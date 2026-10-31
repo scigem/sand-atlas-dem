@@ -60,8 +60,9 @@ Other materials currently require manual preparation and registration.
 Material names resolve hash-pinned geometry; contact properties remain explicit in
 reusable case files. The triaxial template has provisional preparation settings.
 The runner automatically writes resolved inputs, a run/checkpoints and synthetic
-CSV/JSON exports, preserving failure status. Direct Constitutive Atlas synthetic
-import is still required; current exports are comparison bundles. See the
+CSV/JSON exports, preserving failure status. An optional [Atlas bridge](docs/ATLAS_BRIDGE.md) also produces native recorded-path
+requests and explicitly synthetic comparison data. The measurement overlay importer
+is not used. See the
 [case workflow](docs/CASE_WORKFLOW.md) for registration, overrides and open gates.
 
 ## Measured grain geometry
@@ -117,8 +118,9 @@ failure and do not claim measured GPU-only stage timings.
 
 Each run contains a manifest, synthetic history, checkpoints and scheduled snapshots.
 Exports provide CSV, a distinctly typed synthetic comparison bundle, response plots
-and VTK geometry for offline inspection. Constitutive Atlas is not modified and its
-measured-data importer is not reused. Stress is compression-positive; engineering,
+and VTK geometry for offline inspection. The optional recorded-path adapter uses
+Atlas’s actual converter with an explicit projection policy and model configuration.
+Constitutive Atlas is not modified and its measured-data importer is not reused. Stress is compression-positive; engineering,
 logarithmic and volume-ratio measures are explicitly distinguished.
 
 An optional exact-feature triangle-BVH distance path passes bounded device checks;

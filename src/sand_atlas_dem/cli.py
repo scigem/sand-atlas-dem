@@ -42,6 +42,16 @@ def main(argv=None):
     )
     a.add_argument("--rate", type=float, help="positive axial compression rate, 1/s")
     a.add_argument("--stop-strain", type=float)
+    a.add_argument("--atlas-root", type=Path)
+    a.add_argument("--atlas-policy", type=Path)
+    a.add_argument("--atlas-config", type=Path)
+    atlas = sub.add_parser("atlas").add_subparsers(dest="atlas_command", required=True)
+    a = atlas.add_parser("prepare")
+    a.add_argument("run", type=Path)
+    a.add_argument("--output", type=Path, required=True)
+    a.add_argument("--policy", type=Path, required=True)
+    a.add_argument("--configuration", type=Path, required=True)
+    a.add_argument("--atlas-root", type=Path, required=True)
     doctor = sub.add_parser("doctor")
     doctor.add_argument("--output", type=Path)
     g = sub.add_parser("geometry").add_subparsers(
@@ -123,6 +133,33 @@ def main(argv=None):
         elif args.command == "case":
             from .cases import MaterialNotFound, resolve_case, run_case
 
+            handoff = (args.atlas_root, args.atlas_policy, args.atlas_config)
+            if any(handoff) and not all(handoff):
+                raise ValueError(
+                    "Supply --atlas-root, --atlas-policy and --atlas-config together"
+                )
+            if all(handoff):
+                read_paths = [
+                    args.atlas_policy,
+                    args.atlas_config,
+                    args.atlas_root / "atlas/experiment_replay.py",
+                ]
+                if any(not path.is_file() for path in read_paths):
+                    raise ValueError(
+                        "Atlas configuration, policy and prepare-replay checkout must exist"
+                    )
+                from .atlas_bridge import _snapshot, validate_policy
+
+                policy, policy_hash = _snapshot(args.atlas_policy)
+                configuration, configuration_hash = _snapshot(args.atlas_config)
+                validate_policy(policy)
+                frozen_handoff = dict(
+                    policy=policy,
+                    configuration=configuration,
+                    policy_source_sha256=policy_hash,
+                    configuration_source_sha256=configuration_hash,
+                    atlas_root=str(args.atlas_root.resolve()),
+                )
             overrides = {
                 key: getattr(args, key)
                 for key in ("particles", "seed", "pressure", "rate", "stop_strain")
@@ -144,14 +181,44 @@ def main(argv=None):
                 )
                 prepare_material(args.material, args.cache)
                 report = resolve_case(args.material, args.case, args.cache, overrides)
+            if all(handoff):
+                report["atlas_handoff"] = frozen_handoff
             if not args.dry_run:
                 if args.output is None:
                     raise ValueError(
                         "--output is required unless --dry-run is specified"
                     )
                 report = run_case(report, args.output, args.max_chunks)
+                if all(handoff) and report["status"] == "complete":
+                    from .atlas_bridge import export_replay
+
+                    try:
+                        report["atlas"] = export_replay(
+                            args.output / "run",
+                            args.output / "atlas",
+                            policy_path=args.output / "atlas-policy.json",
+                            configuration=args.output / "atlas-configuration.json",
+                            atlas_root=args.atlas_root,
+                        )
+                    except Exception as exc:
+                        report["atlas"] = dict(
+                            status="failed", error=f"{type(exc).__name__}: {exc}"
+                        )
+                        write_json(args.output / "result.json", report)
+                        raise
+                    write_json(args.output / "result.json", report)
                 print(json.dumps(report, indent=2, allow_nan=False))
                 return 1 if report["status"] == "failed" else 0
+        elif args.command == "atlas":
+            from .atlas_bridge import export_replay
+
+            report = export_replay(
+                args.run,
+                args.output,
+                policy_path=args.policy,
+                configuration=args.configuration,
+                atlas_root=args.atlas_root,
+            )
         elif args.command == "doctor":
             from .backend import Metal
 

@@ -1,0 +1,45 @@
+{
+  "version": "experimental-drained-replay-provenance-0.1",
+  "experiment_id": "synthetic-dem-9b887842661b5a44",
+  "experiment_sha256": "60095edecc2b751f3ca5c552f7cebd7dfbde305407c3d83774dc00476979a06c",
+  "configuration_sha256": "6ec6e37fd292a38d6c2c57fe0f07c03a7c31881f0b171ed0bf2aa24b5f3e5ae5",
+  "model_sha256": "fc3874f33677ff66daece43fc7d85f7c5cd1318ab92b5549ee61a2367c24cfec",
+  "request_sha256": "447c06510cf497a34f348cbc37f5a2abe9e6392eb7d2d0c678ce71466afe2a6e",
+  "source": {
+    "source_url": "https://github.com/SciGEM/sand-atlas-dem",
+    "evidence_kind": "synthetic-dem",
+    "member_sha256": "d7cb0a60678285a420edfe9752f74b09541b784ae42e13d87ec673486fb520e9",
+    "archive_sha256": "9b887842661b5a44a35e7985bb407e0f12692d591b3156e00a5b65328e1a69b3",
+    "projection_policy_sha256": "6cb038897998e21d4d943610fb5609981f7caf04684b6e043d4970ee31562c00",
+    "virtual_test_sha256": "694209c9d5ecc22246b249fe89f80fbb032b0ebd458e7b4e4e35bcd1ad4ff56e"
+  },
+  "declarations": {
+    "kinematics": "fixed-frame-axisymmetric-x",
+    "p": "mean-effective-stress",
+    "q": "signed-axial-minus-radial-effective-stress",
+    "strain_origin": "first-observation",
+    "radial_control": "replay-measured-effective-stress",
+    "evidence_url": "https://github.com/SciGEM/sand-atlas-dem",
+    "evidence_locator": "docs/ATLAS_BRIDGE.md; virtual-test.json and its source manifest/history hashes",
+    "initialization_note": "Illustrative linear-elastic parameters, not a sand calibration. Replace e=0.7 with the actual prepared nominal void ratio, or provide Atlas's explicit override note. The converter's legacy radial-control enum denotes an observation constraint; the observations here are synthetic DEM."
+  },
+  "observation_count": 5,
+  "row_mapping": "knot i corresponds to input rows[i], zero-based; no filtering",
+  "source_axial_strain_origin": 0.0,
+  "initial_void_ratio_comparison": {
+    "source": 0.7,
+    "supplied_e": 0.7,
+    "override_note": null
+  },
+  "limitations": [
+    "Measured radial effective stress is replayed; this is not an apparatus-control classification.",
+    "Coordinate is observation order, not elapsed time.",
+    "All history is caller supplied; no preparation or calibration is inferred.",
+    "q enters the radial constraint through p-q/3; its curve is not an independent input channel.",
+    "Conversion does not establish model applicability, source agreement or redistribution permission."
+  ],
+  "input_file_sha256": {
+    "experiment": "b8b0941c836e12682f4d362cc8c44568429c4e89a616134ba26364752709addd",
+    "configuration": "896542402211ce09d127a4b5626cac2c14a15db8674865af1ad319591c6344f0"
+  }
+}

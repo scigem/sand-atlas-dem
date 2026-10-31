@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "tests": 79,
+  "scope": "Serial Metal regression suite plus actual unchanged Atlas Python/browser recorded-request contracts; analytic mapping fixture, not qualified DEM loading or continuum execution.",
+  "wheel_sha256": "ed78d5f00433bc23d3005f0cf9fb68f9a80bf1e9e8c8d5b21a4b54d06db040c3",
+  "study_report_sha256": "37dd7d0a06617ae3c4355a59b61fb37aa0bd95d38ca3d1ca0793a15873e23397",
+  "test_log_sha256": "dd63ab8d9fc1328c31e048fe62208eda025ab5ba87444d91915df47ad7ca03ae"
+}

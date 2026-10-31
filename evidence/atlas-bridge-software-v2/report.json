@@ -1,0 +1,29 @@
+{
+  "format": "sand-dem-atlas-bridge-software-check/1",
+  "passed": true,
+  "scope": "Freeze and check the public Atlas bridge on an OWN ANALYTIC FORMAT FIXTURE.\n\nNo DEM specimen or constitutive engine is executed. This verifies mapping and the\nactual Python/browser request consumers; it does not qualify a material response.\nRequires the development tests (pytest) and Node, alongside both local checkouts.\n",
+  "scientific_admission": false,
+  "files": {
+    "src/sand_atlas_dem/atlas_bridge.py": "401b5108641cd3a0a9384c4292a02db7b824062fcc7d29629889e234ef3ec039",
+    "src/sand_atlas_dem/cli.py": "e4bfff6d45fce916a8eef92c26249ebc77e0537927eb72e509863876d83bf403",
+    "src/sand_atlas_dem/cases.py": "f225b09ee7207a50b35da0b6301626f124c7555cf9cd1a1786b3a73a7300ebb6",
+    "tests/test_atlas_bridge.py": "3b2d5ae58274aaeca26a20f7a7651da31a60bcdd1351878350fcfab040a81b66",
+    "cases/atlas-projection.json": "6cb038897998e21d4d943610fb5609981f7caf04684b6e043d4970ee31562c00",
+    "cases/atlas-elastic-replay.json": "a4af3375d5fb2422228b68ea0115e92331ad4fa93ba5750a2f8c79c1f6ac333d",
+    "examples/atlas_bridge_study.py": "5945cbab7b9df62476ed11ecf5bd4256fabaea9d8e5cddaf6b6c1e704559cb76",
+    "src/sand_atlas_dem/geometry.py": "08122ac327f189d07463655431edf6f86973e98dbb20c21054975ddbf2f9f150",
+    "src/sand_atlas_dem/spec.py": "de79f1ec1dd5a08fcf5313c189a608d7a5772042209fdc35d4e99bdf9a82bd34",
+    "src/sand_atlas_dem/util.py": "0f9dc71429a87057dc08216f3c51425d8b76be9c4fd30f2cab6c3f98b70397c2"
+  },
+  "handoff_sha256": "0edef82c4d62c05f28eee9813558a9bae72414b6fe1b710863b3e84d462e40a5",
+  "node_version": "v26.7.0",
+  "observation_count": 5,
+  "checks": [
+    "Actual public CLI",
+    "Actual Atlas Python prepare-replay",
+    "Actual browser recorded-request parser/validator",
+    "Prepared origin and preserved reversal/duplicate",
+    "Explicit synthetic evidence identity",
+    "Executed source freeze unchanged"
+  ]
+}

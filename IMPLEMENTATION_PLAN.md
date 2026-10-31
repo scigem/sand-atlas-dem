@@ -50,7 +50,9 @@ case runner and direct, explicitly synthetic Atlas handoff described in
 [CASE_WORKFLOW.md](docs/CASE_WORKFLOW.md). Named-material registration, hash-checked
 resolution, case overrides, dry-run and automatic exports are now implemented.
 Reviewed Hostun acquisition/preparation is implemented; additional material recipes
-and the direct Atlas synthetic-test adapter remain open. This is required software
+and dedicated synthetic comparison overlays remain open. The recorded-path
+adapter now uses the actual Atlas converter and browser contract with a typed
+synthetic sidecar and explicit policy. This is required software
 work alongside the scientific gates below; naming a material must not infer calibrated properties.
 
 - [ ] Complete Hostun shape-library qualification. The direct archive and dimensioned
@@ -92,8 +94,11 @@ work alongside the scientific gates below; naming a material must not infer cali
   Sphere throughput is only an engineering baseline.
 - [ ] Reproduce a complete published assembly benchmark and compare with independent
   experimental evidence. Calibration and validation datasets must remain distinct.
-- [ ] Add reviewed atlas adapters only after checking protocol, stress measures,
-  finite-strain compatibility, preparation history and synthetic evidence labeling.
+- [ ] Complete atlas adapters and material comparison. The bounded recorded-path
+  adapter checks protocol, signed stress/strain mapping, prepared origins, frozen
+  approximation declarations and synthetic provenance; actual Python/browser
+  request contracts pass. Qualified DEM loading, continuum execution/comparison
+  and dedicated synthetic overlays remain open (docs/ATLAS_BRIDGE.md).
 - [ ] Verify a second backend/device separately before advertising portability.
 
 ## Indicative effort and cost

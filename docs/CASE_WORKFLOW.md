@@ -1,8 +1,9 @@
 # Named-material case workflow
 
 The named-material runner and reviewed Hostun source acquisition are implemented.
-Source recipes for other materials, named numerical profiles and direct Atlas
-synthetic-test import remain open. The existing
+The recorded-path Atlas bridge is implemented with an explicit synthetic sidecar.
+Source recipes for other materials, named numerical profiles and dedicated synthetic
+comparison overlays remain open. The existing
 `run`, `resume`, geometry and export commands remain available as lower-level tools.
 
 ## User interface
@@ -115,8 +116,9 @@ strain and time origins use the actual prepared state.
 Deliver an explicitly synthetic virtual-test dataset for comparison with
 constitutive-model predictions. The current `sand-dem-atlas-comparison/1` bundle
 retains raw DEM channels but is not yet directly accepted by Atlas's current
-measurement importer. A reviewed synthetic-test import contract is required;
-do not disguise DEM output as measured evidence to satisfy that importer.
+measurement importer. The [Atlas bridge](ATLAS_BRIDGE.md) instead uses the existing recorded-path
+converter, with a separate typed virtual-test sidecar and private legacy conversion
+input explicitly identified as synthetic. It does not use the measurement importer.
 
 The handoff must retain material/geometry identity, parameters, preparation,
 case and solver hashes, run status and qualification status. It needs explicit SI
@@ -140,8 +142,10 @@ experimental validation.
 - [ ] Source/scale recipes for additional named materials.
 - [X] Case-file runner, common CLI overrides and deterministic dry-run resolution.
 - [X] One output directory with resolved case, manifest, history, checkpoint and exports.
-- [ ] Synthetic Atlas dataset plus metadata for preparation and full DEM observations.
-- [ ] Validation against the actual Atlas consumer, including synthetic labels.
+- [X] Typed synthetic virtual-test projection, preparation audit and raw-observation provenance.
+- [X] Actual Atlas converter/browser recorded-request validation with explicit synthetic metadata.
+- [ ] Dedicated Atlas synthetic-evidence overlay import and UI labeling; recorded
+  requests already work, while automatic comparison overlays remain unsupported.
 - [X] End-to-end synthetic-fixture execution and failed-preparation tests on Metal.
 - [ ] Qualified named Hostun preparation/loading study; the two-step named-material
   smoke run checks execution only. Contact and material qualification remain open.

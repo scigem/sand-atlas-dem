@@ -278,3 +278,17 @@ recorded in `evidence/material-acquisition-tests-v3/` and
 the downloaded-material hold case qualifies contact forces or material response.
 The default 64-cell/2,048-sample profile still needs source-to-material scientific
 qualification. The wheel includes the reviewed recipe for fresh installs.
+
+## Explicit Atlas recorded-path adapter
+
+The new bridge maps a completed, independently audited isotropic/triaxial DEM case
+to Atlas's existing ordered replay request and an explicitly synthetic virtual-test
+sidecar. It preserves the prepared strain/time origin, computes signed triaxial q
+from the full tensor, retains raw observations and distinguishes engineering, log
+and finite-volume measures. Case-run configurations/policies are frozen before
+GPU initialization. The actual Atlas Python converter and browser request validator
+pass on the bounded analytic software fixture; neither adjacent atlas is edited.
+See `docs/ATLAS_BRIDGE.md` and the prospective `atlas-bridge-software-v3` evidence.
+This does not execute a continuum solver, establish qualified DEM loading or add
+synthetic measurement overlays to the current GUI. Scientific material comparison
+and physical experimental validation remain open.

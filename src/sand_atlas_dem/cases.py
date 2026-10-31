@@ -166,6 +166,14 @@ def run_case(resolved, output, max_chunks=None):
     output.mkdir(parents=True, exist_ok=False)
     write_json(output / "resolved-case.json", resolved)
     try:
+        if "atlas_handoff" in resolved:
+            write_json(
+                output / "atlas-policy.json", resolved["atlas_handoff"]["policy"]
+            )
+            write_json(
+                output / "atlas-configuration.json",
+                resolved["atlas_handoff"]["configuration"],
+            )
         spec = Experiment(**resolved["experiment"])
         if sha256(spec.shape_library) != resolved["material"]["shape_sha256"]:
             raise ValueError("Material changed after case resolution")
