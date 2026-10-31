@@ -772,3 +772,9 @@ hours for that compression; dense contacts and equilibrium can require more.
 This is a conditional cost scenario, not an ETA or a scientific acceptance.
 Original short sphere timings must not be used for the 53.6-million-node mesh
 workload. See [HOSTUN_RUNTIME_COST.md](HOSTUN_RUNTIME_COST.md).
+
+The source-frozen first-contact profiling workload is resolved and queued. It
+uses the original preparation's archived solver, restores three identical
+checkpoint states, and explicitly preserves drag in its timestamped steps. Eight
+resolver contracts and full 212-test CPU integration pass; no profiling GPU
+execution is inferred. See [HOSTUN_RUNTIME_COST.md](HOSTUN_RUNTIME_COST.md).

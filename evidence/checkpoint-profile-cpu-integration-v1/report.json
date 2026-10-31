@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "exit_code": 0,
+  "passed_tests": 212,
+  "skipped_tests": 8,
+  "deselected_tests": 57,
+  "sources_unchanged": true,
+  "frozen_source_files": 64,
+  "freeze_sha256": "63e5ea1d7dd094a88b1771d792893dac4f3597f1bc7f555460fc1f7b788adf43",
+  "log_sha256": "c1f716b9113cff4aa8a55f0c9e6b2a95c00203910a9e39904cfa89c61ed021dd",
+  "scope": "CPU-only profile resolver and integration regression. The frozen checkpoint profile is not executed on Metal.",
+  "gpu_executed": false,
+  "scientific_admission": false
+}
