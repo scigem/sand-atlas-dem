@@ -3,6 +3,7 @@
 import csv
 import json
 import time
+import warnings
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -136,7 +137,9 @@ class Simulation:
             rate[2] = -stage["rate"]
         return rate
 
-    def run(self, output, *, max_chunks=None):
+    def run(self, output, *, max_chunks=None, view_options=None):
+        if view_options is not None:
+            view_options.preflight()
         path = Path(output)
         path.mkdir(parents=True, exist_ok=False)
         spec = self.experiment
@@ -178,7 +181,17 @@ class Simulation:
         write_json(path / "manifest.json", manifest)
         if not self.rows:
             self.rows.append(dict(self.engine.diagnostics(), stage=self.stage_index))
+        renderer = None
         try:
+            if view_options is not None:
+                from .viewer import Renderer
+                try:
+                    renderer = Renderer(self, path, view_options)
+                    renderer.update()
+                except Exception as exc:
+                    failure_text = f"{type(exc).__name__}: {exc}"
+                    warnings.warn(f"Visualization unavailable; simulation continues: {failure_text}")
+                    manifest["visualization"] = dict(status="failed", failure=failure_text)
             while self.stage_index < len(spec.stages):
                 stage = spec.stages[self.stage_index]
                 if self.stage_steps >= stage["steps"]:
@@ -221,6 +234,8 @@ class Simulation:
                     + origin["elastic_energy_proxy"]
                 )
                 self.rows.append(row)
+                if renderer is not None:
+                    renderer.update()
                 if self.engine.step % spec.snapshot_interval == 0:
                     self.snapshot(path / f"particles-{self.engine.step:09d}.h5")
                 if stage["kind"] == "isotropic":
@@ -261,6 +276,14 @@ class Simulation:
             status = "failed"
             failure = f"{type(exc).__name__}: {exc}"
         finally:
+            if renderer is not None:
+                if not getattr(self.engine, "invalid", False):
+                    renderer.update(final=True)
+                try:
+                    manifest["visualization"] = renderer.close()
+                except Exception as exc:
+                    manifest["visualization"] = dict(status="failed", failure=f"{type(exc).__name__}: {exc}")
+                    warnings.warn(f"Could not save rendering report: {exc}")
             write_json(
                 path / "history.json",
                 dict(format="sand-dem-history/1", kind="synthetic-dem", rows=self.rows),

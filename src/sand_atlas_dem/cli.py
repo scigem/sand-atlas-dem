@@ -8,6 +8,30 @@ from pathlib import Path
 from .util import sha256, write_json
 
 
+def _view_arguments(parser):
+    from .viewer import FIELDS, VECTORS
+    parser.add_argument("--live", action="store_true", help="Interactive 3D viewer during simulation")
+    parser.add_argument("--record-video", action="store_true", help="Write x/y/z/isometric MP4s under the run's visualization directory")
+    parser.add_argument("--view-every", type=int, default=1, help="Render every N diagnostic chunks")
+    parser.add_argument("--video-fps", type=int, default=24)
+    parser.add_argument("--color-by", choices=FIELDS, default="speed")
+    parser.add_argument("--vectors", choices=VECTORS, default="none")
+    parser.add_argument("--color-max", type=float, help="Fixed colour scale maximum in SI units")
+    parser.add_argument("--max-vectors", type=int, default=1000)
+    parser.add_argument("--view-geometry", choices=["mesh", "sphere"], default="mesh")
+
+
+def _view_options(args):
+    from .viewer import ViewOptions
+    if not (args.live or args.record_video):
+        return None
+    options = ViewOptions(args.live, args.record_video, args.view_every, args.video_fps,
+                          args.color_by, args.vectors, args.color_max, args.max_vectors,
+                          args.view_geometry)
+    options.preflight()
+    return options
+
+
 def main(argv=None):
     p = argparse.ArgumentParser(prog="sand-dem")
     sub = p.add_subparsers(dest="command", required=True)
@@ -45,6 +69,7 @@ def main(argv=None):
     a.add_argument("--atlas-root", type=Path)
     a.add_argument("--atlas-policy", type=Path)
     a.add_argument("--atlas-config", type=Path)
+    _view_arguments(a)
     atlas = sub.add_parser("atlas").add_subparsers(dest="atlas_command", required=True)
     a = atlas.add_parser("prepare")
     a.add_argument("run", type=Path)
@@ -81,10 +106,12 @@ def main(argv=None):
     a.add_argument("specification", type=Path)
     a.add_argument("--output", type=Path, required=True)
     a.add_argument("--max-chunks", type=int)
+    _view_arguments(a)
     a = sub.add_parser("resume")
     a.add_argument("checkpoint", type=Path)
     a.add_argument("--output", type=Path, required=True)
     a.add_argument("--max-chunks", type=int)
+    _view_arguments(a)
     a = sub.add_parser("benchmark")
     a.add_argument("--output", type=Path, required=True)
     a.add_argument("--particles", type=int, default=1000)
@@ -189,7 +216,9 @@ def main(argv=None):
                     raise ValueError(
                         "--output is required unless --dry-run is specified"
                     )
-                report = run_case(report, args.output, args.max_chunks)
+                view_options = _view_options(args)
+                view_kwargs = {"view_options": view_options} if view_options is not None else {}
+                report = run_case(report, args.output, args.max_chunks, **view_kwargs)
                 if all(handoff) and report["status"] == "complete":
                     from .atlas_bridge import export_replay
 
@@ -295,12 +324,13 @@ def main(argv=None):
             from .simulation import Simulation
             from .spec import Experiment
 
+            view_options = _view_options(args)
             sim = (
                 Simulation(Experiment.load(args.specification))
                 if args.command == "run"
                 else Simulation.resume(args.checkpoint)
             )
-            result = sim.run(args.output, max_chunks=args.max_chunks)
+            result = sim.run(args.output, max_chunks=args.max_chunks, view_options=view_options)
             report = dict(
                 path=str(result.path), status=result.status, rows=len(result.rows)
             )
