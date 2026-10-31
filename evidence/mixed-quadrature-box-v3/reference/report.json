@@ -1,0 +1,641 @@
+{
+  "passed": true,
+  "source_unchanged": true,
+  "reference_refinement_passed": true,
+  "expected_cases": 6,
+  "completed_cases": 6,
+  "failures": [],
+  "rows": [
+    {
+      "shape": "analytical-box-0",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.000987592990182012,
+      "levels": [
+        {
+          "level": 0,
+          "force_integral_m3": [
+            -1.2407009817988086e-11,
+            0.0,
+            0.0
+          ],
+          "active_nodes": 12,
+          "maximum_sampled_depth_fraction": 0.010000000000000068
+        },
+        {
+          "level": 1,
+          "force_integral_m3": [
+            -1.2407009817988084e-11,
+            0.0,
+            0.0
+          ],
+          "active_nodes": 48,
+          "maximum_sampled_depth_fraction": 0.010000000000000068
+        },
+        {
+          "level": 2,
+          "force_integral_m3": [
+            -1.2407009817988073e-11,
+            0.0,
+            0.0
+          ],
+          "active_nodes": 192,
+          "maximum_sampled_depth_fraction": 0.010000000000000068
+        },
+        {
+          "level": 3,
+          "force_integral_m3": [
+            -1.2407009817988026e-11,
+            0.0,
+            0.0
+          ],
+          "active_nodes": 768,
+          "maximum_sampled_depth_fraction": 0.010000000000000068
+        },
+        {
+          "level": 4,
+          "force_integral_m3": [
+            -1.1389247293856075e-11,
+            0.0,
+            -1.5777218104420236e-30
+          ],
+          "active_nodes": 3072,
+          "maximum_sampled_depth_fraction": 0.010000000000000068
+        },
+        {
+          "level": 5,
+          "force_integral_m3": [
+            -1.164368792489018e-11,
+            -4.928408505368271e-28,
+            -5.32481111024183e-30
+          ],
+          "active_nodes": 12288,
+          "maximum_sampled_depth_fraction": 0.010000000000000068
+        },
+        {
+          "level": 6,
+          "force_integral_m3": [
+            -1.189509950078566e-11,
+            -6.902532920683853e-31,
+            -8.800729473871913e-30
+          ],
+          "active_nodes": 49152,
+          "maximum_sampled_depth_fraction": 0.010000000000000068
+        },
+        {
+          "level": 7,
+          "force_integral_m3": [
+            -1.1832246606834448e-11,
+            -1.445094570751741e-28,
+            -1.8316364143100368e-29
+          ],
+          "active_nodes": 196608,
+          "maximum_sampled_depth_fraction": 0.010000000000000068
+        },
+        {
+          "level": 8,
+          "force_integral_m3": [
+            -1.1769204396932336e-11,
+            8.278422885494325e-18,
+            1.9450505768751123e-28
+          ],
+          "active_nodes": 786432,
+          "maximum_sampled_depth_fraction": 0.010000000000000068
+        }
+      ],
+      "reference_finest_level": 8,
+      "finest_relative_change": 0.00535653968776951,
+      "closed_continuum_integral_m3": [
+        -1.1798913684761889e-11,
+        0.0,
+        0.0
+      ],
+      "relative_continuum_error": 0.0025179681601793513
+    },
+    {
+      "shape": "analytical-box-0",
+      "target_sampled_depth_fraction": 0.02,
+      "separation_m": 0.0009751859803640241,
+      "levels": [
+        {
+          "level": 0,
+          "force_integral_m3": [
+            -2.481401963597596e-11,
+            0.0,
+            0.0
+          ],
+          "active_nodes": 12,
+          "maximum_sampled_depth_fraction": 0.019999999999999962
+        },
+        {
+          "level": 1,
+          "force_integral_m3": [
+            -2.4814019635975972e-11,
+            0.0,
+            0.0
+          ],
+          "active_nodes": 48,
+          "maximum_sampled_depth_fraction": 0.019999999999999962
+        },
+        {
+          "level": 2,
+          "force_integral_m3": [
+            -2.4814019635975998e-11,
+            0.0,
+            0.0
+          ],
+          "active_nodes": 192,
+          "maximum_sampled_depth_fraction": 0.019999999999999962
+        },
+        {
+          "level": 3,
+          "force_integral_m3": [
+            -2.0807589382250583e-11,
+            0.0,
+            3.7865323450608567e-29
+          ],
+          "active_nodes": 768,
+          "maximum_sampled_depth_fraction": 0.019999999999999962
+        },
+        {
+          "level": 4,
+          "force_integral_m3": [
+            -2.180919694568184e-11,
+            0.0,
+            2.208810534618833e-29
+          ],
+          "active_nodes": 3072,
+          "maximum_sampled_depth_fraction": 0.019999999999999962
+        },
+        {
+          "level": 5,
+          "force_integral_m3": [
+            -2.2786572068064616e-11,
+            -9.424915665128039e-28,
+            6.646153126487024e-29
+          ],
+          "active_nodes": 12288,
+          "maximum_sampled_depth_fraction": 0.019999999999999962
+        },
+        {
+          "level": 6,
+          "force_integral_m3": [
+            -2.2542228287458114e-11,
+            2.9375207958167427e-28,
+            -4.214982424209019e-28
+          ],
+          "active_nodes": 49152,
+          "maximum_sampled_depth_fraction": 0.019999999999999962
+        },
+        {
+          "level": 7,
+          "force_integral_m3": [
+            -2.2296369979341382e-11,
+            3.5030354572470555e-29,
+            4.278461075176022e-28
+          ],
+          "active_nodes": 196608,
+          "maximum_sampled_depth_fraction": 0.019999999999999962
+        },
+        {
+          "level": 8,
+          "force_integral_m3": [
+            -2.2357834556404953e-11,
+            -4.3047799004338204e-17,
+            7.495873417950673e-28
+          ],
+          "active_nodes": 786432,
+          "maximum_sampled_depth_fraction": 0.019999999999999962
+        }
+      ],
+      "reference_finest_level": 8,
+      "finest_relative_change": 0.0027491299295122904,
+      "closed_continuum_integral_m3": [
+        -2.2412192852144848e-11,
+        0.0,
+        0.0
+      ],
+      "relative_continuum_error": 0.0024253901946969117
+    },
+    {
+      "shape": "analytical-box-1",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.0009880211637260349,
+      "levels": [
+        {
+          "level": 0,
+          "force_integral_m3": [
+            -1.078095264656865e-11,
+            0.0,
+            0.0
+          ],
+          "active_nodes": 12,
+          "maximum_sampled_depth_fraction": 0.009999999999999936
+        },
+        {
+          "level": 1,
+          "force_integral_m3": [
+            -1.0780952646568654e-11,
+            0.0,
+            0.0
+          ],
+          "active_nodes": 48,
+          "maximum_sampled_depth_fraction": 0.009999999999999936
+        },
+        {
+          "level": 2,
+          "force_integral_m3": [
+            -1.0780952646568638e-11,
+            0.0,
+            0.0
+          ],
+          "active_nodes": 192,
+          "maximum_sampled_depth_fraction": 0.009999999999999936
+        },
+        {
+          "level": 3,
+          "force_integral_m3": [
+            -9.882539926021234e-12,
+            0.0,
+            -1.5777218104420236e-30
+          ],
+          "active_nodes": 768,
+          "maximum_sampled_depth_fraction": 0.009999999999999936
+        },
+        {
+          "level": 4,
+          "force_integral_m3": [
+            -1.010714310615832e-11,
+            0.0,
+            5.916456789157544e-30
+          ],
+          "active_nodes": 3168,
+          "maximum_sampled_depth_fraction": 0.009999999999999936
+        },
+        {
+          "level": 5,
+          "force_integral_m3": [
+            -9.882539926021591e-12,
+            0.0,
+            1.9129876951609542e-29
+          ],
+          "active_nodes": 12544,
+          "maximum_sampled_depth_fraction": 0.009999999999999936
+        },
+        {
+          "level": 6,
+          "force_integral_m3": [
+            -9.835162692711504e-12,
+            0.0,
+            2.1102029214662066e-28
+          ],
+          "active_nodes": 49792,
+          "maximum_sampled_depth_fraction": 0.009999999999999936
+        },
+        {
+          "level": 7,
+          "force_integral_m3": [
+            -9.861044699793718e-12,
+            1.9721522630525295e-31,
+            -3.3946903422956077e-28
+          ],
+          "active_nodes": 199554,
+          "maximum_sampled_depth_fraction": 0.009999999999999936
+        },
+        {
+          "level": 8,
+          "force_integral_m3": [
+            -9.833188641258495e-12,
+            2.40664205850629e-30,
+            7.39316742587639e-28
+          ],
+          "active_nodes": 798720,
+          "maximum_sampled_depth_fraction": 0.009999999999999936
+        }
+      ],
+      "reference_finest_level": 8,
+      "finest_relative_change": 0.0028328611960461696,
+      "closed_continuum_integral_m3": [
+        -9.840777518152362e-12,
+        0.0,
+        0.0
+      ],
+      "relative_continuum_error": 0.0007711663920730662
+    },
+    {
+      "shape": "analytical-box-1",
+      "target_sampled_depth_fraction": 0.02,
+      "separation_m": 0.0009760423274520696,
+      "levels": [
+        {
+          "level": 0,
+          "force_integral_m3": [
+            -2.1561905293137405e-11,
+            0.0,
+            0.0
+          ],
+          "active_nodes": 12,
+          "maximum_sampled_depth_fraction": 0.019999999999999962
+        },
+        {
+          "level": 1,
+          "force_integral_m3": [
+            -2.1561905293137408e-11,
+            0.0,
+            0.0
+          ],
+          "active_nodes": 48,
+          "maximum_sampled_depth_fraction": 0.019999999999999962
+        },
+        {
+          "level": 2,
+          "force_integral_m3": [
+            -1.796825441094783e-11,
+            0.0,
+            0.0
+          ],
+          "active_nodes": 192,
+          "maximum_sampled_depth_fraction": 0.019999999999999962
+        },
+        {
+          "level": 3,
+          "force_integral_m3": [
+            -1.886666713149516e-11,
+            0.0,
+            3.1554436208840517e-29
+          ],
+          "active_nodes": 816,
+          "maximum_sampled_depth_fraction": 0.019999999999999962
+        },
+        {
+          "level": 4,
+          "force_integral_m3": [
+            -1.7968254410948105e-11,
+            0.0,
+            -2.413914369976296e-28
+          ],
+          "active_nodes": 3200,
+          "maximum_sampled_depth_fraction": 0.019999999999999962
+        },
+        {
+          "level": 5,
+          "force_integral_m3": [
+            -1.7813839724604256e-11,
+            2.2888183593750035e-15,
+            -8.49011549244114e-28
+          ],
+          "active_nodes": 12608,
+          "maximum_sampled_depth_fraction": 0.019999999999999962
+        },
+        {
+          "level": 6,
+          "force_integral_m3": [
+            -1.790859419122455e-11,
+            5.5220263365470826e-30,
+            -9.723696732980497e-28
+          ],
+          "active_nodes": 50626,
+          "maximum_sampled_depth_fraction": 0.019999999999999962
+        },
+        {
+          "level": 7,
+          "force_integral_m3": [
+            -1.7798047313486117e-11,
+            -9.367723249499515e-31,
+            4.167305643249724e-27
+          ],
+          "active_nodes": 202752,
+          "maximum_sampled_depth_fraction": 0.019999999999999962
+        },
+        {
+          "level": 8,
+          "force_integral_m3": [
+            -1.7825684032822004e-11,
+            3.1292438507097984e-17,
+            4.3695252059224725e-27
+          ],
+          "active_nodes": 811008,
+          "maximum_sampled_depth_fraction": 0.019999999999999962
+        }
+      ],
+      "reference_finest_level": 8,
+      "finest_relative_change": 0.0015503885854150916,
+      "closed_continuum_integral_m3": [
+        -1.7828706753638486e-11,
+        0.0,
+        0.0
+      ],
+      "relative_continuum_error": 0.00016955143353665223
+    },
+    {
+      "shape": "analytical-box-2",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.0009424117617703027,
+      "levels": [
+        {
+          "level": 0,
+          "force_integral_m3": [
+            -5.758823822969727e-09,
+            0.0,
+            0.0
+          ],
+          "active_nodes": 12,
+          "maximum_sampled_depth_fraction": 0.010000000000000007
+        },
+        {
+          "level": 1,
+          "force_integral_m3": [
+            -5.758823822969727e-09,
+            0.0,
+            0.0
+          ],
+          "active_nodes": 48,
+          "maximum_sampled_depth_fraction": 0.010000000000000007
+        },
+        {
+          "level": 2,
+          "force_integral_m3": [
+            -5.758823822969726e-09,
+            0.0,
+            0.0
+          ],
+          "active_nodes": 192,
+          "maximum_sampled_depth_fraction": 0.010000000000000007
+        },
+        {
+          "level": 3,
+          "force_integral_m3": [
+            -5.758823822969708e-09,
+            0.0,
+            0.0
+          ],
+          "active_nodes": 768,
+          "maximum_sampled_depth_fraction": 0.010000000000000007
+        },
+        {
+          "level": 4,
+          "force_integral_m3": [
+            -5.7588238229698715e-09,
+            0.0,
+            0.0
+          ],
+          "active_nodes": 3072,
+          "maximum_sampled_depth_fraction": 0.010000000000000007
+        },
+        {
+          "level": 5,
+          "force_integral_m3": [
+            -5.520747447476262e-09,
+            0.0,
+            -3.6350710512584224e-27
+          ],
+          "active_nodes": 12288,
+          "maximum_sampled_depth_fraction": 0.010000000000000007
+        },
+        {
+          "level": 6,
+          "force_integral_m3": [
+            -5.58026654134747e-09,
+            4.345298301447004e-25,
+            -1.6976286680356174e-26
+          ],
+          "active_nodes": 49152,
+          "maximum_sampled_depth_fraction": 0.010000000000000007
+        },
+        {
+          "level": 7,
+          "force_integral_m3": [
+            -5.639434144517832e-09,
+            -1.5036162170055618e-25,
+            -6.5790999495432385e-28
+          ],
+          "active_nodes": 196608,
+          "maximum_sampled_depth_fraction": 0.010000000000000007
+        },
+        {
+          "level": 8,
+          "force_integral_m3": [
+            -5.624642243746418e-09,
+            2.9645392818205624e-27,
+            -6.618542994804289e-27
+          ],
+          "active_nodes": 786432,
+          "maximum_sampled_depth_fraction": 0.010000000000000007
+        }
+      ],
+      "reference_finest_level": 8,
+      "finest_relative_change": 0.002629838508904271,
+      "closed_continuum_integral_m3": [
+        -5.626931559400555e-09,
+        0.0,
+        0.0
+      ],
+      "relative_continuum_error": 0.00040684974216760166
+    },
+    {
+      "shape": "analytical-box-2",
+      "target_sampled_depth_fraction": 0.02,
+      "separation_m": 0.0008848235235406056,
+      "levels": [
+        {
+          "level": 0,
+          "force_integral_m3": [
+            -1.1517647645939443e-08,
+            0.0,
+            0.0
+          ],
+          "active_nodes": 12,
+          "maximum_sampled_depth_fraction": 0.019999999999999993
+        },
+        {
+          "level": 1,
+          "force_integral_m3": [
+            -1.1517647645939448e-08,
+            0.0,
+            0.0
+          ],
+          "active_nodes": 48,
+          "maximum_sampled_depth_fraction": 0.019999999999999993
+        },
+        {
+          "level": 2,
+          "force_integral_m3": [
+            -1.1517647645939425e-08,
+            0.0,
+            0.0
+          ],
+          "active_nodes": 192,
+          "maximum_sampled_depth_fraction": 0.019999999999999993
+        },
+        {
+          "level": 3,
+          "force_integral_m3": [
+            -1.151764764593941e-08,
+            0.0,
+            0.0
+          ],
+          "active_nodes": 768,
+          "maximum_sampled_depth_fraction": 0.019999999999999993
+        },
+        {
+          "level": 4,
+          "force_integral_m3": [
+            -1.0572840612483683e-08,
+            9.70967867469472e-25,
+            2.4233807008389483e-27
+          ],
+          "active_nodes": 3072,
+          "maximum_sampled_depth_fraction": 0.019999999999999993
+        },
+        {
+          "level": 5,
+          "force_integral_m3": [
+            -1.0809042370848203e-08,
+            -4.723572882718583e-25,
+            -4.4428646182047385e-27
+          ],
+          "active_nodes": 12288,
+          "maximum_sampled_depth_fraction": 0.019999999999999993
+        },
+        {
+          "level": 6,
+          "force_integral_m3": [
+            -1.1042432203513115e-08,
+            6.159804601200166e-25,
+            -4.455486392688275e-27
+          ],
+          "active_nodes": 49152,
+          "maximum_sampled_depth_fraction": 0.019999999999999993
+        },
+        {
+          "level": 7,
+          "force_integral_m3": [
+            -1.0984084745361488e-08,
+            8.513386889145159e-26,
+            -6.983627821740573e-26
+          ],
+          "active_nodes": 196608,
+          "maximum_sampled_depth_fraction": 0.019999999999999993
+        },
+        {
+          "level": 8,
+          "force_integral_m3": [
+            -1.098408474539589e-08,
+            2.15238995021907e-14,
+            1.0512675967337292e-25
+          ],
+          "active_nodes": 786432,
+          "maximum_sampled_depth_fraction": 0.019999999999999993
+        }
+      ],
+      "reference_finest_level": 8,
+      "finest_relative_change": 1.959553299250876e-06,
+      "closed_continuum_integral_m3": [
+        -1.0993134366570115e-08,
+        0.0,
+        0.0
+      ],
+      "relative_continuum_error": 0.0008232089656125337
+    }
+  ],
+  "scope": "Own analytical box distance and closed continuum force"
+}

@@ -1,0 +1,102 @@
+{
+  "format": "sand-dem-adaptive-quadrature/1",
+  "output": "/private/tmp/sand-atlas-dem-walls/evidence/mixed-quadrature-box-v2/private/adaptive.h5",
+  "sha256": "7b907c190d1cdd7596d158357448dab783ba701ee0ef47ca7b2365629afd762b",
+  "parent_sha256": "772ccc8d8fe772513811344dd4cf080ee4badb52ac0608cc41c387b5fbf5daac",
+  "reference_report_sha256": "a1c7a7e676adca8e768e65a606cba8ff867621478a0e82551ba90df5184a8926",
+  "reference_protocol_sha256": "db578d695a528b3c7897bde1968c4e02e95d405faa2274890bb5c78715ee904e",
+  "reference_freeze_sha256": "8f1a0ab6b9229db23a950ef1b8f41e224363a77aa3a6314dd66b6dec51c5ad37",
+  "rule": "gauss3",
+  "selection_target_relative_error": 0.05,
+  "minimum_level": 2,
+  "maximum_level": 4,
+  "shapes": [
+    {
+      "shape": "analytical-box-0",
+      "subdivisions": 4,
+      "worst_reference_relative_error": 0.03228400921181961,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.000987592990182012,
+          "reference_finest_level": 8,
+          "level_relative_errors": [
+            0.05419273891407329,
+            0.05419273891407316,
+            0.0541927389140722,
+            0.05419273891406822,
+            0.03228400921181961,
+            0.010664822198843063,
+            0.010696993601223257,
+            0.00535653968776951,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.02,
+          "separation_m": 0.0009751859803640241,
+          "reference_finest_level": 8,
+          "level_relative_errors": [
+            0.10985791462706983,
+            0.10985791462707041,
+            0.10985791462707156,
+            0.06933789454601158,
+            0.024538942312450247,
+            0.019176164522479392,
+            0.008247387984400114,
+            0.0027491299295122904,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 9216,
+      "source_face_count": 12
+    },
+    {
+      "shape": "analytical-box-1",
+      "subdivisions": 4,
+      "worst_reference_relative_error": 0.027860186038774513,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.0009880211637260349,
+          "reference_finest_level": 8,
+          "level_relative_errors": [
+            0.09638419844133664,
+            0.09638419844133696,
+            0.09638419844133532,
+            0.005018848571222318,
+            0.027860186038774513,
+            0.005018848571258628,
+            0.00020075394920491413,
+            0.0028328611960461696,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.02,
+          "separation_m": 0.0009760423274520696,
+          "reference_finest_level": 8,
+          "level_relative_errors": [
+            0.20959763751905802,
+            0.2095976375190582,
+            0.007998031452663831,
+            0.058397932849317186,
+            0.007998031452679239,
+            0.0006764133848935234,
+            0.004651163128160732,
+            0.0015503885854150916,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 9216,
+      "source_face_count": 12
+    }
+  ],
+  "total_samples": 18432,
+  "static_reference_target_passed": true,
+  "gpu_verified": false,
+  "scientific_admission": false,
+  "note": "Fixed per-shape preprocessing; requires separate matching GPU and dynamic assembly qualification. New sample keys cannot replace a continuing contact history."
+}

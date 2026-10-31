@@ -1,0 +1,18 @@
+{
+  "identity": "mixed-quadrature-box-v3",
+  "passed": true,
+  "source_unchanged": true,
+  "selected_levels": {
+    "analytical-box-0": 4,
+    "analytical-box-1": 4,
+    "analytical-box-2": 2
+  },
+  "reference_cases": 6,
+  "gpu_cases": 12,
+  "reference_maximum_continuum_error": 0.0025179681601793513,
+  "gpu_coarse_worst_relative_error": 0.2096036078697544,
+  "gpu_fine_worst_relative_error": 0.04858274014326583,
+  "backend": "metal",
+  "scientific_admission": false,
+  "scope": "Exercise reference -> mixed asset -> actual Metal comparison on analytical boxes.\n\nOwn synthetic geometry and independent exact box distance/continuum integrals.\nThis verifies the research workflow, not Hostun or assembly material behaviour.\n"
+}

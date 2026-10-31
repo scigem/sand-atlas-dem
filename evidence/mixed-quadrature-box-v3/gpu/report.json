@@ -1,0 +1,438 @@
+{
+  "protocol": {
+    "identity": "mixed-quadrature-box-v3-metal",
+    "reference_report": "/private/tmp/sand-atlas-dem-walls/evidence/mixed-quadrature-box-v3/reference/report.json",
+    "reference_report_sha256": "d2914c879db510e5a179736e43b02c3b2fca2390401c82ffd91f2f38c59ea3f6",
+    "reference_protocol": "/private/tmp/sand-atlas-dem-walls/evidence/mixed-quadrature-box-v3/reference/protocol.json",
+    "reference_protocol_sha256": "c40ec7e84b595b24c4928198cfbe69c12692b6ff72b3d411e8d9388827e152e3",
+    "reference_freeze_sha256": "b914ac9f82ef58356accb7b79ee649e74f702ee8b73f6d8cf415b9126e95181d",
+    "parent_library_sha256": "734a4c6c888c42b3b2bd3c14112af432f708964124341707866bf498f9647568",
+    "libraries": [
+      {
+        "path": "/private/tmp/sand-atlas-dem-walls/evidence/mixed-quadrature-box-v3/private/coarse.h5",
+        "sha256": "9e12b13b9a3fc2effd12282a4321b07fbe9e7a775e30c101c2b72333dd371282",
+        "subdivisions": 0
+      },
+      {
+        "path": "/private/tmp/sand-atlas-dem-walls/evidence/mixed-quadrature-box-v3/private/adaptive.h5",
+        "sha256": "5826ed6e6cbf4aa9b2b6cf45bf612ee89e24dbd164d8100c9b57aa1daa7a9bc1",
+        "subdivisions_by_shape": {
+          "analytical-box-0": 4,
+          "analytical-box-1": 4,
+          "analytical-box-2": 2
+        }
+      }
+    ],
+    "maximum_relative_force_error": 0.1,
+    "maximum_fixed_level_gpu_error": 0.001,
+    "minimum_worst_error_improvement_factor": 2,
+    "timestep_s": 2e-09,
+    "overlap_guard_fraction": 0.03,
+    "contacts_per_particle": 4096,
+    "zero_fixed_reference": "require-exact-zero-force-and-zero-active-nodes",
+    "scope": "Analytical workflow fixture only; Hostun fixed-node baseline and full-library qualification remain separate"
+  },
+  "protocol_sha256": "5da3103960ec1401f399deb0ecb52637821d79211dea246f92496a2c11f36bfc",
+  "reference_report_sha256": "d2914c879db510e5a179736e43b02c3b2fca2390401c82ffd91f2f38c59ea3f6",
+  "source_hashes": {
+    "examples/mesh_quadrature_study.py": "86ac77b533d03ed5d344152be02aa369b891744e19ba9055aeea87b4f4fc1b16",
+    "src/sand_atlas_dem/__init__.py": "25ef40efbf7fa452aaa142bbe8d9ac35c90756e1a6f09cdacdcd2723cdd1636d",
+    "src/sand_atlas_dem/acquisition.py": "3c9379de9c9f24b4c762ae4608e73d70b76b558d4cbdae48e75196c747594ddd",
+    "src/sand_atlas_dem/atlas_bridge.py": "efbd53d7800d9db8adfcaf6cbd8dc89905c3b195f5d4e85a370fb0c339aa9804",
+    "src/sand_atlas_dem/backend.py": "2184575342f265dfd744d799af8e9b03a73dcb195e06e94a59f21e1525cbab5c",
+    "src/sand_atlas_dem/benchmark.py": "671c6135a60604a2141cabda2213d68d8f1c91f917bf85b3d0f0b96ab4a0302e",
+    "src/sand_atlas_dem/boundaries.py": "9211d9da536033ef5e8fb2638f954056e925b83ac5d64cf2123e92f6e46db870",
+    "src/sand_atlas_dem/cases.py": "196fb7b3bd86e1708363a0df78b7362e975641b64b9f1588fa9936f8e13073ca",
+    "src/sand_atlas_dem/cli.py": "e27dc3eadf408f3abbdc3516d8ae7ecac6ff0e2240d12976c11045f99fa08253",
+    "src/sand_atlas_dem/geometry.py": "d84592edef45221d589ed22b8a2a36f53be39bb5b8972ec55a548913c929c6a5",
+    "src/sand_atlas_dem/gpu.py": "3d2cc4c01a7ec9ebe6f39ff39a0ec91ccb09dbd199d747f4e755bfa8a0ed49fc",
+    "src/sand_atlas_dem/mesh.py": "a72264dd2f8730997fa0c794e16ca45ded0a61acd1f0042456c940354211a1af",
+    "src/sand_atlas_dem/quadrature.py": "136fd0726f49ad37828af9972e03a98a6e9fdf15a07d7c4ccaecf7a4d6f93be9",
+    "src/sand_atlas_dem/qualification.py": "b59751cc6fcc81b834dd90174ff9859e21efffa389dc36bc514ced75ef41b2fb",
+    "src/sand_atlas_dem/reference.py": "972bdbec1a08a8f01097758503296d3581ab6f558145ceac70b02c27603c7730",
+    "src/sand_atlas_dem/simulation.py": "46451bd1eb1915b2650de9f1d6fd465cec268e2a2789a295199587a0afb486d5",
+    "src/sand_atlas_dem/spec.py": "b7c790ef869c748463175e737f765851baa0c2285764f0a59fc779d6d9ebf87b",
+    "src/sand_atlas_dem/util.py": "0f9dc71429a87057dc08216f3c51425d8b76be9c4fd30f2cab6c3f98b70397c2",
+    "src/sand_atlas_dem/viewer.py": "b4be76959a33d6cb0fd9ea20e35d39f0c8dc791ae4fc086e1698573eb9a3bd81",
+    "src/sand_atlas_dem/visualize.py": "d88d384f52e0ecc7a6c12e09ba306e6d18f52292c9b6c139be939ff5e1179626",
+    "src/sand_atlas_dem/shaders/diagnostic.slang": "e1da948fb7c6a0088b40b3380d92a8f13347de6603559ff8d9bfe59452207a8d",
+    "src/sand_atlas_dem/shaders/normal.slang": "5d2495d51046362734247f3507929d4b08a2fa63d76109d2f4adac0a2ddcd78e",
+    "src/sand_atlas_dem/shaders/plane.slang": "ff020384d70fc828c574f3d9853ae43fcb968f8c270e7c30b4d3aaf31cd0e7a2",
+    "src/sand_atlas_dem/shaders/scan.slang": "51900fe7d78347d2274488b1b5c328ed53714be3043d221ad1d48555e1c5cbac",
+    "src/sand_atlas_dem/shaders/solver.slang": "8f626c4346dd63336c53cd3324dc5241db9860bedb5a57788343d7b0bfed4af8"
+  },
+  "backend": {
+    "format": "sand-dem-doctor/1",
+    "backend": "metal",
+    "adapter": "Apple M4 Max",
+    "slangpy": "0.43.1",
+    "python": "3.12.14",
+    "smoke_elements": 257,
+    "smoke_max_error": 0.0,
+    "fallback": false,
+    "floating_point_mode_requested": "precise"
+  },
+  "libraries": [
+    {
+      "path": "/private/tmp/sand-atlas-dem-walls/evidence/mixed-quadrature-box-v3/private/coarse.h5",
+      "sha256": "9e12b13b9a3fc2effd12282a4321b07fbe9e7a775e30c101c2b72333dd371282",
+      "subdivisions": 0,
+      "shape_count": 3,
+      "sample_count": 108
+    },
+    {
+      "path": "/private/tmp/sand-atlas-dem-walls/evidence/mixed-quadrature-box-v3/private/adaptive.h5",
+      "sha256": "5826ed6e6cbf4aa9b2b6cf45bf612ee89e24dbd164d8100c9b57aa1daa7a9bc1",
+      "subdivisions_by_shape": {
+        "analytical-box-0": 4,
+        "analytical-box-1": 4,
+        "analytical-box-2": 2
+      },
+      "shape_count": 3,
+      "sample_count": 19008
+    }
+  ],
+  "rows": [
+    {
+      "library_index": 0,
+      "subdivisions": 0,
+      "shape": "analytical-box-0",
+      "separation_m": 0.000987592990182012,
+      "target_sampled_depth_fraction": 0.01,
+      "status": "complete",
+      "force_N": [
+        -12.407072067260742,
+        1.8487884517526254e-05,
+        6.162628324091202e-06
+      ],
+      "reference_N": [
+        -11.769204396932336,
+        8.278422885494325e-06,
+        1.9450505768751123e-16
+      ],
+      "relative_force_error": 0.05419802808471773,
+      "fixed_level_gpu_relative_error": 5.2573875197152295e-06,
+      "fixed_level_reference_force_norm_N": 12.407009817988087,
+      "zero_fixed_level_reference": false,
+      "active_contacts": 12,
+      "fp64_reference_active_nodes": 12,
+      "max_overlap_fraction": 0.010000050067901611,
+      "sample_count": 36,
+      "estimated_working_bytes": 3103072,
+      "setup_and_initialization_wall_seconds": 1.4824362500803545
+    },
+    {
+      "library_index": 0,
+      "subdivisions": 0,
+      "shape": "analytical-box-0",
+      "separation_m": 0.0009751859803640241,
+      "target_sampled_depth_fraction": 0.02,
+      "status": "complete",
+      "force_N": [
+        -24.81407356262207,
+        1.8487884517526254e-05,
+        6.162628324091202e-06
+      ],
+      "reference_N": [
+        -22.357834556404953,
+        -4.304779900433821e-05,
+        7.495873417950673e-16
+      ],
+      "relative_force_error": 0.10986032662485491,
+      "fixed_level_gpu_relative_error": 2.3107860462107003e-06,
+      "fixed_level_reference_force_norm_N": 24.81401963597596,
+      "zero_fixed_level_reference": false,
+      "active_contacts": 12,
+      "fp64_reference_active_nodes": 12,
+      "max_overlap_fraction": 0.020000040531158447,
+      "sample_count": 36,
+      "estimated_working_bytes": 3103072,
+      "setup_and_initialization_wall_seconds": 0.005467290990054607
+    },
+    {
+      "library_index": 0,
+      "subdivisions": 0,
+      "shape": "analytical-box-1",
+      "separation_m": 0.0009880211637260349,
+      "target_sampled_depth_fraction": 0.01,
+      "status": "complete",
+      "force_N": [
+        -10.78081226348877,
+        4.819461173610762e-05,
+        -2.2089197955210693e-05
+      ],
+      "reference_N": [
+        -9.833188641258495,
+        2.40664205850629e-18,
+        7.39316742587639e-16
+      ],
+      "relative_force_error": 0.09636992213667064,
+      "fixed_level_gpu_relative_error": 1.3919010757763099e-05,
+      "fixed_level_reference_force_norm_N": 10.78095264656865,
+      "zero_fixed_level_reference": false,
+      "active_contacts": 12,
+      "fp64_reference_active_nodes": 12,
+      "max_overlap_fraction": 0.009999871253967285,
+      "sample_count": 36,
+      "estimated_working_bytes": 2913680,
+      "setup_and_initialization_wall_seconds": 0.004801000002771616
+    },
+    {
+      "library_index": 0,
+      "subdivisions": 0,
+      "shape": "analytical-box-1",
+      "separation_m": 0.0009760423274520696,
+      "target_sampled_depth_fraction": 0.02,
+      "status": "complete",
+      "force_N": [
+        -21.56201171875,
+        4.819461173610762e-05,
+        -2.2089197955210693e-05
+      ],
+      "reference_N": [
+        -17.825684032822004,
+        3.129243850709799e-05,
+        4.3695252059224725e-15
+      ],
+      "relative_force_error": 0.2096036078697544,
+      "fixed_level_gpu_relative_error": 5.5143265686255284e-06,
+      "fixed_level_reference_force_norm_N": 21.561905293137404,
+      "zero_fixed_level_reference": false,
+      "active_contacts": 12,
+      "fp64_reference_active_nodes": 12,
+      "max_overlap_fraction": 0.020000100135803223,
+      "sample_count": 36,
+      "estimated_working_bytes": 2913680,
+      "setup_and_initialization_wall_seconds": 0.004567625001072884
+    },
+    {
+      "library_index": 0,
+      "subdivisions": 0,
+      "shape": "analytical-box-2",
+      "separation_m": 0.0009424117617703027,
+      "target_sampled_depth_fraction": 0.01,
+      "status": "complete",
+      "force_N": [
+        -5758.75048828125,
+        0.0028604399412870407,
+        -0.008581317029893398
+      ],
+      "reference_N": [
+        -5624.642243746418,
+        2.9645392818205624e-15,
+        -6.618542994804289e-15
+      ],
+      "relative_force_error": 0.023842982189488108,
+      "fixed_level_gpu_relative_error": 1.2830822031033862e-05,
+      "fixed_level_reference_force_norm_N": 5758.823822969726,
+      "zero_fixed_level_reference": false,
+      "active_contacts": 12,
+      "fp64_reference_active_nodes": 12,
+      "max_overlap_fraction": 0.009999871253967285,
+      "sample_count": 36,
+      "estimated_working_bytes": 2947120,
+      "setup_and_initialization_wall_seconds": 0.004297749954275787
+    },
+    {
+      "library_index": 0,
+      "subdivisions": 0,
+      "shape": "analytical-box-2",
+      "separation_m": 0.0008848235235406056,
+      "target_sampled_depth_fraction": 0.02,
+      "status": "complete",
+      "force_N": [
+        -11517.7060546875,
+        0.002860438544303179,
+        -0.008581317029893398
+      ],
+      "reference_N": [
+        -10984.08474539589,
+        0.021523899502190698,
+        1.0512675967337292e-13
+      ],
+      "relative_force_error": 0.04858131761134093,
+      "fixed_level_gpu_relative_error": 5.1316916602676135e-06,
+      "fixed_level_reference_force_norm_N": 11517.647645939443,
+      "zero_fixed_level_reference": false,
+      "active_contacts": 12,
+      "fp64_reference_active_nodes": 12,
+      "max_overlap_fraction": 0.020000100135803223,
+      "sample_count": 36,
+      "estimated_working_bytes": 2947120,
+      "setup_and_initialization_wall_seconds": 0.004191000014543533
+    },
+    {
+      "library_index": 1,
+      "subdivisions": 4,
+      "shape": "analytical-box-0",
+      "separation_m": 0.000987592990182012,
+      "target_sampled_depth_fraction": 0.01,
+      "status": "complete",
+      "force_N": [
+        -11.389264106750488,
+        5.184656856727088e-06,
+        0.006781913805752993
+      ],
+      "reference_N": [
+        -11.769204396932336,
+        8.278422885494325e-06,
+        1.9450505768751123e-16
+      ],
+      "relative_force_error": 0.03228772319322146,
+      "fixed_level_gpu_relative_error": 0.0005954683793198036,
+      "fixed_level_reference_force_norm_N": 11.389247293856075,
+      "zero_fixed_level_reference": false,
+      "active_contacts": 3072,
+      "fp64_reference_active_nodes": 3072,
+      "max_overlap_fraction": 0.010000050067901611,
+      "sample_count": 9216,
+      "estimated_working_bytes": 3470272,
+      "setup_and_initialization_wall_seconds": 0.024081084062345326
+    },
+    {
+      "library_index": 1,
+      "subdivisions": 4,
+      "shape": "analytical-box-0",
+      "separation_m": 0.0009751859803640241,
+      "target_sampled_depth_fraction": 0.02,
+      "status": "complete",
+      "force_N": [
+        -21.80845832824707,
+        4.460105174075579e-06,
+        0.0067820618860423565
+      ],
+      "reference_N": [
+        -22.357834556404953,
+        -4.304779900433821e-05,
+        7.495873417950673e-16
+      ],
+      "relative_force_error": 0.024573850816507217,
+      "fixed_level_gpu_relative_error": 0.0003128113928983518,
+      "fixed_level_reference_force_norm_N": 21.80919694568184,
+      "zero_fixed_level_reference": false,
+      "active_contacts": 3072,
+      "fp64_reference_active_nodes": 3072,
+      "max_overlap_fraction": 0.020000040531158447,
+      "sample_count": 9216,
+      "estimated_working_bytes": 3470272,
+      "setup_and_initialization_wall_seconds": 0.01682858297135681
+    },
+    {
+      "library_index": 1,
+      "subdivisions": 4,
+      "shape": "analytical-box-1",
+      "separation_m": 0.0009880211637260349,
+      "target_sampled_depth_fraction": 0.01,
+      "status": "complete",
+      "force_N": [
+        -10.106704711914062,
+        4.33809073001612e-05,
+        -3.9512565308541525e-07
+      ],
+      "reference_N": [
+        -9.833188641258495,
+        2.40664205850629e-18,
+        7.39316742587639e-16
+      ],
+      "relative_force_error": 0.027815603267126256,
+      "fixed_level_gpu_relative_error": 4.358655531502789e-05,
+      "fixed_level_reference_force_norm_N": 10.10714310615832,
+      "zero_fixed_level_reference": false,
+      "active_contacts": 3072,
+      "fp64_reference_active_nodes": 3168,
+      "max_overlap_fraction": 0.00999987218528986,
+      "sample_count": 9216,
+      "estimated_working_bytes": 3280880,
+      "setup_and_initialization_wall_seconds": 0.01656579109840095
+    },
+    {
+      "library_index": 1,
+      "subdivisions": 4,
+      "shape": "analytical-box-1",
+      "separation_m": 0.0009760423274520696,
+      "target_sampled_depth_fraction": 0.02,
+      "status": "complete",
+      "force_N": [
+        -17.96871566772461,
+        4.262266884325072e-05,
+        -3.3767415175134374e-07
+      ],
+      "reference_N": [
+        -17.825684032822004,
+        3.129243850709799e-05,
+        4.3695252059224725e-15
+      ],
+      "relative_force_error": 0.008023907250245462,
+      "fixed_level_gpu_relative_error": 2.5780022243514946e-05,
+      "fixed_level_reference_force_norm_N": 17.968254410948106,
+      "zero_fixed_level_reference": false,
+      "active_contacts": 3072,
+      "fp64_reference_active_nodes": 3200,
+      "max_overlap_fraction": 0.020000100135803223,
+      "sample_count": 9216,
+      "estimated_working_bytes": 3280880,
+      "setup_and_initialization_wall_seconds": 0.018135708989575505
+    },
+    {
+      "library_index": 1,
+      "subdivisions": 2,
+      "shape": "analytical-box-2",
+      "separation_m": 0.0009424117617703027,
+      "target_sampled_depth_fraction": 0.01,
+      "status": "complete",
+      "force_N": [
+        -5758.74169921875,
+        -0.003910756669938564,
+        -0.0006927620270289481
+      ],
+      "reference_N": [
+        -5624.642243746418,
+        2.9645392818205624e-15,
+        -6.618542994804289e-15
+      ],
+      "relative_force_error": 0.02384141954632592,
+      "fixed_level_gpu_relative_error": 1.4277174475450323e-05,
+      "fixed_level_reference_force_norm_N": 5758.823822969726,
+      "zero_fixed_level_reference": false,
+      "active_contacts": 192,
+      "fp64_reference_active_nodes": 192,
+      "max_overlap_fraction": 0.009999871253967285,
+      "sample_count": 576,
+      "estimated_working_bytes": 2968720,
+      "setup_and_initialization_wall_seconds": 0.005633292021229863
+    },
+    {
+      "library_index": 1,
+      "subdivisions": 2,
+      "shape": "analytical-box-2",
+      "separation_m": 0.0008848235235406056,
+      "target_sampled_depth_fraction": 0.02,
+      "status": "complete",
+      "force_N": [
+        -11517.7216796875,
+        -0.003910756204277277,
+        -0.0006927627837285399
+      ],
+      "reference_N": [
+        -10984.08474539589,
+        0.021523899502190698,
+        1.0512675967337292e-13
+      ],
+      "relative_force_error": 0.04858274014326583,
+      "fixed_level_gpu_relative_error": 6.4370959998993315e-06,
+      "fixed_level_reference_force_norm_N": 11517.647645939425,
+      "zero_fixed_level_reference": false,
+      "active_contacts": 192,
+      "fp64_reference_active_nodes": 192,
+      "max_overlap_fraction": 0.020000100135803223,
+      "sample_count": 576,
+      "estimated_working_bytes": 2968720,
+      "setup_and_initialization_wall_seconds": 0.005325749982148409
+    }
+  ],
+  "passed": true,
+  "complete": true,
+  "coarse_worst_relative_error": 0.2096036078697544,
+  "fine_worst_relative_error": 0.04858274014326583,
+  "scope": "All 6 frozen static source poses; comparison to independently refined normal-traction integral. FP64/FP32 active counts are diagnostic; the separate unchanged fixed-node force/count oracle remains required. No dynamic/friction/assembly/material or sustained throughput qualification."
+}

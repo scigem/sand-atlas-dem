@@ -1,0 +1,15 @@
+{
+  "identity": "mixed-quadrature-box-v1",
+  "passed": false,
+  "status": "reference-gate-failed-before-metal",
+  "failed_cases": [
+    {
+      "shape": "analytical-box-0",
+      "depth": 0.01,
+      "finest_change": 0.021135727017573464,
+      "continuum_error": 0.008152090827479645
+    }
+  ],
+  "note": "All four poses and original 2% gates retained; one level5-to6 change is 2.11357%. No GPU comparison executed.",
+  "scientific_admission": false
+}

@@ -1,0 +1,351 @@
+{
+  "passed": false,
+  "source_unchanged": true,
+  "reference_refinement_passed": false,
+  "expected_cases": 4,
+  "completed_cases": 4,
+  "failures": [],
+  "rows": [
+    {
+      "shape": "analytical-box-0",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.000987592990182012,
+      "levels": [
+        {
+          "level": 0,
+          "force_integral_m3": [
+            -1.2407009817988086e-11,
+            0.0,
+            0.0
+          ],
+          "active_nodes": 12,
+          "maximum_sampled_depth_fraction": 0.010000000000000068
+        },
+        {
+          "level": 1,
+          "force_integral_m3": [
+            -1.2407009817988084e-11,
+            0.0,
+            0.0
+          ],
+          "active_nodes": 48,
+          "maximum_sampled_depth_fraction": 0.010000000000000068
+        },
+        {
+          "level": 2,
+          "force_integral_m3": [
+            -1.2407009817988073e-11,
+            0.0,
+            0.0
+          ],
+          "active_nodes": 192,
+          "maximum_sampled_depth_fraction": 0.010000000000000068
+        },
+        {
+          "level": 3,
+          "force_integral_m3": [
+            -1.2407009817988026e-11,
+            0.0,
+            0.0
+          ],
+          "active_nodes": 768,
+          "maximum_sampled_depth_fraction": 0.010000000000000068
+        },
+        {
+          "level": 4,
+          "force_integral_m3": [
+            -1.1389247293856075e-11,
+            0.0,
+            -1.5777218104420236e-30
+          ],
+          "active_nodes": 3072,
+          "maximum_sampled_depth_fraction": 0.010000000000000068
+        },
+        {
+          "level": 5,
+          "force_integral_m3": [
+            -1.164368792489018e-11,
+            -4.928408505368271e-28,
+            -5.32481111024183e-30
+          ],
+          "active_nodes": 12288,
+          "maximum_sampled_depth_fraction": 0.010000000000000068
+        },
+        {
+          "level": 6,
+          "force_integral_m3": [
+            -1.189509950078566e-11,
+            -6.902532920683853e-31,
+            -8.800729473871913e-30
+          ],
+          "active_nodes": 49152,
+          "maximum_sampled_depth_fraction": 0.010000000000000068
+        }
+      ],
+      "reference_finest_level": 6,
+      "finest_relative_change": 0.021135727017573464,
+      "closed_continuum_integral_m3": [
+        -1.1798913684761889e-11,
+        0.0,
+        0.0
+      ],
+      "relative_continuum_error": 0.008152090827479645
+    },
+    {
+      "shape": "analytical-box-0",
+      "target_sampled_depth_fraction": 0.02,
+      "separation_m": 0.0009751859803640241,
+      "levels": [
+        {
+          "level": 0,
+          "force_integral_m3": [
+            -2.481401963597596e-11,
+            0.0,
+            0.0
+          ],
+          "active_nodes": 12,
+          "maximum_sampled_depth_fraction": 0.019999999999999962
+        },
+        {
+          "level": 1,
+          "force_integral_m3": [
+            -2.4814019635975972e-11,
+            0.0,
+            0.0
+          ],
+          "active_nodes": 48,
+          "maximum_sampled_depth_fraction": 0.019999999999999962
+        },
+        {
+          "level": 2,
+          "force_integral_m3": [
+            -2.4814019635975998e-11,
+            0.0,
+            0.0
+          ],
+          "active_nodes": 192,
+          "maximum_sampled_depth_fraction": 0.019999999999999962
+        },
+        {
+          "level": 3,
+          "force_integral_m3": [
+            -2.0807589382250583e-11,
+            0.0,
+            3.7865323450608567e-29
+          ],
+          "active_nodes": 768,
+          "maximum_sampled_depth_fraction": 0.019999999999999962
+        },
+        {
+          "level": 4,
+          "force_integral_m3": [
+            -2.180919694568184e-11,
+            0.0,
+            2.208810534618833e-29
+          ],
+          "active_nodes": 3072,
+          "maximum_sampled_depth_fraction": 0.019999999999999962
+        },
+        {
+          "level": 5,
+          "force_integral_m3": [
+            -2.2786572068064616e-11,
+            -9.424915665128039e-28,
+            6.646153126487024e-29
+          ],
+          "active_nodes": 12288,
+          "maximum_sampled_depth_fraction": 0.019999999999999962
+        },
+        {
+          "level": 6,
+          "force_integral_m3": [
+            -2.2542228287458114e-11,
+            2.9375207958167427e-28,
+            -4.214982424209019e-28
+          ],
+          "active_nodes": 49152,
+          "maximum_sampled_depth_fraction": 0.019999999999999962
+        }
+      ],
+      "reference_finest_level": 6,
+      "finest_relative_change": 0.01083938009546504,
+      "closed_continuum_integral_m3": [
+        -2.2412192852144848e-11,
+        0.0,
+        0.0
+      ],
+      "relative_continuum_error": 0.005801995198377993
+    },
+    {
+      "shape": "analytical-box-1",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.0009880211637260349,
+      "levels": [
+        {
+          "level": 0,
+          "force_integral_m3": [
+            -1.078095264656865e-11,
+            0.0,
+            0.0
+          ],
+          "active_nodes": 12,
+          "maximum_sampled_depth_fraction": 0.009999999999999936
+        },
+        {
+          "level": 1,
+          "force_integral_m3": [
+            -1.0780952646568654e-11,
+            0.0,
+            0.0
+          ],
+          "active_nodes": 48,
+          "maximum_sampled_depth_fraction": 0.009999999999999936
+        },
+        {
+          "level": 2,
+          "force_integral_m3": [
+            -1.0780952646568638e-11,
+            0.0,
+            0.0
+          ],
+          "active_nodes": 192,
+          "maximum_sampled_depth_fraction": 0.009999999999999936
+        },
+        {
+          "level": 3,
+          "force_integral_m3": [
+            -9.882539926021234e-12,
+            0.0,
+            -1.5777218104420236e-30
+          ],
+          "active_nodes": 768,
+          "maximum_sampled_depth_fraction": 0.009999999999999936
+        },
+        {
+          "level": 4,
+          "force_integral_m3": [
+            -1.010714310615832e-11,
+            0.0,
+            5.916456789157544e-30
+          ],
+          "active_nodes": 3168,
+          "maximum_sampled_depth_fraction": 0.009999999999999936
+        },
+        {
+          "level": 5,
+          "force_integral_m3": [
+            -9.882539926021591e-12,
+            0.0,
+            1.9129876951609542e-29
+          ],
+          "active_nodes": 12544,
+          "maximum_sampled_depth_fraction": 0.009999999999999936
+        },
+        {
+          "level": 6,
+          "force_integral_m3": [
+            -9.835162692711504e-12,
+            0.0,
+            2.1102029214662066e-28
+          ],
+          "active_nodes": 49792,
+          "maximum_sampled_depth_fraction": 0.009999999999999936
+        }
+      ],
+      "reference_finest_level": 6,
+      "finest_relative_change": 0.004817127564671282,
+      "closed_continuum_integral_m3": [
+        -9.840777518152362e-12,
+        0.0,
+        0.0
+      ],
+      "relative_continuum_error": 0.0005705672575668549
+    },
+    {
+      "shape": "analytical-box-1",
+      "target_sampled_depth_fraction": 0.02,
+      "separation_m": 0.0009760423274520696,
+      "levels": [
+        {
+          "level": 0,
+          "force_integral_m3": [
+            -2.1561905293137405e-11,
+            0.0,
+            0.0
+          ],
+          "active_nodes": 12,
+          "maximum_sampled_depth_fraction": 0.019999999999999962
+        },
+        {
+          "level": 1,
+          "force_integral_m3": [
+            -2.1561905293137408e-11,
+            0.0,
+            0.0
+          ],
+          "active_nodes": 48,
+          "maximum_sampled_depth_fraction": 0.019999999999999962
+        },
+        {
+          "level": 2,
+          "force_integral_m3": [
+            -1.796825441094783e-11,
+            0.0,
+            0.0
+          ],
+          "active_nodes": 192,
+          "maximum_sampled_depth_fraction": 0.019999999999999962
+        },
+        {
+          "level": 3,
+          "force_integral_m3": [
+            -1.886666713149516e-11,
+            0.0,
+            3.1554436208840517e-29
+          ],
+          "active_nodes": 816,
+          "maximum_sampled_depth_fraction": 0.019999999999999962
+        },
+        {
+          "level": 4,
+          "force_integral_m3": [
+            -1.7968254410948105e-11,
+            0.0,
+            -2.413914369976296e-28
+          ],
+          "active_nodes": 3200,
+          "maximum_sampled_depth_fraction": 0.019999999999999962
+        },
+        {
+          "level": 5,
+          "force_integral_m3": [
+            -1.7813839724604256e-11,
+            2.2888183593750035e-15,
+            -8.49011549244114e-28
+          ],
+          "active_nodes": 12608,
+          "maximum_sampled_depth_fraction": 0.019999999999999962
+        },
+        {
+          "level": 6,
+          "force_integral_m3": [
+            -1.790859419122455e-11,
+            5.5220263365470826e-30,
+            -9.723696732980497e-28
+          ],
+          "active_nodes": 50626,
+          "maximum_sampled_depth_fraction": 0.019999999999999962
+        }
+      ],
+      "reference_finest_level": 6,
+      "finest_relative_change": 0.005292548654199558,
+      "closed_continuum_integral_m3": [
+        -1.7828706753638486e-11,
+        0.0,
+        0.0
+      ],
+      "relative_continuum_error": 0.004480831879169262
+    }
+  ],
+  "scope": "Own analytical box distance and closed continuum force"
+}

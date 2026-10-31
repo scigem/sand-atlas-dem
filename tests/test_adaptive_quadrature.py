@@ -90,6 +90,23 @@ def test_rejects_reference_self_comparison_and_forged_convergence_flag():
         select_levels(reference, protocol, ["a", "b"])
 
 
+def test_finer_independent_reference_retains_fixed_candidate_limit():
+    reference, protocol = reference_fixture()
+    for row in reference["rows"]:
+        final = np.array(row["levels"][-1]["force_integral_m3"])
+        for level, factor in enumerate([1.002, 1.0005, 1.0002, 1], 5):
+            row["levels"].append(
+                dict(level=level, force_integral_m3=(final * factor).tolist())
+            )
+        row["reference_finest_level"] = 8
+        row["finest_relative_change"] = 0.0002
+    selected = select_levels(reference, protocol, ["a", "b"])
+    assert [r["subdivisions"] for r in selected] == [3, 2]
+    reference["rows"][0]["levels"].pop(5)
+    with pytest.raises(ValueError, match="Complete ordered"):
+        select_levels(reference, protocol, ["a", "b"])
+
+
 @pytest.fixture
 def frozen_fixture(tmp_path):
     shape = from_mesh(

@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/private/tmp/sand-atlas-dem-walls/examples/mixed_quadrature_box_study.py", line 286, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/private/tmp/sand-atlas-dem-walls/examples/mixed_quadrature_box_study.py", line 196, in main
+    raise RuntimeError(
+RuntimeError: Analytical reference failed its frozen continuum/refinement gates

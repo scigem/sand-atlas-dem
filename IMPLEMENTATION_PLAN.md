@@ -109,6 +109,12 @@ work alongside the scientific gates below; naming a material must not infer cali
   Physical geometry, mass and inertia stay unchanged. Balanced shape sampling
   supports complete source inventories in subsequent assemblies. The final
   combined suite passes 201 tests on Metal with three optional rendering skips.
+  The final analytical-workflow integration passes 202 tests on Metal, including
+  actual Atlas consumers, with three optional rendering skips and unchanged frozen
+  sources. The separate analytical box workflow now passes six independent reference and
+  twelve actual-Metal coarse/fine cases with selected levels 4, 4 and 2. Worst
+  integral error falls from 20.9604% to 4.8583%, preserving the existing gates and
+  both earlier failed studies. This verifies mixed workflow execution, not Hostun.
   The adaptive Hostun asset, all-106 mixed GPU comparison and assembly studies
   remain open; see docs/ADAPTIVE_QUADRATURE.md.
 - [X] Freeze and run rolling/objectivity tests, separating/returning contact,

@@ -59,3 +59,22 @@ distribution or validated preparation. The larger bounded assembly also avoids
 the periodic-image size limit that can prevent a 212-grain specimen from reaching
 a dense state with the largest grain. Pressure, loading, convergence and
 discretization gates still require execution.
+
+## Analytical end-to-end workflow check
+
+`mixed-quadrature-box-v3` exercises the complete reference, asset preparation and
+production Metal comparison on three original analytical boxes at two depths each.
+The six independent CPU reference integrals use exact box distances and a closed
+continuum force; their worst continuum error is 0.2518%. The selected levels are
+4, 4 and 2, so this actually exercises mixed per-shape resolution. All twelve
+coarse/fine GPU cases pass the unchanged 10% integral, 0.1% same-level force and
+twofold pooled-improvement gates. Worst integral error falls from 20.9604% to
+4.8583%. This is static workflow verification, without Hostun or assembly admission.
+
+The original v1 reference failure (2.1136% change against a 2% limit) and v2
+mixed-profile coverage failure (both boxes selected level 4) remain retained.
+V3 keeps all original shapes/poses and adds a wide plate; it keeps every numerical
+acceptance limit. Reference levels through eight are permitted, while selectable
+production levels remain fixed at two through four and strictly below the reference.
+The higher field resolution resolves the plate interior; contacts use original
+triangles. Frozen protocols and archived source bytes identify each run.

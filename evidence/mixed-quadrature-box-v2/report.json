@@ -1,0 +1,12 @@
+{
+  "identity": "mixed-quadrature-box-v2",
+  "passed": false,
+  "status": "mixed-profile-coverage-failed-before-metal",
+  "reference_passed": true,
+  "selected_levels": {
+    "analytical-box-0": 4,
+    "analytical-box-1": 4
+  },
+  "reason": "Both original shapes selected level4; numerical reference passes but fixture does not exercise distinct per-shape levels. No Metal execution.",
+  "scientific_admission": false
+}

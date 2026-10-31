@@ -6,7 +6,7 @@ MECHANICS_QUALIFICATION.md. Source-scale acquisition is now resolved for a docum
 resolutions are prepared. The bounded 216-sphere controller case passes; Hostun
 preparation remains open. Optional exact-feature mesh queries pass fixed-quadrature
 force checks, while source-triangle quadrature convergence is being studied.
-The latest complete Metal test run passes 201 tests, with three optional rendering
+The latest complete Metal test run passes 202 tests, with three optional rendering
 checks skipped, including actual Atlas request consumers; additional
 bounded CPU studies are listed below. Historical entries below retain
 their original evidence identities and are superseded where explicitly stated.
@@ -16,6 +16,20 @@ memory), Python 3.12, SlangPy 0.43.1, Metal. The solver and CLI execute actual G
 kernels; scientific pilot acceptance remains open.
 
 ## Latest explicit-viscosity and reference results
+
+`mixed-quadrature-box-integration-v2` passes 202 tests serially on actual Metal,
+including the actual Atlas Python/browser consumers, with three explicit graphical
+rendering skips. All 158 frozen source/test/example/case/protocol files remain
+unchanged. V1's 200-pass/five-skip result is retained: it omitted the explicit Atlas
+checkout environment variable and therefore skipped those two consumer tests.
+
+The new `mixed-quadrature-box-v3` passes six independent analytical reference cases
+and twelve actual-Metal coarse/fine comparisons. Fixed per-shape levels 4, 4 and 2
+reduce worst continuum-reference error from 20.9604% to 4.8583%; the reference itself
+is within 0.2518% of closed box integrals. V1's reference-limit failure and v2's
+uniform-selection coverage failure are preserved. This verifies the full mixed
+preprocessing/GPU workflow on original synthetic geometry; it does not admit Hostun
+or an assembly. See ADAPTIVE_QUADRATURE.md.
 
 `adaptive-quadrature-preparation-v1` passes 14 CPU checks of reference-driven fixed
 per-grain resolution, archived-source/protocol binding and exact preservation of

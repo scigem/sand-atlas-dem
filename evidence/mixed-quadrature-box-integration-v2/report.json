@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "returncode": 0,
+  "source_unchanged": true,
+  "changed": [],
+  "frozen_files": 158,
+  "backend": "metal",
+  "scientific_admission": false,
+  "identity": "mixed-quadrature-box-integration-v2",
+  "pytest_passed": 202,
+  "pytest_skipped": 3,
+  "test_log_sha256": "142e261302a8146806eb0c5a90951b22b50ba143fe1b800d0f5ffa4d98bf88d6"
+}

@@ -1,0 +1,33 @@
+{
+  "identity": "mixed-quadrature-box-v3-metal",
+  "reference_report": "/private/tmp/sand-atlas-dem-walls/evidence/mixed-quadrature-box-v3/reference/report.json",
+  "reference_report_sha256": "d2914c879db510e5a179736e43b02c3b2fca2390401c82ffd91f2f38c59ea3f6",
+  "reference_protocol": "/private/tmp/sand-atlas-dem-walls/evidence/mixed-quadrature-box-v3/reference/protocol.json",
+  "reference_protocol_sha256": "c40ec7e84b595b24c4928198cfbe69c12692b6ff72b3d411e8d9388827e152e3",
+  "reference_freeze_sha256": "b914ac9f82ef58356accb7b79ee649e74f702ee8b73f6d8cf415b9126e95181d",
+  "parent_library_sha256": "734a4c6c888c42b3b2bd3c14112af432f708964124341707866bf498f9647568",
+  "libraries": [
+    {
+      "path": "/private/tmp/sand-atlas-dem-walls/evidence/mixed-quadrature-box-v3/private/coarse.h5",
+      "sha256": "9e12b13b9a3fc2effd12282a4321b07fbe9e7a775e30c101c2b72333dd371282",
+      "subdivisions": 0
+    },
+    {
+      "path": "/private/tmp/sand-atlas-dem-walls/evidence/mixed-quadrature-box-v3/private/adaptive.h5",
+      "sha256": "5826ed6e6cbf4aa9b2b6cf45bf612ee89e24dbd164d8100c9b57aa1daa7a9bc1",
+      "subdivisions_by_shape": {
+        "analytical-box-0": 4,
+        "analytical-box-1": 4,
+        "analytical-box-2": 2
+      }
+    }
+  ],
+  "maximum_relative_force_error": 0.1,
+  "maximum_fixed_level_gpu_error": 0.001,
+  "minimum_worst_error_improvement_factor": 2,
+  "timestep_s": 2e-09,
+  "overlap_guard_fraction": 0.03,
+  "contacts_per_particle": 4096,
+  "zero_fixed_reference": "require-exact-zero-force-and-zero-active-nodes",
+  "scope": "Analytical workflow fixture only; Hostun fixed-node baseline and full-library qualification remain separate"
+}

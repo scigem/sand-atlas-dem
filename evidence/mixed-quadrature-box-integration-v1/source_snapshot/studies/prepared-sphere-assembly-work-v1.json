@@ -1,0 +1,78 @@
+{
+  "identity": "prepared-sphere-assembly-work-v1",
+  "frozen_before_execution": true,
+  "particles": 216,
+  "initial_pressure_Pa": 10000.0,
+  "prepared_checkpoint": "evidence/controller-v4/run/chunk-0011/prepared-stage-0.h5",
+  "acceptance_audit": "evidence/controller-v4/acceptance-audit.json",
+  "shape_library": "evidence/controller-v4/private/shapes.h5",
+  "timesteps_s": [
+    1e-08,
+    5e-09,
+    2.5e-09
+  ],
+  "diagnostic_period_s": 1e-07,
+  "maximum_relative_proxy_balance_residual": 0.02,
+  "maximum_relative_independent_work_error": 0.001,
+  "maximum_relative_refinement_difference": 0.01,
+  "dissipation_roundoff_fraction": 1e-06,
+  "minimum_active_grain_pairs": 100,
+  "overlap_guard_fraction": 0.01,
+  "cases": [
+    {
+      "name": "static",
+      "phases": [
+        {
+          "duration_s": 0.0001,
+          "rate_s": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "drag_s": 0.0
+        }
+      ]
+    },
+    {
+      "name": "drag",
+      "phases": [
+        {
+          "duration_s": 0.0001,
+          "rate_s": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "drag_s": 100000.0
+        }
+      ]
+    },
+    {
+      "name": "cyclic-affine",
+      "phases": [
+        {
+          "duration_s": 2e-05,
+          "rate_s": [
+            -50.0,
+            -50.0,
+            -50.0
+          ],
+          "drag_s": 0.0
+        },
+        {
+          "duration_s": 2e-05,
+          "rate_s": [
+            50.0,
+            50.0,
+            50.0
+          ],
+          "drag_s": 0.0
+        }
+      ]
+    }
+  ],
+  "scope": "Extended actual-Metal 216-sphere prepared-assembly work-accounting and spring-energy-proxy study. New initial-value cases cloned from one hash-pinned qualified checkpoint; physical parameters and histories retained, timestep explicitly varied. Three complete cases at three timesteps, no case removal. Static/drag relaxation lasts 100 microseconds; cyclic isotropic affine compression/expansion lasts 40 microseconds. Independent sampled Cauchy-stress power audits device work. A 2% proxy residual is an engineering bound, not proof of an exact elastic potential; 1% fine/middle endpoint agreement is bounded refinement, not an order claim. Not Hostun, mesh quadrature, material or experimental qualification. No sustained timing claim under concurrent CPU reference work.",
+  "prepared_checkpoint_sha256": "4b56731060b7f4e8fa8af521f143ac69863dcc9137994a90d14f9a8917116555",
+  "acceptance_audit_sha256": "caa332e78afef14c4f141a25a265b17415133be3a37bf9eb30ab66e4c6107210",
+  "shape_library_sha256": "57dfdaa56e2a4542c3f88b9daee0f5838c0e149e420a8248bfa5cc862d624500"
+}

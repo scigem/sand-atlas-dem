@@ -51,8 +51,11 @@ def select_levels(reference, protocol, shape_ids, *, target=0.05):
     for row in rows:
         levels = row["levels"]
         finest = row["reference_finest_level"]
-        if finest not in (4, 6) or [v["level"] for v in levels] != list(
-            range(finest + 1)
+        if (
+            type(finest) is not int
+            or finest < 4
+            or finest != len(levels) - 1
+            or [v["level"] for v in levels] != list(range(len(levels)))
         ):
             raise ValueError("Complete ordered reference levels required")
         forces = np.array([finite_array(v["force_integral_m3"], (3,)) for v in levels])

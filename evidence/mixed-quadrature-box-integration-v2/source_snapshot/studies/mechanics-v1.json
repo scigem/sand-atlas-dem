@@ -1,0 +1,13 @@
+{
+  "format": "sand-dem-mechanics-protocol/1",
+  "identity": "mechanics-v1",
+  "frozen_before_execution": true,
+  "sphere": {"resolution": 64, "samples": 2048},
+  "objectivity": {"angle": 0.8, "increments": [16, 32, 64], "relative_force_limit": 0.005, "relative_history_limit": 0.005},
+  "separation": {"returned_slip_limit": 1e-10},
+  "growth": {"initial_contacts_per_particle": 1, "relative_state_limit": 0.0001},
+  "rotation": {"extents_m": [0.0004, 0.0008, 0.002], "angular_velocity_rad_s": [100000, 200000, 300000], "duration_s": 0.0000025, "timesteps_s": [5e-9, 2.5e-9, 1.25e-9], "orientation_error_rad_limit": 0.0001, "relative_energy_drift_limit": 0.0001},
+  "affine_work": {"rate_s": [10000, -20000, 10000], "steps": 200, "timestep_s": 1e-8, "relative_velocity_limit": 0.0001, "relative_work_limit": 0.001},
+  "static_cell_energy": {"duration_s": 0.00002, "timesteps_s": [2e-8, 1e-8, 5e-9], "relative_proxy_drift_limit": 0.02},
+  "scope": "Engineering mechanics qualification on original fixtures. Does not admit a Hostun material study or reproduce a published assembly benchmark. No energy-potential identity is assumed."
+}

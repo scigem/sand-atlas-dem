@@ -1,0 +1,14 @@
+{
+  "identity": "mixed-quadrature-box-v2-reference",
+  "library_sha256": "772ccc8d8fe772513811344dd4cf080ee4badb52ac0608cc41c387b5fbf5daac",
+  "shape_ids": [
+    "analytical-box-0",
+    "analytical-box-1"
+  ],
+  "target_sampled_depth_fractions": [
+    0.01,
+    0.02
+  ],
+  "nearest_point_policy": "exact-analytical-axis-aligned-box",
+  "inside_policy": "strict-positive-face-clearance"
+}
