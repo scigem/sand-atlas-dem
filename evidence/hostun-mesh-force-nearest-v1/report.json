@@ -1,0 +1,223 @@
+{
+  "protocol": {
+    "identity": "hostun-mesh-force-v2",
+    "frozen_before_gpu_execution": true,
+    "library": "assets/private/hostun-30-r64-s2048.h5",
+    "library_sha256": "1bc9f37a22b402ada31495ea7ff1ebef4bb6a27a26d68a8333f7f84a12ad16b7",
+    "reference_report": "evidence/hostun-exact-contact-poses-v1/report.json",
+    "reference_report_sha256": "2fe27ce043ccda54f65ac91a37e30e92f34cc100e87ac4cced5beb626ef38a70",
+    "maximum_relative_force_error": 0.001,
+    "exact_active_sample_count_required": true,
+    "timestep_s": 2e-09,
+    "overlap_guard_fraction": 0.03,
+    "scope": "Same five grains and 2048 source nodes at independent triangle-based sampled depths .0025 and .01. Preserves 0.001 force error and 0.03 overlap guard. Prior v1 rejection remains failed.",
+    "prior_failure_receipt_sha256": "4531b46e84bb7c6308e295615f4428f2b70c586625b0fbef7df0dba8508ceaad"
+  },
+  "protocol_sha256": "d48fabbf431e65bdf43522046f7cb0f3e202741b4692b8423c17718e1e67d0c5",
+  "script_sha256": "31e14aa911dee1709f5a262314b4eed7436553a31eafb8ba79cf8f7a875c927d",
+  "source_hashes": {
+    "simulation.py": "f790c13f196f9f2bef4343ff5f6ef31b4727fcecf40c38df140c97f23c79147c",
+    "backend.py": "2184575342f265dfd744d799af8e9b03a73dcb195e06e94a59f21e1525cbab5c",
+    "benchmark.py": "6624caaa956f7d5c8825520cd5c901b559f561f8ff407bb4d719cb1c06f1f83c",
+    "util.py": "0f9dc71429a87057dc08216f3c51425d8b76be9c4fd30f2cab6c3f98b70397c2",
+    "__init__.py": "25ef40efbf7fa452aaa142bbe8d9ac35c90756e1a6f09cdacdcd2723cdd1636d",
+    "spec.py": "de79f1ec1dd5a08fcf5313c189a608d7a5772042209fdc35d4e99bdf9a82bd34",
+    "visualize.py": "9874362fa98cdd00d73b42867f7ecc9254b820d08915baed25eee4b02ecba339",
+    "mesh.py": "c1c68f00e46a9b286182c75a7fd4e5ff6138756cb124cf60ebec4c3e2a0f4e55",
+    "cli.py": "e326047828502f49aaa47407b8a35e244f3c9bc57ea3e1a60adfc7a7fff9cc11",
+    "qualification.py": "b59751cc6fcc81b834dd90174ff9859e21efffa389dc36bc514ced75ef41b2fb",
+    "geometry.py": "08122ac327f189d07463655431edf6f86973e98dbb20c21054975ddbf2f9f150",
+    "reference.py": "1cd2a748a7f06f1c5138b5f6c9ed99c06715ce6167693251369e8a8fb3cc502f",
+    "gpu.py": "211659716a94925d79e6c82d2b3a89ffb2ab2ee6fd09b9c6311ba15306d03275"
+  },
+  "shader_hashes": {
+    "scan.slang": "51900fe7d78347d2274488b1b5c328ed53714be3043d221ad1d48555e1c5cbac",
+    "solver.slang": "d3d87251431cb4209a7eccfe3133dbb19d2920748848cb485c13a4775de97ea2",
+    "diagnostic.slang": "4f738fbef3ee79c370f74596a51d0de80b5ddd12375615afd18004df0bec7bb0"
+  },
+  "backend": {
+    "format": "sand-dem-doctor/1",
+    "backend": "metal",
+    "adapter": "Apple M4 Max",
+    "slangpy": "0.43.1",
+    "python": "3.12.14",
+    "smoke_elements": 257,
+    "smoke_max_error": 0.0,
+    "fallback": false,
+    "floating_point_mode_requested": "precise"
+  },
+  "rows": [
+    {
+      "shape": "hostun-particle_00053",
+      "separation_m": 0.000294365652887935,
+      "relative_force_error": 9.654093128033096e-05,
+      "force_N": [
+        -3.919694063370116e-05,
+        1.2832392712880392e-05,
+        -1.3601127648144029e-05
+      ],
+      "reference_N": [
+        -3.920071073010741e-05,
+        1.2833161945240416e-05,
+        -1.3602793898779376e-05
+      ],
+      "active_contacts": 2,
+      "reference_active_contacts": 2
+    },
+    {
+      "shape": "hostun-particle_00053",
+      "separation_m": 0.00029220300335055485,
+      "relative_force_error": 7.483792664557301e-06,
+      "force_N": [
+        -0.0002764748060144484,
+        8.04539886303246e-05,
+        -0.00011239040759392083
+      ],
+      "reference_N": [
+        -0.0002764770061826524,
+        8.045461610405337e-05,
+        -0.00011239074919747314
+      ],
+      "active_contacts": 5,
+      "reference_active_contacts": 5
+    },
+    {
+      "shape": "hostun-particle_00034",
+      "separation_m": 0.0003464976903378844,
+      "relative_force_error": 3.461089756440821e-05,
+      "force_N": [
+        -5.5872431403258815e-05,
+        -3.776965240831487e-05,
+        2.918713289545849e-05
+      ],
+      "reference_N": [
+        -5.587118179328644e-05,
+        -3.7767879008837885e-05,
+        2.918580547619438e-05
+      ],
+      "active_contacts": 1,
+      "reference_active_contacts": 1
+    },
+    {
+      "shape": "hostun-particle_00034",
+      "separation_m": 0.00034344602608644894,
+      "relative_force_error": 2.466890362892796e-05,
+      "force_N": [
+        -0.0004765125922858715,
+        -0.0001574071793584153,
+        0.00010339842992834747
+      ],
+      "reference_N": [
+        -0.0004765006257311729,
+        -0.00015740360808086683,
+        0.00010339647926336825
+      ],
+      "active_contacts": 2,
+      "reference_active_contacts": 2
+    },
+    {
+      "shape": "hostun-particle_00033",
+      "separation_m": 0.00041684533132007955,
+      "relative_force_error": 4.0975109123094485e-05,
+      "force_N": [
+        -0.00017540254339110106,
+        -3.728803221747512e-06,
+        -3.8837199099361897e-05
+      ],
+      "reference_N": [
+        -0.00017540967344461373,
+        -3.7292403009162583e-06,
+        -3.8838984165275984e-05
+      ],
+      "active_contacts": 2,
+      "reference_active_contacts": 2
+    },
+    {
+      "shape": "hostun-particle_00033",
+      "separation_m": 0.00041428009988057446,
+      "relative_force_error": 1.2324476092015962e-05,
+      "force_N": [
+        -0.0008452666806988418,
+        -7.115038170013577e-05,
+        -0.00022261713456828147
+      ],
+      "reference_N": [
+        -0.0008452765679860005,
+        -7.115114964838247e-05,
+        -0.0002226214328017248
+      ],
+      "active_contacts": 4,
+      "reference_active_contacts": 4
+    },
+    {
+      "shape": "hostun-particle_00039",
+      "separation_m": 0.00042587759408392346,
+      "relative_force_error": 5.787249970478806e-05,
+      "force_N": [
+        -8.654007251607254e-05,
+        3.181696592946537e-05,
+        8.858241199050099e-05
+      ],
+      "reference_N": [
+        -8.653535484087074e-05,
+        3.181491826236242e-05,
+        8.857709234899693e-05
+      ],
+      "active_contacts": 1,
+      "reference_active_contacts": 1
+    },
+    {
+      "shape": "hostun-particle_00039",
+      "separation_m": 0.000420344463081,
+      "relative_force_error": 4.075368754599586e-05,
+      "force_N": [
+        -0.0009485451737418771,
+        0.0009321199613623321,
+        -0.0001932855520863086
+      ],
+      "reference_N": [
+        -0.0009484965153798347,
+        0.0009320949603965352,
+        -0.0001932830005641127
+      ],
+      "active_contacts": 6,
+      "reference_active_contacts": 6
+    },
+    {
+      "shape": "hostun-particle_00031",
+      "separation_m": 0.0004340634797394704,
+      "relative_force_error": 3.3137653749915976e-05,
+      "force_N": [
+        -0.00019268481992185116,
+        0.00010845661017810926,
+        -0.00013139266229700297
+      ],
+      "reference_N": [
+        -0.00019269072175129336,
+        0.00010846134951633424,
+        -0.0001313965809901639
+      ],
+      "active_contacts": 2,
+      "reference_active_contacts": 2
+    },
+    {
+      "shape": "hostun-particle_00031",
+      "separation_m": 0.00042906983079780514,
+      "relative_force_error": 1.0111143078635794e-05,
+      "force_N": [
+        -0.0018732212483882904,
+        0.0015585756627842784,
+        -0.000231225581956096
+      ],
+      "reference_N": [
+        -0.0018732407211930243,
+        0.001558590885820406,
+        -0.00023122685945623007
+      ],
+      "active_contacts": 6,
+      "reference_active_contacts": 6
+    }
+  ],
+  "passed": true,
+  "scope": "Exact-feature distance at fixed surface quadrature; no continuum quadrature, assembly or material acceptance."
+}

@@ -1,0 +1,131 @@
+..F                                                                      [100%]
+=================================== FAILURES ===================================
+_________ test_mesh_compaction_growth_and_sample_key_friction_restart __________
+
+    def test_mesh_compaction_growth_and_sample_key_friction_restart():
+        shape = from_mesh(trimesh.creation.box(), unit="mm", resolution=8, samples=1024)
+        m = Metal()
+        spec = Experiment(
+            particles=2,
+            timestep=1e-9,
+            contact_geometry="mesh",
+            contacts_per_particle=16,
+            pairs_per_particle=4,
+        )
+        origin = np.full(3, 0.005)
+        positions = np.array([origin, origin + [0.00102, 0, 0]])
+        e = Engine(
+            ShapeLibrary([shape]), spec, positions, [0.02] * 3, [0, 0], [1.0, 1.0], metal=m
+        )
+        e.initialize()
+        assert e.diagnostics()["active_surface_contacts"] == 0
+        # Cross into a new flat-face contact through an actual drift. The committed
+        # positions/contact state remain consistent for every rollback and resize.
+        initial_capacity = e.contact_capacity
+        approach = np.zeros((2, 4), np.float32)
+        approach[1, 0] = -0.00003 / spec.timestep * e.time_unit / e.length_unit
+        e.buffers["velocity"].copy_from_numpy(approach)
+        e.advance(1)
+        diagnostics = e.diagnostics()
+        assert diagnostics["active_grain_pairs"] == 1
+        count = diagnostics["active_surface_contacts"]
+        assert (
+            count > initial_capacity and e.contact_capacity >= count and e.capacity_retries
+        )
+        # Exact box distance includes edge-near points whose nearest surface is a
+        # side face. Treating the whole overlap as a single plane is incorrect.
+        from dataclasses import replace
+    
+        from sand_atlas_dem.reference import pair_contact
+    
+        analytic = replace(shape)
+    
+        def box_query(points):
+            q = np.abs(points) - 0.0005
+            outside = np.maximum(q, 0)
+            length = np.linalg.norm(outside, axis=1)
+            phi = length + np.minimum(q.max(axis=1), 0)
+            gradient = np.zeros_like(points)
+            far = length > 0
+            gradient[far] = np.sign(points[far]) * outside[far] / length[far, None]
+            rows = np.flatnonzero(~far)
+            axes = q[~far].argmax(axis=1)
+            gradient[rows, axes] = np.sign(points[rows, axes])
+            return phi, gradient
+    
+        analytic.query = box_query
+        expected = pair_contact(
+            analytic, analytic, origin, origin + [0.00099, 0, 0], kn=spec.normal_stiffness
+        )["force"]
+        force = m.read(e.buffers["force"]).reshape(-1, 4)[0, :3] * e.force_unit
+>       assert np.linalg.norm(force - expected) / np.linalg.norm(expected) < 1e-4
+E       AssertionError: assert (np.float64(0.07866573334478022) / np.float64(9.609407953887624)) < 0.0001
+E        +  where np.float64(0.07866573334478022) = <function norm at 0x10917e730>((array([-9.688041  ,  0.01097285,  0.02264804], dtype=float32) - array([-9.609375  ,  0.01097376,  0.02264752])))
+E        +    where <function norm at 0x10917e730> = <module 'numpy.linalg' from '/Users/bmar5496/code/sand-atlas-dem/.venv/lib/python3.12/site-packages/numpy/linalg/__init__.py'>.norm
+E        +      where <module 'numpy.linalg' from '/Users/bmar5496/code/sand-atlas-dem/.venv/lib/python3.12/site-packages/numpy/linalg/__init__.py'> = np.linalg
+E        +  and   np.float64(9.609407953887624) = <function norm at 0x10917e730>(array([-9.609375  ,  0.01097376,  0.02264752]))
+E        +    where <function norm at 0x10917e730> = <module 'numpy.linalg' from '/Users/bmar5496/code/sand-atlas-dem/.venv/lib/python3.12/site-packages/numpy/linalg/__init__.py'>.norm
+E        +      where <module 'numpy.linalg' from '/Users/bmar5496/code/sand-atlas-dem/.venv/lib/python3.12/site-packages/numpy/linalg/__init__.py'> = np.linalg
+
+tests/test_mesh_metal.py:188: AssertionError
+----------------------------- Captured stdout call -----------------------------
+[WARN] No supported shader model found, pretending to support sm_6_0.
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(133): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_2->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(133): warning :  unused variable '_S4' [-Wunused-variable]
+    uint _S4 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(133): warning :  unused variable '_S4' [-Wunused-variable]
+    uint _S4 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(284): warning :  unused variable '_S19' [-Wunused-variable]
+    uint _S19 = findPairs_0(id_2, true, &kernelContext_5);
+         ^
+2 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(133): warning :  unused variable '_S10' [-Wunused-variable]
+    uint _S10 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(310): warning :  unused variable '_S52' [-Wunused-variable]
+                uint _S52 = atomic_fetch_add_explicit(((atomic_uint device*)((&kernelContext_7)->r_0->contactCounts_0+pair_0)), 1U, memory_order_relaxed);
+                     ^
+2 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(384): warning :  unused variable '_S15' [-Wunused-variable]
+        uint _S15 = atomic_fetch_add_explicit(((atomic_uint device*)(r_1->control_0+int(6))), 1U, memory_order_relaxed);
+             ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(133): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_1->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(133): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(133): warning :  unused variable '_S5' [-Wunused-variable]
+    uint _S5 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_2->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(466): warning :  unused variable '_S2' [-Wunused-variable]
+        uint _S2 = atomic_fetch_or_explicit(((atomic_uint device*)((&kernelContext_1)->r_0->control_0+int(4))), 1U, memory_order_relaxed);
+             ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(133): warning :  unused variable '_S8' [-Wunused-variable]
+    uint _S8 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_5->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+=========================== short test summary info ============================
+FAILED tests/test_mesh_metal.py::test_mesh_compaction_growth_and_sample_key_friction_restart
+1 failed, 2 passed in 2.62s

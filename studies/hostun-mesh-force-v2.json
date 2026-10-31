@@ -1,0 +1,14 @@
+{
+  "identity": "hostun-mesh-force-v2",
+  "frozen_before_gpu_execution": true,
+  "library": "assets/private/hostun-30-r64-s2048.h5",
+  "library_sha256": "1bc9f37a22b402ada31495ea7ff1ebef4bb6a27a26d68a8333f7f84a12ad16b7",
+  "reference_report": "evidence/hostun-exact-contact-poses-v1/report.json",
+  "reference_report_sha256": "2fe27ce043ccda54f65ac91a37e30e92f34cc100e87ac4cced5beb626ef38a70",
+  "maximum_relative_force_error": 0.001,
+  "exact_active_sample_count_required": true,
+  "timestep_s": 2e-09,
+  "overlap_guard_fraction": 0.03,
+  "scope": "Same five grains and 2048 source nodes at independent triangle-based sampled depths .0025 and .01. Preserves 0.001 force error and 0.03 overlap guard. Prior v1 rejection remains failed.",
+  "prior_failure_receipt_sha256": "4531b46e84bb7c6308e295615f4428f2b70c586625b0fbef7df0dba8508ceaad"
+}

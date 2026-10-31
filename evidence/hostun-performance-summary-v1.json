@@ -1,0 +1,41 @@
+{
+  "rows": [
+    {
+      "resolution": "32/512",
+      "particles": 10000,
+      "ms_per_step": 1.6045666602440178,
+      "hours_per_million_steps": 0.44571296117889386,
+      "physical_seconds_per_million_steps": 0.002,
+      "logical_buffers_MB": 121.092572,
+      "source": "evidence/hostun-controlled-pairs-performance-v1/particles-10000/benchmark.json"
+    },
+    {
+      "resolution": "32/512",
+      "particles": 50000,
+      "ms_per_step": 4.9683704192284495,
+      "hours_per_million_steps": 1.3801028942301248,
+      "physical_seconds_per_million_steps": 0.002,
+      "logical_buffers_MB": 357.850288,
+      "source": "evidence/hostun-controlled-pairs-performance-v1/particles-50000/benchmark.json"
+    },
+    {
+      "resolution": "64/2048",
+      "particles": 10000,
+      "ms_per_step": 3.433720818720758,
+      "hours_per_million_steps": 0.9538113385335438,
+      "physical_seconds_per_million_steps": 0.002,
+      "logical_buffers_MB": 162.337356,
+      "source": "evidence/hostun-controlled-pairs-performance-fine-v1/particles-10000/benchmark.json"
+    },
+    {
+      "resolution": "64/2048",
+      "particles": 50000,
+      "ms_per_step": 14.82873833971098,
+      "hours_per_million_steps": 4.11909398325305,
+      "physical_seconds_per_million_steps": 0.002,
+      "logical_buffers_MB": 399.095072,
+      "source": "evidence/hostun-controlled-pairs-performance-fine-v1/particles-50000/benchmark.json"
+    }
+  ],
+  "scope": "Fixed isolated pairs, same solver sources/shaders, at least 180 seconds per workload. Hours exclude setup/reset/diagnostic/output overhead. No dense-specimen throughput or qualified material force accuracy claimed."
+}

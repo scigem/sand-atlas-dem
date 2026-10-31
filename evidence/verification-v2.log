@@ -1,0 +1,30 @@
+..................F                                                      [100%]
+=================================== FAILURES ===================================
+_______________ test_tangential_force_and_concave_mesh_reference _______________
+
+metal = <sand_atlas_dem.backend.Metal object at 0x10c152b70>
+
+    def test_tangential_force_and_concave_mesh_reference(metal):
+        from pathlib import Path
+        p=Path('assets/generated/concave-prism.h5')
+        if not p.exists():pytest.skip('Generate original fixtures with examples/create_fixtures.py')
+        shape=ShapeLibrary.load(p).shapes[0]
+        spec=Experiment(particles=2,timestep=1e-9,max_overlap_fraction=.3,contacts_per_particle=512)
+        x=np.array([[.002,.002,.002],[.0028,.002,.002]])
+        e=Engine(ShapeLibrary([shape]),spec,x,[.008]*3,[0,0],[1,1],metal=metal)
+        e.initialize();assert e.diagnostics()['active_surface_contacts']>0
+        force=e.m.read(e.buffers['force']).reshape(-1,4)[0,:3]*e.force_unit
+        ref=pair_contact(shape,shape,*x,kn=spec.normal_stiffness,kt=spec.tangential_stiffness)
+>       assert np.linalg.norm(force-ref['force'])/np.linalg.norm(ref['force'])<1e-4
+E       AssertionError: assert (np.float64(0.6317806581884908) / np.float64(8.472740324712733)) < 0.0001
+E        +  where np.float64(0.6317806581884908) = <function norm at 0x106c6ab30>((array([-6.8714037, -3.676689 ,  1.5219932], dtype=float32) - array([-7.39876914, -3.68091698,  1.8698647 ])))
+E        +    where <function norm at 0x106c6ab30> = <module 'numpy.linalg' from '/private/tmp/sand-atlas-dem-venv/lib/python3.12/site-packages/numpy/linalg/__init__.py'>.norm
+E        +      where <module 'numpy.linalg' from '/private/tmp/sand-atlas-dem-venv/lib/python3.12/site-packages/numpy/linalg/__init__.py'> = np.linalg
+E        +  and   np.float64(8.472740324712733) = <function norm at 0x106c6ab30>(array([-7.39876914, -3.68091698,  1.8698647 ]))
+E        +    where <function norm at 0x106c6ab30> = <module 'numpy.linalg' from '/private/tmp/sand-atlas-dem-venv/lib/python3.12/site-packages/numpy/linalg/__init__.py'>.norm
+E        +      where <module 'numpy.linalg' from '/private/tmp/sand-atlas-dem-venv/lib/python3.12/site-packages/numpy/linalg/__init__.py'> = np.linalg
+
+tests/test_metal.py:84: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_metal.py::test_tangential_force_and_concave_mesh_reference
+1 failed, 18 passed in 5.70s

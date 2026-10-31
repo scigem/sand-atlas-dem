@@ -1,0 +1,16 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.egg-info/
+dist/
+runs/
+assets/private/
+.DS_Store
+
+evidence/**/private/
+# Retain numerical checkpoints locally; manifests/reports carry their identities.
+evidence/**/*.h5
+# Full histories and chunk-by-chunk recovery state are local run artifacts.
+evidence/**/history.json
+evidence/**/chunk-*/
+evidence/**/progress.json

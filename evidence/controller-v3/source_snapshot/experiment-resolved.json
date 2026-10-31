@@ -1,0 +1,38 @@
+{
+  "format": "sand-dem-experiment/1",
+  "shape_library": "/Users/bmar5496/code/sand-atlas-dem/evidence/controller-v3/private/shapes.h5",
+  "particles": 216,
+  "seed": 42,
+  "density": 2650.0,
+  "normal_stiffness": 1000000000000.0,
+  "tangential_stiffness": 500000000000.0,
+  "friction": 0.5,
+  "timestep": 1e-08,
+  "initial_solid_fraction": 0.15,
+  "scale": 1.0,
+  "cell": null,
+  "skin": 0.05,
+  "working_memory_gib": 12.0,
+  "contacts_per_particle": 256,
+  "pairs_per_particle": 32,
+  "bin_capacity": 128,
+  "stages": [
+    {
+      "kind": "isotropic",
+      "steps": 500000,
+      "drag": 100000.0,
+      "pressure": 10000,
+      "gain": 1000,
+      "filter_time": 1e-05,
+      "max_rate": 1000,
+      "contact_max_rate": 50,
+      "pressure_tolerance": 0.01,
+      "kinetic_tolerance": 1e-05,
+      "force_tolerance": 0.001,
+      "converged_samples": 100
+    }
+  ],
+  "diagnostic_interval": 25,
+  "snapshot_interval": 50000,
+  "max_overlap_fraction": 0.01
+}

@@ -1,0 +1,1196 @@
+{
+  "format": "sand-dem-hostun-ingestion/1",
+  "archive_sha256": "22549ef78526991dc3adb82efe7f1b9cf98babef2e00b435c449f3b90d0f48a6",
+  "descriptor_sha256": "3a615e1af45b981a8c39da454155fe37dd7e61d422d6b91c13fa68af283f5872",
+  "coordinate_unit": "um",
+  "unit_status": "inferred_from_dimensional_source_descriptors",
+  "mappings": [
+    {
+      "member": "particle_00019.stl",
+      "descriptor_id": "1",
+      "relative_volume_difference": 1.691307072060333e-05,
+      "next_best_difference": 0.005307967003231662
+    },
+    {
+      "member": "particle_00020.stl",
+      "descriptor_id": "2",
+      "relative_volume_difference": 3.69843104952583e-06,
+      "next_best_difference": 0.005765931085225828
+    },
+    {
+      "member": "particle_00021.stl",
+      "descriptor_id": "3",
+      "relative_volume_difference": 8.475130339524739e-06,
+      "next_best_difference": 0.0025624347943808967
+    },
+    {
+      "member": "particle_00022.stl",
+      "descriptor_id": "4",
+      "relative_volume_difference": 6.213907875718405e-05,
+      "next_best_difference": 0.01026233831943979
+    },
+    {
+      "member": "particle_00023.stl",
+      "descriptor_id": "5",
+      "relative_volume_difference": 4.6772291229402185e-05,
+      "next_best_difference": 0.004023727920900111
+    },
+    {
+      "member": "particle_00024.stl",
+      "descriptor_id": "6",
+      "relative_volume_difference": 1.0465261438774576e-05,
+      "next_best_difference": 0.012791943631987657
+    },
+    {
+      "member": "particle_00025.stl",
+      "descriptor_id": "7",
+      "relative_volume_difference": 2.5908168453825375e-05,
+      "next_best_difference": 0.005491967040128332
+    },
+    {
+      "member": "particle_00026.stl",
+      "descriptor_id": "8",
+      "relative_volume_difference": 1.2866315580284393e-05,
+      "next_best_difference": 0.05137330686569119
+    },
+    {
+      "member": "particle_00027.stl",
+      "descriptor_id": "9",
+      "relative_volume_difference": 2.1852025127944152e-05,
+      "next_best_difference": 0.04219257530373044
+    },
+    {
+      "member": "particle_00028.stl",
+      "descriptor_id": "10",
+      "relative_volume_difference": 3.517180657386376e-06,
+      "next_best_difference": 0.010435083151096647
+    },
+    {
+      "member": "particle_00029.stl",
+      "descriptor_id": "11",
+      "relative_volume_difference": 6.47185133351158e-06,
+      "next_best_difference": 0.048869132474342325
+    },
+    {
+      "member": "particle_00030.stl",
+      "descriptor_id": "12",
+      "relative_volume_difference": 4.051022131457138e-05,
+      "next_best_difference": 0.04487726281241522
+    },
+    {
+      "member": "particle_00031.stl",
+      "descriptor_id": "13",
+      "relative_volume_difference": 1.630201066671333e-05,
+      "next_best_difference": 0.08185580061130437
+    },
+    {
+      "member": "particle_00032.stl",
+      "descriptor_id": "14",
+      "relative_volume_difference": 1.6849289097287112e-06,
+      "next_best_difference": 0.022855339455486456
+    },
+    {
+      "member": "particle_00033.stl",
+      "descriptor_id": "15",
+      "relative_volume_difference": 3.4643254953614644e-07,
+      "next_best_difference": 0.03139461283191991
+    },
+    {
+      "member": "particle_00034.stl",
+      "descriptor_id": "16",
+      "relative_volume_difference": 1.865780249354909e-05,
+      "next_best_difference": 0.0003803080184616725
+    },
+    {
+      "member": "particle_00035.stl",
+      "descriptor_id": "17",
+      "relative_volume_difference": 2.2228944634106185e-05,
+      "next_best_difference": 0.005375643130906216
+    },
+    {
+      "member": "particle_00036.stl",
+      "descriptor_id": "18",
+      "relative_volume_difference": 3.187085644618115e-06,
+      "next_best_difference": 0.0058402790753046
+    },
+    {
+      "member": "particle_00037.stl",
+      "descriptor_id": "19",
+      "relative_volume_difference": 6.878052035252935e-06,
+      "next_best_difference": 0.0016330979424841185
+    },
+    {
+      "member": "particle_00038.stl",
+      "descriptor_id": "20",
+      "relative_volume_difference": 0.00479722189332743,
+      "next_best_difference": 0.029658325722431655
+    },
+    {
+      "member": "particle_00039.stl",
+      "descriptor_id": "21",
+      "relative_volume_difference": 7.059904438833087e-07,
+      "next_best_difference": 0.0040238183555338924
+    },
+    {
+      "member": "particle_00040.stl",
+      "descriptor_id": "22",
+      "relative_volume_difference": 2.2641637402509573e-05,
+      "next_best_difference": 0.001600963567008784
+    },
+    {
+      "member": "particle_00041.stl",
+      "descriptor_id": "23",
+      "relative_volume_difference": 8.393674351125924e-07,
+      "next_best_difference": 0.033566354951699795
+    },
+    {
+      "member": "particle_00042.stl",
+      "descriptor_id": "24",
+      "relative_volume_difference": 5.100399405932876e-06,
+      "next_best_difference": 0.003921685890749593
+    },
+    {
+      "member": "particle_00043.stl",
+      "descriptor_id": "25",
+      "relative_volume_difference": 1.637443321933496e-05,
+      "next_best_difference": 0.03552563134674491
+    },
+    {
+      "member": "particle_00044.stl",
+      "descriptor_id": "26",
+      "relative_volume_difference": 2.1505183794179317e-05,
+      "next_best_difference": 0.0025688824363571117
+    },
+    {
+      "member": "particle_00045.stl",
+      "descriptor_id": "27",
+      "relative_volume_difference": 1.1296405374672247e-05,
+      "next_best_difference": 0.056760586358814646
+    },
+    {
+      "member": "particle_00046.stl",
+      "descriptor_id": "28",
+      "relative_volume_difference": 1.1486043440478433e-05,
+      "next_best_difference": 0.007627329560816687
+    },
+    {
+      "member": "particle_00047.stl",
+      "descriptor_id": "29",
+      "relative_volume_difference": 8.98237037882943e-06,
+      "next_best_difference": 0.005862347392718625
+    },
+    {
+      "member": "particle_00048.stl",
+      "descriptor_id": "30",
+      "relative_volume_difference": 4.0671401321690226e-05,
+      "next_best_difference": 0.011430048810862847
+    },
+    {
+      "member": "particle_00049.stl",
+      "descriptor_id": "31",
+      "relative_volume_difference": 7.079820959265959e-06,
+      "next_best_difference": 0.005743592154505817
+    },
+    {
+      "member": "particle_00050.stl",
+      "descriptor_id": "32",
+      "relative_volume_difference": 8.690769258690167e-06,
+      "next_best_difference": 0.00404809191476474
+    },
+    {
+      "member": "particle_00051.stl",
+      "descriptor_id": "33",
+      "relative_volume_difference": 1.9096755637493246e-05,
+      "next_best_difference": 0.00939891226102274
+    },
+    {
+      "member": "particle_00052.stl",
+      "descriptor_id": "34",
+      "relative_volume_difference": 1.0817704517052107e-05,
+      "next_best_difference": 0.004254949302175626
+    },
+    {
+      "member": "particle_00053.stl",
+      "descriptor_id": "35",
+      "relative_volume_difference": 1.0614128571617698e-05,
+      "next_best_difference": 0.05436820632413075
+    },
+    {
+      "member": "particle_00054.stl",
+      "descriptor_id": "36",
+      "relative_volume_difference": 0.0005170923818440532,
+      "next_best_difference": 0.012539549971119723
+    },
+    {
+      "member": "particle_00055.stl",
+      "descriptor_id": "37",
+      "relative_volume_difference": 5.408657622218982e-05,
+      "next_best_difference": 0.0003447491430061955
+    },
+    {
+      "member": "particle_00056.stl",
+      "descriptor_id": "38",
+      "relative_volume_difference": 2.8421089000030264e-06,
+      "next_best_difference": 0.047031248978571805
+    },
+    {
+      "member": "particle_00057.stl",
+      "descriptor_id": "39",
+      "relative_volume_difference": 4.3780300191142985e-05,
+      "next_best_difference": 0.014526859349151655
+    },
+    {
+      "member": "particle_00058.stl",
+      "descriptor_id": "40",
+      "relative_volume_difference": 5.081481418223177e-05,
+      "next_best_difference": 0.0056396140215675405
+    },
+    {
+      "member": "particle_00059.stl",
+      "descriptor_id": "41",
+      "relative_volume_difference": 1.7208571856941468e-05,
+      "next_best_difference": 0.007598070987011263
+    },
+    {
+      "member": "particle_00060.stl",
+      "descriptor_id": "42",
+      "relative_volume_difference": 8.175248491837372e-06,
+      "next_best_difference": 0.00390942922808768
+    },
+    {
+      "member": "particle_00061.stl",
+      "descriptor_id": "43",
+      "relative_volume_difference": 1.6664303312374784e-05,
+      "next_best_difference": 0.01663397798584365
+    },
+    {
+      "member": "particle_00062.stl",
+      "descriptor_id": "44",
+      "relative_volume_difference": 1.6721027241040076e-05,
+      "next_best_difference": 0.0574875967702666
+    },
+    {
+      "member": "particle_00063.stl",
+      "descriptor_id": "45",
+      "relative_volume_difference": 1.547757904074576e-05,
+      "next_best_difference": 0.05610309165141614
+    },
+    {
+      "member": "particle_00064.stl",
+      "descriptor_id": "46",
+      "relative_volume_difference": 1.0786615032509772e-05,
+      "next_best_difference": 0.017682884661274212
+    },
+    {
+      "member": "particle_00065.stl",
+      "descriptor_id": "47",
+      "relative_volume_difference": 3.625884483571262e-05,
+      "next_best_difference": 0.01666247222456363
+    },
+    {
+      "member": "particle_00066.stl",
+      "descriptor_id": "48",
+      "relative_volume_difference": 9.08518444653339e-06,
+      "next_best_difference": 0.027766502578187913
+    },
+    {
+      "member": "particle_00067.stl",
+      "descriptor_id": "49",
+      "relative_volume_difference": 3.753797551631077e-05,
+      "next_best_difference": 0.01293027385942147
+    },
+    {
+      "member": "particle_00068.stl",
+      "descriptor_id": "50",
+      "relative_volume_difference": 1.8742999191356802e-05,
+      "next_best_difference": 0.06020807141198681
+    },
+    {
+      "member": "particle_00070.stl",
+      "descriptor_id": "51",
+      "relative_volume_difference": 1.7648882006393585e-05,
+      "next_best_difference": 0.08134786714393583
+    },
+    {
+      "member": "particle_00071.stl",
+      "descriptor_id": "52",
+      "relative_volume_difference": 2.3718538419981172e-05,
+      "next_best_difference": 0.029151396954405495
+    },
+    {
+      "member": "particle_00072.stl",
+      "descriptor_id": "53",
+      "relative_volume_difference": 4.050379471043364e-05,
+      "next_best_difference": 0.01400085445921162
+    },
+    {
+      "member": "particle_00073.stl",
+      "descriptor_id": "54",
+      "relative_volume_difference": 4.1260470095005886e-05,
+      "next_best_difference": 0.01376082859579253
+    }
+  ],
+  "resolution": 32,
+  "samples": 512,
+  "repairs": [],
+  "grains": {
+    "particle_00019.stl": {
+      "status": "rejected",
+      "components": 2,
+      "reason": "not_single_closed_consistent_positive_solid",
+      "path": null
+    },
+    "particle_00020.stl": {
+      "status": "prepared",
+      "volume_m3": 1.4747303457913272e-11,
+      "radius_m": 0.00030309821597472684,
+      "grid": [
+        21,
+        38,
+        37
+      ],
+      "spacing_m": 1.558204355547505e-05,
+      "wall_seconds": 31.262832709006034,
+      "descriptor_id": "2",
+      "source_sha256": "0bc5fb6b04a62ff9b693776339db9660b829d52422c8b575b9379575282967d6",
+      "shape_sha256": "dfa8f7c153d3619e25e73e1793fe112cee604ee2977e5303927065672e84549b",
+      "path": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r32-s512/particle_00020.h5"
+    },
+    "particle_00021.stl": {
+      "status": "prepared",
+      "volume_m3": 1.6554458300002736e-11,
+      "radius_m": 0.00024161453512690494,
+      "grid": [
+        31,
+        38,
+        38
+      ],
+      "spacing_m": 1.3523419287896924e-05,
+      "wall_seconds": 27.4290248749312,
+      "descriptor_id": "3",
+      "source_sha256": "38c86dc9c810b73b299f690ad8866d777229b201e7670a9b03fc26fd1bc7b3e6",
+      "shape_sha256": "d421e0e5e6e543e03371c3c9558c54a94ec7ac1b84dafbe9ce400e43a8f1e4d9",
+      "path": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r32-s512/particle_00021.h5"
+    },
+    "particle_00022.stl": {
+      "status": "prepared",
+      "volume_m3": 4.775981956678763e-11,
+      "radius_m": 0.00036084274262784214,
+      "grid": [
+        30,
+        35,
+        39
+      ],
+      "spacing_m": 1.804510498046875e-05,
+      "wall_seconds": 10.69889337499626,
+      "descriptor_id": "4",
+      "source_sha256": "ad32ae7020a7688171acfb454a65511f648c1b4d4e27c2c874bc003605db927d",
+      "shape_sha256": "4ff72843bc57579cc28bdfd7f8f82cb6df75b756d4f5c48bde0355f1091897d9",
+      "path": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r32-s512/particle_00022.h5"
+    },
+    "particle_00023.stl": {
+      "status": "prepared",
+      "volume_m3": 1.936475122385095e-11,
+      "radius_m": 0.00033747802199819086,
+      "grid": [
+        20,
+        38,
+        26
+      ],
+      "spacing_m": 1.9689042614352318e-05,
+      "wall_seconds": 7.21610270801466,
+      "descriptor_id": "5",
+      "source_sha256": "97970e677f81c0145a6dd47e0cfdf41941931f6e96ac521b0f96c0c155a12372",
+      "shape_sha256": "40c39f2b55bbe23ff411bd8302bf9077fabf99e3399dadc79664866af75cc3f1",
+      "path": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r32-s512/particle_00023.h5"
+    },
+    "particle_00024.stl": {
+      "status": "prepared",
+      "volume_m3": 2.1482456817174166e-11,
+      "radius_m": 0.00040952518295971297,
+      "grid": [
+        33,
+        38,
+        27
+      ],
+      "spacing_m": 2.016753658171623e-05,
+      "wall_seconds": 44.31448887498118,
+      "descriptor_id": "6",
+      "source_sha256": "31c5139f5719c9744f1e3fa8616ad0978f7acedb9af3256822c4cd928a7823ea",
+      "shape_sha256": "daeec8749a584ef9a08d0fd5704ec23f2cb84d9216f4e48546a50c0b0852efed",
+      "path": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r32-s512/particle_00024.h5"
+    },
+    "particle_00025.stl": {
+      "status": "prepared",
+      "volume_m3": 2.8250441063850894e-11,
+      "radius_m": 0.00031687917571112436,
+      "grid": [
+        38,
+        38,
+        30
+      ],
+      "spacing_m": 1.628822326660156e-05,
+      "wall_seconds": 14.49749341700226,
+      "descriptor_id": "7",
+      "source_sha256": "1e071a54d56bcedbdde06a98ec149482614b53b8e90d0d004139870f7c637979",
+      "shape_sha256": "4d6f429089a8d8b048fd8b786ecc40971d45e0c62af5c5b588b43d03dd26d4ee",
+      "path": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r32-s512/particle_00025.h5"
+    },
+    "particle_00026.stl": {
+      "status": "prepared",
+      "volume_m3": 4.0787695205889516e-11,
+      "radius_m": 0.0004546943113694888,
+      "grid": [
+        33,
+        38,
+        25
+      ],
+      "spacing_m": 2.4440553726688508e-05,
+      "wall_seconds": 25.270164916990325,
+      "descriptor_id": "8",
+      "source_sha256": "ab69f83cd684ceb2f75953653979b1d03cf83f5047a895fa583d58021fc0ba11",
+      "shape_sha256": "f4dfd3ba8ec63956a599e7bcfda629b572c08251d8482a5e14f0493d13dfc019",
+      "path": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r32-s512/particle_00026.h5"
+    },
+    "particle_00027.stl": {
+      "status": "prepared",
+      "volume_m3": 4.574186742572089e-11,
+      "radius_m": 0.0003279766761464446,
+      "grid": [
+        30,
+        38,
+        38
+      ],
+      "spacing_m": 1.8620814169606853e-05,
+      "wall_seconds": 15.43568795803003,
+      "descriptor_id": "9",
+      "source_sha256": "f3a13407ebd387bcfbf4bd210243ded6c508e9a3a071b8863e814efd6af0641c",
+      "shape_sha256": "62806a1d5a6a1aeebeebe69c1410ecc1be6ee9a33f7b23b9e97f15146bad8976",
+      "path": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r32-s512/particle_00027.h5"
+    },
+    "particle_00028.stl": {
+      "status": "prepared",
+      "volume_m3": 4.825519872165461e-11,
+      "radius_m": 0.000497774786056381,
+      "grid": [
+        34,
+        28,
+        38
+      ],
+      "spacing_m": 2.2154436665196567e-05,
+      "wall_seconds": 20.090673916973174,
+      "descriptor_id": "10",
+      "source_sha256": "3a792841a26455cf4265b87583d3c1736b4e7368856222ec9f183defa4cd0954",
+      "shape_sha256": "50d2fad398bbc4f5b85c143d76e2a28a2ba81545f9a7c4bdbc97839aa014d3ab",
+      "path": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r32-s512/particle_00028.h5"
+    },
+    "particle_00029.stl": {
+      "status": "prepared",
+      "volume_m3": 3.879493507342737e-11,
+      "radius_m": 0.00033748494472794603,
+      "grid": [
+        38,
+        38,
+        32
+      ],
+      "spacing_m": 1.7601459134009576e-05,
+      "wall_seconds": 13.30883208301384,
+      "descriptor_id": "11",
+      "source_sha256": "42cb845b399b1b80cb35f5a56475613a3546ced3221016e2e9a4435a13dd8a0f",
+      "shape_sha256": "2ae69b85b033de1aacd997e0b63bdf3bce3827cbe78c9757da56b1bc86ce94c6",
+      "path": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r32-s512/particle_00029.h5"
+    },
+    "particle_00030.stl": {
+      "status": "prepared",
+      "volume_m3": 3.007965648418017e-11,
+      "radius_m": 0.00029317216398660085,
+      "grid": [
+        32,
+        38,
+        38
+      ],
+      "spacing_m": 1.5325396137852823e-05,
+      "wall_seconds": 12.176226750016212,
+      "descriptor_id": "12",
+      "source_sha256": "49b7d7275a9d8ec4502f905a3e4046ac821830a3949060550d67aa7cf7d4eef1",
+      "shape_sha256": "6c5b8864b461e17bb650b825fee6824af2c2a6fa19cd72627f9b37b063bbf01a",
+      "path": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r32-s512/particle_00030.h5"
+    },
+    "particle_00031.stl": {
+      "status": "prepared",
+      "volume_m3": 5.2204983032316685e-11,
+      "radius_m": 0.0003516323316183844,
+      "grid": [
+        36,
+        39,
+        37
+      ],
+      "spacing_m": 1.7900554041708668e-05,
+      "wall_seconds": 18.429592499975115,
+      "descriptor_id": "13",
+      "source_sha256": "6db9417877adbee1a23f27f0f7dd91f3ce0ee09169869785d1614b8c711e7133",
+      "shape_sha256": "0603c10bb0239b50ba3e5a8dbea8685dcd8980b6c9eaf6cf52cafdd253932de3",
+      "path": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r32-s512/particle_00031.h5"
+    },
+    "particle_00032.stl": {
+      "status": "prepared",
+      "volume_m3": 1.7177899056412498e-11,
+      "radius_m": 0.00030060177635713196,
+      "grid": [
+        39,
+        27,
+        35
+      ],
+      "spacing_m": 1.594246353641633e-05,
+      "wall_seconds": 33.5057732911082,
+      "descriptor_id": "14",
+      "source_sha256": "de2901707b173b08fede31d9824c476604cdb7c2ae1c92b1a7c6b71e36804f5d",
+      "shape_sha256": "07f3e99ed9822aaf0aa3bd6210dcb226d2c78367b6bc4710194b69f156e82356",
+      "path": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r32-s512/particle_00032.h5"
+    },
+    "particle_00033.stl": {
+      "status": "prepared",
+      "volume_m3": 2.0461348088474527e-11,
+      "radius_m": 0.0002569626646975366,
+      "grid": [
+        38,
+        37,
+        32
+      ],
+      "spacing_m": 1.3956868817729333e-05,
+      "wall_seconds": 13.037066583056003,
+      "descriptor_id": "15",
+      "source_sha256": "fdf9f25e839c46f61a2bed324eaddda950e8241c3087fa34c354875989081a8f",
+      "shape_sha256": "b4f53a32d9b7e7f961e7785a7caecfd19932479444054a23960d7ada0f64b6cc",
+      "path": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r32-s512/particle_00033.h5"
+    },
+    "particle_00034.stl": {
+      "status": "prepared",
+      "volume_m3": 1.550317273946804e-11,
+      "radius_m": 0.00024003877714988547,
+      "grid": [
+        38,
+        35,
+        38
+      ],
+      "spacing_m": 1.2705792826990926e-05,
+      "wall_seconds": 18.829833583091386,
+      "descriptor_id": "16",
+      "source_sha256": "759d2a46a56ffafb048ef48b9903e9b12d2302fb8339e0286dbd8eba11060f82",
+      "shape_sha256": "133e2249916281d6853e58a4403c5469dad5657daf669faae9b4748613bc5904",
+      "path": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r32-s512/particle_00034.h5"
+    },
+    "particle_00035.stl": {
+      "status": "prepared",
+      "volume_m3": 2.2547869204194917e-11,
+      "radius_m": 0.0003169495043861631,
+      "grid": [
+        39,
+        31,
+        30
+      ],
+      "spacing_m": 1.709358215332031e-05,
+      "wall_seconds": 13.566155040985905,
+      "descriptor_id": "17",
+      "source_sha256": "bfc481c6092031e7067f7b2b0ad0c749e8c73ffe30b0c988b7169da742cff6c4",
+      "shape_sha256": "5b2277a9fa3aa3206da6ee03195fc8f1c5c17b193bc2f6b94b0bf6e641b89c56",
+      "path": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r32-s512/particle_00035.h5"
+    },
+    "particle_00036.stl": {
+      "status": "prepared",
+      "volume_m3": 1.7626456822793454e-11,
+      "radius_m": 0.00040200084552060016,
+      "grid": [
+        38,
+        27,
+        24
+      ],
+      "spacing_m": 2.2592442666330647e-05,
+      "wall_seconds": 21.77464633306954,
+      "descriptor_id": "18",
+      "source_sha256": "78ad852e896da73302484b66b9502a0ad24ab82232b54252138eeda64098c3c7",
+      "shape_sha256": "80138b16c962db37afd7a93256584f13931003dd23d9d65f7ec8bfd1fd1e1a06",
+      "path": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r32-s512/particle_00036.h5"
+    },
+    "particle_00037.stl": {
+      "status": "prepared",
+      "volume_m3": 1.928727765798692e-11,
+      "radius_m": 0.00023390151239971853,
+      "grid": [
+        35,
+        35,
+        38
+      ],
+      "spacing_m": 1.2470366939421621e-05,
+      "wall_seconds": 13.461473124916665,
+      "descriptor_id": "19",
+      "source_sha256": "f7223956f18b9a27b07b1d2dfcb7547b961c59270d89967320656c2875aa4c7f",
+      "shape_sha256": "6f519bf26d1a0c8d4973473d89a48e96a6ee4a209aa8dc502483414ebca1371e",
+      "path": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r32-s512/particle_00037.h5"
+    },
+    "particle_00038.stl": {
+      "status": "prepared",
+      "volume_m3": 3.4847107186015896e-11,
+      "radius_m": 0.0002663187067278816,
+      "grid": [
+        35,
+        38,
+        38
+      ],
+      "spacing_m": 1.3608688354492187e-05,
+      "wall_seconds": 0.3482872089371085,
+      "descriptor_id": "20",
+      "source_sha256": "029b5bc8707a8a9d658403d6d8e4e65ebfada1e2e76b8035761d8ba5e562a29e",
+      "shape_sha256": "df47c23cef60ca0683e6895a2c112bae1b51cdafa923d23bc993bfd9eec57788",
+      "path": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r32-s512/particle_00038.h5"
+    },
+    "particle_00039.stl": {
+      "status": "prepared",
+      "volume_m3": 2.7983084244195982e-11,
+      "radius_m": 0.0002769068556742377,
+      "grid": [
+        38,
+        37,
+        28
+      ],
+      "spacing_m": 1.5536779588268647e-05,
+      "wall_seconds": 8.523053875076585,
+      "descriptor_id": "21",
+      "source_sha256": "c104417f34e90536354696bb8af6d2aa6e9666e7b38ec15856ced3cf7b59c167",
+      "shape_sha256": "40aa02a538e46b6d62520bbe6b32b627ed48ed34d93ed2b19e22c654bc4fce00",
+      "path": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r32-s512/particle_00039.h5"
+    },
+    "particle_00040.stl": {
+      "status": "prepared",
+      "volume_m3": 1.9256266983543378e-11,
+      "radius_m": 0.0002987567776430768,
+      "grid": [
+        38,
+        28,
+        36
+      ],
+      "spacing_m": 1.5204513549804687e-05,
+      "wall_seconds": 16.373011750052683,
+      "descriptor_id": "22",
+      "source_sha256": "d9b685172cd56610c39d483458f12ef2d752e3d24f0f0bedee2a6d14f0c25a9c",
+      "shape_sha256": "97cbb9e15bf8df2268ae0505613204d8a901450d0d36202932c6f47cac5c565c",
+      "path": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r32-s512/particle_00040.h5"
+    },
+    "particle_00041.stl": {
+      "status": "prepared",
+      "volume_m3": 1.3184857066930368e-11,
+      "radius_m": 0.00025087910179765155,
+      "grid": [
+        24,
+        35,
+        38
+      ],
+      "spacing_m": 1.4002008253528226e-05,
+      "wall_seconds": 16.87552320805844,
+      "descriptor_id": "23",
+      "source_sha256": "5f8cd6063976090db960e3092b3a73c41716d7410c4038e63c73314f60a31391",
+      "shape_sha256": "47a4bf0401bf01f8ce45018d7f41841e95ffc6d42be5c75ea9ace9d4266f5c71",
+      "path": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r32-s512/particle_00041.h5"
+    },
+    "particle_00042.stl": {
+      "status": "prepared",
+      "volume_m3": 2.575522936128653e-11,
+      "radius_m": 0.0003199489210491567,
+      "grid": [
+        28,
+        27,
+        38
+      ],
+      "spacing_m": 1.9586590182396672e-05,
+      "wall_seconds": 17.155278124962933,
+      "descriptor_id": "24",
+      "source_sha256": "3f0da63d3bb054eb6b2e4367aaca5b67f6d00c884786a9e0f2d0759b47ab8459",
+      "shape_sha256": "cab5aca83f2c97c619976b276d7eb76968f0f9a213bcac61e46feae2a1e8087e",
+      "path": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r32-s512/particle_00042.h5"
+    },
+    "particle_00043.stl": {
+      "status": "prepared",
+      "volume_m3": 3.591279104196978e-11,
+      "radius_m": 0.0003468040907347695,
+      "grid": [
+        29,
+        38,
+        37
+      ],
+      "spacing_m": 1.9174572360131048e-05,
+      "wall_seconds": 17.40138720802497,
+      "descriptor_id": "25",
+      "source_sha256": "aa09a41aab6946bd7bcc4e7eff756e708be90bd9939137b0ad5e985244d44e3f",
+      "shape_sha256": "009df154299e981a01ba0ab33243cbdf8ea7306e0227c4d60db42ffd8ed62bb6",
+      "path": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r32-s512/particle_00043.h5"
+    },
+    "particle_00044.stl": {
+      "status": "prepared",
+      "volume_m3": 1.6511791903243925e-11,
+      "radius_m": 0.0002464390182185005,
+      "grid": [
+        36,
+        36,
+        38
+      ],
+      "spacing_m": 1.2482799899193549e-05,
+      "wall_seconds": 13.379570415941998,
+      "descriptor_id": "26",
+      "source_sha256": "0cf081f4c98f4c5879a93a64cd6d61ddcd56a65f276d254adbaf682d1640949b",
+      "shape_sha256": "90eb433ff30a2c5e42bc48959bfca5f9bdae1d912fd9d825f4d8c6c8061cbc96",
+      "path": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r32-s512/particle_00044.h5"
+    },
+    "particle_00045.stl": {
+      "status": "prepared",
+      "volume_m3": 1.0797553972168876e-11,
+      "radius_m": 0.00023570452636833834,
+      "grid": [
+        26,
+        28,
+        38
+      ],
+      "spacing_m": 1.3556118380638861e-05,
+      "wall_seconds": 10.441614999901503,
+      "descriptor_id": "27",
+      "source_sha256": "2c8a8eda8d7dab15dd4da16cae6f10c9ffbe9798f101dd4e54dcd12dcde76b0b",
+      "shape_sha256": "0b3f2f0022880039e3fda3b3045134eee593d731faa413643eece1682b81f012",
+      "path": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r32-s512/particle_00045.h5"
+    },
+    "particle_00046.stl": {
+      "status": "prepared",
+      "volume_m3": 1.3746854101222987e-11,
+      "radius_m": 0.0002462025430260737,
+      "grid": [
+        33,
+        37,
+        38
+      ],
+      "spacing_m": 1.2547340146956905e-05,
+      "wall_seconds": 14.858721749973483,
+      "descriptor_id": "28",
+      "source_sha256": "cc052e79359b065f7a988f20ccba23ede744cb023b661f8c5476d4ec3a151431",
+      "shape_sha256": "553a9d6365c944d668be7aef92e5bcff25b32b0406d0c0630d3dc5d06620993d",
+      "path": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r32-s512/particle_00046.h5"
+    },
+    "particle_00047.stl": {
+      "status": "prepared",
+      "volume_m3": 1.772984574252827e-11,
+      "radius_m": 0.00030471475284415603,
+      "grid": [
+        38,
+        32,
+        24
+      ],
+      "spacing_m": 1.583357878654234e-05,
+      "wall_seconds": 8.43070612498559,
+      "descriptor_id": "29",
+      "source_sha256": "b09bf2755c607f35653723ceaf8363caab2303fa9cffcaf73fcccf83c9b1fa13",
+      "shape_sha256": "90dcd4a0ba7fafb5b0c0ccd9eed839528182be626b4216fcaddab9e1f5c987a1",
+      "path": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r32-s512/particle_00047.h5"
+    },
+    "particle_00048.stl": {
+      "status": "prepared",
+      "volume_m3": 2.5361386441175855e-11,
+      "radius_m": 0.00026795879667154666,
+      "grid": [
+        35,
+        37,
+        38
+      ],
+      "spacing_m": 1.4149113808908769e-05,
+      "wall_seconds": 12.88422570808325,
+      "descriptor_id": "30",
+      "source_sha256": "8ecae546d13de00e6efff92d304408a1022f3961f3e79537e9ecf66c75a94891",
+      "shape_sha256": "db3db257571c0b9191ef4b1a078b96029e3561c307bb5e9f22fcf0cb17ec0cba",
+      "path": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r32-s512/particle_00048.h5"
+    },
+    "particle_00049.stl": {
+      "status": "prepared",
+      "volume_m3": 1.466265519029151e-11,
+      "radius_m": 0.0002332408240693981,
+      "grid": [
+        27,
+        31,
+        38
+      ],
+      "spacing_m": 1.4087994483209425e-05,
+      "wall_seconds": 13.008993707946502,
+      "descriptor_id": "31",
+      "source_sha256": "48e9480d41709ee3553ed2c96e212a23af6a971521182813995bc4db1412d3e5",
+      "shape_sha256": "d8ec5e73ad28521343656fa63b7a41a1066248865f64039405fc1b9545a5944b",
+      "path": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r32-s512/particle_00049.h5"
+    },
+    "particle_00050.stl": {
+      "status": "prepared",
+      "volume_m3": 2.8096382177052414e-11,
+      "radius_m": 0.0003474767970141469,
+      "grid": [
+        32,
+        33,
+        38
+      ],
+      "spacing_m": 1.8084766018775204e-05,
+      "wall_seconds": 23.96404033305589,
+      "descriptor_id": "32",
+      "source_sha256": "fe2b010ab1723a34b7ffdfa0da3c6a6fac242f39e355358cbaeebc0dac32dcb4",
+      "shape_sha256": "eaec4af056ba51f3ede2c58ca3eaa74365eb05c2b1dffd051e4c87a66e8d79f3",
+      "path": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r32-s512/particle_00050.h5"
+    },
+    "particle_00051.stl": {
+      "status": "prepared",
+      "volume_m3": 1.7896647761382496e-11,
+      "radius_m": 0.0002554622699530234,
+      "grid": [
+        26,
+        33,
+        38
+      ],
+      "spacing_m": 1.4659843198714718e-05,
+      "wall_seconds": 12.24732833309099,
+      "descriptor_id": "33",
+      "source_sha256": "0452237103d97402f6406f58765f41cd734569ae37484a535709f30f26d23034",
+      "shape_sha256": "ca972b695e66ba0569c8ca6536c341b3c78a0ba540af14d0259dc41ea2b80e84",
+      "path": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r32-s512/particle_00051.h5"
+    },
+    "particle_00052.stl": {
+      "status": "prepared",
+      "volume_m3": 1.917389841532374e-11,
+      "radius_m": 0.0003639130645530286,
+      "grid": [
+        38,
+        31,
+        38
+      ],
+      "spacing_m": 1.5842154718214465e-05,
+      "wall_seconds": 41.687818750040606,
+      "descriptor_id": "34",
+      "source_sha256": "51da6fccd04f192e399a6d0f4b2106ec48358f2f08a4b85e3592e2110d595e54",
+      "shape_sha256": "ed6df7ed4f14a6ff860291753e9b54333847b79f8b56bffcdada35cb86dab8d5",
+      "path": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r32-s512/particle_00052.h5"
+    },
+    "particle_00053.stl": {
+      "status": "prepared",
+      "volume_m3": 8.432480502482242e-12,
+      "radius_m": 0.00018433621323026263,
+      "grid": [
+        36,
+        29,
+        38
+      ],
+      "spacing_m": 1.0518864293252266e-05,
+      "wall_seconds": 13.356238208012655,
+      "descriptor_id": "35",
+      "source_sha256": "912d2affdd4efa3cbe93e770e7ab3281f4a9722655069d786d90a98c4363b084",
+      "shape_sha256": "56d792f0e8d8de6aa4133ab723132e306837a5d43fc275415c81ec288623c86e",
+      "path": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r32-s512/particle_00053.h5"
+    },
+    "particle_00054.stl": {
+      "status": "prepared",
+      "volume_m3": 2.21460796506163e-11,
+      "radius_m": 0.0003247769451242671,
+      "grid": [
+        14,
+        38,
+        37
+      ],
+      "spacing_m": 2.0574839930380544e-05,
+      "wall_seconds": 0.11389204196166247,
+      "descriptor_id": "36",
+      "source_sha256": "b00c923172cd0090fa19621d7142f210a920623b8ab63043fce2a9b174443239",
+      "shape_sha256": "692bfab80b1463a5050545f571bd296576c93d7ad9baef259b39b734377cffb9",
+      "path": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r32-s512/particle_00054.h5"
+    },
+    "particle_00055.stl": {
+      "status": "prepared",
+      "volume_m3": 1.5498117194761866e-11,
+      "radius_m": 0.00024477149755456685,
+      "grid": [
+        30,
+        33,
+        38
+      ],
+      "spacing_m": 1.4244258757560481e-05,
+      "wall_seconds": 14.394053332973272,
+      "descriptor_id": "37",
+      "source_sha256": "e9718139ba02a9b341595a91e60b03fc37fa13d8d31b8c08ac6b246b6e7f7d5e",
+      "shape_sha256": "673aafb5f691309329e40d9c2c60f8949656ad12718a4ea5ecb55f2d743ef532",
+      "path": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r32-s512/particle_00055.h5"
+    },
+    "particle_00056.stl": {
+      "status": "prepared",
+      "volume_m3": 3.1493064506464534e-11,
+      "radius_m": 0.0003710673170230807,
+      "grid": [
+        25,
+        38,
+        32
+      ],
+      "spacing_m": 1.9544970112462195e-05,
+      "wall_seconds": 12.064180416986346,
+      "descriptor_id": "38",
+      "source_sha256": "495af93dbd6de7fb69352aebdcd896160e56885c5826009310eacfae0afed0c8",
+      "shape_sha256": "62846038dc3b469d460c8106a824aa557b018d3635d2f29f78b5a9ff5345bd6c",
+      "path": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r32-s512/particle_00056.h5"
+    },
+    "particle_00057.stl": {
+      "status": "prepared",
+      "volume_m3": 1.6794800249207126e-11,
+      "radius_m": 0.00026392537250568746,
+      "grid": [
+        38,
+        36,
+        38
+      ],
+      "spacing_m": 1.2161307550245714e-05,
+      "wall_seconds": 16.147959999972954,
+      "descriptor_id": "39",
+      "source_sha256": "10ad9b68bc7697f311995f20784ba19ccd149ec1d210bc3f3ce809077c85945a",
+      "shape_sha256": "682ba33cca08eb6bddbfb696d137c27cfefec169b05b7880c04344d274f3c14b",
+      "path": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r32-s512/particle_00057.h5"
+    },
+    "particle_00058.stl": {
+      "status": "prepared",
+      "volume_m3": 2.590034681180764e-11,
+      "radius_m": 0.0002787305214245575,
+      "grid": [
+        33,
+        38,
+        38
+      ],
+      "spacing_m": 1.4792612875661542e-05,
+      "wall_seconds": 14.37679787504021,
+      "descriptor_id": "40",
+      "source_sha256": "3173043b1d10888aa77d6333322b4e46de8e74e215c90170c344717f8d732a65",
+      "shape_sha256": "df55060705d29883e850d9c1a2d5eb204cdfeeb756a4f111792bdf2230c57ed0",
+      "path": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r32-s512/particle_00058.h5"
+    },
+    "particle_00059.stl": {
+      "status": "prepared",
+      "volume_m3": 1.3642561226964703e-11,
+      "radius_m": 0.00027208625259992264,
+      "grid": [
+        26,
+        30,
+        38
+      ],
+      "spacing_m": 1.4559557022586944e-05,
+      "wall_seconds": 13.174655791954137,
+      "descriptor_id": "41",
+      "source_sha256": "c91100d7042f1aacb8f20630ff908d362e41ebafd1b805031867675bbb68f909",
+      "shape_sha256": "3c8dc7f3d6ed828cf53b3cd6526898773e9dcfbf5085dfba209aff75c28cb2cf",
+      "path": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r32-s512/particle_00059.h5"
+    },
+    "particle_00060.stl": {
+      "status": "prepared",
+      "volume_m3": 2.565441026710653e-11,
+      "radius_m": 0.000347194997215875,
+      "grid": [
+        25,
+        38,
+        27
+      ],
+      "spacing_m": 1.9147400886781753e-05,
+      "wall_seconds": 8.206883375067264,
+      "descriptor_id": "42",
+      "source_sha256": "07fef318a4044a3971b956a9c5d775afc6f9e038fc07c037c2fb65546b060bdf",
+      "shape_sha256": "987131aa3542c4c5f9b97fbf8844ceda012847979e998bd79d17945422baa582",
+      "path": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r32-s512/particle_00060.h5"
+    },
+    "particle_00061.stl": {
+      "status": "prepared",
+      "volume_m3": 2.1124897025825212e-11,
+      "radius_m": 0.0002882537958063541,
+      "grid": [
+        35,
+        31,
+        39
+      ],
+      "spacing_m": 1.5820614230248235e-05,
+      "wall_seconds": 25.577813000069,
+      "descriptor_id": "43",
+      "source_sha256": "d66e62d7a19dc83d7aa9c8539ce5cc52b02c122c17798da546e4d4d4f2aacaf7",
+      "shape_sha256": "d5d24d71b5f4841dcdcd04f05eb3e07919778be0c502aad708d1a0a53cea47f1",
+      "path": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r32-s512/particle_00061.h5"
+    },
+    "particle_00062.stl": {
+      "status": "prepared",
+      "volume_m3": 8.917148893617224e-12,
+      "radius_m": 0.00027298275960835095,
+      "grid": [
+        27,
+        38,
+        38
+      ],
+      "spacing_m": 1.2803816764585433e-05,
+      "wall_seconds": 31.490865000057966,
+      "descriptor_id": "44",
+      "source_sha256": "fd69fe5e1eeae37f472027833ff7f0794f7da303575cf3378376d6ba19f060b3",
+      "shape_sha256": "dc25106064b6e5b96288a8c9a0f3031b484086f94b066b8240d6bba69aeb1034",
+      "path": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r32-s512/particle_00062.h5"
+    },
+    "particle_00063.stl": {
+      "status": "prepared",
+      "volume_m3": 1.2445135376452188e-11,
+      "radius_m": 0.000298147917169833,
+      "grid": [
+        32,
+        25,
+        38
+      ],
+      "spacing_m": 1.529871540684854e-05,
+      "wall_seconds": 15.228802457917482,
+      "descriptor_id": "45",
+      "source_sha256": "0f767dcd6ef72a1e28bae27962dd7e726f07abe678e413297b6f4f5876fa5f18",
+      "shape_sha256": "a7357afc5dbac06dd3a2862ae031e67e155abf5f717b3586f6fd1a88d84a89f6",
+      "path": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r32-s512/particle_00063.h5"
+    },
+    "particle_00064.stl": {
+      "status": "prepared",
+      "volume_m3": 2.29460705077593e-11,
+      "radius_m": 0.00027524947960037415,
+      "grid": [
+        34,
+        38,
+        33
+      ],
+      "spacing_m": 1.5455230220671625e-05,
+      "wall_seconds": 11.446429125033319,
+      "descriptor_id": "46",
+      "source_sha256": "7468bd6dce63c6d012328f1b62f2230edcee00f32e00c4c4e4d981af94b7308c",
+      "shape_sha256": "ea57639c09c1122ae5c074e7a211c3c53aaee6e91a02adc930be0b3ce6a414b9",
+      "path": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r32-s512/particle_00064.h5"
+    },
+    "particle_00065.stl": {
+      "status": "prepared",
+      "volume_m3": 2.8721907385423835e-11,
+      "radius_m": 0.0003562882013106681,
+      "grid": [
+        28,
+        38,
+        30
+      ],
+      "spacing_m": 2.0112089095577114e-05,
+      "wall_seconds": 17.131981499958783,
+      "descriptor_id": "47",
+      "source_sha256": "710cb456519e9250a8d173a5a5f5acd1d03ac7c14a83b8da727ba901b156448f",
+      "shape_sha256": "013ea9301b10b12958994a0058d18fe8c4ad54d81b198681533f1ed32ca2afed",
+      "path": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r32-s512/particle_00065.h5"
+    },
+    "particle_00066.stl": {
+      "status": "prepared",
+      "volume_m3": 2.3582948253488138e-11,
+      "radius_m": 0.00027681614773016977,
+      "grid": [
+        38,
+        37,
+        28
+      ],
+      "spacing_m": 1.4533792803364414e-05,
+      "wall_seconds": 8.388278958038427,
+      "descriptor_id": "48",
+      "source_sha256": "6261b496a0cf321ffcf0c4bce1d476c07b10c64e2e3c85b7ef04425b08ff6e0f",
+      "shape_sha256": "b172726339da2d147869c641e96a5287f561eabbaeb0d59e4e32b79fc22c271e",
+      "path": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r32-s512/particle_00066.h5"
+    },
+    "particle_00067.stl": {
+      "status": "prepared",
+      "volume_m3": 2.176000314287162e-11,
+      "radius_m": 0.0002969397790739567,
+      "grid": [
+        35,
+        35,
+        38
+      ],
+      "spacing_m": 1.5115948092552922e-05,
+      "wall_seconds": 25.44070879195351,
+      "descriptor_id": "49",
+      "source_sha256": "c6ab3aa11e34aec93978a9e80b3ef54212bc5f1264ee8b95d34111809bc31fa8",
+      "shape_sha256": "3838d594e01317000be3c64733843841040f5fe85b25a961080b798c26421061",
+      "path": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r32-s512/particle_00067.h5"
+    },
+    "particle_00068.stl": {
+      "status": "prepared",
+      "volume_m3": 1.1447524556922071e-11,
+      "radius_m": 0.0002095060225702688,
+      "grid": [
+        39,
+        38,
+        37
+      ],
+      "spacing_m": 1.0703209169449343e-05,
+      "wall_seconds": 15.474052791018039,
+      "descriptor_id": "50",
+      "source_sha256": "70c10509475fade5f3d2e38470f8a564ac1d2cd04561d26cf0d71647b147b3d3",
+      "shape_sha256": "9a678768c878389076ac852e82294a2243a82f0174978cfc0b2527ea2a76573f",
+      "path": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r32-s512/particle_00068.h5"
+    },
+    "particle_00070.stl": {
+      "status": "prepared",
+      "volume_m3": 9.919083936168316e-12,
+      "radius_m": 0.0002199403441740491,
+      "grid": [
+        23,
+        32,
+        38
+      ],
+      "spacing_m": 1.2700501472719253e-05,
+      "wall_seconds": 12.50418237503618,
+      "descriptor_id": "51",
+      "source_sha256": "675c37d2cfca2f66a42d6339302fd7a7dad85bb546722def6e3908fa9d425be3",
+      "shape_sha256": "b828379ce23038a6cce7f3572721e510870a4ba39224bfb09ba923c09ac3145f",
+      "path": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r32-s512/particle_00070.h5"
+    },
+    "particle_00071.stl": {
+      "status": "prepared",
+      "volume_m3": 2.4270203640104148e-11,
+      "radius_m": 0.00025407191878760364,
+      "grid": [
+        38,
+        38,
+        33
+      ],
+      "spacing_m": 1.3862173265026462e-05,
+      "wall_seconds": 14.310685833916068,
+      "descriptor_id": "52",
+      "source_sha256": "d95fdbc826d279b9878021fec4677aa2ac8c27585ec22b42eb06df3c5b7cbc10",
+      "shape_sha256": "c2df7c57115d842ec51fd29f586770d5844b97ef3cfdc1754b7be71a0ad32d77",
+      "path": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r32-s512/particle_00071.h5"
+    },
+    "particle_00072.stl": {
+      "status": "prepared",
+      "volume_m3": 1.5720523715075913e-11,
+      "radius_m": 0.00028738157878522213,
+      "grid": [
+        38,
+        36,
+        27
+      ],
+      "spacing_m": 1.4947996570217993e-05,
+      "wall_seconds": 10.781144459033385,
+      "descriptor_id": "53",
+      "source_sha256": "12e82225b03777b9f6c7012b0fdf6be3b5af1dfa130e8e5c0c1293dc6ad7c59b",
+      "shape_sha256": "d41e94b29d14f51c246034607fed84271fa6a8390d6c6abacf069659ee8a7a6c",
+      "path": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r32-s512/particle_00072.h5"
+    },
+    "particle_00073.stl": {
+      "status": "prepared",
+      "volume_m3": 1.5284023599979822e-11,
+      "radius_m": 0.00027490327095678176,
+      "grid": [
+        28,
+        26,
+        38
+      ],
+      "spacing_m": 1.5012694328061996e-05,
+      "wall_seconds": 9.368355624959804,
+      "descriptor_id": "54",
+      "source_sha256": "d6026481f78171047518c7f0a82f5a9e4c2dbe8441a33ac9f3139f46ce22267c",
+      "shape_sha256": "fb34f88ed5990d80361fe03401d683a5c4fa754f3bc4ce8f31cac6fb01801a7a",
+      "path": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r32-s512/particle_00073.h5"
+    }
+  },
+  "status": "complete",
+  "accepted_grains": 53,
+  "library_path": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r32-s512.h5",
+  "library_sha256": "7757ab752483cd8fabd910ea2cba3c5570fa8a6962b7672d14a32b15f8c414a9"
+}

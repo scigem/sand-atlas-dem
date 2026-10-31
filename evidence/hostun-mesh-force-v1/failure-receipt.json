@@ -1,0 +1,28 @@
+{
+  "status": "failed",
+  "archival_timing": "Unchanged executed sources archived after failure; workload protocol was frozen before GPU execution.",
+  "sources": {
+    "mesh_force_study.py": "31e14aa911dee1709f5a262314b4eed7436553a31eafb8ba79cf8f7a875c927d",
+    "protocol.json": "146e420e872c82abb708c3f5cab826e34af4fc52d1710cdebfa13e708ffba868",
+    "sand_atlas_dem/simulation.py": "f790c13f196f9f2bef4343ff5f6ef31b4727fcecf40c38df140c97f23c79147c",
+    "sand_atlas_dem/backend.py": "2184575342f265dfd744d799af8e9b03a73dcb195e06e94a59f21e1525cbab5c",
+    "sand_atlas_dem/benchmark.py": "c659e8ee64f547c5c6b171292288d6157ddc809f49df2a5c27144c713d4647e9",
+    "sand_atlas_dem/util.py": "0f9dc71429a87057dc08216f3c51425d8b76be9c4fd30f2cab6c3f98b70397c2",
+    "sand_atlas_dem/__init__.py": "25ef40efbf7fa452aaa142bbe8d9ac35c90756e1a6f09cdacdcd2723cdd1636d",
+    "sand_atlas_dem/spec.py": "de79f1ec1dd5a08fcf5313c189a608d7a5772042209fdc35d4e99bdf9a82bd34",
+    "sand_atlas_dem/visualize.py": "9874362fa98cdd00d73b42867f7ecc9254b820d08915baed25eee4b02ecba339",
+    "sand_atlas_dem/mesh.py": "6689b7c700832888f59077998935eca0493db98f45c7a0ff7b56d7e096d0b0be",
+    "sand_atlas_dem/cli.py": "de51b59cfe8d5ce215709c58275b7d9f527741ea288d8f1736bbfd358edd1a7f",
+    "sand_atlas_dem/qualification.py": "b59751cc6fcc81b834dd90174ff9859e21efffa389dc36bc514ced75ef41b2fb",
+    "sand_atlas_dem/geometry.py": "521418ed73ea0642a298e7a874b0d43b796694901f0989650db0040aa467faef",
+    "sand_atlas_dem/reference.py": "1cd2a748a7f06f1c5138b5f6c9ed99c06715ce6167693251369e8a8fb3cc502f",
+    "sand_atlas_dem/gpu.py": "e5a949e68051e3f00a9783a7050da6ad8df4cf16ef386c5bc32fe40e65a80a8d",
+    "sand_atlas_dem/shaders/scan.slang": "51900fe7d78347d2274488b1b5c328ed53714be3043d221ad1d48555e1c5cbac",
+    "sand_atlas_dem/shaders/solver.slang": "5138241a2b8cee95e695422630875f508c0b26d55570a9ff19953c88fd8e2eca",
+    "sand_atlas_dem/shaders/diagnostic.slang": "4f738fbef3ee79c370f74596a51d0de80b5ddd12375615afd18004df0bec7bb0"
+  },
+  "error": "Excessive penetration during second initialization, with unchanged 0.03 guard.",
+  "first_case_relative_force_error": 1.8116318168201635e-05,
+  "first_case_active_contacts": 11,
+  "interpretation": "Independent source-triangle readback finds second pose sampled depth 0.03212397740773413 > 0.03. The solver rejected it correctly. Coarse 512-node placement depths did not bound fine/exact maximum depth. No guard relaxation or accepted preparation."
+}

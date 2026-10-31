@@ -1,0 +1,451 @@
+{
+  "protocol": {
+    "identity": "hostun-sdf-refinement-v1",
+    "frozen_before_execution": true,
+    "coarse_library": "assets/private/hostun-30-r32-s512.h5",
+    "coarse_sha256": "7757ab752483cd8fabd910ea2cba3c5570fa8a6962b7672d14a32b15f8c414a9",
+    "fine_library": "assets/private/hostun-30-r64-s2048.h5",
+    "fine_sha256": "1bc9f37a22b402ada31495ea7ff1ebef4bb6a27a26d68a8333f7f84a12ad16b7",
+    "reference": "The 2048 area-stratified points lie exactly on the source mesh triangles, so exact signed distance is zero independently of SDF interpolation.",
+    "sample_weighting": "Equal grain count, equal area within each grain",
+    "limits": {
+      "pooled_fine_p95_fraction_diameter": 0.005,
+      "worst_grain_fine_p95_fraction_diameter": 0.01,
+      "minimum_pooled_p95_improvement": 1.5
+    },
+    "scope": "Source surface representation only. These size-relative bounds do not prove force convergence at overlaps smaller than the SDF error, or admit a material response. Surface quadrature and assembly convergence remain separate."
+  },
+  "protocol_sha256": "ace1a21789f338f4c62450f0476200f84d7943e7f77852fed0984fdeb4577797",
+  "script_sha256": "8e10da1ff9b0fc80bb0f1ade5965592f372cf1eba483da07a1866c395e056386",
+  "coarse_pooled_p95": 0.005182095438447923,
+  "fine_pooled_p95": 0.0015753216980362442,
+  "worst_grain_fine_p95": 0.003303188653962166,
+  "improvement_ratio": 3.2895474269844636,
+  "rows": [
+    {
+      "shape": "hostun-particle_00020",
+      "source_sha256": "0bc5fb6b04a62ff9b693776339db9660b829d52422c8b575b9379575282967d6",
+      "coarse_p95_fraction_diameter": 0.005671119769911644,
+      "fine_p95_fraction_diameter": 0.001751611993981404,
+      "fine_maximum_error_m": 1.982455982921732e-06,
+      "fine_gradient_norm_error_p95": 0.07902484553955738
+    },
+    {
+      "shape": "hostun-particle_00021",
+      "source_sha256": "38c86dc9c810b73b299f690ad8866d777229b201e7670a9b03fc26fd1bc7b3e6",
+      "coarse_p95_fraction_diameter": 0.0044003421062286845,
+      "fine_p95_fraction_diameter": 0.0012906444920873644,
+      "fine_maximum_error_m": 1.5035343791922426e-06,
+      "fine_gradient_norm_error_p95": 0.06529567573396522
+    },
+    {
+      "shape": "hostun-particle_00022",
+      "source_sha256": "ad32ae7020a7688171acfb454a65511f648c1b4d4e27c2c874bc003605db927d",
+      "coarse_p95_fraction_diameter": 0.003199225010247714,
+      "fine_p95_fraction_diameter": 0.0010778584468957078,
+      "fine_maximum_error_m": 2.029224369921806e-06,
+      "fine_gradient_norm_error_p95": 0.05358268868521298
+    },
+    {
+      "shape": "hostun-particle_00023",
+      "source_sha256": "97970e677f81c0145a6dd47e0cfdf41941931f6e96ac521b0f96c0c155a12372",
+      "coarse_p95_fraction_diameter": 0.008314937126551973,
+      "fine_p95_fraction_diameter": 0.002465755156954301,
+      "fine_maximum_error_m": 2.372549424221787e-06,
+      "fine_gradient_norm_error_p95": 0.10023658427317071
+    },
+    {
+      "shape": "hostun-particle_00024",
+      "source_sha256": "31c5139f5719c9744f1e3fa8616ad0978f7acedb9af3256822c4cd928a7823ea",
+      "coarse_p95_fraction_diameter": 0.008665188923524518,
+      "fine_p95_fraction_diameter": 0.0023896758431731953,
+      "fine_maximum_error_m": 2.273778210108621e-06,
+      "fine_gradient_norm_error_p95": 0.11081675777529877
+    },
+    {
+      "shape": "hostun-particle_00025",
+      "source_sha256": "1e071a54d56bcedbdde06a98ec149482614b53b8e90d0d004139870f7c637979",
+      "coarse_p95_fraction_diameter": 0.004139797772468406,
+      "fine_p95_fraction_diameter": 0.001324695366494565,
+      "fine_maximum_error_m": 2.0815007458366423e-06,
+      "fine_gradient_norm_error_p95": 0.06273599463941659
+    },
+    {
+      "shape": "hostun-particle_00026",
+      "source_sha256": "ab69f83cd684ceb2f75953653979b1d03cf83f5047a895fa583d58021fc0ba11",
+      "coarse_p95_fraction_diameter": 0.007950236400983239,
+      "fine_p95_fraction_diameter": 0.00240093342487164,
+      "fine_maximum_error_m": 3.8275297993140845e-06,
+      "fine_gradient_norm_error_p95": 0.10062785065750775
+    },
+    {
+      "shape": "hostun-particle_00027",
+      "source_sha256": "f3a13407ebd387bcfbf4bd210243ded6c508e9a3a071b8863e814efd6af0641c",
+      "coarse_p95_fraction_diameter": 0.004173708011503793,
+      "fine_p95_fraction_diameter": 0.0012692753212260306,
+      "fine_maximum_error_m": 2.1345800465855637e-06,
+      "fine_gradient_norm_error_p95": 0.06961920792632705
+    },
+    {
+      "shape": "hostun-particle_00028",
+      "source_sha256": "3a792841a26455cf4265b87583d3c1736b4e7368856222ec9f183defa4cd0954",
+      "coarse_p95_fraction_diameter": 0.00580023580697864,
+      "fine_p95_fraction_diameter": 0.0017147702632069437,
+      "fine_maximum_error_m": 2.521079723698454e-06,
+      "fine_gradient_norm_error_p95": 0.07938908957336857
+    },
+    {
+      "shape": "hostun-particle_00029",
+      "source_sha256": "42cb845b399b1b80cb35f5a56475613a3546ced3221016e2e9a4435a13dd8a0f",
+      "coarse_p95_fraction_diameter": 0.004170062223984931,
+      "fine_p95_fraction_diameter": 0.0013580716729910767,
+      "fine_maximum_error_m": 2.2419962003382783e-06,
+      "fine_gradient_norm_error_p95": 0.0717993670890828
+    },
+    {
+      "shape": "hostun-particle_00030",
+      "source_sha256": "49b7d7275a9d8ec4502f905a3e4046ac821830a3949060550d67aa7cf7d4eef1",
+      "coarse_p95_fraction_diameter": 0.0032291594098881648,
+      "fine_p95_fraction_diameter": 0.000955615252581684,
+      "fine_maximum_error_m": 2.119002923699951e-06,
+      "fine_gradient_norm_error_p95": 0.04885232012286865
+    },
+    {
+      "shape": "hostun-particle_00031",
+      "source_sha256": "6db9417877adbee1a23f27f0f7dd91f3ce0ee09169869785d1614b8c711e7133",
+      "coarse_p95_fraction_diameter": 0.0037173572873219728,
+      "fine_p95_fraction_diameter": 0.0011647845318194779,
+      "fine_maximum_error_m": 1.9477721499288715e-06,
+      "fine_gradient_norm_error_p95": 0.06660010952272986
+    },
+    {
+      "shape": "hostun-particle_00032",
+      "source_sha256": "de2901707b173b08fede31d9824c476604cdb7c2ae1c92b1a7c6b71e36804f5d",
+      "coarse_p95_fraction_diameter": 0.007300777225914042,
+      "fine_p95_fraction_diameter": 0.002179494212399198,
+      "fine_maximum_error_m": 1.81840404213683e-06,
+      "fine_gradient_norm_error_p95": 0.10758497883298315
+    },
+    {
+      "shape": "hostun-particle_00033",
+      "source_sha256": "fdf9f25e839c46f61a2bed324eaddda950e8241c3087fa34c354875989081a8f",
+      "coarse_p95_fraction_diameter": 0.00400662555296208,
+      "fine_p95_fraction_diameter": 0.001325615286104757,
+      "fine_maximum_error_m": 2.036564162456359e-06,
+      "fine_gradient_norm_error_p95": 0.06422969878883787
+    },
+    {
+      "shape": "hostun-particle_00034",
+      "source_sha256": "759d2a46a56ffafb048ef48b9903e9b12d2302fb8339e0286dbd8eba11060f82",
+      "coarse_p95_fraction_diameter": 0.004286035016453472,
+      "fine_p95_fraction_diameter": 0.0013978729053024715,
+      "fine_maximum_error_m": 1.7395048522197556e-06,
+      "fine_gradient_norm_error_p95": 0.07636141433433882
+    },
+    {
+      "shape": "hostun-particle_00035",
+      "source_sha256": "bfc481c6092031e7067f7b2b0ad0c749e8c73ffe30b0c988b7169da742cff6c4",
+      "coarse_p95_fraction_diameter": 0.005164578440598486,
+      "fine_p95_fraction_diameter": 0.0015945655453902172,
+      "fine_maximum_error_m": 1.4890991707541588e-06,
+      "fine_gradient_norm_error_p95": 0.07479878947666299
+    },
+    {
+      "shape": "hostun-particle_00036",
+      "source_sha256": "78ad852e896da73302484b66b9502a0ad24ab82232b54252138eeda64098c3c7",
+      "coarse_p95_fraction_diameter": 0.011386456715789323,
+      "fine_p95_fraction_diameter": 0.003303188653962166,
+      "fine_maximum_error_m": 3.3395872969563237e-06,
+      "fine_gradient_norm_error_p95": 0.13258413297530539
+    },
+    {
+      "shape": "hostun-particle_00037",
+      "source_sha256": "f7223956f18b9a27b07b1d2dfcb7547b961c59270d89967320656c2875aa4c7f",
+      "coarse_p95_fraction_diameter": 0.00258338785900915,
+      "fine_p95_fraction_diameter": 0.0009139139176353942,
+      "fine_maximum_error_m": 1.0551579800827692e-06,
+      "fine_gradient_norm_error_p95": 0.046232665837866865
+    },
+    {
+      "shape": "hostun-particle_00038",
+      "source_sha256": "029b5bc8707a8a9d658403d6d8e4e65ebfada1e2e76b8035761d8ba5e562a29e",
+      "coarse_p95_fraction_diameter": 0.0028029336092503794,
+      "fine_p95_fraction_diameter": 0.0009296399297133702,
+      "fine_maximum_error_m": 1.7779478030315226e-06,
+      "fine_gradient_norm_error_p95": 0.05333086159923313
+    },
+    {
+      "shape": "hostun-particle_00039",
+      "source_sha256": "c104417f34e90536354696bb8af6d2aa6e9666e7b38ec15856ced3cf7b59c167",
+      "coarse_p95_fraction_diameter": 0.003919879949141675,
+      "fine_p95_fraction_diameter": 0.0012020969524233697,
+      "fine_maximum_error_m": 1.9943281749009013e-06,
+      "fine_gradient_norm_error_p95": 0.06327535410591188
+    },
+    {
+      "shape": "hostun-particle_00040",
+      "source_sha256": "d9b685172cd56610c39d483458f12ef2d752e3d24f0f0bedee2a6d14f0c25a9c",
+      "coarse_p95_fraction_diameter": 0.004965255769736118,
+      "fine_p95_fraction_diameter": 0.0014728257179835778,
+      "fine_maximum_error_m": 2.137899249473179e-06,
+      "fine_gradient_norm_error_p95": 0.07931839467525689
+    },
+    {
+      "shape": "hostun-particle_00041",
+      "source_sha256": "5f8cd6063976090db960e3092b3a73c41716d7410c4038e63c73314f60a31391",
+      "coarse_p95_fraction_diameter": 0.0054402781309480785,
+      "fine_p95_fraction_diameter": 0.0016016578596573362,
+      "fine_maximum_error_m": 1.2356295651799344e-06,
+      "fine_gradient_norm_error_p95": 0.07319555936335347
+    },
+    {
+      "shape": "hostun-particle_00042",
+      "source_sha256": "3f0da63d3bb054eb6b2e4367aaca5b67f6d00c884786a9e0f2d0759b47ab8459",
+      "coarse_p95_fraction_diameter": 0.00666881116093239,
+      "fine_p95_fraction_diameter": 0.0019787961302995907,
+      "fine_maximum_error_m": 2.338331727759829e-06,
+      "fine_gradient_norm_error_p95": 0.08177190318958893
+    },
+    {
+      "shape": "hostun-particle_00043",
+      "source_sha256": "aa09a41aab6946bd7bcc4e7eff756e708be90bd9939137b0ad5e985244d44e3f",
+      "coarse_p95_fraction_diameter": 0.00477338417150081,
+      "fine_p95_fraction_diameter": 0.0013857909988676711,
+      "fine_maximum_error_m": 1.8969282544253423e-06,
+      "fine_gradient_norm_error_p95": 0.0679828764844844
+    },
+    {
+      "shape": "hostun-particle_00044",
+      "source_sha256": "0cf081f4c98f4c5879a93a64cd6d61ddcd56a65f276d254adbaf682d1640949b",
+      "coarse_p95_fraction_diameter": 0.0035325588754679836,
+      "fine_p95_fraction_diameter": 0.0011185272770707871,
+      "fine_maximum_error_m": 1.2699529971441862e-06,
+      "fine_gradient_norm_error_p95": 0.053724353484101935
+    },
+    {
+      "shape": "hostun-particle_00045",
+      "source_sha256": "2c8a8eda8d7dab15dd4da16cae6f10c9ffbe9798f101dd4e54dcd12dcde76b0b",
+      "coarse_p95_fraction_diameter": 0.00545112106966765,
+      "fine_p95_fraction_diameter": 0.0015914628412386788,
+      "fine_maximum_error_m": 1.377325008018196e-06,
+      "fine_gradient_norm_error_p95": 0.06241856128126548
+    },
+    {
+      "shape": "hostun-particle_00046",
+      "source_sha256": "cc052e79359b065f7a988f20ccba23ede744cb023b661f8c5476d4ec3a151431",
+      "coarse_p95_fraction_diameter": 0.0041462888268725,
+      "fine_p95_fraction_diameter": 0.001475546755970832,
+      "fine_maximum_error_m": 1.4583039591740032e-06,
+      "fine_gradient_norm_error_p95": 0.06727462778594842
+    },
+    {
+      "shape": "hostun-particle_00047",
+      "source_sha256": "b09bf2755c607f35653723ceaf8363caab2303fa9cffcaf73fcccf83c9b1fa13",
+      "coarse_p95_fraction_diameter": 0.00564642592350812,
+      "fine_p95_fraction_diameter": 0.001731784857360839,
+      "fine_maximum_error_m": 2.0325361671417552e-06,
+      "fine_gradient_norm_error_p95": 0.08419641922301375
+    },
+    {
+      "shape": "hostun-particle_00048",
+      "source_sha256": "8ecae546d13de00e6efff92d304408a1022f3961f3e79537e9ecf66c75a94891",
+      "coarse_p95_fraction_diameter": 0.0032099711635391343,
+      "fine_p95_fraction_diameter": 0.0010988957649871363,
+      "fine_maximum_error_m": 2.011312352337692e-06,
+      "fine_gradient_norm_error_p95": 0.05720543284910599
+    },
+    {
+      "shape": "hostun-particle_00049",
+      "source_sha256": "48e9480d41709ee3553ed2c96e212a23af6a971521182813995bc4db1412d3e5",
+      "coarse_p95_fraction_diameter": 0.004621132899623483,
+      "fine_p95_fraction_diameter": 0.001451295446159299,
+      "fine_maximum_error_m": 1.299282562635043e-06,
+      "fine_gradient_norm_error_p95": 0.06760169899286413
+    },
+    {
+      "shape": "hostun-particle_00050",
+      "source_sha256": "fe2b010ab1723a34b7ffdfa0da3c6a6fac242f39e355358cbaeebc0dac32dcb4",
+      "coarse_p95_fraction_diameter": 0.005543499577258693,
+      "fine_p95_fraction_diameter": 0.001625510073741436,
+      "fine_maximum_error_m": 1.7321622472176704e-06,
+      "fine_gradient_norm_error_p95": 0.08092469964466333
+    },
+    {
+      "shape": "hostun-particle_00051",
+      "source_sha256": "0452237103d97402f6406f58765f41cd734569ae37484a535709f30f26d23034",
+      "coarse_p95_fraction_diameter": 0.004295634077254834,
+      "fine_p95_fraction_diameter": 0.0013841789523493515,
+      "fine_maximum_error_m": 1.100089278573804e-06,
+      "fine_gradient_norm_error_p95": 0.05985318407834562
+    },
+    {
+      "shape": "hostun-particle_00052",
+      "source_sha256": "51da6fccd04f192e399a6d0f4b2106ec48358f2f08a4b85e3592e2110d595e54",
+      "coarse_p95_fraction_diameter": 0.005457326292000604,
+      "fine_p95_fraction_diameter": 0.001562889561295472,
+      "fine_maximum_error_m": 1.8252470328667979e-06,
+      "fine_gradient_norm_error_p95": 0.06896032497278212
+    },
+    {
+      "shape": "hostun-particle_00053",
+      "source_sha256": "912d2affdd4efa3cbe93e770e7ab3281f4a9722655069d786d90a98c4363b084",
+      "coarse_p95_fraction_diameter": 0.0034571024311364825,
+      "fine_p95_fraction_diameter": 0.0011675863374531476,
+      "fine_maximum_error_m": 9.200177674164747e-07,
+      "fine_gradient_norm_error_p95": 0.06464220997361328
+    },
+    {
+      "shape": "hostun-particle_00054",
+      "source_sha256": "b00c923172cd0090fa19621d7142f210a920623b8ab63043fce2a9b174443239",
+      "coarse_p95_fraction_diameter": 0.009175239774573945,
+      "fine_p95_fraction_diameter": 0.0028104270670547297,
+      "fine_maximum_error_m": 2.7802660763240084e-06,
+      "fine_gradient_norm_error_p95": 0.17521272001191845
+    },
+    {
+      "shape": "hostun-particle_00055",
+      "source_sha256": "e9718139ba02a9b341595a91e60b03fc37fa13d8d31b8c08ac6b246b6e7f7d5e",
+      "coarse_p95_fraction_diameter": 0.005198321381735323,
+      "fine_p95_fraction_diameter": 0.0018143717726278967,
+      "fine_maximum_error_m": 1.9216807316796277e-06,
+      "fine_gradient_norm_error_p95": 0.08483569775405495
+    },
+    {
+      "shape": "hostun-particle_00056",
+      "source_sha256": "495af93dbd6de7fb69352aebdcd896160e56885c5826009310eacfae0afed0c8",
+      "coarse_p95_fraction_diameter": 0.005900630049200791,
+      "fine_p95_fraction_diameter": 0.001686081129194669,
+      "fine_maximum_error_m": 1.7441712308461258e-06,
+      "fine_gradient_norm_error_p95": 0.0672101270251105
+    },
+    {
+      "shape": "hostun-particle_00057",
+      "source_sha256": "10ad9b68bc7697f311995f20784ba19ccd149ec1d210bc3f3ce809077c85945a",
+      "coarse_p95_fraction_diameter": 0.003438930289213683,
+      "fine_p95_fraction_diameter": 0.0011368500939778995,
+      "fine_maximum_error_m": 1.4392488281562551e-06,
+      "fine_gradient_norm_error_p95": 0.06713101911812391
+    },
+    {
+      "shape": "hostun-particle_00058",
+      "source_sha256": "3173043b1d10888aa77d6333322b4e46de8e74e215c90170c344717f8d732a65",
+      "coarse_p95_fraction_diameter": 0.0037153091164963898,
+      "fine_p95_fraction_diameter": 0.001129528113377163,
+      "fine_maximum_error_m": 1.7513669761047235e-06,
+      "fine_gradient_norm_error_p95": 0.06260309019958842
+    },
+    {
+      "shape": "hostun-particle_00059",
+      "source_sha256": "c91100d7042f1aacb8f20630ff908d362e41ebafd1b805031867675bbb68f909",
+      "coarse_p95_fraction_diameter": 0.00528574407589742,
+      "fine_p95_fraction_diameter": 0.0016462223668074962,
+      "fine_maximum_error_m": 2.1960513001126105e-06,
+      "fine_gradient_norm_error_p95": 0.08199302808158745
+    },
+    {
+      "shape": "hostun-particle_00060",
+      "source_sha256": "07fef318a4044a3971b956a9c5d775afc6f9e038fc07c037c2fb65546b060bdf",
+      "coarse_p95_fraction_diameter": 0.006370080127999621,
+      "fine_p95_fraction_diameter": 0.0018628933072596468,
+      "fine_maximum_error_m": 1.8687004911827429e-06,
+      "fine_gradient_norm_error_p95": 0.0816382748885665
+    },
+    {
+      "shape": "hostun-particle_00061",
+      "source_sha256": "d66e62d7a19dc83d7aa9c8539ce5cc52b02c122c17798da546e4d4d4f2aacaf7",
+      "coarse_p95_fraction_diameter": 0.004625926862723586,
+      "fine_p95_fraction_diameter": 0.001344738295487334,
+      "fine_maximum_error_m": 1.6938082936721356e-06,
+      "fine_gradient_norm_error_p95": 0.0692165579429915
+    },
+    {
+      "shape": "hostun-particle_00062",
+      "source_sha256": "fd69fe5e1eeae37f472027833ff7f0794f7da303575cf3378376d6ba19f060b3",
+      "coarse_p95_fraction_diameter": 0.006501260405720759,
+      "fine_p95_fraction_diameter": 0.002039976723413786,
+      "fine_maximum_error_m": 1.417433846660363e-06,
+      "fine_gradient_norm_error_p95": 0.0937691408818774
+    },
+    {
+      "shape": "hostun-particle_00063",
+      "source_sha256": "0f767dcd6ef72a1e28bae27962dd7e726f07abe678e413297b6f4f5876fa5f18",
+      "coarse_p95_fraction_diameter": 0.005988991514811412,
+      "fine_p95_fraction_diameter": 0.0018136431823484271,
+      "fine_maximum_error_m": 2.138444841093897e-06,
+      "fine_gradient_norm_error_p95": 0.08258930639107033
+    },
+    {
+      "shape": "hostun-particle_00064",
+      "source_sha256": "7468bd6dce63c6d012328f1b62f2230edcee00f32e00c4c4e4d981af94b7308c",
+      "coarse_p95_fraction_diameter": 0.004326603728769605,
+      "fine_p95_fraction_diameter": 0.0014542432566189817,
+      "fine_maximum_error_m": 1.505919713480615e-06,
+      "fine_gradient_norm_error_p95": 0.07408293788493145
+    },
+    {
+      "shape": "hostun-particle_00065",
+      "source_sha256": "710cb456519e9250a8d173a5a5f5acd1d03ac7c14a83b8da727ba901b156448f",
+      "coarse_p95_fraction_diameter": 0.00632517619021668,
+      "fine_p95_fraction_diameter": 0.0017067869299296537,
+      "fine_maximum_error_m": 2.9442826109979485e-06,
+      "fine_gradient_norm_error_p95": 0.0739276366014981
+    },
+    {
+      "shape": "hostun-particle_00066",
+      "source_sha256": "6261b496a0cf321ffcf0c4bce1d476c07b10c64e2e3c85b7ef04425b08ff6e0f",
+      "coarse_p95_fraction_diameter": 0.0034590667578667626,
+      "fine_p95_fraction_diameter": 0.001083277875665054,
+      "fine_maximum_error_m": 1.1413578302867197e-06,
+      "fine_gradient_norm_error_p95": 0.05454666444108709
+    },
+    {
+      "shape": "hostun-particle_00067",
+      "source_sha256": "c6ab3aa11e34aec93978a9e80b3ef54212bc5f1264ee8b95d34111809bc31fa8",
+      "coarse_p95_fraction_diameter": 0.004254217109271437,
+      "fine_p95_fraction_diameter": 0.0012125396224125441,
+      "fine_maximum_error_m": 1.4779497966593204e-06,
+      "fine_gradient_norm_error_p95": 0.05893594110958406
+    },
+    {
+      "shape": "hostun-particle_00068",
+      "source_sha256": "70c10509475fade5f3d2e38470f8a564ac1d2cd04561d26cf0d71647b147b3d3",
+      "coarse_p95_fraction_diameter": 0.003287118173594842,
+      "fine_p95_fraction_diameter": 0.0010582957116446392,
+      "fine_maximum_error_m": 1.0993731126339676e-06,
+      "fine_gradient_norm_error_p95": 0.05647220257196731
+    },
+    {
+      "shape": "hostun-particle_00070",
+      "source_sha256": "675c37d2cfca2f66a42d6339302fd7a7dad85bb546722def6e3908fa9d425be3",
+      "coarse_p95_fraction_diameter": 0.004916955305777222,
+      "fine_p95_fraction_diameter": 0.001504471189997307,
+      "fine_maximum_error_m": 1.2353634415726776e-06,
+      "fine_gradient_norm_error_p95": 0.06501757849528071
+    },
+    {
+      "shape": "hostun-particle_00071",
+      "source_sha256": "d95fdbc826d279b9878021fec4677aa2ac8c27585ec22b42eb06df3c5b7cbc10",
+      "coarse_p95_fraction_diameter": 0.0035884143585098293,
+      "fine_p95_fraction_diameter": 0.0012673829299006975,
+      "fine_maximum_error_m": 1.1978216165745681e-06,
+      "fine_gradient_norm_error_p95": 0.06987037025756661
+    },
+    {
+      "shape": "hostun-particle_00072",
+      "source_sha256": "12e82225b03777b9f6c7012b0fdf6be3b5af1dfa130e8e5c0c1293dc6ad7c59b",
+      "coarse_p95_fraction_diameter": 0.00495292597342526,
+      "fine_p95_fraction_diameter": 0.0015557571973780055,
+      "fine_maximum_error_m": 1.5777452972447595e-06,
+      "fine_gradient_norm_error_p95": 0.06169348128249244
+    },
+    {
+      "shape": "hostun-particle_00073",
+      "source_sha256": "d6026481f78171047518c7f0a82f5a9e4c2dbe8441a33ac9f3139f46ce22267c",
+      "coarse_p95_fraction_diameter": 0.005198767497294739,
+      "fine_p95_fraction_diameter": 0.0016822412121166315,
+      "fine_maximum_error_m": 1.2239550830931392e-06,
+      "fine_gradient_norm_error_p95": 0.07127125337957996
+    }
+  ],
+  "passed": true
+}

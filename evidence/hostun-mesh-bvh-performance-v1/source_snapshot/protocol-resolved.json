@@ -1,0 +1,30 @@
+{
+  "identity": "hostun-mesh-bvh-performance-v1",
+  "frozen_before_gpu_execution": true,
+  "particles": [
+    10000,
+    50000
+  ],
+  "library": "/Users/bmar5496/code/sand-atlas-dem/evidence/hostun-mesh-bvh-performance-v1/private/shapes.h5",
+  "library_sha256": "1bc9f37a22b402ada31495ea7ff1ebef4bb6a27a26d68a8333f7f84a12ad16b7",
+  "packing": "controlled-pairs",
+  "orientation_seed": 123,
+  "target_maximum_penetration_fraction_of_equivalent_diameter": 0.0025,
+  "timestep_s": 2e-09,
+  "steps_per_repeat": 50,
+  "minimum_repeats": 3,
+  "minimum_wall_seconds": 180,
+  "pair_capacity_per_particle": 1,
+  "contact_capacity_policy": "twice preprocessed active sample count divided by particle count; minimum 16 per particle",
+  "reset_to_identical_committed_state_before_each_repeat": true,
+  "reset_and_diagnostic_time_in_per_step_timing": false,
+  "checks": [
+    "all particles belong to one active pair",
+    "no cross-pair contacts",
+    "no truncated contacts",
+    "reported device memory and logical buffer inventory",
+    "first/last quarter timing comparison"
+  ],
+  "scope": "Actual GPU nearest-feature triangle-BVH contacts; 53 shared source-grain hierarchies, same fine source samples and controlled-pair placement rule. Fixed isolated pairs, not dense prepared soil or quadrature convergence. Compare method-specific contact counts and source hashes explicitly.",
+  "contact_geometry": "mesh"
+}

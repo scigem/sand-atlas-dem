@@ -1,0 +1,8 @@
+{
+  "status": "interrupted",
+  "child_return_code": -15,
+  "elapsed_wall_seconds": 248.38596641703043,
+  "reason": "Fixed-order hierarchy traversal was still in its first workload after several minutes. Agent terminated only its owned child before an unnecessarily long sweep.",
+  "timing_claim": null,
+  "next": "Nearest-first traversal, same numerical gates and new benchmark identity."
+}

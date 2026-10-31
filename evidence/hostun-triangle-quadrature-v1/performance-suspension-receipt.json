@@ -1,0 +1,9 @@
+{
+  "format": "sand-dem-study-suspension/1",
+  "process_id": 99852,
+  "action": "SIGSTOP before GPU performance run; SIGCONT after terminal successful benchmark",
+  "benchmark": "hostun-mesh-bvh-performance-cull-compact-v1",
+  "resumed_before_utc": "2026-10-31T09:48:22.628201+00:00",
+  "reason": "Avoid CPU contention in wall-clock GPU performance measurement. No source, pose, reference or acceptance gate changed.",
+  "elapsed_time_note": "Quadrature elapsed wall time includes this suspension; it is not active CPU compute time."
+}

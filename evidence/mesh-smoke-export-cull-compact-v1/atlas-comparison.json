@@ -1,0 +1,690 @@
+{
+  "format": "sand-dem-atlas-comparison/1",
+  "kind": "synthetic-dem",
+  "protocol": "research",
+  "source_manifest_sha256": "21da048ec2af643e7da9295a7ec34e6a5df0d9ba697646e166d8637612704ae8",
+  "conventions": {
+    "stress": "compression_positive",
+    "tensor_order": "xx,xy,xz;yx,yy,yz;zx,zy,zz",
+    "stress_measure": "contact_virial_plus_peculiar_kinetic",
+    "strain": "engineering_compression_positive",
+    "volumetric_strain": "sum_of_axial_engineering_strains",
+    "void_ratio": "cell_volume_over_sum_rigid_grain_volumes_minus_one"
+  },
+  "units": {
+    "length": "m",
+    "stress": "Pa",
+    "time": "s",
+    "strain": "1"
+  },
+  "preparation": [
+    {
+      "kind": "hold",
+      "steps": 20,
+      "drag": 0
+    }
+  ],
+  "warnings": [
+    "Synthetic DEM evidence, not measured experimental validation.",
+    "Finite-strain histories are not automatically compatible with infinitesimal continuum models.",
+    "Nominal void ratio ignores geometric overlap volume."
+  ],
+  "initial": {
+    "step": 0,
+    "elapsed_time": 0.0,
+    "cell": [
+      0.014227573421008954,
+      0.014227573421008954,
+      0.014227573421008954
+    ],
+    "stress": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "contact_stress": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "kinetic_stress": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "stress_antisymmetry": 0.0,
+    "p": 0.0,
+    "q": 0.0,
+    "axial_strain": -1.4271491766137956e-08,
+    "volumetric_strain": -4.281447529841387e-08,
+    "volume_ratio": 1.000000042814476,
+    "log_strain": [
+      -1.4271491664300219e-08,
+      -1.4271491664300219e-08,
+      -1.4271491664300219e-08
+    ],
+    "void_ratio": 99.00000428144766,
+    "kinetic_energy": 0.0,
+    "elastic_energy_proxy": 0.0,
+    "unbalanced_force": 0.0,
+    "max_overlap_fraction": 0.0,
+    "friction_dissipation_last_step": 0.0,
+    "candidate_pairs": 0,
+    "active_surface_contacts": 0,
+    "active_grain_pairs": 0,
+    "coordination": 0.0,
+    "fabric": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "sliding_fraction": 0.0,
+    "cell_log_rate": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "friction_dissipation": 0.0,
+    "drag_dissipation": 0.0,
+    "cell_work": 0.0,
+    "stage": 0
+  },
+  "rows": [
+    {
+      "step": 0,
+      "elapsed_time": 0.0,
+      "cell": [
+        0.014227573421008954,
+        0.014227573421008954,
+        0.014227573421008954
+      ],
+      "stress": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "contact_stress": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "kinetic_stress": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "stress_antisymmetry": 0.0,
+      "p": 0.0,
+      "q": 0.0,
+      "axial_strain": -1.4271491766137956e-08,
+      "volumetric_strain": -4.281447529841387e-08,
+      "volume_ratio": 1.000000042814476,
+      "log_strain": [
+        -1.4271491664300219e-08,
+        -1.4271491664300219e-08,
+        -1.4271491664300219e-08
+      ],
+      "void_ratio": 99.00000428144766,
+      "kinetic_energy": 0.0,
+      "elastic_energy_proxy": 0.0,
+      "unbalanced_force": 0.0,
+      "max_overlap_fraction": 0.0,
+      "friction_dissipation_last_step": 0.0,
+      "candidate_pairs": 0,
+      "active_surface_contacts": 0,
+      "active_grain_pairs": 0,
+      "coordination": 0.0,
+      "fabric": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "sliding_fraction": 0.0,
+      "cell_log_rate": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "friction_dissipation": 0.0,
+      "drag_dissipation": 0.0,
+      "cell_work": 0.0,
+      "stage": 0
+    },
+    {
+      "step": 5,
+      "elapsed_time": 5e-09,
+      "cell": [
+        0.014227573421008954,
+        0.014227573421008954,
+        0.014227573421008954
+      ],
+      "stress": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "contact_stress": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "kinetic_stress": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "stress_antisymmetry": 0.0,
+      "p": 0.0,
+      "q": 0.0,
+      "axial_strain": -1.4271491766137956e-08,
+      "volumetric_strain": -4.281447529841387e-08,
+      "volume_ratio": 1.000000042814476,
+      "log_strain": [
+        -1.4271491664300219e-08,
+        -1.4271491664300219e-08,
+        -1.4271491664300219e-08
+      ],
+      "void_ratio": 99.00000428144766,
+      "kinetic_energy": 0.0,
+      "elastic_energy_proxy": 0.0,
+      "unbalanced_force": 0.0,
+      "max_overlap_fraction": 0.0,
+      "friction_dissipation_last_step": 0.0,
+      "candidate_pairs": 0,
+      "active_surface_contacts": 0,
+      "active_grain_pairs": 0,
+      "coordination": 0.0,
+      "fabric": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "sliding_fraction": 0.0,
+      "cell_log_rate": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "friction_dissipation": 0.0,
+      "drag_dissipation": 0.0,
+      "cell_work": 0.0,
+      "stage": 0,
+      "wall_seconds": 0.24170629191212356,
+      "work_balance_proxy_residual": 0.0
+    },
+    {
+      "step": 10,
+      "elapsed_time": 1e-08,
+      "cell": [
+        0.014227573421008954,
+        0.014227573421008954,
+        0.014227573421008954
+      ],
+      "stress": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "contact_stress": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "kinetic_stress": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "stress_antisymmetry": 0.0,
+      "p": 0.0,
+      "q": 0.0,
+      "axial_strain": -1.4271491766137956e-08,
+      "volumetric_strain": -4.281447529841387e-08,
+      "volume_ratio": 1.000000042814476,
+      "log_strain": [
+        -1.4271491664300219e-08,
+        -1.4271491664300219e-08,
+        -1.4271491664300219e-08
+      ],
+      "void_ratio": 99.00000428144766,
+      "kinetic_energy": 0.0,
+      "elastic_energy_proxy": 0.0,
+      "unbalanced_force": 0.0,
+      "max_overlap_fraction": 0.0,
+      "friction_dissipation_last_step": 0.0,
+      "candidate_pairs": 0,
+      "active_surface_contacts": 0,
+      "active_grain_pairs": 0,
+      "coordination": 0.0,
+      "fabric": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "sliding_fraction": 0.0,
+      "cell_log_rate": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "friction_dissipation": 0.0,
+      "drag_dissipation": 0.0,
+      "cell_work": 0.0,
+      "stage": 0,
+      "wall_seconds": 0.007256084005348384,
+      "work_balance_proxy_residual": 0.0
+    },
+    {
+      "step": 15,
+      "elapsed_time": 1.5000000000000002e-08,
+      "cell": [
+        0.014227573421008954,
+        0.014227573421008954,
+        0.014227573421008954
+      ],
+      "stress": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "contact_stress": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "kinetic_stress": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "stress_antisymmetry": 0.0,
+      "p": 0.0,
+      "q": 0.0,
+      "axial_strain": -1.4271491766137956e-08,
+      "volumetric_strain": -4.281447529841387e-08,
+      "volume_ratio": 1.000000042814476,
+      "log_strain": [
+        -1.4271491664300219e-08,
+        -1.4271491664300219e-08,
+        -1.4271491664300219e-08
+      ],
+      "void_ratio": 99.00000428144766,
+      "kinetic_energy": 0.0,
+      "elastic_energy_proxy": 0.0,
+      "unbalanced_force": 0.0,
+      "max_overlap_fraction": 0.0,
+      "friction_dissipation_last_step": 0.0,
+      "candidate_pairs": 0,
+      "active_surface_contacts": 0,
+      "active_grain_pairs": 0,
+      "coordination": 0.0,
+      "fabric": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "sliding_fraction": 0.0,
+      "cell_log_rate": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "friction_dissipation": 0.0,
+      "drag_dissipation": 0.0,
+      "cell_work": 0.0,
+      "stage": 0,
+      "wall_seconds": 0.007530333008617163,
+      "work_balance_proxy_residual": 0.0
+    },
+    {
+      "step": 20,
+      "elapsed_time": 2e-08,
+      "cell": [
+        0.014227573421008954,
+        0.014227573421008954,
+        0.014227573421008954
+      ],
+      "stress": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "contact_stress": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "kinetic_stress": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "stress_antisymmetry": 0.0,
+      "p": 0.0,
+      "q": 0.0,
+      "axial_strain": -1.4271491766137956e-08,
+      "volumetric_strain": -4.281447529841387e-08,
+      "volume_ratio": 1.000000042814476,
+      "log_strain": [
+        -1.4271491664300219e-08,
+        -1.4271491664300219e-08,
+        -1.4271491664300219e-08
+      ],
+      "void_ratio": 99.00000428144766,
+      "kinetic_energy": 0.0,
+      "elastic_energy_proxy": 0.0,
+      "unbalanced_force": 0.0,
+      "max_overlap_fraction": 0.0,
+      "friction_dissipation_last_step": 0.0,
+      "candidate_pairs": 0,
+      "active_surface_contacts": 0,
+      "active_grain_pairs": 0,
+      "coordination": 0.0,
+      "fabric": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "sliding_fraction": 0.0,
+      "cell_log_rate": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "friction_dissipation": 0.0,
+      "drag_dissipation": 0.0,
+      "cell_work": 0.0,
+      "stage": 0,
+      "wall_seconds": 0.0070512499660253525,
+      "work_balance_proxy_residual": 0.0
+    }
+  ]
+}

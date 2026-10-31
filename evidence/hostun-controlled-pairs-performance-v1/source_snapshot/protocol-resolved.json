@@ -1,0 +1,29 @@
+{
+  "identity": "hostun-controlled-pairs-performance-v1",
+  "frozen_before_gpu_execution": true,
+  "particles": [
+    10000,
+    50000
+  ],
+  "library": "/Users/bmar5496/code/sand-atlas-dem/evidence/hostun-controlled-pairs-performance-v1/private/shapes.h5",
+  "library_sha256": "7757ab752483cd8fabd910ea2cba3c5570fa8a6962b7672d14a32b15f8c414a9",
+  "packing": "controlled-pairs",
+  "orientation_seed": 123,
+  "target_maximum_penetration_fraction_of_equivalent_diameter": 0.0025,
+  "timestep_s": 2e-09,
+  "steps_per_repeat": 50,
+  "minimum_repeats": 3,
+  "minimum_wall_seconds": 180,
+  "pair_capacity_per_particle": 1,
+  "contact_capacity_policy": "twice preprocessed active sample count divided by particle count; minimum 16 per particle",
+  "reset_to_identical_committed_state_before_each_repeat": true,
+  "reset_and_diagnostic_time_in_per_step_timing": false,
+  "checks": [
+    "all particles belong to one active pair",
+    "no cross-pair contacts",
+    "no truncated contacts",
+    "reported device memory and logical buffer inventory",
+    "first/last quarter timing comparison"
+  ],
+  "scope": "Actual mesh-derived contact throughput; isolated pairs, not a dense prepared specimen. Run after other heavy local jobs finish. No thermal equilibrium or soil-material validation inferred from duration alone."
+}

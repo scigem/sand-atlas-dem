@@ -1,0 +1,89 @@
+{
+  "format": "sand-dem-run/1",
+  "kind": "synthetic-dem",
+  "scientific_admission": false,
+  "experiment": {
+    "format": "sand-dem-experiment/1",
+    "shape_library": "/Users/bmar5496/code/sand-atlas-dem/assets/generated/sphere.h5",
+    "particles": 64,
+    "seed": 42,
+    "density": 2650.0,
+    "normal_stiffness": 1000000000000.0,
+    "tangential_stiffness": 500000000000.0,
+    "friction": 0.5,
+    "timestep": 1e-08,
+    "initial_solid_fraction": 0.05,
+    "scale": 1.0,
+    "cell": null,
+    "skin": 0.05,
+    "working_memory_gib": 12.0,
+    "contacts_per_particle": 256,
+    "pairs_per_particle": 32,
+    "bin_capacity": 128,
+    "stages": [
+      {
+        "kind": "hold",
+        "steps": 20,
+        "drag": 0
+      }
+    ],
+    "diagnostic_interval": 5,
+    "snapshot_interval": 10,
+    "max_overlap_fraction": 0.01
+  },
+  "shape_sha256": "57dfdaa56e2a4542c3f88b9daee0f5838c0e149e420a8248bfa5cc862d624500",
+  "backend": {
+    "format": "sand-dem-doctor/1",
+    "backend": "metal",
+    "adapter": "Apple M4 Max",
+    "slangpy": "0.43.1",
+    "python": "3.12.14",
+    "smoke_elements": 257,
+    "smoke_max_error": 0.0,
+    "fallback": false
+  },
+  "estimated_memory_bytes": 5151072,
+  "conventions": {
+    "stress": "compression_positive",
+    "tensor_order": "xx,xy,xz;yx,yy,yz;zx,zy,zz",
+    "stress_measure": "contact_virial_plus_peculiar_kinetic",
+    "strain": "engineering_compression_positive",
+    "volumetric_strain": "sum_of_axial_engineering_strains",
+    "void_ratio": "cell_volume_over_sum_rigid_grain_volumes_minus_one"
+  },
+  "units": {
+    "length": "m",
+    "stress": "Pa",
+    "time": "s",
+    "strain": "1"
+  },
+  "created_utc": "2026-10-31T07:48:10Z",
+  "source_hashes": {
+    "simulation.py": "8dfac006795bbe6663191a59374affb408bdef68b3ca048794dccf18ddccdb24",
+    "backend.py": "13bcb38a4df578fac7ba75396f7b091054e452e8a0e8f7470e9a6cf1b49a1ade",
+    "benchmark.py": "2f82c262603fc632d7dd04062d6ffff88c307927f1e78ee69b8581bc129a4c32",
+    "util.py": "e847a504d9c9d20024de755f255a69da3232716726d773a3a4af130dbb91c230",
+    "__init__.py": "25ef40efbf7fa452aaa142bbe8d9ac35c90756e1a6f09cdacdcd2723cdd1636d",
+    "spec.py": "dc6286e91b04b4afd4dd8e6a7c4e9296e460a7f9f338bb576be7067bb133017b",
+    "visualize.py": "2033f63282a491b061464558a8399b5a5d1bc53c55c1bb4de9c48cf8dc893cec",
+    "cli.py": "2e6957abae577df7ed81b7e8103539ab110cd756ff9b2426d86205afbe5786a1",
+    "geometry.py": "521418ed73ea0642a298e7a874b0d43b796694901f0989650db0040aa467faef",
+    "reference.py": "1cd2a748a7f06f1c5138b5f6c9ed99c06715ce6167693251369e8a8fb3cc502f",
+    "gpu.py": "bef4d856e6981257eb6eaf9383e1a6ddb6390cd44fa7ad4677ea28ee7f4cb5ed"
+  },
+  "shader_hashes": {
+    "scan.slang": "51900fe7d78347d2274488b1b5c328ed53714be3043d221ad1d48555e1c5cbac",
+    "solver.slang": "75454af3d5e92002190cf863a8602192378f560a8bf432bcc9b6bd32e1263e5e",
+    "diagnostic.slang": "4f738fbef3ee79c370f74596a51d0de80b5ddd12375615afd18004df0bec7bb0"
+  },
+  "status": "paused",
+  "failure": null,
+  "elapsed_wall_seconds": 0.45935258409008384,
+  "completed_steps": 5,
+  "stage_index": 0,
+  "capacity_retries": [],
+  "artifacts": {
+    "checkpoint.h5": "068b4d9105084a1df5852aded0f1175c46f573f771a639e79a54f9edd7b27192",
+    "history.json": "d0d4b74dbdf97f2c15710231d9b609ee7af25a234eaf143544816f1ab753721f"
+  }
+}

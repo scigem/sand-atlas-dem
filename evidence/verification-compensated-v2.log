@@ -1,0 +1,45 @@
+.......................F                                                 [100%]
+=================================== FAILURES ===================================
+_______________ test_sub_ulp_translation_rotation_and_slow_cell ________________
+
+metal = <sand_atlas_dem.backend.Metal object at 0x10c1a5d30>
+shape = Shape(id='analytical-sphere', vertices=TrackedArray([[-2.62865556e-04,  4.25325404e-04,  0.00000000e+00],
+            ...8776e-17]]), radius=0.0005, provenance={'fixture': 'analytical_sphere', 'radius_m': 0.0005, 'display_mesh_only': True})
+
+    def test_sub_ulp_translation_rotation_and_slow_cell(metal, shape):
+        """Analytical motions whose per-step increments round to zero without residuals."""
+        from scipy.spatial.transform import Rotation
+    
+        spec = Experiment(particles=2, timestep=1e-8)
+        x = np.array([[0.001, 0.001, 0.001], [0.004, 0.004, 0.004]])
+        e = Engine(ShapeLibrary([shape]), spec, x, [0.006] * 3, [0, 0], [1, 1], metal=metal)
+        q = np.tile(np.array([0.5, 0.5, 0.5, 0.5], np.float32), (2, 1))
+        e.buffers["rotation"].copy_from_numpy(q)
+        e.initialize()
+        velocity = np.tile(np.array([1e-7, 0.1, 0, 0], np.float32), (2, 1))
+        e.buffers["velocity"].copy_from_numpy(velocity)
+        physical_w = np.array([0.01, 0.02, -0.03])
+        inertia = shape.inertia * spec.density / (e.mass_unit * e.length_unit**2)
+        momentum = inertia @ (physical_w * e.time_unit)
+        e.buffers["momentum"].copy_from_numpy(
+            np.column_stack([np.tile(momentum, (2, 1)), np.zeros(2)]).astype(np.float32)
+        )
+        before = e.state()
+        steps = 2000
+        for _ in range(20):
+            e.advance(100, rate=[0, -0.1, 0])
+        after = e.state()
+        actual_x = after["position"][:, 0].astype(float) + after["positionRemainder"][:, 0]
+        expected_x = (
+            before["position"][:, 0].astype(float)
+            + float(velocity[0, 0]) * steps * spec.timestep / e.time_unit
+        )
+>       assert np.allclose(actual_x, expected_x, rtol=0, atol=5e-11)
+E       assert False
+E        +  where False = <function allclose at 0x1066ecc70>(array([1., 4.]), array([1.00000123, 4.00000123]), rtol=0, atol=5e-11)
+E        +    where <function allclose at 0x1066ecc70> = np.allclose
+
+tests/test_metal.py:227: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_metal.py::test_sub_ulp_translation_rotation_and_slow_cell
+1 failed, 23 passed in 11.76s

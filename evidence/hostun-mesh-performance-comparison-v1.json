@@ -1,0 +1,44 @@
+{
+  "format": "sand-dem-mesh-performance-comparison/1",
+  "before": "evidence/hostun-mesh-bvh-performance-nearest-v1",
+  "after": "evidence/hostun-mesh-bvh-performance-cull-compact-v1",
+  "rows": [
+    {
+      "particles": 10000,
+      "report_sha256": [
+        "b1e2d40eca2248917c88fd535ebd236baabe62c443d72a3506d5daa8ed742c1d",
+        "5f8bca2ef3fbdba9181a7ab09b24a1654c7045e04936627f0086151f0187b529"
+      ],
+      "before_seconds_per_step": 0.5168197683407925,
+      "after_seconds_per_step": 0.015202770000323653,
+      "speedup": 33.99510538735966,
+      "after_hours_per_million_steps": 4.22299166675657,
+      "physical_seconds_per_million_steps": 0.002,
+      "after_logical_solver_buffer_bytes": 377124668,
+      "active_surface_contacts": 16428,
+      "after_first_last_quarter_seconds_per_step": [
+        0.015179922499228268,
+        0.015250150000210851
+      ]
+    },
+    {
+      "particles": 50000,
+      "report_sha256": [
+        "c54f28e151513853cd02efc83dd708e4b99dc3f6ac706cb31e88d2c5c23e1b74",
+        "6da1a8d364b4aa0bc51bba1e126d57d740db38681d56dd2e3a1f05fb244e810e"
+      ],
+      "before_seconds_per_step": 2.5603192824986762,
+      "after_seconds_per_step": 0.06031959749991074,
+      "speedup": 42.44589467796872,
+      "after_hours_per_million_steps": 16.755443749975207,
+      "physical_seconds_per_million_steps": 0.002,
+      "after_logical_solver_buffer_bytes": 613882384,
+      "active_surface_contacts": 82201,
+      "after_first_last_quarter_seconds_per_step": [
+        0.06085593875031918,
+        0.05894336540950462
+      ]
+    }
+  ],
+  "scope": "Matched isolated-pair workloads and contact counts. Wall time excludes reset/diagnostics. No dense-specimen, quadrature convergence or experimental validation claim."
+}

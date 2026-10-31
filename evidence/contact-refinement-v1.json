@@ -1,0 +1,106 @@
+{
+  "format": "sand-dem-contact-refinement/1",
+  "reference": "independent spherical surface integral of half-weighted two-pass traction law",
+  "geometry": {
+    "radius": 1.0,
+    "separation": 1.8,
+    "normal_stiffness": 1.0
+  },
+  "reference_force_x": -0.058048358084848324,
+  "rows": [
+    {
+      "resolution": 32,
+      "samples": 2048,
+      "force": [
+        -0.05756362741355304,
+        -5.415783493453156e-05,
+        7.448637258989017e-05
+      ],
+      "relative_error": 0.008350463084360856
+    },
+    {
+      "resolution": 32,
+      "samples": 8192,
+      "force": [
+        -0.05757077385089546,
+        -2.8549103226022827e-06,
+        -4.700488716739903e-06
+      ],
+      "relative_error": 0.008227351293119956
+    },
+    {
+      "resolution": 32,
+      "samples": 32768,
+      "force": [
+        -0.05757187904871597,
+        -5.304047830737635e-06,
+        9.092077581501136e-08
+      ],
+      "relative_error": 0.008208312032459116
+    },
+    {
+      "resolution": 64,
+      "samples": 2048,
+      "force": [
+        -0.05792593702184438,
+        -1.1131072188552434e-06,
+        -1.1362398978661602e-05
+      ],
+      "relative_error": 0.002108949624811196
+    },
+    {
+      "resolution": 64,
+      "samples": 8192,
+      "force": [
+        -0.05793137345923764,
+        -5.65028711590953e-06,
+        5.075975404409895e-06
+      ],
+      "relative_error": 0.0020152960302458056
+    },
+    {
+      "resolution": 64,
+      "samples": 32768,
+      "force": [
+        -0.05793397648621243,
+        4.522074385588642e-06,
+        2.367640091240465e-07
+      ],
+      "relative_error": 0.0019704536426113006
+    },
+    {
+      "resolution": 128,
+      "samples": 2048,
+      "force": [
+        -0.05801881264920026,
+        8.988785059962357e-06,
+        -1.5793868717413376e-05
+      ],
+      "relative_error": 0.0005089796959438376
+    },
+    {
+      "resolution": 128,
+      "samples": 8192,
+      "force": [
+        -0.05801906585979199,
+        -1.2524076739855112e-05,
+        1.8315951197483948e-06
+      ],
+      "relative_error": 0.0005046176330003844
+    },
+    {
+      "resolution": 128,
+      "samples": 32768,
+      "force": [
+        -0.05802040641157132,
+        -2.113848818125694e-06,
+        -3.004461239641914e-07
+      ],
+      "relative_error": 0.0004815239258989096
+    }
+  ],
+  "policy": {
+    "finest_reference_relative_error": 0.02
+  },
+  "passed": true
+}

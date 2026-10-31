@@ -1,0 +1,225 @@
+{
+  "format": "sand-dem-mechanics-study/1",
+  "protocol": {
+    "format": "sand-dem-mechanics-protocol/1",
+    "identity": "mechanics-v1",
+    "frozen_before_execution": true,
+    "sphere": {
+      "resolution": 64,
+      "samples": 2048
+    },
+    "objectivity": {
+      "angle": 0.8,
+      "increments": [
+        16,
+        32,
+        64
+      ],
+      "relative_force_limit": 0.005,
+      "relative_history_limit": 0.005
+    },
+    "separation": {
+      "returned_slip_limit": 1e-10
+    },
+    "growth": {
+      "initial_contacts_per_particle": 1,
+      "relative_state_limit": 0.0001
+    },
+    "rotation": {
+      "extents_m": [
+        0.0004,
+        0.0008,
+        0.002
+      ],
+      "angular_velocity_rad_s": [
+        100000,
+        200000,
+        300000
+      ],
+      "duration_s": 2.5e-06,
+      "timesteps_s": [
+        5e-09,
+        2.5e-09,
+        1.25e-09
+      ],
+      "orientation_error_rad_limit": 0.0001,
+      "relative_energy_drift_limit": 0.0001
+    },
+    "affine_work": {
+      "rate_s": [
+        10000,
+        -20000,
+        10000
+      ],
+      "steps": 200,
+      "timestep_s": 1e-08,
+      "relative_velocity_limit": 0.0001,
+      "relative_work_limit": 0.001
+    },
+    "static_cell_energy": {
+      "duration_s": 2e-05,
+      "timesteps_s": [
+        2e-08,
+        1e-08,
+        5e-09
+      ],
+      "relative_proxy_drift_limit": 0.02
+    },
+    "scope": "Engineering mechanics qualification on original fixtures. Does not admit a Hostun material study or reproduce a published assembly benchmark. No energy-potential identity is assumed."
+  },
+  "protocol_sha256": "6673339917f92e50038cef037f90748118b0f786ea6bfe30b2780b684310bdcf",
+  "source_hashes": {
+    "simulation.py": "8dfac006795bbe6663191a59374affb408bdef68b3ca048794dccf18ddccdb24",
+    "backend.py": "13bcb38a4df578fac7ba75396f7b091054e452e8a0e8f7470e9a6cf1b49a1ade",
+    "benchmark.py": "2f82c262603fc632d7dd04062d6ffff88c307927f1e78ee69b8581bc129a4c32",
+    "util.py": "e847a504d9c9d20024de755f255a69da3232716726d773a3a4af130dbb91c230",
+    "__init__.py": "25ef40efbf7fa452aaa142bbe8d9ac35c90756e1a6f09cdacdcd2723cdd1636d",
+    "spec.py": "dc6286e91b04b4afd4dd8e6a7c4e9296e460a7f9f338bb576be7067bb133017b",
+    "visualize.py": "2033f63282a491b061464558a8399b5a5d1bc53c55c1bb4de9c48cf8dc893cec",
+    "cli.py": "2e6957abae577df7ed81b7e8103539ab110cd756ff9b2426d86205afbe5786a1",
+    "qualification.py": "eea1b116f968baa8baeff5ab2cad6a89b5eae8f6abd2b1768ecd1ced48f4679d",
+    "geometry.py": "521418ed73ea0642a298e7a874b0d43b796694901f0989650db0040aa467faef",
+    "reference.py": "1cd2a748a7f06f1c5138b5f6c9ed99c06715ce6167693251369e8a8fb3cc502f",
+    "gpu.py": "1628a01f0b7e2268431e9ca37e4da4eb6568f5105c0b4ae4cdde64cfbdf1d82d"
+  },
+  "shader_hashes": {
+    "scan.slang": "51900fe7d78347d2274488b1b5c328ed53714be3043d221ad1d48555e1c5cbac",
+    "solver.slang": "75454af3d5e92002190cf863a8602192378f560a8bf432bcc9b6bd32e1263e5e",
+    "diagnostic.slang": "4f738fbef3ee79c370f74596a51d0de80b5ddd12375615afd18004df0bec7bb0"
+  },
+  "cases": {
+    "objectivity": {
+      "rows": [
+        {
+          "increments": 16,
+          "force_relative_error": 3.238236209643764e-05,
+          "history_relative_error": 0.0001392882023126037,
+          "same_contact_keys": true
+        },
+        {
+          "increments": 32,
+          "force_relative_error": 3.1568327040281195e-05,
+          "history_relative_error": 7.572383849133366e-05,
+          "same_contact_keys": true
+        },
+        {
+          "increments": 64,
+          "force_relative_error": 3.135197929908034e-05,
+          "history_relative_error": 6.61100941744915e-05,
+          "same_contact_keys": true
+        }
+      ],
+      "passed": true,
+      "wall_seconds": 1.024810625007376
+    },
+    "separation": {
+      "seeded_slip_norm": 0.0028076444286853075,
+      "separated_contacts": 0,
+      "returned_contacts": 21,
+      "returned_slip_norm": 0.0,
+      "passed": true,
+      "wall_seconds": 0.011817042017355561
+    },
+    "growth": {
+      "retries": [
+        {
+          "step": 0,
+          "flags": 32,
+          "new_capacities": {
+            "contacts_per_particle": 16
+          }
+        },
+        {
+          "step": 0,
+          "flags": 32,
+          "new_capacities": {
+            "contacts_per_particle": 32
+          }
+        },
+        {
+          "step": 0,
+          "flags": 32,
+          "new_capacities": {
+            "contacts_per_particle": 64
+          }
+        }
+      ],
+      "contacts": 124,
+      "relative_state_errors": {
+        "position": 0.0,
+        "velocity": 1.375299444369548e-14,
+        "force": 1.9712600995980267e-10,
+        "torque": 7.1731228672433645e-06
+      },
+      "passed": true,
+      "wall_seconds": 0.2890270419884473
+    },
+    "rotation": {
+      "rows": [
+        {
+          "timestep_s": 5e-09,
+          "steps": 500,
+          "orientation_error_rad": 1.0700057841643995e-06,
+          "relative_energy_drift": 0.0,
+          "spatial_momentum_unchanged": true
+        },
+        {
+          "timestep_s": 2.5e-09,
+          "steps": 1000,
+          "orientation_error_rad": 5.611126289868931e-06,
+          "relative_energy_drift": 1.3882470817350168e-06,
+          "spatial_momentum_unchanged": true
+        },
+        {
+          "timestep_s": 1.25e-09,
+          "steps": 2000,
+          "orientation_error_rad": 1.0835419387539085e-05,
+          "relative_energy_drift": 1.5733466925960116e-06,
+          "spatial_momentum_unchanged": true
+        }
+      ],
+      "passed": true,
+      "wall_seconds": 4.153643999947235
+    },
+    "affine_work": {
+      "relative_velocity_error": 3.500951767529991e-06,
+      "relative_work_error": 0.0001070039190410147,
+      "kinetic_change_J": 0.0012946650385856628,
+      "cell_work_J": 0.001294803572818637,
+      "passed": true,
+      "wall_seconds": 0.20762908307369798
+    },
+    "static_cell_energy": {
+      "rows": [
+        {
+          "timestep_s": 2e-08,
+          "steps": 1000,
+          "maximum_relative_proxy_energy_drift": 7.080520520608147e-05
+        },
+        {
+          "timestep_s": 1e-08,
+          "steps": 2000,
+          "maximum_relative_proxy_energy_drift": 0.0006187743997541073
+        },
+        {
+          "timestep_s": 5e-09,
+          "steps": 4000,
+          "maximum_relative_proxy_energy_drift": 0.002484323306942482
+        }
+      ],
+      "passed": true,
+      "wall_seconds": 7.749186458066106
+    }
+  },
+  "status": "passed",
+  "backend": {
+    "format": "sand-dem-doctor/1",
+    "backend": "metal",
+    "adapter": "Apple M4 Max",
+    "slangpy": "0.43.1",
+    "python": "3.12.14",
+    "smoke_elements": 257,
+    "smoke_max_error": 0.0,
+    "fallback": false
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "status": "complete",
+  "step": 617425,
+  "prepared_checkpoint": "/Users/bmar5496/code/sand-atlas-dem/evidence/controller-v4/run/chunk-0011/prepared-stage-0.h5",
+  "prepared_checkpoint_sha256": "4b56731060b7f4e8fa8af521f143ac69863dcc9137994a90d14f9a8917116555",
+  "checked_samples": 100,
+  "unchanged_solver_sources_and_shaders": true,
+  "policy": {
+    "kind": "isotropic",
+    "steps": 1000000,
+    "drag": 100000.0,
+    "pressure": 10000,
+    "gain": 1000,
+    "filter_time": 1e-05,
+    "max_rate": 1000,
+    "contact_max_rate": 50,
+    "pressure_tolerance": 0.01,
+    "kinetic_tolerance": 1e-05,
+    "force_tolerance": 0.001,
+    "converged_samples": 100
+  },
+  "max_pressure_error": 9.579500353684711e-05,
+  "max_energy_ratio": 9.999083242485466e-06,
+  "max_force_imbalance": 0.0002253817510791123,
+  "max_overlap": 0.006128715816885233,
+  "scope": "216 analytical spheres, seed 42, SDF 32/512. Does not qualify Hostun, a triaxial response or physical sand calibration."
+}

@@ -1,0 +1,338 @@
+[WARN] No supported shader model found, pretending to support sm_6_0.
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(84): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_2->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(84): warning :  unused variable '_S4' [-Wunused-variable]
+    uint _S4 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(84): warning :  unused variable '_S4' [-Wunused-variable]
+    uint _S4 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(154): warning :  unused variable '_S19' [-Wunused-variable]
+    uint _S19 = findPairs_0(id_2, true, &kernelContext_5);
+         ^
+2 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(84): warning :  unused variable '_S15' [-Wunused-variable]
+    uint _S15 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_2->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(84): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(84): warning :  unused variable '_S15' [-Wunused-variable]
+    uint _S15 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_2->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(228): warning :  unused variable '_S15' [-Wunused-variable]
+        uint _S15 = atomic_fetch_add_explicit(((atomic_uint device*)(r_1->control_0+int(6))), 1U, memory_order_relaxed);
+             ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(84): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_1->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(84): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(84): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(299): warning :  unused variable '_S2' [-Wunused-variable]
+        uint _S2 = atomic_fetch_or_explicit(((atomic_uint device*)((&kernelContext_1)->r_0->control_0+int(4))), 1U, memory_order_relaxed);
+             ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(84): warning :  unused variable '_S4' [-Wunused-variable]
+    uint _S4 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_2->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+{
+  "format": "sand-dem-benchmark/1",
+  "backend": {
+    "format": "sand-dem-doctor/1",
+    "backend": "metal",
+    "adapter": "Apple M4 Max",
+    "slangpy": "0.43.1",
+    "python": "3.12.14",
+    "smoke_elements": 257,
+    "smoke_max_error": 0.0,
+    "fallback": false
+  },
+  "source_hashes": {
+    "simulation.py": "ef3fd516b06c3bf8f9a6f08255c3b7967d2d521dba7e70784d9e8258bd86513f",
+    "backend.py": "13bcb38a4df578fac7ba75396f7b091054e452e8a0e8f7470e9a6cf1b49a1ade",
+    "benchmark.py": "2f82c262603fc632d7dd04062d6ffff88c307927f1e78ee69b8581bc129a4c32",
+    "util.py": "e847a504d9c9d20024de755f255a69da3232716726d773a3a4af130dbb91c230",
+    "__init__.py": "25ef40efbf7fa452aaa142bbe8d9ac35c90756e1a6f09cdacdcd2723cdd1636d",
+    "spec.py": "dc6286e91b04b4afd4dd8e6a7c4e9296e460a7f9f338bb576be7067bb133017b",
+    "visualize.py": "2033f63282a491b061464558a8399b5a5d1bc53c55c1bb4de9c48cf8dc893cec",
+    "cli.py": "2e6957abae577df7ed81b7e8103539ab110cd756ff9b2426d86205afbe5786a1",
+    "geometry.py": "521418ed73ea0642a298e7a874b0d43b796694901f0989650db0040aa467faef",
+    "reference.py": "1cd2a748a7f06f1c5138b5f6c9ed99c06715ce6167693251369e8a8fb3cc502f",
+    "gpu.py": "bef4d856e6981257eb6eaf9383e1a6ddb6390cd44fa7ad4677ea28ee7f4cb5ed"
+  },
+  "shader_hashes": {
+    "scan.slang": "51900fe7d78347d2274488b1b5c328ed53714be3043d221ad1d48555e1c5cbac",
+    "solver.slang": "75454af3d5e92002190cf863a8602192378f560a8bf432bcc9b6bd32e1263e5e",
+    "diagnostic.slang": "4f738fbef3ee79c370f74596a51d0de80b5ddd12375615afd18004df0bec7bb0"
+  },
+  "workload": {
+    "particles": 10000,
+    "unique_shapes": 1,
+    "geometry": "analytical-sphere",
+    "resolution": 64,
+    "samples": 2048,
+    "packing": "periodic simple cubic, bounding sphere spacing 1.99r",
+    "steps_per_repeat": 20,
+    "repeats": 3
+  },
+  "seconds_per_step": [
+    0.010146002052351832,
+    0.010067864548182115,
+    0.010098533349810168
+  ],
+  "median_seconds_per_step": 0.010098533349810168,
+  "steps_per_second": 99.0242805920721,
+  "estimated_working_memory_bytes": 706498400,
+  "initial_diagnostics": {
+    "step": 0,
+    "elapsed_time": 0.0,
+    "cell": [
+      0.021889999389648446,
+      0.021889999389648446,
+      0.021889999389648446
+    ],
+    "stress": [
+      [
+        16436.55294389797,
+        34.19900199647122,
+        -16.721259395647508
+      ],
+      [
+        53.47766729779466,
+        18326.59001968207,
+        -89.62072108776002
+      ],
+      [
+        223.47703330726443,
+        -36.84028092911356,
+        17917.475218684256
+      ]
+    ],
+    "contact_stress": [
+      [
+        16436.55294389797,
+        34.19900199647122,
+        -16.721259395647508
+      ],
+      [
+        53.47766729779466,
+        18326.59001968207,
+        -89.62072108776002
+      ],
+      [
+        223.47703330726443,
+        -36.84028092911356,
+        17917.475218684256
+      ]
+    ],
+    "kinetic_stress": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "stress_antisymmetry": 0.011457396371116283,
+    "p": 17560.206060754765,
+    "q": 535.9037368942372,
+    "axial_strain": 2.788266573183762e-08,
+    "volumetric_strain": 8.364799719551286e-08,
+    "volume_ratio": 0.999999916352005,
+    "log_strain": [
+      2.788266612055915e-08,
+      2.788266612055915e-08,
+      2.788266612055915e-08
+    ],
+    "void_ratio": 1.0032660274323328,
+    "kinetic_energy": 0.0,
+    "elastic_energy_proxy": 0.0009102195035666227,
+    "unbalanced_force": 0.01626906357705593,
+    "max_overlap_fraction": 0.004858975298702717,
+    "friction_dissipation_last_step": 0.0,
+    "candidate_pairs": 29493,
+    "active_surface_contacts": 305370,
+    "active_grain_pairs": 29493,
+    "coordination": 5.8986,
+    "fabric": [
+      [
+        0.3226528465747833,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.3383175730705261,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.33902961015701294
+      ]
+    ],
+    "sliding_fraction": 0.0,
+    "cell_log_rate": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "friction_dissipation": 0.0,
+    "drag_dissipation": 0.0,
+    "cell_work": 0.0
+  },
+  "final_diagnostics": {
+    "step": 62,
+    "elapsed_time": 6.2e-07,
+    "cell": [
+      0.021889999389648446,
+      0.021889999389648446,
+      0.021889999389648446
+    ],
+    "stress": [
+      [
+        16435.768703995152,
+        34.32185427174602,
+        -15.450302058987935
+      ],
+      [
+        53.38292916766039,
+        18326.54215352425,
+        -89.34102839764037
+      ],
+      [
+        222.35393569905415,
+        -37.17360106553469,
+        17917.475239093103
+      ]
+    ],
+    "contact_stress": [
+      [
+        16435.760228921386,
+        34.32182598124344,
+        -15.450417111242642
+      ],
+      [
+        53.382900877157816,
+        18326.54171805267,
+        -89.34102779464544
+      ],
+      [
+        222.35382064681002,
+        -37.17360046254108,
+        17917.475218684256
+      ]
+    ],
+    "kinetic_stress": [
+      [
+        0.008475073764233254,
+        2.8290502577180785e-05,
+        0.00011505225470632597
+      ],
+      [
+        2.8290502577180785e-05,
+        0.00043547157980465204,
+        -6.029949321092935e-07
+      ],
+      [
+        0.00011505224412176177,
+        -6.029936090387686e-07,
+        2.0408845768281773e-05
+      ]
+    ],
+    "stress_antisymmetry": 0.011342416795004312,
+    "p": 17559.928698870837,
+    "q": 536.3198103333998,
+    "axial_strain": 2.788266573183762e-08,
+    "volumetric_strain": 8.364799719551286e-08,
+    "volume_ratio": 0.999999916352005,
+    "log_strain": [
+      2.788266612055915e-08,
+      2.788266612055915e-08,
+      2.788266612055915e-08
+    ],
+    "void_ratio": 1.0032660274323328,
+    "kinetic_energy": 4.7780332579350215e-08,
+    "elastic_energy_proxy": 0.00091019575484097,
+    "unbalanced_force": 0.016265079379081726,
+    "max_overlap_fraction": 0.004858975298702717,
+    "friction_dissipation_last_step": 0.0,
+    "candidate_pairs": 29493,
+    "active_surface_contacts": 305370,
+    "active_grain_pairs": 29493,
+    "coordination": 5.8986,
+    "fabric": [
+      [
+        0.3226528465747833,
+        -1.9884800472880215e-09,
+        -8.835431691833762e-11
+      ],
+      [
+        -1.9884800472880215e-09,
+        0.3383175730705261,
+        -8.835423365161077e-11
+      ],
+      [
+        -8.835431691833762e-11,
+        -8.835423365161077e-11,
+        0.33902961015701294
+      ]
+    ],
+    "sliding_fraction": 0.0,
+    "cell_log_rate": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "friction_dissipation": 0.0,
+    "drag_dissipation": 0.0,
+    "cell_work": 0.0
+  },
+  "gpu_profile": {
+    "available": false,
+    "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+    "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+  },
+  "scientific_verification": false,
+  "limitations": [
+    "Short benchmark; not a thermal-sustained study or a prepared soil specimen.",
+    "Wall time includes Python command encoding, dispatch and scalar boundary reads.",
+    "Sphere benchmarks do not establish irregular-grain performance."
+  ]
+}

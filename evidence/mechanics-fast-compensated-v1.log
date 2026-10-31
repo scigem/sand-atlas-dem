@@ -1,0 +1,317 @@
+[WARN] No supported shader model found, pretending to support sm_6_0.
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(124): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_2->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(124): warning :  unused variable '_S4' [-Wunused-variable]
+    uint _S4 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(124): warning :  unused variable '_S4' [-Wunused-variable]
+    uint _S4 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(194): warning :  unused variable '_S19' [-Wunused-variable]
+    uint _S19 = findPairs_0(id_2, true, &kernelContext_5);
+         ^
+2 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(124): warning :  unused variable '_S15' [-Wunused-variable]
+    uint _S15 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_2->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(124): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(124): warning :  unused variable '_S15' [-Wunused-variable]
+    uint _S15 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_2->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(268): warning :  unused variable '_S15' [-Wunused-variable]
+        uint _S15 = atomic_fetch_add_explicit(((atomic_uint device*)(r_1->control_0+int(6))), 1U, memory_order_relaxed);
+             ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(124): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_1->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(124): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+objectivity True
+separation True
+rolling True
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(124): warning :  unused variable '_S5' [-Wunused-variable]
+    uint _S5 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_2->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(350): warning :  unused variable '_S2' [-Wunused-variable]
+        uint _S2 = atomic_fetch_or_explicit(((atomic_uint device*)((&kernelContext_1)->r_0->control_0+int(4))), 1U, memory_order_relaxed);
+             ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(124): warning :  unused variable '_S8' [-Wunused-variable]
+    uint _S8 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_5->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+growth True
+rotation True
+affine_work True
+static_cell_energy True
+{
+  "format": "sand-dem-mechanics-study/1",
+  "protocol": {
+    "format": "sand-dem-mechanics-protocol/1",
+    "identity": "mechanics-fast-rotation-v1",
+    "frozen_before_execution": true,
+    "sphere": {
+      "resolution": 64,
+      "samples": 2048
+    },
+    "objectivity": {
+      "angle": 0.8,
+      "increments": [
+        16,
+        32,
+        64
+      ],
+      "relative_force_limit": 0.005,
+      "relative_history_limit": 0.005
+    },
+    "separation": {
+      "returned_slip_limit": 1e-10
+    },
+    "growth": {
+      "initial_contacts_per_particle": 1,
+      "relative_state_limit": 0.0001
+    },
+    "rotation": {
+      "extents_m": [
+        0.0004,
+        0.0008,
+        0.002
+      ],
+      "angular_velocity_rad_s": [
+        1000000.0,
+        2000000.0,
+        3000000.0
+      ],
+      "duration_s": 2.5e-06,
+      "timesteps_s": [
+        5e-09,
+        2.5e-09,
+        1.25e-09
+      ],
+      "orientation_error_rad_limit": 0.0001,
+      "relative_energy_drift_limit": 0.002,
+      "minimum_refinement_ratio": 3
+    },
+    "affine_work": {
+      "rate_s": [
+        10000,
+        -20000,
+        10000
+      ],
+      "steps": 200,
+      "timestep_s": 1e-08,
+      "relative_velocity_limit": 0.0001,
+      "relative_work_limit": 0.001
+    },
+    "static_cell_energy": {
+      "duration_s": 2e-05,
+      "timesteps_s": [
+        2e-08,
+        1e-08,
+        5e-09
+      ],
+      "relative_proxy_drift_limit": 0.02
+    },
+    "scope": "Engineering mechanics qualification on original fixtures. Does not admit a Hostun material study or reproduce a published assembly benchmark. No energy-potential identity is assumed. Higher-spin rotation tests truncation-error refinement above the low-spin FP32 roundoff floor; limits are frozen before this new excitation.",
+    "rolling": {
+      "angular_velocity_rad_s": [
+        0,
+        100000,
+        0
+      ],
+      "relative_force_limit": 0.001,
+      "relative_torque_limit": 0.001,
+      "relative_history_limit": 0.001
+    }
+  },
+  "protocol_sha256": "dfee884db63a69a85594848d5769d46eca7ff3d1527b55271cddd830a0cf3257",
+  "source_hashes": {
+    "simulation.py": "f790c13f196f9f2bef4343ff5f6ef31b4727fcecf40c38df140c97f23c79147c",
+    "backend.py": "394345bc9bfd276ff9c378e7a14810f5e0ff5a6eae03434ca8ebcc5db3bc8b85",
+    "benchmark.py": "9911287c3dd6b4d8bd43dd44f67e3733f2726aa25b64fb3aa2a802c696f7ad5d",
+    "util.py": "0f9dc71429a87057dc08216f3c51425d8b76be9c4fd30f2cab6c3f98b70397c2",
+    "__init__.py": "25ef40efbf7fa452aaa142bbe8d9ac35c90756e1a6f09cdacdcd2723cdd1636d",
+    "spec.py": "07dcdd1999efbecb7bb2aea3324a5ae7ec26c38e5da88b95713535911268350d",
+    "visualize.py": "9874362fa98cdd00d73b42867f7ecc9254b820d08915baed25eee4b02ecba339",
+    "cli.py": "fe02e5d403232ce9ad0bb1c3f7171c6621fa18c4c93b4a4ded30ad61b9647a1d",
+    "qualification.py": "b59751cc6fcc81b834dd90174ff9859e21efffa389dc36bc514ced75ef41b2fb",
+    "geometry.py": "521418ed73ea0642a298e7a874b0d43b796694901f0989650db0040aa467faef",
+    "reference.py": "1cd2a748a7f06f1c5138b5f6c9ed99c06715ce6167693251369e8a8fb3cc502f",
+    "gpu.py": "abf9403dd9b8431f78e88473bf1ad9ead7e2df1e7091534ed86dbe61f635b163"
+  },
+  "shader_hashes": {
+    "scan.slang": "51900fe7d78347d2274488b1b5c328ed53714be3043d221ad1d48555e1c5cbac",
+    "solver.slang": "ae59ce7f3a2a53522b906bf0b3e72593495beba249a77e14f8dfb4bae4269bd3",
+    "diagnostic.slang": "4f738fbef3ee79c370f74596a51d0de80b5ddd12375615afd18004df0bec7bb0"
+  },
+  "cases": {
+    "objectivity": {
+      "rows": [
+        {
+          "increments": 16,
+          "force_relative_error": 3.238236209643764e-05,
+          "history_relative_error": 0.0001392882023126037,
+          "same_contact_keys": true
+        },
+        {
+          "increments": 32,
+          "force_relative_error": 3.1568327040281195e-05,
+          "history_relative_error": 7.572383849133366e-05,
+          "same_contact_keys": true
+        },
+        {
+          "increments": 64,
+          "force_relative_error": 3.135197929908034e-05,
+          "history_relative_error": 6.61100941744915e-05,
+          "same_contact_keys": true
+        }
+      ],
+      "passed": true,
+      "wall_seconds": 0.9853677090723068
+    },
+    "separation": {
+      "seeded_slip_norm": 0.0028076444286853075,
+      "separated_contacts": 0,
+      "returned_contacts": 21,
+      "returned_slip_norm": 0.0,
+      "passed": true,
+      "wall_seconds": 0.014926208998076618
+    },
+    "rolling": {
+      "relative_force_error": 2.2005156998218208e-05,
+      "relative_torque_error": 1.2523067494211846e-07,
+      "relative_history_error": 1.3243581788142512e-05,
+      "contacts": 21,
+      "passed": true,
+      "wall_seconds": 0.011200667009688914
+    },
+    "growth": {
+      "retries": [
+        {
+          "step": 0,
+          "flags": 32,
+          "new_capacities": {
+            "contacts_per_particle": 16
+          }
+        },
+        {
+          "step": 0,
+          "flags": 32,
+          "new_capacities": {
+            "contacts_per_particle": 32
+          }
+        },
+        {
+          "step": 0,
+          "flags": 32,
+          "new_capacities": {
+            "contacts_per_particle": 64
+          }
+        }
+      ],
+      "contacts": 124,
+      "relative_state_errors": {
+        "position": 0.0,
+        "velocity": 1.0970073624722108e-14,
+        "force": 1.0021123486581018e-08,
+        "torque": 6.800519258831628e-06
+      },
+      "passed": true,
+      "wall_seconds": 0.29361879208590835
+    },
+    "rotation": {
+      "rows": [
+        {
+          "timestep_s": 5e-09,
+          "steps": 500,
+          "orientation_error_rad": 0.0004285931054296111,
+          "relative_energy_drift": 2.0138839529337815e-06,
+          "spatial_momentum_unchanged": true
+        },
+        {
+          "timestep_s": 2.5e-09,
+          "steps": 1000,
+          "orientation_error_rad": 0.0001050436574906641,
+          "relative_energy_drift": 2.3692752382231674e-07,
+          "spatial_momentum_unchanged": true
+        },
+        {
+          "timestep_s": 1.25e-09,
+          "steps": 2000,
+          "orientation_error_rad": 2.6811043555302283e-05,
+          "relative_energy_drift": 1.1846376191115837e-07,
+          "spatial_momentum_unchanged": true
+        }
+      ],
+      "refinement_ratio": 15.985692781616866,
+      "passed": true,
+      "wall_seconds": 4.491300957975909
+    },
+    "affine_work": {
+      "relative_velocity_error": 3.995013831795393e-08,
+      "relative_work_error": 9.890150992036092e-07,
+      "kinetic_change_J": 0.0012947916984558105,
+      "cell_work_J": 0.0012947904178872705,
+      "passed": true,
+      "wall_seconds": 0.23903887497726828
+    },
+    "static_cell_energy": {
+      "rows": [
+        {
+          "timestep_s": 2e-08,
+          "steps": 1000,
+          "maximum_relative_proxy_energy_drift": 7.778056948137824e-05
+        },
+        {
+          "timestep_s": 1e-08,
+          "steps": 2000,
+          "maximum_relative_proxy_energy_drift": 7.677106952597157e-05
+        },
+        {
+          "timestep_s": 5e-09,
+          "steps": 4000,
+          "maximum_relative_proxy_energy_drift": 7.6434569540762e-05
+        }
+      ],
+      "passed": true,
+      "wall_seconds": 8.743539541959763
+    }
+  },
+  "status": "passed",
+  "backend": {
+    "format": "sand-dem-doctor/1",
+    "backend": "metal",
+    "adapter": "Apple M4 Max",
+    "slangpy": "0.43.1",
+    "python": "3.12.14",
+    "smoke_elements": 257,
+    "smoke_max_error": 0.0,
+    "fallback": false,
+    "floating_point_mode": "precise"
+  }
+}

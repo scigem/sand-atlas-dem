@@ -1,0 +1,1001 @@
+............FF..FFFFFFFF                                                 [100%]
+=================================== FAILURES ===================================
+__________________________ test_run_resume_and_export __________________________
+
+tmp_path = PosixPath('/private/var/folders/ff/b6vctr0n2jjfkdtcm0dt7xdr0000gp/T/pytest-of-bmar5496/pytest-92/test_run_resume_and_export0')
+
+    def test_run_resume_and_export(tmp_path):
+        library = tmp_path / "shapes.h5"
+        ShapeLibrary([sphere(resolution=16, samples=64)]).save(library)
+        spec = Experiment(
+            shape_library=str(library),
+            particles=27,
+            timestep=1e-8,
+            initial_solid_fraction=0.05,
+            diagnostic_interval=2,
+            snapshot_interval=2,
+            stages=[dict(kind="hold", steps=8)],
+        )
+>       sim = Simulation(spec)
+              ^^^^^^^^^^^^^^^^
+
+tests/test_laboratory.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/sand_atlas_dem/simulation.py:63: in __init__
+    self.engine.initialize()
+src/sand_atlas_dem/gpu.py:365: in initialize
+    self.forces(e, self.bindings(dt=0))
+src/sand_atlas_dem/gpu.py:361: in forces
+    self.dispatch("gather", self.n, e, b)
+src/sand_atlas_dem/gpu.py:342: in dispatch
+    self.m.dispatch(name, n, e, r=b)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sand_atlas_dem.backend.Metal object at 0x1104a4860>, name = 'gather'
+n = 27, encoder = CommandEncoder(
+  device = 0xb48b91828
+), kwargs = {}
+
+    def dispatch(self, name, n, encoder=None, **kwargs):
+        globals_ = {"r": kwargs.pop("r")} if "r" in kwargs else {}
+>       self.kernel(name).dispatch(
+            thread_count=[max(1, int(n)), 1, 1],
+            command_encoder=encoder,
+            vars=globals_,
+            **kwargs,
+        )
+E       RuntimeError: m_device->rhi_device()->createComputePipeline(rhi_desc, (rhi::IComputePipeline**)m_rhi_pipeline.writeRef()) failed with error: -2147467259 (SLANG_FAIL)
+E       
+E       RHI messages:
+E       slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(119): warning :  unused variable '_S1' [-Wunused-variable]
+E           uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+E                ^
+E       metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  unexpected namespace name 'precise': expected expression
+E           precise float3 y_0 = increment_0 + *low_0;
+E           ^
+E       metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  expected ';' after expression
+E           precise float3 y_0 = increment_0 + *low_0;
+E                  ^
+E                  ;
+E       metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  unexpected namespace name 'precise': expected expression
+E           precise float3 next_1 = *high_0 + y_0;
+E           ^
+E       metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  expected ';' after expression
+E           precise float3 next_1 = *high_0 + y_0;
+E                  ^
+E                  ;
+E       1 warning and 4 errors generated.
+E       
+E       
+E       /Users/runner/work/slangpy/slangpy/src/sgl/device/pipeline.cpp:61 in function recreate
+
+src/sand_atlas_dem/backend.py:48: RuntimeError
+----------------------------- Captured stdout call -----------------------------
+[WARN] No supported shader model found, pretending to support sm_6_0.
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(119): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_2->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(119): warning :  unused variable '_S4' [-Wunused-variable]
+    uint _S4 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(119): warning :  unused variable '_S4' [-Wunused-variable]
+    uint _S4 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(189): warning :  unused variable '_S19' [-Wunused-variable]
+    uint _S19 = findPairs_0(id_2, true, &kernelContext_5);
+         ^
+2 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(119): warning :  unused variable '_S15' [-Wunused-variable]
+    uint _S15 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_2->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(119): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(119): warning :  unused variable '_S15' [-Wunused-variable]
+    uint _S15 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_2->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(263): warning :  unused variable '_S15' [-Wunused-variable]
+        uint _S15 = atomic_fetch_add_explicit(((atomic_uint device*)(r_1->control_0+int(6))), 1U, memory_order_relaxed);
+             ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(119): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_1->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+----------------------------- Captured stderr call -----------------------------
+[ERROR] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(119): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  unexpected namespace name 'precise': expected expression
+    precise float3 y_0 = increment_0 + *low_0;
+    ^
+metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  expected ';' after expression
+    precise float3 y_0 = increment_0 + *low_0;
+           ^
+           ;
+metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  unexpected namespace name 'precise': expected expression
+    precise float3 next_1 = *high_0 + y_0;
+    ^
+metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  expected ';' after expression
+    precise float3 next_1 = *high_0 + y_0;
+           ^
+           ;
+1 warning and 4 errors generated.
+
+___________________ test_unconverged_preparation_is_failure ____________________
+
+tmp_path = PosixPath('/private/var/folders/ff/b6vctr0n2jjfkdtcm0dt7xdr0000gp/T/pytest-of-bmar5496/pytest-92/test_unconverged_preparation_i0')
+
+    def test_unconverged_preparation_is_failure(tmp_path):
+        library = tmp_path / "s.h5"
+        ShapeLibrary([sphere(resolution=16, samples=64)]).save(library)
+        spec = Experiment(
+            shape_library=str(library),
+            particles=27,
+            timestep=1e-8,
+            initial_solid_fraction=0.05,
+            diagnostic_interval=1,
+            stages=[
+                dict(
+                    kind="isotropic",
+                    steps=2,
+                    drag=1000,
+                    pressure=1000,
+                    gain=1,
+                    filter_time=1e-5,
+                    max_rate=1,
+                    converged_samples=100,
+                )
+            ],
+        )
+>       result = Simulation(spec).run(tmp_path / "failed")
+                 ^^^^^^^^^^^^^^^^
+
+tests/test_laboratory.py:67: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/sand_atlas_dem/simulation.py:63: in __init__
+    self.engine.initialize()
+src/sand_atlas_dem/gpu.py:365: in initialize
+    self.forces(e, self.bindings(dt=0))
+src/sand_atlas_dem/gpu.py:361: in forces
+    self.dispatch("gather", self.n, e, b)
+src/sand_atlas_dem/gpu.py:342: in dispatch
+    self.m.dispatch(name, n, e, r=b)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sand_atlas_dem.backend.Metal object at 0x110732720>, name = 'gather'
+n = 27, encoder = CommandEncoder(
+  device = 0xb467a8628
+), kwargs = {}
+
+    def dispatch(self, name, n, encoder=None, **kwargs):
+        globals_ = {"r": kwargs.pop("r")} if "r" in kwargs else {}
+>       self.kernel(name).dispatch(
+            thread_count=[max(1, int(n)), 1, 1],
+            command_encoder=encoder,
+            vars=globals_,
+            **kwargs,
+        )
+E       RuntimeError: m_device->rhi_device()->createComputePipeline(rhi_desc, (rhi::IComputePipeline**)m_rhi_pipeline.writeRef()) failed with error: -2147467259 (SLANG_FAIL)
+E       
+E       RHI messages:
+E       slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(119): warning :  unused variable '_S1' [-Wunused-variable]
+E           uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+E                ^
+E       metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  unexpected namespace name 'precise': expected expression
+E           precise float3 y_0 = increment_0 + *low_0;
+E           ^
+E       metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  expected ';' after expression
+E           precise float3 y_0 = increment_0 + *low_0;
+E                  ^
+E                  ;
+E       metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  unexpected namespace name 'precise': expected expression
+E           precise float3 next_1 = *high_0 + y_0;
+E           ^
+E       metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  expected ';' after expression
+E           precise float3 next_1 = *high_0 + y_0;
+E                  ^
+E                  ;
+E       1 warning and 4 errors generated.
+E       
+E       
+E       /Users/runner/work/slangpy/slangpy/src/sgl/device/pipeline.cpp:61 in function recreate
+
+src/sand_atlas_dem/backend.py:48: RuntimeError
+----------------------------- Captured stdout call -----------------------------
+[WARN] No supported shader model found, pretending to support sm_6_0.
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(119): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_2->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(119): warning :  unused variable '_S4' [-Wunused-variable]
+    uint _S4 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(119): warning :  unused variable '_S4' [-Wunused-variable]
+    uint _S4 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(189): warning :  unused variable '_S19' [-Wunused-variable]
+    uint _S19 = findPairs_0(id_2, true, &kernelContext_5);
+         ^
+2 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(119): warning :  unused variable '_S15' [-Wunused-variable]
+    uint _S15 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_2->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(119): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(119): warning :  unused variable '_S15' [-Wunused-variable]
+    uint _S15 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_2->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(263): warning :  unused variable '_S15' [-Wunused-variable]
+        uint _S15 = atomic_fetch_add_explicit(((atomic_uint device*)(r_1->control_0+int(6))), 1U, memory_order_relaxed);
+             ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(119): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_1->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+----------------------------- Captured stderr call -----------------------------
+[ERROR] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(119): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  unexpected namespace name 'precise': expected expression
+    precise float3 y_0 = increment_0 + *low_0;
+    ^
+metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  expected ';' after expression
+    precise float3 y_0 = increment_0 + *low_0;
+           ^
+           ;
+metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  unexpected namespace name 'precise': expected expression
+    precise float3 next_1 = *high_0 + y_0;
+    ^
+metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  expected ';' after expression
+    precise float3 next_1 = *high_0 + y_0;
+           ^
+           ;
+1 warning and 4 errors generated.
+
+______________________ test_contact_reference_and_balance ______________________
+
+metal = <sand_atlas_dem.backend.Metal object at 0x110483830>
+shape = Shape(id='analytical-sphere', vertices=TrackedArray([[-2.62865556e-04,  4.25325404e-04,  0.00000000e+00],
+            ...8776e-17]]), radius=0.0005, provenance={'fixture': 'analytical_sphere', 'radius_m': 0.0005, 'display_mesh_only': True})
+
+    def test_contact_reference_and_balance(metal, shape):
+        e, x = engine(metal, shape)
+>       e.initialize()
+
+tests/test_metal.py:67: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/sand_atlas_dem/gpu.py:365: in initialize
+    self.forces(e, self.bindings(dt=0))
+src/sand_atlas_dem/gpu.py:361: in forces
+    self.dispatch("gather", self.n, e, b)
+src/sand_atlas_dem/gpu.py:342: in dispatch
+    self.m.dispatch(name, n, e, r=b)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sand_atlas_dem.backend.Metal object at 0x110483830>, name = 'gather'
+n = 2, encoder = CommandEncoder(
+  device = 0xb46beaa28
+), kwargs = {}
+
+    def dispatch(self, name, n, encoder=None, **kwargs):
+        globals_ = {"r": kwargs.pop("r")} if "r" in kwargs else {}
+>       self.kernel(name).dispatch(
+            thread_count=[max(1, int(n)), 1, 1],
+            command_encoder=encoder,
+            vars=globals_,
+            **kwargs,
+        )
+E       RuntimeError: m_device->rhi_device()->createComputePipeline(rhi_desc, (rhi::IComputePipeline**)m_rhi_pipeline.writeRef()) failed with error: -2147467259 (SLANG_FAIL)
+E       
+E       RHI messages:
+E       slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(119): warning :  unused variable '_S1' [-Wunused-variable]
+E           uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+E                ^
+E       metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  unexpected namespace name 'precise': expected expression
+E           precise float3 y_0 = increment_0 + *low_0;
+E           ^
+E       metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  expected ';' after expression
+E           precise float3 y_0 = increment_0 + *low_0;
+E                  ^
+E                  ;
+E       metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  unexpected namespace name 'precise': expected expression
+E           precise float3 next_1 = *high_0 + y_0;
+E           ^
+E       metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  expected ';' after expression
+E           precise float3 next_1 = *high_0 + y_0;
+E                  ^
+E                  ;
+E       1 warning and 4 errors generated.
+E       
+E       
+E       /Users/runner/work/slangpy/slangpy/src/sgl/device/pipeline.cpp:61 in function recreate
+
+src/sand_atlas_dem/backend.py:48: RuntimeError
+----------------------------- Captured stdout call -----------------------------
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(119): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_2->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(119): warning :  unused variable '_S4' [-Wunused-variable]
+    uint _S4 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(119): warning :  unused variable '_S4' [-Wunused-variable]
+    uint _S4 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(189): warning :  unused variable '_S19' [-Wunused-variable]
+    uint _S19 = findPairs_0(id_2, true, &kernelContext_5);
+         ^
+2 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(119): warning :  unused variable '_S15' [-Wunused-variable]
+    uint _S15 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_2->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(119): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(119): warning :  unused variable '_S15' [-Wunused-variable]
+    uint _S15 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_2->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(263): warning :  unused variable '_S15' [-Wunused-variable]
+        uint _S15 = atomic_fetch_add_explicit(((atomic_uint device*)(r_1->control_0+int(6))), 1U, memory_order_relaxed);
+             ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(119): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_1->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+----------------------------- Captured stderr call -----------------------------
+[ERROR] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(119): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  unexpected namespace name 'precise': expected expression
+    precise float3 y_0 = increment_0 + *low_0;
+    ^
+metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  expected ';' after expression
+    precise float3 y_0 = increment_0 + *low_0;
+           ^
+           ;
+metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  unexpected namespace name 'precise': expected expression
+    precise float3 next_1 = *high_0 + y_0;
+    ^
+metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  expected ';' after expression
+    precise float3 next_1 = *high_0 + y_0;
+           ^
+           ;
+1 warning and 4 errors generated.
+
+____________________ test_periodic_pair_and_history_restart ____________________
+
+metal = <sand_atlas_dem.backend.Metal object at 0x110483830>
+shape = Shape(id='analytical-sphere', vertices=TrackedArray([[-2.62865556e-04,  4.25325404e-04,  0.00000000e+00],
+            ...8776e-17]]), radius=0.0005, provenance={'fixture': 'analytical_sphere', 'radius_m': 0.0005, 'display_mesh_only': True})
+
+    def test_periodic_pair_and_history_restart(metal, shape):
+        e, x = engine(metal, shape)
+        x = np.array([[0.0001, 0.002, 0.002], [0.00511, 0.002, 0.002]])
+        e.buffers["position"].copy_from_numpy(
+            np.column_stack([x / e.length_unit, np.zeros(2)]).astype(np.float32)
+        )
+>       e.initialize()
+
+tests/test_metal.py:91: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/sand_atlas_dem/gpu.py:365: in initialize
+    self.forces(e, self.bindings(dt=0))
+src/sand_atlas_dem/gpu.py:361: in forces
+    self.dispatch("gather", self.n, e, b)
+src/sand_atlas_dem/gpu.py:342: in dispatch
+    self.m.dispatch(name, n, e, r=b)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sand_atlas_dem.backend.Metal object at 0x110483830>, name = 'gather'
+n = 2, encoder = CommandEncoder(
+  device = 0xb46beaa28
+), kwargs = {}
+
+    def dispatch(self, name, n, encoder=None, **kwargs):
+        globals_ = {"r": kwargs.pop("r")} if "r" in kwargs else {}
+>       self.kernel(name).dispatch(
+            thread_count=[max(1, int(n)), 1, 1],
+            command_encoder=encoder,
+            vars=globals_,
+            **kwargs,
+        )
+E       RuntimeError: m_device->rhi_device()->createComputePipeline(rhi_desc, (rhi::IComputePipeline**)m_rhi_pipeline.writeRef()) failed with error: -2147467259 (SLANG_FAIL)
+E       
+E       RHI messages:
+E       slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(119): warning :  unused variable '_S1' [-Wunused-variable]
+E           uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+E                ^
+E       metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  unexpected namespace name 'precise': expected expression
+E           precise float3 y_0 = increment_0 + *low_0;
+E           ^
+E       metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  expected ';' after expression
+E           precise float3 y_0 = increment_0 + *low_0;
+E                  ^
+E                  ;
+E       metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  unexpected namespace name 'precise': expected expression
+E           precise float3 next_1 = *high_0 + y_0;
+E           ^
+E       metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  expected ';' after expression
+E           precise float3 next_1 = *high_0 + y_0;
+E                  ^
+E                  ;
+E       1 warning and 4 errors generated.
+E       
+E       
+E       /Users/runner/work/slangpy/slangpy/src/sgl/device/pipeline.cpp:61 in function recreate
+
+src/sand_atlas_dem/backend.py:48: RuntimeError
+----------------------------- Captured stderr call -----------------------------
+[ERROR] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(119): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  unexpected namespace name 'precise': expected expression
+    precise float3 y_0 = increment_0 + *low_0;
+    ^
+metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  expected ';' after expression
+    precise float3 y_0 = increment_0 + *low_0;
+           ^
+           ;
+metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  unexpected namespace name 'precise': expected expression
+    precise float3 next_1 = *high_0 + y_0;
+    ^
+metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  expected ';' after expression
+    precise float3 next_1 = *high_0 + y_0;
+           ^
+           ;
+1 warning and 4 errors generated.
+
+____________________________ test_overlap_rollback _____________________________
+
+metal = <sand_atlas_dem.backend.Metal object at 0x110483830>
+shape = Shape(id='analytical-sphere', vertices=TrackedArray([[-2.62865556e-04,  4.25325404e-04,  0.00000000e+00],
+            ...8776e-17]]), radius=0.0005, provenance={'fixture': 'analytical_sphere', 'radius_m': 0.0005, 'display_mesh_only': True})
+
+    def test_overlap_rollback(metal, shape):
+        e, x = engine(metal, shape)
+>       e.initialize()
+
+tests/test_metal.py:109: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/sand_atlas_dem/gpu.py:365: in initialize
+    self.forces(e, self.bindings(dt=0))
+src/sand_atlas_dem/gpu.py:361: in forces
+    self.dispatch("gather", self.n, e, b)
+src/sand_atlas_dem/gpu.py:342: in dispatch
+    self.m.dispatch(name, n, e, r=b)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sand_atlas_dem.backend.Metal object at 0x110483830>, name = 'gather'
+n = 2, encoder = CommandEncoder(
+  device = 0xb46beaa28
+), kwargs = {}
+
+    def dispatch(self, name, n, encoder=None, **kwargs):
+        globals_ = {"r": kwargs.pop("r")} if "r" in kwargs else {}
+>       self.kernel(name).dispatch(
+            thread_count=[max(1, int(n)), 1, 1],
+            command_encoder=encoder,
+            vars=globals_,
+            **kwargs,
+        )
+E       RuntimeError: m_device->rhi_device()->createComputePipeline(rhi_desc, (rhi::IComputePipeline**)m_rhi_pipeline.writeRef()) failed with error: -2147467259 (SLANG_FAIL)
+E       
+E       RHI messages:
+E       slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(119): warning :  unused variable '_S1' [-Wunused-variable]
+E           uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+E                ^
+E       metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  unexpected namespace name 'precise': expected expression
+E           precise float3 y_0 = increment_0 + *low_0;
+E           ^
+E       metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  expected ';' after expression
+E           precise float3 y_0 = increment_0 + *low_0;
+E                  ^
+E                  ;
+E       metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  unexpected namespace name 'precise': expected expression
+E           precise float3 next_1 = *high_0 + y_0;
+E           ^
+E       metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  expected ';' after expression
+E           precise float3 next_1 = *high_0 + y_0;
+E                  ^
+E                  ;
+E       1 warning and 4 errors generated.
+E       
+E       
+E       /Users/runner/work/slangpy/slangpy/src/sgl/device/pipeline.cpp:61 in function recreate
+
+src/sand_atlas_dem/backend.py:48: RuntimeError
+----------------------------- Captured stderr call -----------------------------
+[ERROR] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(119): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  unexpected namespace name 'precise': expected expression
+    precise float3 y_0 = increment_0 + *low_0;
+    ^
+metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  expected ';' after expression
+    precise float3 y_0 = increment_0 + *low_0;
+           ^
+           ;
+metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  unexpected namespace name 'precise': expected expression
+    precise float3 next_1 = *high_0 + y_0;
+    ^
+metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  expected ';' after expression
+    precise float3 next_1 = *high_0 + y_0;
+           ^
+           ;
+1 warning and 4 errors generated.
+
+__________________ test_affine_cell_and_no_particle_fallback ___________________
+
+metal = <sand_atlas_dem.backend.Metal object at 0x110483830>
+shape = Shape(id='analytical-sphere', vertices=TrackedArray([[-2.62865556e-04,  4.25325404e-04,  0.00000000e+00],
+            ...8776e-17]]), radius=0.0005, provenance={'fixture': 'analytical_sphere', 'radius_m': 0.0005, 'display_mesh_only': True})
+
+    def test_affine_cell_and_no_particle_fallback(metal, shape):
+        spec = Experiment(particles=2, timestep=1e-8)
+        x = np.array([[0.001, 0.001, 0.001], [0.004, 0.004, 0.004]])
+        e = Engine(ShapeLibrary([shape]), spec, x, [0.006] * 3, [0, 0], [1, 1], metal=metal)
+>       e.initialize()
+
+tests/test_metal.py:138: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/sand_atlas_dem/gpu.py:365: in initialize
+    self.forces(e, self.bindings(dt=0))
+src/sand_atlas_dem/gpu.py:361: in forces
+    self.dispatch("gather", self.n, e, b)
+src/sand_atlas_dem/gpu.py:342: in dispatch
+    self.m.dispatch(name, n, e, r=b)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sand_atlas_dem.backend.Metal object at 0x110483830>, name = 'gather'
+n = 2, encoder = CommandEncoder(
+  device = 0xb46beaa28
+), kwargs = {}
+
+    def dispatch(self, name, n, encoder=None, **kwargs):
+        globals_ = {"r": kwargs.pop("r")} if "r" in kwargs else {}
+>       self.kernel(name).dispatch(
+            thread_count=[max(1, int(n)), 1, 1],
+            command_encoder=encoder,
+            vars=globals_,
+            **kwargs,
+        )
+E       RuntimeError: m_device->rhi_device()->createComputePipeline(rhi_desc, (rhi::IComputePipeline**)m_rhi_pipeline.writeRef()) failed with error: -2147467259 (SLANG_FAIL)
+E       
+E       RHI messages:
+E       slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(119): warning :  unused variable '_S1' [-Wunused-variable]
+E           uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+E                ^
+E       metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  unexpected namespace name 'precise': expected expression
+E           precise float3 y_0 = increment_0 + *low_0;
+E           ^
+E       metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  expected ';' after expression
+E           precise float3 y_0 = increment_0 + *low_0;
+E                  ^
+E                  ;
+E       metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  unexpected namespace name 'precise': expected expression
+E           precise float3 next_1 = *high_0 + y_0;
+E           ^
+E       metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  expected ';' after expression
+E           precise float3 next_1 = *high_0 + y_0;
+E                  ^
+E                  ;
+E       1 warning and 4 errors generated.
+E       
+E       
+E       /Users/runner/work/slangpy/slangpy/src/sgl/device/pipeline.cpp:61 in function recreate
+
+src/sand_atlas_dem/backend.py:48: RuntimeError
+----------------------------- Captured stderr call -----------------------------
+[ERROR] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(119): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  unexpected namespace name 'precise': expected expression
+    precise float3 y_0 = increment_0 + *low_0;
+    ^
+metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  expected ';' after expression
+    precise float3 y_0 = increment_0 + *low_0;
+           ^
+           ;
+metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  unexpected namespace name 'precise': expected expression
+    precise float3 next_1 = *high_0 + y_0;
+    ^
+metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  expected ';' after expression
+    precise float3 next_1 = *high_0 + y_0;
+           ^
+           ;
+1 warning and 4 errors generated.
+
+_______________ test_tangential_force_and_concave_mesh_reference _______________
+
+metal = <sand_atlas_dem.backend.Metal object at 0x110483830>
+
+    def test_tangential_force_and_concave_mesh_reference(metal):
+        from pathlib import Path
+    
+        p = Path("assets/generated/concave-prism.h5")
+        if not p.exists():
+            pytest.skip("Generate original fixtures with examples/create_fixtures.py")
+        shape = ShapeLibrary.load(p).shapes[0]
+        spec = Experiment(
+            particles=2, timestep=1e-9, max_overlap_fraction=0.3, contacts_per_particle=512
+        )
+        x = np.array([[0.002, 0.002, 0.002], [0.0028, 0.002, 0.002]])
+        e = Engine(ShapeLibrary([shape]), spec, x, [0.008] * 3, [0, 0], [1, 1], metal=metal)
+>       e.initialize()
+
+tests/test_metal.py:159: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/sand_atlas_dem/gpu.py:365: in initialize
+    self.forces(e, self.bindings(dt=0))
+src/sand_atlas_dem/gpu.py:361: in forces
+    self.dispatch("gather", self.n, e, b)
+src/sand_atlas_dem/gpu.py:342: in dispatch
+    self.m.dispatch(name, n, e, r=b)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sand_atlas_dem.backend.Metal object at 0x110483830>, name = 'gather'
+n = 2, encoder = CommandEncoder(
+  device = 0xb46beaa28
+), kwargs = {}
+
+    def dispatch(self, name, n, encoder=None, **kwargs):
+        globals_ = {"r": kwargs.pop("r")} if "r" in kwargs else {}
+>       self.kernel(name).dispatch(
+            thread_count=[max(1, int(n)), 1, 1],
+            command_encoder=encoder,
+            vars=globals_,
+            **kwargs,
+        )
+E       RuntimeError: m_device->rhi_device()->createComputePipeline(rhi_desc, (rhi::IComputePipeline**)m_rhi_pipeline.writeRef()) failed with error: -2147467259 (SLANG_FAIL)
+E       
+E       RHI messages:
+E       slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(119): warning :  unused variable '_S1' [-Wunused-variable]
+E           uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+E                ^
+E       metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  unexpected namespace name 'precise': expected expression
+E           precise float3 y_0 = increment_0 + *low_0;
+E           ^
+E       metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  expected ';' after expression
+E           precise float3 y_0 = increment_0 + *low_0;
+E                  ^
+E                  ;
+E       metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  unexpected namespace name 'precise': expected expression
+E           precise float3 next_1 = *high_0 + y_0;
+E           ^
+E       metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  expected ';' after expression
+E           precise float3 next_1 = *high_0 + y_0;
+E                  ^
+E                  ;
+E       1 warning and 4 errors generated.
+E       
+E       
+E       /Users/runner/work/slangpy/slangpy/src/sgl/device/pipeline.cpp:61 in function recreate
+
+src/sand_atlas_dem/backend.py:48: RuntimeError
+----------------------------- Captured stderr call -----------------------------
+[ERROR] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(119): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  unexpected namespace name 'precise': expected expression
+    precise float3 y_0 = increment_0 + *low_0;
+    ^
+metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  expected ';' after expression
+    precise float3 y_0 = increment_0 + *low_0;
+           ^
+           ;
+metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  unexpected namespace name 'precise': expected expression
+    precise float3 next_1 = *high_0 + y_0;
+    ^
+metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  expected ';' after expression
+    precise float3 next_1 = *high_0 + y_0;
+           ^
+           ;
+1 warning and 4 errors generated.
+
+_________________________ test_drag_energy_accounting __________________________
+
+metal = <sand_atlas_dem.backend.Metal object at 0x110483830>
+shape = Shape(id='analytical-sphere', vertices=TrackedArray([[-2.62865556e-04,  4.25325404e-04,  0.00000000e+00],
+            ...8776e-17]]), radius=0.0005, provenance={'fixture': 'analytical_sphere', 'radius_m': 0.0005, 'display_mesh_only': True})
+
+    def test_drag_energy_accounting(metal, shape):
+        spec = Experiment(particles=2, timestep=1e-8)
+        x = np.array([[0.001, 0.001, 0.001], [0.004, 0.004, 0.004]])
+        e = Engine(ShapeLibrary([shape]), spec, x, [0.006] * 3, [0, 0], [1, 1], metal=metal)
+>       e.initialize()
+
+tests/test_metal.py:172: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/sand_atlas_dem/gpu.py:365: in initialize
+    self.forces(e, self.bindings(dt=0))
+src/sand_atlas_dem/gpu.py:361: in forces
+    self.dispatch("gather", self.n, e, b)
+src/sand_atlas_dem/gpu.py:342: in dispatch
+    self.m.dispatch(name, n, e, r=b)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sand_atlas_dem.backend.Metal object at 0x110483830>, name = 'gather'
+n = 2, encoder = CommandEncoder(
+  device = 0xb46beaa28
+), kwargs = {}
+
+    def dispatch(self, name, n, encoder=None, **kwargs):
+        globals_ = {"r": kwargs.pop("r")} if "r" in kwargs else {}
+>       self.kernel(name).dispatch(
+            thread_count=[max(1, int(n)), 1, 1],
+            command_encoder=encoder,
+            vars=globals_,
+            **kwargs,
+        )
+E       RuntimeError: m_device->rhi_device()->createComputePipeline(rhi_desc, (rhi::IComputePipeline**)m_rhi_pipeline.writeRef()) failed with error: -2147467259 (SLANG_FAIL)
+E       
+E       RHI messages:
+E       slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(119): warning :  unused variable '_S1' [-Wunused-variable]
+E           uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+E                ^
+E       metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  unexpected namespace name 'precise': expected expression
+E           precise float3 y_0 = increment_0 + *low_0;
+E           ^
+E       metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  expected ';' after expression
+E           precise float3 y_0 = increment_0 + *low_0;
+E                  ^
+E                  ;
+E       metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  unexpected namespace name 'precise': expected expression
+E           precise float3 next_1 = *high_0 + y_0;
+E           ^
+E       metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  expected ';' after expression
+E           precise float3 next_1 = *high_0 + y_0;
+E                  ^
+E                  ;
+E       1 warning and 4 errors generated.
+E       
+E       
+E       /Users/runner/work/slangpy/slangpy/src/sgl/device/pipeline.cpp:61 in function recreate
+
+src/sand_atlas_dem/backend.py:48: RuntimeError
+----------------------------- Captured stderr call -----------------------------
+[ERROR] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(119): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  unexpected namespace name 'precise': expected expression
+    precise float3 y_0 = increment_0 + *low_0;
+    ^
+metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  expected ';' after expression
+    precise float3 y_0 = increment_0 + *low_0;
+           ^
+           ;
+metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  unexpected namespace name 'precise': expected expression
+    precise float3 next_1 = *high_0 + y_0;
+    ^
+metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  expected ';' after expression
+    precise float3 next_1 = *high_0 + y_0;
+           ^
+           ;
+1 warning and 4 errors generated.
+
+__________________ test_contact_growth_from_effective_minimum __________________
+
+metal = <sand_atlas_dem.backend.Metal object at 0x110483830>
+
+    def test_contact_growth_from_effective_minimum(metal):
+        from sand_atlas_dem.qualification import growth
+    
+>       result = growth(
+            metal,
+            sphere(resolution=64, samples=2048),
+            {"initial_contacts_per_particle": 1, "relative_state_limit": 1e-4},
+        )
+
+tests/test_metal.py:190: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/sand_atlas_dem/qualification.py:215: in growth
+    e = pair(metal, shape, contacts=cap, separation=1.001, friction=0)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/sand_atlas_dem/qualification.py:56: in pair
+    e.initialize()
+src/sand_atlas_dem/gpu.py:365: in initialize
+    self.forces(e, self.bindings(dt=0))
+src/sand_atlas_dem/gpu.py:361: in forces
+    self.dispatch("gather", self.n, e, b)
+src/sand_atlas_dem/gpu.py:342: in dispatch
+    self.m.dispatch(name, n, e, r=b)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sand_atlas_dem.backend.Metal object at 0x110483830>, name = 'gather'
+n = 2, encoder = CommandEncoder(
+  device = 0xb46beaa28
+), kwargs = {}
+
+    def dispatch(self, name, n, encoder=None, **kwargs):
+        globals_ = {"r": kwargs.pop("r")} if "r" in kwargs else {}
+>       self.kernel(name).dispatch(
+            thread_count=[max(1, int(n)), 1, 1],
+            command_encoder=encoder,
+            vars=globals_,
+            **kwargs,
+        )
+E       RuntimeError: m_device->rhi_device()->createComputePipeline(rhi_desc, (rhi::IComputePipeline**)m_rhi_pipeline.writeRef()) failed with error: -2147467259 (SLANG_FAIL)
+E       
+E       RHI messages:
+E       slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(119): warning :  unused variable '_S1' [-Wunused-variable]
+E           uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+E                ^
+E       metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  unexpected namespace name 'precise': expected expression
+E           precise float3 y_0 = increment_0 + *low_0;
+E           ^
+E       metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  expected ';' after expression
+E           precise float3 y_0 = increment_0 + *low_0;
+E                  ^
+E                  ;
+E       metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  unexpected namespace name 'precise': expected expression
+E           precise float3 next_1 = *high_0 + y_0;
+E           ^
+E       metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  expected ';' after expression
+E           precise float3 next_1 = *high_0 + y_0;
+E                  ^
+E                  ;
+E       1 warning and 4 errors generated.
+E       
+E       
+E       /Users/runner/work/slangpy/slangpy/src/sgl/device/pipeline.cpp:61 in function recreate
+
+src/sand_atlas_dem/backend.py:48: RuntimeError
+----------------------------- Captured stderr call -----------------------------
+[ERROR] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(119): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  unexpected namespace name 'precise': expected expression
+    precise float3 y_0 = increment_0 + *low_0;
+    ^
+metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  expected ';' after expression
+    precise float3 y_0 = increment_0 + *low_0;
+           ^
+           ;
+metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  unexpected namespace name 'precise': expected expression
+    precise float3 next_1 = *high_0 + y_0;
+    ^
+metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  expected ';' after expression
+    precise float3 next_1 = *high_0 + y_0;
+           ^
+           ;
+1 warning and 4 errors generated.
+
+_______________ test_sub_ulp_translation_rotation_and_slow_cell ________________
+
+metal = <sand_atlas_dem.backend.Metal object at 0x110483830>
+shape = Shape(id='analytical-sphere', vertices=TrackedArray([[-2.62865556e-04,  4.25325404e-04,  0.00000000e+00],
+            ...8776e-17]]), radius=0.0005, provenance={'fixture': 'analytical_sphere', 'radius_m': 0.0005, 'display_mesh_only': True})
+
+    def test_sub_ulp_translation_rotation_and_slow_cell(metal, shape):
+        """Analytical motions whose per-step increments round to zero without residuals."""
+        from scipy.spatial.transform import Rotation
+    
+        spec = Experiment(particles=2, timestep=1e-8)
+        x = np.array([[0.001, 0.001, 0.001], [0.004, 0.004, 0.004]])
+        e = Engine(ShapeLibrary([shape]), spec, x, [0.006] * 3, [0, 0], [1, 1], metal=metal)
+        q = np.tile(np.array([0.5, 0.5, 0.5, 0.5], np.float32), (2, 1))
+        e.buffers["rotation"].copy_from_numpy(q)
+>       e.initialize()
+
+tests/test_metal.py:208: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/sand_atlas_dem/gpu.py:365: in initialize
+    self.forces(e, self.bindings(dt=0))
+src/sand_atlas_dem/gpu.py:361: in forces
+    self.dispatch("gather", self.n, e, b)
+src/sand_atlas_dem/gpu.py:342: in dispatch
+    self.m.dispatch(name, n, e, r=b)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sand_atlas_dem.backend.Metal object at 0x110483830>, name = 'gather'
+n = 2, encoder = CommandEncoder(
+  device = 0xb46beaa28
+), kwargs = {}
+
+    def dispatch(self, name, n, encoder=None, **kwargs):
+        globals_ = {"r": kwargs.pop("r")} if "r" in kwargs else {}
+>       self.kernel(name).dispatch(
+            thread_count=[max(1, int(n)), 1, 1],
+            command_encoder=encoder,
+            vars=globals_,
+            **kwargs,
+        )
+E       RuntimeError: m_device->rhi_device()->createComputePipeline(rhi_desc, (rhi::IComputePipeline**)m_rhi_pipeline.writeRef()) failed with error: -2147467259 (SLANG_FAIL)
+E       
+E       RHI messages:
+E       slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(119): warning :  unused variable '_S1' [-Wunused-variable]
+E           uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+E                ^
+E       metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  unexpected namespace name 'precise': expected expression
+E           precise float3 y_0 = increment_0 + *low_0;
+E           ^
+E       metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  expected ';' after expression
+E           precise float3 y_0 = increment_0 + *low_0;
+E                  ^
+E                  ;
+E       metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  unexpected namespace name 'precise': expected expression
+E           precise float3 next_1 = *high_0 + y_0;
+E           ^
+E       metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  expected ';' after expression
+E           precise float3 next_1 = *high_0 + y_0;
+E                  ^
+E                  ;
+E       1 warning and 4 errors generated.
+E       
+E       
+E       /Users/runner/work/slangpy/slangpy/src/sgl/device/pipeline.cpp:61 in function recreate
+
+src/sand_atlas_dem/backend.py:48: RuntimeError
+----------------------------- Captured stderr call -----------------------------
+[ERROR] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(119): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  unexpected namespace name 'precise': expected expression
+    precise float3 y_0 = increment_0 + *low_0;
+    ^
+metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  expected ';' after expression
+    precise float3 y_0 = increment_0 + *low_0;
+           ^
+           ;
+metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  unexpected namespace name 'precise': expected expression
+    precise float3 next_1 = *high_0 + y_0;
+    ^
+metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(76): error :  expected ';' after expression
+    precise float3 next_1 = *high_0 + y_0;
+           ^
+           ;
+1 warning and 4 errors generated.
+
+=========================== short test summary info ============================
+FAILED tests/test_laboratory.py::test_run_resume_and_export - RuntimeError: m...
+FAILED tests/test_laboratory.py::test_unconverged_preparation_is_failure - Ru...
+FAILED tests/test_metal.py::test_contact_reference_and_balance - RuntimeError...
+FAILED tests/test_metal.py::test_periodic_pair_and_history_restart - RuntimeE...
+FAILED tests/test_metal.py::test_overlap_rollback - RuntimeError: m_device->r...
+FAILED tests/test_metal.py::test_affine_cell_and_no_particle_fallback - Runti...
+FAILED tests/test_metal.py::test_tangential_force_and_concave_mesh_reference
+FAILED tests/test_metal.py::test_drag_energy_accounting - RuntimeError: m_dev...
+FAILED tests/test_metal.py::test_contact_growth_from_effective_minimum - Runt...
+FAILED tests/test_metal.py::test_sub_ulp_translation_rotation_and_slow_cell
+10 failed, 14 passed in 5.72s

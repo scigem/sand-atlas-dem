@@ -1,0 +1,10 @@
+{
+  "format": "sand-dem-doctor/1",
+  "backend": "metal",
+  "adapter": "Apple M4 Max",
+  "slangpy": "0.43.1",
+  "python": "3.12.14",
+  "smoke_elements": 257,
+  "smoke_max_error": 0.0,
+  "fallback": false
+}

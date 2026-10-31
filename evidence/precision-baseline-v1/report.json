@@ -1,0 +1,78 @@
+{
+  "identity": "precision-v1",
+  "protocol": {
+    "identity": "precision-v1",
+    "frozen_before_execution": true,
+    "reference": "Analytical force-free translation, constant spatial rotation of an isotropic body, diagonal cell strain and peculiar-velocity evolution",
+    "particles": 2,
+    "timestep_s": 1e-08,
+    "steps": 2000,
+    "initial_quaternion_xyzw": [
+      0.5,
+      0.5,
+      0.5,
+      0.5
+    ],
+    "initial_normalized_velocity": [
+      1e-07,
+      0.1,
+      0
+    ],
+    "physical_angular_velocity_rad_s": [
+      0.01,
+      0.02,
+      -0.03
+    ],
+    "diagonal_cell_rate_s": [
+      0,
+      -0.1,
+      0
+    ],
+    "limits": {
+      "translation_absolute_normalized": 5e-11,
+      "velocity_absolute_normalized": 1e-10,
+      "engineering_strain_absolute": 1e-07,
+      "orientation_error_rad": 1e-09
+    },
+    "invariant": "Per-step increments below FP32 ULP must accumulate; no relaxed equilibrium gate or CPU stepping fallback. All residual state is transactional and checkpointed."
+  },
+  "protocol_sha256": "acbe385d9333814e4d1039cb50f58a7e1cfe2518f940811eb84cc75a5e204158",
+  "source_hashes": {
+    "simulation.py": "45bae47126be10df9225a5cc47b53a964799c2230cc237bb6479ecd651f25846",
+    "backend.py": "13bcb38a4df578fac7ba75396f7b091054e452e8a0e8f7470e9a6cf1b49a1ade",
+    "benchmark.py": "2f82c262603fc632d7dd04062d6ffff88c307927f1e78ee69b8581bc129a4c32",
+    "util.py": "0f9dc71429a87057dc08216f3c51425d8b76be9c4fd30f2cab6c3f98b70397c2",
+    "__init__.py": "25ef40efbf7fa452aaa142bbe8d9ac35c90756e1a6f09cdacdcd2723cdd1636d",
+    "spec.py": "07dcdd1999efbecb7bb2aea3324a5ae7ec26c38e5da88b95713535911268350d",
+    "visualize.py": "2033f63282a491b061464558a8399b5a5d1bc53c55c1bb4de9c48cf8dc893cec",
+    "cli.py": "ee494c2498258a534b618d7793616c9e2bf3519bfe4c9637f380b71298981190",
+    "qualification.py": "b59751cc6fcc81b834dd90174ff9859e21efffa389dc36bc514ced75ef41b2fb",
+    "geometry.py": "521418ed73ea0642a298e7a874b0d43b796694901f0989650db0040aa467faef",
+    "reference.py": "1cd2a748a7f06f1c5138b5f6c9ed99c06715ce6167693251369e8a8fb3cc502f",
+    "gpu.py": "1628a01f0b7e2268431e9ca37e4da4eb6568f5105c0b4ae4cdde64cfbdf1d82d"
+  },
+  "shader_hashes": {
+    "scan.slang": "51900fe7d78347d2274488b1b5c328ed53714be3043d221ad1d48555e1c5cbac",
+    "solver.slang": "75454af3d5e92002190cf863a8602192378f560a8bf432bcc9b6bd32e1263e5e",
+    "diagnostic.slang": "4f738fbef3ee79c370f74596a51d0de80b5ddd12375615afd18004df0bec7bb0"
+  },
+  "backend": {
+    "format": "sand-dem-doctor/1",
+    "backend": "metal",
+    "adapter": "Apple M4 Max",
+    "slangpy": "0.43.1",
+    "python": "3.12.14",
+    "smoke_elements": 257,
+    "smoke_max_error": 0.0,
+    "fallback": false
+  },
+  "actual_strain": 0.0,
+  "expected_strain": 1.9999980000013335e-06,
+  "errors": {
+    "translation_absolute_normalized": 1.2285902482034317e-06,
+    "velocity_absolute_normalized": 2.000002029822756e-07,
+    "engineering_strain_absolute": 1.9999980000013335e-06,
+    "orientation_error_rad": 7.483314773169807e-07
+  },
+  "passed": false
+}

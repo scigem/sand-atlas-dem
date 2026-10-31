@@ -1,0 +1,119 @@
+{
+  "status": "complete",
+  "step": 20,
+  "stage": 1,
+  "converged": 0,
+  "contact_phase": false,
+  "last": {
+    "step": 20,
+    "elapsed_time": 2e-07,
+    "cell": [
+      0.008751238822937015,
+      0.008751238822937015,
+      0.008751238822937015
+    ],
+    "stress": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "contact_stress": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "kinetic_stress": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "stress_antisymmetry": 0.0,
+    "p": 0.0,
+    "q": 0.0,
+    "axial_strain": -1.226728185699244e-08,
+    "volumetric_strain": -3.680184557097732e-08,
+    "volume_ratio": 1.0000000368018462,
+    "log_strain": [
+      -1.2267281781749339e-08,
+      -1.2267281781749339e-08,
+      -1.2267281781749339e-08
+    ],
+    "void_ratio": 19.000000736036935,
+    "kinetic_energy": 0.0,
+    "elastic_energy_proxy": 0.0,
+    "unbalanced_force": 0.0,
+    "max_overlap_fraction": 0.0,
+    "friction_dissipation_last_step": 0.0,
+    "candidate_pairs": 0,
+    "active_surface_contacts": 0,
+    "active_grain_pairs": 0,
+    "coordination": 0.0,
+    "fabric": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "sliding_fraction": 0.0,
+    "cell_log_rate": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "friction_dissipation": 0.0,
+    "drag_dissipation": 0.0,
+    "cell_work": 0.0,
+    "stage": 0,
+    "wall_seconds": 0.0067262910306453705,
+    "work_balance_proxy_residual": 0.0
+  },
+  "elapsed_wall_seconds": 0.5027882501017302,
+  "latest_checkpoint": "/Users/bmar5496/code/sand-atlas-dem/evidence/frozen-workflow-smoke-v1/run/chunk-0002/checkpoint.h5"
+}

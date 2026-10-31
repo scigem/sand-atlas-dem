@@ -1,0 +1,19 @@
+.F.................                                                      [100%]
+=================================== FAILURES ===================================
+____________________ test_scaled_mesh_and_invalid_geometry _____________________
+
+    def test_scaled_mesh_and_invalid_geometry():
+        mesh = trimesh.creation.box(extents=[1, 2, 3])
+        s = from_mesh(mesh, unit="mm", resolution=12, samples=128)
+        assert np.isclose(s.volume, 6e-9)
+        assert s.query([[0, 0, 0]])[0][0] < 0
+>       assert np.isclose(s.query([[0, 0, 0]])[0][0], -0.0005, atol=s.spacing * 0.1)
+E       AssertionError: assert np.False_
+E        +  where np.False_ = <function isclose at 0x106ae1530>(np.float64(-0.00042424242807707435), -0.0005, atol=(0.00027272727272727274 * 0.1))
+E        +    where <function isclose at 0x106ae1530> = np.isclose
+E        +    and   0.00027272727272727274 = Shape(id='grain', vertices=TrackedArray([[-0.0005, -0.001 , -0.0015],\n              [-0.0005, -0.001 ,  0.0015],\n     ...esolution': 12, 'sample_count': 128, 'sdf_sign': 'negative_inside', 'sampling': 'scrambled_sobol_area', 'repairs': []}).spacing
+
+tests/test_geometry.py:28: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_geometry.py::test_scaled_mesh_and_invalid_geometry - Assert...
+1 failed, 18 passed in 6.40s
