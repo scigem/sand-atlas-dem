@@ -48,6 +48,53 @@ planes with nonperiodic neighbours, wall reactions/work and restartable state:
 **with provisional controller settings**, not a validated ready-to-publish test.
 Preparation that exhausts its budget without convergence is a failed run.
 
+## Live 3D view and videos
+
+Install the optional renderer once:
+
+```sh
+.venv/bin/python -m pip install -e '.[view]'
+.venv/bin/sand-dem run examples/smoke.json --output runs/view-smoke \
+  --live --record-video --color-by force --vectors velocity
+# The same flags work on resume and case run:
+.venv/bin/sand-dem case run hostun --case cases/drained-triaxial.json \
+  --output runs/hostun-video --record-video --view-every 10 \
+  --color-by coordination --view-geometry sphere
+```
+
+`--live` opens an interactive 3D window (drag to rotate, wheel to zoom).
+`--record-video` writes four 960×720 MP4s: `x.mp4`, `y.mp4`, `z.mp4` and
+`iso.mp4` in `<run>/visualization/` (`<case-output>/run/visualization/` for cases).
+Both flags can be combined. The three axis views are orthographic, looking along
+the named axis toward the cell centre; videos retain a fixed initial-cell framing.
+Closing the live window lets the simulation and any recording continue.
+
+`--color-by` accepts `speed`, `force`, `torque`, `momentum`, `coordination` and
+`shape`. `--vectors` accepts `velocity`, `force`, `torque` and `momentum`.
+Labels use SI units; speed and velocity are peculiar motion, excluding affine
+cell streaming. Force and torque are net particle contact resultants, so balanced
+contact forces can cancel; this viewer does not show individual nodal force chains.
+Coordination counts distinct active grain neighbours across both directed passes.
+The white box is the periodic cell, with no ghost copies or clipping of crossing grains.
+
+Rendering samples committed states at diagnostic boundaries. `--view-every N`
+selects every Nth chunk; initial and final committed states are included.
+`--video-fps 24` sets playback speed, independently of physical simulation time;
+each frame displays its step and physical time. Default colours rescale each frame;
+use `--color-max VALUE` to fix the zero-to-maximum range for comparisons.
+Arrows show direction and relative magnitude with a per-frame display scale;
+`--max-vectors 1000` limits arrows by deterministic striding.
+
+Original mesh geometry is the default. `--view-geometry sphere` uses bounding
+spheres as an explicit display proxy for large assemblies. Rendering and GPU
+readback add wall time, especially for detailed meshes and four videos; they do
+not change the solver timestep, diagnostic cadence or integration.
+`render.json` records options, frame count and rendering failures. A display/encoder
+error stops rendering with a warning while the simulation continues; check rendering
+status separately from the run's scientific and execution status. Existing snapshots
+and checkpoints retain their formats. PyVista/VTK renders the scene; ImageIO's
+bundled FFmpeg encodes H.264. macOS rendering requires access to a graphical session.
+
 ## Named-material cases
 
 ```sh
