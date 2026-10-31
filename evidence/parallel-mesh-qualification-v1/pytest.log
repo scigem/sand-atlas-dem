@@ -1,0 +1,549 @@
+.............................................ss..................ss..... [ 22%]
+.s............................FF.F...................................... [ 45%]
+..........F....................................F......................FF [ 68%]
+........................................................................ [ 90%]
+......sss....................                                            [100%]
+=================================== FAILURES ===================================
+________________ test_coupled_rotating_chain_refinement[False] _________________
+
+metal = <sand_atlas_dem.backend.Metal object at 0x10ced8200>
+cube = Shape(id='grain', vertices=TrackedArray([[-5.e-05, -5.e-05, -5.e-05],
+              [-5.e-05, -5.e-05,  5.e-05],
+     ...'resolution': 8, 'sample_count': 16, 'sdf_sign': 'negative_inside', 'sampling': 'scrambled_sobol_area', 'repairs': []})
+dense = False
+
+    @pytest.mark.metal
+    @metal_test[1]
+    @pytest.mark.parametrize("dense", [False, True])
+    def test_coupled_rotating_chain_refinement(metal, cube, dense):
+        # Three grains, two contacts/body in the middle, sticking/sliding plus spin.
+        positions = [[0.005 + i * 0.999e-4, 0.005, 0.005] for i in range(3)]
+        if dense:
+            positions = 0.005 + np.indices((3, 3, 3)).reshape(3, -1).T * 0.999e-4
+        n = len(positions)
+        outputs = []
+        for dt, steps in [(1e-9, 2048), (2e-9, 1024), (4e-9, 512), (8e-9, 256)]:
+            e = engine(metal, cube, dt=dt, walls=0, positions=positions)
+            e.buffers["velocity"].copy_from_numpy(
+                f4(np.array([[0, 0.001 * np.cos(i), 0.001 * np.sin(i)] for i in range(n)]))
+                * e.time_unit
+                / e.length_unit
+            )
+            # Nonzero angular momentum: physical 1000 rad/s about an oblique axis.
+            inertia = cube.inertia * 2650
+            L = (
+                inertia
+                @ np.array([600.0, 800.0, 0.0])
+                / (e.mass_unit * e.length_unit**2 / e.time_unit)
+            )
+            e.buffers["momentum"].copy_from_numpy(f4([L * (-1) ** i for i in range(n)]))
+            e.initialize()
+>           assert e.state()["contacts"] >= (108 if dense else 4)
+E           assert 0 >= 4
+
+tests/test_contact_timestep_policy.py:203: AssertionError
+----------------------------- Captured stdout call -----------------------------
+[WARN] (rhi) layer: IComputePassEncoder::dispatchComputeIndirect is not supported!
+_________________ test_coupled_rotating_chain_refinement[True] _________________
+
+metal = <sand_atlas_dem.backend.Metal object at 0x10ced8200>
+cube = Shape(id='grain', vertices=TrackedArray([[-5.e-05, -5.e-05, -5.e-05],
+              [-5.e-05, -5.e-05,  5.e-05],
+     ...'resolution': 8, 'sample_count': 16, 'sdf_sign': 'negative_inside', 'sampling': 'scrambled_sobol_area', 'repairs': []})
+dense = True
+
+    @pytest.mark.metal
+    @metal_test[1]
+    @pytest.mark.parametrize("dense", [False, True])
+    def test_coupled_rotating_chain_refinement(metal, cube, dense):
+        # Three grains, two contacts/body in the middle, sticking/sliding plus spin.
+        positions = [[0.005 + i * 0.999e-4, 0.005, 0.005] for i in range(3)]
+        if dense:
+            positions = 0.005 + np.indices((3, 3, 3)).reshape(3, -1).T * 0.999e-4
+        n = len(positions)
+        outputs = []
+        for dt, steps in [(1e-9, 2048), (2e-9, 1024), (4e-9, 512), (8e-9, 256)]:
+            e = engine(metal, cube, dt=dt, walls=0, positions=positions)
+            e.buffers["velocity"].copy_from_numpy(
+                f4(np.array([[0, 0.001 * np.cos(i), 0.001 * np.sin(i)] for i in range(n)]))
+                * e.time_unit
+                / e.length_unit
+            )
+            # Nonzero angular momentum: physical 1000 rad/s about an oblique axis.
+            inertia = cube.inertia * 2650
+            L = (
+                inertia
+                @ np.array([600.0, 800.0, 0.0])
+                / (e.mass_unit * e.length_unit**2 / e.time_unit)
+            )
+            e.buffers["momentum"].copy_from_numpy(f4([L * (-1) ** i for i in range(n)]))
+            e.initialize()
+>           assert e.state()["contacts"] >= (108 if dense else 4)
+E           assert 0 >= 108
+
+tests/test_contact_timestep_policy.py:203: AssertionError
+----------------------------- Captured stdout call -----------------------------
+[WARN] (rhi) layer: IComputePassEncoder::dispatchComputeIndirect is not supported!
+______________________ test_unequal_pair_rotational_rates ______________________
+
+metal = <sand_atlas_dem.backend.Metal object at 0x10ced8200>
+
+    @pytest.mark.metal
+    @metal_test[1]
+    def test_unequal_pair_rotational_rates(metal):
+        sh = with_face_quadrature(
+            from_mesh(
+                trimesh.creation.box(extents=[1e-4, 7e-5, 4e-5]),
+                unit="m",
+                resolution=8,
+                samples=32,
+            ),
+            rule="gauss3",
+            subdivisions=1,
+        )
+        spec = Experiment(
+            periodic=False,
+            contact_geometry="mesh",
+            particles=2,
+            timestep_policy="active-contact",
+            timestep=1e-10,
+            normal_viscosity=1e5,
+            contacts_per_particle=512,
+            max_overlap_fraction=0.1,
+        )
+        scales = [1.0, 0.8]
+        e = Engine(
+            ShapeLibrary([sh]),
+            spec,
+            [[0.005, 0.005, 0.005], [0.005 + 8.9e-5, 0.005 + 2e-6, 0.005]],
+            [0.01] * 3,
+            [0, 0],
+            scales,
+            metal=metal,
+        )
+        angle = 0.3
+        e.buffers["rotation"].copy_from_numpy(
+            np.array(
+                [[0, 0, 0, 1], [np.sin(angle / 2), 0, 0, np.cos(angle / 2)]], np.float32
+            )
+        )
+        e.initialize()
+        state = e.state()
+        count = state["contacts"]
+>       assert count > 0
+E       assert 0 > 0
+
+tests/test_contact_timestep_policy.py:320: AssertionError
+----------------------------- Captured stdout call -----------------------------
+[WARN] (rhi) layer: IComputePassEncoder::dispatchComputeIndirect is not supported!
+_________ test_mesh_compaction_growth_and_sample_key_friction_restart __________
+
+    def test_mesh_compaction_growth_and_sample_key_friction_restart():
+        shape = from_mesh(trimesh.creation.box(), unit="mm", resolution=8, samples=1024)
+        m = Metal()
+        spec = Experiment(
+            particles=2,
+            timestep=1e-9,
+            contact_geometry="mesh",
+            contacts_per_particle=16,
+            pairs_per_particle=4,
+        )
+        origin = np.full(3, 0.005)
+        positions = np.array([origin, origin + [0.00102, 0, 0]])
+        e = Engine(
+            ShapeLibrary([shape]), spec, positions, [0.02] * 3, [0, 0], [1.0, 1.0], metal=m
+        )
+        e.initialize()
+        assert e.diagnostics()["active_surface_contacts"] == 0
+        # Cross into a new flat-face contact through an actual drift. The committed
+        # positions/contact state remain consistent for every rollback and resize.
+        initial_capacity = e.contact_capacity
+        approach = np.zeros((2, 4), np.float32)
+        approach[1, 0] = -0.00003 / spec.timestep * e.time_unit / e.length_unit
+        e.buffers["velocity"].copy_from_numpy(approach)
+        e.advance(1)
+        diagnostics = e.diagnostics()
+>       assert diagnostics["active_grain_pairs"] == 1
+E       assert 0 == 1
+
+tests/test_mesh_metal.py:157: AssertionError
+----------------------------- Captured stdout call -----------------------------
+[WARN] No supported shader model found, pretending to support sm_6_0.
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(182): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(182): warning :  unused variable '_S5' [-Wunused-variable]
+    uint _S5 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(182): warning :  unused variable '_S5' [-Wunused-variable]
+    uint _S5 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(376): warning :  unused variable '_S26' [-Wunused-variable]
+    uint _S26 = findPairs_0(id_2, true, &kernelContext_5);
+         ^
+2 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(182): warning :  unused variable '_S35' [-Wunused-variable]
+    uint _S35 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_4->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(468): warning :  unused variable '_S84' [-Wunused-variable]
+                        uint _S84 = atomic_fetch_add_explicit(((atomic_uint device*)((&kernelContext_8)->r_0->contactCounts_0+pair_0)), 1U, memory_order_relaxed);
+                             ^
+2 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(182): warning :  unused variable '_S10' [-Wunused-variable]
+    uint _S10 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_2->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(669): warning :  unused variable '_S23' [-Wunused-variable]
+            uint _S23 = atomic_fetch_add_explicit(((atomic_uint device*)(r_1->control_0+int(6))), 1U, memory_order_relaxed);
+                 ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(684): warning :  unused variable '_S29' [-Wunused-variable]
+        uint _S29 = atomic_fetch_add_explicit(((atomic_uint device*)(r_1->control_0+int(6))), 1U, memory_order_relaxed);
+             ^
+3 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(182): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_1->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(182): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) layer: IComputePassEncoder::dispatchComputeIndirect is not supported!
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(182): warning :  unused variable '_S22' [-Wunused-variable]
+    uint _S22 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_10->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(182): warning :  unused variable '_S5' [-Wunused-variable]
+    uint _S5 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_2->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(842): warning :  unused variable '_S3' [-Wunused-variable]
+        uint _S3 = atomic_fetch_or_explicit(((atomic_uint device*)((&kernelContext_1)->r_0->control_0+int(4))), 1U, memory_order_relaxed);
+             ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(182): warning :  unused variable '_S15' [-Wunused-variable]
+    uint _S15 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_9->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) layer: IComputePassEncoder::dispatchComputeIndirect is not supported!
+_____ test_interior_contacts_preserve_existing_mechanics_and_history[mesh] _____
+
+geometry = 'mesh'
+
+    @pytest.mark.parametrize("geometry", ["sdf", "mesh"])
+    def test_interior_contacts_preserve_existing_mechanics_and_history(geometry):
+        shape = from_mesh(
+            trimesh.creation.box(extents=[1, 1, 1]), unit="mm", resolution=16, samples=512
+        )
+        library = ShapeLibrary([shape])
+        metal = Metal()
+        positions = [[0.002] * 3, [0.002995, 0.002, 0.002]]
+        engines = []
+        for periodic in (True, False):
+            spec = Experiment(
+                particles=2, timestep=1e-8, periodic=periodic, contact_geometry=geometry
+            )
+            engine = Engine(
+                library, spec, positions, [0.006] * 3, [0, 0], [1, 1], metal=metal
+            )
+            engine.initialize()
+            v = np.array([[0, 0.01, 0], [0, 0, 0]])
+            engine.buffers["velocity"].copy_from_numpy(
+                f4(v * engine.time_unit / engine.length_unit)
+            )
+            engine.advance(3)
+            engines.append(engine)
+        periodic, bounded = engines
+>       assert bounded.diagnostics()["active_surface_contacts"] > 0
+E       assert 0 > 0
+
+tests/test_nonperiodic_integration.py:48: AssertionError
+----------------------------- Captured stdout call -----------------------------
+[WARN] No supported shader model found, pretending to support sm_6_0.
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(182): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(182): warning :  unused variable '_S5' [-Wunused-variable]
+    uint _S5 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(182): warning :  unused variable '_S5' [-Wunused-variable]
+    uint _S5 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(376): warning :  unused variable '_S26' [-Wunused-variable]
+    uint _S26 = findPairs_0(id_2, true, &kernelContext_5);
+         ^
+2 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(182): warning :  unused variable '_S35' [-Wunused-variable]
+    uint _S35 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_4->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(468): warning :  unused variable '_S84' [-Wunused-variable]
+                        uint _S84 = atomic_fetch_add_explicit(((atomic_uint device*)((&kernelContext_8)->r_0->contactCounts_0+pair_0)), 1U, memory_order_relaxed);
+                             ^
+2 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(182): warning :  unused variable '_S10' [-Wunused-variable]
+    uint _S10 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_2->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(669): warning :  unused variable '_S23' [-Wunused-variable]
+            uint _S23 = atomic_fetch_add_explicit(((atomic_uint device*)(r_1->control_0+int(6))), 1U, memory_order_relaxed);
+                 ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(684): warning :  unused variable '_S29' [-Wunused-variable]
+        uint _S29 = atomic_fetch_add_explicit(((atomic_uint device*)(r_1->control_0+int(6))), 1U, memory_order_relaxed);
+             ^
+3 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(182): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_1->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(182): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) layer: IComputePassEncoder::dispatchComputeIndirect is not supported!
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(182): warning :  unused variable '_S22' [-Wunused-variable]
+    uint _S22 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_10->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(182): warning :  unused variable '_S5' [-Wunused-variable]
+    uint _S5 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_2->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(842): warning :  unused variable '_S3' [-Wunused-variable]
+        uint _S3 = atomic_fetch_or_explicit(((atomic_uint device*)((&kernelContext_1)->r_0->control_0+int(4))), 1U, memory_order_relaxed);
+             ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(182): warning :  unused variable '_S15' [-Wunused-variable]
+    uint _S15 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_9->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) layer: IComputePassEncoder::dispatchComputeIndirect is not supported!
+[WARN] (rhi) layer: IComputePassEncoder::dispatchComputeIndirect is not supported!
+[WARN] (rhi) layer: IComputePassEncoder::dispatchComputeIndirect is not supported!
+[WARN] (rhi) layer: IComputePassEncoder::dispatchComputeIndirect is not supported!
+[WARN] (rhi) layer: IComputePassEncoder::dispatchComputeIndirect is not supported!
+[WARN] (rhi) layer: IComputePassEncoder::dispatchComputeIndirect is not supported!
+[WARN] (rhi) layer: IComputePassEncoder::dispatchComputeIndirect is not supported!
+_____________ test_parallel_serial_force_history_and_motion[False] _____________
+
+concave = False
+
+    @pytest.mark.metal
+    @pytest.mark.skipif(
+        os.environ.get("SAND_DEM_METAL") != "1", reason="Serial Metal required"
+    )
+    @pytest.mark.parametrize("concave", [False, True])
+    def test_parallel_serial_force_history_and_motion(concave):
+        mesh = (
+            trimesh.creation.annulus(r_min=2e-5, r_max=5e-5, height=4e-5, sections=24)
+            if concave
+            else trimesh.creation.box(extents=[1e-4, 7e-5, 4e-5])
+        )
+        sh = with_face_quadrature(
+            from_mesh(mesh, unit="m", resolution=8, samples=32),
+            rule="gauss3",
+            subdivisions=2,
+        )
+        metal = Metal()
+        states = []
+        for cls in [SerialEngine, Engine]:
+            spec = Experiment(
+                periodic=False,
+                contact_geometry="mesh",
+                particles=2,
+                timestep=2e-9,
+                max_overlap_fraction=0.3,
+                contacts_per_particle=4096,
+                pairs_per_particle=4,
+                bin_capacity=16,
+            )
+            e = cls(
+                ShapeLibrary([sh]),
+                spec,
+                [[0.003, 0.003, 0.003], [0.003 + 8.5e-5, 0.003 + 2e-6, 0.003]],
+                [0.01] * 3,
+                [0, 0],
+                [1, 1],
+                metal=metal,
+            )
+            angle = 0.1
+            e.buffers["rotation"].copy_from_numpy(
+                np.array(
+                    [[0, 0, 0, 1], [0, 0, np.sin(angle / 2), np.cos(angle / 2)]], np.float32
+                )
+            )
+            e.buffers["velocity"].copy_from_numpy(
+                f4([[0, 0.01, 0], [0, -0.01, 0]]) * e.time_unit / e.length_unit
+            )
+            e.initialize()
+>           assert e.state()["contacts"] > 0
+E           assert 0 > 0
+
+tests/test_parallel_mesh.py:97: AssertionError
+----------------------------- Captured stdout call -----------------------------
+[WARN] No supported shader model found, pretending to support sm_6_0.
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(182): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(182): warning :  unused variable '_S5' [-Wunused-variable]
+    uint _S5 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(182): warning :  unused variable '_S5' [-Wunused-variable]
+    uint _S5 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(376): warning :  unused variable '_S26' [-Wunused-variable]
+    uint _S26 = findPairs_0(id_2, true, &kernelContext_5);
+         ^
+2 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(182): warning :  unused variable '_S35' [-Wunused-variable]
+    uint _S35 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_4->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(421): warning :  unused variable '_S82' [-Wunused-variable]
+                        uint _S82 = atomic_fetch_add_explicit(((atomic_uint device*)((&kernelContext_8)->r_0->contactCounts_0+pair_0)), 1U, memory_order_relaxed);
+                             ^
+2 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(182): warning :  unused variable '_S10' [-Wunused-variable]
+    uint _S10 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_2->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(669): warning :  unused variable '_S23' [-Wunused-variable]
+            uint _S23 = atomic_fetch_add_explicit(((atomic_uint device*)(r_1->control_0+int(6))), 1U, memory_order_relaxed);
+                 ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(684): warning :  unused variable '_S29' [-Wunused-variable]
+        uint _S29 = atomic_fetch_add_explicit(((atomic_uint device*)(r_1->control_0+int(6))), 1U, memory_order_relaxed);
+             ^
+3 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(182): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_1->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(182): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(182): warning :  unused variable '_S22' [-Wunused-variable]
+    uint _S22 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_10->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(182): warning :  unused variable '_S5' [-Wunused-variable]
+    uint _S5 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_2->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(842): warning :  unused variable '_S3' [-Wunused-variable]
+        uint _S3 = atomic_fetch_or_explicit(((atomic_uint device*)((&kernelContext_1)->r_0->control_0+int(4))), 1U, memory_order_relaxed);
+             ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(182): warning :  unused variable '_S15' [-Wunused-variable]
+    uint _S15 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_9->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(182): warning :  unused variable '_S35' [-Wunused-variable]
+    uint _S35 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_4->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(468): warning :  unused variable '_S84' [-Wunused-variable]
+                        uint _S84 = atomic_fetch_add_explicit(((atomic_uint device*)((&kernelContext_8)->r_0->contactCounts_0+pair_0)), 1U, memory_order_relaxed);
+                             ^
+2 warnings generated.
+
+[WARN] (rhi) layer: IComputePassEncoder::dispatchComputeIndirect is not supported!
+_____________ test_parallel_serial_force_history_and_motion[True] ______________
+
+concave = True
+
+    @pytest.mark.metal
+    @pytest.mark.skipif(
+        os.environ.get("SAND_DEM_METAL") != "1", reason="Serial Metal required"
+    )
+    @pytest.mark.parametrize("concave", [False, True])
+    def test_parallel_serial_force_history_and_motion(concave):
+        mesh = (
+            trimesh.creation.annulus(r_min=2e-5, r_max=5e-5, height=4e-5, sections=24)
+            if concave
+            else trimesh.creation.box(extents=[1e-4, 7e-5, 4e-5])
+        )
+        sh = with_face_quadrature(
+>           from_mesh(mesh, unit="m", resolution=8, samples=32),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            rule="gauss3",
+            subdivisions=2,
+        )
+
+tests/test_parallel_mesh.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+mesh = <trimesh.Trimesh(vertices.shape=(96, 3), faces.shape=(0, 3))>
+shape_id = 'grain', unit = 'm', resolution = 8, samples = 32, seed = 0
+provenance = None
+
+    def from_mesh(
+        mesh,
+        *,
+        shape_id="grain",
+        unit,
+        resolution=64,
+        samples=2048,
+        seed=0,
+        provenance=None,
+    ):
+        if unit not in UNITS or resolution < 8 or samples < 16:
+            raise ValueError(
+                "Explicit m/mm/um unit, resolution >=8 and samples >=16 required"
+            )
+        mesh = mesh.copy()
+        if (
+            not isinstance(mesh, trimesh.Trimesh)
+            or not mesh.is_watertight
+            or not mesh.is_winding_consistent
+            or len(mesh.split()) != 1
+            or mesh.volume <= 0
+        ):
+>           raise ValueError(
+                "Mesh must be a single watertight, consistently wound, positive-volume solid"
+            )
+E           ValueError: Mesh must be a single watertight, consistently wound, positive-volume solid
+
+src/sand_atlas_dem/geometry.py:188: ValueError
+=========================== short test summary info ============================
+FAILED tests/test_contact_timestep_policy.py::test_coupled_rotating_chain_refinement[False]
+FAILED tests/test_contact_timestep_policy.py::test_coupled_rotating_chain_refinement[True]
+FAILED tests/test_contact_timestep_policy.py::test_unequal_pair_rotational_rates
+FAILED tests/test_mesh_metal.py::test_mesh_compaction_growth_and_sample_key_friction_restart
+FAILED tests/test_nonperiodic_integration.py::test_interior_contacts_preserve_existing_mechanics_and_history[mesh]
+FAILED tests/test_parallel_mesh.py::test_parallel_serial_force_history_and_motion[False]
+FAILED tests/test_parallel_mesh.py::test_parallel_serial_force_history_and_motion[True]
+7 failed, 302 passed, 8 skipped in 45.71s

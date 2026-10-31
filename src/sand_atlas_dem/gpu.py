@@ -170,14 +170,14 @@ class Engine:
         estimated = (
             244 * self.contact_capacity
             + 8 * self.hash_size
-            + 64 * self.pair_capacity
+            + 196 * self.pair_capacity
             + 8 * self.bin_count * self.bin_capacity
             + 1184 * self.n
         )
         estimated += 160 * self.wall_count * self.n + 256 * self.wall_count
         if spec.contact_geometry == "mesh":
             estimated += sum(
-                224 * len(s.faces) + 224 + 8 * len(s.samples) for s in library.shapes
+                224 * len(s.faces) + 736 + 8 * len(s.samples) for s in library.shapes
             )
         estimated += sum(s.sdf.nbytes + 32 * len(s.samples) for s in library.shapes)
         if estimated > spec.working_memory_gib * 1024**3:
@@ -187,6 +187,8 @@ class Engine:
         self.estimated_bytes = estimated
         self.buffers = {}
         self._static_geometry()
+        self.allocate("meshPairMask", self.pair_capacity)
+        self.allocate("meshPairTransform", 8 * self.pair_capacity, 16)
         self.add("shapeId", self.ids)
         self.add("body", self.body)
         self.add("invI", f4(inertia.reshape(-1, 3)))
@@ -430,6 +432,7 @@ class Engine:
                         "meshRoots",
                         "meshLinks",
                         "meshHullInfo",
+                        "meshFrontier",
                         "meshClusterInfo",
                         "meshClusterRanges",
                         "meshSampleIndices",
@@ -445,6 +448,7 @@ class Engine:
                     "meshMax",
                     "meshTriangles",
                     "meshNormals",
+                    "meshFrontier",
                     "meshClusterInfo",
                     "meshClusterRanges",
                     "meshClusterMin",
@@ -524,7 +528,8 @@ class Engine:
     def _encode_contacts(self, e, b):
         if self.spec.contact_geometry == "mesh":
             self.dispatch("resetMeshContacts", self.pair_capacity, e, b)
-            self.dispatch("collectMeshContacts", 64 * self.pair_capacity, e, b)
+            self.dispatch("prepareMeshPairs", self.pair_capacity, e, b)
+            self.dispatch("collectMeshFrontiers", 64 * 4096, e, b)
         else:
             self.dispatch("countContacts", 64 * self.pair_capacity, e, b)
             self.scan_contacts.encode(

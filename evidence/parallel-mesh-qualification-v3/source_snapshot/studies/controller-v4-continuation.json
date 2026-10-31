@@ -1,0 +1,13 @@
+{
+  "identity": "controller-v4-continuation",
+  "frozen_before_execution": true,
+  "experiment": "studies/controller-v4-experiment.json",
+  "parent_checkpoint": "/Users/bmar5496/code/sand-atlas-dem/evidence/controller-v3/run/chunk-0200/checkpoint.h5",
+  "parent_checkpoint_sha256": "ca6e1f738e8c9aa8025d6f3d2fa2fe56688463b47a8165cc78af1bd848cf40e0",
+  "source_snapshot": "evidence/controller-v3/source_snapshot",
+  "source_manifest_sha256": "11e187dedba5673dcc124e9979642724aabb5b149b38e199234e5be54f63d685",
+  "changed_setting": "isotropic stage step budget 500000 -> 1000000 only",
+  "same_equilibrium_gates": true,
+  "same_solver_snapshot": true,
+  "scope": "Independent longer observation of the failed parent preparation; retains parent failure, does not relabel it as success. Driver provenance records the exact budget amendment."
+}

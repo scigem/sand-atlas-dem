@@ -1,0 +1,15 @@
+{
+  "identity": "mixed-quadrature-box-v1",
+  "box_extents_m": [[0.001, 0.001, 0.001], [0.001, 0.003, 0.0003]],
+  "depth_fractions": [0.01, 0.02],
+  "maximum_reference_change": 0.02,
+  "maximum_reference_continuum_error": 0.02,
+  "selection_target": 0.05,
+  "minimum_distinct_selected_levels": 2,
+  "maximum_gpu_integral_error": 0.1,
+  "maximum_gpu_fixed_level_error": 0.001,
+  "minimum_gpu_refinement_factor": 2,
+  "timestep_s": 2e-9,
+  "overlap_guard_fraction": 0.03,
+  "scope": "Own analytical boxes; independent axis-aligned distance and closed continuum x-force = -d*(hy-2d)*(hz-2d), before multiplying by traction stiffness. Surface Gauss3 levels0..6, accepted-source adaptive selection and actual shared Metal study driver. All four original poses retained; require at least two distinct selected per-shape levels. No Hostun/material/assembly or performance claim."
+}

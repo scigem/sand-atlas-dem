@@ -1,0 +1,17 @@
+{
+  "format": "sand-dem-experiment/1",
+  "shape_library": "../assets/generated/concave-prism.h5",
+  "particles": 64,
+  "timestep": 1e-09,
+  "initial_solid_fraction": 0.01,
+  "diagnostic_interval": 5,
+  "snapshot_interval": 10,
+  "stages": [
+    {
+      "kind": "hold",
+      "steps": 20,
+      "drag": 0
+    }
+  ],
+  "contact_geometry": "mesh"
+}

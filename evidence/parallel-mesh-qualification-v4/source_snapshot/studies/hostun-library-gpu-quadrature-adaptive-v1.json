@@ -1,0 +1,31 @@
+{
+  "identity": "hostun-library-gpu-quadrature-adaptive-v1",
+  "frozen_before_gpu_execution": true,
+  "reference_report": "evidence/hostun-library-quadrature-adaptive-v2/report.json",
+  "parent_library_sha256": "1bc9f37a22b402ada31495ea7ff1ebef4bb6a27a26d68a8333f7f84a12ad16b7",
+  "libraries": [
+    {
+      "path": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r64-gauss3.h5",
+      "sha256": "097a6a14df21513e8cf3b936fe0404baa488e38316a0e4233e6f59ba94bc2270",
+      "subdivisions": 0
+    }
+  ],
+  "maximum_relative_force_error": 0.1,
+  "maximum_fixed_level_gpu_error": 0.001,
+  "minimum_worst_error_improvement_factor": 2,
+  "timestep_s": 2e-09,
+  "overlap_guard_fraction": 0.03,
+  "active_counts": "Diagnostic for FP64/FP32 boundary classification; separate unchanged 2048-node exact-count oracle required.",
+  "scope": "Prospective accepted-reference adaptive whole-library study: preserve all 53 grains and both original poses (106 reference and 212 GPU cases), 5% preprocessing selection, 10% refined-integral error, 0.1% same-level GPU force error, twofold pooled improvement and exact empty-reference policy. Mandatory original 2048-node baseline unchanged. Reference, candidate and resolved protocol hashes are frozen before GPU execution. No dynamic, assembly, material or experimental admission.",
+  "reference_nearest_point_policy": "strict-fp64-minimum-squared-distance",
+  "fixed_node_baseline": {
+    "path": "/Users/bmar5496/code/sand-atlas-dem/evidence/hostun-library-mesh-force-minimum-v1/report.json",
+    "sha256": "51f2190cb728e555e41bf116f2173f3a9ae3f9ba0907a2c44472075cb9513182"
+  },
+  "zero_fixed_reference": "require-exact-zero-force-and-zero-active-nodes",
+  "reference_inside_policy": "bidirectional-parity-with-direct-winding-disagreement",
+  "physical_library": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r64-s2048.h5",
+  "selection_target": 0.05,
+  "minimum_contacts_per_particle": 4096,
+  "capacity_policy": "For two bodies, allocate twice the largest selected-level reference active-node count, with minimum total capacity 8192. Resolve and freeze before any GPU execution. No truncation or numerical-gate changes."
+}

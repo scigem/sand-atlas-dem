@@ -1,0 +1,180 @@
+.............................................ss..................ss..... [ 22%]
+.s...................................................................... [ 45%]
+.......................................................................F [ 68%]
+........................................................................ [ 90%]
+......sss....................                                            [100%]
+=================================== FAILURES ===================================
+_____________ test_parallel_serial_force_history_and_motion[True] ______________
+
+concave = True
+
+    @pytest.mark.metal
+    @pytest.mark.skipif(
+        os.environ.get("SAND_DEM_METAL") != "1", reason="Serial Metal required"
+    )
+    @pytest.mark.parametrize("concave", [False, True])
+    def test_parallel_serial_force_history_and_motion(concave):
+        mesh = (
+            trimesh.creation.annulus(r_min=20, r_max=50, height=40, sections=24)
+            if concave
+            else trimesh.creation.box(extents=[100, 70, 40])
+        )
+        sh = with_face_quadrature(
+            from_mesh(mesh, unit="um", resolution=8, samples=32),
+            rule="gauss3",
+            subdivisions=2,
+        )
+        metal = Metal()
+        states = []
+        for cls in [SerialEngine, Engine]:
+            spec = Experiment(
+                periodic=False,
+                contact_geometry="mesh",
+                particles=2,
+                timestep=2e-9,
+                max_overlap_fraction=0.3,
+                contacts_per_particle=4096,
+                pairs_per_particle=4,
+                bin_capacity=16,
+            )
+            e = cls(
+                ShapeLibrary([sh]),
+                spec,
+                [[0.003, 0.003, 0.003], [0.003 + 8.5e-5, 0.003 + 2e-6, 0.003]],
+                [0.01] * 3,
+                [0, 0],
+                [1, 1],
+                metal=metal,
+            )
+            angle = 0.1
+            e.buffers["rotation"].copy_from_numpy(
+                np.array(
+                    [[0, 0, 0, 1], [0, 0, np.sin(angle / 2), np.cos(angle / 2)]], np.float32
+                )
+            )
+            e.buffers["velocity"].copy_from_numpy(
+                f4([[0, 0.01, 0], [0, -0.01, 0]]) * e.time_unit / e.length_unit
+            )
+            e.initialize()
+            assert e.state()["contacts"] > 0
+            initial = e.state()
+            e.advance(16)
+            final = e.state()
+            e.restore(initial, 0)
+            e.advance(16)
+            repeated = e.state()
+            states.append((initial, final, repeated))
+        for first, second in zip(states[0], states[1]):
+            for name in ["position", "velocity", "rotation"]:
+                assert np.max(abs(first[name] - second[name])) <= 1e-5
+            for name in ["force", "torque"]:
+                scale = max(
+                    float(np.max(np.linalg.norm(first[name][:, :3], axis=1))), 1e-12
+                )
+                assert (
+                    np.max(np.linalg.norm(first[name][:, :3] - second[name][:, :3], axis=1))
+                    / scale
+                    <= 1e-4
+                )
+            a = np.lexsort(first["meta"][:, :3].T[::-1])
+            b = np.lexsort(second["meta"][:, :3].T[::-1])
+            np.testing.assert_array_equal(first["meta"][a], second["meta"][b])
+>           np.testing.assert_allclose(
+                first["normalArea"][a], second["normalArea"][b], rtol=1e-6, atol=1e-7
+            )
+E           AssertionError: 
+E           Not equal to tolerance rtol=1e-06, atol=1e-07
+E           
+E           Mismatched elements: 1 / 4324 (0.0231%)
+E           Mismatch at index:
+E            [553, 2]: 8.429186095781915e-07 (ACTUAL), 6.965514103285386e-07 (DESIRED)
+E           Max absolute difference among violations: 1.463672e-07
+E           Max relative difference among violations: 0.21013123
+E            ACTUAL: array([[-6.227656e-03,  6.206656e-02, -9.980526e-01,  2.573777e-04],
+E                  [ 6.227106e-03, -6.206676e-02, -9.980526e-01,  2.573777e-04],
+E                  [ 7.775447e-03, -7.749866e-02, -9.969621e-01,  2.573777e-04],...
+E            DESIRED: array([[-6.227656e-03,  6.206656e-02, -9.980526e-01,  2.573777e-04],
+E                  [ 6.227106e-03, -6.206676e-02, -9.980526e-01,  2.573777e-04],
+E                  [ 7.775447e-03, -7.749866e-02, -9.969621e-01,  2.573777e-04],...
+
+tests/test_parallel_mesh.py:120: AssertionError
+----------------------------- Captured stdout call -----------------------------
+[WARN] No supported shader model found, pretending to support sm_6_0.
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(181): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(181): warning :  unused variable '_S5' [-Wunused-variable]
+    uint _S5 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(181): warning :  unused variable '_S5' [-Wunused-variable]
+    uint _S5 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(375): warning :  unused variable '_S26' [-Wunused-variable]
+    uint _S26 = findPairs_0(id_2, true, &kernelContext_5);
+         ^
+2 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(181): warning :  unused variable '_S35' [-Wunused-variable]
+    uint _S35 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_4->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(419): warning :  unused variable '_S82' [-Wunused-variable]
+                        uint _S82 = atomic_fetch_add_explicit(((atomic_uint device*)((&kernelContext_8)->r_0->contactCounts_0+pair_0)), 1U, memory_order_relaxed);
+                             ^
+2 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(181): warning :  unused variable '_S10' [-Wunused-variable]
+    uint _S10 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_2->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(675): warning :  unused variable '_S23' [-Wunused-variable]
+            uint _S23 = atomic_fetch_add_explicit(((atomic_uint device*)(r_1->control_0+int(6))), 1U, memory_order_relaxed);
+                 ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(690): warning :  unused variable '_S29' [-Wunused-variable]
+        uint _S29 = atomic_fetch_add_explicit(((atomic_uint device*)(r_1->control_0+int(6))), 1U, memory_order_relaxed);
+             ^
+3 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(181): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_1->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(181): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(181): warning :  unused variable '_S22' [-Wunused-variable]
+    uint _S22 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_10->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(181): warning :  unused variable '_S5' [-Wunused-variable]
+    uint _S5 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_2->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(848): warning :  unused variable '_S3' [-Wunused-variable]
+        uint _S3 = atomic_fetch_or_explicit(((atomic_uint device*)((&kernelContext_1)->r_0->control_0+int(4))), 1U, memory_order_relaxed);
+             ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(181): warning :  unused variable '_S15' [-Wunused-variable]
+    uint _S15 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_9->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(181): warning :  unused variable '_S35' [-Wunused-variable]
+    uint _S35 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_4->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(464): warning :  unused variable '_S83' [-Wunused-variable]
+                        uint _S83 = atomic_fetch_add_explicit(((atomic_uint device*)(kernelContext_8->r_0->contactCounts_0+pair_0)), 1U, memory_order_relaxed);
+                             ^
+2 warnings generated.
+
+=========================== short test summary info ============================
+FAILED tests/test_parallel_mesh.py::test_parallel_serial_force_history_and_motion[True]
+1 failed, 308 passed, 8 skipped in 59.65s

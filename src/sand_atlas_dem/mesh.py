@@ -10,6 +10,7 @@ import numpy as np
 def pack_meshes(library, length_unit):
     bounds_min, bounds_max, links, roots, triangles, normals = [], [], [], [], [], []
     hull_info, planes = [], []
+    frontier = []
     cluster_info, cluster_ranges, cluster_min, cluster_max, sample_indices = (
         [],
         [],
@@ -53,6 +54,20 @@ def pack_meshes(library, length_unit):
 
         partition(np.arange(len(points)))
         cluster_info.append([first_cluster, len(cluster_ranges) - first_cluster, 0, 0])
+        # Disjoint complete subtrees cover every original sample exactly once.
+        # Split the largest remaining subtree first; small shapes use fewer slots.
+        pending = [first_cluster]
+        while len(pending) < 32:
+            splittable = [node for node in pending if cluster_ranges[node][1] == 0]
+            if not splittable:
+                break
+            node = max(splittable, key=lambda n: cluster_ranges[n][2] - n)
+            left = node + 1
+            right = cluster_ranges[left][2]
+            at = pending.index(node)
+            pending[at : at + 1] = [left, right]
+        frontier.extend([[node, cluster_ranges[node][2], 0, 0] for node in pending])
+        frontier.extend([[0, 0, 0, 0]] * (32 - len(pending)))
         # Conservative enclosure only: original concave triangles still determine
         # every penetrating distance and normal. Round offsets outward so all
         # GPU-rounded source vertices remain inside even under FP32 dot error.
@@ -190,6 +205,7 @@ def pack_meshes(library, length_unit):
         return np.pad(a, ((0, 0), (0, 1)))
 
     return {
+        "meshFrontier": np.asarray(frontier, np.uint32),
         "meshClusterInfo": np.asarray(cluster_info, np.uint32),
         "meshClusterRanges": np.asarray(cluster_ranges, np.uint32),
         "meshClusterMin": np.asarray(cluster_min, np.float32),

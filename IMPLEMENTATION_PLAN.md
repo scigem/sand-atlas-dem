@@ -305,3 +305,14 @@ separate startup improvement; command encoding and friction/hash work are lower
 priorities on this sparse workload. Full evidence and limits:
 [docs/RUNTIME_PROFILING.md](docs/RUNTIME_PROFILING.md). No production optimization or
 preparation restart is performed by this profiling task.
+
+## Parallel mesh traversal implementation — 2026-11-01
+
+The bounded contact-traversal optimization is implemented and qualified: disjoint
+subtree scheduling, hoisted pair transforms, conservative bounds and compensated
+force/torque gathering. Actual Metal: 312 tests pass, eight skip; six restored
+trials per mode show 1.405× speedup (12.582 → 8.954 ms/step) with unchanged
+state/contact/history gates. Retained failures and frozen evidence are in
+[docs/PARALLEL_MESH_CONTACTS.md](docs/PARALLEL_MESH_CONTACTS.md). Dense performance,
+static packed-geometry caching, deeper traversal counters and scientific admission
+remain open. No preparation restart.

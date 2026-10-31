@@ -1,0 +1,16 @@
+{
+  "format": "sand-dem-experiment/1",
+  "shape_library": "../assets/generated/sphere.h5",
+  "particles": 64,
+  "timestep": 1e-08,
+  "initial_solid_fraction": 0.05,
+  "diagnostic_interval": 5,
+  "snapshot_interval": 10,
+  "stages": [
+    {
+      "kind": "hold",
+      "steps": 20,
+      "drag": 0
+    }
+  ]
+}

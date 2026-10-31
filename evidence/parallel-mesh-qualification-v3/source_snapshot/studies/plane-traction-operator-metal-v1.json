@@ -1,0 +1,22 @@
+{
+  "identity": "plane-traction-operator-metal-v1",
+  "frozen_before_execution": true,
+  "variant": "single-directed-full-area-spring-Coulomb-traction",
+  "sample_counts": [
+    2048,
+    8192,
+    32768
+  ],
+  "depths": [
+    0.05,
+    0.1,
+    0.2
+  ],
+  "kn": 1.0,
+  "kt": 0.5,
+  "mu": 0.3,
+  "transition_fraction": 0.25,
+  "maximum_fine_relative_error": 0.001,
+  "maximum_nodal_relative_error": 1e-05,
+  "scope": "Actual-Metal isolated plane traction operator verification in normalized units, sphere radius one. Independent analytical sphere-cap force, torque and normal work; prescribed nodal history continuation, separation/return, Coulomb loss and common rigid-frame rotation. Full one-sided area weighting is an explicit project extension of continuum traction integration, not an assertion of equivalence to the published benchmark wall algorithm. Final 32768-node force, torque and normal energy errors bounded by 0.1% of the declared analytical scales; all coarser observations retained. No particle advancement, plane motion driver, nonperiodic neighbour search, integrated reactions/checkpoints/rollback, restitution, assembly or material qualification."
+}

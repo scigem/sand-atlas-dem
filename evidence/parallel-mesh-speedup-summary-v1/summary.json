@@ -1,0 +1,42 @@
+{
+  "studies": [
+    {
+      "identity": "hostun-parallel-mesh-performance-v1",
+      "speedup": 1.404928237335539,
+      "ranges": {
+        "serial": {
+          "min_ms": 12.53590982832975,
+          "max_ms": 12.743565757773467,
+          "median_ms": 12.5687041013407
+        },
+        "parallel": {
+          "min_ms": 8.91558365583478,
+          "max_ms": 9.023627273563761,
+          "median_ms": 8.946153808665258
+        }
+      },
+      "equivalence_passed": true,
+      "performance_passed": true
+    },
+    {
+      "identity": "hostun-parallel-mesh-performance-v2",
+      "speedup": 1.4052034387534864,
+      "ranges": {
+        "serial": {
+          "min_ms": 12.557200843730243,
+          "max_ms": 12.754767578371684,
+          "median_ms": 12.581975914145005
+        },
+        "parallel": {
+          "min_ms": 8.914267577893042,
+          "max_ms": 8.994404624900199,
+          "median_ms": 8.953846515851183
+        }
+      },
+      "equivalence_passed": true,
+      "performance_passed": true
+    }
+  ],
+  "inputs_unchanged": true,
+  "scope": "Counterbalanced ordinary advancement wall times; setup/reset/warmup excluded. Dilute checkpoint, not dense throughput or GPU-only timings."
+}

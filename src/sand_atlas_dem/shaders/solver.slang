@@ -51,6 +51,9 @@ struct Resources {
     StructuredBuffer<uint4> meshLinks;
     StructuredBuffer<float4> meshTriangles;
     StructuredBuffer<float4> meshNormals;
+    StructuredBuffer<uint4> meshFrontier;
+    RWStructuredBuffer<uint> meshPairMask;
+    RWStructuredBuffer<float4> meshPairTransform;
     StructuredBuffer<uint4> meshClusterInfo;
     StructuredBuffer<uint4> meshClusterRanges;
     StructuredBuffer<float4> meshClusterMin;
@@ -267,6 +270,22 @@ bool meshMayContain(uint shape,float3 p){
     return true;
 }
 
+bool meshBoxMayContact(uint shape,float3 low,float3 high){
+    uint root=r.meshRoots[shape].x;
+    float3 targetLow=r.meshMin[root].xyz,targetHigh=r.meshMax[root].xyz;
+    if(any(high<targetLow)||any(low>targetHigh))return false;
+    float3 center=.5*(low+high),half=.5*(high-low);
+    float3 direction=(center-.5*(targetLow+targetHigh))/(targetHigh-targetLow);
+    float3 a=abs(direction);uint axis=a.x>=a.y&&a.x>=a.z?0:(a.y>=a.z?1:2);
+    uint group=2*axis+(direction[axis]>=0?1:0);
+    uint4 info=r.meshHullInfo[6*shape+group];
+    for(uint i=0;i<info.y;i++){
+        float4 plane=r.meshPlanes[info.x+i];
+        if(dot(plane.xyz,center)+plane.w-dot(abs(plane.xyz),half)>0)return false;
+    }
+    return true;
+}
+
 bool meshClusterMayContact(uint src,uint dst,uint cluster){
     float3 sourceLow=r.meshClusterMin[cluster].xyz,sourceHigh=r.meshClusterMax[cluster].xyz;
     float3 branch=centerBranch(src,dst),low=1e30,high=-1e30;
@@ -281,19 +300,7 @@ bool meshClusterMayContact(uint src,uint dst,uint cluster){
     float pad=64.*1.1920928955078125e-7*(1.+max(max(abs(low.x),abs(low.y)),abs(low.z))
         +max(max(abs(high.x),abs(high.y)),abs(high.z))+length(branch)/r.body[dst].x);
     low-=pad;high+=pad;
-    uint shape=r.shapeId[dst],root=r.meshRoots[shape].x;
-    float3 targetLow=r.meshMin[root].xyz,targetHigh=r.meshMax[root].xyz;
-    if(any(high<targetLow)||any(low>targetHigh))return false;
-    float3 center=.5*(low+high),half=.5*(high-low);
-    float3 direction=(center-.5*(targetLow+targetHigh))/(targetHigh-targetLow);
-    float3 a=abs(direction);uint axis=a.x>=a.y&&a.x>=a.z?0:(a.y>=a.z?1:2);
-    uint group=2*axis+(direction[axis]>=0?1:0);
-    uint4 info=r.meshHullInfo[6*shape+group];
-    for(uint i=0;i<info.y;i++){
-        float4 plane=r.meshPlanes[info.x+i];
-        if(dot(plane.xyz,center)+plane.w-dot(abs(plane.xyz),half)>0)return false;
-    }
-    return true;
+    return meshBoxMayContact(r.shapeId[dst],low,high);
 }
 [shader("compute")][numthreads(64,1,1)]
 void meshClusterProbe(uint id:SV_DispatchThreadID,uniform uint count,
@@ -381,8 +388,32 @@ void emitPairs(uint id:SV_DispatchThreadID){
 void resetMeshContacts(uint id:SV_DispatchThreadID){
     if(r.control[0]!=0)return;
     if(id<r.c.pairCapacity)r.contactCounts[id]=0;
-    if(id==0){r.control[2]=0;r.control[6]=0;}
+    if(id==0){
+        r.control[2]=0;r.control[6]=0;
+    }
 }
+void meshPairBounds(uint direction,uint cluster,out float3 low,out float3 high){
+    float3 center=.5*(r.meshClusterMin[cluster].xyz+r.meshClusterMax[cluster].xyz);
+    float3 half=.5*(r.meshClusterMax[cluster].xyz-r.meshClusterMin[cluster].xyz);
+    float3 c,e;
+    for(uint axis=0;axis<3;axis++){
+        float4 row=r.meshPairTransform[4*direction+axis];
+        c[axis]=dot(row.xyz,center)+row.w;e[axis]=dot(abs(row.xyz),half);
+    }
+    low=c-e;high=c+e;
+    // Cover composed-matrix, center/extent and dot rounding conservatively.
+    float pad=256.*1.1920928955078125e-7*(1.+max(max(abs(low.x),abs(low.y)),abs(low.z))
+        +max(max(abs(high.x),abs(high.y)),abs(high.z))+r.meshPairTransform[4*direction+3].x);
+    low-=pad;high+=pad;
+}
+[shader("compute")][numthreads(64,1,1)]
+void meshPairBoundsProbe(uint id:SV_DispatchThreadID,uniform uint count,uniform uint direction,
+                         uniform uint first,RWStructuredBuffer<float4> result){
+    if(id>=count)return;
+    float3 low,high;meshPairBounds(direction,first+id,low,high);
+    result[2*id]=float4(low,0);result[2*id+1]=float4(high,0);
+}
+
 groupshared uint meshClusterCandidate;
 groupshared uint meshGroupActive;
 [shader("compute")][numthreads(64,1,1)]
@@ -421,6 +452,75 @@ void collectMeshContacts(uint3 group:SV_GroupID,uint lane:SV_GroupIndex){
             // decision and reach every barrier, also for rejected subtrees.
             cluster=nextCluster;
         }
+    }
+}
+
+// Root rejection is shared by all subtree workgroups for each pair.
+[shader("compute")][numthreads(64,1,1)]
+void prepareMeshPairs(uint id:SV_DispatchThreadID){
+    if(id>=min(r.control[1],r.c.pairCapacity)||r.control[0]!=0)return;
+    uint2 ij=r.pairs[id];uint mask=0;
+    if(meshClusterMayContact(ij.x,ij.y,r.meshClusterInfo[r.shapeId[ij.x]].x))mask|=1;
+    if(meshClusterMayContact(ij.y,ij.x,r.meshClusterInfo[r.shapeId[ij.y]].x))mask|=2;
+    for(uint pass=0;pass<2;pass++){
+        if((mask&(1u<<pass))==0)continue;
+        uint i=pass==0?ij.x:ij.y,j=pass==0?ij.y:ij.x;
+        float ratio=r.body[i].x/r.body[j].x;
+        float3 a=qinv(r.rotation[j],qrot(r.rotation[i],float3(ratio,0,0)));
+        float3 b=qinv(r.rotation[j],qrot(r.rotation[i],float3(0,ratio,0)));
+        float3 c=qinv(r.rotation[j],qrot(r.rotation[i],float3(0,0,ratio)));
+        float3 branch=centerBranch(i,j),offset=qinv(r.rotation[j],-branch)/r.body[j].x;
+        uint base=4*(2*id+pass);
+        r.meshPairTransform[base]=float4(a.x,b.x,c.x,offset.x);
+        r.meshPairTransform[base+1]=float4(a.y,b.y,c.y,offset.y);
+        r.meshPairTransform[base+2]=float4(a.z,b.z,c.z,offset.z);
+        r.meshPairTransform[base+3]=float4(length(branch)/r.body[j].x,0,0,0);
+    }
+    r.meshPairMask[id]=mask;
+}
+
+void collectMeshSubtree(uint pair,uint pass,uint tile,uint lane){
+    if(pair>=min(r.control[1],r.c.pairCapacity))return;
+    if((r.meshPairMask[pair]&(1u<<pass))==0)return;
+    uint2 ij=r.pairs[pair];
+    uint i=pass==0?ij.x:ij.y,j=pass==0?ij.y:ij.x;
+    uint4 subtree=r.meshFrontier[32*r.shapeId[i]+tile];
+    if(subtree.y==0)return;
+    if(lane==0)meshGroupActive=r.control[0]==0?1:0;
+    GroupMemoryBarrierWithGroupSync();
+    if(meshGroupActive==0)return;
+    uint cluster=subtree.x;
+    while(cluster<subtree.y){
+        if(lane==0){
+            float3 low,high;meshPairBounds(2*pair+pass,cluster,low,high);
+            meshClusterCandidate=meshBoxMayContact(r.shapeId[j],low,high)?1:0;
+        }
+        GroupMemoryBarrierWithGroupSync();
+        uint candidate=meshClusterCandidate;
+        uint4 range=r.meshClusterRanges[cluster];
+        if(candidate!=0&&lane<range.y){
+            uint node=r.meshSampleIndices[range.x+lane];float4 pd,na;
+            if(nodeContact(i,j,node,pd,na)){
+                uint offset;InterlockedAdd(r.control[2],1,offset);
+                if(offset>=r.c.contactCapacity)fail(32);
+                else{
+                    r.meta[offset]=uint4(i,j,node,0);r.pointDepth[offset]=pd;r.normalArea[offset]=na;
+                    uint unused;InterlockedAdd(r.contactCounts[pair],1,unused);
+                }
+            }
+        }
+        GroupMemoryBarrierWithGroupSync();
+        cluster=candidate!=0?cluster+1:range.z;
+    }
+}
+
+// Metal currently lacks indirect dispatch in this backend. A bounded persistent
+// pool consumes all GPU-known tasks, independent of reserved pair capacity.
+[shader("compute")][numthreads(64,1,1)]
+void collectMeshFrontiers(uint3 group:SV_GroupID,uint lane:SV_GroupIndex){
+    uint tasks=64*min(r.control[1],r.c.pairCapacity);
+    for(uint task=group.x;task<tasks;task+=4096){
+        collectMeshSubtree(task/64,(task%64)/32,task%32,lane);
     }
 }
 
@@ -651,7 +751,7 @@ void buildHistoryHash(uint id:SV_DispatchThreadID){
 [shader("compute")][numthreads(64,1,1)]
 void gather(uint id:SV_DispatchThreadID){
     if(id>=r.c.N||r.control[0]!=0)return;
-    float3 f=0,t=0;float3 stress0=0,stress1=0,stress2=0;float energy=0,denom=0,maxDepth=0,dissipation=0,normalPower=0;
+    float3 f=0,t=0,fLow=0,tLow=0;float3 stress0=0,stress1=0,stress2=0;float energy=0,denom=0,maxDepth=0,dissipation=0,normalPower=0;
     float stiffnessRate=0,viscousRate=0;
     float inverseInertia=max(max(dot(abs(r.invI[3*id].xyz),float3(1)),dot(abs(r.invI[3*id+1].xyz),float3(1))),dot(abs(r.invI[3*id+2].xyz),float3(1)));
     uint entry=r.heads[id];uint visited=0;
@@ -675,14 +775,15 @@ void gather(uint id:SV_DispatchThreadID){
             viscousRate+=coupling*area*material.w*(1+material.z)*mobility;
         }
         if(key.y>=r.c.N){
-            f+=force;t+=cross(arm,force);
+            compensated3(f,fLow,force);compensated3(t,tLow,cross(arm,force));
             stress0-=force.x*arm;stress1-=force.y*arm;stress2-=force.z*arm;
             energy+=r.contactForce[contact].w;denom+=length(force);
             maxDepth=max(maxDepth,r.pointDepth[contact].w/r.body[key.x].w);
             dissipation+=r.slip[contact].w;normalPower+=r.normalLossPower[contact];entry=r.next[entry];continue;
         }
         float3 branch=centerBranch(key.x,key.y);
-        f+=source?force:-force;t+=source?cross(arm,force):cross(arm-branch,-force);
+        compensated3(f,fLow,source?force:-force);
+        compensated3(t,tLow,source?cross(arm,force):cross(arm-branch,-force));
         // Compression-positive virial: -force_on_source outer centre branch.
         stress0-=.5*force.x*branch;stress1-=.5*force.y*branch;stress2-=.5*force.z*branch;
         energy+=.5*r.contactForce[contact].w;denom+=length(force);
@@ -690,6 +791,7 @@ void gather(uint id:SV_DispatchThreadID){
         dissipation+=.5*r.slip[contact].w;normalPower+=.5*r.normalLossPower[contact];
         entry=r.next[entry];
     }
+    f=rounded3(f+fLow);t=rounded3(t+tLow);
     r.timestepRows[id]=float4(stiffnessRate,viscousRate,0,0);
     float4 normalState=r.normalDamping[id];normalState.z=normalPower;r.normalDamping[id]=normalState;
     r.force[id]=float4(f,maxDepth);r.torque[id]=float4(t,dissipation);

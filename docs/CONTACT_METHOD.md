@@ -156,3 +156,12 @@ advancement chunks with rollback and retains a fixed declared timestep. See
 [CONTACT_TIMESTEP_POLICY.md](CONTACT_TIMESTEP_POLICY.md) for its frozen coefficients,
 motion guards, evidence and limits. The default remains conservative; neither
 policy removes the need for timestep refinement in a new physical study.
+
+## Parallel mesh traversal
+
+The production mesh path splits each directed source hierarchy into 32 complete
+subtrees, scheduled by a persistent Metal workgroup pool. Relative transforms and
+conservative bounds are reused; force and torque use compensated accumulation.
+Physical quadrature and persistent history keys are retained. Architecture,
+qualification, failures and throughput limits are in
+[PARALLEL_MESH_CONTACTS.md](PARALLEL_MESH_CONTACTS.md).

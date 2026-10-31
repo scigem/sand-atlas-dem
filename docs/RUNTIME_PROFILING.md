@@ -132,3 +132,12 @@ Execute GPU studies serially on Metal; use a fresh output directory. The driver
 freezes the current package/shaders, its own source, protocol and input hashes
 before execution. Raw geometry and checkpoints remain private. Timing measurements
 are short local runs, without a claim of thermal equilibrium or dense scaling.
+
+## Subsequent optimization
+
+The measured contact bottleneck has now been addressed with parallel source
+subtrees and hoisted pair transforms. A separately frozen current-engine serial
+reference comparison measures 1.405× speedup: 12.582 → 8.954 ms/step median,
+unchanged 2 ns timestep, six restored trials per mode. This remains the sparse
+checkpoint workload. See [PARALLEL_MESH_CONTACTS.md](PARALLEL_MESH_CONTACTS.md) for
+312-test Metal qualification, exact workload limits and retained failed revisions.

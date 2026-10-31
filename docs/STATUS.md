@@ -907,3 +907,16 @@ trajectories agree within 2.274e-13 normalized component error. This is a dilute
 347-candidate/two-active-pair workload, not dense throughput. Current profiling
 uses the conservative timestep policy; no opt-in guard overhead or end-to-end
 optimization speedup is inferred. The preparation remains stopped.
+
+## Parallel mesh traversal — 2026-11-01
+
+Production contact traversal now distributes disjoint source subtrees across GPU
+workgroups and reuses pair transforms. Final actual-Metal qualification passes
+312 tests with eight skips; independent FP64 corner checks and unchanged
+force/history gates pass. All 230 frozen inputs verify unchanged.
+
+Six restored trials per mode measure 12.582 → 8.954 ms/step median, a 1.405×
+speedup at the same 2 ns timestep on the dilute 424-grain checkpoint. Dense Hostun
+throughput and scientific admission remain open. Static geometry caching is still
+unimplemented, and preparation remains stopped. Evidence and retained failures:
+[PARALLEL_MESH_CONTACTS.md](PARALLEL_MESH_CONTACTS.md).
