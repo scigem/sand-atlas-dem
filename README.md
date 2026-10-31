@@ -45,6 +45,23 @@ and exports; it is not a preparation or triaxial acceptance study.
 **with provisional controller settings**, not a validated ready-to-publish test.
 Preparation that exhausts its budget without convergence is a failed run.
 
+## Named-material cases
+
+```sh
+# Once the separately prepared Hostun asset is available:
+.venv/bin/sand-dem material register cases/hostun-material.json
+.venv/bin/sand-dem case run hostun --case cases/drained-triaxial.json --dry-run
+.venv/bin/sand-dem case run hostun --case cases/drained-triaxial.json \
+  --pressure 20000 --rate 0.5 --output runs/hostun-tc
+```
+
+Material names resolve hash-pinned geometry; contact properties remain explicit in
+reusable case files. The triaxial template has provisional preparation settings.
+The runner automatically writes resolved inputs, a run/checkpoints and synthetic
+CSV/JSON exports, preserving failure status. Direct Constitutive Atlas synthetic
+import is still required; current exports are comparison bundles. See the
+[case workflow](docs/CASE_WORKFLOW.md) for registration, overrides and open gates.
+
 ## Measured grain geometry
 
 ```sh

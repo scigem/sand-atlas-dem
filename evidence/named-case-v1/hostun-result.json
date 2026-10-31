@@ -1,0 +1,9 @@
+{
+  "format": "sand-dem-case-result/1",
+  "kind": "synthetic-dem",
+  "status": "complete",
+  "scientific_admission": false,
+  "resolved_case_sha256": "903d25add5590d0d271c48a4d0e2915c1fa6dcef5bbfcd985d080c8baf3070eb",
+  "rows": 3,
+  "path": "runs/named-hostun-hold-v1"
+}

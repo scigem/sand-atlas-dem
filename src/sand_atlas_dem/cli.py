@@ -11,6 +11,30 @@ from .util import sha256, write_json
 def main(argv=None):
     p = argparse.ArgumentParser(prog="sand-dem")
     sub = p.add_subparsers(dest="command", required=True)
+    cache_default = Path.home() / ".cache" / "sand-atlas-dem" / "materials"
+    material = sub.add_parser("material").add_subparsers(
+        dest="material_command", required=True
+    )
+    a = material.add_parser("list")
+    a.add_argument("--cache", type=Path, default=cache_default)
+    a = material.add_parser("register")
+    a.add_argument("receipt", type=Path)
+    a.add_argument("--cache", type=Path, default=cache_default)
+    case = sub.add_parser("case").add_subparsers(dest="case_command", required=True)
+    a = case.add_parser("run")
+    a.add_argument("material")
+    a.add_argument("--case", type=Path, required=True)
+    a.add_argument("--cache", type=Path, default=cache_default)
+    a.add_argument("--output", type=Path)
+    a.add_argument("--dry-run", action="store_true")
+    a.add_argument("--max-chunks", type=int)
+    a.add_argument("--particles", type=int)
+    a.add_argument("--seed", type=int)
+    a.add_argument(
+        "--pressure", type=float, help="Pa; overrides all pressure-controlled stages"
+    )
+    a.add_argument("--rate", type=float, help="positive axial compression rate, 1/s")
+    a.add_argument("--stop-strain", type=float)
     doctor = sub.add_parser("doctor")
     doctor.add_argument("--output", type=Path)
     g = sub.add_parser("geometry").add_subparsers(
@@ -69,7 +93,35 @@ def main(argv=None):
     a.add_argument("--output", type=Path, required=True)
     args = p.parse_args(argv)
     try:
-        if args.command == "doctor":
+        if args.command == "material":
+            from .cases import materials, register_material
+
+            report = (
+                materials(args.cache)
+                if args.material_command == "list"
+                else register_material(args.receipt, args.cache)
+            )
+        elif args.command == "case":
+            from .cases import resolve_case, run_case
+
+            report = resolve_case(
+                args.material,
+                args.case,
+                args.cache,
+                {
+                    key: getattr(args, key)
+                    for key in ("particles", "seed", "pressure", "rate", "stop_strain")
+                },
+            )
+            if not args.dry_run:
+                if args.output is None:
+                    raise ValueError(
+                        "--output is required unless --dry-run is specified"
+                    )
+                report = run_case(report, args.output, args.max_chunks)
+                print(json.dumps(report, indent=2, allow_nan=False))
+                return 1 if report["status"] == "failed" else 0
+        elif args.command == "doctor":
             from .backend import Metal
 
             report = Metal().doctor()

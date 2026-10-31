@@ -347,6 +347,8 @@ def export_run(path, output):
         dict(
             format="sand-dem-atlas-comparison/1",
             kind="synthetic-dem",
+            run_status=manifest["status"],
+            scientific_admission=False,
             protocol="drained-triaxial"
             if any(s["kind"] == "triaxial" for s in manifest["experiment"]["stages"])
             else "research",

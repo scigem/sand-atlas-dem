@@ -1,0 +1,69 @@
+{
+  "format": "sand-dem-resolved-case/1",
+  "kind": "synthetic-dem",
+  "scientific_admission": false,
+  "case_sha256": "e0db6b811427788cdfb77852a4059c62f1ba75de6eadc920dd690599761adc30",
+  "material": {
+    "format": "sand-dem-material/1",
+    "id": "hostun-0000005",
+    "aliases": [
+      "hostun",
+      "Hostun sand"
+    ],
+    "shape_library": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r64-s2048.h5",
+    "shape_sha256": "1bc9f37a22b402ada31495ea7ff1ebef4bb6a27a26d68a8333f7f84a12ad16b7",
+    "source": {
+      "archive_url": "https://data.scigem-eng.sydney.edu.au/sand-atlas/sands/hostun-0000005/meshes_30.zip",
+      "archive_sha256": "22549ef78526991dc3adb82efe7f1b9cf98babef2e00b435c449f3b90d0f48a6",
+      "descriptor_url": "https://sand-atlas.scigem.com/assets/sands/hostun-0000005.csv",
+      "descriptor_sha256": "3a615e1af45b981a8c39da454155fe37dd7e61d422d6b91c13fa68af283f5872",
+      "accepted_solids": 53,
+      "excluded_solids": 1,
+      "acquisition_report": "docs/HOSTUN_ACQUISITION_V2.md"
+    },
+    "scale_evidence": "Micrometre coordinates inferred by a unique one-to-one match of raw mesh volumes to the dimensioned descriptor CSV; not an STL-declared unit. See docs/HOSTUN_ACQUISITION_V2.md. No mechanical calibration is implied."
+  },
+  "overrides": {},
+  "experiment": {
+    "format": "sand-dem-experiment/1",
+    "shape_library": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r64-s2048.h5",
+    "contact_geometry": "mesh",
+    "particles": 106,
+    "seed": 42,
+    "density": 2650,
+    "normal_stiffness": 1000000000000,
+    "tangential_stiffness": 500000000000,
+    "friction": 0.5,
+    "timestep": 2e-09,
+    "initial_solid_fraction": 0.01,
+    "scale": 1.0,
+    "cell": null,
+    "skin": 0.05,
+    "working_memory_gib": 12.0,
+    "contacts_per_particle": 256,
+    "pairs_per_particle": 32,
+    "bin_capacity": 128,
+    "stages": [
+      {
+        "kind": "hold",
+        "steps": 2,
+        "drag": 0
+      }
+    ],
+    "diagnostic_interval": 1,
+    "snapshot_interval": 100,
+    "max_overlap_fraction": 0.01
+  },
+  "budget": {
+    "maximum_steps": 2,
+    "maximum_physical_time_s": 4e-09,
+    "shape_library_bytes": 62294120,
+    "working_memory_limit_gib": 12.0,
+    "wall_time_estimate_s": null
+  },
+  "notes": [
+    "Material names supply geometry, not calibrated contact parameters.",
+    "Step budgets are upper bounds; no case-specific throughput estimate is available.",
+    "The current comparison bundle requires a synthetic-test adapter in Constitutive Atlas."
+  ]
+}

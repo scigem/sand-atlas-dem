@@ -1,0 +1,20 @@
+{
+  "format": "sand-dem-workflow-check/1",
+  "passed": true,
+  "tests": 53,
+  "scope": "Named material resolution and two-step Hostun Metal hold; not contact quadrature, preparation, calibration or direct Atlas import qualification.",
+  "source_sha256": {
+    "src/sand_atlas_dem/cases.py": "c5535a34e1da6e428136897cabefb831b4c08c9741e55749d281cb0fd7e5c81a",
+    "src/sand_atlas_dem/cli.py": "4e02209272fb5488f92779b394fcdb49319df05fb8f71cf763ed58c2c79bccb6",
+    "src/sand_atlas_dem/simulation.py": "caa4aa1bf30e92d61b1f2292dfbfbf3a195bc982e1c83ac489ff4afa0f02867e",
+    "tests/test_cases.py": "af0cb6763752130b456fc10d441576711fce9025339503839121d1323e866d2c"
+  },
+  "artifacts": {
+    "hostun-manifest.json": "14ac00f937f2231c2eeb9b19e26a468a3b0e390409f1affc37100578e5cd3582",
+    "hostun-dry-run.json": "8f9ea91c865396c42c709d1a2c4d852187366562b21052e42f74ac2725ba7c5d",
+    "hostun-resolved-case.json": "903d25add5590d0d271c48a4d0e2915c1fa6dcef5bbfcd985d080c8baf3070eb",
+    "hostun-comparison.json": "9c21d4fd37ea731329a9e062fe750ae4330c23b9e77ef987e6ab6d28a717acc5",
+    "hostun-result.json": "d9f03daa7cd84cd776109c78bdf4d50be2424a0c9212017b37def589314f5e03",
+    "verification.log": "12a757ce17ad756224e5486d99359723667e05fdcef2d9d978d2481b407521fd"
+  }
+}

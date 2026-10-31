@@ -226,10 +226,13 @@ The independent CPU quadrature oracle now has a separately frozen accelerated
 identity, `hostun-triangle-quadrature-culled-v1`. Fourteen overlapping refinement
 levels match the original oracle exactly. The slower original execution was then
 terminated; its partial result, executed source/protocol and replacement receipt
-are retained. The accelerated run continues the same original triangle queries,
-source nodes, poses and 2% finest-change gate. Its first two completed cases expose
-approximately 205% and 71% error in the 2,048-node surface integral relative to the
-refined triangle integral. Whole-library contact qualification remains open.
+are retained. The accelerated run completed all ten poses with the same original triangle
+queries, source nodes and 2% finest-change gate. Worst finest-level change is
+0.3767%, passing this bounded refinement check. The 2,048-node surface integral
+differs by 10.65%–229.67% from the refined triangle integral. Unsubdivided face
+Gauss3 differs by up to 15.20%; two source-face subdivisions reduce the worst
+observed difference to 1.323%. Subdivided GPU assets remain unimplemented, and
+whole-library contact qualification remains open.
 
 The all-shape Gauss3 functional workload completes successfully
 (`hostun-gauss3-mesh-cluster-smoke-v1`): 106 particles, all 53 contacting pairs,
@@ -240,3 +243,16 @@ execution only; concurrent CPU reference work excludes a sustained timing claim.
 The final integrated device/reference suite passes all 46 tests
 (`verification-mesh-clusters-reference-v1.log`). No scientific convergence gate
 has been marked complete by that software result.
+
+## Named-material cases
+
+The CLI now registers source/scale receipts for prepared assets and resolves names
+or canonical IDs with SHA-256 verification. Versioned case files compile to the
+existing experiment contract; common CLI overrides and dry-run require no GPU.
+Execution automatically exports CSV and explicitly synthetic JSON, retains case
+provenance, and preserves failed preparation status. All 53 tests pass on Metal,
+including named-case execution, initialization failure preservation and failed
+preparation export. A named Hostun two-step hold completes with 106 particles; it
+is an execution check, not qualified material preparation. See
+`evidence/named-case-v1/` and `docs/CASE_WORKFLOW.md`. Automatic acquisition and a
+direct synthetic-test adapter in Constitutive Atlas remain open.

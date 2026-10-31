@@ -47,7 +47,11 @@ original unculled oracle, including forces, depths and active counts.
 
 The slower `hostun-triangle-quadrature-v1` was interrupted after that comparison;
 its partial results, original script/protocol and interruption receipt remain.
-The accelerated study is still running. Its first two completed cases put the
-2,048-node force errors relative to refined integration at approximately 205% and
-71%. These partial results do not establish a worst-case error or qualify the
-remaining poses. Exact distance evaluation does not resolve surface integration.
+The accelerated study completed all ten poses. Every case passes the frozen 2%
+finest-change gate (worst 0.3767%). Relative to its level-four triangle integral,
+the 2,048-node force error ranges from 10.65% to 229.67%; exact distance evaluation
+does not resolve surface integration. Unsubdivided face Gauss3 has up to 15.20%
+error; two subdivisions reduce the worst observed difference to 1.323%. These
+are static, frictionless comparisons over ten poses, not rigorous error bounds
+or whole-library/material qualification. Subdivided GPU assets and corresponding
+performance/assembly studies remain to be implemented and qualified.

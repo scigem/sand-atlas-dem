@@ -1,0 +1,99 @@
+{
+  "format": "sand-dem-run/1",
+  "kind": "synthetic-dem",
+  "scientific_admission": false,
+  "numerics": {
+    "state_accumulation": "compensated_fp32",
+    "cell_update": "accumulated_log_strain",
+    "checkpoint_format": "sand-dem-checkpoint/3"
+  },
+  "experiment": {
+    "format": "sand-dem-experiment/1",
+    "shape_library": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r64-s2048.h5",
+    "contact_geometry": "mesh",
+    "particles": 106,
+    "seed": 42,
+    "density": 2650,
+    "normal_stiffness": 1000000000000,
+    "tangential_stiffness": 500000000000,
+    "friction": 0.5,
+    "timestep": 2e-09,
+    "initial_solid_fraction": 0.01,
+    "scale": 1.0,
+    "cell": null,
+    "skin": 0.05,
+    "working_memory_gib": 12.0,
+    "contacts_per_particle": 256,
+    "pairs_per_particle": 32,
+    "bin_capacity": 128,
+    "stages": [
+      {
+        "kind": "hold",
+        "steps": 2,
+        "drag": 0
+      }
+    ],
+    "diagnostic_interval": 1,
+    "snapshot_interval": 100,
+    "max_overlap_fraction": 0.01
+  },
+  "shape_sha256": "1bc9f37a22b402ada31495ea7ff1ebef4bb6a27a26d68a8333f7f84a12ad16b7",
+  "backend": {
+    "format": "sand-dem-doctor/1",
+    "backend": "metal",
+    "adapter": "Apple M4 Max",
+    "slangpy": "0.43.1",
+    "python": "3.12.14",
+    "smoke_elements": 257,
+    "smoke_max_error": 0.0,
+    "fallback": false,
+    "floating_point_mode_requested": "precise"
+  },
+  "estimated_memory_bytes": 309592080,
+  "conventions": {
+    "stress": "compression_positive",
+    "tensor_order": "xx,xy,xz;yx,yy,yz;zx,zy,zz",
+    "stress_measure": "contact_virial_plus_peculiar_kinetic",
+    "strain": "engineering_compression_positive",
+    "volumetric_strain": "sum_of_axial_engineering_strains",
+    "void_ratio": "cell_volume_over_sum_rigid_grain_volumes_minus_one"
+  },
+  "units": {
+    "length": "m",
+    "stress": "Pa",
+    "time": "s",
+    "strain": "1"
+  },
+  "created_utc": "2026-10-31T10:18:59Z",
+  "source_hashes": {
+    "simulation.py": "caa4aa1bf30e92d61b1f2292dfbfbf3a195bc982e1c83ac489ff4afa0f02867e",
+    "backend.py": "2184575342f265dfd744d799af8e9b03a73dcb195e06e94a59f21e1525cbab5c",
+    "benchmark.py": "6624caaa956f7d5c8825520cd5c901b559f561f8ff407bb4d719cb1c06f1f83c",
+    "util.py": "0f9dc71429a87057dc08216f3c51425d8b76be9c4fd30f2cab6c3f98b70397c2",
+    "__init__.py": "25ef40efbf7fa452aaa142bbe8d9ac35c90756e1a6f09cdacdcd2723cdd1636d",
+    "spec.py": "de79f1ec1dd5a08fcf5313c189a608d7a5772042209fdc35d4e99bdf9a82bd34",
+    "cases.py": "8476f3534530b7530697c9d372e864c44fe879d19063f5652ee4cd1d03a7a818",
+    "visualize.py": "9874362fa98cdd00d73b42867f7ecc9254b820d08915baed25eee4b02ecba339",
+    "mesh.py": "6eca7323f65d4cde10c0c0c7460d2844778626b2273bb6943822b7cd20d0a40e",
+    "cli.py": "4e02209272fb5488f92779b394fcdb49319df05fb8f71cf763ed58c2c79bccb6",
+    "qualification.py": "b59751cc6fcc81b834dd90174ff9859e21efffa389dc36bc514ced75ef41b2fb",
+    "geometry.py": "08122ac327f189d07463655431edf6f86973e98dbb20c21054975ddbf2f9f150",
+    "reference.py": "1cd2a748a7f06f1c5138b5f6c9ed99c06715ce6167693251369e8a8fb3cc502f",
+    "gpu.py": "084b2992ef08441f030f4d171e533a1bbc1a1c5c135112d8f4a33c56b679a5f7"
+  },
+  "shader_hashes": {
+    "scan.slang": "51900fe7d78347d2274488b1b5c328ed53714be3043d221ad1d48555e1c5cbac",
+    "solver.slang": "2c52c2c57ccf357c4b40823f33199b54a5a810536f2420569c01ca6d9473e336",
+    "diagnostic.slang": "4f738fbef3ee79c370f74596a51d0de80b5ddd12375615afd18004df0bec7bb0"
+  },
+  "status": "complete",
+  "failure": null,
+  "elapsed_wall_seconds": 0.5555415829876438,
+  "completed_steps": 2,
+  "stage_index": 1,
+  "capacity_retries": [],
+  "artifacts": {
+    "checkpoint.h5": "d00068affedecfd5c3bbb817cd9a159476ea9f49de81d29dad860e8b0c3255f4",
+    "history.json": "43fc79f6d95681617b47bba7c19224d36dc151dfffe4076d75aad5c220e0cf94"
+  }
+}

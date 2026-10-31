@@ -1,0 +1,924 @@
+{
+  "protocol": {
+    "identity": "hostun-triangle-quadrature-culled-v1",
+    "frozen_before_execution": true,
+    "library": "assets/private/hostun-30-r64-s2048.h5",
+    "library_sha256": "1bc9f37a22b402ada31495ea7ff1ebef4bb6a27a26d68a8333f7f84a12ad16b7",
+    "pose_report": "evidence/hostun-exact-contact-poses-v1/report.json",
+    "pose_report_sha256": "2fe27ce043ccda54f65ac91a37e30e92f34cc100e87ac4cced5beb626ef38a70",
+    "subdivision_levels": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "query_batch_size": 2048,
+    "maximum_finest_relative_change": 0.02,
+    "scope": "Independent static source-triangle normal traction: symmetric three-point quadrature after 0 through 4 uniform triangle subdivisions, conservative AABB exclusion only. Finest-change gate is not a rigorous absolute error bound. No friction/material acceptance. Same original source nodes and 2% finest-change gate; skip exact queries only outside support planes enclosing every original triangle. Distinct accelerated reference identity; prior partial study retained.",
+    "outside_point_rejection": "fp64-original-vertex-support-planes"
+  },
+  "protocol_sha256": "c64d8b69bafba26ce5f94d7f3a5c86a1d58f360973cdad9b214887d0a44c1234",
+  "script_sha256": "8e4351e0b46f4d2af2cb3397d06a3a27283106b88619a3e6fc499e5aa243373a",
+  "runtime_versions": {
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "trimesh": "5.2.0",
+    "rtree": "1.4.1"
+  },
+  "rows": [
+    {
+      "shape": "hostun-particle_00053",
+      "separation_m": 0.000294365652887935,
+      "target_sampled_depth_fraction": 0.0025,
+      "levels": [
+        {
+          "level": 0,
+          "force_integral_m3": [
+            -1.1516790161295371e-17,
+            3.982467694342691e-18,
+            -2.165707255605386e-18
+          ],
+          "maximum_sampled_depth_fraction": 0.002709202865260862,
+          "active_nodes": 28,
+          "evaluated_nodes": 1041,
+          "triangle_queried_nodes": 60,
+          "candidate_subtriangles": [
+            252,
+            95
+          ]
+        },
+        {
+          "level": 1,
+          "force_integral_m3": [
+            -1.3154960163735325e-17,
+            5.6839603369271305e-18,
+            -2.8347417679469643e-18
+          ],
+          "maximum_sampled_depth_fraction": 0.0028969188043506673,
+          "active_nodes": 94,
+          "evaluated_nodes": 3690,
+          "triangle_queried_nodes": 228,
+          "candidate_subtriangles": [
+            900,
+            330
+          ]
+        },
+        {
+          "level": 2,
+          "force_integral_m3": [
+            -1.2941227424523325e-17,
+            5.701876003354813e-18,
+            -2.7982387181799706e-18
+          ],
+          "maximum_sampled_depth_fraction": 0.0029592636973829038,
+          "active_nodes": 385,
+          "evaluated_nodes": 13773,
+          "triangle_queried_nodes": 911,
+          "candidate_subtriangles": [
+            3383,
+            1208
+          ]
+        },
+        {
+          "level": 3,
+          "force_integral_m3": [
+            -1.2897323918815222e-17,
+            5.509047874314766e-18,
+            -2.77323231274376e-18
+          ],
+          "maximum_sampled_depth_fraction": 0.0030616011095279086,
+          "active_nodes": 1515,
+          "evaluated_nodes": 53205,
+          "triangle_queried_nodes": 3635,
+          "candidate_subtriangles": [
+            13118,
+            4617
+          ]
+        },
+        {
+          "level": 4,
+          "force_integral_m3": [
+            -1.2913857805259306e-17,
+            5.546888307959713e-18,
+            -2.746356164490004e-18
+          ],
+          "maximum_sampled_depth_fraction": 0.0030840130565516076,
+          "active_nodes": 6097,
+          "evaluated_nodes": 209427,
+          "triangle_queried_nodes": 14557,
+          "candidate_subtriangles": [
+            51670,
+            18139
+          ]
+        }
+      ],
+      "finest_relative_change": 0.0034405543278405145,
+      "qmc_2048_relative_error_to_finest": 2.0501304279553083
+    },
+    {
+      "shape": "hostun-particle_00053",
+      "separation_m": 0.00029220300335055485,
+      "target_sampled_depth_fraction": 0.01,
+      "levels": [
+        {
+          "level": 0,
+          "force_integral_m3": [
+            -1.7502885158637354e-16,
+            6.319914735668168e-17,
+            -2.953126839826608e-17
+          ],
+          "maximum_sampled_depth_fraction": 0.010225393869906634,
+          "active_nodes": 85,
+          "evaluated_nodes": 1257,
+          "triangle_queried_nodes": 151,
+          "candidate_subtriangles": [
+            306,
+            113
+          ]
+        },
+        {
+          "level": 1,
+          "force_integral_m3": [
+            -1.7050057698095541e-16,
+            6.542294795596643e-17,
+            -3.423255563708003e-17
+          ],
+          "maximum_sampled_depth_fraction": 0.010539176216364984,
+          "active_nodes": 335,
+          "evaluated_nodes": 4596,
+          "triangle_queried_nodes": 602,
+          "candidate_subtriangles": [
+            1120,
+            412
+          ]
+        },
+        {
+          "level": 2,
+          "force_integral_m3": [
+            -1.7044184695739142e-16,
+            6.600976547094321e-17,
+            -3.435205025894963e-17
+          ],
+          "maximum_sampled_depth_fraction": 0.010656282193559675,
+          "active_nodes": 1349,
+          "evaluated_nodes": 17556,
+          "triangle_queried_nodes": 2421,
+          "candidate_subtriangles": [
+            4278,
+            1574
+          ]
+        },
+        {
+          "level": 3,
+          "force_integral_m3": [
+            -1.7040564272856331e-16,
+            6.472471444313336e-17,
+            -3.436575382573702e-17
+          ],
+          "maximum_sampled_depth_fraction": 0.01071843752611781,
+          "active_nodes": 5394,
+          "evaluated_nodes": 68499,
+          "triangle_queried_nodes": 9658,
+          "candidate_subtriangles": [
+            16708,
+            6125
+          ]
+        },
+        {
+          "level": 4,
+          "force_integral_m3": [
+            -1.7041940620098408e-16,
+            6.524680474670737e-17,
+            -3.4216675631822105e-17
+          ],
+          "maximum_sampled_depth_fraction": 0.010747637200891932,
+          "active_nodes": 21593,
+          "evaluated_nodes": 270324,
+          "triangle_queried_nodes": 38670,
+          "candidate_subtriangles": [
+            65997,
+            24111
+          ]
+        }
+      ],
+      "finest_relative_change": 0.002925365156838124,
+      "qmc_2048_relative_error_to_finest": 0.7143585269948933
+    },
+    {
+      "shape": "hostun-particle_00034",
+      "separation_m": 0.0003464976903378844,
+      "target_sampled_depth_fraction": 0.0025,
+      "levels": [
+        {
+          "level": 0,
+          "force_integral_m3": [
+            -4.691246743535488e-17,
+            -1.8879353502061918e-17,
+            1.370595964240962e-17
+          ],
+          "maximum_sampled_depth_fraction": 0.005792711059619074,
+          "active_nodes": 28,
+          "evaluated_nodes": 8007,
+          "triangle_queried_nodes": 1457,
+          "candidate_subtriangles": [
+            1634,
+            1035
+          ]
+        },
+        {
+          "level": 1,
+          "force_integral_m3": [
+            -4.502690942083345e-17,
+            -1.8394075517518575e-17,
+            1.3612501859717518e-17
+          ],
+          "maximum_sampled_depth_fraction": 0.00610670166858878,
+          "active_nodes": 105,
+          "evaluated_nodes": 30330,
+          "triangle_queried_nodes": 5792,
+          "candidate_subtriangles": [
+            6122,
+            3988
+          ]
+        },
+        {
+          "level": 2,
+          "force_integral_m3": [
+            -4.45821046774282e-17,
+            -1.790696407045816e-17,
+            1.457927119461056e-17
+          ],
+          "maximum_sampled_depth_fraction": 0.006506713199402174,
+          "active_nodes": 418,
+          "evaluated_nodes": 118047,
+          "triangle_queried_nodes": 23218,
+          "candidate_subtriangles": [
+            23757,
+            15592
+          ]
+        },
+        {
+          "level": 3,
+          "force_integral_m3": [
+            -4.473018911339154e-17,
+            -1.8153937822487977e-17,
+            1.4431418281091604e-17
+          ],
+          "maximum_sampled_depth_fraction": 0.0068019408894315556,
+          "active_nodes": 1671,
+          "evaluated_nodes": 466035,
+          "triangle_queried_nodes": 92822,
+          "candidate_subtriangles": [
+            93672,
+            61673
+          ]
+        },
+        {
+          "level": 4,
+          "force_integral_m3": [
+            -4.4781488584090744e-17,
+            -1.7980008458746748e-17,
+            1.448752657998136e-17
+          ],
+          "maximum_sampled_depth_fraction": 0.006864846702805107,
+          "active_nodes": 6716,
+          "evaluated_nodes": 1852608,
+          "triangle_queried_nodes": 371276,
+          "candidate_subtriangles": [
+            372300,
+            245236
+          ]
+        }
+      ],
+      "finest_relative_change": 0.003767440762012956,
+      "qmc_2048_relative_error_to_finest": 0.5364646504930315
+    },
+    {
+      "shape": "hostun-particle_00034",
+      "separation_m": 0.00034344602608644894,
+      "target_sampled_depth_fraction": 0.01,
+      "levels": [
+        {
+          "level": 0,
+          "force_integral_m3": [
+            -3.870490533555637e-16,
+            -1.3752028668646023e-16,
+            1.303786285944267e-16
+          ],
+          "maximum_sampled_depth_fraction": 0.014011785815426801,
+          "active_nodes": 77,
+          "evaluated_nodes": 8832,
+          "triangle_queried_nodes": 1705,
+          "candidate_subtriangles": [
+            1774,
+            1170
+          ]
+        },
+        {
+          "level": 1,
+          "force_integral_m3": [
+            -3.7923128189850733e-16,
+            -1.4376857834953834e-16,
+            1.3910305675985153e-16
+          ],
+          "maximum_sampled_depth_fraction": 0.015173972913427886,
+          "active_nodes": 298,
+          "evaluated_nodes": 33384,
+          "triangle_queried_nodes": 6787,
+          "candidate_subtriangles": [
+            6720,
+            4408
+          ]
+        },
+        {
+          "level": 2,
+          "force_integral_m3": [
+            -3.772919161273027e-16,
+            -1.417089274277989e-16,
+            1.3839902826133796e-16
+          ],
+          "maximum_sampled_depth_fraction": 0.015735580558175036,
+          "active_nodes": 1190,
+          "evaluated_nodes": 130518,
+          "triangle_queried_nodes": 27211,
+          "candidate_subtriangles": [
+            26293,
+            17213
+          ]
+        },
+        {
+          "level": 3,
+          "force_integral_m3": [
+            -3.780446964693165e-16,
+            -1.4141534559775463e-16,
+            1.383089223107043e-16
+          ],
+          "maximum_sampled_depth_fraction": 0.015818944913033015,
+          "active_nodes": 4723,
+          "evaluated_nodes": 516555,
+          "triangle_queried_nodes": 108847,
+          "candidate_subtriangles": [
+            104021,
+            68164
+          ]
+        },
+        {
+          "level": 4,
+          "force_integral_m3": [
+            -3.779895023416617e-16,
+            -1.415343566464006e-16,
+            1.3804483570586242e-16
+          ],
+          "maximum_sampled_depth_fraction": 0.015926079286834854,
+          "active_nodes": 18961,
+          "evaluated_nodes": 2053584,
+          "triangle_queried_nodes": 435373,
+          "candidate_subtriangles": [
+            413187,
+            271341
+          ]
+        }
+      ],
+      "finest_relative_change": 0.0006912671942196628,
+      "qmc_2048_relative_error_to_finest": 0.24761460905826427
+    },
+    {
+      "shape": "hostun-particle_00033",
+      "separation_m": 0.00041684533132007955,
+      "target_sampled_depth_fraction": 0.0025,
+      "levels": [
+        {
+          "level": 0,
+          "force_integral_m3": [
+            -1.9709810356442494e-16,
+            -8.103877231584653e-17,
+            -9.264186737007743e-17
+          ],
+          "maximum_sampled_depth_fraction": 0.009608924035382152,
+          "active_nodes": 60,
+          "evaluated_nodes": 852,
+          "triangle_queried_nodes": 100,
+          "candidate_subtriangles": [
+            154,
+            130
+          ]
+        },
+        {
+          "level": 1,
+          "force_integral_m3": [
+            -1.9669034820660015e-16,
+            -7.01137684240799e-17,
+            -9.508079328313172e-17
+          ],
+          "maximum_sampled_depth_fraction": 0.00979780389215898,
+          "active_nodes": 231,
+          "evaluated_nodes": 3186,
+          "triangle_queried_nodes": 382,
+          "candidate_subtriangles": [
+            599,
+            463
+          ]
+        },
+        {
+          "level": 2,
+          "force_integral_m3": [
+            -1.9762731096436644e-16,
+            -7.587344062772008e-17,
+            -9.45085256421983e-17
+          ],
+          "maximum_sampled_depth_fraction": 0.009896296677449694,
+          "active_nodes": 948,
+          "evaluated_nodes": 12255,
+          "triangle_queried_nodes": 1533,
+          "candidate_subtriangles": [
+            2328,
+            1757
+          ]
+        },
+        {
+          "level": 3,
+          "force_integral_m3": [
+            -1.9759484147948746e-16,
+            -7.617414598708275e-17,
+            -9.434325652561715e-17
+          ],
+          "maximum_sampled_depth_fraction": 0.009928987514314432,
+          "active_nodes": 3818,
+          "evaluated_nodes": 47688,
+          "triangle_queried_nodes": 6152,
+          "candidate_subtriangles": [
+            9074,
+            6822
+          ]
+        },
+        {
+          "level": 4,
+          "force_integral_m3": [
+            -1.9751051836460036e-16,
+            -7.580391840359908e-17,
+            -9.475457731433212e-17
+          ],
+          "maximum_sampled_depth_fraction": 0.009940548290705259,
+          "active_nodes": 15191,
+          "evaluated_nodes": 188637,
+          "triangle_queried_nodes": 24616,
+          "candidate_subtriangles": [
+            35965,
+            26914
+          ]
+        }
+      ],
+      "finest_relative_change": 0.0024148791321105118,
+      "qmc_2048_relative_error_to_finest": 0.40490499748158193
+    },
+    {
+      "shape": "hostun-particle_00033",
+      "separation_m": 0.00041428009988057446,
+      "target_sampled_depth_fraction": 0.01,
+      "levels": [
+        {
+          "level": 0,
+          "force_integral_m3": [
+            -6.814105062615348e-16,
+            -2.265405068085528e-16,
+            -3.294132979600963e-16
+          ],
+          "maximum_sampled_depth_fraction": 0.015548474267901794,
+          "active_nodes": 112,
+          "evaluated_nodes": 1182,
+          "triangle_queried_nodes": 150,
+          "candidate_subtriangles": [
+            216,
+            178
+          ]
+        },
+        {
+          "level": 1,
+          "force_integral_m3": [
+            -6.879764442843446e-16,
+            -2.296822948540969e-16,
+            -3.183428641612661e-16
+          ],
+          "maximum_sampled_depth_fraction": 0.015638222406125515,
+          "active_nodes": 442,
+          "evaluated_nodes": 4164,
+          "triangle_queried_nodes": 618,
+          "candidate_subtriangles": [
+            757,
+            631
+          ]
+        },
+        {
+          "level": 2,
+          "force_integral_m3": [
+            -6.847910603635809e-16,
+            -2.323313588506193e-16,
+            -3.2144969753522203e-16
+          ],
+          "maximum_sampled_depth_fraction": 0.01568386050295357,
+          "active_nodes": 1768,
+          "evaluated_nodes": 15516,
+          "triangle_queried_nodes": 2441,
+          "candidate_subtriangles": [
+            2823,
+            2349
+          ]
+        },
+        {
+          "level": 3,
+          "force_integral_m3": [
+            -6.868187632351905e-16,
+            -2.318705750116194e-16,
+            -3.2071710827088197e-16
+          ],
+          "maximum_sampled_depth_fraction": 0.015706868623953034,
+          "active_nodes": 7089,
+          "evaluated_nodes": 60327,
+          "triangle_queried_nodes": 9778,
+          "candidate_subtriangles": [
+            11039,
+            9070
+          ]
+        },
+        {
+          "level": 4,
+          "force_integral_m3": [
+            -6.868998528973221e-16,
+            -2.311998287454531e-16,
+            -3.204419611504271e-16
+          ],
+          "maximum_sampled_depth_fraction": 0.01571841971093308,
+          "active_nodes": 28343,
+          "evaluated_nodes": 237540,
+          "triangle_queried_nodes": 39127,
+          "candidate_subtriangles": [
+            43518,
+            35662
+          ]
+        }
+      ],
+      "finest_relative_change": 0.0009205797267828785,
+      "qmc_2048_relative_error_to_finest": 0.3097942295325274
+    },
+    {
+      "shape": "hostun-particle_00039",
+      "separation_m": 0.00042587759408392346,
+      "target_sampled_depth_fraction": 0.0025,
+      "levels": [
+        {
+          "level": 0,
+          "force_integral_m3": [
+            -6.142300417310691e-17,
+            4.866425876457261e-17,
+            -2.2037016012826748e-17
+          ],
+          "maximum_sampled_depth_fraction": 0.005736539251445525,
+          "active_nodes": 43,
+          "evaluated_nodes": 9423,
+          "triangle_queried_nodes": 944,
+          "candidate_subtriangles": [
+            1733,
+            1408
+          ]
+        },
+        {
+          "level": 1,
+          "force_integral_m3": [
+            -6.344645196223909e-17,
+            5.3238188642714685e-17,
+            -2.2124860942460418e-17
+          ],
+          "maximum_sampled_depth_fraction": 0.0061636265683704654,
+          "active_nodes": 162,
+          "evaluated_nodes": 36285,
+          "triangle_queried_nodes": 3746,
+          "candidate_subtriangles": [
+            6648,
+            5447
+          ]
+        },
+        {
+          "level": 2,
+          "force_integral_m3": [
+            -6.395166149716582e-17,
+            5.423610382336229e-17,
+            -2.0272093284686802e-17
+          ],
+          "maximum_sampled_depth_fraction": 0.006377170226832948,
+          "active_nodes": 673,
+          "evaluated_nodes": 142353,
+          "triangle_queried_nodes": 15016,
+          "candidate_subtriangles": [
+            26125,
+            21326
+          ]
+        },
+        {
+          "level": 3,
+          "force_integral_m3": [
+            -6.352646059432576e-17,
+            5.469176330553586e-17,
+            -2.1232425722349882e-17
+          ],
+          "maximum_sampled_depth_fraction": 0.006483942056064132,
+          "active_nodes": 2677,
+          "evaluated_nodes": 564030,
+          "triangle_queried_nodes": 60027,
+          "candidate_subtriangles": [
+            103662,
+            84348
+          ]
+        },
+        {
+          "level": 4,
+          "force_integral_m3": [
+            -6.362467371828312e-17,
+            5.443537436293009e-17,
+            -2.1349103843805785e-17
+          ],
+          "maximum_sampled_depth_fraction": 0.006537327970679769,
+          "active_nodes": 10691,
+          "evaluated_nodes": 2244336,
+          "triangle_queried_nodes": 240086,
+          "candidate_subtriangles": [
+            412520,
+            335592
+          ]
+        }
+      ],
+      "finest_relative_change": 0.003452285862082927,
+      "qmc_2048_relative_error_to_finest": 1.3255526111849074
+    },
+    {
+      "shape": "hostun-particle_00039",
+      "separation_m": 0.000420344463081,
+      "target_sampled_depth_fraction": 0.01,
+      "levels": [
+        {
+          "level": 0,
+          "force_integral_m3": [
+            -1.0603349601773315e-15,
+            8.4342190206131165e-16,
+            -2.391678325929784e-16
+          ],
+          "maximum_sampled_depth_fraction": 0.016083386684907424,
+          "active_nodes": 168,
+          "evaluated_nodes": 11115,
+          "triangle_queried_nodes": 1592,
+          "candidate_subtriangles": [
+            2026,
+            1679
+          ]
+        },
+        {
+          "level": 1,
+          "force_integral_m3": [
+            -1.055613351700305e-15,
+            8.442876302359268e-16,
+            -2.3873722277873297e-16
+          ],
+          "maximum_sampled_depth_fraction": 0.016520552133171936,
+          "active_nodes": 676,
+          "evaluated_nodes": 42525,
+          "triangle_queried_nodes": 6379,
+          "candidate_subtriangles": [
+            7767,
+            6408
+          ]
+        },
+        {
+          "level": 2,
+          "force_integral_m3": [
+            -1.0574428723501223e-15,
+            8.446173506265034e-16,
+            -2.415391171938596e-16
+          ],
+          "maximum_sampled_depth_fraction": 0.016739134857304216,
+          "active_nodes": 2709,
+          "evaluated_nodes": 166542,
+          "triangle_queried_nodes": 25491,
+          "candidate_subtriangles": [
+            30425,
+            25089
+          ]
+        },
+        {
+          "level": 3,
+          "force_integral_m3": [
+            -1.0563140029261029e-15,
+            8.453156962180918e-16,
+            -2.419619208099247e-16
+          ],
+          "maximum_sampled_depth_fraction": 0.01684842621937039,
+          "active_nodes": 10842,
+          "evaluated_nodes": 660183,
+          "triangle_queried_nodes": 101927,
+          "candidate_subtriangles": [
+            120515,
+            99546
+          ]
+        },
+        {
+          "level": 4,
+          "force_integral_m3": [
+            -1.0563092086490833e-15,
+            8.459905833983293e-16,
+            -2.4229017792020047e-16
+          ],
+          "maximum_sampled_depth_fraction": 0.016903071900403493,
+          "active_nodes": 43410,
+          "evaluated_nodes": 2628564,
+          "triangle_queried_nodes": 407758,
+          "candidate_subtriangles": [
+            479674,
+            396514
+          ]
+        }
+      ],
+      "finest_relative_change": 0.0005458795579788028,
+      "qmc_2048_relative_error_to_finest": 0.10650048193472143
+    },
+    {
+      "shape": "hostun-particle_00031",
+      "separation_m": 0.0004340634797394704,
+      "target_sampled_depth_fraction": 0.0025,
+      "levels": [
+        {
+          "level": 0,
+          "force_integral_m3": [
+            -5.554857900288139e-17,
+            4.4657839984556275e-17,
+            -7.01924996251611e-18
+          ],
+          "maximum_sampled_depth_fraction": 0.0026801829987798875,
+          "active_nodes": 24,
+          "evaluated_nodes": 12267,
+          "triangle_queried_nodes": 702,
+          "candidate_subtriangles": [
+            1950,
+            2139
+          ]
+        },
+        {
+          "level": 1,
+          "force_integral_m3": [
+            -6.535053814845075e-17,
+            4.914417950146848e-17,
+            -1.4040045540402732e-17
+          ],
+          "maximum_sampled_depth_fraction": 0.0029242747304506905,
+          "active_nodes": 107,
+          "evaluated_nodes": 48024,
+          "triangle_queried_nodes": 2807,
+          "candidate_subtriangles": [
+            7636,
+            8372
+          ]
+        },
+        {
+          "level": 2,
+          "force_integral_m3": [
+            -6.412763980428243e-17,
+            4.6388770280127934e-17,
+            -1.2826894525475281e-17
+          ],
+          "maximum_sampled_depth_fraction": 0.003046320596286113,
+          "active_nodes": 423,
+          "evaluated_nodes": 188463,
+          "triangle_queried_nodes": 11237,
+          "candidate_subtriangles": [
+            29978,
+            32843
+          ]
+        },
+        {
+          "level": 3,
+          "force_integral_m3": [
+            -6.457366057092567e-17,
+            4.659561047584866e-17,
+            -1.2976888577010966e-17
+          ],
+          "maximum_sampled_depth_fraction": 0.0031073435292038147,
+          "active_nodes": 1692,
+          "evaluated_nodes": 747567,
+          "triangle_queried_nodes": 44973,
+          "candidate_subtriangles": [
+            119098,
+            130091
+          ]
+        },
+        {
+          "level": 4,
+          "force_integral_m3": [
+            -6.446716229256654e-17,
+            4.660238094425923e-17,
+            -1.3040168289366074e-17
+          ],
+          "maximum_sampled_depth_fraction": 0.0031378549956626793,
+          "active_nodes": 6770,
+          "evaluated_nodes": 2975496,
+          "triangle_queried_nodes": 179884,
+          "candidate_subtriangles": [
+            474057,
+            517775
+          ]
+        }
+      ],
+      "finest_relative_change": 0.0015390883527795264,
+      "qmc_2048_relative_error_to_finest": 2.2967345459033957
+    },
+    {
+      "shape": "hostun-particle_00031",
+      "separation_m": 0.00042906983079780514,
+      "target_sampled_depth_fraction": 0.01,
+      "levels": [
+        {
+          "level": 0,
+          "force_integral_m3": [
+            -1.4144556753071545e-15,
+            1.0800200485999375e-15,
+            -2.9026272278910284e-16
+          ],
+          "maximum_sampled_depth_fraction": 0.010958469262386661,
+          "active_nodes": 113,
+          "evaluated_nodes": 13308,
+          "triangle_queried_nodes": 1000,
+          "candidate_subtriangles": [
+            2170,
+            2266
+          ]
+        },
+        {
+          "level": 1,
+          "force_integral_m3": [
+            -1.4340380813685237e-15,
+            1.055483585422384e-15,
+            -2.8982830672298574e-16
+          ],
+          "maximum_sampled_depth_fraction": 0.011086334586610413,
+          "active_nodes": 449,
+          "evaluated_nodes": 51603,
+          "triangle_queried_nodes": 4012,
+          "candidate_subtriangles": [
+            8330,
+            8871
+          ]
+        },
+        {
+          "level": 2,
+          "force_integral_m3": [
+            -1.4284744554520395e-15,
+            1.0562129512368062e-15,
+            -2.796392684592657e-16
+          ],
+          "maximum_sampled_depth_fraction": 0.011365101501047761,
+          "active_nodes": 1807,
+          "evaluated_nodes": 203523,
+          "triangle_queried_nodes": 16068,
+          "candidate_subtriangles": [
+            32700,
+            35141
+          ]
+        },
+        {
+          "level": 3,
+          "force_integral_m3": [
+            -1.4302339974278563e-15,
+            1.0524142693979432e-15,
+            -2.816702702957851e-16
+          ],
+          "maximum_sampled_depth_fraction": 0.01144942315850221,
+          "active_nodes": 7231,
+          "evaluated_nodes": 808440,
+          "triangle_queried_nodes": 64174,
+          "candidate_subtriangles": [
+            129622,
+            139858
+          ]
+        },
+        {
+          "level": 4,
+          "force_integral_m3": [
+            -1.4303189050107101e-15,
+            1.0535626688457955e-15,
+            -2.812826451330623e-16
+          ],
+          "maximum_sampled_depth_fraction": 0.011514150472534781,
+          "active_nodes": 28911,
+          "evaluated_nodes": 3220617,
+          "triangle_queried_nodes": 256738,
+          "candidate_subtriangles": [
+            516272,
+            557267
+          ]
+        }
+      ],
+      "finest_relative_change": 0.0006755425885076979,
+      "qmc_2048_relative_error_to_finest": 0.3745163356248794
+    }
+  ],
+  "passed": true,
+  "elapsed_wall_seconds": 1170.876580332988,
+  "scope": "Independent static normal-traction integration on original source triangles. Finest-change gate is a numerical refinement check, not a rigorous error bound or friction/material validation."
+}
