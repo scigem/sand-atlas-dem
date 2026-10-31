@@ -50,7 +50,7 @@ case runner and direct, explicitly synthetic Atlas handoff described in
 [CASE_WORKFLOW.md](docs/CASE_WORKFLOW.md). Named-material registration, hash-checked
 resolution, case overrides, dry-run and automatic exports are now implemented.
 Reviewed Hostun acquisition/preparation is implemented; additional material recipes
-and dedicated Atlas browser comparison overlays remain open. The recorded-path
+and dedicated Atlas browser comparison overlays remain open. Ottawa 1 µm source intake now retains all 175 meshes, the 244-row descriptor table, invalid members and unresolved identity/scale correspondence (docs/OTTAWA_SOURCE_INTAKE.md); no recipe is admitted. The recorded-path
 adapter now uses the actual Atlas converter and browser contract with a typed
 synthetic sidecar and explicit policy. This is required software
 work alongside the scientific gates below; naming a material must not infer calibrated properties.

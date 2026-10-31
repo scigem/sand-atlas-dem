@@ -1,0 +1,13 @@
+{
+  "files": {
+    "/Users/bmar5496/code/sand-atlas-python/sand_atlas/pipeline.py": "caa88d6d988fbed4f4cfc3466731fc975c7128c6e257dcd436eedb518ef319c8",
+    "/Users/bmar5496/code/sand-atlas-python/sand_atlas/blender_scripts/vdb.py": "1c7d89c8a5136ebba07dfa6a00192fc228b298bb23ea29bd45db0b6573616903"
+  },
+  "repository_head": "3c70874eecab3148a6dd615db5c6c922504f132a",
+  "executed": false,
+  "locators": {
+    "sand_atlas/pipeline.py": "labelled_image_to_mesh, lines 131\u2013160; labels preserved in output names; boundary labels skipped; disconnected regions removed upstream",
+    "sand_atlas/blender_scripts/vdb.py": "lines 174\u2013181; current source applies voxel_size_m * 1000 before export"
+  },
+  "conclusion": "Current generator is not hash-bound to the acquired 2025 archive. It cannot establish historical label or scale correspondence, override the observed raw volume matches or authorize repair. Raw names, descriptor rows and nearest-volume assignments remain distinct."
+}

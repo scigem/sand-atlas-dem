@@ -1,0 +1,9 @@
+{
+  "identity": "ottawa1um-source-intake-v1",
+  "status": "failed",
+  "failure_stage": "source audit reporting",
+  "failure": "First member has no mesh bounds; initial audit did not handle empty STL inputs. No source repair or admission.",
+  "retained_log_sha256": "5db82601d79b67710a422276c16d1a2eeef7c88976957eb27a5617ee138905c5",
+  "gpu_executed": false,
+  "scientific_admission": false
+}

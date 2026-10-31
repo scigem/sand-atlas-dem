@@ -753,3 +753,12 @@ CPU integration passes 204 tests (eight skipped, 57 Metal cases deselected), wit
 unchanged frozen sources. Restore no longer stages a capacity-sized zero history
 on the host. Actual device exact-byte upload and poisoned-unused-tail restart
 checks remain queued; this does not reduce fixed device contact/rollback storage.
+
+## Additional-material source intake
+
+The separate Ottawa 1 µm audit acquired and inspected all 175 archive members
+against 244 descriptors. One member is empty, one is multipart, and nearest-volume
+matching is not one-to-one. All evidence and the initial reporting failure are
+retained. No recipe, scale, material registration or scientific admission is
+introduced; the historical identity/export receipt is the next source action.
+See [OTTAWA_SOURCE_INTAKE.md](OTTAWA_SOURCE_INTAKE.md).

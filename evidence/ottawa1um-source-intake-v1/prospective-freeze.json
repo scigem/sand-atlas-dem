@@ -1,0 +1,14 @@
+{
+  "input_sha256": {
+    "/private/tmp/sand-atlas-dem-walls/evidence/ottawa1um-source-intake-v1/private/meshes_30.zip": "2273714017391b9aa018e755a2416a09b69aacf8132ca7c777533a12ae721a9d",
+    "/private/tmp/sand-atlas-dem-walls/evidence/ottawa1um-source-intake-v1/source_snapshot/sand-atlas/assets/sands/ottawa-0000008.csv": "7dc724725eebf288001e8b751068370a43c579ab2aefdfa92691cdcfd3368f0b",
+    "/private/tmp/sand-atlas-dem-walls/evidence/ottawa1um-source-intake-v1/source_snapshot/sand-atlas/_data/json/ottawa-0000008.json": "05359375f45ea6b49c07f1a345c3f0e66f6b96570681d66b378dea51d4baee72",
+    "/private/tmp/sand-atlas-dem-walls/evidence/ottawa1um-source-intake-v1/download-receipt.json": "6a12196ac27f38be912a148594f826011bca333dde33bf65405703147f5d602f",
+    "/private/tmp/sand-atlas-dem-walls/evidence/ottawa1um-source-intake-v1/local-source-receipt.json": "ce2cc80c07611cb952883971216cd1ccd2d499ace56b08e8cd1c464fb2236feb",
+    "/private/tmp/sand-atlas-dem-walls/evidence/ottawa1um-source-intake-v1/analyze.py": "758447d09ebbf2a9851043c4adad02e7148ed4a1df3ea819e16a8031ecb99cca"
+  },
+  "scope": "CPU-only source topology/unit crosswalk diagnostics; no preparation or admission.",
+  "acceptance": "No numerical acceptance target or material admission. Preserve every member, its signed-volume comparisons, topology diagnostics and unmatched inventories. Exact coordinate welding only; no repairs or source execution.",
+  "numpy": "2.5.4",
+  "trimesh": "5.2.0"
+}
