@@ -893,3 +893,17 @@ admission remain open. No preparation restart or pressure-normalized default.
 The final policy revision passes 302 tests with eight skips on actual Metal;
 all 222 frozen inputs and all five retained study archives verify unchanged.
 Receipt: `evidence/active-contact-timestep-v5/`.
+
+## Hostun subsystem profiling — 2026-11-01
+
+The queued immutable first-contact profile has now executed: 384 original-solver
+steps average 12.741ms wall time; GPU timestamps remain unavailable. A separate
+current-solver profile measures approximately12.5ms/step, with mesh contact geometry
+accounting for 82.9% of synchronized subsystem wall time. Startup under profiling
+spends 106.3s in static mesh packing. Three restored repetitions, batch sizes 1/16/128,
+Python call profiles, 96 split steps and independent input/archive checks are
+retained in [RUNTIME_PROFILING.md](RUNTIME_PROFILING.md). The split and ordinary
+trajectories agree within 2.274e-13 normalized component error. This is a dilute
+347-candidate/two-active-pair workload, not dense throughput. Current profiling
+uses the conservative timestep policy; no opt-in guard overhead or end-to-end
+optimization speedup is inferred. The preparation remains stopped.

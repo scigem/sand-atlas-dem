@@ -1,0 +1,216 @@
+{
+  "identity": "hostun-current-runtime-profile-v1",
+  "completed": true,
+  "backend": {
+    "format": "sand-dem-doctor/1",
+    "backend": "metal",
+    "adapter": "Apple M4 Max",
+    "slangpy": "0.43.1",
+    "python": "3.12.14",
+    "smoke_elements": 257,
+    "smoke_max_error": 0.0,
+    "fallback": false,
+    "floating_point_mode_requested": "precise"
+  },
+  "sources_and_inputs_unchanged": true,
+  "startup_seconds": 114.06053933303338,
+  "batch_seconds_per_step": {
+    "1": {
+      "mean": 0.013386583343769113,
+      "median": 0.013375499984249473,
+      "min": 0.013360333046875894,
+      "max": 0.013423917000181973,
+      "count": 3
+    },
+    "16": {
+      "mean": 0.012489090292850355,
+      "median": 0.012487445317674428,
+      "min": 0.012485309940529987,
+      "max": 0.012494515620346647,
+      "count": 3
+    },
+    "128": {
+      "mean": 0.012553550348760231,
+      "median": 0.01253121159334114,
+      "min": 0.012522118492597656,
+      "max": 0.012607320960341895,
+      "count": 3
+    }
+  },
+  "stage_synchronized_wall": {
+    "drift": {
+      "wall_seconds": {
+        "mean": 0.0004025729140266776,
+        "median": 0.00039362499956041574,
+        "min": 0.00036641594488173723,
+        "max": 0.0006225839024409652,
+        "count": 96
+      },
+      "encode_seconds": {
+        "mean": 0.00022769186034565791,
+        "median": 0.000223687500692904,
+        "min": 0.0002210000529885292,
+        "max": 0.0002721250057220459,
+        "count": 96
+      },
+      "submit_wait_seconds": {
+        "mean": 0.0001748810536810197,
+        "median": 0.00016943697119131684,
+        "min": 0.00014070793986320496,
+        "max": 0.00036112498492002487,
+        "count": 96
+      }
+    },
+    "neighbours": {
+      "wall_seconds": {
+        "mean": 0.0005044739082222804,
+        "median": 0.0005027914885431528,
+        "min": 0.00046979100443422794,
+        "max": 0.0005497080273926258,
+        "count": 96
+      },
+      "encode_seconds": {
+        "mean": 0.0003132026431558188,
+        "median": 0.00030987447826191783,
+        "min": 0.0003058330621570349,
+        "max": 0.00034729205071926117,
+        "count": 96
+      },
+      "submit_wait_seconds": {
+        "mean": 0.00019127126506646164,
+        "median": 0.00019206252181902528,
+        "min": 0.00016062497161328793,
+        "max": 0.00021929200738668442,
+        "count": 96
+      }
+    },
+    "contact_geometry": {
+      "wall_seconds": {
+        "mean": 0.010987263883483442,
+        "median": 0.010981791478116065,
+        "min": 0.010935959056951106,
+        "max": 0.011185084003955126,
+        "count": 96
+      },
+      "encode_seconds": {
+        "mean": 0.00015224047092488036,
+        "median": 0.00014964595902711153,
+        "min": 0.00014670798555016518,
+        "max": 0.00020241702441126108,
+        "count": 96
+      },
+      "submit_wait_seconds": {
+        "mean": 0.010835023412558561,
+        "median": 0.010830936953425407,
+        "min": 0.01078679203055799,
+        "max": 0.011019667028449476,
+        "count": 96
+      }
+    },
+    "friction_and_history": {
+      "wall_seconds": {
+        "mean": 0.0006911236851010472,
+        "median": 0.000684479484334588,
+        "min": 0.0006542500341311097,
+        "max": 0.000815875013358891,
+        "count": 96
+      },
+      "encode_seconds": {
+        "mean": 0.00023856813398500284,
+        "median": 0.00023727095685899258,
+        "min": 0.00021945801563560963,
+        "max": 0.0002912919735535979,
+        "count": 96
+      },
+      "submit_wait_seconds": {
+        "mean": 0.00045255555111604434,
+        "median": 0.0004463960067369044,
+        "min": 0.00040954200085252523,
+        "max": 0.0005775829777121544,
+        "count": 96
+      }
+    },
+    "force_reduction": {
+      "wall_seconds": {
+        "mean": 0.000441399279225152,
+        "median": 0.0004376870347186923,
+        "min": 0.00040129199624061584,
+        "max": 0.000563874957151711,
+        "count": 96
+      },
+      "encode_seconds": {
+        "mean": 8.020967046225753e-05,
+        "median": 7.797905709594488e-05,
+        "min": 7.479195483028889e-05,
+        "max": 0.00012704194523394108,
+        "count": 96
+      },
+      "submit_wait_seconds": {
+        "mean": 0.00036118960876289446,
+        "median": 0.00035877100890502334,
+        "min": 0.00032650004141032696,
+        "max": 0.0004859169712290168,
+        "count": 96
+      }
+    },
+    "final_kick": {
+      "wall_seconds": {
+        "mean": 0.0002243454691779334,
+        "median": 0.0002243955386802554,
+        "min": 0.0001989169977605343,
+        "max": 0.0003195001045241952,
+        "count": 96
+      },
+      "encode_seconds": {
+        "mean": 7.945706238388084e-05,
+        "median": 7.808353984728456e-05,
+        "min": 7.454201113432646e-05,
+        "max": 9.474996477365494e-05,
+        "count": 96
+      },
+      "submit_wait_seconds": {
+        "mean": 0.00014488840679405257,
+        "median": 0.00014641648158431053,
+        "min": 0.0001117499778047204,
+        "max": 0.00024150009267032146,
+        "count": 96
+      }
+    }
+  },
+  "partition_state_max_absolute_errors": [
+    {
+      "position": 0.0,
+      "velocity": 4.884981308350689e-15,
+      "force": 2.2737367544323206e-13,
+      "rotation": 0.0
+    },
+    {
+      "position": 0.0,
+      "velocity": 6.8833827526759706e-15,
+      "force": 1.1368683772161603e-13,
+      "rotation": 0.0
+    },
+    {
+      "position": 0.0,
+      "velocity": 5.995204332975845e-15,
+      "force": 1.1368683772161603e-13,
+      "rotation": 0.0
+    }
+  ],
+  "partition_check_passed": true,
+  "memory": {
+    "solver_buffer_count": 117,
+    "logical_solver_buffer_bytes": 1745730820,
+    "process_peak_rss_bytes": 10486431744,
+    "excludes": [
+      "Python/Slang compiler object overhead from logical buffer count",
+      "Other processes and system allocations; unified-memory categories can overlap",
+      "Driver execution scratch and shader thread-local storage are outside logical buffer inventory"
+    ],
+    "reported_device_resource_bytes": 1745730820,
+    "reported_host_resource_bytes": 0,
+    "internal_heaps": []
+  },
+  "scientific_admission": false,
+  "timing_scope": "Wall-clock encoding and submitted device execution with explicit stage synchronization. Not GPU-only timings; do not add stage costs to predict unpartitioned runtime."
+}

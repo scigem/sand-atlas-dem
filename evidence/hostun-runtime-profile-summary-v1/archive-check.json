@@ -1,0 +1,13 @@
+{
+  "studies": {
+    "hostun-first-contact-profile-v1": {
+      "source_files": 33,
+      "sources_and_inputs_verified": true
+    },
+    "hostun-current-runtime-profile-v1": {
+      "source_files": 27,
+      "sources_and_inputs_verified": true
+    }
+  },
+  "analysis_inputs_and_script_verified": true
+}

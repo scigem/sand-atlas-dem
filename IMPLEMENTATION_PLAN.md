@@ -292,3 +292,16 @@ receipts, retained revisions and remaining scope are described in
 [CONTACT_TIMESTEP_POLICY.md](docs/CONTACT_TIMESTEP_POLICY.md). This closes the bounded
 software implementation task; irregular dense-assembly/loading-rate and material
 qualification remain separate open studies. The stopped preparation stays stopped.
+
+## Profiling priorities — 2026-11-01
+
+Executed the previously queued archived-checkpoint profile and a separately frozen
+current-solver runtime profile. The leading measured stage is mesh contact geometry
+(82.9% of synchronized subsystem wall time); static geometry packing also dominates
+startup. Next bounded optimization: count traversal/query work and pair imbalance,
+then evaluate parallel leaf/subtree work and tighter conservative pair rejection.
+Existing sample hierarchies/BVHs already exist. Static packed-geometry caching is a
+separate startup improvement; command encoding and friction/hash work are lower
+priorities on this sparse workload. Full evidence and limits:
+[docs/RUNTIME_PROFILING.md](docs/RUNTIME_PROFILING.md). No production optimization or
+preparation restart is performed by this profiling task.

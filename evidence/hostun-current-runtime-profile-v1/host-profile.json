@@ -1,0 +1,274 @@
+{
+  "functions": [
+    {
+      "file": "/private/tmp/sand-atlas-dem-walls/evidence/hostun-current-runtime-profile-v1/source_snapshot/sand_atlas_dem/gpu.py",
+      "line": 588,
+      "function": "advance",
+      "calls": 1,
+      "primitive_calls": 1,
+      "own_seconds": 2.3500000000000002e-05,
+      "cumulative_seconds": 1.606067292
+    },
+    {
+      "file": "/private/tmp/sand-atlas-dem-walls/evidence/hostun-current-runtime-profile-v1/source_snapshot/sand_atlas_dem/gpu.py",
+      "line": 663,
+      "function": "_advance_once",
+      "calls": 1,
+      "primitive_calls": 1,
+      "own_seconds": 1.4542781690000002,
+      "cumulative_seconds": 1.6060291670000002
+    },
+    {
+      "file": "/private/tmp/sand-atlas-dem-walls/evidence/hostun-current-runtime-profile-v1/source_snapshot/sand_atlas_dem/gpu.py",
+      "line": 521,
+      "function": "dispatch",
+      "calls": 1792,
+      "primitive_calls": 1792,
+      "own_seconds": 0.00033342200000000005,
+      "cumulative_seconds": 0.14388014000000002
+    },
+    {
+      "file": "/private/tmp/sand-atlas-dem-walls/evidence/hostun-current-runtime-profile-v1/source_snapshot/sand_atlas_dem/backend.py",
+      "line": 46,
+      "function": "dispatch",
+      "calls": 1792,
+      "primitive_calls": 1792,
+      "own_seconds": 0.143085482,
+      "cumulative_seconds": 0.14354671800000002
+    },
+    {
+      "file": "/private/tmp/sand-atlas-dem-walls/evidence/hostun-current-runtime-profile-v1/source_snapshot/sand_atlas_dem/gpu.py",
+      "line": 538,
+      "function": "forces",
+      "calls": 128,
+      "primitive_calls": 128,
+      "own_seconds": 0.00024175200000000003,
+      "cumulative_seconds": 0.105199047
+    },
+    {
+      "file": "/private/tmp/sand-atlas-dem-walls/evidence/hostun-current-runtime-profile-v1/source_snapshot/sand_atlas_dem/gpu.py",
+      "line": 524,
+      "function": "_encode_contacts",
+      "calls": 128,
+      "primitive_calls": 128,
+      "own_seconds": 5.9229000000000005e-05,
+      "cumulative_seconds": 0.020704959000000002
+    },
+    {
+      "file": "/private/tmp/sand-atlas-dem-walls/evidence/hostun-current-runtime-profile-v1/source_snapshot/sand_atlas_dem/backend.py",
+      "line": 55,
+      "function": "submit",
+      "calls": 1,
+      "primitive_calls": 1,
+      "own_seconds": 0.004372458,
+      "cumulative_seconds": 0.004372458
+    },
+    {
+      "file": "/private/tmp/sand-atlas-dem-walls/evidence/hostun-current-runtime-profile-v1/source_snapshot/sand_atlas_dem/gpu.py",
+      "line": 73,
+      "function": "encode",
+      "calls": 256,
+      "primitive_calls": 128,
+      "own_seconds": 0.002299207,
+      "cumulative_seconds": 0.002340538
+    },
+    {
+      "file": "/private/tmp/sand-atlas-dem-walls/evidence/hostun-current-runtime-profile-v1/source_snapshot/sand_atlas_dem/backend.py",
+      "line": 58,
+      "function": "read",
+      "calls": 3,
+      "primitive_calls": 3,
+      "own_seconds": 0.000531042,
+      "cumulative_seconds": 0.00053925
+    },
+    {
+      "file": "/private/tmp/sand-atlas-dem-walls/evidence/hostun-current-runtime-profile-v1/source_snapshot/sand_atlas_dem/gpu.py",
+      "line": 483,
+      "function": "bindings",
+      "calls": 128,
+      "primitive_calls": 128,
+      "own_seconds": 0.000266691,
+      "cumulative_seconds": 0.000289917
+    },
+    {
+      "file": "/private/tmp/sand-atlas-dem-walls/evidence/hostun-current-runtime-profile-v1/source_snapshot/sand_atlas_dem/backend.py",
+      "line": 26,
+      "function": "kernel",
+      "calls": 2176,
+      "primitive_calls": 2176,
+      "own_seconds": 0.000244618,
+      "cumulative_seconds": 0.000244618
+    },
+    {
+      "file": "/private/tmp/sand-atlas-dem-walls/evidence/hostun-current-runtime-profile-v1/source_snapshot/sand_atlas_dem/gpu.py",
+      "line": 580,
+      "function": "check_errors",
+      "calls": 1,
+      "primitive_calls": 1,
+      "own_seconds": 4.0830000000000005e-06,
+      "cumulative_seconds": 0.00023958300000000003
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method builtins.max>",
+      "calls": 1921,
+      "primitive_calls": 1921,
+      "own_seconds": 0.00016033,
+      "cumulative_seconds": 0.00016033
+    },
+    {
+      "file": "/private/tmp/sand-atlas-dem-walls/evidence/hostun-current-runtime-profile-v1/source_snapshot/sand_atlas_dem/gpu.py",
+      "line": 640,
+      "function": "_reserve_history_backup",
+      "calls": 1,
+      "primitive_calls": 1,
+      "own_seconds": 4.625000000000001e-06,
+      "cumulative_seconds": 0.000155417
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'pop' of 'dict' objects>",
+      "calls": 1792,
+      "primitive_calls": 1792,
+      "own_seconds": 0.00011229100000000001,
+      "cumulative_seconds": 0.00011229100000000001
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'tolist' of 'numpy.ndarray' objects>",
+      "calls": 128,
+      "primitive_calls": 128,
+      "own_seconds": 1.5255e-05,
+      "cumulative_seconds": 1.5255e-05
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'disable' of '_lsprof.Profiler' objects>",
+      "calls": 1,
+      "primitive_calls": 1,
+      "own_seconds": 1.4833e-05,
+      "cumulative_seconds": 1.4833e-05
+    },
+    {
+      "file": "/private/tmp/sand-atlas-dem-walls/evidence/hostun-current-runtime-profile-v1/source_snapshot/sand_atlas_dem/util.py",
+      "line": 49,
+      "function": "finite_array",
+      "calls": 1,
+      "primitive_calls": 1,
+      "own_seconds": 7.708e-06,
+      "cumulative_seconds": 1.4625000000000001e-05
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method builtins.len>",
+      "calls": 128,
+      "primitive_calls": 128,
+      "own_seconds": 7.971e-06,
+      "cumulative_seconds": 7.971e-06
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'all' of 'numpy.ndarray' objects>",
+      "calls": 1,
+      "primitive_calls": 1,
+      "own_seconds": 1.542e-06,
+      "cumulative_seconds": 4.875e-06
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'copy' of 'numpy.ndarray' objects>",
+      "calls": 4,
+      "primitive_calls": 4,
+      "own_seconds": 4.333e-06,
+      "cumulative_seconds": 4.333e-06
+    },
+    {
+      "file": "/Users/bmar5496/code/sand-atlas-dem/.venv/lib/python3.12/site-packages/numpy/_core/_methods.py",
+      "line": 64,
+      "function": "_all",
+      "calls": 1,
+      "primitive_calls": 1,
+      "own_seconds": 1.5410000000000002e-06,
+      "cumulative_seconds": 3.333e-06
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'reshape' of 'numpy.ndarray' objects>",
+      "calls": 4,
+      "primitive_calls": 4,
+      "own_seconds": 2.6250000000000003e-06,
+      "cumulative_seconds": 2.6250000000000003e-06
+    },
+    {
+      "file": "/private/tmp/sand-atlas-dem-walls/evidence/hostun-current-runtime-profile-v1/source_snapshot/sand_atlas_dem/gpu.py",
+      "line": 654,
+      "function": "_copy_history_backup",
+      "calls": 1,
+      "primitive_calls": 1,
+      "own_seconds": 2.291e-06,
+      "cumulative_seconds": 2.375e-06
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method numpy.asarray>",
+      "calls": 2,
+      "primitive_calls": 2,
+      "own_seconds": 2.209e-06,
+      "cumulative_seconds": 2.209e-06
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'view' of 'numpy.ndarray' objects>",
+      "calls": 3,
+      "primitive_calls": 3,
+      "own_seconds": 2.2080000000000003e-06,
+      "cumulative_seconds": 2.2080000000000003e-06
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'reduce' of 'numpy.ufunc' objects>",
+      "calls": 1,
+      "primitive_calls": 1,
+      "own_seconds": 1.7920000000000002e-06,
+      "cumulative_seconds": 1.7920000000000002e-06
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'items' of 'dict' objects>",
+      "calls": 2,
+      "primitive_calls": 2,
+      "own_seconds": 4.18e-07,
+      "cumulative_seconds": 4.18e-07
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'update' of 'dict' objects>",
+      "calls": 1,
+      "primitive_calls": 1,
+      "own_seconds": 3.75e-07,
+      "cumulative_seconds": 3.75e-07
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method builtins.getattr>",
+      "calls": 1,
+      "primitive_calls": 1,
+      "own_seconds": 1.2500000000000002e-07,
+      "cumulative_seconds": 1.2500000000000002e-07
+    }
+  ]
+}

@@ -1,0 +1,1147 @@
+{
+  "repetition": 0,
+  "initial_step": 500000,
+  "final_step": 500144,
+  "diagnostics": {
+    "step": 500144,
+    "elapsed_time": 0.001000288,
+    "cell": [
+      0.005398709688310325,
+      0.005398709688310325,
+      0.005398709688310325
+    ],
+    "domain_cell": [
+      0.005398709688310325,
+      0.005398709688310325,
+      0.005398709688310325
+    ],
+    "walls": [],
+    "stress": [
+      [
+        0.25873868853636395,
+        0.002973484851267312,
+        -0.004652339202131916
+      ],
+      [
+        -0.014098667311747427,
+        0.28402866232787777,
+        0.0044487809470560025
+      ],
+      [
+        0.02719482333260375,
+        0.00539402100695415,
+        -0.0004139712168839916
+      ]
+    ],
+    "contact_stress": [
+      [
+        0.25868220325955577,
+        0.0029736054022620494,
+        -0.004658327791880371
+      ],
+      [
+        -0.01409854676075269,
+        0.2839682663669407,
+        0.0044476207594107515
+      ],
+      [
+        0.027188834742855297,
+        0.005392860819381997,
+        -0.00041462891003487884
+      ]
+    ],
+    "kinetic_stress": [
+      [
+        5.648527680819251e-05,
+        -1.2055099473734243e-07,
+        5.988589748454239e-06
+      ],
+      [
+        -1.2055099473734243e-07,
+        6.039596093705889e-05,
+        1.160187645251308e-06
+      ],
+      [
+        5.988589748454239e-06,
+        1.1601875721523534e-06,
+        6.576931508871832e-07
+      ]
+    ],
+    "stress_antisymmetry": 0.13259387312361284,
+    "p": 0.18078445988245254,
+    "q": -0.2717976466490048,
+    "axial_strain": 0.4547314581028651,
+    "volumetric_strain": 1.3641943743085951,
+    "volume_ratio": 0.16211803389797239,
+    "log_strain": [
+      0.6064768682481803,
+      0.6064768682481803,
+      0.6064768682481803
+    ],
+    "void_ratio": 15.21180338979725,
+    "kinetic_energy": 2.0885074919485547e-11,
+    "elastic_energy_proxy": 8.387094491135727e-11,
+    "unbalanced_force": 0.9367887377738953,
+    "max_overlap_fraction": 0.0063864062540233135,
+    "friction_dissipation_last_step": 4.367273090157856e-17,
+    "candidate_pairs": 347,
+    "active_surface_contacts": 956,
+    "active_grain_pairs": 2,
+    "coordination": 0.009433962264150943,
+    "fabric": [
+      [
+        0.4997417628765106,
+        -0.019181616604328156,
+        -0.009367216378450394
+      ],
+      [
+        -0.019181616604328156,
+        0.49997401237487793,
+        0.007728243712335825
+      ],
+      [
+        -0.009367216378450394,
+        0.007728243712335825,
+        0.0002843414549715817
+      ]
+    ],
+    "sliding_fraction": 0.04184100418410042,
+    "cell_log_rate": [
+      -50.0,
+      -50.0,
+      -50.0
+    ],
+    "friction_dissipation": 3.413283544695389e-11,
+    "drag_dissipation": 1.1811405187245327e-09,
+    "cell_work": 1.3199590309653786e-09,
+    "wall_work": 0.0,
+    "normal_contact_dissipation": 0.0,
+    "normal_contact_power": 0.0
+  },
+  "samples": [
+    {
+      "wall_seconds": 0.01495412492658943,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.013305625063367188,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012707957997918129,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012688749935477972,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012680332991294563,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.01265537494327873,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012655082973651588,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.01263487502001226,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012652500066906214,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012697750004008412,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012649707961827517,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.01263875002041459,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012654540943913162,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012679875013418496,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012660374981351197,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.01268095790874213,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012615040992386639,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.01265320903621614,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012650624965317547,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012714333017356694,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012651375029236078,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.01265129097737372,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012571249972097576,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012634500046260655,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012575292028486729,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012650332995690405,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012611667043529451,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012634541955776513,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012700750026851892,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012639083084650338,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012622542097233236,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.0126875409623608,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012685250025242567,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.01278079196345061,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012844541925005615,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.01290125004015863,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012748250039294362,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012668209034018219,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012756666983477771,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012651750002987683,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012714624986983836,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012650249991565943,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012586249969899654,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012752207927405834,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012719916994683444,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.01256025000475347,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012584166950546205,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012546999962069094,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012656667036935687,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012688459013588727,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012597416061908007,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012570374994538724,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.01274200004991144,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.013064084108918905,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.013049375033006072,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012786958017386496,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.01279395807068795,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012847917038016021,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012994499993510544,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012938875006511807,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.013128792052157223,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.013687499915249646,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.01409750001039356,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.01384075009264052,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.01365604205057025,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.01373729098122567,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.013877667021006346,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.013970667030662298,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.013781875022687018,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.013707834063097835,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.013704334036447108,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.01363037503324449,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.013613958959467709,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.01359633298125118,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.01379358395934105,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.01383562502451241,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.01402454194612801,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.014063042006455362,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.014287041034549475,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.014256666996516287,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.013930833083577454,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.013892333023250103,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012889000005088747,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012968041002750397,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012710249982774258,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012619332992471755,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012727083987556398,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012659542029723525,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012678541941568255,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012815332971513271,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012645000009797513,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012672708020545542,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012678832979872823,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012652916950173676,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012595915934070945,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012841916992329061,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012656208011321723,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.01269466697704047,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012658999999985099,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012643666937947273,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.01268641697242856,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012779999990016222,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012637082953006029,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012605875032022595,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012588124955072999,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012658415944315493,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012590124970301986,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012681916006840765,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.0127328330418095,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012708458001725376,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.01266287500038743,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012659083004109561,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.01266454195138067,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012666333001106977,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012654416030272841,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012581415940076113,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012583666015416384,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012661959044635296,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012664041947573423,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.01266645803116262,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.01281395903788507,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012653833022341132,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012636042083613575,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012657874962314963,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012665000045672059,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012651457916945219,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.012674374971538782,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    },
+    {
+      "wall_seconds": 0.01259354199282825,
+      "gpu": {
+        "available": false,
+        "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+        "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+      }
+    }
+  ]
+}

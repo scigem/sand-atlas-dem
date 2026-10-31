@@ -1,0 +1,74 @@
+{
+  "stage_ranking": [
+    {
+      "name": "contact_geometry",
+      "mean_wall_ms": 10.987263883483442,
+      "encode_ms": 0.15224047092488036,
+      "submit_wait_ms": 10.835023412558561,
+      "fraction_of_split_total": 0.8291536751586375
+    },
+    {
+      "name": "friction_and_history",
+      "mean_wall_ms": 0.6911236851010472,
+      "encode_ms": 0.23856813398500284,
+      "submit_wait_ms": 0.45255555111604434,
+      "fraction_of_split_total": 0.0521556367051624
+    },
+    {
+      "name": "neighbours",
+      "mean_wall_ms": 0.5044739082222804,
+      "encode_ms": 0.3132026431558188,
+      "submit_wait_ms": 0.19127126506646164,
+      "fraction_of_split_total": 0.03807011458539121
+    },
+    {
+      "name": "force_reduction",
+      "mean_wall_ms": 0.441399279225152,
+      "encode_ms": 0.08020967046225753,
+      "submit_wait_ms": 0.36118960876289447,
+      "fraction_of_split_total": 0.03331018882071979
+    },
+    {
+      "name": "drift",
+      "mean_wall_ms": 0.4025729140266776,
+      "encode_ms": 0.22769186034565791,
+      "submit_wait_ms": 0.1748810536810197,
+      "fraction_of_split_total": 0.03038015785588964
+    },
+    {
+      "name": "final_kick",
+      "mean_wall_ms": 0.2243454691779334,
+      "encode_ms": 0.07945706238388084,
+      "submit_wait_ms": 0.14488840679405257,
+      "fraction_of_split_total": 0.016930226874199445
+    }
+  ],
+  "split_encode_fraction": 0.08236020581941796,
+  "batch_seconds_per_step": {
+    "1": {
+      "mean": 0.013386583343769113,
+      "median": 0.013375499984249473,
+      "min": 0.013360333046875894,
+      "max": 0.013423917000181973,
+      "count": 3
+    },
+    "16": {
+      "mean": 0.012489090292850355,
+      "median": 0.012487445317674428,
+      "min": 0.012485309940529987,
+      "max": 0.012494515620346647,
+      "count": 3
+    },
+    "128": {
+      "mean": 0.012553550348760231,
+      "median": 0.01253121159334114,
+      "min": 0.012522118492597656,
+      "max": 0.012607320960341895,
+      "count": 3
+    }
+  },
+  "synchronized_total_ms": 13.251179139236532,
+  "partition_check_passed": true,
+  "inputs_unchanged": true,
+  "warning": "Synchronized stage wall time includes driver/queue overhead and changes scheduling. It is not GPU execution time, and its sum is not unpartitioned throughput. Startup and Python call profiles include profiler overhead. Sparse checkpoint is not dense throughput."
+}
