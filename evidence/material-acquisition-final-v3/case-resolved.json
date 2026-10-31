@@ -1,0 +1,97 @@
+{
+  "format": "sand-dem-resolved-case/1",
+  "kind": "synthetic-dem",
+  "scientific_admission": false,
+  "case_sha256": "e0db6b811427788cdfb77852a4059c62f1ba75de6eadc920dd690599761adc30",
+  "material": {
+    "format": "sand-dem-material/1",
+    "id": "hostun-0000005",
+    "aliases": [
+      "hostun",
+      "Hostun sand"
+    ],
+    "shape_library": "/Users/bmar5496/code/sand-atlas-dem/evidence/material-acquisition-final-v3/private/materials/private/hostun-0000005/e25e34ef263926fec8817a364470b68824b81b4df28be58bc40d1e77a1d5a03e/shapes.h5",
+    "shape_sha256": "22c0cb20853ae7ea9a924521666f9f5447f8f33ba0e594d2e01e326c893c107d",
+    "scale_evidence": "Micrometre coordinates inferred from unique one-to-one raw-volume matching to dimensioned source descriptors. The inference is fixed to these source hashes and is not an STL-declared unit. See docs/HOSTUN_ACQUISITION_V2.md.",
+    "source": {
+      "archive": {
+        "url": "https://data.scigem-eng.sydney.edu.au/sand-atlas/sands/hostun-0000005/meshes_30.zip",
+        "sha256": "22549ef78526991dc3adb82efe7f1b9cf98babef2e00b435c449f3b90d0f48a6",
+        "filename": "hostun-meshes-30.zip",
+        "bytes": 25568448
+      },
+      "descriptors": {
+        "url": "https://sand-atlas.scigem.com/assets/sands/hostun-0000005.csv",
+        "sha256": "3a615e1af45b981a8c39da454155fe37dd7e61d422d6b91c13fa68af283f5872",
+        "filename": "hostun-descriptors.csv",
+        "bytes": 10205
+      },
+      "preparation_identity": "e25e34ef263926fec8817a364470b68824b81b4df28be58bc40d1e77a1d5a03e",
+      "preparation_profile": {
+        "format": "sand-dem-preparation-profile/1",
+        "resolution": 8,
+        "samples": 16,
+        "seed": 0,
+        "python_version": "3.12.14",
+        "recipe_sha256": "76ad8eae2a013795a5aa673123981711b8f8b4913e4a813eebdf37e8ab1c0295",
+        "code_sha256": {
+          "acquisition.py": "3c9379de9c9f24b4c762ae4608e73d70b76b558d4cbdae48e75196c747594ddd",
+          "geometry.py": "08122ac327f189d07463655431edf6f86973e98dbb20c21054975ddbf2f9f150",
+          "util.py": "0f9dc71429a87057dc08216f3c51425d8b76be9c4fd30f2cab6c3f98b70397c2"
+        },
+        "versions": {
+          "numpy": "2.5.4",
+          "scipy": "1.18.1",
+          "trimesh": "5.2.0",
+          "h5py": "3.16.0",
+          "rtree": "1.4.1"
+        }
+      },
+      "preparation_report": "/Users/bmar5496/code/sand-atlas-dem/evidence/material-acquisition-final-v3/private/materials/private/hostun-0000005/e25e34ef263926fec8817a364470b68824b81b4df28be58bc40d1e77a1d5a03e/attempt-c7c94aae9d744b44a5fe49b9cf4402ce.json",
+      "preparation_report_sha256": "23a8a925ac0c39ddabdb7f77082b220cf4ca274c6683e940c1b446bc1a5f57dc"
+    }
+  },
+  "overrides": {},
+  "experiment": {
+    "format": "sand-dem-experiment/1",
+    "shape_library": "/Users/bmar5496/code/sand-atlas-dem/evidence/material-acquisition-final-v3/private/materials/private/hostun-0000005/e25e34ef263926fec8817a364470b68824b81b4df28be58bc40d1e77a1d5a03e/shapes.h5",
+    "contact_geometry": "mesh",
+    "particles": 106,
+    "seed": 42,
+    "density": 2650,
+    "normal_stiffness": 1000000000000,
+    "tangential_stiffness": 500000000000,
+    "friction": 0.5,
+    "timestep": 2e-09,
+    "initial_solid_fraction": 0.01,
+    "scale": 1.0,
+    "cell": null,
+    "skin": 0.05,
+    "working_memory_gib": 12.0,
+    "contacts_per_particle": 256,
+    "pairs_per_particle": 32,
+    "bin_capacity": 128,
+    "stages": [
+      {
+        "kind": "hold",
+        "steps": 2,
+        "drag": 0
+      }
+    ],
+    "diagnostic_interval": 1,
+    "snapshot_interval": 100,
+    "max_overlap_fraction": 0.01
+  },
+  "budget": {
+    "maximum_steps": 2,
+    "maximum_physical_time_s": 4e-09,
+    "shape_library_bytes": 16953198,
+    "working_memory_limit_gib": 12.0,
+    "wall_time_estimate_s": null
+  },
+  "notes": [
+    "Material names supply geometry, not calibrated contact parameters.",
+    "Step budgets are upper bounds; no case-specific throughput estimate is available.",
+    "The current comparison bundle requires a synthetic-test adapter in Constitutive Atlas."
+  ]
+}

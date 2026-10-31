@@ -17,6 +17,13 @@ def main(argv=None):
     )
     a = material.add_parser("list")
     a.add_argument("--cache", type=Path, default=cache_default)
+    a = material.add_parser("prepare")
+    a.add_argument("material")
+    a.add_argument("--cache", type=Path, default=cache_default)
+    a.add_argument("--resolution", type=int, default=64)
+    a.add_argument("--samples", type=int, default=2048)
+    a.add_argument("--workers", type=int, default=4)
+    a.add_argument("--source-directory", type=Path)
     a = material.add_parser("register")
     a.add_argument("receipt", type=Path)
     a.add_argument("--cache", type=Path, default=cache_default)
@@ -96,23 +103,47 @@ def main(argv=None):
         if args.command == "material":
             from .cases import materials, register_material
 
-            report = (
-                materials(args.cache)
-                if args.material_command == "list"
-                else register_material(args.receipt, args.cache)
-            )
-        elif args.command == "case":
-            from .cases import resolve_case, run_case
+            if args.material_command == "prepare":
+                from .acquisition import prepare_material
 
-            report = resolve_case(
-                args.material,
-                args.case,
-                args.cache,
-                {
-                    key: getattr(args, key)
-                    for key in ("particles", "seed", "pressure", "rate", "stop_strain")
-                },
-            )
+                report = prepare_material(
+                    args.material,
+                    args.cache,
+                    resolution=args.resolution,
+                    samples=args.samples,
+                    workers=args.workers,
+                    source_directory=args.source_directory,
+                )
+            else:
+                report = (
+                    materials(args.cache)
+                    if args.material_command == "list"
+                    else register_material(args.receipt, args.cache)
+                )
+        elif args.command == "case":
+            from .cases import MaterialNotFound, resolve_case, run_case
+
+            overrides = {
+                key: getattr(args, key)
+                for key in ("particles", "seed", "pressure", "rate", "stop_strain")
+            }
+            if not args.dry_run and args.output is None:
+                raise ValueError("--output is required unless --dry-run is specified")
+            if not args.dry_run and args.output.exists():
+                raise FileExistsError(args.output)
+            try:
+                report = resolve_case(args.material, args.case, args.cache, overrides)
+            except MaterialNotFound:
+                if args.dry_run:
+                    raise
+                from .acquisition import prepare_material
+
+                print(
+                    "Preparing reviewed material geometry (CPU); cached sources remain private.",
+                    file=sys.stderr,
+                )
+                prepare_material(args.material, args.cache)
+                report = resolve_case(args.material, args.case, args.cache, overrides)
             if not args.dry_run:
                 if args.output is None:
                     raise ValueError(

@@ -48,13 +48,15 @@ Preparation that exhausts its budget without convergence is a failed run.
 ## Named-material cases
 
 ```sh
-# Once the separately prepared Hostun asset is available:
-.venv/bin/sand-dem material register cases/hostun-material.json
+# Optional explicit first-use preparation (also automatic on case run):
+.venv/bin/sand-dem material prepare hostun --workers 4
 .venv/bin/sand-dem case run hostun --case cases/drained-triaxial.json --dry-run
 .venv/bin/sand-dem case run hostun --case cases/drained-triaxial.json \
   --pressure 20000 --rate 0.5 --output runs/hostun-tc
 ```
 
+Hostun acquisition uses a reviewed source/scale recipe and private prepared cache.
+Other materials currently require manual preparation and registration.
 Material names resolve hash-pinned geometry; contact properties remain explicit in
 reusable case files. The triaxial template has provisional preparation settings.
 The runner automatically writes resolved inputs, a run/checkpoints and synthetic

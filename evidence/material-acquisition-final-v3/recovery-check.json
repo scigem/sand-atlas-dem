@@ -1,0 +1,8 @@
+{
+  "format": "sand-dem-cache-recovery-check/1",
+  "passed": true,
+  "scope": "Real Hostun grain cache reuse after missing registry publication",
+  "material_sha256": "ae317a395c7b7eaae473f23d467bf4da7f8635700b959189fb25223d8b70ecc2",
+  "original_material_sha256": "ae317a395c7b7eaae473f23d467bf4da7f8635700b959189fb25223d8b70ecc2",
+  "preparation_report_sha256": "23a8a925ac0c39ddabdb7f77082b220cf4ca274c6683e940c1b446bc1a5f57dc"
+}

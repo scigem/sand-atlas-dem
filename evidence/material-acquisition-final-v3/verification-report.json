@@ -1,0 +1,45 @@
+{
+  "format": "sand-dem-material-workflow-check/1",
+  "passed": true,
+  "scope": "Pinned Hostun acquisition, full 54-member source crosswalk, 53 accepted/1 excluded grains, real cache recovery and 106-particle two-step Metal hold; functional geometry is 8-cell/16-sample and not scientifically qualified.",
+  "tests": 63,
+  "scientific_admission": false,
+  "preparation_profile": {
+    "format": "sand-dem-preparation-profile/1",
+    "resolution": 8,
+    "samples": 16,
+    "seed": 0,
+    "python_version": "3.12.14",
+    "recipe_sha256": "76ad8eae2a013795a5aa673123981711b8f8b4913e4a813eebdf37e8ab1c0295",
+    "code_sha256": {
+      "acquisition.py": "3c9379de9c9f24b4c762ae4608e73d70b76b558d4cbdae48e75196c747594ddd",
+      "geometry.py": "08122ac327f189d07463655431edf6f86973e98dbb20c21054975ddbf2f9f150",
+      "util.py": "0f9dc71429a87057dc08216f3c51425d8b76be9c4fd30f2cab6c3f98b70397c2"
+    },
+    "versions": {
+      "numpy": "2.5.4",
+      "scipy": "1.18.1",
+      "trimesh": "5.2.0",
+      "h5py": "3.16.0",
+      "rtree": "1.4.1"
+    }
+  },
+  "source_sha256": {
+    "src/sand_atlas_dem/cases.py": "2dccef028eeac4fc3c0652383033c8cdab6742bfc3d1249073e579a3f3593978",
+    "src/sand_atlas_dem/cli.py": "15c38e85fbf87284dc7b5eeb0f022b9e157b404cadf2113cf5c9bad9862a08da",
+    "tests/test_acquisition.py": "725c7efae8f953b974302b9e17edc6e46e80231d18a303606083a73218b618a5"
+  },
+  "artifacts": {
+    "case-manifest.json": "b91d11b639634ec26e994a940442fd302aa5d66c85d6897673d02384a4575f4f",
+    "case-execution.log": "ce2acdff2f453a19b90b8ac843a0fbaba5f5715a3d3623fbb4b804ae05fd91e5",
+    "recovery-attempt-report.json": "540deef461d10937b702686868ec87f3dea142daaa9c04a2119fe866df63e318",
+    "case-comparison.json": "c3ca4e27009cbb05ca8b2138ae32bd0a7ac6c6b74dfbb3ce6185fcad70819429",
+    "case-resolved.json": "21c519777ff2a1773b13f08e816aec337bb45cee2f85d5386918df5aa37a7c77",
+    "material-receipt.json": "ae317a395c7b7eaae473f23d467bf4da7f8635700b959189fb25223d8b70ecc2",
+    "execution.log": "ae317a395c7b7eaae473f23d467bf4da7f8635700b959189fb25223d8b70ecc2",
+    "recovery.log": "ae317a395c7b7eaae473f23d467bf4da7f8635700b959189fb25223d8b70ecc2",
+    "case-result.json": "3f98bda1bbb4ae3c4fd1b9a909d5554348c15494b692ff9ae85759ca05d789a2",
+    "preparation-report.json": "23a8a925ac0c39ddabdb7f77082b220cf4ca274c6683e940c1b446bc1a5f57dc",
+    "recovery-check.json": "d4ed57fbde6eff739c9abc213dde26944a197626797d090a0bcb7af1a85de233"
+  }
+}

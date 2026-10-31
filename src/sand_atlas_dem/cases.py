@@ -7,6 +7,10 @@ from .spec import Experiment
 from .util import read_json, sha256, write_json
 
 
+class MaterialNotFound(ValueError):
+    """No registered identity; distinct from ambiguous names or corrupt assets."""
+
+
 def _material(record):
     required = {
         "format",
@@ -74,6 +78,10 @@ def resolve_material(name, cache):
     matches = exact or [
         r for r in records if key in [a.strip().casefold() for a in r["aliases"]]
     ]
+    if not matches:
+        raise MaterialNotFound(
+            f"Material {name!r} is not registered; use material prepare/register"
+        )
     if len(matches) != 1:
         raise ValueError(
             f"Material {name!r}: expected one match, found {len(matches)}; use material list/register"
@@ -121,6 +129,7 @@ def resolve_case(material, case, cache, overrides=None):
                 raise ValueError(f"Override {key} has no applicable stage")
             for stage in targets:
                 stage[key] = value
+    Experiment(**values)  # Validate all case fields before any source acquisition.
     record = resolve_material(material, cache)
     spec = Experiment(shape_library=record["shape_library"], **values)
     steps = sum(s["steps"] for s in spec.stages)

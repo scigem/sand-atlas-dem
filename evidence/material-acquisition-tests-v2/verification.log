@@ -1,0 +1,83 @@
+.........F.....................................................          [100%]
+=================================== FAILURES ===================================
+________ test_failed_registration_preserves_completed_receipt_for_retry ________
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/opt/homebrew/Cellar/python@3.12/3.12.14/Frameworks/Python.framework/Versions/3.12/lib/python3.12/concurrent/futures/process.py", line 264, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.14/Frameworks/Python.framework/Versions/3.12/lib/python3.12/concurrent/futures/process.py", line 213, in _process_chunk
+    return [fn(*args) for args in chunk]
+            ^^^^^^^^^
+  File "/Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/acquisition.py", line 140, in _prepare_one
+    raise ValueError(f"Prepared grain provenance mismatch: {target}")
+ValueError: Prepared grain provenance mismatch: /private/var/folders/ff/b6vctr0n2jjfkdtcm0dt7xdr0000gp/T/pytest-of-bmar5496/pytest-120/test_failed_registration_prese0/cache/private/owned-fixture/58b0a00d8d78ccceb3df7d5c3e5e9f522b5b18f032325189221ffe069930a533/grain-0.h5
+"""
+
+The above exception was the direct cause of the following exception:
+
+fixture_recipe = ({'format': 'sand-dem-source-recipe/1', 'id': 'owned-fixture', 'aliases': ['fixture'], 'scale_evidence': 'Owned synthe.../var/folders/ff/b6vctr0n2jjfkdtcm0dt7xdr0000gp/T/pytest-of-bmar5496/pytest-120/test_failed_registration_prese0/cache'))
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10dee26c0>
+
+    def test_failed_registration_preserves_completed_receipt_for_retry(
+        fixture_recipe, monkeypatch
+    ):
+        _, sources, cache = fixture_recipe
+        original = acquisition.register_material
+    
+        def fail(*args):
+            raise OSError("registry write unavailable")
+    
+        monkeypatch.setattr(acquisition, "register_material", fail)
+        with pytest.raises(OSError, match="registry write unavailable"):
+            acquisition.prepare_material(
+                "fixture",
+                cache,
+                resolution=8,
+                samples=16,
+                workers=1,
+                source_directory=sources,
+            )
+        receipt_path = next(cache.glob("private/*/*/material.json"))
+        receipt = read_json(receipt_path)
+        completed = receipt["source"]["preparation_report"]
+        assert read_json(completed)["status"] == "complete"
+        assert sha256(completed) == receipt["source"]["preparation_report_sha256"]
+        assert len(list(receipt_path.parent.glob("*.registration-failure.json"))) == 1
+        monkeypatch.setattr(acquisition, "register_material", original)
+>       record = acquisition.prepare_material(
+            "fixture", cache, resolution=8, samples=16, workers=1, source_directory=sources
+        )
+
+tests/test_acquisition.py:301: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/sand_atlas_dem/acquisition.py:255: in prepare_material
+    for record in executor.map(_prepare_one, tasks):
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/homebrew/Cellar/python@3.12/3.12.14/Frameworks/Python.framework/Versions/3.12/lib/python3.12/concurrent/futures/process.py:636: in _chain_from_iterable_of_lists
+    for element in iterable:
+                   ^^^^^^^^
+/opt/homebrew/Cellar/python@3.12/3.12.14/Frameworks/Python.framework/Versions/3.12/lib/python3.12/concurrent/futures/_base.py:619: in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/homebrew/Cellar/python@3.12/3.12.14/Frameworks/Python.framework/Versions/3.12/lib/python3.12/concurrent/futures/_base.py:317: in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+/opt/homebrew/Cellar/python@3.12/3.12.14/Frameworks/Python.framework/Versions/3.12/lib/python3.12/concurrent/futures/_base.py:456: in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = None
+
+    def __get_result(self):
+        if self._exception:
+            try:
+>               raise self._exception
+E               ValueError: Prepared grain provenance mismatch: /private/var/folders/ff/b6vctr0n2jjfkdtcm0dt7xdr0000gp/T/pytest-of-bmar5496/pytest-120/test_failed_registration_prese0/cache/private/owned-fixture/58b0a00d8d78ccceb3df7d5c3e5e9f522b5b18f032325189221ffe069930a533/grain-0.h5
+
+/opt/homebrew/Cellar/python@3.12/3.12.14/Frameworks/Python.framework/Versions/3.12/lib/python3.12/concurrent/futures/_base.py:401: ValueError
+=========================== short test summary info ============================
+FAILED tests/test_acquisition.py::test_failed_registration_preserves_completed_receipt_for_retry
+1 failed, 62 passed in 19.26s

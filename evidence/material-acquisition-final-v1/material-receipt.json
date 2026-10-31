@@ -1,0 +1,48 @@
+{
+  "format": "sand-dem-material/1",
+  "id": "hostun-0000005",
+  "aliases": [
+    "hostun",
+    "Hostun sand"
+  ],
+  "shape_library": "/Users/bmar5496/code/sand-atlas-dem/evidence/material-acquisition-final-v1/private/materials/private/hostun-0000005/7849c3e439bf6413507b613c1eba23145bbac5e9fae866d8ade9193da41892de/shapes.h5",
+  "shape_sha256": "235460cb03565ac17ca5d0af14cb6fca073d8b357c200fcad87a74ab1d3576b0",
+  "scale_evidence": "Micrometre coordinates inferred from unique one-to-one raw-volume matching to dimensioned source descriptors. The inference is fixed to these source hashes and is not an STL-declared unit. See docs/HOSTUN_ACQUISITION_V2.md.",
+  "source": {
+    "archive": {
+      "url": "https://data.scigem-eng.sydney.edu.au/sand-atlas/sands/hostun-0000005/meshes_30.zip",
+      "sha256": "22549ef78526991dc3adb82efe7f1b9cf98babef2e00b435c449f3b90d0f48a6",
+      "filename": "hostun-meshes-30.zip",
+      "bytes": 25568448
+    },
+    "descriptors": {
+      "url": "https://sand-atlas.scigem.com/assets/sands/hostun-0000005.csv",
+      "sha256": "3a615e1af45b981a8c39da454155fe37dd7e61d422d6b91c13fa68af283f5872",
+      "filename": "hostun-descriptors.csv",
+      "bytes": 10205
+    },
+    "preparation_identity": "7849c3e439bf6413507b613c1eba23145bbac5e9fae866d8ade9193da41892de",
+    "preparation_profile": {
+      "format": "sand-dem-preparation-profile/1",
+      "resolution": 8,
+      "samples": 16,
+      "seed": 0,
+      "python_version": "3.12.14",
+      "recipe_sha256": "76ad8eae2a013795a5aa673123981711b8f8b4913e4a813eebdf37e8ab1c0295",
+      "code_sha256": {
+        "acquisition.py": "de0bea7947391b204ac74de0678280d9a59a863a0abdb241f3e0b34418c137cb",
+        "geometry.py": "08122ac327f189d07463655431edf6f86973e98dbb20c21054975ddbf2f9f150",
+        "util.py": "0f9dc71429a87057dc08216f3c51425d8b76be9c4fd30f2cab6c3f98b70397c2"
+      },
+      "versions": {
+        "numpy": "2.5.4",
+        "scipy": "1.18.1",
+        "trimesh": "5.2.0",
+        "h5py": "3.16.0",
+        "rtree": "1.4.1"
+      }
+    },
+    "preparation_report": "/Users/bmar5496/code/sand-atlas-dem/evidence/material-acquisition-final-v1/private/materials/private/hostun-0000005/7849c3e439bf6413507b613c1eba23145bbac5e9fae866d8ade9193da41892de/attempt-7aea980296f444d58fd01093c3a41e88.json",
+    "preparation_report_sha256": "6b76dc1b1a934c90952e6ac1427e64ef47b6d95119891d16203b3e34f248cfa9"
+  }
+}

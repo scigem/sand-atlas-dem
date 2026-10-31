@@ -1,0 +1,5 @@
+{
+  "status": "failed",
+  "reason": "Public endpoint returned HTTP 403 to unidentified urllib client; unchanged pinned sources succeeded with explicitly identified client.",
+  "execution_log_sha256": "f2dda5323f2dfa71d16fad0fb1aa65c5d3ecf0c567603dba0d2076ca0517f291"
+}

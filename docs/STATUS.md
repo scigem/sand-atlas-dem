@@ -254,5 +254,27 @@ provenance, and preserves failed preparation status. All 53 tests pass on Metal,
 including named-case execution, initialization failure preservation and failed
 preparation export. A named Hostun two-step hold completes with 106 particles; it
 is an execution check, not qualified material preparation. See
-`evidence/named-case-v1/` and `docs/CASE_WORKFLOW.md`. Automatic acquisition and a
-direct synthetic-test adapter in Constitutive Atlas remain open.
+`evidence/named-case-v1/` and `docs/CASE_WORKFLOW.md`. Reviewed Hostun acquisition is now implemented (see below); a direct synthetic-test
+adapter in Constitutive Atlas remains open.
+
+## Reviewed Hostun acquisition
+
+`material prepare hostun` downloads the pinned mesh archive/descriptor CSV, checks
+the entire reviewed member inventory and unique source-volume crosswalk, retains
+the known whole-grain exclusion, and prepares a private hash-checked library.
+First-use `case run` performs this automatically for an unregistered Hostun name.
+Dry-run and invalid case inputs never trigger acquisition. Other materials require
+their own source/scale recipes or manual preparation/registration.
+
+Cache identity includes recipe, discretization, preprocessing code and runtime
+versions. An exclusive writer lock and separate grain receipts support recovery.
+A registry-write failure retains the completed, hash-pinned preparation report;
+retry verifies and reuses the assets. The initial HTTP 403, the subsequently
+successful identified-client download and the cache-retry test failure are retained
+in distinct evidence directories. The corrected suite and end-to-end checks are
+recorded in `evidence/material-acquisition-tests-v3/` and
+`evidence/material-acquisition-final-v3/`. The full 54-member acquisition check uses
+8-cell/16-sample geometry solely for functional verification; neither that asset nor
+the downloaded-material hold case qualifies contact forces or material response.
+The default 64-cell/2,048-sample profile still needs source-to-material scientific
+qualification. The wheel includes the reviewed recipe for fresh installs.

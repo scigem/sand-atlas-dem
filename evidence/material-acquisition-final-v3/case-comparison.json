@@ -1,0 +1,524 @@
+{
+  "format": "sand-dem-atlas-comparison/1",
+  "kind": "synthetic-dem",
+  "run_status": "complete",
+  "scientific_admission": false,
+  "protocol": "research",
+  "source_manifest_sha256": "b91d11b639634ec26e994a940442fd302aa5d66c85d6897673d02384a4575f4f",
+  "conventions": {
+    "stress": "compression_positive",
+    "tensor_order": "xx,xy,xz;yx,yy,yz;zx,zy,zz",
+    "stress_measure": "contact_virial_plus_peculiar_kinetic",
+    "strain": "engineering_compression_positive",
+    "volumetric_strain": "sum_of_axial_engineering_strains",
+    "void_ratio": "cell_volume_over_sum_rigid_grain_volumes_minus_one"
+  },
+  "units": {
+    "length": "m",
+    "stress": "Pa",
+    "time": "s",
+    "strain": "1"
+  },
+  "preparation": [
+    {
+      "kind": "hold",
+      "steps": 2,
+      "drag": 0
+    }
+  ],
+  "warnings": [
+    "Synthetic DEM evidence, not measured experimental validation.",
+    "Finite-strain histories are not automatically compatible with infinitesimal continuum models.",
+    "Nominal void ratio ignores geometric overlap volume."
+  ],
+  "initial": {
+    "step": 0,
+    "elapsed_time": 0.0,
+    "cell": [
+      0.006242358442058476,
+      0.006242358442058476,
+      0.006242358442058476
+    ],
+    "stress": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "contact_stress": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "kinetic_stress": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "stress_antisymmetry": 0.0,
+    "p": 0.0,
+    "q": 0.0,
+    "axial_strain": -2.4166800782765563e-08,
+    "volumetric_strain": -7.250040234829669e-08,
+    "volume_ratio": 1.0000000725004043,
+    "log_strain": [
+      -2.4166800490748436e-08,
+      -2.4166800490748436e-08,
+      -2.4166800490748436e-08
+    ],
+    "void_ratio": 99.00000725004051,
+    "kinetic_energy": 0.0,
+    "elastic_energy_proxy": 0.0,
+    "unbalanced_force": 0.0,
+    "max_overlap_fraction": 0.0,
+    "friction_dissipation_last_step": 0.0,
+    "candidate_pairs": 0,
+    "active_surface_contacts": 0,
+    "active_grain_pairs": 0,
+    "coordination": 0.0,
+    "fabric": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "sliding_fraction": 0.0,
+    "cell_log_rate": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "friction_dissipation": 0.0,
+    "drag_dissipation": 0.0,
+    "cell_work": 0.0,
+    "stage": 0
+  },
+  "rows": [
+    {
+      "step": 0,
+      "elapsed_time": 0.0,
+      "cell": [
+        0.006242358442058476,
+        0.006242358442058476,
+        0.006242358442058476
+      ],
+      "stress": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "contact_stress": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "kinetic_stress": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "stress_antisymmetry": 0.0,
+      "p": 0.0,
+      "q": 0.0,
+      "axial_strain": -2.4166800782765563e-08,
+      "volumetric_strain": -7.250040234829669e-08,
+      "volume_ratio": 1.0000000725004043,
+      "log_strain": [
+        -2.4166800490748436e-08,
+        -2.4166800490748436e-08,
+        -2.4166800490748436e-08
+      ],
+      "void_ratio": 99.00000725004051,
+      "kinetic_energy": 0.0,
+      "elastic_energy_proxy": 0.0,
+      "unbalanced_force": 0.0,
+      "max_overlap_fraction": 0.0,
+      "friction_dissipation_last_step": 0.0,
+      "candidate_pairs": 0,
+      "active_surface_contacts": 0,
+      "active_grain_pairs": 0,
+      "coordination": 0.0,
+      "fabric": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "sliding_fraction": 0.0,
+      "cell_log_rate": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "friction_dissipation": 0.0,
+      "drag_dissipation": 0.0,
+      "cell_work": 0.0,
+      "stage": 0
+    },
+    {
+      "step": 1,
+      "elapsed_time": 2e-09,
+      "cell": [
+        0.006242358442058476,
+        0.006242358442058476,
+        0.006242358442058476
+      ],
+      "stress": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "contact_stress": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "kinetic_stress": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "stress_antisymmetry": 0.0,
+      "p": 0.0,
+      "q": 0.0,
+      "axial_strain": -2.4166800782765563e-08,
+      "volumetric_strain": -7.250040234829669e-08,
+      "volume_ratio": 1.0000000725004043,
+      "log_strain": [
+        -2.4166800490748436e-08,
+        -2.4166800490748436e-08,
+        -2.4166800490748436e-08
+      ],
+      "void_ratio": 99.00000725004051,
+      "kinetic_energy": 0.0,
+      "elastic_energy_proxy": 0.0,
+      "unbalanced_force": 0.0,
+      "max_overlap_fraction": 0.0,
+      "friction_dissipation_last_step": 0.0,
+      "candidate_pairs": 0,
+      "active_surface_contacts": 0,
+      "active_grain_pairs": 0,
+      "coordination": 0.0,
+      "fabric": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "sliding_fraction": 0.0,
+      "cell_log_rate": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "friction_dissipation": 0.0,
+      "drag_dissipation": 0.0,
+      "cell_work": 0.0,
+      "stage": 0,
+      "wall_seconds": 0.2314306660555303,
+      "work_balance_proxy_residual": 0.0
+    },
+    {
+      "step": 2,
+      "elapsed_time": 4e-09,
+      "cell": [
+        0.006242358442058476,
+        0.006242358442058476,
+        0.006242358442058476
+      ],
+      "stress": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "contact_stress": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "kinetic_stress": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "stress_antisymmetry": 0.0,
+      "p": 0.0,
+      "q": 0.0,
+      "axial_strain": -2.4166800782765563e-08,
+      "volumetric_strain": -7.250040234829669e-08,
+      "volume_ratio": 1.0000000725004043,
+      "log_strain": [
+        -2.4166800490748436e-08,
+        -2.4166800490748436e-08,
+        -2.4166800490748436e-08
+      ],
+      "void_ratio": 99.00000725004051,
+      "kinetic_energy": 0.0,
+      "elastic_energy_proxy": 0.0,
+      "unbalanced_force": 0.0,
+      "max_overlap_fraction": 0.0,
+      "friction_dissipation_last_step": 0.0,
+      "candidate_pairs": 0,
+      "active_surface_contacts": 0,
+      "active_grain_pairs": 0,
+      "coordination": 0.0,
+      "fabric": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "sliding_fraction": 0.0,
+      "cell_log_rate": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "friction_dissipation": 0.0,
+      "drag_dissipation": 0.0,
+      "cell_work": 0.0,
+      "stage": 0,
+      "wall_seconds": 0.002576791914179921,
+      "work_balance_proxy_residual": 0.0
+    }
+  ],
+  "case_provenance": {
+    "material": {
+      "format": "sand-dem-material/1",
+      "id": "hostun-0000005",
+      "aliases": [
+        "hostun",
+        "Hostun sand"
+      ],
+      "shape_library": "/Users/bmar5496/code/sand-atlas-dem/evidence/material-acquisition-final-v3/private/materials/private/hostun-0000005/e25e34ef263926fec8817a364470b68824b81b4df28be58bc40d1e77a1d5a03e/shapes.h5",
+      "shape_sha256": "22c0cb20853ae7ea9a924521666f9f5447f8f33ba0e594d2e01e326c893c107d",
+      "scale_evidence": "Micrometre coordinates inferred from unique one-to-one raw-volume matching to dimensioned source descriptors. The inference is fixed to these source hashes and is not an STL-declared unit. See docs/HOSTUN_ACQUISITION_V2.md.",
+      "source": {
+        "archive": {
+          "url": "https://data.scigem-eng.sydney.edu.au/sand-atlas/sands/hostun-0000005/meshes_30.zip",
+          "sha256": "22549ef78526991dc3adb82efe7f1b9cf98babef2e00b435c449f3b90d0f48a6",
+          "filename": "hostun-meshes-30.zip",
+          "bytes": 25568448
+        },
+        "descriptors": {
+          "url": "https://sand-atlas.scigem.com/assets/sands/hostun-0000005.csv",
+          "sha256": "3a615e1af45b981a8c39da454155fe37dd7e61d422d6b91c13fa68af283f5872",
+          "filename": "hostun-descriptors.csv",
+          "bytes": 10205
+        },
+        "preparation_identity": "e25e34ef263926fec8817a364470b68824b81b4df28be58bc40d1e77a1d5a03e",
+        "preparation_profile": {
+          "format": "sand-dem-preparation-profile/1",
+          "resolution": 8,
+          "samples": 16,
+          "seed": 0,
+          "python_version": "3.12.14",
+          "recipe_sha256": "76ad8eae2a013795a5aa673123981711b8f8b4913e4a813eebdf37e8ab1c0295",
+          "code_sha256": {
+            "acquisition.py": "3c9379de9c9f24b4c762ae4608e73d70b76b558d4cbdae48e75196c747594ddd",
+            "geometry.py": "08122ac327f189d07463655431edf6f86973e98dbb20c21054975ddbf2f9f150",
+            "util.py": "0f9dc71429a87057dc08216f3c51425d8b76be9c4fd30f2cab6c3f98b70397c2"
+          },
+          "versions": {
+            "numpy": "2.5.4",
+            "scipy": "1.18.1",
+            "trimesh": "5.2.0",
+            "h5py": "3.16.0",
+            "rtree": "1.4.1"
+          }
+        },
+        "preparation_report": "/Users/bmar5496/code/sand-atlas-dem/evidence/material-acquisition-final-v3/private/materials/private/hostun-0000005/e25e34ef263926fec8817a364470b68824b81b4df28be58bc40d1e77a1d5a03e/attempt-c7c94aae9d744b44a5fe49b9cf4402ce.json",
+        "preparation_report_sha256": "23a8a925ac0c39ddabdb7f77082b220cf4ca274c6683e940c1b446bc1a5f57dc"
+      }
+    },
+    "case_sha256": "e0db6b811427788cdfb77852a4059c62f1ba75de6eadc920dd690599761adc30",
+    "resolved_case_sha256": "21c519777ff2a1773b13f08e816aec337bb45cee2f85d5386918df5aa37a7c77"
+  }
+}

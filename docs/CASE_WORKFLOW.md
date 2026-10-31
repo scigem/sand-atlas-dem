@@ -1,15 +1,18 @@
 # Named-material case workflow
 
-The named-material runner is implemented. Automatic source acquisition, versioned
-numerical profiles and direct Atlas synthetic-test import remain open. The existing
+The named-material runner and reviewed Hostun source acquisition are implemented.
+Source recipes for other materials, named numerical profiles and direct Atlas
+synthetic-test import remain open. The existing
 `run`, `resume`, geometry and export commands remain available as lower-level tools.
 
 ## User interface
 
-After registering a prepared material once:
+Hostun can be acquired/prepared once, or prepared assets can be registered manually:
 
 ```sh
-sand-dem material register cases/hostun-material.json
+sand-dem material prepare hostun --workers 4
+# Alternatively, register the separately prepared asset:
+# sand-dem material register cases/hostun-material.json
 sand-dem material list
 sand-dem case run hostun --case cases/drained-triaxial.json --dry-run
 sand-dem case run hostun --case cases/drained-triaxial.json --output runs/hostun-tc
@@ -24,9 +27,13 @@ prepared-library path/SHA-256, source receipt and coordinate-scale evidence. Lib
 are referenced in place and checked at registration and resolution. The default
 registry is `~/.cache/sand-atlas-dem/materials`; `--cache PATH` selects another.
 Duplicate registrations and ambiguous aliases fail. Canonical IDs take precedence.
-The included Hostun receipt refers to the separately prepared private asset; a fresh
-checkout must acquire/prepare that asset before registering it. Registration is not
-an automatic downloader or a scientific qualification.
+The included manual Hostun receipt refers to a separately prepared private asset.
+`material prepare hostun` instead downloads the reviewed source archive/descriptors,
+checks pinned SHA-256 and member identities, rebuilds the fixed scale crosswalk,
+and prepares/registers the library. First-use `case run` automatically does this
+for an unregistered Hostun material; dry-run never acquires sources or starts Metal.
+Other materials require a reviewed source/scale recipe or explicit manual preparation
+and registration. Neither path establishes scientific qualification.
 
 The case declares particle count, seed, density, contact stiffness and friction,
 preparation pressure/history, loading rate and stopping condition. Numerical
@@ -41,9 +48,10 @@ Hostun preparation recipe; `cases/mesh-hold-smoke.json` is a two-step execution 
 
 Reusable case files are the primary reproducible interface. Equivalent command
 line overrides should cover common pressure, rate, strain, particle-count and seed
-sweeps. A dry-run command resolves all settings and reports the step/physical-time budgets,
-asset size and configured memory limit without starting Metal. Case-specific wall
-time is explicitly unknown; the memory limit is not an allocation estimate. Low-level geometry and solver settings remain available.
+sweeps. A dry-run command resolves all settings and reports the step/physical-time
+budgets, asset size and configured memory limit without starting Metal. Case-specific
+wall time is explicitly unknown; the memory limit is not an allocation estimate.
+Low-level geometry and solver settings remain available.
 
 ## Material resolution
 
@@ -57,6 +65,31 @@ evidence must produce actionable errors rather than inferred defaults.
 The Hostun acquisition and its excluded grain already have a documented source/
 descriptor crosswalk. Other materials require their own scale/topology checks.
 Cached geometry qualification and calibrated parameter provenance are separate.
+
+## Acquisition and cache recovery
+
+The default acquisition profile is 64-cell/2,048-sample geometry, seed zero, four
+CPU workers. `material prepare` accepts `--resolution`, `--samples`, `--workers`
+and `--source-directory` (reuse pinned archive/CSV bytes in that directory). The
+existing fine Hostun preparation recorded about 2.1 aggregate CPU-hours; parallel
+wall time depends on CPU contention. The mesh ZIP is about 24.4 MiB. There is no
+GPU execution during acquisition; geometry preprocessing runs on the CPU.
+
+Original bytes and prepared assets stay under `<cache>/private/hostun-0000005/`.
+The dataset directory is created with mode 0700. The preparation identity covers
+source recipe, numerical settings, Python/dependency versions and preprocessing
+code hashes. Completed grain assets have separate SHA-256 receipts and can be
+reused after interruption. Changed inputs select another profile directory;
+registration with an existing incompatible profile fails and requests a different
+`--cache`. Existing manually registered libraries remain usable by `case run`.
+
+An exclusive `preparation.lock` records the writer PID and profile identity.
+Ordinary exceptions remove it and retain a failed attempt report. After abrupt
+termination, verify that the recorded process is terminal before removing that
+specific stale lock and repeating the same command. Never remove an active lock.
+Each attempt has a distinct report; failed source downloads leave no final source
+file. Corrupt cached sources or prepared grains fail explicitly without overwrite.
+A changed published archive is not automatically admitted under a new hash.
 
 ## Execution
 
@@ -93,7 +126,7 @@ mean-radial stress from the stress tensor; DEM's nonnegative J2 q is a different
 quantity. Preserve the full tensor and radial asymmetry alongside any projected
 curve. Finite-volume strain and engineering/logarithmic strain remain distinguished.
 
-The initial supported output is a dry drained-triaxial virtual experiment with
+The target initial Atlas handoff is a dry drained-triaxial virtual experiment with
 stress, axial/radial/volume strain, void ratio and physical time. Isotropic and
 general strain paths need their own admitted protocol mappings. Effective stress
 interpretation, axisymmetric projection and continuum kinematic compatibility
@@ -103,7 +136,8 @@ experimental validation.
 ## Deliverables and acceptance
 
 - [X] Named-material listing/resolution and hash-checked prepared-asset registry.
-- [ ] Automatic source acquisition/preparation with complete cache identity.
+- [X] Reviewed Hostun source acquisition/preparation with versioned cache identity.
+- [ ] Source/scale recipes for additional named materials.
 - [X] Case-file runner, common CLI overrides and deterministic dry-run resolution.
 - [X] One output directory with resolved case, manifest, history, checkpoint and exports.
 - [ ] Synthetic Atlas dataset plus metadata for preparation and full DEM observations.

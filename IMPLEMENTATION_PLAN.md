@@ -49,8 +49,9 @@ Public workflow requirement clarified by the user: implement the named-material
 case runner and direct, explicitly synthetic Atlas handoff described in
 [CASE_WORKFLOW.md](docs/CASE_WORKFLOW.md). Named-material registration, hash-checked
 resolution, case overrides, dry-run and automatic exports are now implemented.
-Automatic acquisition and the direct Atlas synthetic-test adapter remain open. This is required software work alongside the
-scientific gates below; naming a material must not infer calibrated properties.
+Reviewed Hostun acquisition/preparation is implemented; additional material recipes
+and the direct Atlas synthetic-test adapter remain open. This is required software
+work alongside the scientific gates below; naming a material must not infer calibrated properties.
 
 - [ ] Complete Hostun shape-library qualification. The direct archive and dimensioned
   descriptors resolve the earlier source/scale blocker; 53 valid grains are prepared
