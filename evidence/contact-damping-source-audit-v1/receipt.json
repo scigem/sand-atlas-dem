@@ -1,0 +1,30 @@
+{
+  "title": "Predictive Modeling of Architected Solids across Scales",
+  "author": "Ziran Zhou",
+  "year": 2025,
+  "version": "Caltech doctoral thesis; defended January 21, 2025",
+  "doi": "10.7907/cn82-z804",
+  "url": "https://thesis.caltech.edu/17018/1/Zhou_Ziran_2025.pdf",
+  "repository": "https://thesis.caltech.edu/17018/",
+  "accessed_utc": "2026-10-31T13:28:36.862702+00:00",
+  "private_path": "/private/tmp/sand-atlas-dem-walls/evidence/contact-damping-source-audit-v1/private/zhou-2025-thesis.pdf",
+  "size_bytes": 65604453,
+  "sha256": "fe19141cac9df2a26291277fabbcd1f61de113a093f105fa8e5bcc193a4c3839",
+  "publisher_checksum_verified": false,
+  "locators": [
+    "PDF page 1: title and version",
+    "PDF page 2: all rights reserved",
+    "PDF page 29 / printed 15: equations 3.2-3.5; body-mass wording"
+  ],
+  "visually_inspected_pdf_pages": [
+    1,
+    2,
+    29
+  ],
+  "limitations": [
+    "Thesis version, not an independently verified exact copy of ASCE 2023 article",
+    "Not evidence of the Feldfogel benchmark implementation",
+    "Printed logarithm-square placement remains ambiguous; no silent correction",
+    "Normal-force body/normal sign assignment not transplanted into Engine"
+  ]
+}

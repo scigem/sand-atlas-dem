@@ -1,0 +1,10 @@
+{
+  "identity": "restitution-scaling-tests-v1",
+  "passed": true,
+  "source_unchanged": true,
+  "pytest_result": "8 passed in 0.63s",
+  "gpu_dynamics_executed": false,
+  "scientific_admission": false,
+  "source_freeze_sha256": "436a5e098d22b38e1e843c0ad07b3e781075043f39048ca918b929619e0b93a8",
+  "log_sha256": "358d5b23fc11791060432f7e434ab88910f73bee5ed8acbed48ef377323c7b05"
+}

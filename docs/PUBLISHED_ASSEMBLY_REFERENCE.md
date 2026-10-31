@@ -52,17 +52,20 @@ different interlocked-block benchmark requiring its own input/geometry audit.
 
 ## Implementation implications
 
-The current laboratory implements periodic orthogonal cells. It has neither an
-explicit wall contact API nor an independently qualified wall-reaction measurement
-or contact restitution damping. Global drag alone does not implement restitution.
+The laboratory now implements both periodic orthogonal cells and nonperiodic
+fixed-normal translating planes. Production wall collection, reactions/work,
+checkpoint/retry and the CLI are independently checked in WALL_CONTACT.md.
+Contact restitution damping remains absent; global drag alone does not implement it.
 A periodic-cell approximation would therefore be a different study and cannot
 complete the published-benchmark gate. Source acquisition must establish dimensions,
 initial placement/orientations, loading schedule, contact parameters, surface/grid
 discretizations, damping and output units. Missing items remain gaps.
 
-The next implementation needs generic prescribed plane-boundary contacts/reactions
-and a source-derived restitution law, independently verified for force/work/history;
-only then can an exact source-supported wall-confined benchmark be frozen. Keep
+The next damping implementation needs a declared traction/mass convention and
+independent force/work/history checks. A later author thesis and independent
+scaling audit are recorded in CONTACT_DAMPING_DESIGN.md; they do not establish
+the benchmark's conversion from restitution 0.5. Only complete source-supported
+inputs can freeze an exact wall-confined benchmark reproduction. Keep
 the project's two directed half-weight passes explicit when comparing with the
 publication. Its wall counterpart needs a declared derivation rather than an
 inferred weight. Missing inputs must be acquired before freezing a complete
@@ -70,7 +73,7 @@ reproduction; independently chosen numerical settings need explicit identities a
 convergence studies. Physical sand validation remains a separate gate.
 
 
-The isolated plane-traction kernel now passes the independently derived project
-operator study in WALL_CONTACT.md. It does not add walls to the laboratory. The
-inspected original contact/global-damping source and unresolved restitution mapping
+Both the isolated plane-traction kernel and production wall laboratory now pass
+their distinct frozen engineering studies in WALL_CONTACT.md. The inspected
+original contact/global-damping source and unresolved restitution mapping
 are recorded separately in CONTACT_SOURCE_AUDIT.md; no coefficient is inferred.

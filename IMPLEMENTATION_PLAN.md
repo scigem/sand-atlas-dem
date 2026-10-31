@@ -89,6 +89,12 @@ work alongside the scientific gates below; naming a material must not infer cali
   `hostun-library-quadrature-deterministic-v1` is running all 106 original poses
   at levels zero through four, with the unchanged 2% finest-change gate. Its
   completion and passing full-library GPU comparison remain required.
+  Its completed shallow grain-00038 row exceeds the level-four reference gate
+  (8.0767% change). The separately frozen targeted level-six study retains the
+  same pose, reproduces all five overlapping levels exactly and reduces the final
+  change to 0.3765%, passing the unchanged 2% gate. The whole-library parent keeps
+  running, with no case removed. Full-library reference consolidation and GPU
+  comparison remain required; this targeted diagnostic does not admit the L2 asset.
 - [X] Freeze and run rolling/objectivity tests, separating/returning contact,
   changing normal orientation, strongly anisotropic torque-free rotation and
   capacity-growth stress tests. Test timestep refinement over useful physical time.
@@ -138,6 +144,11 @@ work alongside the scientific gates below; naming a material must not infer cali
   Wall CLI interruption/resume/export also passes. Source-derived restitution
   damping and benchmark input reconstruction remain required. See docs/WALL_CONTACT.md,
   docs/CONTACT_SOURCE_AUDIT.md and docs/PUBLISHED_ASSEMBLY_REFERENCE.md.
+  A later primary-source damping audit and independent oscillator/area-scaling
+  checks now pass their bounded analytical gates. They demonstrate why applying
+  an ordinary nodal restitution coefficient without a mass convention is
+  nonconvergent. CONTACT_DAMPING_DESIGN.md declares the separate traction-viscosity
+  extension to implement; no benchmark-specific mapping or dashpot is claimed.
 - [ ] Complete atlas adapters and material comparison. The bounded recorded-path
   adapter checks protocol, signed stress/strain mapping, prepared origins, frozen
   approximation declarations and synthetic provenance; actual Python/browser

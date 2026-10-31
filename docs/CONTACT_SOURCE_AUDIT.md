@@ -27,3 +27,10 @@ Next: obtain the benchmark-specific damping/weighting evidence, or explicitly
 define and independently qualify a different project damping variant. Either path
 must retain the unresolved source identity; neither completes the published
 reproduction gate by itself. See WALL_CONTACT.md and PUBLISHED_ASSEMBLY_REFERENCE.md.
+
+A later primary-source thesis audit and independent oscillator/tributary-area
+analysis are now recorded in CONTACT_DAMPING_DESIGN.md. They identify an explicit
+body-mass convention and ambiguous printed logarithm placement in that distinct
+source, but do not resolve the Feldfogel benchmark's area-weighted damping choice.
+The new dimensional audit demonstrates why a nodal coefficient cannot be inferred
+from its restitution number. No normal dashpot has been added to the Engine.

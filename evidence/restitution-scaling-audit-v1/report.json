@@ -1,0 +1,138 @@
+{
+  "identity": "restitution-scaling-audit-v1",
+  "passed": true,
+  "gates": {
+    "oscillator": true,
+    "divergent_full_mass": true,
+    "invariant_area_mass": true,
+    "no_global_restitution": true,
+    "cap_ratio": true
+  },
+  "oscillators": [
+    {
+      "restitution": 0.1,
+      "ratio": 0.5911550337988976,
+      "coefficient_kg_per_s": 9.158134403719252,
+      "return_displacement": -6.135185675465449e-14,
+      "measured_restitution": 0.10000000000012557,
+      "restitution_error": 1.255662240851052e-13
+    },
+    {
+      "restitution": 0.5,
+      "ratio": 0.2154537619662468,
+      "coefficient_kg_per_s": 3.3377953278920436,
+      "return_displacement": 2.2434289669026608e-13,
+      "measured_restitution": 0.4999999999999257,
+      "restitution_error": 7.427392034742297e-14
+    },
+    {
+      "restitution": 0.9,
+      "ratio": 0.03351844910567637,
+      "coefficient_kg_per_s": 0.5192655807079418,
+      "return_displacement": 4.752154344946774e-14,
+      "measured_restitution": 0.8999999999989506,
+      "restitution_error": 1.049382802875698e-12
+    },
+    {
+      "restitution": 1.0,
+      "ratio": -0.0,
+      "coefficient_kg_per_s": -0.0,
+      "return_displacement": -8.534310953246804e-15,
+      "measured_restitution": 0.9999999999988441,
+      "restitution_error": 1.1558531909372505e-12
+    }
+  ],
+  "patch_scaling": [
+    {
+      "nodes": 1,
+      "full_body_mass_at_every_node": 86181.50478649871,
+      "area_partitioned_mass": 86181.50478649871,
+      "full_mass_growth": 1.0,
+      "area_mass_growth": 1.0
+    },
+    {
+      "nodes": 4,
+      "full_body_mass_at_every_node": 172363.00957299743,
+      "area_partitioned_mass": 86181.50478649871,
+      "full_mass_growth": 2.0,
+      "area_mass_growth": 1.0
+    },
+    {
+      "nodes": 16,
+      "full_body_mass_at_every_node": 344726.01914599485,
+      "area_partitioned_mass": 86181.50478649871,
+      "full_mass_growth": 4.0,
+      "area_mass_growth": 1.0
+    },
+    {
+      "nodes": 64,
+      "full_body_mass_at_every_node": 689452.0382919897,
+      "area_partitioned_mass": 86181.50478649871,
+      "full_mass_growth": 8.0,
+      "area_mass_growth": 1.0
+    },
+    {
+      "nodes": 256,
+      "full_body_mass_at_every_node": 1378904.0765839794,
+      "area_partitioned_mass": 86181.50478649871,
+      "full_mass_growth": 16.0,
+      "area_mass_growth": 1.0
+    },
+    {
+      "nodes": 1024,
+      "full_body_mass_at_every_node": 2757808.153167959,
+      "area_partitioned_mass": 86181.50478649871,
+      "full_mass_growth": 32.0,
+      "area_mass_growth": 1.0
+    }
+  ],
+  "contact_fraction_effect": [
+    {
+      "contact_area_fraction": 0.01,
+      "effective_ratio": 0.02154537619662468,
+      "effective_linear_restitution": 0.9345384468889812
+    },
+    {
+      "contact_area_fraction": 0.1,
+      "effective_ratio": 0.0681324618265098,
+      "effective_linear_restitution": 0.8069101312010966
+    },
+    {
+      "contact_area_fraction": 1.0,
+      "effective_ratio": 0.2154537619662468,
+      "effective_linear_restitution": 0.5
+    }
+  ],
+  "sphere_cap": [
+    {
+      "elastic_force": 3.1415926535897936,
+      "damping_force": 6.283185307179588e-05,
+      "dissipation_power": 6.283185307179588e-08,
+      "tangent_stiffness": 628318.5307179587,
+      "damping_coefficient": 0.06283185307179588,
+      "depth_m": 1e-05,
+      "local_tangent_ratio": 2.8024956081989652e-05
+    },
+    {
+      "elastic_force": 50.2654824574367,
+      "damping_force": 0.00025132741228718353,
+      "dissipation_power": 2.513274122871835e-07,
+      "tangent_stiffness": 2513274.122871835,
+      "damping_coefficient": 0.2513274122871835,
+      "depth_m": 4e-05,
+      "local_tangent_ratio": 5.6049912163979303e-05
+    },
+    {
+      "elastic_force": 804.2477193189872,
+      "damping_force": 0.0010053096491487341,
+      "dissipation_power": 1.005309649148734e-06,
+      "tangent_stiffness": 10053096.49148734,
+      "damping_coefficient": 1.005309649148734,
+      "depth_m": 0.00016,
+      "local_tangent_ratio": 0.00011209982432795861
+    }
+  ],
+  "source_derived_benchmark_damping": false,
+  "gpu_dynamics_executed": false,
+  "scientific_admission": false
+}

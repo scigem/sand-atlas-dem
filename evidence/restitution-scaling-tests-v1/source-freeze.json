@@ -1,0 +1,9 @@
+{
+  "identity": "restitution-scaling-tests-v1",
+  "frozen_at": "2026-10-31T13:31:38.051260+00:00",
+  "sources": {
+    "tests/test_restitution_scaling.py": "93fb6671296275f2af51c97795a5055ad6371ac2b2d2436acb0f76fbdf9dbb78",
+    "examples/restitution_scaling_audit.py": "f674536476a19b8bc579f3e8d06e9b0c4db4959fd5eff5577d07170df25df72d",
+    "studies/restitution-scaling-audit-v1.json": "4d8b368cd17eb52290ca7c5ad2efa5992dc18dba482589a6fff96f84df7d73ae"
+  }
+}

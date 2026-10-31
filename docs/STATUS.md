@@ -6,7 +6,8 @@ MECHANICS_QUALIFICATION.md. Source-scale acquisition is now resolved for a docum
 resolutions are prepared. The bounded 216-sphere controller case passes; Hostun
 preparation remains open. Optional exact-feature mesh queries pass fixed-quadrature
 force checks, while source-triangle quadrature convergence is being studied.
-The current full test suite passes 145 tests, with one skipped. Historical entries below retain
+The latest complete Metal test run passes 145 tests, with one skipped; additional
+bounded CPU studies are listed below. Historical entries below retain
 their original evidence identities and are superseded where explicitly stated.
 
 2026-10-31 — research development build, Apple M4 Max (32 GPU cores, 36 GB unified
@@ -459,3 +460,25 @@ one skipped on Metal. Immutable checkpoint-normal identity and normalized-FP32
 velocity bounds are checked before mutation. An unintended profiling-time reduction
 buffer reallocation was removed. Earlier study source snapshots/results remain
 unchanged; the final identity repeats the complete suite and identical CLI smoke.
+
+## Damping scaling audit and targeted reference refinement
+
+`restitution-scaling-audit-v1` independently verifies the ordinary linear-oscillator
+restitution relation (four endpoint errors <=1.16e-12, limit 1e-10), diagnoses
+sqrt(node-count) aggregate damping when a whole body mass is reused at every node,
+and derives area-partition/contact-fraction and spherical-cap consequences.
+`restitution-scaling-tests-v1` passes eight CPU parameter/quadrature checks.
+The later author thesis is acquired privately with a source receipt and exact
+locators; its mass and printed-logarithm conventions do not establish the
+Feldfogel benchmark's traction damping prescription. CONTACT_DAMPING_DESIGN.md
+records the explicit viscosity contract to implement. The Engine is unchanged
+and still has no contact restitution dashpot.
+
+The running deterministic whole-library reference has one completed level-four
+row above its frozen 2% gate: shallow grain-00038, change 8.0767%.
+`hostun-grain38-quadrature-l6-v1` repeats all seven levels at the same source pose.
+Its five overlapping forces agree exactly with the parent; final change is
+0.3765%, passing the unchanged reference gate. This is a targeted diagnostic,
+not full-library or L2-asset admission. The original 106-pose study continues
+without source mutation or case exclusion; consolidation and GPU comparison
+remain open. See HOSTUN_CONTACT_ACCURACY.md.

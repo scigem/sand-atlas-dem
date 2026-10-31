@@ -185,3 +185,22 @@ The integrated actual-Metal suite subsequently passes 107 tests with one skipped
 (`deterministic-reference-tests-v2/verification.log`), including the explicit empty
 reference rejection checks. This is software verification; the full-library
 reference and scientific gates above remain pending.
+
+## Targeted level-six refinement of a failed full-library pose
+
+The running deterministic 106-pose study's completed shallow grain-00038 row
+shows 8.0767% relative force change from level three to level four, above the
+unchanged 2% reference gate. The separately frozen
+`hostun-grain38-quadrature-l6-v1` re-evaluates that identical source pose at all
+seven levels zero through six. Every overlapping level reproduces the parent force
+exactly. The level-five to level-six change is 0.3765%, passing the same 2% gate.
+No triangle, grain, pose or prior failure is excluded or overwritten.
+
+Against that level-six reference, force errors at levels zero through five are
+16.2920%, 16.0661%, 9.1534%, 9.4189%, 2.0861%, 0.3765%. In particular, level two
+satisfies the 10% integral-error bound for this diagnostic but does not provide the
+prospective twofold improvement over level zero. Level three is not a monotone
+improvement. These values must inform a separately frozen refinement choice;
+they do not relax any gate, admit the current uniform L2 library or replace the
+still-running full-library study. Consolidation across all 106 source poses and
+an actual GPU comparison remain required before whole-library qualification.

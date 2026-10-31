@@ -1,0 +1,151 @@
+{
+  "identity": "hostun-grain38-quadrature-l6-v1",
+  "passed": true,
+  "source_unchanged": true,
+  "common_level_relative_differences": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "overlap_passed": true,
+  "refinement_passed": true,
+  "row": {
+    "shape": "hostun-particle_00038",
+    "separation_m": 0.0003720462605601217,
+    "target_sampled_depth_fraction": 0.0025,
+    "levels": [
+      {
+        "level": 0,
+        "force_integral_m3": [
+          -1.0922484157545216e-15,
+          2.6631556736514973e-17,
+          -2.8263117023178586e-18
+        ],
+        "maximum_sampled_depth_fraction": 0.0013533075280417793,
+        "active_nodes": 3,
+        "evaluated_nodes": 24,
+        "triangle_queried_nodes": 3,
+        "candidate_subtriangles": [
+          4,
+          4
+        ],
+        "cumulative_winding_checks": 0,
+        "maximum_winding_integer_residual": 0.0
+      },
+      {
+        "level": 1,
+        "force_integral_m3": [
+          -1.5125161720440947e-15,
+          2.419581465613897e-17,
+          -8.341910384462049e-18
+        ],
+        "maximum_sampled_depth_fraction": 0.0025514239227610825,
+        "active_nodes": 11,
+        "evaluated_nodes": 57,
+        "triangle_queried_nodes": 11,
+        "candidate_subtriangles": [
+          9,
+          10
+        ],
+        "cumulative_winding_checks": 0,
+        "maximum_winding_integer_residual": 0.0
+      },
+      {
+        "level": 2,
+        "force_integral_m3": [
+          -1.4205208019848116e-15,
+          1.8291136870558586e-17,
+          -9.382285192317621e-18
+        ],
+        "maximum_sampled_depth_fraction": 0.0032184397319297464,
+        "active_nodes": 38,
+        "evaluated_nodes": 102,
+        "triangle_queried_nodes": 38,
+        "candidate_subtriangles": [
+          14,
+          20
+        ],
+        "cumulative_winding_checks": 0,
+        "maximum_winding_integer_residual": 0.0
+      },
+      {
+        "level": 3,
+        "force_integral_m3": [
+          -1.1827580675338527e-15,
+          2.4034260437672242e-17,
+          -6.052953477466129e-18
+        ],
+        "maximum_sampled_depth_fraction": 0.003076445406690552,
+        "active_nodes": 161,
+        "evaluated_nodes": 291,
+        "triangle_queried_nodes": 161,
+        "candidate_subtriangles": [
+          41,
+          56
+        ],
+        "cumulative_winding_checks": 0,
+        "maximum_winding_integer_residual": 0.0
+      },
+      {
+        "level": 4,
+        "force_integral_m3": [
+          -1.2864947153603474e-15,
+          2.256949647704425e-17,
+          -1.2171938038919644e-17
+        ],
+        "maximum_sampled_depth_fraction": 0.0033018670974575477,
+        "active_nodes": 639,
+        "evaluated_nodes": 897,
+        "triangle_queried_nodes": 639,
+        "candidate_subtriangles": [
+          129,
+          170
+        ],
+        "cumulative_winding_checks": 0,
+        "maximum_winding_integer_residual": 0.0
+      },
+      {
+        "level": 5,
+        "force_integral_m3": [
+          -1.3073956413397808e-15,
+          4.683582937011853e-17,
+          -1.4166389479556833e-17
+        ],
+        "maximum_sampled_depth_fraction": 0.003284365625763723,
+        "active_nodes": 2598,
+        "evaluated_nodes": 3078,
+        "triangle_queried_nodes": 2598,
+        "candidate_subtriangles": [
+          458,
+          568
+        ],
+        "cumulative_winding_checks": 0,
+        "maximum_winding_integer_residual": 0.0
+      },
+      {
+        "level": 6,
+        "force_integral_m3": [
+          -1.3038620798520352e-15,
+          4.347959538458577e-17,
+          -1.3553390997093111e-17
+        ],
+        "maximum_sampled_depth_fraction": 0.0033227239388394425,
+        "active_nodes": 10272,
+        "evaluated_nodes": 11202,
+        "triangle_queried_nodes": 10272,
+        "candidate_subtriangles": [
+          1607,
+          2127
+        ],
+        "cumulative_winding_checks": 1,
+        "maximum_winding_integer_residual": 0.0
+      }
+    ],
+    "finest_relative_change": 0.003764847682268128,
+    "qmc_2048_relative_error_to_finest": 0.3134150914008537
+  },
+  "whole_library_qualified": false,
+  "scientific_admission": false
+}
