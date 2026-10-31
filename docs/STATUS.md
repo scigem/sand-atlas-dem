@@ -210,3 +210,33 @@ and snapshots (`mesh-smoke-cull-compact-v1`). This dilute example is a software
 check. All numerical checkpoints remain local and are Git-ignored; historical
 controller attempts account for most of the approximately 19 GiB evidence footprint.
 No failed evidence has been deleted.
+
+## Larger-quadrature execution and independent reference
+
+The current optional mesh collector adds conservative spatial sample-cluster
+rejection, preserving all original surface-node identities. The full device suite
+passes 44 tests (`verification-mesh-clusters-v1.log`); the ten frozen static Hostun
+force cases also pass (`hostun-mesh-force-clusters-v1`). Two additional CPU reference
+checks verify analytical inside-point retention and an unchanged independent
+triangle integral with outside-point rejection. The preceding sustained timing
+results remain tied to their own pre-cluster source snapshot; cluster timing is
+not inferred from them.
+
+The independent CPU quadrature oracle now has a separately frozen accelerated
+identity, `hostun-triangle-quadrature-culled-v1`. Fourteen overlapping refinement
+levels match the original oracle exactly. The slower original execution was then
+terminated; its partial result, executed source/protocol and replacement receipt
+are retained. The accelerated run continues the same original triangle queries,
+source nodes, poses and 2% finest-change gate. Its first two completed cases expose
+approximately 205% and 71% error in the 2,048-node surface integral relative to the
+refined triangle integral. Whole-library contact qualification remains open.
+
+The all-shape Gauss3 functional workload completes successfully
+(`hostun-gauss3-mesh-cluster-smoke-v1`): 106 particles, all 53 contacting pairs,
+3,343,608 shared source nodes, 1,852 active contacts retained after advancement,
+334,792,732 owned buffer bytes and maximum overlap 0.004192. Its scope is functional
+execution only; concurrent CPU reference work excludes a sustained timing claim.
+
+The final integrated device/reference suite passes all 46 tests
+(`verification-mesh-clusters-reference-v1.log`). No scientific convergence gate
+has been marked complete by that software result.

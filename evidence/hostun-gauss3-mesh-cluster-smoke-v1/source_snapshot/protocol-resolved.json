@@ -1,0 +1,30 @@
+{
+  "identity": "hostun-gauss3-mesh-cluster-smoke-v1",
+  "frozen_before_gpu_execution": true,
+  "particles": [
+    106
+  ],
+  "library": "/Users/bmar5496/code/sand-atlas-dem/evidence/hostun-gauss3-mesh-cluster-smoke-v1/private/shapes.h5",
+  "library_sha256": "097a6a14df21513e8cf3b936fe0404baa488e38316a0e4233e6f59ba94bc2270",
+  "packing": "controlled-pairs",
+  "orientation_seed": 123,
+  "target_maximum_penetration_fraction_of_equivalent_diameter": 0.0025,
+  "timestep_s": 2e-09,
+  "steps_per_repeat": 2,
+  "minimum_repeats": 1,
+  "minimum_wall_seconds": 0,
+  "pair_capacity_per_particle": 1,
+  "contact_capacity_policy": "twice preprocessed active sample count divided by particle count; minimum 16 per particle",
+  "reset_to_identical_committed_state_before_each_repeat": true,
+  "reset_and_diagnostic_time_in_per_step_timing": false,
+  "checks": [
+    "all particles belong to one active pair",
+    "no cross-pair contacts",
+    "no truncated contacts",
+    "reported device memory and logical buffer inventory",
+    "first/last quarter timing comparison"
+  ],
+  "scope": "Functional GPU execution only: one contacting pair for each of 53 source shapes, original-face Gauss3 library with 3,343,608 total shared nodes. Concurrent CPU reference work means timings are not performance evidence. No quadrature or material qualification.",
+  "contact_geometry": "mesh",
+  "traversal": "Nearest-first triangle queries with conservative spatial sample clusters and unchanged original node keys."
+}

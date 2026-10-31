@@ -147,7 +147,9 @@ class Engine:
             + 1024 * self.n
         )
         if spec.contact_geometry == "mesh":
-            estimated += sum(224 * len(s.faces) + 128 for s in library.shapes)
+            estimated += sum(
+                224 * len(s.faces) + 224 + 8 * len(s.samples) for s in library.shapes
+            )
         estimated += sum(s.sdf.nbytes + 32 * len(s.samples) for s in library.shapes)
         if estimated > spec.working_memory_gib * 1024**3:
             raise MemoryError(
@@ -293,7 +295,15 @@ class Engine:
                 name: np.zeros(
                     (1, 4),
                     np.uint32
-                    if name in {"meshRoots", "meshLinks", "meshHullInfo"}
+                    if name
+                    in {
+                        "meshRoots",
+                        "meshLinks",
+                        "meshHullInfo",
+                        "meshClusterInfo",
+                        "meshClusterRanges",
+                        "meshSampleIndices",
+                    }
                     else np.float32,
                 )
                 for name in (
@@ -305,6 +315,11 @@ class Engine:
                     "meshMax",
                     "meshTriangles",
                     "meshNormals",
+                    "meshClusterInfo",
+                    "meshClusterRanges",
+                    "meshClusterMin",
+                    "meshClusterMax",
+                    "meshSampleIndices",
                 )
             }
         for name, data in mesh_data.items():

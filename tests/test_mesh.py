@@ -53,6 +53,28 @@ def test_open_or_inconsistently_oriented_mesh_is_rejected(box):
         pack_meshes(ShapeLibrary([replace(box, faces=faces)]), 0.001)
 
 
+@pytest.mark.parametrize("count", [1, 32, 64, 65, 129, 1024])
+def test_spatial_clusters_preserve_every_original_node_key_and_enclose_points(
+    box, count
+):
+    rng = np.random.default_rng(321)
+    # Arbitrary points exercise uneven partitions, not just surface regularity.
+    points = rng.normal(size=(count, 3)) * 0.001
+    shape = replace(box, samples=points, areas=np.ones(count))
+    data = pack_meshes(ShapeLibrary([shape, replace(shape, id="second")]), 0.001)
+    for first, clusters, _, _ in data["meshClusterInfo"]:
+        keys = []
+        for cluster in range(first, first + clusters):
+            start, size, _, _ = data["meshClusterRanges"][cluster]
+            assert 0 < size <= 64
+            node_ids = data["meshSampleIndices"][start : start + size]
+            keys.extend(node_ids.tolist())
+            rounded = (points[node_ids] / 0.001).astype(np.float32)
+            assert np.all(rounded >= data["meshClusterMin"][cluster, :3])
+            assert np.all(rounded <= data["meshClusterMax"][cluster, :3])
+        assert sorted(keys) == list(range(count))
+
+
 def test_disconnected_vertex_fans_are_rejected(box):
     # Two otherwise closed tetrahedra share exactly one vertex index.
     a = trimesh.creation.icosphere(subdivisions=0)

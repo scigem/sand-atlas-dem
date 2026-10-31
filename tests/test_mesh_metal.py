@@ -215,3 +215,60 @@ def test_mesh_compaction_growth_and_sample_key_friction_restart():
     assert a.keys() == b.keys()
     assert any(np.linalg.norm(s) > 0 for s in a.values())
     assert all(np.allclose(a[key], b[key], rtol=1e-4, atol=1e-9) for key in a)
+
+
+def test_cluster_culling_retains_all_analytical_inside_nodes_under_rotation_and_scale():
+    from scipy.spatial.transform import Rotation
+
+    shape = from_mesh(trimesh.creation.box(), unit="mm", resolution=8, samples=1024)
+    m = Metal()
+    e = Engine(
+        ShapeLibrary([shape]),
+        Experiment(particles=2, timestep=1e-9, contact_geometry="mesh"),
+        [[0.005] * 3, [0.008] * 3],
+        [0.02] * 3,
+        [0, 0],
+        [0.8, 1.3],
+        metal=m,
+    )
+    info = m.read(e.buffers["meshClusterInfo"], np.uint32).reshape(-1, 4)[0]
+    first, count = map(int, info[:2])
+    ranges = m.read(e.buffers["meshClusterRanges"], np.uint32).reshape(-1, 4)
+    indices = m.read(e.buffers["meshSampleIndices"], np.uint32)
+    result = m.buffer(count=count)
+    rng = np.random.default_rng(518)
+    rejected = penetrating = 0
+    for _ in range(24):
+        rotations = Rotation.random(2, random_state=rng)
+        source = np.full(3, 0.005)
+        target = source + rotations[1].apply([0.0009, 0, 0])
+        e.buffers["position"].copy_from_numpy(
+            f4(np.array([source, target]) / e.length_unit)
+        )
+        e.buffers["rotation"].copy_from_numpy(rotations.as_quat().astype(np.float32))
+        local = (
+            rotations[1]
+            .inv()
+            .apply(rotations[0].apply(shape.samples * 0.8) + source - target)
+            / 1.3
+        )
+        inside = np.all(np.abs(local) < 0.0005, axis=1)
+        penetrating += int(inside.sum())
+        m.dispatch(
+            "meshClusterProbe",
+            count,
+            r=e.bindings(),
+            count=count,
+            src=0,
+            dst=1,
+            result=result,
+        )
+        m.device.wait()
+        keep = m.read(result, np.uint32)
+        rejected += int((keep == 0).sum())
+        for cluster in range(count):
+            start, size = map(int, ranges[first + cluster, :2])
+            keys = indices[start : start + size]
+            if inside[keys].any():
+                assert keep[cluster] == 1
+    assert penetrating > 0 and rejected > 0

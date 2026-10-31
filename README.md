@@ -113,7 +113,8 @@ culling and one-pass contact compaction. All 37 tests pass; ten fixed Hostun pos
 match an independent triangle-force reference within 0.00965%. This comparison
 holds the surface samples fixed; contact-quadrature convergence remains open.
 
-Sustained M4 Max mesh workloads measure **15.20 ms/step at 10k grains** and
+The frozen enclosure/compaction M4 Max mesh workloads measure
+**15.20 ms/step at 10k grains** and
 **60.32 ms/step at 50k** (isolated contacting pairs, 53 reused shapes, 2,048 nodes
 per shape). These imply about 4.2/16.8 hours per million steps before setup and
 output. At the tested 2 ns timestep this advances 2 ms physically. Dense specimens
@@ -123,3 +124,7 @@ No calibrated sand properties, measured-data validation, finite-strain continuum
 compatibility, NVIDIA backend verification or scientific admission is claimed.
 Code is MIT; third-party sources retain their own rights. No raw publication texts
 or downloaded Sand Atlas geometry are bundled in version control.
+
+The current collector also rejects conservative spatial groups of surface nodes,
+retaining original sample keys. This extension passes the 46-test integrated device/reference suite
+and all ten static Hostun force cases; its own sustained timings are pending.

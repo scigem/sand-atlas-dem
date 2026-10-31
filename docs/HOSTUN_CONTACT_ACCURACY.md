@@ -35,3 +35,19 @@ FP32 scalar cube alone costs about 512 MiB per cubic shape before padding; 53 su
 cubes would approach 26.5 GiB, before solver state, and still do not pass this gate.
 Actual shape aspect ratios reduce that illustrative cube estimate. This motivates
 an explicit triangle-query path rather than claiming uniform refinement is solved.
+
+A separate original-triangle quadrature study now compares source-face Gauss3
+rules under zero through four triangle subdivisions at fixed source poses.
+`hostun-triangle-quadrature-culled-v1` retains the frozen 2% finest-level-change
+gate and exact triangle/parity oracle. Its FP64 rejection planes explicitly
+contain every original source vertex, so points outside their intersection have
+zero contact contribution. Analytical box tests verify no interior loss and the
+unchanged full triangle integral. Fourteen overlapping levels exactly match the
+original unculled oracle, including forces, depths and active counts.
+
+The slower `hostun-triangle-quadrature-v1` was interrupted after that comparison;
+its partial results, original script/protocol and interruption receipt remain.
+The accelerated study is still running. Its first two completed cases put the
+2,048-node force errors relative to refined integration at approximately 205% and
+71%. These partial results do not establish a worst-case error or qualify the
+remaining poses. Exact distance evaluation does not resolve surface integration.

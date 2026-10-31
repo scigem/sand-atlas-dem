@@ -1,0 +1,32 @@
+{
+  "format": "sand-dem-frozen-performance/1",
+  "original_protocol_sha256": "443c2338f43c986992d33dfc3e0de91b056b5591c49f392221441543b465bd72",
+  "sources": {
+    "LICENSE": "9947fb8425ad5cacca01b1f4f9b96d593ca9d7e99a94c330d1bef94b291d0da7",
+    "pyproject.toml": "a622bbe7dcefa49da0a5456e090ed140f9f9c0b204619f14d212ba7aa912ec6c",
+    "frozen_benchmark.py": "b03f335de835f65a7395302f5d178884eeaca96cb9475ebd51f713e40677c901",
+    "requirements-tested-macos.txt": "d49d34198965dd6cac4c77a43c0feedcae3e609004d1aefd600a694136df8f98",
+    "protocol-original.json": "443c2338f43c986992d33dfc3e0de91b056b5591c49f392221441543b465bd72",
+    "protocol-resolved.json": "91d90103887eace9f5614432807111abca362ec5e8ba520926b1de2aef87c1d0",
+    "sand_atlas_dem/simulation.py": "f790c13f196f9f2bef4343ff5f6ef31b4727fcecf40c38df140c97f23c79147c",
+    "sand_atlas_dem/backend.py": "2184575342f265dfd744d799af8e9b03a73dcb195e06e94a59f21e1525cbab5c",
+    "sand_atlas_dem/benchmark.py": "6624caaa956f7d5c8825520cd5c901b559f561f8ff407bb4d719cb1c06f1f83c",
+    "sand_atlas_dem/util.py": "0f9dc71429a87057dc08216f3c51425d8b76be9c4fd30f2cab6c3f98b70397c2",
+    "sand_atlas_dem/__init__.py": "25ef40efbf7fa452aaa142bbe8d9ac35c90756e1a6f09cdacdcd2723cdd1636d",
+    "sand_atlas_dem/spec.py": "de79f1ec1dd5a08fcf5313c189a608d7a5772042209fdc35d4e99bdf9a82bd34",
+    "sand_atlas_dem/visualize.py": "9874362fa98cdd00d73b42867f7ecc9254b820d08915baed25eee4b02ecba339",
+    "sand_atlas_dem/mesh.py": "6eca7323f65d4cde10c0c0c7460d2844778626b2273bb6943822b7cd20d0a40e",
+    "sand_atlas_dem/cli.py": "e326047828502f49aaa47407b8a35e244f3c9bc57ea3e1a60adfc7a7fff9cc11",
+    "sand_atlas_dem/qualification.py": "b59751cc6fcc81b834dd90174ff9859e21efffa389dc36bc514ced75ef41b2fb",
+    "sand_atlas_dem/geometry.py": "08122ac327f189d07463655431edf6f86973e98dbb20c21054975ddbf2f9f150",
+    "sand_atlas_dem/reference.py": "1cd2a748a7f06f1c5138b5f6c9ed99c06715ce6167693251369e8a8fb3cc502f",
+    "sand_atlas_dem/gpu.py": "084b2992ef08441f030f4d171e533a1bbc1a1c5c135112d8f4a33c56b679a5f7",
+    "sand_atlas_dem/shaders/scan.slang": "51900fe7d78347d2274488b1b5c328ed53714be3043d221ad1d48555e1c5cbac",
+    "sand_atlas_dem/shaders/solver.slang": "2c52c2c57ccf357c4b40823f33199b54a5a810536f2420569c01ca6d9473e336",
+    "sand_atlas_dem/shaders/diagnostic.slang": "4f738fbef3ee79c370f74596a51d0de80b5ddd12375615afd18004df0bec7bb0"
+  },
+  "shape_sha256": "097a6a14df21513e8cf3b936fe0404baa488e38316a0e4233e6f59ba94bc2270",
+  "status": "complete",
+  "return_code": 0,
+  "elapsed_wall_seconds": 47.57210087496787
+}

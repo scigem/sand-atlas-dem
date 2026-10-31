@@ -1,0 +1,19 @@
+{
+  "status": "interrupted",
+  "reason": "Replaced redundant slow execution with a separate conservative outside-point-rejection oracle after exact cross-checks. Not a completed or accepted convergence study.",
+  "replaced_by": "hostun-triangle-quadrature-culled-v1",
+  "terminated_pid": 99852,
+  "terminated_utc": "2026-10-31T10:02:42.759477+00:00",
+  "exact_matching_levels": 14,
+  "exactly_compared_fields": [
+    "level",
+    "force_integral_m3",
+    "maximum_sampled_depth_fraction",
+    "active_nodes",
+    "evaluated_nodes",
+    "candidate_subtriangles"
+  ],
+  "partial_sha256": "21f177b205b23cfff98bbce634d520d58198b427e56baef3534857b3e4d42843",
+  "comparison_snapshot_sha256": "90e4a4ff227ab0b7944d2aac9b9ec741a6521c2399d13b3b50708f5b9a91765d",
+  "maximum_finest_relative_change_unchanged": 0.02
+}

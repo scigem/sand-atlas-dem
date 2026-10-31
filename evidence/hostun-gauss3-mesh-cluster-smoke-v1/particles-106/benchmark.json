@@ -1,0 +1,412 @@
+{
+  "format": "sand-dem-benchmark/1",
+  "backend": {
+    "format": "sand-dem-doctor/1",
+    "backend": "metal",
+    "adapter": "Apple M4 Max",
+    "slangpy": "0.43.1",
+    "python": "3.12.14",
+    "smoke_elements": 257,
+    "smoke_max_error": 0.0,
+    "fallback": false,
+    "floating_point_mode_requested": "precise"
+  },
+  "source_hashes": {
+    "simulation.py": "f790c13f196f9f2bef4343ff5f6ef31b4727fcecf40c38df140c97f23c79147c",
+    "backend.py": "2184575342f265dfd744d799af8e9b03a73dcb195e06e94a59f21e1525cbab5c",
+    "benchmark.py": "6624caaa956f7d5c8825520cd5c901b559f561f8ff407bb4d719cb1c06f1f83c",
+    "util.py": "0f9dc71429a87057dc08216f3c51425d8b76be9c4fd30f2cab6c3f98b70397c2",
+    "__init__.py": "25ef40efbf7fa452aaa142bbe8d9ac35c90756e1a6f09cdacdcd2723cdd1636d",
+    "spec.py": "de79f1ec1dd5a08fcf5313c189a608d7a5772042209fdc35d4e99bdf9a82bd34",
+    "visualize.py": "9874362fa98cdd00d73b42867f7ecc9254b820d08915baed25eee4b02ecba339",
+    "mesh.py": "6eca7323f65d4cde10c0c0c7460d2844778626b2273bb6943822b7cd20d0a40e",
+    "cli.py": "e326047828502f49aaa47407b8a35e244f3c9bc57ea3e1a60adfc7a7fff9cc11",
+    "qualification.py": "b59751cc6fcc81b834dd90174ff9859e21efffa389dc36bc514ced75ef41b2fb",
+    "geometry.py": "08122ac327f189d07463655431edf6f86973e98dbb20c21054975ddbf2f9f150",
+    "reference.py": "1cd2a748a7f06f1c5138b5f6c9ed99c06715ce6167693251369e8a8fb3cc502f",
+    "gpu.py": "084b2992ef08441f030f4d171e533a1bbc1a1c5c135112d8f4a33c56b679a5f7"
+  },
+  "shader_hashes": {
+    "scan.slang": "51900fe7d78347d2274488b1b5c328ed53714be3043d221ad1d48555e1c5cbac",
+    "solver.slang": "2c52c2c57ccf357c4b40823f33199b54a5a810536f2420569c01ca6d9473e336",
+    "diagnostic.slang": "4f738fbef3ee79c370f74596a51d0de80b5ddd12375615afd18004df0bec7bb0"
+  },
+  "workload": {
+    "particles": 106,
+    "unique_shapes": 53,
+    "geometry": "mesh-derived",
+    "resolution": null,
+    "samples": [
+      145572,
+      73992,
+      42624,
+      67728,
+      179616,
+      57468,
+      124992,
+      45972,
+      59136,
+      47544,
+      41088,
+      51648,
+      134472,
+      49332,
+      52764,
+      61404,
+      128856,
+      46740,
+      252,
+      57900,
+      61740,
+      79488,
+      72684,
+      48420,
+      42324,
+      58104,
+      41208,
+      67644,
+      39336,
+      56460,
+      66852,
+      53472,
+      102264,
+      44916,
+      132,
+      50004,
+      63408,
+      44340,
+      41844,
+      57120,
+      59424,
+      71724,
+      88344,
+      61272,
+      37896,
+      71544,
+      53808,
+      67488,
+      39132,
+      70368,
+      52392,
+      60768,
+      48588
+    ],
+    "packing": "controlled-pairs",
+    "contact_geometry": "mesh",
+    "arrangement": "isolated contacting pairs; repeated from identical committed state",
+    "controlled_pair_separations_m": [
+      0.00016310584916238,
+      0.00028526520402743377,
+      0.00038111078200614857,
+      0.00024438059889577655,
+      0.00039837029133287763,
+      0.00047848196463382085,
+      0.00032780948219883433,
+      0.00037877345339330543,
+      0.0005055994207388433,
+      0.0004341735798074837,
+      0.0003764379074283401,
+      0.00043411758014531116,
+      0.0004769686551483411,
+      0.0004195805913636443,
+      0.00034715626176394585,
+      0.0005235362411707531,
+      0.00045450270149727256,
+      0.00031303250263472625,
+      0.000371581328999362,
+      0.0004275482669208483,
+      0.00044522764350161736,
+      0.00020225351372171955,
+      0.00026927063026934534,
+      0.0003908686123471907,
+      0.0002761453651890086,
+      0.00023352306015617802,
+      0.00029618452871808966,
+      0.0004649536326054812,
+      0.0003644362900307367,
+      0.000244132845731704,
+      0.00039706145838622425,
+      0.00026240872417234535,
+      0.000370114214285787,
+      0.0002941714270681666,
+      0.0001390094052020025,
+      0.0002773848880340094,
+      0.0003292923680229344,
+      0.0003365411460822868,
+      0.00032827169773368766,
+      0.0002475526232514924,
+      0.00027347194258425355,
+      0.0003292286123589812,
+      0.0001953146298800389,
+      0.00027571354144542313,
+      0.0004128839119751766,
+      0.00032822724026075265,
+      0.00041008952370235187,
+      0.0003183836946231127,
+      0.0003201019691031847,
+      0.00019320499576387735,
+      0.0004273538495965227,
+      0.00035783560136551775,
+      0.00026737679005184783
+    ],
+    "timestep_s": 2e-09,
+    "pairs_per_particle": 1,
+    "contacts_per_particle": 27,
+    "predicted_active_surface_contacts": 1390,
+    "capacity_policy": "twice preprocessed active contact count, minimum 16 per particle",
+    "minimum_wall_seconds": 0,
+    "reset_time_included": false,
+    "shape_library_sha256": "097a6a14df21513e8cf3b936fe0404baa488e38316a0e4233e6f59ba94bc2270",
+    "steps_per_repeat": 2,
+    "requested_repeats": 1,
+    "repeats": 1
+  },
+  "seconds_per_step": [
+    0.043624708021525294
+  ],
+  "median_seconds_per_step": 0.043624708021525294,
+  "steps_per_second": 22.922789523464093,
+  "estimated_working_memory_bytes": 433734768,
+  "memory_accounting": {
+    "solver_buffer_count": 95,
+    "logical_solver_buffer_bytes": 334792732,
+    "process_peak_rss_bytes": 2228846592,
+    "excludes": [
+      "Python/Slang compiler object overhead from logical buffer count",
+      "Other processes and system allocations; unified-memory categories can overlap",
+      "Driver execution scratch and shader thread-local storage are outside logical buffer inventory"
+    ],
+    "reported_device_resource_bytes": 334792732,
+    "reported_host_resource_bytes": 0,
+    "internal_heaps": []
+  },
+  "elapsed_wall_seconds": 0.27495887503027916,
+  "first_quarter_median_seconds_per_step": 0.043624708021525294,
+  "last_quarter_median_seconds_per_step": 0.043624708021525294,
+  "initial_diagnostics": {
+    "step": 0,
+    "elapsed_time": 0.0,
+    "cell": [
+      0.011946594409441609,
+      0.011946594409441609,
+      0.011946594409441609
+    ],
+    "stress": [
+      [
+        0.6684506477904719,
+        -0.27976748551198455,
+        -0.5374553047968699
+      ],
+      [
+        -0.30253381311745625,
+        0.38322931438491104,
+        0.2935736574107957
+      ],
+      [
+        -0.4941948457013389,
+        0.28740776758600356,
+        0.6404139366221214
+      ]
+    ],
+    "contact_stress": [
+      [
+        0.6684506477904719,
+        -0.27976748551198455,
+        -0.5374553047968699
+      ],
+      [
+        -0.30253381311745625,
+        0.38322931438491104,
+        0.2935736574107957
+      ],
+      [
+        -0.4941948457013389,
+        0.28740776758600356,
+        0.6404139366221214
+      ]
+    ],
+    "kinetic_stress": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "stress_antisymmetry": 0.050881855332248614,
+    "p": 0.5640312995991681,
+    "q": 0.11457395553442995,
+    "axial_strain": 3.816246729737571e-08,
+    "volumetric_strain": 1.1448740189212714e-07,
+    "volume_ratio": 0.9999998855126024,
+    "log_strain": [
+      3.8162468025562685e-08,
+      3.8162468025562685e-08,
+      3.8162468025562685e-08
+    ],
+    "void_ratio": 701.6737913595366,
+    "kinetic_energy": 0.0,
+    "elastic_energy_proxy": 4.894268101907073e-09,
+    "unbalanced_force": 0.9954771995544434,
+    "max_overlap_fraction": 0.004191759042441845,
+    "friction_dissipation_last_step": 0.0,
+    "candidate_pairs": 53,
+    "active_surface_contacts": 1852,
+    "active_grain_pairs": 53,
+    "coordination": 1.0,
+    "fabric": [
+      [
+        0.29530638456344604,
+        -0.0364227332174778,
+        -0.07201043516397476
+      ],
+      [
+        -0.0364227332174778,
+        0.34625887870788574,
+        0.026503911241889
+      ],
+      [
+        -0.07201043516397476,
+        0.026503911241889,
+        0.3584347367286682
+      ]
+    ],
+    "sliding_fraction": 0.0,
+    "cell_log_rate": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "friction_dissipation": 0.0,
+    "drag_dissipation": 0.0,
+    "cell_work": 0.0
+  },
+  "final_diagnostics": {
+    "step": 2,
+    "elapsed_time": 4e-09,
+    "cell": [
+      0.011946594409441609,
+      0.011946594409441609,
+      0.011946594409441609
+    ],
+    "stress": [
+      [
+        0.6684506557740384,
+        -0.27976751969660923,
+        -0.5374553131076731
+      ],
+      [
+        -0.3025338473020814,
+        0.3832293188069949,
+        0.2935736352760607
+      ],
+      [
+        -0.4941949106020036,
+        0.28740777374619925,
+        0.6404139453244225
+      ]
+    ],
+    "contact_stress": [
+      [
+        0.6684506477904719,
+        -0.2797675138069153,
+        -0.5374553047968699
+      ],
+      [
+        -0.302533841412387,
+        0.38322931438491104,
+        0.293573629115865
+      ],
+      [
+        -0.49419490229120033,
+        0.28740776758600356,
+        0.6404139366221214
+      ]
+    ],
+    "kinetic_stress": [
+      [
+        7.98356649397124e-09,
+        -5.8896939508575234e-09,
+        -8.31080326524136e-09
+      ],
+      [
+        -5.8896943724848456e-09,
+        4.422083866074118e-09,
+        6.160195706233809e-09
+      ],
+      [
+        -8.31080326524136e-09,
+        6.160195706233809e-09,
+        8.702301100128333e-09
+      ]
+    ],
+    "stress_antisymmetry": 0.050881798623218205,
+    "p": 0.5640313066351519,
+    "q": 0.11457395803390591,
+    "axial_strain": 3.816246729737571e-08,
+    "volumetric_strain": 1.1448740189212714e-07,
+    "volume_ratio": 0.9999998855126024,
+    "log_strain": [
+      3.8162468025562685e-08,
+      3.8162468025562685e-08,
+      3.8162468025562685e-08
+    ],
+    "void_ratio": 701.6737913595366,
+    "kinetic_energy": 3.307162215523268e-14,
+    "elastic_energy_proxy": 4.8942676578178634e-09,
+    "unbalanced_force": 0.9954770803451538,
+    "max_overlap_fraction": 0.004191759042441845,
+    "friction_dissipation_last_step": 0.0,
+    "candidate_pairs": 53,
+    "active_surface_contacts": 1852,
+    "active_grain_pairs": 53,
+    "coordination": 1.0,
+    "fabric": [
+      [
+        0.29530638456344604,
+        -0.0364227332174778,
+        -0.07201043516397476
+      ],
+      [
+        -0.0364227332174778,
+        0.34625887870788574,
+        0.026503911241889
+      ],
+      [
+        -0.07201043516397476,
+        0.026503911241889,
+        0.3584347367286682
+      ]
+    ],
+    "sliding_fraction": 0.0,
+    "cell_log_rate": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "friction_dissipation": 0.0,
+    "drag_dissipation": 0.0,
+    "cell_work": 0.0
+  },
+  "gpu_profile": {
+    "available": false,
+    "reason": "m_rhi_query_pool->getResult(index, count, result.data()) failed with error: -2113929209 (SLANG_E_NOT_AVAILABLE)\n\n/Users/runner/work/slangpy/slangpy/src/sgl/device/query.cpp:52 in function get_results",
+    "timing_source": "GPU timestamps unavailable; use separately measured wall time"
+  },
+  "scientific_verification": false,
+  "limitations": [
+    "This workload is not a prepared soil specimen. Minimum duration is explicit; a long run alone does not prove thermal equilibrium.",
+    "Wall time includes Python command encoding, dispatch and scalar boundary reads.",
+    "Controlled pairs exercise irregular contacts but do not establish dense assembly performance.",
+    "Reset and diagnostic costs are excluded from per-step timing; elapsed wall time includes them."
+  ]
+}

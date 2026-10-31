@@ -10,6 +10,13 @@ import numpy as np
 def pack_meshes(library, length_unit):
     bounds_min, bounds_max, links, roots, triangles, normals = [], [], [], [], [], []
     hull_info, planes = [], []
+    cluster_info, cluster_ranges, cluster_min, cluster_max, sample_indices = (
+        [],
+        [],
+        [],
+        [],
+        [],
+    )
     for shape in library.shapes:
         if shape.provenance.get("display_mesh_only"):
             raise ValueError(
@@ -17,6 +24,30 @@ def pack_meshes(library, length_unit):
             )
         vertices = np.asarray(shape.vertices, float) / length_unit
         faces = np.asarray(shape.faces, np.int64)
+        # Spatial blocks preserve original node keys through an index map. Bounds
+        # enclose the actual rounded GPU sample coordinates, not source vertices.
+        points = (shape.samples / length_unit).astype(np.float32)
+        first_cluster = len(cluster_ranges)
+
+        def partition(ids, points=points):
+            if len(ids) > 64:
+                axis = np.ptp(points[ids], axis=0).argmax()
+                order = ids[np.argsort(points[ids, axis], kind="stable")]
+                middle = len(order) // 2
+                partition(order[:middle])
+                partition(order[middle:])
+                return
+            cluster_ranges.append([len(sample_indices), len(ids), 0, 0])
+            sample_indices.extend(ids.tolist())
+            cluster_min.append(
+                [*np.nextafter(points[ids].min(0), np.float32(-np.inf)), 0]
+            )
+            cluster_max.append(
+                [*np.nextafter(points[ids].max(0), np.float32(np.inf)), 0]
+            )
+
+        partition(np.arange(len(points)))
+        cluster_info.append([first_cluster, len(cluster_ranges) - first_cluster, 0, 0])
         # Conservative enclosure only: original concave triangles still determine
         # every penetrating distance and normal. Round offsets outward so all
         # GPU-rounded source vertices remain inside even under FP32 dot error.
@@ -154,6 +185,11 @@ def pack_meshes(library, length_unit):
         return np.pad(a, ((0, 0), (0, 1)))
 
     return {
+        "meshClusterInfo": np.asarray(cluster_info, np.uint32),
+        "meshClusterRanges": np.asarray(cluster_ranges, np.uint32),
+        "meshClusterMin": np.asarray(cluster_min, np.float32),
+        "meshClusterMax": np.asarray(cluster_max, np.float32),
+        "meshSampleIndices": np.asarray(sample_indices, np.uint32),
         "meshHullInfo": np.asarray(hull_info, np.uint32),
         "meshPlanes": np.asarray(planes, np.float32),
         "meshRoots": np.asarray(roots, np.uint32),

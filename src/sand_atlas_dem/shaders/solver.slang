@@ -49,6 +49,11 @@ struct Resources {
     StructuredBuffer<uint4> meshLinks;
     StructuredBuffer<float4> meshTriangles;
     StructuredBuffer<float4> meshNormals;
+    StructuredBuffer<uint4> meshClusterInfo;
+    StructuredBuffer<uint4> meshClusterRanges;
+    StructuredBuffer<float4> meshClusterMin;
+    StructuredBuffer<float4> meshClusterMax;
+    StructuredBuffer<uint> meshSampleIndices;
     RWStructuredBuffer<uint> binCounts;
     RWStructuredBuffer<uint> binParticles;
     RWStructuredBuffer<uint> pairCounts;
@@ -220,6 +225,43 @@ bool meshMayContain(uint shape,float3 p){
     }
     return true;
 }
+
+bool meshClusterMayContact(uint src,uint dst,uint cluster){
+    float3 sourceLow=r.meshClusterMin[cluster].xyz,sourceHigh=r.meshClusterMax[cluster].xyz;
+    float3 branch=centerBranch(src,dst),low=1e30,high=-1e30;
+    for(uint corner=0;corner<8;corner++){
+        float3 p=float3((corner&1)!=0?sourceHigh.x:sourceLow.x,
+                        (corner&2)!=0?sourceHigh.y:sourceLow.y,
+                        (corner&4)!=0?sourceHigh.z:sourceLow.z);
+        p=qinv(r.rotation[dst],qrot(r.rotation[src],p*r.body[src].x)-branch)/r.body[dst].x;
+        low=min(low,p);high=max(high,p);
+    }
+    // Bound transform/dot rounding as well as the rounded source coordinates.
+    float pad=64.*1.1920928955078125e-7*(1.+max(max(abs(low.x),abs(low.y)),abs(low.z))
+        +max(max(abs(high.x),abs(high.y)),abs(high.z))+length(branch)/r.body[dst].x);
+    low-=pad;high+=pad;
+    uint shape=r.shapeId[dst],root=r.meshRoots[shape].x;
+    float3 targetLow=r.meshMin[root].xyz,targetHigh=r.meshMax[root].xyz;
+    if(any(high<targetLow)||any(low>targetHigh))return false;
+    float3 center=.5*(low+high),half=.5*(high-low);
+    float3 direction=(center-.5*(targetLow+targetHigh))/(targetHigh-targetLow);
+    float3 a=abs(direction);uint axis=a.x>=a.y&&a.x>=a.z?0:(a.y>=a.z?1:2);
+    uint group=2*axis+(direction[axis]>=0?1:0);
+    uint4 info=r.meshHullInfo[6*shape+group];
+    for(uint i=0;i<info.y;i++){
+        float4 plane=r.meshPlanes[info.x+i];
+        if(dot(plane.xyz,center)+plane.w-dot(abs(plane.xyz),half)>0)return false;
+    }
+    return true;
+}
+[shader("compute")][numthreads(64,1,1)]
+void meshClusterProbe(uint id:SV_DispatchThreadID,uniform uint count,
+                      uniform uint src,uniform uint dst,RWStructuredBuffer<uint> result){
+    if(id<count){
+        uint cluster=r.meshClusterInfo[r.shapeId[src]].x+id;
+        result[id]=meshClusterMayContact(src,dst,cluster)?1:0;
+    }
+}
 [shader("compute")][numthreads(64,1,1)]
 void meshCullProbe(uint id:SV_DispatchThreadID,uniform uint count,uniform uint shape,
                    StructuredBuffer<float4> points,RWStructuredBuffer<uint> result){
@@ -294,20 +336,38 @@ void resetMeshContacts(uint id:SV_DispatchThreadID){
     if(id<r.c.pairCapacity)r.contactCounts[id]=0;
     if(id==0){r.control[2]=0;r.control[6]=0;}
 }
+groupshared uint meshClusterCandidate;
+groupshared uint meshGroupActive;
 [shader("compute")][numthreads(64,1,1)]
 void collectMeshContacts(uint3 group:SV_GroupID,uint lane:SV_GroupIndex){
     uint pair=group.x;
-    if(pair>=min(r.control[1],r.c.pairCapacity)||r.control[0]!=0)return;
-    uint2 ij=r.pairs[pair];uint a=r.sampleInfo[r.shapeId[ij.x]].y;
-    uint total=a+r.sampleInfo[r.shapeId[ij.y]].y;
-    for(uint s=lane;s<total;s+=64){
-        uint i=s<a?ij.x:ij.y,j=s<a?ij.y:ij.x,node=s<a?s:s-a;
-        float4 pd,na;
-        if(nodeContact(i,j,node,pd,na)){
-            uint offset;InterlockedAdd(r.control[2],1,offset);
-            if(offset>=r.c.contactCapacity){fail(32);return;}
-            r.meta[offset]=uint4(i,j,node,0);r.pointDepth[offset]=pd;r.normalArea[offset]=na;
-            uint unused;InterlockedAdd(r.contactCounts[pair],1,unused);
+    if(pair>=min(r.control[1],r.c.pairCapacity))return;
+    if(lane==0)meshGroupActive=r.control[0]==0?1:0;
+    GroupMemoryBarrierWithGroupSync();
+    if(meshGroupActive==0)return;
+    // Every lane reaches every barrier, including when another group flags an
+    // overflow. No lane may return early from a contact-capacity failure.
+    uint2 ij=r.pairs[pair];
+    for(uint pass=0;pass<2;pass++){
+        uint i=pass==0?ij.x:ij.y,j=pass==0?ij.y:ij.x;
+        uint4 info=r.meshClusterInfo[r.shapeId[i]];
+        for(uint c=0;c<info.y;c++){
+            uint cluster=info.x+c;
+            if(lane==0)meshClusterCandidate=meshClusterMayContact(i,j,cluster)?1:0;
+            GroupMemoryBarrierWithGroupSync();
+            uint4 range=r.meshClusterRanges[cluster];
+            if(meshClusterCandidate!=0&&lane<range.y){
+                uint node=r.meshSampleIndices[range.x+lane];float4 pd,na;
+                if(nodeContact(i,j,node,pd,na)){
+                    uint offset;InterlockedAdd(r.control[2],1,offset);
+                    if(offset>=r.c.contactCapacity)fail(32);
+                    else{
+                        r.meta[offset]=uint4(i,j,node,0);r.pointDepth[offset]=pd;r.normalArea[offset]=na;
+                        uint unused;InterlockedAdd(r.contactCounts[pair],1,unused);
+                    }
+                }
+            }
+            GroupMemoryBarrierWithGroupSync();
         }
     }
 }
