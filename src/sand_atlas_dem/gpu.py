@@ -979,17 +979,17 @@ class Engine:
         ):
             self.buffers[name].copy_from_numpy(state[name])
         count = int(state["contacts"])
-        if count > self.contact_capacity:
-            raise ValueError("Checkpoint exceeds contact capacity")
+        if count < 0 or count > self.contact_capacity:
+            raise ValueError("Checkpoint contact count is outside capacity")
         self.active = 0
         h = self.history_buffers[1]
         for name in ("meta", "slip", "normalArea"):
-            padded = np.zeros(
-                (self.contact_capacity, 4),
-                dtype=np.uint32 if name == "meta" else np.float32,
+            values = np.asarray(
+                state[name], dtype=np.uint32 if name == "meta" else np.float32
             )
-            padded[:count] = state[name]
-            h[name].copy_from_numpy(padded)
+            if values.shape != (count, 4):
+                raise ValueError("Checkpoint contact history shape mismatch")
+            self.m.write_prefix(h[name], values)
         ctrl = np.zeros(16, np.uint32)
         ctrl[2] = count
         ctrl[4] = 1

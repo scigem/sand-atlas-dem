@@ -281,3 +281,43 @@ def test_active_prefix_readback_matches_original_buffer(metal):
     empty = metal.read_prefix(source, 0, np.uint32, shape=(0, 4))
     assert empty.shape == (0, 4)
     np.testing.assert_array_equal(metal.read(source, np.uint32), words)
+
+
+def test_active_prefix_upload_preserves_unused_tail(metal):
+    original = np.full(256, 0xDEADBEEF, np.uint32)
+    destination = metal.buffer(original)
+    values = np.array([0, 1, 0xFFFFFFFF, 0x7FC00000], np.uint32)
+    metal.write_prefix(destination, values)
+    expected = original.copy()
+    expected[: len(values)] = values
+    np.testing.assert_array_equal(metal.read(destination, np.uint32), expected)
+    metal.write_prefix(destination, np.empty((0, 4), np.float32))
+    np.testing.assert_array_equal(metal.read(destination, np.uint32), expected)
+
+
+def test_restore_ignores_poisoned_unused_contact_history(metal, shape):
+    e, _ = engine(metal, shape)
+    e.initialize()
+    velocity = np.zeros((2, 4), np.float32)
+    velocity[0, 1] = 0.01
+    e.buffers["velocity"].copy_from_numpy(velocity)
+    e.advance(3)
+    saved = e.state()
+    assert 0 < saved["contacts"] < e.contact_capacity
+    e.advance(2)
+    expected = e.state()
+    for side in e.history_buffers:
+        side["meta"].copy_from_numpy(
+            np.full((e.contact_capacity, 4), 0xFFFFFFFF, np.uint32)
+        )
+        for name in ("slip", "normalArea"):
+            side[name].copy_from_numpy(
+                np.full((e.contact_capacity, 4), np.nan, np.float32)
+            )
+    e.restore(saved, 3)
+    e.advance(2)
+    actual = e.state()
+    for name in ("position", "velocity", "rotation", "momentum", "force", "torque"):
+        np.testing.assert_allclose(
+            actual[name], expected[name], rtol=2e-4, atol=3e-7, err_msg=name
+        )

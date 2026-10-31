@@ -22,6 +22,7 @@ class BytesBuffer:
 class HostTransfer:
     read = Metal.read
     read_prefix = Metal.read_prefix
+    write_prefix = Metal.write_prefix
 
     def __init__(self):
         self.allocations = []
@@ -31,7 +32,10 @@ class HostTransfer:
             create_command_encoder=lambda: self, wait=self.wait
         )
 
-    def buffer(self, *, count):
+    def buffer(self, array=None, *, count=None):
+        if array is not None:
+            self.allocations.append(array.nbytes)
+            return BytesBuffer(array.view(np.uint8).reshape(-1))
         self.allocations.append(count * 4)
         return BytesBuffer(np.zeros(count * 4, dtype=np.uint8))
 
@@ -89,4 +93,44 @@ def test_invalid_prefix_is_rejected_before_allocation(count, dtype, error):
     transfer = HostTransfer()
     with pytest.raises(ValueError, match=error):
         transfer.read_prefix(BytesBuffer(np.zeros(16)), count, dtype)
+    assert not transfer.allocations and not transfer.copies
+
+
+@pytest.mark.parametrize("dtype", [np.float32, np.uint32])
+def test_upload_changes_only_active_bytes_and_accepts_noncontiguous_input(dtype):
+    destination = BytesBuffer(np.full(1024, 173, np.uint8), forbid_read=True)
+    values = np.arange(24, dtype=dtype).reshape(4, 6)[:, ::2]
+    assert not values.flags.c_contiguous
+    transfer = HostTransfer()
+    transfer.write_prefix(destination, values)
+    expected = np.ascontiguousarray(values).view(np.uint8).reshape(-1)
+    np.testing.assert_array_equal(destination.data[:48], expected)
+    np.testing.assert_array_equal(destination.data[48:], 173)
+    assert transfer.allocations == [48]
+    assert transfer.copies == [48]
+    assert transfer.waits == 1
+
+
+def test_empty_upload_leaves_destination_unchanged_without_device_work():
+    destination = BytesBuffer(np.full(16, 173, np.uint8), forbid_read=True)
+    transfer = HostTransfer()
+    transfer.write_prefix(destination, np.empty((0, 4), np.float32))
+    np.testing.assert_array_equal(destination.data, 173)
+    assert not transfer.allocations and not transfer.copies and not transfer.waits
+
+
+@pytest.mark.parametrize(
+    "values,error",
+    [
+        (np.zeros(5, np.float32), "capacity"),
+        (np.zeros(1, np.uint8), "aligned"),
+        (np.array([object()]), "fixed-size"),
+    ],
+)
+def test_invalid_upload_preserves_destination(values, error):
+    destination = BytesBuffer(np.full(16, 173, np.uint8))
+    transfer = HostTransfer()
+    with pytest.raises(ValueError, match=error):
+        transfer.write_prefix(destination, values)
+    np.testing.assert_array_equal(destination.data, 173)
     assert not transfer.allocations and not transfer.copies

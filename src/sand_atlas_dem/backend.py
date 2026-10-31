@@ -82,6 +82,23 @@ class Metal:
             result = self.read(staging, dtype)
         return result if shape is None else result.reshape(shape)
 
+    def write_prefix(self, buffer, array):
+        """Upload only active bytes; the destination's unused tail is untouched."""
+        array = np.asarray(array)
+        if array.dtype.hasobject or array.dtype.itemsize == 0:
+            raise ValueError("Upload requires a fixed-size numeric dtype")
+        if array.nbytes > buffer.size:
+            raise ValueError("Upload prefix exceeds buffer capacity")
+        if array.nbytes % 4:
+            raise ValueError("Upload prefix must be aligned to four bytes")
+        if array.nbytes == 0:
+            return
+        staging = self.buffer(np.ascontiguousarray(array))
+        encoder = self.device.create_command_encoder()
+        encoder.copy_buffer(buffer, 0, staging, 0, array.nbytes)
+        self.submit(encoder)
+        self.device.wait()
+
     def doctor(self):
         x = np.linspace(-2, 2, 257, dtype=np.float32)
         a = self.buffer(x)

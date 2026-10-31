@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "exit_code": 0,
+  "passed_tests": 204,
+  "skipped_tests": 8,
+  "deselected_tests": 57,
+  "sources_unchanged": true,
+  "frozen_source_files": 61,
+  "freeze_sha256": "f2a660430307b5b68b92aa59b3d6041be684738811f91b31d74b260a46ee4bb7",
+  "log_sha256": "a26509c8bd2504a1805a479a40bbf9d95908a3aaa0f7b6fd7b2081f30d3f28f8",
+  "gpu_executed": false,
+  "metal_verification_pending": true,
+  "scientific_admission": false,
+  "scope": "CPU-only transfer and integration tests. No Metal driver verification or peak-memory measurement. Device upload and poisoned-tail restart tests remain queued."
+}

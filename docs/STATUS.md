@@ -747,3 +747,9 @@ inventory and 100-sample equilibrium window remain unchanged. See
 `hostun-balanced424-first-contact-observation-v1`; no dynamic, work, timestep or
 material gate is closed. A one-second CPU stack sample finds the main thread
 waiting on Metal; it is not a GPU utilization or sustained-throughput measurement.
+
+The corresponding active-contact restore upload is now implemented. The combined
+CPU integration passes 204 tests (eight skipped, 57 Metal cases deselected), with
+unchanged frozen sources. Restore no longer stages a capacity-sized zero history
+on the host. Actual device exact-byte upload and poisoned-unused-tail restart
+checks remain queued; this does not reduce fixed device contact/rollback storage.
