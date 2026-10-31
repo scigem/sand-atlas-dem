@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/private/tmp/sand-dem-reference-adaptive-library-v1/examples/adaptive_library_reference.py", line 172, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/private/tmp/sand-dem-reference-adaptive-library-v1/examples/adaptive_library_reference.py", line 56, in main
+    raise ValueError("Unsupported frozen adaptive reference contract")
+ValueError: Unsupported frozen adaptive reference contract

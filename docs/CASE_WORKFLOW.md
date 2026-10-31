@@ -42,6 +42,12 @@ settings may come from a named, versioned profile, with explicit overrides. Ever
 resolved value goes into the output manifest. A material name supplies grain
 geometry and source identity; it does not supply calibrated mechanical properties.
 
+Optional experiment `normal_viscosity` is an explicit grain-contact traction
+viscosity in N·s/m³, default zero; each plane has its independent value. A restitution
+number is not substituted for this coefficient. Resolved inputs retain these
+values, and output histories include normal contact power and cumulative loss
+separately from friction and global drag. See CONTACT_DAMPING_DESIGN.md.
+
 `sand-dem-case/1` case files contain an `experiment` object without a geometry path.
 Density, both contact stiffnesses, friction, timestep and stages must be explicit.
 `cases/drained-triaxial.json` is a provisional research template, not a qualified

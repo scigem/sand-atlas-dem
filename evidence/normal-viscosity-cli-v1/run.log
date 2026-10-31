@@ -1,0 +1,2 @@
+[WARN] No supported shader model found, pretending to support sm_6_0.
+ValueError: Timestep exceeds conservative estimate 2.52381e-09 s

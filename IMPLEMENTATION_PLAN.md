@@ -92,8 +92,12 @@ work alongside the scientific gates below; naming a material must not infer cali
   All numerical reference dependencies remained unchanged; the failed gate and
   all rows are retained in hostun-library-quadrature-terminal-audit-v1.
   Grain 54 deeper also exceeds the unchanged 2% finest-change gate (2.6276%).
-  A separately frozen targeted level-six diagnostic is running in an immutable
-  source copy. Full-library reference consolidation and GPU comparison remain required.
+  The separately frozen grain-54 level-six diagnostic passes from an immutable
+  source copy (0.29146% final change, exact overlap-level agreement).
+  A fresh all-106-pose adaptive reference rerun now uses an immutable source copy
+  and extends failing level-four poses through level six at the same 2% gate
+  (hostun-library-quadrature-adaptive-v2); its earlier script-hash preflight
+  rejection is retained. Full-library reference consolidation and GPU comparison remain required.
   Its completed shallow grain-00038 row exceeds the level-four reference gate
   (8.0767% change). The separately frozen targeted level-six study retains the
   same pose, reproduces all five overlapping levels exactly and reduces the final
@@ -152,7 +156,9 @@ work alongside the scientific gates below; naming a material must not infer cali
   checks now pass their bounded analytical gates. They demonstrate why applying
   an ordinary nodal restitution coefficient without a mass convention is
   nonconvergent. The separate explicit traction-viscosity extension is now implemented;
-  normal-viscosity-integration-v1 passes all 166 tests on Metal. The independent
+  normal-viscosity-integration-v1 passes all 166 tests on Metal. After merging
+  existing visualization work, the combined suite passes 174 tests with three
+  optional rendering skips. Viscous CLI checkpoint/5 resume and exports pass. The independent
   constant-area oscillator v2 passes at three timesteps (4.27-fold phase refinement;
   0.3327% finest cumulative-loss error), preserving v1 preflight rejection.
   No benchmark-specific restitution mapping is claimed; see CONTACT_DAMPING_DESIGN.md.

@@ -1,0 +1,12 @@
+{
+  "identity": "normal-viscosity-viewer-integration-v1",
+  "passed": true,
+  "backend": "metal",
+  "pytest_exit_code": 0,
+  "pytest_passed": 174,
+  "pytest_skipped": 3,
+  "skips": "Optional PyVista/explicit graphical-session rendering checks; all prior Metal and Atlas tests executed",
+  "sources_unchanged": true,
+  "test_log_sha256": "34731fe05dafdfa5c8572dbb7d97273a0697d2d8fbdbe0c8643d3939a419e368",
+  "scientific_admission": false
+}

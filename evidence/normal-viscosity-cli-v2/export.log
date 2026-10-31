@@ -1,0 +1,6 @@
+/Users/bmar5496/.matplotlib is not a writable directory
+Matplotlib created a temporary cache directory at /var/folders/ff/b6vctr0n2jjfkdtcm0dt7xdr0000gp/T/matplotlib-yt2k0zrg because there was an issue with the default path (/Users/bmar5496/.matplotlib); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+Matplotlib is building the font cache; this may take a moment.
+{
+  "path": "evidence/normal-viscosity-cli-v2/private/exports"
+}

@@ -1,0 +1,7 @@
+{
+  "identity": "normal-viscosity-cli-v1",
+  "passed": false,
+  "status": "preflight-rejected",
+  "reason": "Sum of seven declared grain/plane viscosities makes timestep exceed the unchanged conservative estimate; no trajectory executed",
+  "scientific_admission": false
+}

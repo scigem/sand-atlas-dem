@@ -1,0 +1,9 @@
+{
+  "identity": "hostun-library-quadrature-adaptive-v1",
+  "passed": false,
+  "status": "preflight-rejected",
+  "reason": "Inherited reference_source_sha256 pins predecessor reference, not deterministic library driver; no cases executed",
+  "driver_sha256": "2e55db744924decb2933632c5ec6658fa721f2bb170be158ee36f013b8e213c4",
+  "protocol_sha256": "761b80057ac5e6e6f8838c6744db3bc58f5356738345673a3d1509a46151b406",
+  "scientific_admission": false
+}

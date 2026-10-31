@@ -1,0 +1,1757 @@
+{
+  "format": "sand-dem-atlas-comparison/1",
+  "kind": "synthetic-dem",
+  "run_status": "complete",
+  "scientific_admission": false,
+  "protocol": "research",
+  "source_manifest_sha256": "a82a84d1ff4429e878d7309697129cba73b51af1f7cdf7d59fbfd0103741aef1",
+  "conventions": {
+    "stress": "compression_positive",
+    "tensor_order": "xx,xy,xz;yx,yy,yz;zx,zy,zz",
+    "stress_measure": "contact_virial_plus_peculiar_kinetic",
+    "strain": "engineering_compression_positive",
+    "volumetric_strain": "sum_of_axial_engineering_strains",
+    "void_ratio": "cell_volume_over_sum_rigid_grain_volumes_minus_one",
+    "boundary": "translating-planes",
+    "measurement_volume": "orthogonal-wall-box"
+  },
+  "units": {
+    "length": "m",
+    "stress": "Pa",
+    "time": "s",
+    "strain": "1"
+  },
+  "preparation": [
+    {
+      "kind": "wall",
+      "steps": 20,
+      "wall_velocities": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.1
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ]
+    }
+  ],
+  "warnings": [
+    "Synthetic DEM evidence, not measured experimental validation.",
+    "Finite-strain histories are not automatically compatible with infinitesimal continuum models.",
+    "Nominal void ratio ignores geometric overlap volume."
+  ],
+  "initial": {
+    "step": 0,
+    "elapsed_time": 0.0,
+    "cell": [
+      0.004999999999999999,
+      0.004999999999999999,
+      0.0026399880592877295
+    ],
+    "domain_cell": [
+      0.006000000000000003,
+      0.006000000000000003,
+      0.006000000000000003
+    ],
+    "walls": [
+      {
+        "index": 0,
+        "normal": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "offset": 0.0005,
+        "velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reaction": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reaction_moment_origin": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "active_surface_contacts": 0,
+        "power": 0.0,
+        "work": 0.0
+      },
+      {
+        "index": 1,
+        "normal": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "offset": -0.0055,
+        "velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reaction": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reaction_moment_origin": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "active_surface_contacts": 0,
+        "power": 0.0,
+        "work": 0.0
+      },
+      {
+        "index": 2,
+        "normal": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "offset": 0.0005,
+        "velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reaction": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reaction_moment_origin": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "active_surface_contacts": 0,
+        "power": 0.0,
+        "work": 0.0
+      },
+      {
+        "index": 3,
+        "normal": [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        "offset": -0.0055,
+        "velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reaction": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reaction_moment_origin": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "active_surface_contacts": 0,
+        "power": 0.0,
+        "work": 0.0
+      },
+      {
+        "index": 4,
+        "normal": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "offset": 0.00286001194071227,
+        "velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reaction": [
+          0.0,
+          0.0,
+          -0.03988214209675789
+        ],
+        "reaction_moment_origin": [
+          -0.00011705241195159033,
+          0.00013021395716350526,
+          0.0
+        ],
+        "active_surface_contacts": 2,
+        "power": 0.0,
+        "work": 0.0
+      },
+      {
+        "index": 5,
+        "normal": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "offset": -0.0055,
+        "velocity": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reaction": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reaction_moment_origin": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "active_surface_contacts": 0,
+        "power": 0.0,
+        "work": 0.0
+      }
+    ],
+    "stress": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        3.7752770455272064,
+        2.7383706665125773,
+        301.3376831018524
+      ]
+    ],
+    "contact_stress": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        3.7752770455272064,
+        2.7383706665125773,
+        301.3376831018524
+      ]
+    ],
+    "kinetic_stress": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "stress_antisymmetry": 0.021885327906280515,
+    "p": 100.44589436728414,
+    "q": 301.3376831018524,
+    "axial_strain": 6.661338147750939e-16,
+    "volumetric_strain": 6.661338147750939e-16,
+    "volume_ratio": 0.9999999999999992,
+    "log_strain": [
+      -0.0,
+      -0.0,
+      6.661338147750941e-16
+    ],
+    "void_ratio": 125.05014480176649,
+    "kinetic_energy": 0.0,
+    "elastic_energy_proxy": 7.326804052354419e-08,
+    "unbalanced_force": 1.0,
+    "max_overlap_fraction": 0.004424219951033592,
+    "friction_dissipation_last_step": 0.0,
+    "candidate_pairs": 0,
+    "active_surface_contacts": 2,
+    "active_grain_pairs": 0,
+    "coordination": 0.0,
+    "fabric": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "sliding_fraction": 0.0,
+    "cell_log_rate": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "friction_dissipation": 0.0,
+    "drag_dissipation": 0.0,
+    "cell_work": 0.0,
+    "wall_work": 0.0,
+    "normal_contact_dissipation": 0.0,
+    "normal_contact_power": 0.0,
+    "stage": 0
+  },
+  "rows": [
+    {
+      "step": 0,
+      "elapsed_time": 0.0,
+      "cell": [
+        0.004999999999999999,
+        0.004999999999999999,
+        0.0026399880592877295
+      ],
+      "domain_cell": [
+        0.006000000000000003,
+        0.006000000000000003,
+        0.006000000000000003
+      ],
+      "walls": [
+        {
+          "index": 0,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "offset": 0.0005,
+          "velocity": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reaction": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reaction_moment_origin": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "active_surface_contacts": 0,
+          "power": 0.0,
+          "work": 0.0
+        },
+        {
+          "index": 1,
+          "normal": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "offset": -0.0055,
+          "velocity": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reaction": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reaction_moment_origin": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "active_surface_contacts": 0,
+          "power": 0.0,
+          "work": 0.0
+        },
+        {
+          "index": 2,
+          "normal": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "offset": 0.0005,
+          "velocity": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reaction": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reaction_moment_origin": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "active_surface_contacts": 0,
+          "power": 0.0,
+          "work": 0.0
+        },
+        {
+          "index": 3,
+          "normal": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "offset": -0.0055,
+          "velocity": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reaction": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reaction_moment_origin": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "active_surface_contacts": 0,
+          "power": 0.0,
+          "work": 0.0
+        },
+        {
+          "index": 4,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "offset": 0.00286001194071227,
+          "velocity": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reaction": [
+            0.0,
+            0.0,
+            -0.03988214209675789
+          ],
+          "reaction_moment_origin": [
+            -0.00011705241195159033,
+            0.00013021395716350526,
+            0.0
+          ],
+          "active_surface_contacts": 2,
+          "power": 0.0,
+          "work": 0.0
+        },
+        {
+          "index": 5,
+          "normal": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "offset": -0.0055,
+          "velocity": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reaction": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reaction_moment_origin": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "active_surface_contacts": 0,
+          "power": 0.0,
+          "work": 0.0
+        }
+      ],
+      "stress": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          3.7752770455272064,
+          2.7383706665125773,
+          301.3376831018524
+        ]
+      ],
+      "contact_stress": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          3.7752770455272064,
+          2.7383706665125773,
+          301.3376831018524
+        ]
+      ],
+      "kinetic_stress": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "stress_antisymmetry": 0.021885327906280515,
+      "p": 100.44589436728414,
+      "q": 301.3376831018524,
+      "axial_strain": 6.661338147750939e-16,
+      "volumetric_strain": 6.661338147750939e-16,
+      "volume_ratio": 0.9999999999999992,
+      "log_strain": [
+        -0.0,
+        -0.0,
+        6.661338147750941e-16
+      ],
+      "void_ratio": 125.05014480176649,
+      "kinetic_energy": 0.0,
+      "elastic_energy_proxy": 7.326804052354419e-08,
+      "unbalanced_force": 1.0,
+      "max_overlap_fraction": 0.004424219951033592,
+      "friction_dissipation_last_step": 0.0,
+      "candidate_pairs": 0,
+      "active_surface_contacts": 2,
+      "active_grain_pairs": 0,
+      "coordination": 0.0,
+      "fabric": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "sliding_fraction": 0.0,
+      "cell_log_rate": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "friction_dissipation": 0.0,
+      "drag_dissipation": 0.0,
+      "cell_work": 0.0,
+      "wall_work": 0.0,
+      "normal_contact_dissipation": 0.0,
+      "normal_contact_power": 0.0,
+      "stage": 0
+    },
+    {
+      "step": 5,
+      "elapsed_time": 5e-08,
+      "cell": [
+        0.004999999999999999,
+        0.004999999999999999,
+        0.002639983059287827
+      ],
+      "domain_cell": [
+        0.006000000000000003,
+        0.006000000000000003,
+        0.006000000000000003
+      ],
+      "walls": [
+        {
+          "index": 0,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "offset": 0.0005,
+          "velocity": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reaction": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reaction_moment_origin": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "active_surface_contacts": 0,
+          "power": 0.0,
+          "work": 0.0
+        },
+        {
+          "index": 1,
+          "normal": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "offset": -0.0055,
+          "velocity": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reaction": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reaction_moment_origin": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "active_surface_contacts": 0,
+          "power": 0.0,
+          "work": 0.0
+        },
+        {
+          "index": 2,
+          "normal": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "offset": 0.0005,
+          "velocity": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reaction": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reaction_moment_origin": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "active_surface_contacts": 0,
+          "power": 0.0,
+          "work": 0.0
+        },
+        {
+          "index": 3,
+          "normal": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "offset": -0.0055,
+          "velocity": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reaction": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reaction_moment_origin": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "active_surface_contacts": 0,
+          "power": 0.0,
+          "work": 0.0
+        },
+        {
+          "index": 4,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "offset": 0.0028600169407121726,
+          "velocity": [
+            0.0,
+            0.0,
+            0.10000000149011612
+          ],
+          "reaction": [
+            -7.4250752213345095e-09,
+            -4.815771781352396e-09,
+            -0.04115384817123413
+          ],
+          "reaction_moment_origin": [
+            -0.00012079658336006105,
+            0.000134353045723401,
+            6.186039961525447e-12
+          ],
+          "active_surface_contacts": 2,
+          "power": 0.004115385003387928,
+          "work": 2.0566193192905757e-10
+        },
+        {
+          "index": 5,
+          "normal": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "offset": -0.0055,
+          "velocity": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reaction": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reaction_moment_origin": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "active_surface_contacts": 0,
+          "power": 0.0,
+          "work": 0.0
+        }
+      ],
+      "stress": [
+        [
+          1.8422146406690295e-06,
+          -5.254889573078731e-07,
+          5.60543507920993e-05
+        ],
+        [
+          1.1948277223508573e-06,
+          -3.4082278268944033e-07,
+          3.635586008192276e-05
+        ],
+        [
+          4.092078908204129,
+          2.647216079946876,
+          310.9387672020173
+        ]
+      ],
+      "contact_stress": [
+        [
+          1.8422146406688556e-06,
+          -5.25488957307986e-07,
+          5.605434795798096e-05
+        ],
+        [
+          1.1948277223507444e-06,
+          -3.4082278268951355e-07,
+          3.6355858243149366e-05
+        ],
+        [
+          4.0920789082012945,
+          2.647216079945037,
+          310.9387210147511
+        ]
+      ],
+      "kinetic_stress": [
+        [
+          1.7390566824428845e-19,
+          1.128298357590651e-19,
+          2.8341183440929735e-12
+        ],
+        [
+          1.128298357590651e-19,
+          7.320389386447161e-20,
+          1.8387733982581594e-12
+        ],
+        [
+          2.8341185399229736e-12,
+          1.8387735940881595e-12,
+          4.618726621763907e-05
+        ]
+      ],
+      "stress_antisymmetry": 0.022163523770559124,
+      "p": 103.64625623446972,
+      "q": 310.9387664513214,
+      "axial_strain": 1.8939479239366008e-06,
+      "volumetric_strain": 1.8939479239366008e-06,
+      "volume_ratio": 0.999998106052076,
+      "log_strain": [
+        -0.0,
+        -0.0,
+        1.8939497174582347e-06
+      ],
+      "void_ratio": 125.04990606935652,
+      "kinetic_energy": 1.5251007921823767e-12,
+      "elastic_energy_proxy": 7.346612562741939e-08,
+      "unbalanced_force": 1.0,
+      "max_overlap_fraction": 0.004429182969033718,
+      "friction_dissipation_last_step": 0.0,
+      "candidate_pairs": 0,
+      "active_surface_contacts": 2,
+      "active_grain_pairs": 0,
+      "coordination": 0.0,
+      "fabric": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "sliding_fraction": 0.0,
+      "cell_log_rate": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "friction_dissipation": 0.0,
+      "drag_dissipation": 0.0,
+      "cell_work": 0.0,
+      "wall_work": 2.0566193192905757e-10,
+      "normal_contact_dissipation": 6.061631665360556e-12,
+      "normal_contact_power": 0.0001194636060972698,
+      "stage": 0,
+      "wall_seconds": 0.34284012496937066,
+      "work_balance_proxy_residual": -9.90440368608958e-15
+    },
+    {
+      "step": 10,
+      "elapsed_time": 1e-07,
+      "cell": [
+        0.004999999999999999,
+        0.004999999999999999,
+        0.0026399780592879537
+      ],
+      "domain_cell": [
+        0.006000000000000003,
+        0.006000000000000003,
+        0.006000000000000003
+      ],
+      "walls": [
+        {
+          "index": 0,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "offset": 0.0005,
+          "velocity": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reaction": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reaction_moment_origin": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "active_surface_contacts": 0,
+          "power": 0.0,
+          "work": 0.0
+        },
+        {
+          "index": 1,
+          "normal": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "offset": -0.0055,
+          "velocity": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reaction": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reaction_moment_origin": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "active_surface_contacts": 0,
+          "power": 0.0,
+          "work": 0.0
+        },
+        {
+          "index": 2,
+          "normal": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "offset": 0.0005,
+          "velocity": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reaction": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reaction_moment_origin": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "active_surface_contacts": 0,
+          "power": 0.0,
+          "work": 0.0
+        },
+        {
+          "index": 3,
+          "normal": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "offset": -0.0055,
+          "velocity": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reaction": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reaction_moment_origin": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "active_surface_contacts": 0,
+          "power": 0.0,
+          "work": 0.0
+        },
+        {
+          "index": 4,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "offset": 0.002860021940712046,
+          "velocity": [
+            0.0,
+            0.0,
+            0.10000000149011612
+          ],
+          "reaction": [
+            -2.9726491490578155e-08,
+            -1.9255292471598295e-08,
+            -0.041195616126060486
+          ],
+          "reaction_moment_origin": [
+            -0.00012091951793991029,
+            0.0001344889315078035,
+            2.4846643839615545e-11
+          ],
+          "active_surface_contacts": 2,
+          "power": 0.004119561519473791,
+          "work": 4.1153594421139417e-10
+        },
+        {
+          "index": 5,
+          "normal": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "offset": -0.0055,
+          "velocity": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reaction": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reaction_moment_origin": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "active_surface_contacts": 0,
+          "power": 0.0,
+          "work": 0.0
+        }
+      ],
+      "stress": [
+        [
+          7.375371215095909e-06,
+          -2.1038132363977123e-06,
+          0.0002244155950580174
+        ],
+        [
+          4.777386431266731e-06,
+          -1.3627423667378443e-06,
+          0.0001453648877229788
+        ],
+        [
+          4.102486937386837,
+          2.644231621763535,
+          311.2548165363427
+        ]
+      ],
+      "contact_stress": [
+        [
+          7.375371215085089e-06,
+          -2.1038132364047253e-06,
+          0.0002244155503255072
+        ],
+        [
+          4.777386431259719e-06,
+          -1.3627423667423897e-06,
+          0.00014536485872921766
+        ],
+        [
+          4.102486937342105,
+          2.644231621734541,
+          311.2546315963827
+        ]
+      ],
+      "kinetic_stress": [
+        [
+          1.0819713160905557e-17,
+          7.012890542503554e-18,
+          4.473251020180259e-11
+        ],
+        [
+          7.012889795469974e-18,
+          4.545465144576535e-18,
+          2.8993761147182965e-11
+        ],
+        [
+          4.473250706851665e-11,
+          2.8993761147182965e-11,
+          0.00018493995996420737
+        ]
+      ],
+      "stress_antisymmetry": 0.02217247259731069,
+      "p": 103.75160751632383,
+      "q": 311.25481353002823,
+      "axial_strain": 3.78789583621586e-06,
+      "volumetric_strain": 3.78789583621586e-06,
+      "volume_ratio": 0.9999962121041638,
+      "log_strain": [
+        -0.0,
+        -0.0,
+        3.7879030103114094e-06
+      ],
+      "void_ratio": 125.04966733694793,
+      "kinetic_energy": 6.106696311819482e-12,
+      "elastic_energy_proxy": 7.366153198518077e-08,
+      "unbalanced_force": 0.9999999403953552,
+      "max_overlap_fraction": 0.004434071481227875,
+      "friction_dissipation_last_step": 0.0,
+      "candidate_pairs": 0,
+      "active_surface_contacts": 2,
+      "active_grain_pairs": 0,
+      "coordination": 0.0,
+      "fabric": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "sliding_fraction": 0.0,
+      "cell_log_rate": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "friction_dissipation": 0.0,
+      "drag_dissipation": 0.0,
+      "cell_work": 0.0,
+      "wall_work": 4.1153594421139417e-10,
+      "normal_contact_dissipation": 1.1945387387579665e-11,
+      "normal_contact_power": 0.00011589481437113136,
+      "stage": 0,
+      "wall_seconds": 0.0659819160355255,
+      "work_balance_proxy_residual": -7.601124590861374e-15
+    },
+    {
+      "step": 15,
+      "elapsed_time": 1.5e-07,
+      "cell": [
+        0.004999999999999999,
+        0.004999999999999999,
+        0.00263997305928808
+      ],
+      "domain_cell": [
+        0.006000000000000003,
+        0.006000000000000003,
+        0.006000000000000003
+      ],
+      "walls": [
+        {
+          "index": 0,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "offset": 0.0005,
+          "velocity": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reaction": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reaction_moment_origin": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "active_surface_contacts": 0,
+          "power": 0.0,
+          "work": 0.0
+        },
+        {
+          "index": 1,
+          "normal": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "offset": -0.0055,
+          "velocity": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reaction": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reaction_moment_origin": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "active_surface_contacts": 0,
+          "power": 0.0,
+          "work": 0.0
+        },
+        {
+          "index": 2,
+          "normal": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "offset": 0.0005,
+          "velocity": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reaction": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reaction_moment_origin": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "active_surface_contacts": 0,
+          "power": 0.0,
+          "work": 0.0
+        },
+        {
+          "index": 3,
+          "normal": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "offset": -0.0055,
+          "velocity": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reaction": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reaction_moment_origin": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "active_surface_contacts": 0,
+          "power": 0.0,
+          "work": 0.0
+        },
+        {
+          "index": 4,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "offset": 0.0028600269407119197,
+          "velocity": [
+            0.0,
+            0.0,
+            0.10000000149011612
+          ],
+          "reaction": [
+            -6.694120457950703e-08,
+            -4.3307139208081935e-08,
+            -0.04123646020889282
+          ],
+          "reaction_moment_origin": [
+            -0.00012103970220778137,
+            0.00013462176139000803,
+            5.612776909913464e-11
+          ],
+          "active_surface_contacts": 2,
+          "power": 0.004123645834624767,
+          "work": 6.176165134874623e-10
+        },
+        {
+          "index": 5,
+          "normal": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "offset": -0.0055,
+          "velocity": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reaction": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reaction_moment_origin": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "active_surface_contacts": 0,
+          "power": 0.0,
+          "work": 0.0
+        }
+      ],
+      "stress": [
+        [
+          1.6608658456998328e-05,
+          -4.737594586395721e-06,
+          0.0005053633966636468
+        ],
+        [
+          1.0744852976976973e-05,
+          -3.0649521315516514e-06,
+          0.0003269412967223048
+        ],
+        [
+          4.112664185047145,
+          2.64131325504616,
+          311.5639870480339
+        ]
+      ],
+      "contact_stress": [
+        [
+          1.6608658456875607e-05,
+          -4.737594586475189e-06,
+          0.0005053631705705694
+        ],
+        [
+          1.0744852976897504e-05,
+          -3.0649521316031103e-06,
+          0.0003269411503166478
+        ],
+        [
+          4.112664184821052,
+          2.6413132548997544,
+          311.5635705107872
+        ]
+      ],
+      "kinetic_stress": [
+        [
+          1.227214986952047e-16,
+          7.946781386607951e-17,
+          2.260930774592584e-10
+        ],
+        [
+          7.946781386607951e-17,
+          5.1459057459340395e-17,
+          1.4640565702405465e-10
+        ],
+        [
+          2.260930774592584e-10,
+          1.464056444908872e-10,
+          0.0004165372467013205
+        ]
+      ],
+      "stress_antisymmetry": 0.022180627622994376,
+      "p": 103.8546668639134,
+      "q": 311.5639802761807,
+      "axial_strain": 5.681843748717164e-06,
+      "volumetric_strain": 5.681843748717164e-06,
+      "volume_ratio": 0.9999943181562512,
+      "log_strain": [
+        -0.0,
+        -0.0,
+        5.681859890452499e-06
+      ],
+      "void_ratio": 125.04942860453932,
+      "kinetic_energy": 1.3753989266951372e-11,
+      "elastic_energy_proxy": 7.38542667022557e-08,
+      "unbalanced_force": 1.0,
+      "max_overlap_fraction": 0.0044388859532773495,
+      "friction_dissipation_last_step": 0.0,
+      "candidate_pairs": 0,
+      "active_surface_contacts": 2,
+      "active_grain_pairs": 0,
+      "coordination": 0.0,
+      "fabric": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "sliding_fraction": 0.0,
+      "cell_log_rate": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "friction_dissipation": 0.0,
+      "drag_dissipation": 0.0,
+      "cell_work": 0.0,
+      "wall_work": 6.176165134874623e-10,
+      "normal_contact_dissipation": 1.7651970163345965e-11,
+      "normal_contact_power": 0.00011237673606956378,
+      "stage": 0,
+      "wall_seconds": 0.553338750032708,
+      "work_balance_proxy_residual": -1.56246543481231e-14
+    },
+    {
+      "step": 20,
+      "elapsed_time": 2e-07,
+      "cell": [
+        0.004999999999999999,
+        0.004999999999999999,
+        0.002639968059288206
+      ],
+      "domain_cell": [
+        0.006000000000000003,
+        0.006000000000000003,
+        0.006000000000000003
+      ],
+      "walls": [
+        {
+          "index": 0,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "offset": 0.0005,
+          "velocity": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reaction": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reaction_moment_origin": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "active_surface_contacts": 0,
+          "power": 0.0,
+          "work": 0.0
+        },
+        {
+          "index": 1,
+          "normal": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "offset": -0.0055,
+          "velocity": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reaction": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reaction_moment_origin": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "active_surface_contacts": 0,
+          "power": 0.0,
+          "work": 0.0
+        },
+        {
+          "index": 2,
+          "normal": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "offset": 0.0005,
+          "velocity": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reaction": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reaction_moment_origin": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "active_surface_contacts": 0,
+          "power": 0.0,
+          "work": 0.0
+        },
+        {
+          "index": 3,
+          "normal": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "offset": -0.0055,
+          "velocity": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reaction": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reaction_moment_origin": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "active_surface_contacts": 0,
+          "power": 0.0,
+          "work": 0.0
+        },
+        {
+          "index": 4,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "offset": 0.0028600319407117935,
+          "velocity": [
+            0.0,
+            0.0,
+            0.10000000149011612
+          ],
+          "reaction": [
+            -1.191047260817868e-07,
+            -7.695975057231408e-08,
+            -0.04127637669444084
+          ],
+          "reaction_moment_origin": [
+            -0.00012115712888771668,
+            0.00013475152081809938,
+            1.0017166957032586e-10
+          ],
+          "active_surface_contacts": 2,
+          "power": 0.004127637483179569,
+          "work": 8.238989490649828e-10
+        },
+        {
+          "index": 5,
+          "normal": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "offset": -0.0055,
+          "velocity": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reaction": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "reaction_moment_origin": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "active_surface_contacts": 0,
+          "power": 0.0,
+          "work": 0.0
+        }
+      ],
+      "stress": [
+        [
+          2.955090540762256e-05,
+          -8.429348408029571e-06,
+          0.0008991668176515937
+        ],
+        [
+          1.909437338692196e-05,
+          -5.446639290002774e-06,
+          0.0005809983973473811
+        ],
+        [
+          4.122607635581341,
+          2.6384633487829996,
+          311.8662238469534
+        ]
+      ],
+      "contact_stress": [
+        [
+          2.95509054069335e-05,
+          -8.429348408475356e-06,
+          0.0008991661029722329
+        ],
+        [
+          1.9094373386476178e-05,
+          -5.4466392902911715e-06,
+          0.0005809979349892339
+        ],
+        [
+          4.122607634866662,
+          2.6384633483206414,
+          311.8654825967943
+        ]
+      ],
+      "kinetic_stress": [
+        [
+          6.890610781709419e-16,
+          4.457845235199039e-16,
+          7.146793608218094e-10
+        ],
+        [
+          4.457845235199039e-16,
+          2.8839803195328184e-16,
+          4.623581472120566e-10
+        ],
+        [
+          7.146794109545743e-10,
+          4.6235819734482146e-10,
+          0.000741250159105332
+        ]
+      ],
+      "stress_antisymmetry": 0.02218798487360874,
+      "p": 103.95541598373984,
+      "q": 311.86621179482034,
+      "axial_strain": 7.575791661107445e-06,
+      "volumetric_strain": 7.575791661107445e-06,
+      "volume_ratio": 0.9999924242083388,
+      "log_strain": [
+        -0.0,
+        -0.0,
+        7.575820357562024e-06
+      ],
+      "void_ratio": 125.04918987213071,
+      "kinetic_energy": 2.447591261611759e-11,
+      "elastic_energy_proxy": 7.404431556778945e-08,
+      "unbalanced_force": 1.0000001192092896,
+      "max_overlap_fraction": 0.004443626385182142,
+      "friction_dissipation_last_step": 0.0,
+      "candidate_pairs": 0,
+      "active_surface_contacts": 2,
+      "active_grain_pairs": 0,
+      "coordination": 0.0,
+      "fabric": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "sliding_fraction": 0.0,
+      "cell_log_rate": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "friction_dissipation": 0.0,
+      "drag_dissipation": 0.0,
+      "cell_work": 0.0,
+      "wall_work": 8.238989490649828e-10,
+      "normal_contact_dissipation": 2.3183914857338728e-11,
+      "normal_contact_power": 0.00010890940029639751,
+      "stage": 0,
+      "wall_seconds": 0.012729542097076774,
+      "work_balance_proxy_residual": -3.592265374052772e-14
+    }
+  ]
+}

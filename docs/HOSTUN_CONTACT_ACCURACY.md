@@ -204,3 +204,22 @@ improvement. These values must inform a separately frozen refinement choice;
 they do not relax any gate, admit the current uniform L2 library or replace the
 still-running full-library study. Consolidation across all 106 source poses and
 an actual GPU comparison remain required before whole-library qualification.
+
+## Terminal deterministic run and isolated follow-up
+
+The original deterministic whole-library run completed all 106 rows but failed its
+final broad source-integrity gate after separate visualization commit ff7a766 changed
+cases/CLI/simulation. Numerical operator dependencies were unchanged; this does not
+override the failed gate. The terminal audit preserves all rows, exact changes and
+execution log. Grain 38 shallow and grain 54 deeper have finest changes 8.0767%
+and 2.6276%, above the unchanged 2% reference limit. Both separately frozen
+level-six diagnostics now pass: 0.3765% and 0.29146%, with exact agreement on
+all five overlapping force levels. Neither admits the L2 production asset.
+
+`hostun-library-quadrature-adaptive-v2` is a fresh prospective rerun of every
+original pose from an isolated immutable source copy. It retains initial levels
+0..4 and extends a failed 2% finest-change case through level6, preserving exact
+overlap forces. The v1 intake rejection for an inherited predecessor-script hash
+is preserved separately; all numerical gates are unchanged. Reference acceptance,
+production quadrature selection, matching GPU comparison and assembly qualification
+remain separate gates.

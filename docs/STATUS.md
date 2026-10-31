@@ -6,8 +6,8 @@ MECHANICS_QUALIFICATION.md. Source-scale acquisition is now resolved for a docum
 resolutions are prepared. The bounded 216-sphere controller case passes; Hostun
 preparation remains open. Optional exact-feature mesh queries pass fixed-quadrature
 force checks, while source-triangle quadrature convergence is being studied.
-The latest complete Metal test run passes 166 tests, including actual Atlas request
-consumers; additional
+The latest complete Metal test run passes 174 tests, with three optional rendering
+checks skipped, including actual Atlas request consumers; additional
 bounded CPU studies are listed below. Historical entries below retain
 their original evidence identities and are superseded where explicitly stated.
 
@@ -18,6 +18,10 @@ kernels; scientific pilot acceptance remains open.
 ## Latest explicit-viscosity and reference results
 
 `normal-viscosity-integration-v1` passes all 166 tests serially on Metal.
+After merging the existing visualization commit, the independently frozen
+`normal-viscosity-viewer-integration-v1` passes 174 tests; three optional
+PyVista/graphical-session rendering checks are skipped. No rendering execution
+is claimed by this combined regression.
 The optional normal traction viscosity is explicit in SI units for grain contacts
 and each plane; it preserves separate compensated normal loss and force-evaluation
 kinematics through checkpoint /5, rollback and capacity growth. The independently
@@ -34,8 +38,20 @@ byte-identical. This observation does not override the failed frozen gate.
 `hostun-library-quadrature-terminal-audit-v1` retains the terminal log, exact rows,
 source changes and receipt. Two rows exceed the 2% numerical finest-change gate:
 grain 38 shallow (8.0767%) and grain 54 deeper (2.6276%). The grain-38 level-six
-diagnostic passes; a separately frozen grain-54 level-six diagnostic runs from an
-isolated immutable source copy. Full-library consolidation/GPU checks remain open.
+diagnostic passes; the separately frozen grain-54 level-six diagnostic also passes
+from an isolated immutable source copy, with exact overlap-level agreement and
+0.29146% final change. Full-library consolidation/GPU checks remain open.
+`hostun-library-quadrature-adaptive-v2` reruns all 106 poses in an immutable source
+copy, retaining levels zero through four and extending to level six only after a
+failed 2% reference gate. Its v1 preflight rejection (inherited predecessor-script
+hash) is retained separately. No numerical acceptance threshold changed.
+
+`normal-viscosity-cli-v2` passes actual Metal interruption at step 10, checkpoint /5
+resume to step 20, and synthetic CSV/JSON/VTK export. All five observations retain
+active wall contacts, nonnegative normal power/loss and zero cell work. Final normal
+loss is 2.31839e-11 J and wall work is 8.23899e-10 J. The v1 all-wall-viscosity
+workload failed the existing timestep bound and remains preserved; v2 declares
+viscosity on the contacting bottom plane only. This is a software smoke case.
 
 Historical entries below describe their original executed sources and scopes.
 

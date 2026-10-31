@@ -148,8 +148,13 @@ SAND_DEM_METAL=1 .venv/bin/python -m pytest -q
 .venv/bin/sand-dem benchmark --particles 10000 --resolution 64 --samples 2048 --steps 20 --repeats 3 --output runs/benchmark-10000
 ```
 
-Current checkpoints are /3 and include compensated FP32 accumulation state; older
-checkpoints are deliberately rejected. See [PRECISION.md](docs/PRECISION.md).
+Current checkpoints retain compensated FP32 state: /3 for undamped periodic or
+bounded domains, /4 for undamped planes, and /5 when normal traction viscosity is
+enabled. See [PRECISION.md](docs/PRECISION.md) and
+[contact damping](docs/CONTACT_DAMPING_DESIGN.md). `normal_viscosity` is explicit
+in N·s/m³ for grain contacts and independently for each plane; its default is zero.
+`examples/wall-viscous-smoke-v2.json` is a run/resume/export example with positive
+viscous wall loss. It is a short software check, not a calibrated sand specimen.
 
 The suite includes independent FP64 contact evaluation, analytical geometry,
 periodic contact, friction history/restart, force and torque balance, failed-step

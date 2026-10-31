@@ -1,0 +1,62 @@
+{
+  "identity": "normal-viscosity-cli-v2",
+  "passed": true,
+  "backend": "metal",
+  "paused_steps": 10,
+  "resumed_steps": 20,
+  "observations": 5,
+  "checkpoint_format": "sand-dem-checkpoint/5",
+  "final_normal_dissipation_J": 2.3183914857338728e-11,
+  "final_wall_work_J": 8.238989490649828e-10,
+  "vtk_snapshots": 1,
+  "sources_unchanged": true,
+  "scientific_admission": false,
+  "observed_channels": [
+    {
+      "step": 0,
+      "normal_contact_dissipation": 0.0,
+      "normal_contact_power": 0.0,
+      "wall_work": 0.0,
+      "cell_work": 0.0,
+      "active_surface_contacts": 2
+    },
+    {
+      "step": 5,
+      "normal_contact_dissipation": 6.061631665360556e-12,
+      "normal_contact_power": 0.0001194636060972698,
+      "wall_work": 2.0566193192905757e-10,
+      "cell_work": 0.0,
+      "active_surface_contacts": 2
+    },
+    {
+      "step": 10,
+      "normal_contact_dissipation": 1.1945387387579665e-11,
+      "normal_contact_power": 0.00011589481437113136,
+      "wall_work": 4.1153594421139417e-10,
+      "cell_work": 0.0,
+      "active_surface_contacts": 2
+    },
+    {
+      "step": 15,
+      "normal_contact_dissipation": 1.7651970163345965e-11,
+      "normal_contact_power": 0.00011237673606956378,
+      "wall_work": 6.176165134874623e-10,
+      "cell_work": 0.0,
+      "active_surface_contacts": 2
+    },
+    {
+      "step": 20,
+      "normal_contact_dissipation": 2.3183914857338728e-11,
+      "normal_contact_power": 0.00010890940029639751,
+      "wall_work": 8.238989490649828e-10,
+      "cell_work": 0.0,
+      "active_surface_contacts": 2
+    }
+  ],
+  "private_artifact_hashes": {
+    "paused/checkpoint.h5": "cf9186fc56c48679b8c8eec42513584fcdf3c729249dd37837675603562fe63d",
+    "resumed/checkpoint.h5": "e3b07cc7bd2a51e8f53956bfc7ba5b825fac6931b40fcd67e754ab9403d21677",
+    "exports/history.csv": "4b830858c80861247d2845c6728a99aa6f0c3d0b7755b97a5d01c99bca3b518e",
+    "exports/particles-000000020.vtu": "d73bcacf6a3ee508d37b35d7eba6d3c96033f86f72f4dfb2f3a64abd4b66720c"
+  }
+}
