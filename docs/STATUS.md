@@ -17,6 +17,14 @@ kernels; scientific pilot acceptance remains open.
 
 ## Latest explicit-viscosity and reference results
 
+`atlas-native-replay-v2` executes the actual Atlas native solver on all five
+analytical bridge observations with exact coordinate/order identity. Independent
+Hooke compliance and exponential void evolution pass the frozen stress/strain/void
+gates (worst 1.819e-12 Pa, 1.525e-20 and 2.221e-16 respectively). Binary, request,
+handoff and consumer sources remain unchanged. This is continuum software-path
+verification; qualified DEM loading, generic stress-binding-aware comparison and
+dedicated overlays remain open. See ATLAS_BRIDGE.md.
+
 `mixed-quadrature-box-integration-v2` passes 202 tests serially on actual Metal,
 including the actual Atlas Python/browser consumers, with three explicit graphical
 rendering skips. All 158 frozen source/test/example/case/protocol files remain

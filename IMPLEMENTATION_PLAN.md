@@ -179,7 +179,11 @@ work alongside the scientific gates below; naming a material must not infer cali
 - [ ] Complete atlas adapters and material comparison. The bounded recorded-path
   adapter checks protocol, signed stress/strain mapping, prepared origins, frozen
   approximation declarations and synthetic provenance; actual Python/browser
-  request contracts pass. Qualified DEM loading, continuum execution/comparison
+  request contracts pass. Actual native continuum replay also passes five analytical
+  fixture observations, including reversal/duplicate ordering, against independent
+  Hooke stress/strain and void-evolution checks (atlas-native-replay-v2). This is
+  bounded software coverage, not a qualified DEM response comparison.
+  Qualified DEM loading, continuum execution/comparison
   and dedicated synthetic overlays remain open (docs/ATLAS_BRIDGE.md).
 - [ ] Verify a second backend/device separately before advertising portability.
 

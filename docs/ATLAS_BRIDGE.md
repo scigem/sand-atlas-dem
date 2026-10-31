@@ -105,3 +105,26 @@ signed q, full tensor permutation, prepared-state origins, strain measures, nega
 cases and ordered reversals/duplicates. The prospective study is not evidence of
 qualified material response or browser visual QA. Real qualified DEM loading,
 continuum execution/comparison and physical experimental validation remain open.
+
+## Native continuum replay verification
+
+`atlas-native-replay-v2` runs the existing Atlas native solver on the five original
+analytical bridge observations. The request, handoff artifacts, native binary,
+consumer Python/schema/model bytes and study source are hash-frozen before
+execution. Returned coordinates must exactly preserve every original knot,
+including the reversal and duplicate. Nothing is sorted or interpolated.
+
+An independent isotropic Hooke compliance calculation checks all six stress and
+strain components at each observation; exponential void-ratio evolution is checked
+separately. Maximum errors are 1.819e-12 Pa, 1.525e-20 strain and 2.221e-16 void
+ratio, below the prospectively declared 0.002 Pa, 2e-11 and 2e-10 limits. V1 is
+retained separately; v2 adds the explicit coordinate identity check with unchanged
+numerical gates. No adjacent repository or binary was modified or rebuilt.
+
+This proves actual native continuum execution for the analytical software fixture.
+It does not turn that fixture into a GPU-produced specimen or establish agreement
+for qualified Hostun loading. The native API returns model state and strain;
+a generic comparison tool must resolve the model's explicit stress binding and
+state layout, rather than assume the first six values are stress. This study
+checks the pinned linear-elastic layout only. Dedicated comparison overlays and
+qualified material replay remain open.

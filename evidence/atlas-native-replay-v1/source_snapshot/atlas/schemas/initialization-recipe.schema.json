@@ -1,0 +1,190 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Experimental physical-time initialization recipe",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "id",
+    "model",
+    "model_sha256",
+    "sources",
+    "inputs",
+    "terms",
+    "state",
+    "initial_strain_rate"
+  ],
+  "properties": {
+    "version": {
+      "const": "experimental-initialization-recipe-0.1"
+    },
+    "id": {
+      "type": "string"
+    },
+    "model": {
+      "type": "string"
+    },
+    "model_sha256": {
+      "type": "string"
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "url",
+          "locator"
+        ],
+        "properties": {
+          "url": {
+            "type": "string"
+          },
+          "locator": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "inputs": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "shape",
+          "unit"
+        ],
+        "properties": {
+          "shape": {
+            "enum": [
+              "scalar",
+              "sym"
+            ]
+          },
+          "unit": {
+            "oneOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "1",
+                  "Pa",
+                  "s",
+                  "K"
+                ]
+              },
+              {
+                "type": "object",
+                "required": [
+                  "si"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "si": {
+                    "type": "array",
+                    "minItems": 4,
+                    "maxItems": 4,
+                    "items": {
+                      "oneOf": [
+                        {
+                          "type": "number"
+                        },
+                        {
+                          "type": "string"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "terms": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "shape",
+          "unit",
+          "expr",
+          "locator"
+        ],
+        "properties": {
+          "shape": {
+            "enum": [
+              "scalar",
+              "sym"
+            ]
+          },
+          "unit": {
+            "oneOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "1",
+                  "Pa",
+                  "s",
+                  "K"
+                ]
+              },
+              {
+                "type": "object",
+                "required": [
+                  "si"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "si": {
+                    "type": "array",
+                    "minItems": 4,
+                    "maxItems": 4,
+                    "items": {
+                      "oneOf": [
+                        {
+                          "type": "number"
+                        },
+                        {
+                          "type": "string"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "name": {
+            "type": "string"
+          },
+          "expr": {
+            "type": "string"
+          },
+          "locator": {
+            "type": "string"
+          },
+          "requires": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "state": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "initial_strain_rate": {
+      "type": "string"
+    }
+  }
+}
