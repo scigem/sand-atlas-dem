@@ -1,0 +1,121 @@
+"""Explicit Metal backend. There is deliberately no CPU fallback."""
+
+import platform
+from pathlib import Path
+
+import numpy as np
+
+
+class Metal:
+    def __init__(self, debug=False):
+        import slangpy as spy
+
+        self.spy = spy
+        self.device = spy.Device(
+            type=spy.DeviceType.metal,
+            enable_debug_layers=debug,
+            compiler_options={
+                "include_paths": [str(Path(__file__).parent / "shaders")],
+                "floating_point_mode": spy.SlangFloatingPointMode.precise,
+            },
+        )
+        if self.device.info.type != spy.DeviceType.metal:
+            raise RuntimeError("Metal device required; fallback is forbidden")
+        self.kernels = {}
+
+    def kernel(self, name, module="solver.slang"):
+        key = (module, name)
+        if key not in self.kernels:
+            p = self.device.load_program(
+                str(Path(__file__).parent / "shaders" / module), [name]
+            )
+            self.kernels[key] = self.device.create_compute_kernel(p)
+        return self.kernels[key]
+
+    def buffer(self, array=None, *, count=None, stride=4):
+        usage = (
+            self.spy.BufferUsage.shader_resource | self.spy.BufferUsage.unordered_access
+        )
+        if array is not None:
+            a = np.ascontiguousarray(array)
+            return self.device.create_buffer(size=max(4, a.nbytes), usage=usage, data=a)
+        return self.device.create_buffer(
+            element_count=max(1, count), struct_size=stride, usage=usage
+        )
+
+    def dispatch(self, name, n, encoder=None, **kwargs):
+        globals_ = {"r": kwargs.pop("r")} if "r" in kwargs else {}
+        self.kernel(name).dispatch(
+            thread_count=[max(1, int(n)), 1, 1],
+            command_encoder=encoder,
+            vars=globals_,
+            **kwargs,
+        )
+
+    def submit(self, encoder):
+        return self.device.submit_command_buffer(encoder.finish())
+
+    def read(self, buffer, dtype=np.float32, shape=None):
+        a = buffer.to_numpy().view(dtype).reshape(-1).copy()
+        return a if shape is None else a.reshape(shape)
+
+    def read_prefix(self, buffer, count, dtype=np.float32, shape=None):
+        """Read only a valid scalar prefix, without a full-capacity host copy."""
+        dtype = np.dtype(dtype)
+        if type(count) is not int or count < 0:
+            raise ValueError("Readback count must be a nonnegative integer")
+        if dtype.hasobject or dtype.itemsize == 0:
+            raise ValueError("Readback requires a fixed-size numeric dtype")
+        size = count * dtype.itemsize
+        if size > buffer.size:
+            raise ValueError("Readback prefix exceeds buffer capacity")
+        if size % 4:
+            raise ValueError("Readback prefix must be aligned to four bytes")
+        if count == 0:
+            result = np.empty(0, dtype=dtype)
+        else:
+            staging = self.buffer(count=size // 4)
+            encoder = self.device.create_command_encoder()
+            encoder.copy_buffer(staging, 0, buffer, 0, size)
+            self.submit(encoder)
+            self.device.wait()
+            result = self.read(staging, dtype)
+        return result if shape is None else result.reshape(shape)
+
+    def write_prefix(self, buffer, array):
+        """Upload only active bytes; the destination's unused tail is untouched."""
+        array = np.asarray(array)
+        if array.dtype.hasobject or array.dtype.itemsize == 0:
+            raise ValueError("Upload requires a fixed-size numeric dtype")
+        if array.nbytes > buffer.size:
+            raise ValueError("Upload prefix exceeds buffer capacity")
+        if array.nbytes % 4:
+            raise ValueError("Upload prefix must be aligned to four bytes")
+        if array.nbytes == 0:
+            return
+        staging = self.buffer(np.ascontiguousarray(array))
+        encoder = self.device.create_command_encoder()
+        encoder.copy_buffer(buffer, 0, staging, 0, array.nbytes)
+        self.submit(encoder)
+        self.device.wait()
+
+    def doctor(self):
+        x = np.linspace(-2, 2, 257, dtype=np.float32)
+        a = self.buffer(x)
+        b = self.buffer(count=len(x))
+        self.dispatch("smoke", len(x), N=len(x), a=a, b=b)
+        self.device.wait()
+        y = self.read(b)
+        if not np.allclose(y, x * x + 1, rtol=1e-6, atol=1e-6):
+            raise RuntimeError("Metal compute verification failed")
+        return dict(
+            format="sand-dem-doctor/1",
+            backend="metal",
+            adapter=str(self.device.info.adapter_name),
+            slangpy=self.spy.__version__,
+            python=platform.python_version(),
+            smoke_elements=len(x),
+            smoke_max_error=float(np.max(abs(y - (x * x + 1)))),
+            fallback=False,
+            floating_point_mode_requested="precise",
+        )

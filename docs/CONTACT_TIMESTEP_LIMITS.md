@@ -102,3 +102,12 @@ separate coordinate error. Compare accuracy over fixed physical durations and
 refinement before proposing a production timestep policy. No general Hostun
 step increase, dense assembly qualification, frictional timestep limit or
 scientific validation is established by these analytical fixtures.
+
+## Local-frame follow-up
+
+The separately identified [local-frame implementation and studies](LOCAL_FRAME_CONTACTS.md)
+repeat all original trajectories without changing physical cases or criteria.
+They reduce the original-location error and the translation difference while
+preserving this original evidence, including failures. The revised arithmetic
+and initial-position residual pass the full current Metal-enabled suite; this
+initial timestep study remains historical evidence for the previous implementation.

@@ -1,0 +1,77 @@
+[WARN] No supported shader model found, pretending to support sm_6_0.
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(178): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(178): warning :  unused variable '_S5' [-Wunused-variable]
+    uint _S5 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(178): warning :  unused variable '_S5' [-Wunused-variable]
+    uint _S5 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(372): warning :  unused variable '_S26' [-Wunused-variable]
+    uint _S26 = findPairs_0(id_2, true, &kernelContext_5);
+         ^
+2 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(178): warning :  unused variable '_S11' [-Wunused-variable]
+    uint _S11 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(178): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(178): warning :  unused variable '_S11' [-Wunused-variable]
+    uint _S11 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(178): warning :  unused variable '_S30' [-Wunused-variable]
+    uint _S30 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_8->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(178): warning :  unused variable '_S10' [-Wunused-variable]
+    uint _S10 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_2->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(618): warning :  unused variable '_S23' [-Wunused-variable]
+            uint _S23 = atomic_fetch_add_explicit(((atomic_uint device*)(r_1->control_0+int(6))), 1U, memory_order_relaxed);
+                 ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(633): warning :  unused variable '_S29' [-Wunused-variable]
+        uint _S29 = atomic_fetch_add_explicit(((atomic_uint device*)(r_1->control_0+int(6))), 1U, memory_order_relaxed);
+             ^
+3 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(178): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_1->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(178): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(178): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+0.0003 [0, 0, 1] 1.4844357868569004e-05 0.0 True
+0.005 [0, 0, 1] 1.4844351905151693e-05 0.0 True
+0.5 [0, 0, 1] 1.4844273841436493e-05 0.0 True
+5 [0, 0, 1] 1.4840388003400983e-05 0.0 True
+0.0003 [0.6, 0, 0.8] 1.1842809622264595e-05 3.5762358903524603e-06 True
+0.005 [0.6, 0, 0.8] 1.1842807995942077e-05 3.576235402442432e-06 True
+0.5 [0.6, 0, 0.8] 1.1843736084145412e-05 3.576513828932546e-06 True
+5 [0.6, 0, 0.8] 1.1998282269070493e-05 3.610662457245616e-06 True
+0.0003 [0.3333333333333333, 0.6666666666666666, 0.6666666666666666] 9.897362064030931e-06 1.1746014194497568e-06 True
+0.005 [0.3333333333333333, 0.6666666666666666, 0.6666666666666666] 9.897365858721882e-06 1.1746018666725928e-06 True
+0.5 [0.3333333333333333, 0.6666666666666666, 0.6666666666666666] 9.897851586156977e-06 1.1746591101895756e-06 True
+5 [0.3333333333333333, 0.6666666666666666, 0.6666666666666666] 1.0063494017373364e-05 1.1867193895168927e-06 True

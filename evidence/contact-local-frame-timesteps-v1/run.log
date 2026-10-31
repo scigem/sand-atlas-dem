@@ -1,0 +1,186 @@
+[WARN] No supported shader model found, pretending to support sm_6_0.
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(178): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(178): warning :  unused variable '_S5' [-Wunused-variable]
+    uint _S5 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(178): warning :  unused variable '_S5' [-Wunused-variable]
+    uint _S5 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(372): warning :  unused variable '_S26' [-Wunused-variable]
+    uint _S26 = findPairs_0(id_2, true, &kernelContext_5);
+         ^
+2 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(178): warning :  unused variable '_S11' [-Wunused-variable]
+    uint _S11 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(178): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(178): warning :  unused variable '_S11' [-Wunused-variable]
+    uint _S11 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(178): warning :  unused variable '_S30' [-Wunused-variable]
+    uint _S30 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_8->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(178): warning :  unused variable '_S10' [-Wunused-variable]
+    uint _S10 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_2->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(618): warning :  unused variable '_S23' [-Wunused-variable]
+            uint _S23 = atomic_fetch_add_explicit(((atomic_uint device*)(r_1->control_0+int(6))), 1U, memory_order_relaxed);
+                 ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(633): warning :  unused variable '_S29' [-Wunused-variable]
+        uint _S29 = atomic_fetch_add_explicit(((atomic_uint device*)(r_1->control_0+int(6))), 1U, memory_order_relaxed);
+             ^
+3 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(178): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_1->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(178): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(178): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(178): warning :  unused variable '_S22' [-Wunused-variable]
+    uint _S22 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_10->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(178): warning :  unused variable '_S5' [-Wunused-variable]
+    uint _S5 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_2->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(178): warning :  unused variable '_S5' [-Wunused-variable]
+    uint _S5 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_2->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(753): warning :  unused variable '_S3' [-Wunused-variable]
+        uint _S3 = atomic_fetch_or_explicit(((atomic_uint device*)((&kernelContext_1)->r_0->control_0+int(4))), 1U, memory_order_relaxed);
+             ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(178): warning :  unused variable '_S15' [-Wunused-variable]
+    uint _S15 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_9->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+confined 0.0001 2e-09 accurate True error 1.602796471888264e-05 failure None
+confined 0.0001 4e-09 accurate True error 6.390469836792392e-05 failure None
+confined 0.0001 8e-09 accurate True error 0.0002549147557291578 failure None
+confined 0.0001 1.6e-08 accurate True error 0.0010108414580737963 failure None
+confined 0.0001 3.2e-08 accurate True error 0.0040429893912753865 failure None
+confined 0.0001 6.4e-08 accurate False error 0.015857145173027623 failure None
+confined 0.0001 1.28e-07 accurate False error 0.06314654909019288 failure None
+confined 0.0001 1.82002747232013e-07 accurate False error 0.10477499622134838 failure None
+confined 0.0001 2.56e-07 accurate False error 0.24530966801200993 failure None
+confined 0.0001 3.64005494464026e-07 accurate False error 0.4074466594587364 failure None
+confined 0.0001 5.12e-07 accurate False error 0.8988531904710434 failure None
+confined 0.0001 5.460082416960389e-07 accurate False error 1.498457242944798 failure None
+confined 0.0001 6.916104394816493e-07 accurate False error 0.9707922900295691 failure None
+confined 0.0001 7.644115383744546e-07 accurate False error 17.19433104409659 failure ValueError: Prospective dynamic energy divergence stop
+confined 0.0001 9.100137361600649e-07 accurate False error 46.88960039183206 failure ValueError: Prospective dynamic energy divergence stop
+confined 0.0001 1.024e-06 accurate False error 2.8755577419201417e-11 failure RejectedStep: GPU step rejected: excessive penetration
+rebound 0.0001 2e-09 accurate True error 0.00017480898618405408 failure None
+rebound 0.0001 4e-09 accurate True error 0.00014108055699759008 failure None
+rebound 0.0001 8e-09 accurate True error 4.600207537429207e-05 failure None
+rebound 0.0001 1.6e-08 accurate True error 0.00023342318765784525 failure None
+rebound 0.0001 3.2e-08 accurate True error 0.0007506093645142122 failure None
+rebound 0.0001 6.4e-08 accurate True error 0.001000769622327553 failure None
+rebound 0.0001 1.28e-07 accurate True error 0.009650918310320398 failure None
+rebound 0.0001 2.56e-07 accurate False error 0.18592771928331647 failure None
+rebound 0.0001 2.57390753524675e-07 accurate False error 0.2083205308687783 failure None
+rebound 0.0001 5.12e-07 accurate False error 0.07047260159612148 failure None
+rebound 0.0001 5.1478150704935e-07 accurate False error 0.07098017747372755 failure None
+rebound 0.0001 7.721722605740251e-07 accurate False error 2.8040533001382224 failure None
+rebound 0.0001 9.78084863393765e-07 accurate False error 0.09401579529800025 failure None
+rebound 0.0001 1.024e-06 accurate False error 0.4957640314640474 failure None
+rebound 0.0001 1.0810411648036351e-06 accurate False error 1.2009919507271085 failure None
+rebound 0.0001 1.286953767623375e-06 accurate False error 4.321073985514235 failure None
+confined 0.0005 2e-09 accurate True error 3.306703983564664e-06 failure None
+confined 0.0005 4e-09 accurate True error 1.2888865735131688e-05 failure None
+confined 0.0005 8e-09 accurate True error 5.133353886367496e-05 failure None
+confined 0.0005 1.6e-08 accurate True error 0.00020312967284205773 failure None
+confined 0.0005 3.2e-08 accurate True error 0.0008075061824579474 failure None
+confined 0.0005 6.4e-08 accurate True error 0.0032293474145457493 failure None
+confined 0.0005 1.28e-07 accurate False error 0.01291202748430252 failure None
+confined 0.0005 2.56e-07 accurate False error 0.05156028852135371 failure None
+confined 0.0005 4.0697051490249265e-07 accurate False error 0.10477499622134984 failure None
+confined 0.0005 5.12e-07 accurate False error 0.20352118140157788 failure None
+confined 0.0005 8.139410298049853e-07 accurate False error 0.4074467122151475 failure None
+confined 0.0005 1.024e-06 accurate False error 0.6559937299811862 failure None
+confined 0.0005 1.220911544707478e-06 accurate False error 1.4984571512663971 failure None
+confined 0.0005 1.546487956629472e-06 accurate False error 0.9707922900295691 failure None
+confined 0.0005 1.7092761625904692e-06 accurate False error 17.19433518000696 failure ValueError: Prospective dynamic energy divergence stop
+confined 0.0005 2.0348525745124633e-06 accurate False error 46.88960452773896 failure ValueError: Prospective dynamic energy divergence stop
+rebound 0.0005 2e-09 accurate True error 0.00017394979407630087 failure None
+rebound 0.0005 4e-09 accurate True error 0.0001629583807880085 failure None
+rebound 0.0005 8e-09 accurate True error 0.00011803806203310012 failure None
+rebound 0.0005 1.6e-08 accurate True error 6.903041410413941e-05 failure None
+rebound 0.0005 3.2e-08 accurate True error 0.00022739311055660857 failure None
+rebound 0.0005 6.4e-08 accurate True error 0.0007050036099478857 failure None
+rebound 0.0005 1.28e-07 accurate True error 0.009024199469736992 failure None
+rebound 0.0005 2.56e-07 accurate False error 0.05287326576609287 failure None
+rebound 0.0005 5.12e-07 accurate False error 0.013326689856098828 failure None
+rebound 0.0005 5.75543221661067e-07 accurate False error 0.20832051140518218 failure None
+rebound 0.0005 1.024e-06 accurate False error 0.14225853861396892 failure None
+rebound 0.0005 1.151086443322134e-06 accurate False error 0.07098019694252786 failure None
+rebound 0.0005 1.7266296649832008e-06 accurate False error 2.8040532806746272 failure None
+rebound 0.0005 2.1870642423120544e-06 accurate False error 0.09401570361960394 failure None
+rebound 0.0005 2.4172815309764814e-06 accurate False error 1.2009920424107117 failure None
+rebound 0.0005 2.8777161083053346e-06 accurate False error 4.321074077199575 failure None
+confined 0.001 2e-09 accurate True error 1.9043763905147667e-06 failure None
+confined 0.001 4e-09 accurate True error 6.659402243719185e-06 failure None
+confined 0.001 8e-09 accurate True error 2.583655314147105e-05 failure None
+confined 0.001 1.6e-08 accurate True error 0.00010263743150307321 failure None
+confined 0.001 3.2e-08 accurate True error 0.00040962675951830563 failure None
+confined 0.001 6.4e-08 accurate True error 0.0016374680246232357 failure None
+confined 0.001 1.28e-07 accurate True error 0.006550916199537202 failure None
+confined 0.001 2.56e-07 accurate False error 0.02522632355634738 failure None
+confined 0.001 5.12e-07 accurate False error 0.08997182180166238 failure None
+confined 0.001 5.75543221661067e-07 accurate False error 0.10477499622134825 failure None
+confined 0.001 1.024e-06 accurate False error 0.4087862445444717 failure None
+confined 0.001 1.151086443322134e-06 accurate False error 0.4074467007555634 failure None
+confined 0.001 1.7266296649832008e-06 accurate False error 1.4984572120242179 failure None
+confined 0.001 2.1870642423120544e-06 accurate False error 0.9707932069437908 failure None
+confined 0.001 2.4172815309764814e-06 accurate False error 17.19433338600885 failure ValueError: Prospective dynamic energy divergence stop
+confined 0.001 2.8777161083053346e-06 accurate False error 46.88961428866974 failure ValueError: Prospective dynamic energy divergence stop
+rebound 0.001 2e-09 accurate True error 0.00017713580321442632 failure None
+rebound 0.001 4e-09 accurate True error 0.00017594483944225793 failure None
+rebound 0.001 8e-09 accurate True error 0.00017614274234102492 failure None
+rebound 0.001 1.6e-08 accurate True error 0.00013038567753721633 failure None
+rebound 0.001 3.2e-08 accurate True error 0.00015004529428080796 failure None
+rebound 0.001 6.4e-08 accurate True error 0.0014579774214677473 failure None
+rebound 0.001 1.28e-07 accurate True error 0.007001540046036424 failure None
+rebound 0.001 2.56e-07 accurate False error 0.029381251611741543 failure None
+rebound 0.001 5.12e-07 accurate False error 0.11615778839957469 failure None
+rebound 0.001 8.139410298049853e-07 accurate False error 0.2083204999455972 failure None
+rebound 0.001 1.024e-06 accurate False error 0.022262265168222016 failure None
+rebound 0.001 1.6278820596099706e-06 accurate False error 0.0709801361838398 failure None
+rebound 0.001 2.441823089414956e-06 accurate False error 2.804053269215042 failure None
+rebound 0.001 3.092975913258944e-06 accurate False error 0.09401576437742463 failure None
+rebound 0.001 3.4185523251809385e-06 accurate False error 1.200991981652022 failure None
+rebound 0.001 4.069705149024927e-06 accurate False error 4.321074016440883 failure None

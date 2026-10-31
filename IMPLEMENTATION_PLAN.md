@@ -52,6 +52,10 @@ million-step checkpoint to study individual-contact timestep limits. Completed
 conservatism in the existing preflight for these fixtures and a coordinate-error
 floor. Production policy remains unchanged. Irregular pair contacts, rotation,
 friction and loading-rate/refinement remain required before a new preparation.
+The subsequent [local-plane precision fix](docs/LOCAL_FRAME_CONTACTS.md) passes
+12 translated static cases, all 128 original/translated dynamic repetitions and
+the complete 286-pass/eight-skip Metal-enabled suite. It reduces coordinate
+sensitivity while retaining the original failures and production timestep policy.
 Earlier running-preparation statements below describe historical progress.
 
 Public workflow requirement clarified by the user: implement the named-material

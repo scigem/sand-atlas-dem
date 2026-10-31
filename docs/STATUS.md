@@ -1,5 +1,18 @@
 # Status and evidence
 
+## Local plane frame and initial-position precision
+
+Production plane penetration now uses a particle-centred plane offset and
+compensated projections, avoiding a rounded world-space surface point. Initial
+positions preserve their existing low-component storage. Twelve translated
+axis/oblique static cases pass, and all 96 original plus 32 translated trajectory
+cases are repeated with unchanged source hashes and numerical criteria. At 2 ns,
+the 0.1 mm rebound's original-location path error falls from 3.76% to 0.0175%;
+paired translated trajectories differ by about 1e-9 on the contact scales.
+The complete serial Metal-enabled suite passes 286 tests, with eight skips and
+all 215 frozen inputs unchanged. Production timestep policy remains unchanged;
+the preparation remains stopped. See [LOCAL_FRAME_CONTACTS.md](LOCAL_FRAME_CONTACTS.md).
+
 ## Preparation stopped; isolated contact timestep evidence
 
 The user requested termination of the ongoing Hostun preparation to investigate

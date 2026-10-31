@@ -1,0 +1,31 @@
+{
+  "files": {
+    "src/sand_atlas_dem/__init__.py": "25ef40efbf7fa452aaa142bbe8d9ac35c90756e1a6f09cdacdcd2723cdd1636d",
+    "src/sand_atlas_dem/acquisition.py": "3c9379de9c9f24b4c762ae4608e73d70b76b558d4cbdae48e75196c747594ddd",
+    "src/sand_atlas_dem/atlas_bridge.py": "efbd53d7800d9db8adfcaf6cbd8dc89905c3b195f5d4e85a370fb0c339aa9804",
+    "src/sand_atlas_dem/atlas_compare.py": "3f9acbcfc69917c0ee083c09905dfe9681283315862646b2cbfdcf31264999f2",
+    "src/sand_atlas_dem/backend.py": "60a9831c19550e40aa1e1fff84f53f71f5e00d2ae04d939f21c56692232d87db",
+    "src/sand_atlas_dem/benchmark.py": "671c6135a60604a2141cabda2213d68d8f1c91f917bf85b3d0f0b96ab4a0302e",
+    "src/sand_atlas_dem/boundaries.py": "9211d9da536033ef5e8fb2638f954056e925b83ac5d64cf2123e92f6e46db870",
+    "src/sand_atlas_dem/cases.py": "196fb7b3bd86e1708363a0df78b7362e975641b64b9f1588fa9936f8e13073ca",
+    "src/sand_atlas_dem/cli.py": "e5b831d0377ba919e5963e37b83bbc791ddda385d54e184bcb8ac6bed63fc301",
+    "src/sand_atlas_dem/geometry.py": "85056b1690a0d731b5095c096f3de41595305ea5ad25739dc71d4553a9d74fc8",
+    "src/sand_atlas_dem/gpu.py": "75edc88d185e5e3c65629d10ca99ac3f2c71fecd108057a1d6faff95b253b15f",
+    "src/sand_atlas_dem/mesh.py": "a72264dd2f8730997fa0c794e16ca45ded0a61acd1f0042456c940354211a1af",
+    "src/sand_atlas_dem/quadrature.py": "f8bc3eee681747fcc3ecddc59f8cc886b457303d324e6c55571b3e465dbd735f",
+    "src/sand_atlas_dem/qualification.py": "b59751cc6fcc81b834dd90174ff9859e21efffa389dc36bc514ced75ef41b2fb",
+    "src/sand_atlas_dem/reference.py": "972bdbec1a08a8f01097758503296d3581ab6f558145ceac70b02c27603c7730",
+    "src/sand_atlas_dem/simulation.py": "46451bd1eb1915b2650de9f1d6fd465cec268e2a2789a295199587a0afb486d5",
+    "src/sand_atlas_dem/spec.py": "b7c790ef869c748463175e737f765851baa0c2285764f0a59fc779d6d9ebf87b",
+    "src/sand_atlas_dem/util.py": "0f9dc71429a87057dc08216f3c51425d8b76be9c4fd30f2cab6c3f98b70397c2",
+    "src/sand_atlas_dem/viewer.py": "b4be76959a33d6cb0fd9ea20e35d39f0c8dc791ae4fc086e1698573eb9a3bd81",
+    "src/sand_atlas_dem/visualize.py": "d88d384f52e0ecc7a6c12e09ba306e6d18f52292c9b6c139be939ff5e1179626",
+    "src/sand_atlas_dem/shaders/diagnostic.slang": "e1da948fb7c6a0088b40b3380d92a8f13347de6603559ff8d9bfe59452207a8d",
+    "src/sand_atlas_dem/shaders/normal.slang": "5d2495d51046362734247f3507929d4b08a2fa63d76109d2f4adac0a2ddcd78e",
+    "src/sand_atlas_dem/shaders/plane.slang": "ff020384d70fc828c574f3d9853ae43fcb968f8c270e7c30b4d3aaf31cd0e7a2",
+    "src/sand_atlas_dem/shaders/scan.slang": "51900fe7d78347d2274488b1b5c328ed53714be3043d221ad1d48555e1c5cbac",
+    "src/sand_atlas_dem/shaders/solver.slang": "a38ea688a915eedd8932bdc07feda9b52a191ae1070f18fc0e5606da32f923dc",
+    "examples/contact_timestep_study.py": "6233ee729b5430dcffa9782490755256de8e824b790286830b215f0356d3bc2c",
+    "studies/contact-local-frame-origin-v1.json": "6e30417d945aa6006fc07b26dcc8be442fe68ef4433016ffa04df191820a8af3"
+  }
+}

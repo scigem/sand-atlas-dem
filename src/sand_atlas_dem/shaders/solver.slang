@@ -462,14 +462,51 @@ void contactTotal(uint id:SV_DispatchThreadID){
 }
 
 
+// Two-component sums retain cancellation residuals under Metal fast math.
+// Materialization barriers keep these error terms from being reassociated away.
+float rounded1(float x){return asfloat(asuint(x)^r.control[15]);}
+float2 wallTwoSum(float a,float b){
+    float high=rounded1(a+b),v=rounded1(high-a);
+    float low=rounded1(rounded1(a-rounded1(high-v))+rounded1(b-v));
+    return float2(high,low);
+}
+float2 wallAdd(float2 a,float b){
+    float2 sum=wallTwoSum(a.x,b);
+    return wallTwoSum(sum.x,rounded1(sum.y+a.y));
+}
+float2 wallAddDot(float2 sum,float3 a,float3 b){
+    float3 product=rounded3(a*b);
+    float3 error=rounded3(fma(a,b,-product));
+    for(uint axis=0;axis<3;axis++){
+        sum=wallAdd(sum,product[axis]);sum=wallAdd(sum,error[axis]);
+    }
+    return sum;
+}
+// Local plane offset at the grain centre; never form a world-space surface point.
+float2 wallCentreDistance(uint body,uint wall){
+    float4 plane=r.wallPlane[wall],low=r.wallRemainder[wall];
+    float3 p=r.position[body].xyz,pl=r.positionRemainder[body].xyz;
+    float2 sum=float2(-plane.w,-low.w);
+    sum=wallAddDot(sum,plane.xyz,p);
+    sum=wallAddDot(sum,plane.xyz,pl);
+    sum=wallAddDot(sum,low.xyz,p);
+    return wallAddDot(sum,low.xyz,pl);
+}
+float localWallDistance(uint body,uint wall,float3 arm){
+    float2 sum=wallCentreDistance(body,wall);
+    sum=wallAddDot(sum,r.wallPlane[wall].xyz,arm);
+    sum=wallAddDot(sum,r.wallRemainder[wall].xyz,arm);
+    return rounded1(sum.x+sum.y);
+}
+
 // Conservative fixed-normal plane bound over the reusable source-sample tree.
 bool wallClusterMayContact(uint body,uint wall,uint cluster){
     float3 low=r.meshClusterMin[cluster].xyz,high=r.meshClusterMax[cluster].xyz;
     float4 plane=r.wallPlane[wall];
     float3 normal=qinv(r.rotation[body],plane.xyz)*r.body[body].x;
     float3 center=.5*(low+high),half=.5*(high-low);
-    float base=dot(plane.xyz,r.position[body].xyz)-plane.w;
-    base+=dot(plane.xyz,r.positionRemainder[body].xyz)-r.wallRemainder[wall].w;
+    float2 centreDistance=wallCentreDistance(body,wall);
+    float base=centreDistance.x+centreDistance.y;
     float support=dot(normal,center)-dot(abs(normal),half);
     float pad=64.*1.1920928955078125e-7*(1.+abs(plane.w)+length(r.position[body].xyz)
         +length(normal)*(length(center)+length(half)));
@@ -479,8 +516,7 @@ void appendWallContact(uint body,uint wall,uint node){
     float4 point=r.sample[r.sampleInfo[r.shapeId[body]].x+node];
     float3 arm=qrot(r.rotation[body],point.xyz*r.body[body].x);
     float4 plane=r.wallPlane[wall];
-    float phi=dot(plane.xyz,r.position[body].xyz+arm)-plane.w;
-    phi+=dot(plane.xyz,r.positionRemainder[body].xyz)-r.wallRemainder[wall].w;
+    float phi=localWallDistance(body,wall,arm);
     if(!isfinite(phi)){fail(512);return;}
     if(phi>=0)return;
     if(-phi>r.c.maxOverlap*r.body[body].w)fail(4);
@@ -500,8 +536,8 @@ void collectWallContacts(uint3 group:SV_GroupID,uint lane:SV_GroupIndex){
     GroupMemoryBarrierWithGroupSync();
     if(wallGroupActive==0)return;
     float4 plane=r.wallPlane[wall];
-    float phi=dot(plane.xyz,r.position[body].xyz)-plane.w;
-    phi+=dot(plane.xyz,r.positionRemainder[body].xyz)-r.wallRemainder[wall].w;
+    float2 centreDistance=wallCentreDistance(body,wall);
+    float phi=centreDistance.x+centreDistance.y;
     float pad=64.*1.1920928955078125e-7*(1.+length(r.position[body].xyz)+abs(plane.w));
     if(phi>r.body[body].z+pad)return;
     if(r.c.meshGeometry==0){

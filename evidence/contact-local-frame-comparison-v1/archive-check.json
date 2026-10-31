@@ -1,0 +1,27 @@
+{
+  "studies": [
+    {
+      "study": "contact-local-frame-v1",
+      "files": 27,
+      "archive_matches": true,
+      "current_sources_match": true,
+      "cases": 12
+    },
+    {
+      "study": "contact-local-frame-timesteps-v1",
+      "files": 27,
+      "archive_matches": true,
+      "current_sources_match": true,
+      "cases": 96
+    },
+    {
+      "study": "contact-local-frame-origin-v1",
+      "files": 27,
+      "archive_matches": true,
+      "current_sources_match": true,
+      "cases": 32
+    }
+  ],
+  "integration_inputs_unchanged": 215,
+  "integration_passed": true
+}

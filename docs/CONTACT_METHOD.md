@@ -138,3 +138,11 @@ The plane-free periodic contract and checkpoint /3 remain supported. The current
 full Metal suite passes 145 tests with one skipped, including independent bounded
 plane force/torque/return-loss and work checks. No restitution dashpot or published
 wall-confined assembly reproduction is inferred from those results.
+
+## Local production plane frame
+
+Plane distances now use the particle-centred plane offset plus the local surface
+arm, with compensated projection and preserved initial-position residual. See
+[LOCAL_FRAME_CONTACTS.md](LOCAL_FRAME_CONTACTS.md) for the arithmetic contract,
+translated static/dynamic checks and full regression. This bounded precision fix
+leaves the production conservative timestep policy unchanged.

@@ -1,0 +1,81 @@
+{
+  "mode": "rebound",
+  "side_m": 0.0001,
+  "timestep_s": 1.28e-07,
+  "omega_rad_s": 1942571.724714528,
+  "omega_dt": 0.2486491807634596,
+  "linear_verlet_stability_threshold_s": 1.0295630140987002e-06,
+  "production_bound_s": 5.7197945227705575e-09,
+  "production_preflight": "Timestep exceeds conservative estimate 5.71979e-09 s",
+  "requested_steps": 51,
+  "completed_step": 51,
+  "failure": null,
+  "analytical_domain_exit": false,
+  "completed": true,
+  "bounded_observed": true,
+  "accurate": true,
+  "maximum_normalized_path_error": 0.009650929742148104,
+  "maximum_relative_dynamic_energy_error": 0.0024303283624291794,
+  "rows": [
+    {
+      "step": 0,
+      "time_s": 0.0,
+      "displacement_m": 1.0000000000016506e-07,
+      "velocity_m_s": -0.0,
+      "exact_displacement_m": 1.0000000000000001e-07,
+      "exact_velocity_m_s": -0.0,
+      "normalized_path_error": 1.650523107063809e-12,
+      "relative_dynamic_energy_error": 3.3011371414204405e-12,
+      "dynamic_energy_multiple": 1.0000000000033011,
+      "active_contacts": 1
+    },
+    {
+      "step": 16,
+      "time_s": 2.048e-06,
+      "displacement_m": -2.4085214657117247e-07,
+      "velocity_m_s": -0.19402097451657427,
+      "exact_displacement_m": -2.407590565420457e-07,
+      "exact_velocity_m_s": -0.19425717247145283,
+      "normalized_path_error": 0.001215903391743588,
+      "relative_dynamic_energy_error": 0.0024303283624291794,
+      "dynamic_energy_multiple": 0.9975696716375708,
+      "active_contacts": 0
+    },
+    {
+      "step": 32,
+      "time_s": 4.096e-06,
+      "displacement_m": -6.382070949911833e-07,
+      "velocity_m_s": -0.19402097451657427,
+      "exact_displacement_m": -6.385977457635811e-07,
+      "exact_velocity_m_s": -0.19425717247145283,
+      "normalized_path_error": 0.00390650772397798,
+      "relative_dynamic_energy_error": 0.0024303283624291794,
+      "dynamic_energy_multiple": 0.9975696716375708,
+      "active_contacts": 0
+    },
+    {
+      "step": 48,
+      "time_s": 6.144000000000001e-06,
+      "displacement_m": -1.0355620434111942e-06,
+      "velocity_m_s": -0.19402097451657427,
+      "exact_displacement_m": -1.0364364349851166e-06,
+      "exact_velocity_m_s": -0.19425717247145283,
+      "normalized_path_error": 0.008743915739224471,
+      "relative_dynamic_energy_error": 0.0024303283624291794,
+      "dynamic_energy_multiple": 0.9975696716375708,
+      "active_contacts": 0
+    },
+    {
+      "step": 51,
+      "time_s": 6.528e-06,
+      "displacement_m": -1.1100660962399395e-06,
+      "velocity_m_s": -0.19402097451657427,
+      "exact_displacement_m": -1.1110311892141543e-06,
+      "exact_velocity_m_s": -0.19425717247145283,
+      "normalized_path_error": 0.009650929742148104,
+      "relative_dynamic_energy_error": 0.0024303283624291794,
+      "dynamic_energy_multiple": 0.9975696716375708,
+      "active_contacts": 0
+    }
+  ]
+}

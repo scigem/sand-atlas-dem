@@ -189,7 +189,8 @@ class Engine:
         self.add("shapeId", self.ids)
         self.add("body", self.body)
         self.add("invI", f4(inertia.reshape(-1, 3)))
-        self.add("position", f4(np.asarray(positions) / l))
+        normalized_position = np.asarray(positions, dtype=float) / l
+        self.add("position", f4(normalized_position))
         self.add("velocity", np.zeros((self.n, 4), np.float32))
         self.add("rotation", np.tile(np.array([0, 0, 0, 1], np.float32), (self.n, 1)))
         for name in (
@@ -206,9 +207,12 @@ class Engine:
         for name in DAMPING_STATE:
             self.add(name, np.zeros((self.n, 4), np.float32))
         for name in RESIDUAL_STATE:
-            self.add(
-                name, np.zeros((2 if name == "cellLog" else self.n, 4), np.float32)
-            )
+            residual = np.zeros((2 if name == "cellLog" else self.n, 4), np.float32)
+            if name == "positionRemainder":
+                residual[:, :3] = normalized_position - normalized_position.astype(
+                    np.float32
+                ).astype(float)
+            self.add(name, residual)
         self.add("referencePositionRemainder", np.zeros((self.n, 4), np.float32))
         self.allocate("fabricRows", 2 * self.pair_capacity, 16)
         self.add(

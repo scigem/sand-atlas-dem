@@ -1,0 +1,29 @@
+{
+  "identity": "contact-local-frame-comparison-v1",
+  "inputs_unchanged": true,
+  "cases": [
+    {
+      "side_m": 0.0001,
+      "timestep_s": 2e-09,
+      "original_path_error": 0.03763974239874057,
+      "original_shifted_path_error": 0.0007277867864612468,
+      "local_path_error": 0.00017480898618405408,
+      "local_shifted_path_error": 0.00017480883656415428,
+      "original_normalized_translation_difference": 0.038367529185201824,
+      "local_normalized_translation_difference": 9.80118763926896e-10,
+      "local_energy_error": 2.8936330633166918e-05
+    },
+    {
+      "side_m": 0.0005,
+      "timestep_s": 2e-09,
+      "original_path_error": 0.002695436011814368,
+      "original_shifted_path_error": 0.0007289553020993315,
+      "local_path_error": 0.00017394979407630087,
+      "local_shifted_path_error": 0.00017395063411614411,
+      "original_normalized_translation_difference": 0.0034243913139136994,
+      "local_normalized_translation_difference": 1.4046923346722195e-09,
+      "local_energy_error": 2.891616832512156e-05
+    }
+  ],
+  "scope": "Paired trajectory differences at identical observation times; synthetic plane contacts only. No assembly timestep change."
+}

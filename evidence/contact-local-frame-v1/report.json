@@ -1,0 +1,418 @@
+{
+  "identity": "contact-local-frame-v1",
+  "backend": "metal",
+  "cases": [
+    {
+      "normal": [
+        0,
+        0,
+        1
+      ],
+      "centre_m": 0.0003,
+      "force_N": [
+        0.0,
+        0.0,
+        0.0010000148443576895
+      ],
+      "reference_force_N": [
+        0.0,
+        0.0,
+        0.000999999999999821
+      ],
+      "torque_N_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reference_torque_N_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "relative_force_error": 1.4844357868569004e-05,
+      "relative_torque_error": 0.0,
+      "normalized_initial_position_error": 3.755786496842898e-15,
+      "active_contacts": 1,
+      "expected_contacts": 1,
+      "passed": true
+    },
+    {
+      "normal": [
+        0,
+        0,
+        1
+      ],
+      "centre_m": 0.005,
+      "force_N": [
+        0.0,
+        0.0,
+        0.0010000148443576895
+      ],
+      "reference_force_N": [
+        0.0,
+        0.0,
+        0.0010000000000057842
+      ],
+      "torque_N_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reference_torque_N_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "relative_force_error": 1.4844351905151693e-05,
+      "relative_torque_error": 0.0,
+      "normalized_initial_position_error": 1.2018516789897274e-13,
+      "active_contacts": 1,
+      "expected_contacts": 1,
+      "passed": true
+    },
+    {
+      "normal": [
+        0,
+        0,
+        1
+      ],
+      "centre_m": 0.5,
+      "force_N": [
+        0.0,
+        0.0,
+        0.0010000148443576895
+      ],
+      "reference_force_N": [
+        0.0,
+        0.0,
+        0.0010000000000838468
+      ],
+      "torque_N_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reference_torque_N_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "relative_force_error": 1.4844273841436493e-05,
+      "relative_torque_error": 0.0,
+      "normalized_initial_position_error": 7.691850745534256e-12,
+      "active_contacts": 1,
+      "expected_contacts": 1,
+      "passed": true
+    },
+    {
+      "normal": [
+        0,
+        0,
+        1
+      ],
+      "centre_m": 5,
+      "force_N": [
+        0.0,
+        0.0,
+        0.0010000148443576895
+      ],
+      "reference_force_N": [
+        0.0,
+        0.0,
+        0.0010000000039696272
+      ],
+      "torque_N_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reference_torque_N_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "relative_force_error": 1.4840388003400983e-05,
+      "relative_torque_error": 0.0,
+      "normalized_initial_position_error": 1.0768591043747958e-10,
+      "active_contacts": 1,
+      "expected_contacts": 1,
+      "passed": true
+    },
+    {
+      "normal": [
+        0.6,
+        0,
+        0.8
+      ],
+      "centre_m": 0.0003,
+      "force_N": [
+        0.0006000071056858286,
+        0.0,
+        0.0008000094742477716
+      ],
+      "reference_force_N": [
+        0.0006000000000000552,
+        0.0,
+        0.0008000000000000738
+      ],
+      "torque_N_m": [
+        0.0,
+        -3.00003576235918e-08,
+        0.0
+      ],
+      "reference_torque_N_m": [
+        0.0,
+        -3.0000000000002763e-08,
+        0.0
+      ],
+      "relative_force_error": 1.1842809622264595e-05,
+      "relative_torque_error": 3.5762358903524603e-06,
+      "normalized_initial_position_error": 3.755786496842898e-15,
+      "active_contacts": 1,
+      "expected_contacts": 1,
+      "passed": true
+    },
+    {
+      "normal": [
+        0.6,
+        0,
+        0.8
+      ],
+      "centre_m": 0.005,
+      "force_N": [
+        0.0006000071056858286,
+        0.0,
+        0.0008000094742477716
+      ],
+      "reference_force_N": [
+        0.000600000000001031,
+        0.0,
+        0.0008000000000013748
+      ],
+      "torque_N_m": [
+        0.0,
+        -3.00003576235918e-08,
+        0.0
+      ],
+      "reference_torque_N_m": [
+        0.0,
+        -3.0000000000051554e-08,
+        0.0
+      ],
+      "relative_force_error": 1.1842807995942077e-05,
+      "relative_torque_error": 3.576235402442432e-06,
+      "normalized_initial_position_error": 1.2018516789897274e-13,
+      "active_contacts": 1,
+      "expected_contacts": 1,
+      "passed": true
+    },
+    {
+      "normal": [
+        0.6,
+        0,
+        0.8
+      ],
+      "centre_m": 0.5,
+      "force_N": [
+        0.0006000071056858286,
+        0.0,
+        0.0008000094742477716
+      ],
+      "reference_force_N": [
+        0.0005999999994441847,
+        0.0,
+        0.000799999999258913
+      ],
+      "torque_N_m": [
+        0.0,
+        -3.00003576235918e-08,
+        0.0
+      ],
+      "reference_torque_N_m": [
+        0.0,
+        -2.999999997220924e-08,
+        0.0
+      ],
+      "relative_force_error": 1.1843736084145412e-05,
+      "relative_torque_error": 3.576513828932546e-06,
+      "normalized_initial_position_error": 7.691850745534256e-12,
+      "active_contacts": 1,
+      "expected_contacts": 1,
+      "passed": true
+    },
+    {
+      "normal": [
+        0.6,
+        0,
+        0.8
+      ],
+      "centre_m": 5,
+      "force_N": [
+        0.0006000072168542722,
+        0.0,
+        0.000800009585416215
+      ],
+      "reference_force_N": [
+        0.0006000000001103186,
+        0.0,
+        0.0008000000001470916
+      ],
+      "torque_N_m": [
+        0.0,
+        -3.000036107176172e-08,
+        0.0
+      ],
+      "reference_torque_N_m": [
+        0.0,
+        -3.000000000551593e-08,
+        0.0
+      ],
+      "relative_force_error": 1.1998282269070493e-05,
+      "relative_torque_error": 3.610662457245616e-06,
+      "normalized_initial_position_error": 1.0768591043747958e-10,
+      "active_contacts": 1,
+      "expected_contacts": 1,
+      "passed": true
+    },
+    {
+      "normal": [
+        0.3333333333333333,
+        0.6666666666666666,
+        0.6666666666666666
+      ],
+      "centre_m": 0.0003,
+      "force_N": [
+        0.0006666732649079685,
+        0.001333346529815937,
+        0.001333346529815937
+      ],
+      "reference_force_N": [
+        0.0006666666666665925,
+        0.001333333333333185,
+        0.001333333333333185
+      ],
+      "torque_N_m": [
+        0.0,
+        -1.666683278039059e-08,
+        1.666683278039059e-08
+      ],
+      "reference_torque_N_m": [
+        0.0,
+        -1.6666666666664814e-08,
+        1.6666666666664814e-08
+      ],
+      "relative_force_error": 9.897362064030931e-06,
+      "relative_torque_error": 1.1746014194497568e-06,
+      "normalized_initial_position_error": 3.755786496842898e-15,
+      "active_contacts": 2,
+      "expected_contacts": 2,
+      "passed": true
+    },
+    {
+      "normal": [
+        0.3333333333333333,
+        0.6666666666666666,
+        0.6666666666666666
+      ],
+      "centre_m": 0.005,
+      "force_N": [
+        0.0006666732649079685,
+        0.001333346529815937,
+        0.001333346529815937
+      ],
+      "reference_force_N": [
+        0.0006666666666640627,
+        0.0013333333333281254,
+        0.0013333333333281254
+      ],
+      "torque_N_m": [
+        0.0,
+        -1.666683278039059e-08,
+        1.666683278039059e-08
+      ],
+      "reference_torque_N_m": [
+        0.0,
+        -1.6666666666601568e-08,
+        1.6666666666601568e-08
+      ],
+      "relative_force_error": 9.897365858721882e-06,
+      "relative_torque_error": 1.1746018666725928e-06,
+      "normalized_initial_position_error": 1.2018516789897274e-13,
+      "active_contacts": 2,
+      "expected_contacts": 2,
+      "passed": true
+    },
+    {
+      "normal": [
+        0.3333333333333333,
+        0.6666666666666666,
+        0.6666666666666666
+      ],
+      "centre_m": 0.5,
+      "force_N": [
+        0.0006666732649079685,
+        0.001333346529815937,
+        0.001333346529815937
+      ],
+      "reference_force_N": [
+        0.0006666666663402476,
+        0.0013333333326804953,
+        0.0013333333326804953
+      ],
+      "torque_N_m": [
+        0.0,
+        -1.666683278039059e-08,
+        1.666683278039059e-08
+      ],
+      "reference_torque_N_m": [
+        0.0,
+        -1.6666666658506193e-08,
+        1.6666666658506193e-08
+      ],
+      "relative_force_error": 9.897851586156977e-06,
+      "relative_torque_error": 1.1746591101895756e-06,
+      "normalized_initial_position_error": 7.691850745534256e-12,
+      "active_contacts": 2,
+      "expected_contacts": 2,
+      "passed": true
+    },
+    {
+      "normal": [
+        0.3333333333333333,
+        0.6666666666666666,
+        0.6666666666666666
+      ],
+      "centre_m": 5,
+      "force_N": [
+        0.0006666733760764121,
+        0.0013333467521528242,
+        0.0013333467521528242
+      ],
+      "reference_force_N": [
+        0.0006666666670803964,
+        0.0013333333341607927,
+        0.0013333333341607927
+      ],
+      "torque_N_m": [
+        0.0,
+        -1.666683450447555e-08,
+        1.666683450447555e-08
+      ],
+      "reference_torque_N_m": [
+        0.0,
+        -1.666666667700991e-08,
+        1.666666667700991e-08
+      ],
+      "relative_force_error": 1.0063494017373364e-05,
+      "relative_torque_error": 1.1867193895168927e-06,
+      "normalized_initial_position_error": 1.0768591043747958e-10,
+      "active_contacts": 2,
+      "expected_contacts": 2,
+      "passed": true
+    }
+  ],
+  "sources_unchanged": true,
+  "passed": true,
+  "scientific_admission": false,
+  "scope": "Frozen analytical six-face-centre static traction, all original sampled areas; translation spans centre/side 3 to50000. Expected forces and centre torques evaluated independently from SI plane equations in FP64. No timestep preflight bypass, no altered contact properties. This is bounded precision verification, not mesh or material qualification."
+}

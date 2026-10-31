@@ -1,0 +1,69 @@
+{
+  "mode": "confined",
+  "side_m": 0.0001,
+  "timestep_s": 1.28e-07,
+  "omega_rad_s": 2747211.27897378,
+  "omega_dt": 0.35164304370864385,
+  "linear_verlet_stability_threshold_s": 7.28010988928052e-07,
+  "production_bound_s": 4.670192671451294e-09,
+  "production_preflight": "Timestep exceeds conservative estimate 4.67019e-09 s",
+  "requested_steps": 36,
+  "completed_step": 36,
+  "failure": null,
+  "analytical_domain_exit": false,
+  "completed": true,
+  "bounded_observed": true,
+  "accurate": false,
+  "maximum_normalized_path_error": 0.06314654909019288,
+  "maximum_relative_dynamic_energy_error": 0.02793189349644587,
+  "rows": [
+    {
+      "step": 0,
+      "time_s": 0.0,
+      "displacement_m": 1.0000000000287557e-07,
+      "velocity_m_s": 0.0,
+      "exact_displacement_m": 1.0000000000000001e-07,
+      "exact_velocity_m_s": -0.0,
+      "normalized_path_error": 2.8755577419201417e-11,
+      "relative_dynamic_energy_error": 5.751443765689146e-11,
+      "dynamic_energy_multiple": 1.0000000000575144,
+      "active_contacts": 2
+    },
+    {
+      "step": 16,
+      "time_s": 2.048e-06,
+      "displacement_m": 8.094992744265422e-08,
+      "velocity_m_s": 0.15878194679866225,
+      "exact_displacement_m": 7.918911662524463e-08,
+      "exact_velocity_m_s": 0.1677618214626872,
+      "normalized_path_error": 0.03268723717303379,
+      "relative_dynamic_energy_error": 0.010655811866354115,
+      "dynamic_energy_multiple": 0.9893441881336459,
+      "active_contacts": 2
+    },
+    {
+      "step": 32,
+      "time_s": 4.096e-06,
+      "displacement_m": 3.105773293057834e-08,
+      "velocity_m_s": 0.25706761888872615,
+      "exact_displacement_m": 2.5418323837731857e-08,
+      "exact_velocity_m_s": 0.265698208901444,
+      "normalized_path_error": 0.056394090928464834,
+      "relative_dynamic_energy_error": 0.02793189349644587,
+      "dynamic_energy_multiple": 0.9720681065035541,
+      "active_contacts": 2
+    },
+    {
+      "step": 36,
+      "time_s": 4.608000000000001e-06,
+      "displacement_m": 9.873975472061286e-08,
+      "velocity_m_s": -0.042799480230153,
+      "exact_displacement_m": 9.956991188398401e-08,
+      "exact_velocity_m_s": -0.025451789041268064,
+      "normalized_path_error": 0.06314654909019288,
+      "relative_dynamic_energy_error": 0.0007747932906920774,
+      "dynamic_energy_multiple": 0.9992252067093079,
+      "active_contacts": 2
+    }
+  ]
+}

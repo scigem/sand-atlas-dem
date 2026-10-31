@@ -1,0 +1,9 @@
+{
+  "identity": "contact-local-frame-integration-v1",
+  "returncode": 0,
+  "source_files": 215,
+  "sources_unchanged": true,
+  "backend": "metal",
+  "passed": true,
+  "scope": "Complete current pytest suite with explicit serial Metal; environment-dependent skips retained in log. No new Atlas binary build or material admission."
+}
