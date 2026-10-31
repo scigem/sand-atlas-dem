@@ -1,0 +1,35 @@
+{
+  "archives": {
+    "active-contact-timestep-v1": {
+      "files": 68,
+      "archive_verified": true,
+      "pytest_returncode": 0
+    },
+    "active-contact-timestep-v2": {
+      "files": 222,
+      "archive_verified": true,
+      "pytest_returncode": 1
+    },
+    "active-contact-timestep-v3": {
+      "files": 222,
+      "archive_verified": true,
+      "pytest_returncode": 1
+    },
+    "active-contact-timestep-v4": {
+      "files": 222,
+      "archive_verified": true,
+      "pytest_returncode": 0
+    },
+    "active-contact-timestep-v5": {
+      "files": 222,
+      "archive_verified": true,
+      "pytest_returncode": 0
+    }
+  },
+  "current_sources_verified": true,
+  "measurements": {
+    "initial_contact_limit_seconds": 9.975630203431382e-07,
+    "legacy_limit_seconds": 7.528265718981036e-09,
+    "initial_limit_ratio": 132.5090077290949
+  }
+}

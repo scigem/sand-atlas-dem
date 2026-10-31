@@ -137,3 +137,8 @@ the passing isolated-pair steps here, even at near-current stiffness. These resu
 motivate that work; they do not authorize increasing a full specimen's timestep,
 selecting kappa 1000 by default, or restarting the interrupted preparation under
 its old study identity. Calibration and validation remain separate requirements.
+
+The subsequent opt-in contact-aware implementation and its separate synthetic
+multi-contact/rotational qualification are recorded in
+[CONTACT_TIMESTEP_POLICY.md](CONTACT_TIMESTEP_POLICY.md). This does not change the
+above112 trajectories, stiffness choices or retained failures.

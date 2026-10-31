@@ -877,3 +877,19 @@ uses the original preparation's archived solver, restores three identical
 checkpoint states, and explicitly preserves drag in its timestamped steps. Eight
 resolver contracts and full 212-test CPU integration pass; no profiling GPU
 execution is inferred. See [HOSTUN_RUNTIME_COST.md](HOSTUN_RUNTIME_COST.md).
+
+## Active-contact timestep policy — 2026-11-01
+
+Implemented an explicit `active-contact` experiment policy in the production Metal
+solver, retaining the conservative default and fixed timestep. Nodal active-area
+stiffness/damping sums include translation, rotation, endpoint coupling and
+Coulomb coupling. Committed/trial checks reject advancement chunks with rollback;
+restart recomputes estimates. Dense 27-grain/three-grain rotational refinement,
+independent rate checks, contact-creation rejection and retained revisions are in
+[CONTACT_TIMESTEP_POLICY.md](CONTACT_TIMESTEP_POLICY.md). Current qualification is
+bounded synthetic software evidence; irregular-grain dense assembly and material
+admission remain open. No preparation restart or pressure-normalized default.
+
+The final policy revision passes 302 tests with eight skips on actual Metal;
+all 222 frozen inputs and all five retained study archives verify unchanged.
+Receipt: `evidence/active-contact-timestep-v5/`.

@@ -10,7 +10,7 @@ void smoke(uint tid: SV_DispatchThreadID, uniform uint N,
 }
 
 struct Config {
-    uint N; uint shapes; uint pairCapacity; uint contactCapacity;
+    uint activeTimestep; uint N; uint shapes; uint pairCapacity; uint contactCapacity;
     uint binCapacity; uint binCount; uint3 bins; uint hashSize;
     float dt; float kn; float kt; float mu; float normalViscosity;
     float skin; float drag; float maxOverlap; uint historyStep;
@@ -80,6 +80,7 @@ struct Resources {
     RWStructuredBuffer<uint> heads;
     RWStructuredBuffer<uint> next;
     RWStructuredBuffer<float4> particleStress; // 3 rows per particle, contact contribution
+    RWStructuredBuffer<float4> timestepRows; // frozen-contact elastic frequency^2, viscous rate
     RWStructuredBuffer<float4> particleDiagnostic; // kinetic, elastic proxy, force norm, contact force norms
     RWStructuredBuffer<float4> diagnosticRows;
     RWStructuredBuffer<float4> accumulated; // friction loss, drag loss, cell work, reserved
@@ -651,12 +652,28 @@ void buildHistoryHash(uint id:SV_DispatchThreadID){
 void gather(uint id:SV_DispatchThreadID){
     if(id>=r.c.N||r.control[0]!=0)return;
     float3 f=0,t=0;float3 stress0=0,stress1=0,stress2=0;float energy=0,denom=0,maxDepth=0,dissipation=0,normalPower=0;
+    float stiffnessRate=0,viscousRate=0;
+    float inverseInertia=max(max(dot(abs(r.invI[3*id].xyz),float3(1)),dot(abs(r.invI[3*id+1].xyz),float3(1))),dot(abs(r.invI[3*id+2].xyz),float3(1)));
     uint entry=r.heads[id];uint visited=0;
     while(entry!=EMPTY){
         if(visited++>2*r.c.contactCapacity){fail(128);return;}
         uint contact=entry/2;bool source=(entry&1)==0;uint4 key=r.meta[contact];
         float3 force=r.contactForce[contact].xyz;
         float3 arm=r.pointDepth[contact].xyz;
+        if(r.c.activeTimestep!=0){
+            bool wall=key.y>=r.c.N;
+            float3 localArm=source?arm:arm-centerBranch(key.x,key.y);
+            // Spectral bound for frozen contact geometry in mass-normalized 6D.
+            // Coulomb coupling adds mu*kn (and mu*viscosity).
+            // Pair factor 2 bounds the off-diagonal coupling; wall is fixed.
+            float mobility=1/r.body[id].y+dot(localArm,localArm)*inverseInertia;
+            float4 material=float4(r.c.kn,r.c.kt,r.c.mu,r.c.normalViscosity);
+            if(wall)material=r.wallMaterial[key.y-r.c.N];
+            float area=r.normalArea[contact].w*(wall?1:.5);
+            float coupling=wall?1:2;
+            stiffnessRate+=coupling*area*(material.x*(1+material.z)+material.y)*mobility;
+            viscousRate+=coupling*area*material.w*(1+material.z)*mobility;
+        }
         if(key.y>=r.c.N){
             f+=force;t+=cross(arm,force);
             stress0-=force.x*arm;stress1-=force.y*arm;stress2-=force.z*arm;
@@ -673,12 +690,34 @@ void gather(uint id:SV_DispatchThreadID){
         dissipation+=.5*r.slip[contact].w;normalPower+=.5*r.normalLossPower[contact];
         entry=r.next[entry];
     }
+    r.timestepRows[id]=float4(stiffnessRate,viscousRate,0,0);
     float4 normalState=r.normalDamping[id];normalState.z=normalPower;r.normalDamping[id]=normalState;
     r.force[id]=float4(f,maxDepth);r.torque[id]=float4(t,dissipation);
     r.particleStress[3*id]=float4(stress0,0);r.particleStress[3*id+1]=float4(stress1,0);r.particleStress[3*id+2]=float4(stress2,0);
     float kinetic=.5*(r.body[id].y*dot(r.velocity[id].xyz,r.velocity[id].xyz)+dot(r.momentum[id].xyz,omega(id)));
     r.particleDiagnostic[id]=float4(kinetic,energy,length(f),denom);
     accumulate(id,float4(dissipation,0,0,0));
+}
+
+// Separate dispatch makes a rejection visible before any particle starts a kick.
+// Trial contacts are checked again before the final kick; host rollback is atomic.
+[shader("compute")][numthreads(64,1,1)]
+void checkContactTimestep(uint id:SV_DispatchThreadID){
+    if(id>=r.c.N||r.control[0]!=0||r.c.dt==0)return;
+    float dt=r.c.dt;float2 rates=r.timestepRows[id].xy;
+    float3 v=r.velocity[id].xyz+r.velocityRemainder[id].xyz;
+    float speed=length(v)+dt*length(r.force[id].xyz)/r.body[id].y;
+    float inverseInertia=max(max(dot(abs(r.invI[3*id].xyz),float3(1)),dot(abs(r.invI[3*id+1].xyz),float3(1))),dot(abs(r.invI[3*id+2].xyz),float3(1)));
+    // Bound spin through angular momentum, including torque-free anisotropy.
+    float spin=inverseInertia*(length(r.momentum[id].xyz+r.momentumRemainder[id].xyz)+dt*length(r.torque[id].xyz));
+    float wallSpeed=0;
+    for(uint w=0;w<r.c.wallCount;w++)wallSpeed=max(wallSpeed,length(r.wallVelocity[w].xyz));
+    // Prevent grossly underresolved flight, rotation and imposed cell strain too.
+    float motion=dt*(speed+r.body[id].z*spin+wallSpeed);
+    bool finite=all(isfinite(rates))&&isfinite(motion)&&isfinite(spin);
+    if(!finite){fail(512);return;}
+    if(dt*sqrt(rates.x)>.1||dt*rates.y>.1||dt*spin>.01||
+       motion>.25*r.c.skin||any(abs(r.cell[1].xyz)*dt>.01))fail(8192);
 }
 
 // Each (wall,body) owns its rows; only integer atomics collect contacts.

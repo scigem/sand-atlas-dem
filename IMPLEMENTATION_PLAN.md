@@ -281,3 +281,14 @@ steps from the 500k checkpoint to the nominal 0.45 density floor. Holding the
 observed cost fixed gives about 22 wall hours for compression alone, not a
 completion ETA or dense-performance claim. See docs/HOSTUN_RUNTIME_COST.md;
 subsystem profiling and requalified optimization remain required.
+
+## Contact-aware timestep implementation (2026-11-01)
+
+The opt-in active-contact policy is implemented in the production Metal path.
+It sums active nodal stiffness/damping with translational and rotational mobility,
+checks committed/trial contact sets, and rolls back rejected advancement chunks.
+The declared timestep stays fixed; the legacy default remains. Qualification
+receipts, retained revisions and remaining scope are described in
+[CONTACT_TIMESTEP_POLICY.md](docs/CONTACT_TIMESTEP_POLICY.md). This closes the bounded
+software implementation task; irregular dense-assembly/loading-rate and material
+qualification remain separate open studies. The stopped preparation stays stopped.

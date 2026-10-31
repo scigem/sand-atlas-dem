@@ -1,0 +1,17 @@
+{
+  "identity": "hostun-local-field-refinement-v1",
+  "frozen_before_execution": true,
+  "library": "assets/private/hostun-30-r64-s2048.h5",
+  "library_sha256": "1bc9f37a22b402ada31495ea7ff1ebef4bb6a27a26d68a8333f7f84a12ad16b7",
+  "parent_report": "evidence/hostun-source-triangle-contact-v1/report.json",
+  "parent_report_sha256": "88a455e49c4693830886437f21d0369b96dfb4008022e8315199ab8aa6257c6c",
+  "resolutions": [
+    32,
+    64,
+    128,
+    256,
+    512
+  ],
+  "selection_limit_max_relative_force_error": 0.1,
+  "scope": "Resolution selection diagnostic at unchanged poses and quadrature; full field baking and independent surface quadrature still required."
+}

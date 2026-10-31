@@ -1,0 +1,12 @@
+{
+  "identity": "atlas-native-replay-v1",
+  "atlas_root": "/Users/bmar5496/code/constitutive-atlas",
+  "handoff": "/private/tmp/sand-atlas-dem-walls/evidence/atlas-bridge-software-v3/handoff",
+  "request_sha256": "ec9d5e3e9a5075914742e059b9ebe21f33f6fba2cb93ce3dc9e769b9467d8852",
+  "solver": "/Users/bmar5496/code/constitutive-atlas/build/atlas_solver",
+  "solver_sha256": "da23f66eda19e4b14c3eea85422572809b87e24d37ca6ebdf8f4a05f21af2a82",
+  "maximum_stress_error_Pa": 0.002,
+  "maximum_strain_error": 2e-11,
+  "void_ratio_error": 2e-10,
+  "scope": "Five original ordered analytical handoff observations, retaining reversal and duplicate. Execute existing Atlas native solver without rebuilding or modifying adjacent repository. Independent Hooke compliance and exponential void-ratio evolution; software verification only, no qualified DEM loading or scientific admission."
+}

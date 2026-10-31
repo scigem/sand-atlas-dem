@@ -217,3 +217,9 @@ or downloaded Sand Atlas geometry are bundled in version control.
 The current collector also rejects conservative spatial groups of surface nodes,
 retaining original sample keys. This extension passes the 46-test integrated device/reference suite
 and all ten static Hostun force cases; its own sustained timings are pending.
+
+An opt-in [active-contact timestep policy](docs/CONTACT_TIMESTEP_POLICY.md) uses
+current contact areas and rotational mobility instead of the whole surface. Set
+`"timestep_policy": "active-contact"` in a complete experiment/case. Device checks
+reject unsafe chunks with rollback; this does not automatically choose a timestep
+or qualify a material. The default remains `"conservative"`.

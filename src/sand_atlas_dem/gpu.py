@@ -21,6 +21,7 @@ ERRORS = {
     1024: "mesh traversal stack capacity",
     2048: "nonperiodic domain escape",
     4096: "invalid boundary box",
+    8192: "active-contact timestep bound",
 }
 
 
@@ -171,7 +172,7 @@ class Engine:
             + 8 * self.hash_size
             + 64 * self.pair_capacity
             + 8 * self.bin_count * self.bin_capacity
-            + 1152 * self.n
+            + 1184 * self.n
         )
         estimated += 160 * self.wall_count * self.n + 256 * self.wall_count
         if spec.contact_geometry == "mesh":
@@ -201,6 +202,7 @@ class Engine:
             "particleDiagnostic",
         ):
             self.add(name, np.zeros((self.n, 4), np.float32))
+        self.add("timestepRows", np.zeros((self.n, 4), np.float32))
         self.add("particleStress", np.zeros((3 * self.n, 4), np.float32))
         self.add("diagnosticRows", np.zeros((8 * self.n, 4), np.float32))
         self.add("accumulated", np.zeros((self.n, 4), np.float32))
@@ -347,6 +349,7 @@ class Engine:
             "pairOffsets",
             "particleStress",
             "particleDiagnostic",
+            "timestepRows",
             "accumulated",
             "referencePositionRemainder",
             *RESIDUAL_STATE,
@@ -362,6 +365,8 @@ class Engine:
         }
 
     def _preflight_dt(self):
+        if self.spec.timestep_policy == "active-contact":
+            return  # Device checks committed and trial contact sets every step.
         limits = []
         for i, s in zip(self.ids, self.scales):
             sh = self.library.shapes[int(i)]
@@ -479,6 +484,7 @@ class Engine:
         new = self.history_buffers[self.active]
         old = self.history_buffers[1 - self.active]
         c = {
+            "activeTimestep": int(self.spec.timestep_policy == "active-contact"),
             "N": self.n,
             "shapes": len(self.library.shapes),
             "pairCapacity": self.pair_capacity,
@@ -546,6 +552,21 @@ class Engine:
         self.dispatch("gather", self.n, e, b)
         if self.wall_count:
             self.dispatch("gatherWallRows", self.n * self.wall_count, e, b)
+        if self.spec.timestep_policy == "active-contact":
+            self.dispatch("checkContactTimestep", self.n, e, b)
+
+    def timestep_limits(self):
+        """Per-particle frozen-contact elastic/viscous estimates in seconds.
+
+        Motion limits are additionally checked on device. No timestep is changed.
+        """
+        if self.spec.timestep_policy != "active-contact":
+            raise ValueError("Contact limits require active-contact policy")
+        rows = self.m.read(self.buffers["timestepRows"], shape=(self.n, 4))
+        with np.errstate(divide="ignore"):
+            elastic = 0.1 / np.sqrt(rows[:, 0].astype(float)) * self.time_unit
+            viscous = 0.1 / rows[:, 1].astype(float) * self.time_unit
+        return {"elastic_seconds": elastic, "viscous_seconds": viscous}
 
     def initialize(self):
         e = self.m.device.create_command_encoder()
@@ -683,6 +704,8 @@ class Engine:
                 )
         for _ in range(steps):
             b = self.bindings(drag=drag)
+            if self.spec.timestep_policy == "active-contact":
+                self.dispatch("checkContactTimestep", self.n, e, b)
             self.dispatch("beginStep", self.n, e, b)
             self.dispatch("advanceCell", 1, e, b)
             if self.wall_count:
@@ -905,6 +928,10 @@ class Engine:
         e = self.m.device.create_command_encoder()
         b = self.bindings()
         e.write_timestamp(pool, 0)
+        if self.spec.timestep_policy == "active-contact":
+            raise ValueError(
+                "Use advance for active-contact policy: profiling has no rollback"
+            )
         self.dispatch("beginStep", self.n, e, b)
         self.dispatch("advanceCell", 1, e, b)
         if self.wall_count:

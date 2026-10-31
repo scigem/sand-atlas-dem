@@ -1,0 +1,43 @@
+.............................................ss..................ss..... [ 23%]
+.s..............................F....................................... [ 46%]
+........................................................................ [ 69%]
+......................................................................ss [ 93%]
+s....................                                                    [100%]
+=================================== FAILURES ===================================
+_____________________ test_active_patch_allows_larger_step _____________________
+
+metal = <sand_atlas_dem.backend.Metal object at 0x10eec08f0>
+record_property = <function record_property.<locals>.append_property at 0x10eea5260>
+
+    @pytest.mark.metal
+    @metal_test[1]
+    def test_active_patch_allows_larger_step(metal, record_property):
+        sh = with_face_quadrature(
+            from_mesh(
+                trimesh.creation.icosphere(subdivisions=2, radius=5e-5),
+                unit="m",
+                resolution=8,
+                samples=32,
+            ),
+            rule="gauss3",
+            subdivisions=2,
+        )
+        e = engine(metal, sh, dt=1e-8, walls=1)
+        e.initialize()
+        limit = float(e.timestep_limits()["elastic_seconds"][0])
+        # Independently reconstruct legacy whole-surface preflight, same shape/material.
+        stiffness = 3e12 * sh.areas.sum()
+        old = 0.1 * np.sqrt(
+            min(
+                2650 * sh.volume / stiffness,
+                np.linalg.eigvalsh(sh.inertia * 2650).min() / (stiffness * sh.radius**2),
+            )
+        )
+        assert limit > 2 * old
+>       assert e.state()["contacts"] > 0
+E       assert 0 > 0
+
+tests/test_contact_timestep_policy.py:270: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_contact_timestep_policy.py::test_active_patch_allows_larger_step
+1 failed, 300 passed, 8 skipped in 55.05s

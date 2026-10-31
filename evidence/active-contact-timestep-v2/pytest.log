@@ -1,0 +1,116 @@
+.............................................ss..................ss..... [ 23%]
+.s.............................FF....................................... [ 46%]
+........................................................................ [ 69%]
+......................................................................ss [ 93%]
+s....................                                                    [100%]
+=================================== FAILURES ===================================
+_________________ test_coupled_rotating_chain_refinement[True] _________________
+
+metal = <sand_atlas_dem.backend.Metal object at 0x1116359a0>
+cube = Shape(id='grain', vertices=TrackedArray([[-5.e-05, -5.e-05, -5.e-05],
+              [-5.e-05, -5.e-05,  5.e-05],
+     ...'resolution': 8, 'sample_count': 16, 'sdf_sign': 'negative_inside', 'sampling': 'scrambled_sobol_area', 'repairs': []})
+dense = True
+
+    @pytest.mark.metal
+    @metal_test[1]
+    @pytest.mark.parametrize("dense", [False, True])
+    def test_coupled_rotating_chain_refinement(metal, cube, dense):
+        # Three grains, two contacts/body in the middle, sticking/sliding plus spin.
+        positions = [[0.005 + i * 0.999e-4, 0.005, 0.005] for i in range(3)]
+        if dense:
+            positions = 0.005 + np.indices((3, 3, 3)).reshape(3, -1).T * 0.999e-4
+        n = len(positions)
+        outputs = []
+        for dt, steps in [(1e-9, 2048), (2e-9, 1024), (8e-9, 256)]:
+            e = engine(metal, cube, dt=dt, walls=0, positions=positions)
+            e.buffers["velocity"].copy_from_numpy(
+                f4(np.array([[0, 0.001 * np.cos(i), 0.001 * np.sin(i)] for i in range(n)]))
+                * e.time_unit
+                / e.length_unit
+            )
+            # Nonzero angular momentum: physical 1000 rad/s about an oblique axis.
+            inertia = cube.inertia * 2650
+            L = (
+                inertia
+                @ np.array([600.0, 800.0, 0.0])
+                / (e.mass_unit * e.length_unit**2 / e.time_unit)
+            )
+            e.buffers["momentum"].copy_from_numpy(f4([L * (-1) ** i for i in range(n)]))
+            e.initialize()
+            assert e.state()["contacts"] >= (108 if dense else 4)
+>           e.advance(steps)
+
+tests/test_contact_timestep_policy.py:204: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/sand_atlas_dem/gpu.py:604: in advance
+    return self._advance_once(
+src/sand_atlas_dem/gpu.py:721: in _advance_once
+    self.check_errors()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sand_atlas_dem.gpu.Engine object at 0x1116500e0>
+
+    def check_errors(self):
+        ctrl = self.m.read(self.buffers["control"], np.uint32)
+        if ctrl[15] != 0:
+            raise RuntimeError("Arithmetic materialization mask must remain zero")
+        if ctrl[0]:
+>           raise RejectedStep(ctrl[0])
+E           sand_atlas_dem.gpu.RejectedStep: GPU step rejected: active-contact timestep bound
+
+src/sand_atlas_dem/gpu.py:585: RejectedStep
+_____________________ test_active_patch_allows_larger_step _____________________
+
+metal = <sand_atlas_dem.backend.Metal object at 0x1116359a0>
+record_property = <function record_property.<locals>.append_property at 0x111624180>
+
+    @pytest.mark.metal
+    @metal_test[1]
+    def test_active_patch_allows_larger_step(metal, record_property):
+        sh = sphere(radius=5e-5, resolution=8, samples=512)
+>       e = engine(metal, sh, dt=1e-8, walls=1)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_contact_timestep_policy.py:241: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_contact_timestep_policy.py:92: in engine
+    return Engine(
+src/sand_atlas_dem/gpu.py:189: in __init__
+    self._static_geometry()
+src/sand_atlas_dem/gpu.py:422: in _static_geometry
+    mesh_data = pack_meshes(self.library, self.length_unit)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+library = <sand_atlas_dem.geometry.ShapeLibrary object at 0x1116530b0>
+length_unit = 0.00010000000000000006
+
+    def pack_meshes(library, length_unit):
+        bounds_min, bounds_max, links, roots, triangles, normals = [], [], [], [], [], []
+        hull_info, planes = [], []
+        cluster_info, cluster_ranges, cluster_min, cluster_max, sample_indices = (
+            [],
+            [],
+            [],
+            [],
+            [],
+        )
+        for shape in library.shapes:
+            if shape.provenance.get("display_mesh_only"):
+>               raise ValueError(
+                    "Mesh query requires physical source triangles, not a display-only fixture mesh"
+                )
+E               ValueError: Mesh query requires physical source triangles, not a display-only fixture mesh
+
+src/sand_atlas_dem/mesh.py:22: ValueError
+=============================== warnings summary ===============================
+tests/test_contact_timestep_policy.py::test_active_patch_allows_larger_step
+  tests/test_contact_timestep_policy.py:237: PytestWarning: record_property is incompatible with junit_family 'xunit2' (use 'legacy' or 'xunit1')
+    @pytest.mark.metal
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_contact_timestep_policy.py::test_coupled_rotating_chain_refinement[True]
+FAILED tests/test_contact_timestep_policy.py::test_active_patch_allows_larger_step
+2 failed, 299 passed, 8 skipped, 1 warning in 54.76s

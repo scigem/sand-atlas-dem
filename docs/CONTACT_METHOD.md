@@ -146,3 +146,13 @@ arm, with compensated projection and preserved initial-position residual. See
 [LOCAL_FRAME_CONTACTS.md](LOCAL_FRAME_CONTACTS.md) for the arithmetic contract,
 translated static/dynamic checks and full regression. This bounded precision fix
 leaves the production conservative timestep policy unchanged.
+
+## Optional active-contact timestep check
+
+An explicit `timestep_policy: "active-contact"` replaces the legacy whole-surface
+preflight with on-device committed/trial contact estimates, including rotational
+mobility, neighbour coupling, Coulomb coupling and viscosity. It rejects unsafe
+advancement chunks with rollback and retains a fixed declared timestep. See
+[CONTACT_TIMESTEP_POLICY.md](CONTACT_TIMESTEP_POLICY.md) for its frozen coefficients,
+motion guards, evidence and limits. The default remains conservative; neither
+policy removes the need for timestep refinement in a new physical study.

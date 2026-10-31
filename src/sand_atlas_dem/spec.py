@@ -25,6 +25,7 @@ class Experiment:
     tangential_stiffness: float = 5e11
     friction: float = 0.5
     normal_viscosity: float = 0.0  # normal traction / normal speed: N*s/m^3
+    timestep_policy: str = "conservative"
     timestep: float = 1e-7
     initial_solid_fraction: float = 0.15
     scale: float = 1.0
@@ -46,6 +47,8 @@ class Experiment:
             raise ValueError("Unsupported experiment format")
         if self.contact_geometry not in {"sdf", "mesh"}:
             raise ValueError("Unsupported contact geometry")
+        if self.timestep_policy not in {"conservative", "active-contact"}:
+            raise ValueError("Unsupported timestep policy")
         if self.shape_sampling not in {"random", "balanced"}:
             raise ValueError("shape_sampling must be random or balanced")
         if type(self.periodic) is not bool:
