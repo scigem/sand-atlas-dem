@@ -1,0 +1,11 @@
+{
+  "script_sha256": "167dd1281ef0ef64b0416023b65a5d62630f536a0e087dd281c82b9041005bc9",
+  "archive_sha256": "2273714017391b9aa018e755a2416a09b69aacf8132ca7c777533a12ae721a9d",
+  "blobs": {
+    "a8be484b90a5d29f43e2ffc656b94d3c5ea7ea31": "4a3406c73949e3e899c1b4b73e2eb8dd8e8fb88bd5466e653cb740935dc502ac",
+    "141a7785f84dc4eb58d82a3a0648e70a0b3e7c7f": "3f7f2343046fcfe792fdff3716cfdd779456ac6ae2c48a3dd8829451af6f94f9",
+    "e902cc5d2e373cbce3e84ba977bf8eafa2b598fc": "a0eec7fc94bb650699cf1d79195f801787f8fa5c1a16e452166cf9f13a61c979"
+  },
+  "scope": "Read immutable local Git blobs; do not execute producer source or admit units.",
+  "admission": "No gate or historical-producer assignment. ZIP dates are nonbinding metadata."
+}

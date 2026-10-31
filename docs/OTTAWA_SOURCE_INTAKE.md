@@ -88,3 +88,24 @@ and 120 were 133 and 155 respectively. The exact signed discrepancies and second
 candidates are retained in the report. No outliers are silently dropped and no
 post-observation gate is fitted. Historical label/export provenance remains the
 next source dependency; the diagnostic does not register another material.
+
+## Historical exporter source review
+
+`evidence/ottawa-export-history-v1` reads immutable local Git blobs without
+executing them or touching the producer checkout's unrelated modifications.
+Commit and blob IDs, SHA-256 hashes, dates, URLs and exact active-assignment line
+locators are retained. The scale expressions changed across revisions:
+
+- `a8be484b90a5d29f43e2ffc656b94d3c5ea7ea31` (2024-12-16) multiplies the
+  volume correction by the argument named `voxel_size_m`.
+- `141a7785f84dc4eb58d82a3a0648e70a0b3e7c7f` (2025-01-28) uses volume
+  correction alone, leaving the underlying voxel coordinate scale.
+- `e902cc5d2e373cbce3e84ba977bf8eafa2b598fc` (2025-02-04) multiplies that
+  argument by 1000 before the correction.
+
+All 175 ZIP entries carry date 2025-01-21, but ZIP timestamps are not a producer
+receipt and do not select a source revision. The argument name does not establish
+its supplied value, Blender export-unit settings or subsequent regeneration.
+These source differences reinforce the need for the original label/export
+receipt rather than interpreting the archive through the present generator.
+No revision, scale or material registration is admitted by this review.

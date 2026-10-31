@@ -1,0 +1,60 @@
+{
+  "identity": "ottawa-export-history-v1",
+  "inputs_unchanged": true,
+  "producer_revisions": [
+    {
+      "commit": "a8be484b90a5d29f43e2ffc656b94d3c5ea7ea31",
+      "blob": "954c2d05cca2a3178984ca55e784e505af4e31b7",
+      "source_sha256": "4a3406c73949e3e899c1b4b73e2eb8dd8e8fb88bd5466e653cb740935dc502ac",
+      "source_path": "sand_atlas/blender_scripts/vdb.py",
+      "commit_date": "2024-12-16T13:33:31+11:00",
+      "url": "https://github.com/SciGEM/sand-atlas-python/blob/a8be484b90a5d29f43e2ffc656b94d3c5ea7ea31/sand_atlas/blender_scripts/vdb.py",
+      "active_scale_assignment_lines": [
+        180
+      ],
+      "observed_scale_expression": "voxel_size_m times volume correction",
+      "executed": false
+    },
+    {
+      "commit": "141a7785f84dc4eb58d82a3a0648e70a0b3e7c7f",
+      "blob": "5e82616fa7228fa9603d55e8923a41b24d2f2ac3",
+      "source_sha256": "3f7f2343046fcfe792fdff3716cfdd779456ac6ae2c48a3dd8829451af6f94f9",
+      "source_path": "sand_atlas/blender_scripts/vdb.py",
+      "commit_date": "2025-01-28T09:34:13+11:00",
+      "url": "https://github.com/SciGEM/sand-atlas-python/blob/141a7785f84dc4eb58d82a3a0648e70a0b3e7c7f/sand_atlas/blender_scripts/vdb.py",
+      "active_scale_assignment_lines": [
+        178
+      ],
+      "observed_scale_expression": "volume correction alone; voxel coordinates",
+      "executed": false
+    },
+    {
+      "commit": "e902cc5d2e373cbce3e84ba977bf8eafa2b598fc",
+      "blob": "d7d4146607ba81479cdf403373c6ae39c4ad5689",
+      "source_sha256": "a0eec7fc94bb650699cf1d79195f801787f8fa5c1a16e452166cf9f13a61c979",
+      "source_path": "sand_atlas/blender_scripts/vdb.py",
+      "commit_date": "2025-02-04T11:09:11+11:00",
+      "url": "https://github.com/SciGEM/sand-atlas-python/blob/e902cc5d2e373cbce3e84ba977bf8eafa2b598fc/sand_atlas/blender_scripts/vdb.py",
+      "active_scale_assignment_lines": [
+        176,
+        177
+      ],
+      "observed_scale_expression": "voxel_size_m times 1000 times volume correction",
+      "executed": false
+    }
+  ],
+  "zip_member_dates": [
+    [
+      2025,
+      1,
+      21
+    ]
+  ],
+  "archive_members": 175,
+  "original_export_receipt_found": false,
+  "coordinate_units_admitted": false,
+  "material_registered": false,
+  "gpu_executed": false,
+  "scientific_admission": false,
+  "conclusion": "Historical exporter units changed. ZIP metadata dates do not bind exporter commits, label maps, argument values, Blender unit settings or regeneration history. No historical producer can be selected from this evidence alone."
+}
