@@ -267,3 +267,17 @@ def test_sub_ulp_translation_rotation_and_slow_cell(metal, shape):
         "cellLog",
     ):
         assert np.array_equal(replayed[name], continued[name]), name
+
+
+def test_active_prefix_readback_matches_original_buffer(metal):
+    # Deliberately nontrivial uint bits test exact transfers, including float views.
+    words = np.array([0, 1, 0xFFFFFFFF, 0x80000000, 0x7FC00000, 7, 31, 99], np.uint32)
+    source = metal.buffer(words)
+    for count in (0, 4, len(words)):
+        result = metal.read_prefix(source, count, np.uint32)
+        np.testing.assert_array_equal(result, words[:count])
+        floating = metal.read_prefix(source, count, np.float32)
+        np.testing.assert_array_equal(floating.view(np.uint32), words[:count])
+    empty = metal.read_prefix(source, 0, np.uint32, shape=(0, 4))
+    assert empty.shape == (0, 4)
+    np.testing.assert_array_equal(metal.read(source, np.uint32), words)

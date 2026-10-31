@@ -1,0 +1,10 @@
+{
+  "files": {
+    "src/sand_atlas_dem/backend.py": "71d0214566b007b0848707a70bbb1598a61aceaaf049abdde3707093fc5db953",
+    "src/sand_atlas_dem/gpu.py": "79c3318c20113185e390400add578ff20485cfa8eafcceb1068d278c80620771",
+    "tests/test_prefix_readback.py": "5e51537635cd0ec3779be75e53caf1debf2c933c102bda33cb09c891b39b8bb9",
+    "tests/test_metal.py": "31b88ea5e60c33925d268d3d0370d952dde5a0ea05253fb1d37339b0ea51c7f8"
+  },
+  "command": "PYTHONPATH=src pytest -q tests/test_prefix_readback.py tests/test_prepared_work_resolution.py tests/test_reference_overlap.py",
+  "scope": "CPU transfer-contract regression only. No actual Metal or application peak-memory verification."
+}

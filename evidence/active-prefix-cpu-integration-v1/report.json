@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "passed_tests": 198,
+  "skipped_tests": 8,
+  "deselected_tests": 55,
+  "exit_code": 0,
+  "sources_unchanged": true,
+  "source_file_count": 61,
+  "freeze_sha256": "6e9a36d49f4f145e93beabe14a3e58fc21c4538eaece3f6d101e852325dc6444",
+  "log_sha256": "4bdfa84e315184860265fdf1de68a42cd3249d86f7e32931f6426fcc722d1328",
+  "scope": "CPU-only integration, explicit Metal/native-Atlas execution environment unset. No device verification or material admission.",
+  "gpu_executed": false,
+  "scientific_admission": false
+}

@@ -59,6 +59,29 @@ class Metal:
         a = buffer.to_numpy().view(dtype).reshape(-1).copy()
         return a if shape is None else a.reshape(shape)
 
+    def read_prefix(self, buffer, count, dtype=np.float32, shape=None):
+        """Read only a valid scalar prefix, without a full-capacity host copy."""
+        dtype = np.dtype(dtype)
+        if type(count) is not int or count < 0:
+            raise ValueError("Readback count must be a nonnegative integer")
+        if dtype.hasobject or dtype.itemsize == 0:
+            raise ValueError("Readback requires a fixed-size numeric dtype")
+        size = count * dtype.itemsize
+        if size > buffer.size:
+            raise ValueError("Readback prefix exceeds buffer capacity")
+        if size % 4:
+            raise ValueError("Readback prefix must be aligned to four bytes")
+        if count == 0:
+            result = np.empty(0, dtype=dtype)
+        else:
+            staging = self.buffer(count=size // 4)
+            encoder = self.device.create_command_encoder()
+            encoder.copy_buffer(staging, 0, buffer, 0, size)
+            self.submit(encoder)
+            self.device.wait()
+            result = self.read(staging, dtype)
+        return result if shape is None else result.reshape(shape)
+
     def doctor(self):
         x = np.linspace(-2, 2, 257, dtype=np.float32)
         a = self.buffer(x)

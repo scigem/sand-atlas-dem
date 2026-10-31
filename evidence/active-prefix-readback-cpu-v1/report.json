@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "passed_tests": 24,
+  "exit_code": 0,
+  "sources_unchanged": true,
+  "log_sha256": "7cc43dc08e18eab65642da574ff72f3f308a86881954bbc5fd000bfc05908f7c",
+  "scope": "CPU transfer-contract regression only. No actual Metal or application peak-memory verification.",
+  "gpu_executed": false,
+  "metal_verification_pending": true,
+  "scientific_admission": false
+}

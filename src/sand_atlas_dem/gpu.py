@@ -864,9 +864,12 @@ class Engine:
         count = int(ctrl[2])
         out["contacts"] = count
         for name in ("meta", "slip", "normalArea"):
-            out[name] = self.m.read(
-                h[name], np.uint32 if name == "meta" else np.float32
-            ).reshape(-1, 4)[:count]
+            out[name] = self.m.read_prefix(
+                h[name],
+                4 * count,
+                np.uint32 if name == "meta" else np.float32,
+                shape=(count, 4),
+            )
         return out
 
     def profile_step(self):

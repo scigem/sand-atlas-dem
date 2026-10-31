@@ -720,3 +720,11 @@ The stronger-reference software regression passes 189 CPU tests with 62 skips
 (`higher-reference-cpu-integration-v1`); all 60 frozen source/test files remain
 unchanged. This is CPU regression coverage only; revised higher-level Metal
 qualification remains queued behind the existing preparation.
+
+## Checkpoint host-memory reduction
+
+Active-contact prefix readback is implemented and passes 198 CPU integration
+tests (eight skipped, 55 Metal cases deselected). It removes capacity-sized
+host-history readbacks from checkpoint extraction; actual Metal verification
+remains queued behind the running preparation. This does not reduce the dense
+solver's fixed device allocation. See [CHECKPOINT_READBACK.md](CHECKPOINT_READBACK.md).
