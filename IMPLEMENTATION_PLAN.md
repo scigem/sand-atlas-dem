@@ -171,6 +171,10 @@ work alongside the scientific gates below; naming a material must not infer cali
   This does not qualify Hostun preparation.
 - [ ] Prepare and run the 10,000-grain Hostun pilot with declared material parameters,
   seed, pressure, density, loading rate and timestep. Preserve failed preparations.
+  Metadata-only resource intake now bounds the revised candidate at 12.615–12.865
+  GiB for 10k and 52.966–53.216 GiB for 50k at current contact capacities, above
+  the 12 GiB configured budget. Larger-case capacities and total peak memory need
+  independent measurement/review; no automatic budget increase or capacity reduction.
   Repeat timestep, shape discretization and loading-rate studies; assess quasi-static
   response and stress/strain conventions before comparing continuum results.
 - [ ] Run the 50,000-grain irregular-shape performance study: sustained thermal

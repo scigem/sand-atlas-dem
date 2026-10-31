@@ -88,3 +88,34 @@ No new GPU execution is run concurrently with the frozen preparation. The curren
 software changes have CPU analytical/contract coverage; the earlier complete
 Metal suite retains its original source identity. Higher-level Metal execution
 and its actual memory/time costs remain pending.
+
+## Resource bounds before larger runs
+
+`hostun-resolution-memory-intake-v1` reads HDF5 dataset metadata without loading
+the surface arrays or initializing Metal. It evaluates the actual hash-frozen
+Engine allocation-estimate statements, with the existing 4,096 contacts per
+particle, 32 pairs per particle and 128 entries per bin. Bounds use one through
+64 cubed bins, covering the current per-axis bin cap.
+
+| Particles | Revised candidate estimate | Hypothetical plus-one estimate |
+| --- | --- | --- |
+| 424 | 2.705–2.955 GiB | 8.705–8.955 GiB |
+| 10,000 | 12.615–12.865 GiB | 18.616–18.866 GiB |
+| 50,000 | 52.966–53.216 GiB | 58.966–59.216 GiB |
+
+The plus-one profile multiplies every face's node count by four; it has not been
+allocated or qualified. The 424-case higher-resolution buffer estimate fits
+12 GiB, but total application, host-array, driver, rollback and output memory
+remain unmeasured. Both larger cases exceed the current 12 GiB configured budget
+even at the revised candidate resolution. Their contact capacities also remain
+unverified for dense assemblies. Do not reduce capacities merely to obtain a
+fitting estimate: the pilot needs measured dense contact statistics and an
+explicitly reviewed device-memory budget or a qualified storage optimization.
+Memory fit alone says nothing about timestep, throughput or convergence.
+
+This Mac reports 36 GiB installed unified memory (`sysctl -n hw.memsize`, receipt
+retained). The 50k estimate exceeds even total installed memory. The current
+50k dense configuration therefore cannot be launched on this Mac: it requires
+a separately verified reduction in contact/history storage or a qualified
+larger-memory device. The 10k estimate is below installed memory but remains
+above the configured budget; actual safe headroom has not been established.

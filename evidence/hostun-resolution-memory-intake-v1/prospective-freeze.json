@@ -1,0 +1,10 @@
+{
+  "files": {
+    "evidence/hostun-resolution-memory-intake-v1/analyze.py": "3a2bb4b27881308133a41cb0aeb0bce418db66b30285cb5528cfae7f86c65468",
+    "src/sand_atlas_dem/gpu.py": "3d2cc4c01a7ec9ebe6f39ff39a0ec91ccb09dbd199d747f4e755bfa8a0ed49fc",
+    "evidence/hostun-adaptive-l5-candidate-v1/verification.json": "0fdf5f9eb10fbdec23fe063642b676995d982ba3682d02ac2f3990a964ea8d57"
+  },
+  "asset_sha256": "0749b2bc3bdde4a7da9cd0946acd0d377ffbffa37dd5df8f4e8529f579f73b32",
+  "scope": "Metadata-only planning bounds; not a measured peak or device allocation.",
+  "acceptance": "No scientific acceptance gate. Evaluate the unchanged Engine buffer estimate at declared capacities and both allowed bin-count bounds. Plus-one quadrature is hypothetical, not generated or qualified."
+}

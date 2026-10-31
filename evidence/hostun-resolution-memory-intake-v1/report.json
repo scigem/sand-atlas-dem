@@ -1,0 +1,90 @@
+{
+  "identity": "hostun-resolution-memory-intake-v1",
+  "source_unchanged": true,
+  "metadata_only": true,
+  "gpu_executed": false,
+  "scientific_admission": false,
+  "shapes": 53,
+  "candidate_nodes": 53691264,
+  "rows": [
+    {
+      "profile": "revised-candidate",
+      "particles": 424,
+      "contacts_per_particle": 4096,
+      "pairs_per_particle": 32,
+      "bin_capacity": 128,
+      "minimum_estimate_bytes": 2904078352,
+      "maximum_estimate_bytes": 3172512784,
+      "minimum_estimate_GiB": 2.704633727669716,
+      "maximum_estimate_GiB": 2.9546327739953995,
+      "within_12GiB_for_all_bin_counts": true
+    },
+    {
+      "profile": "revised-candidate",
+      "particles": 10000,
+      "contacts_per_particle": 4096,
+      "pairs_per_particle": 32,
+      "bin_capacity": 128,
+      "minimum_estimate_bytes": 13545393168,
+      "maximum_estimate_bytes": 13813827600,
+      "minimum_estimate_GiB": 12.615130439400673,
+      "maximum_estimate_GiB": 12.865129485726357,
+      "within_12GiB_for_all_bin_counts": false
+    },
+    {
+      "profile": "revised-candidate",
+      "particles": 50000,
+      "contacts_per_particle": 4096,
+      "pairs_per_particle": 32,
+      "bin_capacity": 128,
+      "minimum_estimate_bytes": 56871578640,
+      "maximum_estimate_bytes": 57140013072,
+      "minimum_estimate_GiB": 52.965785041451454,
+      "maximum_estimate_GiB": 53.21578408777714,
+      "within_12GiB_for_all_bin_counts": false
+    },
+    {
+      "profile": "hypothetical-plus-one",
+      "particles": 424,
+      "contacts_per_particle": 4096,
+      "pairs_per_particle": 32,
+      "bin_capacity": 128,
+      "minimum_estimate_bytes": 9347030032,
+      "maximum_estimate_bytes": 9615464464,
+      "minimum_estimate_GiB": 8.705100074410439,
+      "maximum_estimate_GiB": 8.955099120736122,
+      "within_12GiB_for_all_bin_counts": true
+    },
+    {
+      "profile": "hypothetical-plus-one",
+      "particles": 10000,
+      "contacts_per_particle": 4096,
+      "pairs_per_particle": 32,
+      "bin_capacity": 128,
+      "minimum_estimate_bytes": 19988344848,
+      "maximum_estimate_bytes": 20256779280,
+      "minimum_estimate_GiB": 18.615596786141396,
+      "maximum_estimate_GiB": 18.86559583246708,
+      "within_12GiB_for_all_bin_counts": false
+    },
+    {
+      "profile": "hypothetical-plus-one",
+      "particles": 50000,
+      "contacts_per_particle": 4096,
+      "pairs_per_particle": 32,
+      "bin_capacity": 128,
+      "minimum_estimate_bytes": 63314530320,
+      "maximum_estimate_bytes": 63582964752,
+      "minimum_estimate_GiB": 58.96625138819218,
+      "maximum_estimate_GiB": 59.21625043451786,
+      "within_12GiB_for_all_bin_counts": false
+    }
+  ],
+  "limitations": [
+    "Engine estimates are not measured total application or driver memory. Host copies, compilation, rollback and output peaks require separate measurement.",
+    "4096 contacts per particle and 32 pairs per particle retain the current 424-case capacities; they are not proven adequate for dense 10k/50k cases.",
+    "Bin-count extremes bound the existing 1..64 per-axis implementation, not an observed specimen.",
+    "Hypothetical plus-one multiplies each face sample count by four; no asset or numerical qualification is claimed.",
+    "Memory fit does not establish stable timestep, usable throughput or physical convergence."
+  ]
+}
