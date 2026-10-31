@@ -115,6 +115,11 @@ work alongside the scientific gates below; naming a material must not infer cali
   twelve actual-Metal coarse/fine cases with selected levels 4, 4 and 2. Worst
   integral error falls from 20.9604% to 4.8583%, preserving the existing gates and
   both earlier failed studies. This verifies mixed workflow execution, not Hostun.
+  A source-frozen accepted-reference resolver now prepares the candidate and full
+  212-case coarse/adaptive GPU protocol with the unchanged fixed-node baseline.
+  It freezes contact capacity from selected CPU counts, instead of the insufficient
+  old 8,192-node provisional allocation. Twelve analytical-fixture Metal cases and
+  rejection of the actual pending Hostun reference pass; no Hostun gate is closed.
   The adaptive Hostun asset, all-106 mixed GPU comparison and assembly studies
   remain open; see docs/ADAPTIVE_QUADRATURE.md.
 - [X] Freeze and run rolling/objectivity tests, separating/returning contact,

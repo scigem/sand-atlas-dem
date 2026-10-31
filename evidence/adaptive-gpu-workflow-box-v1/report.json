@@ -1,0 +1,9 @@
+{
+  "identity": "adaptive-gpu-workflow-box-v1",
+  "passed": true,
+  "source_unchanged": true,
+  "scientific_admission": false,
+  "whole_library_static_only": true,
+  "completed_gpu_cases": 12,
+  "expected_gpu_cases": 12
+}

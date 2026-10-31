@@ -17,6 +17,15 @@ kernels; scientific pilot acceptance remains open.
 
 ## Latest explicit-viscosity and reference results
 
+`adaptive-gpu-workflow-box-v1` passes twelve actual-Metal cases through the new
+accepted-reference resolver, with source hashes unchanged. The actual pending
+Hostun report rejects before asset creation or GPU initialization. The prospective
+Hostun adaptive study now preserves every original pose and the fixed-node baseline,
+with 212 coarse/adaptive GPU comparisons. Contact capacity is frozen from selected
+CPU counts before execution, avoiding the old provisional 8,192-node limit that
+is already below one retained 21,484-node pose. No numerical gate changed; actual
+full-library static and assembly qualification remain pending.
+
 `atlas-native-replay-v2` executes the actual Atlas native solver on all five
 analytical bridge observations with exact coordinate/order identity. Independent
 Hooke compliance and exponential void evolution pass the frozen stress/strain/void

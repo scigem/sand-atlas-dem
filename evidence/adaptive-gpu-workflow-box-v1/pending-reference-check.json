@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "scope": "Actual pending Hostun reference rejects before any asset/output directory or Metal initialization.",
+  "protocol_sha256": "52a6e335acce5c40bad70b7b33d588c9c454a9b023d18c927bcdb872d82f35e2",
+  "returncode": 1,
+  "output_created": false,
+  "reference_report_exists": false
+}

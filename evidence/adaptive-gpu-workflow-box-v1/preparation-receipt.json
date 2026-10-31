@@ -1,0 +1,143 @@
+{
+  "format": "sand-dem-adaptive-quadrature/1",
+  "output": "/private/tmp/sand-atlas-dem-walls/evidence/adaptive-gpu-workflow-box-v1/private/adaptive.h5",
+  "sha256": "5826ed6e6cbf4aa9b2b6cf45bf612ee89e24dbd164d8100c9b57aa1daa7a9bc1",
+  "parent_sha256": "734a4c6c888c42b3b2bd3c14112af432f708964124341707866bf498f9647568",
+  "reference_report_sha256": "d2914c879db510e5a179736e43b02c3b2fca2390401c82ffd91f2f38c59ea3f6",
+  "reference_protocol_sha256": "c40ec7e84b595b24c4928198cfbe69c12692b6ff72b3d411e8d9388827e152e3",
+  "reference_freeze_sha256": "b914ac9f82ef58356accb7b79ee649e74f702ee8b73f6d8cf415b9126e95181d",
+  "rule": "gauss3",
+  "selection_target_relative_error": 0.05,
+  "minimum_level": 2,
+  "maximum_level": 4,
+  "shapes": [
+    {
+      "shape": "analytical-box-0",
+      "subdivisions": 4,
+      "worst_reference_relative_error": 0.03228400921181961,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.000987592990182012,
+          "reference_finest_level": 8,
+          "level_relative_errors": [
+            0.05419273891407329,
+            0.05419273891407316,
+            0.0541927389140722,
+            0.05419273891406822,
+            0.03228400921181961,
+            0.010664822198843063,
+            0.010696993601223257,
+            0.00535653968776951,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.02,
+          "separation_m": 0.0009751859803640241,
+          "reference_finest_level": 8,
+          "level_relative_errors": [
+            0.10985791462706983,
+            0.10985791462707041,
+            0.10985791462707156,
+            0.06933789454601158,
+            0.024538942312450247,
+            0.019176164522479392,
+            0.008247387984400114,
+            0.0027491299295122904,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 9216,
+      "source_face_count": 12
+    },
+    {
+      "shape": "analytical-box-1",
+      "subdivisions": 4,
+      "worst_reference_relative_error": 0.027860186038774513,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.0009880211637260349,
+          "reference_finest_level": 8,
+          "level_relative_errors": [
+            0.09638419844133664,
+            0.09638419844133696,
+            0.09638419844133532,
+            0.005018848571222318,
+            0.027860186038774513,
+            0.005018848571258628,
+            0.00020075394920491413,
+            0.0028328611960461696,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.02,
+          "separation_m": 0.0009760423274520696,
+          "reference_finest_level": 8,
+          "level_relative_errors": [
+            0.20959763751905802,
+            0.2095976375190582,
+            0.007998031452663831,
+            0.058397932849317186,
+            0.007998031452679239,
+            0.0006764133848935234,
+            0.004651163128160732,
+            0.0015503885854150916,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 9216,
+      "source_face_count": 12
+    },
+    {
+      "shape": "analytical-box-2",
+      "subdivisions": 2,
+      "worst_reference_relative_error": 0.04857600003498665,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.0009424117617703027,
+          "reference_finest_level": 8,
+          "level_relative_errors": [
+            0.023856020242441992,
+            0.023856020242441992,
+            0.023856020242441846,
+            0.02385602024243861,
+            0.02385602024246773,
+            0.018471360802665798,
+            0.007889515541772576,
+            0.002629838508904271,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.02,
+          "separation_m": 0.0008848235235406056,
+          "reference_finest_level": 8,
+          "level_relative_errors": [
+            0.04857600003498831,
+            0.04857600003498876,
+            0.04857600003498665,
+            0.048576000034985294,
+            0.03744000005526724,
+            0.015936000124548766,
+            0.005312000356840346,
+            1.959553299250876e-06,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 576,
+      "source_face_count": 12
+    }
+  ],
+  "total_samples": 19008,
+  "static_reference_target_passed": true,
+  "gpu_verified": false,
+  "scientific_admission": false,
+  "note": "Fixed per-shape preprocessing; requires separate matching GPU and dynamic assembly qualification. New sample keys cannot replace a continuing contact history."
+}

@@ -78,3 +78,33 @@ acceptance limit. Reference levels through eight are permitted, while selectable
 production levels remain fixed at two through four and strictly below the reference.
 The higher field resolution resolves the plate interior; contacts use original
 triangles. Frozen protocols and archived source bytes identify each run.
+
+## Resolve and run the full-library GPU study
+
+After the immutable Hostun reference finishes successfully, the complete next step is:
+
+```sh
+PYTHONPATH=src python examples/adaptive_gpu_study.py \
+  studies/hostun-library-gpu-quadrature-adaptive-v1.json \
+  --output evidence/hostun-library-gpu-quadrature-adaptive-v1 --run
+```
+
+Omit `--run` to prepare a separate private asset and a hash-resolved GPU protocol
+without starting Metal. The resolver refuses incomplete/failed references before
+creating the output. It preserves all 53 grains and both depths: 106 reference
+poses and 212 coarse/adaptive GPU comparisons. The original exact-count 2,048-node
+baseline remains mandatory; numerical acceptance gates are unchanged.
+
+Contact storage is resolved before GPU execution from the largest selected-level
+CPU active-node count. For each two-body case, total capacity is twice that largest
+count, with a minimum of 8,192 nodes. This is a memory margin, not a force/count
+tolerance or permission to truncate contacts. The earlier provisional 8,192-node
+capacity is insufficient for an already retained level-two pose with 21,484 nodes;
+initialization rejects overflow rather than applying advancement-time growth.
+The chosen capacity, reference, candidate asset, sources and protocol are frozen
+before execution. Capacity or numerical failure remains a failed study.
+
+`adaptive-gpu-workflow-box-v1` passes all twelve original analytical-box GPU cases
+through this resolver; its separate pending-reference check verifies that the
+actual unfinished Hostun report cannot start preparation or GPU work. The Hostun
+study itself remains pending; neither software check admits a Hostun asset.
