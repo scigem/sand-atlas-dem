@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/private/tmp/sand-atlas-dem-walls/evidence/active-history-backup-metal-v1/run.py", line 70, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/private/tmp/sand-atlas-dem-walls/evidence/active-history-backup-metal-v1/run.py", line 32, in main
+    raise RuntimeError(
+RuntimeError: Existing preparation is not terminal; keep GPU tests queued

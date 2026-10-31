@@ -72,3 +72,19 @@ Two new actual-Metal cases cover both history-side parities and an injected
 rejection after three encoded steps, checking complete exposed state and exact
 hash restoration. They remain queued behind the ongoing immutable preparation.
 No actual-device verification, measured saving or dense memory fit is claimed.
+
+The device checks are frozen separately under
+`evidence/active-history-backup-metal-v1/source_snapshot`, including the complete
+package and selected test file. Eight cases collect successfully without a GPU.
+The standard-library runner verifies every frozen source hash before solver
+import and rejects execution while the existing preparation manifest is
+nonterminal. That rejection was checked and retained. It never overwrites an
+earlier execution directory. After verifying that the GPU is free, run serially:
+
+```sh
+.venv/bin/python evidence/active-history-backup-metal-v1/run.py --execute
+```
+
+The runner's dependency check does not detect unrelated GPU processes; the
+operator must still enforce serial execution. Without `--execute` it checks hashes
+only. Collection and dependency checks do not establish device-test success.

@@ -1,0 +1,10 @@
+tests/test_metal.py::test_overlap_rollback
+tests/test_metal.py::test_active_history_backup_restores_after_multiple_encoded_steps[1]
+tests/test_metal.py::test_active_history_backup_restores_after_multiple_encoded_steps[2]
+tests/test_metal.py::test_active_prefix_readback_matches_original_buffer
+tests/test_metal.py::test_active_prefix_upload_preserves_unused_tail
+tests/test_metal.py::test_restore_ignores_poisoned_unused_contact_history
+tests/test_metal.py::test_contact_growth_from_effective_minimum
+tests/test_metal.py::test_periodic_pair_and_history_restart
+
+8 tests collected in 0.53s
