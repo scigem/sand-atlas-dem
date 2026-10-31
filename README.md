@@ -41,6 +41,9 @@ the output retains this warning rather than suppressing it.
 
 The smoke case is deliberately dilute and short. It tests execution, checkpointing
 and exports; it is not a preparation or triaxial acceptance study.
+An additional [wall example](docs/WALL_CONTACT.md) runs prescribed translating
+planes with nonperiodic neighbours, wall reactions/work and restartable state:
+`sand-dem run examples/wall-smoke.json --output runs/wall-smoke`.
 `examples/pilot-template.json` specifies a 10,000-grain preparation/triaxial study,
 **with provisional controller settings**, not a validated ready-to-publish test.
 Preparation that exhausts its budget without convergence is a failed run.

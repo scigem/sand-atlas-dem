@@ -103,6 +103,7 @@ def memory_report(engine):
         "history_backup",
         "diag_buffers",
         "fabric_buffers",
+        "wall_diag_buffers",
     ):
         visit(getattr(engine, name))
 

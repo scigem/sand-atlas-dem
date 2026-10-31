@@ -1,9 +1,11 @@
 # Plane traction operator and integration contract
 
-Status: an independently verified Slang/Metal force operator. The laboratory does
-not yet advance wall-confined specimens. `shaders/plane.slang` defines the reusable
-response and an isolated probe; `plane_contact_study.py` exercises it on the actual
-Metal device. It is not connected to the current periodic Engine contact collector.
+Status: implemented fixed-normal translating planes in the Slang/Metal Engine,
+including nonperiodic neighbours, source-sample collection, rigid-body forces,
+reactions/work, prescribed motion, transactional retry and checkpoint state.
+The independent operator probe and analytical references remain separate evidence.
+This is an explicit project wall variant; no published assembly reproduction,
+restitution dashpot or material qualification is claimed.
 
 ## Explicit project extension
 
@@ -22,7 +24,7 @@ The probe's active flag belongs to that same persistent source-node/plane key.
 Normals are fixed during a history update; rotating-wall transport is unsupported.
 
 Force acts at the source node. Reaction is opposite at the same common point,
-so a future assembly implementation must preserve both force and moment balance.
+and the assembly implementation preserves both force and moment balance.
 The probe reports torque about its origin. Its inputs are normalized world points,
 positive source areas, relative velocities and explicitly active old springs.
 It does not transform particle geometry or advance particles on the CPU.
@@ -57,40 +59,117 @@ The default sandbox exposed no Metal adapter; that failed initialization, execut
 source and unchanged policy are retained as `plane-traction-operator-sandbox-v1`.
 The authorized host execution has a separate identity and no relaxed gate.
 
-## Remaining laboratory integration
+## Production laboratory integration
 
-The nonperiodic foundation is now implemented: `periodic: false` selects a fixed
-computational domain, with clipped neighbour-bin traversal and Euclidean centre
-branches. Opposite faces do not interact. The domain may be smaller than twice
-the pair cutoff; the periodic minimum-image restriction does not apply. Particle
-centres must remain in `[0, cell)` on each axis. Grain surfaces may extend outside
-that envelope: these bounds do not generate physical wall forces. Escape rejects
-the entire advancement chunk with flag 2048 and restores its committed state.
-Nonfinite positions fail separately. Nonperiodic cases currently allow hold stages
-only and reject nonzero affine rates before mutation.
+Set `periodic: false` and provide a `planes` list. Every plane requires `normal`
+(unit inward normal), `offset` in metres, `velocity` in m/s, `normal_stiffness` and
+`tangential_stiffness` in Pa/m, and nonnegative `friction`. There are no inherited
+plane contact properties or automatic normal normalization. The normal stays fixed;
+translation updates the offset by `dot(normal, velocity)*dt`. Tangential plane
+velocity contributes to friction without changing its geometric offset.
 
-Checkpoint /3 already stores the complete experiment, including the new explicit
-boolean, so no extra state-array version is needed for this foundation. Older
-experiments retain the historical periodic default. Checkpoints and synthetic
-exports retain the boundary setting; manifests explicitly label nonperiodic
-measurement volume as the computational domain. That volume is not an established
-wall-confined specimen volume.
+Persistent keys are `(source_body, body_count + plane_index, source_sample)`.
+Plane ordering is part of continuing history identity. Source transformations,
+bounding-sphere rejection and the mesh sample tree run on the GPU. The mesh path
+rejects whole sample subtrees using conservative plane/AABB support bounds; SDF
+mode visits the same source samples directly. Both append to the capacity-checked
+contact buffer, then reuse the committed friction hash and particle contact lists.
+Plane contacts use full one-sided traction, energy and loss. Grain contacts retain
+their two directed half-weighted passes. Wall spring transport uses the existing
+minimal-normal rotation and mean normal spin, with zero wall angular velocity.
+Rotating plane normals and inertial walls are unsupported.
 
-`nonperiodic-domain-v1` passes all eleven prospective checks. The expanded
-`nonperiodic-domain-integration-v1` passes the complete serial Metal suite:
-131 passed, one skipped. This covers exact unique neighbour sets including a
-single-bin domain, six-face transactional escape, analytical free drift/rebuild,
-state restore, SDF/mesh interior contacts and continuing friction, and HDF5
-checkpoint/export semantics. Protocols, source snapshots and logs are retained.
-These checks do not establish plane-contact integration or assembly acceptance.
+Each particle gathers its wall force and common-node torque. Contact virial adds
+`-force_on_body outer centre_to_node_arm` for plane contacts, with full weight;
+particle/particle accounting remains unchanged. Per-plane/body rows gather opposite
+reactions and common-origin moments; a GPU tree reduces those rows over bodies.
+Active counts are reduced as integers, without floating point force atomics.
+Per-plane outputs contain offset, velocity, reaction, origin moment, active-node
+count, power and cumulative work. Fabric/coordination still count grain pairs only.
 
-GPU source transformations and conservative sample-hierarchy plane rejection must
-feed capacity-checked collection; an O(all nodes times all particles) host loop is
-not an integration path. Persistent keys must distinguish planes from grain targets.
-Force/torque gathering, wall reactions, stress, imposed-wall work and dissipation
-need consistent common-point accounting. Wall offsets, prescribed velocities and
-history belong to trial/commit/rollback, growth/retry and versioned checkpoints.
-Freeze dynamic wall motion, restart, overflow, work and assembly acceptance cases
-before executing them. The existing periodic case/export semantics must remain
-explicit. Restitution damping and complete published-benchmark input assignments
-remain separate source/integration gaps in PUBLISHED_ASSEMBLY_REFERENCE.md.
+Actuator power is `dot(force_on_body, wall_velocity)`; compression work is positive.
+Every step integrates old/new endpoint power by the trapezoidal rule. A prescribed
+velocity change refreshes the old power using the newly prescribed velocity before
+advancement. Compensated total wall work is separate from cell work, and per-wall
+work has its own compensated accumulator. The laboratory proxy balance includes
+both work channels. These are declared discrete work diagnostics, not an assertion
+of an exact potential for all evolving contact geometries.
+
+`kind: "wall"` stages require an explicit `wall_velocities` array, one three-vector
+per plane, plus the usual steps and optional global drag. Velocities persist until
+another wall stage overrides them. A hold stage preserves the current velocities;
+it does not implicitly stop a moving wall. Nonperiodic affine cell rates and
+periodic pressure/strain stages are rejected. No wall pressure servo is supplied.
+
+Nonperiodic domains use clipped neighbour bins, Euclidean centre branches and no
+wrapping. Their computational domain stays fixed, and centres must remain in
+`[0, cell)` on each axis. Grain surfaces may extend outside it: the computational
+bounds do not create contact forces. Escape rejects the entire chunk with flag
+2048. Nonfinite positions fail separately. Planes and domain limits are distinct.
+
+An optional `boundary_box` lists six distinct plane indices ordered xmin, xmax,
+ymin, ymax, zmin, zmax with exact inward axis normals `+x,-x,+y,-y,+z,-z`.
+Its initial and evolving gaps must be positive and its faces must stay inside the
+computational domain. Invalid geometry rejects the chunk with flag 4096. These
+wall gaps define measurement volume, engineering strain and nominal void ratio.
+Diagnostics retain the separate `domain_cell`. Without this explicit box, volume
+is the computational-domain volume and is labelled as such; it is not inferred
+from arbitrary planes or particle bounds.
+
+Wall offsets/residuals, velocities, per-body/per-wall work and reaction rows join
+GPU chunk backup/rollback and capacity growth/retry. Wall checkpoints use /4 and
+wall snapshots /3. Restart validates the complete plane specification, restores
+state/history and re-evaluates forces at dt=0. Plane-free checkpoints remain /3;
+older experiments retain their historical periodic default. Snapshot export accepts
+both old and new versions. JSON histories retain plane state/reactions; CSV exposes
+total wall work. No wall surface mesh is added to particle VTK exports.
+
+## Integration evidence and executable example
+
+`wall-boundaries-metal-v1` passes ten prospectively frozen checks, including the
+32768-node sphere-cap force/energy integrals, common-origin action/reaction,
+original-node wall virial, exact rotated-box source keys for oblique planes,
+normal-motion work/energy, friction separation/return, restart, capacity growth,
+rollback, measurement geometry and laboratory checkpoint/export semantics.
+`wall-boundaries-integration-v1` passes the full serial Metal suite: 143 passed,
+one skipped. Its 257-body/two-plane case exercises both reduction levels and exact
+integer contact counts. Mixed grain/wall histories and complete device-buffer
+memory accounting also pass. Protocols, executed source snapshots and logs remain
+in their distinct evidence directories. Nonperiodic-only predecessor studies
+retain their original narrower scopes.
+
+```sh
+python examples/create_fixtures.py
+sand-dem run examples/wall-smoke.json --output runs/wall-first --max-chunks 2
+sand-dem resume runs/wall-first/checkpoint.h5 --output runs/wall-resumed
+sand-dem export runs/wall-resumed --output runs/wall-export
+```
+
+The one-sphere example places a plane for its explicit seed/geometry and runs
+20 prescribed-motion steps. Changing those inputs requires reviewing initial
+contact geometry. It is a software smoke case, not an equilibrated specimen.
+Source-derived restitution damping and complete published-benchmark input
+assignments remain separate gaps in PUBLISHED_ASSEMBLY_REFERENCE.md. Long assembly,
+wall-controller, material and experimental qualification remain open.
+
+`wall-friction-return-v1` subsequently checks the production Coulomb path against
+closed partial-slip sphere-cap force, torque and return-loss integrals. Every
+relative error is below the frozen 0.1% limit. For trial slip magnitude S, set
+`c=mu*kn`, `h=min(delta,kt*S/c)`. Integrating returned-spring loss over the cap gives
+`2*pi*R*c*(S*h^2/2-c*h^3/(3*kt))`. The imposed positive-x plane motion gives a
+negative-x trial spring, positive-x force and negative-y torque. The complete
+serial Metal suite at this identity passes 144 tests, one skipped. The deliberately
+large first-step tangential increment is a return-map check, not a quasistatic or
+large-step work-accuracy claim.
+
+The frozen `wall-cli-smoke-v1` also passes the command sequence above, interrupted
+at step 10 and completed at step 20. All five observations retain two active wall
+nodes, final wall work is positive, cell work is zero, and the new snapshot version
+exports to particle VTK alongside the explicit synthetic CSV/JSON bundle.
+
+The final reviewed build (`wall-final-integration-v1`) passes 145 tests with one
+skipped. It additionally rejects changed checkpoint plane normals and wall velocities
+outside normalized FP32 range before mutation, and removes an unintended reduction
+buffer reallocation from the profiling path. Earlier study snapshots retain their
+exact executed sources and results; this final identity reruns the complete suite
+and repeats the identical CLI workload without relaxing numerical gates.

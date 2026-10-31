@@ -1,0 +1,11 @@
+{
+  "identity": "wall-friction-return-v1",
+  "passed": true,
+  "source_unchanged": true,
+  "source_snapshot_unchanged": true,
+  "pytest_result": "144 passed, 1 skipped in 38.00s",
+  "backend": "metal",
+  "source_freeze_sha256": "9f9d2458674904c3b667875892b620dc67349dbcc76359d88a150da19f093503",
+  "log_sha256": "b9a5f23f93626f0b1a529e83d71f502d6da1081748b44896f0a0dcc96abb928e",
+  "scientific_admission": false
+}

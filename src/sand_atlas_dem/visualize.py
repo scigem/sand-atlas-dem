@@ -47,11 +47,15 @@ def export_snapshots(run, output):
         offset = 0
         with h5py.File(file) as f:
             version = f.attrs.get("format")
-            if version not in {"sand-dem-snapshot/1", "sand-dem-snapshot/2"}:
+            if version not in {
+                "sand-dem-snapshot/1",
+                "sand-dem-snapshot/2",
+                "sand-dem-snapshot/3",
+            }:
                 raise ValueError("Unsupported particle snapshot")
             x = f["position"][:, :3].astype(float)
             q = f["rotation"][:].astype(float)
-            if version == "sand-dem-snapshot/2":
+            if version in {"sand-dem-snapshot/2", "sand-dem-snapshot/3"}:
                 x += f["positionRemainder"][:, :3]
                 q += f["rotationRemainder"][:]
             x *= f.attrs["length_unit_m"]

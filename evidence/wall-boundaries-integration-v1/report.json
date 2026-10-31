@@ -1,0 +1,11 @@
+{
+  "identity": "wall-boundaries-integration-v1",
+  "passed": true,
+  "source_unchanged": true,
+  "source_snapshot_unchanged": true,
+  "pytest_result": "143 passed, 1 skipped in 36.60s",
+  "backend": "metal",
+  "source_freeze_sha256": "e536b21320473a8d602f8e0906f2f898b03abba1787b109a95c4ef5a4bd72c24",
+  "log_sha256": "602b3e3d23fc145e6e5b46261df835ea94ec14f172c0a5ed1e81cb7cc36ea428",
+  "scientific_admission": false
+}

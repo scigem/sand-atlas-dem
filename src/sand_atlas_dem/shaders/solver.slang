@@ -1,3 +1,5 @@
+#include "plane.slang"
+
 // Standalone Slang kernels. Quaternion order xyzw; body-to-world rotations.
 [shader("compute")]
 [numthreads(64,1,1)]
@@ -12,7 +14,7 @@ struct Config {
     uint binCapacity; uint binCount; uint3 bins; uint hashSize;
     float dt; float kn; float kt; float mu;
     float skin; float drag; float maxOverlap; uint historyStep;
-    uint meshGeometry; uint periodic;
+    uint meshGeometry; uint periodic; uint wallCount; uint wallBoxEnabled;
 };
 struct Resources {
     Config c;
@@ -78,6 +80,14 @@ struct Resources {
     RWStructuredBuffer<float4> diagnosticRows;
     RWStructuredBuffer<float4> accumulated; // friction loss, drag loss, cell work, reserved
     RWStructuredBuffer<float4> fabricRows;
+    RWStructuredBuffer<float4> wallPlane; // unit inward normal, normalized offset
+    RWStructuredBuffer<float4> wallRemainder; // compensated offset in w
+    RWStructuredBuffer<float4> wallVelocity;
+    StructuredBuffer<float4> wallMaterial; // kn,kt,mu
+    StructuredBuffer<uint> wallBoxIds;
+    RWStructuredBuffer<float4> wallRows; // wall-major, body-major, three rows
+    RWStructuredBuffer<float4> wallAccumulated; // compensated wall work high,low
+
 };
 ParameterBlock<Resources> r;
 static const uint EMPTY=0xffffffff;
@@ -108,10 +118,24 @@ float4 rotationIncrement(float3 w,float dt,float4 q){
     float cm1=-2*sin(.5*half)*sin(.5*half);
     return qmul(float4(coefficient*w,cm1),q);
 }
-void accumulate(uint id,float3 increment){
-    float3 high=r.accumulated[id].xyz,low=r.accumulatedRemainder[id].xyz;
-    compensated3(high,low,increment);
-    r.accumulated[id]=float4(high,0);r.accumulatedRemainder[id]=float4(low,0);
+void accumulate(uint id,float4 increment){
+    float4 high=r.accumulated[id],low=r.accumulatedRemainder[id];
+    compensated4(high,low,increment);
+    r.accumulated[id]=high;r.accumulatedRemainder[id]=low;
+}
+float wallStepWork(uint id,float dt){
+    float total=0;
+    for(uint w=0;w<r.c.wallCount;w++){
+        uint index=w*r.c.N+id;
+        float increment=dt*r.wallRows[3*index+1].w;
+        float4 state=r.wallAccumulated[index];
+        float3 high=float3(state.x,0,0),low=float3(state.y,0,0);
+        compensated3(high,low,float3(increment,0,0));
+        r.wallAccumulated[index]=float4(high.x,low.x,0,0);
+        r.wallRows[3*index+2]=float4(high.x+low.x,0,0,0);
+        total+=increment;
+    }
+    return total;
 }
 float3 centerBranch(uint i,uint j){
     float3 box=r.cell[0].xyz;
@@ -421,6 +445,85 @@ void contactTotal(uint id:SV_DispatchThreadID){
     if(r.control[2]>r.c.contactCapacity)fail(32);
 }
 
+
+// Conservative fixed-normal plane bound over the reusable source-sample tree.
+bool wallClusterMayContact(uint body,uint wall,uint cluster){
+    float3 low=r.meshClusterMin[cluster].xyz,high=r.meshClusterMax[cluster].xyz;
+    float4 plane=r.wallPlane[wall];
+    float3 normal=qinv(r.rotation[body],plane.xyz)*r.body[body].x;
+    float3 center=.5*(low+high),half=.5*(high-low);
+    float base=dot(plane.xyz,r.position[body].xyz)-plane.w;
+    base+=dot(plane.xyz,r.positionRemainder[body].xyz)-r.wallRemainder[wall].w;
+    float support=dot(normal,center)-dot(abs(normal),half);
+    float pad=64.*1.1920928955078125e-7*(1.+abs(plane.w)+length(r.position[body].xyz)
+        +length(normal)*(length(center)+length(half)));
+    return base+support<=pad;
+}
+void appendWallContact(uint body,uint wall,uint node){
+    float4 point=r.sample[r.sampleInfo[r.shapeId[body]].x+node];
+    float3 arm=qrot(r.rotation[body],point.xyz*r.body[body].x);
+    float4 plane=r.wallPlane[wall];
+    float phi=dot(plane.xyz,r.position[body].xyz+arm)-plane.w;
+    phi+=dot(plane.xyz,r.positionRemainder[body].xyz)-r.wallRemainder[wall].w;
+    if(!isfinite(phi)){fail(512);return;}
+    if(phi>=0)return;
+    if(-phi>r.c.maxOverlap*r.body[body].w)fail(4);
+    uint offset;InterlockedAdd(r.control[2],1,offset);
+    if(offset>=r.c.contactCapacity){fail(32);return;}
+    r.meta[offset]=uint4(body,r.c.N+wall,node,1);
+    r.pointDepth[offset]=float4(arm,-phi);
+    r.normalArea[offset]=float4(plane.xyz,point.w*r.body[body].x*r.body[body].x);
+}
+groupshared uint wallCandidate;
+groupshared uint wallGroupActive;
+[shader("compute")][numthreads(64,1,1)]
+void collectWallContacts(uint3 group:SV_GroupID,uint lane:SV_GroupIndex){
+    uint body=group.x%r.c.N,wall=group.x/r.c.N;
+    if(wall>=r.c.wallCount)return;
+    if(lane==0)wallGroupActive=r.control[0]==0?1:0;
+    GroupMemoryBarrierWithGroupSync();
+    if(wallGroupActive==0)return;
+    float4 plane=r.wallPlane[wall];
+    float phi=dot(plane.xyz,r.position[body].xyz)-plane.w;
+    phi+=dot(plane.xyz,r.positionRemainder[body].xyz)-r.wallRemainder[wall].w;
+    float pad=64.*1.1920928955078125e-7*(1.+length(r.position[body].xyz)+abs(plane.w));
+    if(phi>r.body[body].z+pad)return;
+    if(r.c.meshGeometry==0){
+        uint count=r.sampleInfo[r.shapeId[body]].y;
+        for(uint node=lane;node<count;node+=64)appendWallContact(body,wall,node);
+        return;
+    }
+    uint4 info=r.meshClusterInfo[r.shapeId[body]];uint cluster=info.x;
+    while(cluster<info.x+info.y){
+        if(lane==0)wallCandidate=wallClusterMayContact(body,wall,cluster)?1:0;
+        GroupMemoryBarrierWithGroupSync();
+        uint candidate=wallCandidate;uint4 range=r.meshClusterRanges[cluster];
+        if(candidate!=0&&lane<range.y)appendWallContact(body,wall,r.meshSampleIndices[range.x+lane]);
+        GroupMemoryBarrierWithGroupSync();
+        cluster=candidate!=0?cluster+1:range.z;
+    }
+}
+[shader("compute")][numthreads(1,1,1)]
+void advanceWalls(uint id:SV_DispatchThreadID){
+    if(r.control[0]!=0)return;
+    for(uint w=0;w<r.c.wallCount;w++){
+        float4 plane=r.wallPlane[w],residual=r.wallRemainder[w];
+        float3 high=float3(plane.w,0,0),low=float3(residual.w,0,0);
+        compensated3(high,low,float3(dot(plane.xyz,r.wallVelocity[w].xyz)*r.c.dt,0,0));
+        plane.w=high.x;residual.w=low.x;
+        if(!isfinite(high.x)||!isfinite(low.x)){fail(512);return;}
+        r.wallPlane[w]=plane;r.wallRemainder[w]=residual;
+    }
+    if(r.c.wallBoxEnabled!=0){
+        for(uint axis=0;axis<3;axis++){
+            uint lo=r.wallBoxIds[2*axis],hi=r.wallBoxIds[2*axis+1];
+            float low=r.wallPlane[lo].w+r.wallRemainder[lo].w;
+            float high=-(r.wallPlane[hi].w+r.wallRemainder[hi].w);
+            if(low<0||high>r.cell[0][axis]||high<=low)fail(4096);
+        }
+    }
+}
+
 uint hashKey(uint4 key){uint h=key.x*73856093u^key.y*19349663u^key.z*83492791u;h^=h>>16;return h&(r.c.hashSize-1);}
 bool keyEqual(uint4 a,uint4 b){return all(a.xyz==b.xyz);}
 float3 transported(float3 x,float3 a,float3 b,float spin){
@@ -438,7 +541,8 @@ void clearContactStorage(uint id:SV_DispatchThreadID){
 void resolveContacts(uint id:SV_DispatchThreadID){
     if(id>=min(r.control[2],r.c.contactCapacity)||r.control[0]!=0)return;
     uint4 key=r.meta[id];uint i=key.x,j=key.y;float3 n=r.normalArea[id].xyz;
-    float3 wi=omega(i),wj=omega(j);float3 elastic=0;uint slot=hashKey(key);
+    bool wall=j>=r.c.N;
+    float3 wi=omega(i),wj=0;if(!wall)wj=omega(j);float3 elastic=0;uint slot=hashKey(key);
     if(r.c.historyStep!=0){
         for(uint probe=0;probe<r.c.hashSize;probe++){
             uint old=r.oldHash[slot];if(old==EMPTY)break;
@@ -446,7 +550,19 @@ void resolveContacts(uint id:SV_DispatchThreadID){
             slot=(slot+1)&(r.c.hashSize-1);
         }
     }
-    float3 arm=r.pointDepth[id].xyz;float3 branch=centerBranch(i,j);
+    float3 arm=r.pointDepth[id].xyz;
+    if(wall){
+        uint w=j-r.c.N;float4 material=r.wallMaterial[w];
+        float3 rv=r.velocity[i].xyz+r.velocityRemainder[i].xyz+cross(wi,arm)-r.wallVelocity[w].xyz;
+        PlaneResponse response=planeResponse(n,-r.pointDepth[id].w,r.normalArea[id].w,rv,elastic,
+            material.x,material.y,material.z,r.c.dt);
+        r.slip[id]=response.slipLoss;r.contactForce[id]=response.forceEnergy;
+        if(response.sliding){uint unused;InterlockedAdd(r.control[6],1,unused);}
+        uint oldHead;InterlockedExchange(r.heads[i],2*id,oldHead);
+        r.next[2*id]=oldHead;r.next[2*id+1]=EMPTY;
+        return;
+    }
+    float3 branch=centerBranch(i,j);
     float3 rv=r.velocity[i].xyz-r.velocity[j].xyz-r.cell[1].xyz*branch+cross(wi,arm)-cross(wj,arm-branch);
     elastic+=(rv-n*dot(rv,n))*r.c.dt;
     float3 trial=elastic;
@@ -476,8 +592,16 @@ void gather(uint id:SV_DispatchThreadID){
     while(entry!=EMPTY){
         if(visited++>2*r.c.contactCapacity){fail(128);return;}
         uint contact=entry/2;bool source=(entry&1)==0;uint4 key=r.meta[contact];
-        float3 force=r.contactForce[contact].xyz;float3 branch=centerBranch(key.x,key.y);
+        float3 force=r.contactForce[contact].xyz;
         float3 arm=r.pointDepth[contact].xyz;
+        if(key.y>=r.c.N){
+            f+=force;t+=cross(arm,force);
+            stress0-=force.x*arm;stress1-=force.y*arm;stress2-=force.z*arm;
+            energy+=r.contactForce[contact].w;denom+=length(force);
+            maxDepth=max(maxDepth,r.pointDepth[contact].w/r.body[key.x].w);
+            dissipation+=r.slip[contact].w;entry=r.next[entry];continue;
+        }
+        float3 branch=centerBranch(key.x,key.y);
         f+=source?force:-force;t+=source?cross(arm,force):cross(arm-branch,-force);
         // Compression-positive virial: -force_on_source outer centre branch.
         stress0-=.5*force.x*branch;stress1-=.5*force.y*branch;stress2-=.5*force.z*branch;
@@ -490,8 +614,33 @@ void gather(uint id:SV_DispatchThreadID){
     r.particleStress[3*id]=float4(stress0,0);r.particleStress[3*id+1]=float4(stress1,0);r.particleStress[3*id+2]=float4(stress2,0);
     float kinetic=.5*(r.body[id].y*dot(r.velocity[id].xyz,r.velocity[id].xyz)+dot(r.momentum[id].xyz,omega(id)));
     r.particleDiagnostic[id]=float4(kinetic,energy,length(f),denom);
-    accumulate(id,float3(dissipation,0,0));
+    accumulate(id,float4(dissipation,0,0,0));
 }
+
+// Each (wall,body) owns its rows; only integer atomics collect contacts.
+// Reduction over bodies is performed by diagnostic.slang, without force atomics.
+[shader("compute")][numthreads(64,1,1)]
+void gatherWallRows(uint index:SV_DispatchThreadID){
+    if(index>=r.c.N*r.c.wallCount||r.control[0]!=0)return;
+    uint body=index%r.c.N,wall=index/r.c.N,count=0,visited=0;
+    float3 reaction=0,moment=0;float power=0;uint entry=r.heads[body];
+    while(entry!=EMPTY){
+        if(visited++>2*r.c.contactCapacity){fail(128);return;}
+        uint contact=entry/2;
+        if(r.meta[contact].y==r.c.N+wall){
+            float3 force=r.contactForce[contact].xyz;
+            float3 point=r.position[body].xyz+r.positionRemainder[body].xyz+r.pointDepth[contact].xyz;
+            reaction-=force;moment-=cross(point,force);
+            power+=dot(force,r.wallVelocity[wall].xyz);count++;
+        }
+        entry=r.next[entry];
+    }
+    float4 work=r.wallAccumulated[index];
+    r.wallRows[3*index]=float4(reaction,asfloat(count));
+    r.wallRows[3*index+1]=float4(moment,power);
+    r.wallRows[3*index+2]=float4(work.x+work.y,0,0,0);
+}
+
 [shader("compute")][numthreads(64,1,1)]
 void beginStep(uint id:SV_DispatchThreadID){
     if(id>=r.c.N||r.control[0]!=0)return;
@@ -501,7 +650,7 @@ void beginStep(uint id:SV_DispatchThreadID){
     compensated3(v,vl,.5*dt*r.force[id].xyz/r.body[id].y);
     compensated3(l,ll,.5*dt*r.torque[id].xyz);
     float loss=-expm1Stable(-r.c.drag*dt)*(.5*r.body[id].y*dot(v+vl,v+vl)+rotationalEnergy(id,l+ll));
-    accumulate(id,float3(0,loss,.5*dt*cellPower(id)));
+    accumulate(id,float4(0,loss,.5*dt*cellPower(id),wallStepWork(id,.5*dt)));
     float damping=expm1Stable(-.5*r.c.drag*dt);
     compensated3(v,vl,damping*(v+vl));compensated3(l,ll,damping*(l+ll));
     r.momentum[id]=float4(l,0);r.momentumRemainder[id]=float4(ll,0);
@@ -546,7 +695,7 @@ void finishStep(uint id:SV_DispatchThreadID){
     compensated3(v,vl,.5*r.c.dt*r.force[id].xyz/r.body[id].y);
     compensated3(l,ll,.5*r.c.dt*r.torque[id].xyz);
     float loss=-expm1Stable(-r.c.drag*r.c.dt)*(.5*r.body[id].y*dot(v+vl,v+vl)+rotationalEnergy(id,l+ll));
-    accumulate(id,float3(0,loss,.5*r.c.dt*cellPower(id)));
+    accumulate(id,float4(0,loss,.5*r.c.dt*cellPower(id),wallStepWork(id,.5*r.c.dt)));
     float damping=expm1Stable(-.5*r.c.drag*r.c.dt);
     compensated3(v,vl,damping*(v+vl));compensated3(l,ll,damping*(l+ll));
     if(any(!isfinite(v))||any(!isfinite(l))){fail(512);return;}
@@ -577,4 +726,12 @@ void fabricRows(uint id:SV_DispatchThreadID){
         a=float4(n*n,n.x*n.y);b=float4(n.x*n.z,n.y*n.z,1,0);
     }
     r.fabricRows[2*id]=a;r.fabricRows[2*id+1]=b;
+}
+
+[shader("compute")][numthreads(64,1,1)]
+void refreshWallPower(uint index:SV_DispatchThreadID){
+    if(index>=r.c.N*r.c.wallCount)return;
+    float4 value=r.wallRows[3*index+1];
+    value.w=-dot(r.wallRows[3*index].xyz,r.wallVelocity[index/r.c.N].xyz);
+    r.wallRows[3*index+1]=value;
 }

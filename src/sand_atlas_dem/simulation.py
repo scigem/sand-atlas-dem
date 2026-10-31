@@ -72,7 +72,9 @@ class Simulation:
         state = self.engine.state()
         with h5py.File(path, "w") as f:
             f.attrs.update(
-                format="sand-dem-checkpoint/3",
+                format="sand-dem-checkpoint/4"
+                if self.engine.wall_count
+                else "sand-dem-checkpoint/3",
                 step=self.engine.step,
                 stage_index=self.stage_index,
                 stage_steps=self.stage_steps,
@@ -93,9 +95,14 @@ class Simulation:
     @classmethod
     def resume(cls, path, *, metal=None):
         with h5py.File(path) as f:
-            if f.attrs.get("format") != "sand-dem-checkpoint/3":
+            if f.attrs.get("format") not in {
+                "sand-dem-checkpoint/3",
+                "sand-dem-checkpoint/4",
+            }:
                 raise ValueError("Unsupported checkpoint")
             spec = Experiment(**json.loads(f.attrs["experiment"]))
+            if bool(spec.planes) != (f.attrs["format"] == "sand-dem-checkpoint/4"):
+                raise ValueError("Checkpoint boundary version mismatch")
             if sha256(spec.shape_library) != f.attrs["shape_sha256"]:
                 raise ValueError("Shape library changed since checkpoint")
             state = {name: f[name][:] for name in f}
@@ -114,7 +121,7 @@ class Simulation:
     def rate(self, stage, row):
         kind = stage["kind"]
         dt = self.experiment.diagnostic_interval * self.experiment.timestep
-        if kind == "hold":
+        if kind in {"hold", "wall"}:
             return np.zeros(3)
         if kind == "strain":
             return np.asarray(stage["rate"], float)
@@ -151,7 +158,9 @@ class Simulation:
             numerics=dict(
                 state_accumulation="compensated_fp32",
                 cell_update="accumulated_log_strain",
-                checkpoint_format="sand-dem-checkpoint/3",
+                checkpoint_format="sand-dem-checkpoint/4"
+                if self.engine.wall_count
+                else "sand-dem-checkpoint/3",
             ),
             experiment=spec.to_dict(),
             shape_sha256=sha256(spec.shape_library),
@@ -164,8 +173,14 @@ class Simulation:
                 strain="engineering_compression_positive",
                 volumetric_strain="sum_of_axial_engineering_strains",
                 void_ratio="cell_volume_over_sum_rigid_grain_volumes_minus_one",
-                boundary="periodic" if spec.periodic else "nonperiodic-centre-domain",
-                measurement_volume="periodic_cell"
+                boundary="translating-planes"
+                if spec.planes
+                else "periodic"
+                if spec.periodic
+                else "nonperiodic-centre-domain",
+                measurement_volume="orthogonal-wall-box"
+                if spec.boundary_box is not None
+                else "periodic_cell"
                 if spec.periodic
                 else "computational_domain",
             ),
@@ -203,7 +218,12 @@ class Simulation:
                 )
                 rate = self.rate(stage, self.rows[-1])
                 wall = time.perf_counter()
-                self.engine.advance(amount, rate=rate, drag=stage.get("drag", 0))
+                self.engine.advance(
+                    amount,
+                    rate=rate,
+                    drag=stage.get("drag", 0),
+                    wall_velocities=stage.get("wall_velocities"),
+                )
                 self.stage_steps += amount
                 chunks += 1
                 row = dict(
@@ -215,6 +235,8 @@ class Simulation:
                 row["work_balance_proxy_residual"] = (
                     row["cell_work"]
                     - origin["cell_work"]
+                    + row["wall_work"]
+                    - origin.get("wall_work", 0)
                     - row["friction_dissipation"]
                     + origin["friction_dissipation"]
                     - row["drag_dissipation"]
@@ -291,7 +313,9 @@ class Simulation:
         state = self.engine.state()
         with h5py.File(path, "w") as f:
             f.attrs.update(
-                format="sand-dem-snapshot/2",
+                format="sand-dem-snapshot/3"
+                if self.engine.wall_count
+                else "sand-dem-snapshot/2",
                 step=self.engine.step,
                 length_unit_m=self.engine.length_unit,
             )
@@ -303,6 +327,9 @@ class Simulation:
                 "rotationRemainder",
             ):
                 f.create_dataset(name, data=state[name])
+            if self.engine.wall_count:
+                for name in ("wallPlane", "wallRemainder", "wallVelocity"):
+                    f.create_dataset(name, data=state[name])
             f.create_dataset("shape_id", data=self.engine.ids)
             f.create_dataset("scale", data=self.engine.scales)
 
@@ -340,6 +367,7 @@ def export_run(path, output):
         "friction_dissipation",
         "drag_dissipation",
         "cell_work",
+        "wall_work",
         "work_balance_proxy_residual",
     ]
     with open(out / "history.csv", "w", newline="") as f:

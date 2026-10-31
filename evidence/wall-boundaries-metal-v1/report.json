@@ -1,0 +1,11 @@
+{
+  "identity": "wall-boundaries-metal-v1",
+  "passed": true,
+  "source_unchanged": true,
+  "source_snapshot_unchanged": true,
+  "pytest_result": "10 passed in 5.78s",
+  "backend": "metal",
+  "source_freeze_sha256": "41733c346fd825916182cf72a44c1fd6300f723cd7f9a23597c84231a1b919cd",
+  "log_sha256": "0799c94bed7b9580474ef216cf4f28c4d5a49de7c54b3f7aef528b3ed1b7ff9a",
+  "scientific_admission": false
+}

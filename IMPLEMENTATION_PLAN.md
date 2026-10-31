@@ -130,9 +130,13 @@ work alongside the scientific gates below; naming a material must not infer cali
   The standalone Metal plane-traction operator now passes frozen analytical force,
   torque, energy and history checks. The nonperiodic foundation now passes the full
   131-test Metal suite (one skipped), including bounded neighbours, six-face escape
-  rollback and checkpoint/export boundary identity. Production wall collection,
-  motion, reactions and wall-state checkpoint/rollback integration remain required, as does
-  source-derived restitution damping. See docs/WALL_CONTACT.md,
+  rollback and checkpoint/export boundary identity. Production plane collection,
+  prescribed motion, reactions/work, measurement-box geometry and wall-state
+  checkpoint/rollback integration are now implemented. The final complete suite
+  passes 145 tests with one skipped on Metal, including independent analytical
+  partial-slip force/torque/loss checks and multilevel reaction reductions.
+  Wall CLI interruption/resume/export also passes. Source-derived restitution
+  damping and benchmark input reconstruction remain required. See docs/WALL_CONTACT.md,
   docs/CONTACT_SOURCE_AUDIT.md and docs/PUBLISHED_ASSEMBLY_REFERENCE.md.
 - [ ] Complete atlas adapters and material comparison. The bounded recorded-path
   adapter checks protocol, signed stress/strain mapping, prepared origins, frozen

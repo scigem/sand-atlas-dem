@@ -5,6 +5,7 @@ from pathlib import Path
 
 import numpy as np
 
+from .boundaries import validate_planes
 from .util import finite_array, read_json
 
 
@@ -14,6 +15,8 @@ class Experiment:
     shape_library: str = ""
     contact_geometry: str = "sdf"
     periodic: bool = True
+    planes: list = field(default_factory=list)
+    boundary_box: list | None = None
     particles: int = 1000
     seed: int = 42
     density: float = 2650.0
@@ -43,6 +46,7 @@ class Experiment:
             raise ValueError("Unsupported contact geometry")
         if type(self.periodic) is not bool:
             raise ValueError("periodic must be an explicit boolean")
+        validate_planes(self.planes, self.periodic, self.boundary_box)
         for name in (
             "particles",
             "seed",
@@ -97,23 +101,29 @@ class Experiment:
             "pressure_tolerance",
             "kinetic_tolerance",
             "force_tolerance",
+            "wall_velocities",
         }
         for s in self.stages:
-            if not self.periodic and s.get("kind") != "hold":
-                raise ValueError(
-                    "Nonperiodic domains currently support hold stages only"
-                )
+            if not self.periodic and s.get("kind") not in {"hold", "wall"}:
+                raise ValueError("Nonperiodic domains support hold or wall stages only")
             if set(s) - allowed or s.get("kind") not in {
                 "hold",
                 "isotropic",
                 "triaxial",
                 "strain",
+                "wall",
             }:
                 raise ValueError("Unsupported stage or unknown stage fields")
             if type(s.get("steps")) is not int or s["steps"] < 1:
                 raise ValueError("Positive stage steps required")
             if not np.isfinite(s.get("drag", 0)) or s.get("drag", 0) < 0:
                 raise ValueError("Drag must be finite and nonnegative")
+            if s["kind"] == "wall":
+                if not self.planes:
+                    raise ValueError("Wall stages require planes")
+                finite_array(s.get("wall_velocities"), (len(self.planes), 3))
+            elif "wall_velocities" in s:
+                raise ValueError("wall_velocities require a wall stage")
             if s["kind"] in {"isotropic", "triaxial"}:
                 for key in ("pressure", "gain", "filter_time", "max_rate"):
                     if not np.isfinite(s.get(key, np.nan)) or s[key] <= 0:

@@ -5,6 +5,7 @@ import math
 import numpy as np
 
 from .backend import Metal
+from .boundaries import box_extents
 from .util import finite_array
 
 ERRORS = {
@@ -19,7 +20,17 @@ ERRORS = {
     512: "nonfinite state",
     1024: "mesh traversal stack capacity",
     2048: "nonperiodic domain escape",
+    4096: "invalid boundary box",
 }
+
+
+WALL_STATE = (
+    "wallPlane",
+    "wallRemainder",
+    "wallVelocity",
+    "wallAccumulated",
+    "wallRows",
+)
 
 
 RESIDUAL_STATE = (
@@ -85,10 +96,15 @@ class Engine:
             raise ValueError("At least one three-dimensional position required")
         if not spec.periodic and (np.any(positions < 0) or np.any(positions >= cell)):
             raise ValueError("Nonperiodic particle centres must lie in [0, cell)")
+        if spec.boundary_box is not None:
+            box_extents(
+                np.array([p["offset"] for p in spec.planes]), spec.boundary_box, cell
+            )
         self.m = metal or Metal()
         self.spec = spec
         self.library = library
         self.n = len(positions)
+        self.wall_count = len(spec.planes)
         self.step = 0
         self.history = False
         self.active = 0
@@ -153,6 +169,7 @@ class Engine:
             + 8 * self.bin_count * self.bin_capacity
             + 1024 * self.n
         )
+        estimated += 160 * self.wall_count * self.n + 256 * self.wall_count
         if spec.contact_geometry == "mesh":
             estimated += sum(
                 224 * len(s.faces) + 224 + 8 * len(s.samples) for s in library.shapes
@@ -193,6 +210,48 @@ class Engine:
             np.array([list(box) + [0], [0, 0, 0, 0], list(box) + [0]], np.float32),
         )
         self.initial_cell = np.asarray(cell, float)
+        if spec.boundary_box is not None:
+            self.initial_cell = box_extents(
+                np.array([p["offset"] for p in spec.planes]), spec.boundary_box, cell
+            )
+        wall_plane = np.zeros((max(1, self.wall_count), 4), np.float64)
+        wall_velocity = np.zeros_like(wall_plane)
+        wall_material = np.zeros_like(wall_plane)
+        for index, plane in enumerate(spec.planes):
+            wall_plane[index] = [*plane["normal"], plane["offset"] / l]
+            wall_velocity[index, :3] = np.array(plane["velocity"]) * self.time_unit / l
+            wall_material[index, :3] = [
+                plane["normal_stiffness"] / spec.normal_stiffness,
+                plane["tangential_stiffness"] / spec.normal_stiffness,
+                plane["friction"],
+            ]
+        rounded_plane = wall_plane.astype(np.float32)
+        residual_plane = (wall_plane - rounded_plane).astype(np.float32)
+        if (
+            not np.isfinite(rounded_plane).all()
+            or not np.isfinite(residual_plane).all()
+            or not np.isfinite(wall_velocity.astype(np.float32)).all()
+            or not np.isfinite(wall_material.astype(np.float32)).all()
+            or (
+                self.wall_count
+                and np.any(wall_material[: self.wall_count, :2].astype(np.float32) <= 0)
+            )
+        ):
+            raise ValueError(
+                "Plane data cannot be represented in normalized FP32 units"
+            )
+        self.add("wallPlane", rounded_plane)
+        self.add("wallRemainder", residual_plane)
+        self.add("wallVelocity", wall_velocity.astype(np.float32))
+        self.add("wallMaterial", wall_material.astype(np.float32))
+        self.add("wallBoxIds", np.array(spec.boundary_box or [0] * 6, np.uint32))
+        self.add(
+            "wallAccumulated",
+            np.zeros((max(1, self.wall_count * self.n), 4), np.float32),
+        )
+        self.add(
+            "wallRows", np.zeros((max(1, 3 * self.wall_count * self.n), 4), np.float32)
+        )
         self.add(
             "referenceCell",
             np.array([list(box) + [0], [0, 0, 0, self.cutoff]], np.float32),
@@ -238,6 +297,13 @@ class Engine:
         while size > 1:
             size = (size + 255) // 256
             self.fabric_buffers.append((size, self.m.buffer(count=size * 2, stride=16)))
+        self.wall_diag_buffers = []
+        size = self.n
+        while self.wall_count and size > 1:
+            size = (size + 255) // 256
+            self.wall_diag_buffers.append(
+                (size, self.m.buffer(count=3 * size * self.wall_count, stride=16))
+            )
         names = (
             "position",
             "velocity",
@@ -257,6 +323,7 @@ class Engine:
             "accumulated",
             "referencePositionRemainder",
             *RESIDUAL_STATE,
+            *(WALL_STATE if self.wall_count else ()),
         )
         self.backups = {
             name: self.m.buffer(count=self.buffers[name].size // 4) for name in names
@@ -272,7 +339,14 @@ class Engine:
             sh = self.library.shapes[int(i)]
             mass = self.spec.density * sh.volume * s**3
             stiffness = (
-                (self.spec.normal_stiffness + self.spec.tangential_stiffness)
+                (
+                    self.spec.normal_stiffness
+                    + self.spec.tangential_stiffness
+                    + sum(
+                        p["normal_stiffness"] + p["tangential_stiffness"]
+                        for p in self.spec.planes
+                    )
+                )
                 * sh.areas.sum()
                 * s
                 * s
@@ -379,6 +453,8 @@ class Engine:
             "historyStep": int(self.history),
             "meshGeometry": int(self.spec.contact_geometry == "mesh"),
             "periodic": int(self.spec.periodic),
+            "wallCount": self.wall_count,
+            "wallBoxEnabled": int(self.spec.boundary_box is not None),
         }
         return dict(
             self.buffers,
@@ -404,6 +480,8 @@ class Engine:
             )
             self.dispatch("contactTotal", 1, e, b)
             self.dispatch("emitContacts", 64 * self.pair_capacity, e, b)
+        if self.wall_count:
+            self.dispatch("collectWallContacts", 64 * self.n * self.wall_count, e, b)
 
     def forces(self, e, b):
         self.dispatch("clearBins", self.bin_count, e, b)
@@ -418,6 +496,8 @@ class Engine:
         self.dispatch("resolveContacts", self.contact_capacity, e, b)
         self.dispatch("buildHistoryHash", self.contact_capacity, e, b)
         self.dispatch("gather", self.n, e, b)
+        if self.wall_count:
+            self.dispatch("gatherWallRows", self.n * self.wall_count, e, b)
 
     def initialize(self):
         e = self.m.device.create_command_encoder()
@@ -436,7 +516,7 @@ class Engine:
             raise RejectedStep(ctrl[0])
         return ctrl
 
-    def advance(self, steps, *, rate=(0, 0, 0), drag=0):
+    def advance(self, steps, *, rate=(0, 0, 0), drag=0, wall_velocities=None):
         from dataclasses import replace
 
         if type(steps) is not int or steps < 0:
@@ -446,9 +526,15 @@ class Engine:
             raise ValueError("Affine cell rates require a periodic domain")
         if not np.isfinite(drag) or drag < 0:
             raise ValueError("Finite nonnegative drag required")
+        if wall_velocities is not None:
+            if not self.wall_count:
+                raise ValueError("Wall velocities require planes")
+            wall_velocities = finite_array(wall_velocities, (self.wall_count, 3))
         for attempt in range(5):
             try:
-                return self._advance_once(steps, rate=rate, drag=drag)
+                return self._advance_once(
+                    steps, rate=rate, drag=drag, wall_velocities=wall_velocities
+                )
             except RejectedStep as exc:
                 capacity = exc.flags & (8 | 16 | 32 | 64)
                 if not capacity or exc.flags & ~(8 | 16 | 32 | 64) or attempt == 4:
@@ -482,13 +568,26 @@ class Engine:
                 self.__dict__.update(replacement.__dict__)
                 self.capacity_retries = log
 
-    def _advance_once(self, steps, *, rate=(0, 0, 0), drag=0):
+    def _advance_once(self, steps, *, rate=(0, 0, 0), drag=0, wall_velocities=None):
         if getattr(self, "invalid", False):
             raise RuntimeError("Engine is invalid; restore a checkpoint")
         if steps < 1:
             return
         cell = self.m.read(self.buffers["cell"], shape=(3, 4))
         original_cell = cell.copy()
+        original_wall_velocity = None
+        if wall_velocities is not None:
+            original_wall_velocity = self.m.read(
+                self.buffers["wallVelocity"], shape=(self.wall_count, 4)
+            )
+            normalized_velocity = f4(
+                wall_velocities * self.time_unit / self.length_unit
+            )
+            if not np.isfinite(normalized_velocity).all():
+                raise ValueError(
+                    "Wall velocities cannot be represented in normalized FP32 units"
+                )
+            self.buffers["wallVelocity"].copy_from_numpy(normalized_velocity)
         cell[1, :3] = np.asarray(rate) * self.time_unit
         self.buffers["cell"].copy_from_numpy(cell)
         e = self.m.device.create_command_encoder()
@@ -499,10 +598,16 @@ class Engine:
         committed = self.history_buffers[1 - self.active]
         for name, backup in self.history_backup.items():
             e.copy_buffer(backup, 0, committed[name], 0, committed[name].size)
+        if original_wall_velocity is not None:
+            self.dispatch(
+                "refreshWallPower", self.n * self.wall_count, e, self.bindings()
+            )
         for _ in range(steps):
             b = self.bindings(drag=drag)
             self.dispatch("beginStep", self.n, e, b)
             self.dispatch("advanceCell", 1, e, b)
+            if self.wall_count:
+                self.dispatch("advanceWalls", 1, e, b)
             self.dispatch("checkRebuild", self.n, e, b)
             self.forces(e, b)
             self.dispatch("finishStep", self.n, e, b)
@@ -521,6 +626,8 @@ class Engine:
             self.m.submit(e)
             self.m.device.wait()
             self.buffers["cell"].copy_from_numpy(original_cell)
+            if original_wall_velocity is not None:
+                self.buffers["wallVelocity"].copy_from_numpy(original_wall_velocity)
             self.active = original_active
             self.history = original_history
             raise
@@ -554,6 +661,19 @@ class Engine:
             )
             fabric_source = dest
             n = size
+        wall_source = self.buffers["wallRows"]
+        n = self.n
+        for size, dest in self.wall_diag_buffers:
+            self.m.kernel("reduceWallRows", "diagnostic.slang").dispatch(
+                thread_count=[size * 256, self.wall_count, 1],
+                command_encoder=e,
+                N=n,
+                outputCount=size,
+                input=wall_source,
+                output=dest,
+            )
+            wall_source = dest
+            n = size
         self.m.submit(e)
         self.m.device.wait()
         data = self.m.read(source, shape=(7, 4))
@@ -569,6 +689,42 @@ class Engine:
         cell = self.m.read(self.buffers["cell"], shape=(3, 4))
         ctrl = self.check_errors()
         box = cell[0, :3].astype(float) * self.length_unit
+        domain = box.copy()
+        wall_results = []
+        if self.wall_count:
+            wall_data = self.m.read(wall_source, shape=(self.wall_count, 3, 4))
+            plane = self.m.read(
+                self.buffers["wallPlane"], shape=(self.wall_count, 4)
+            ).astype(float)
+            remainder = self.m.read(
+                self.buffers["wallRemainder"], shape=(self.wall_count, 4)
+            ).astype(float)
+            wall_velocity = self.m.read(
+                self.buffers["wallVelocity"], shape=(self.wall_count, 4)
+            )
+            offsets = (plane[:, 3] + remainder[:, 3]) * self.length_unit
+            for w in range(self.wall_count):
+                wall_results.append(
+                    dict(
+                        index=w,
+                        normal=plane[w, :3].tolist(),
+                        offset=float(offsets[w]),
+                        velocity=(
+                            wall_velocity[w, :3] * self.length_unit / self.time_unit
+                        ).tolist(),
+                        reaction=(wall_data[w, 0, :3] * self.force_unit).tolist(),
+                        reaction_moment_origin=(
+                            wall_data[w, 1, :3] * self.energy_unit
+                        ).tolist(),
+                        active_surface_contacts=int(wall_data[w, 0, 3].view(np.uint32)),
+                        power=float(
+                            wall_data[w, 1, 3] * self.energy_unit / self.time_unit
+                        ),
+                        work=float(wall_data[w, 2, 0] * self.energy_unit),
+                    )
+                )
+            if self.spec.boundary_box is not None:
+                box = box_extents(offsets, self.spec.boundary_box, domain)
         volume = float(box.prod())
         contact = data[:3, :3].astype(float) * self.energy_unit / volume
         kinetic = data[3:6, :3].astype(float) * self.energy_unit / volume
@@ -583,6 +739,8 @@ class Engine:
             "step": self.step,
             "elapsed_time": self.step * self.spec.timestep,
             "cell": box.tolist(),
+            "domain_cell": domain.tolist(),
+            "walls": wall_results,
             "stress": total.tolist(),
             "contact_stress": contact.tolist(),
             "kinetic_stress": kinetic.tolist(),
@@ -611,6 +769,7 @@ class Engine:
             "friction_dissipation": float(data[6, 0] * self.energy_unit),
             "drag_dissipation": float(data[6, 1] * self.energy_unit),
             "cell_work": float(data[6, 2] * self.energy_unit),
+            "wall_work": float(data[6, 3] * self.energy_unit),
         }
 
     def state(self):
@@ -634,6 +793,14 @@ class Engine:
                 *RESIDUAL_STATE,
             )
         }
+        if self.wall_count:
+            for name in WALL_STATE:
+                size = (
+                    self.wall_count * self.n * (3 if name == "wallRows" else 1)
+                    if name in {"wallRows", "wallAccumulated"}
+                    else self.wall_count
+                )
+                out[name] = self.m.read(self.buffers[name], shape=(size, 4))
         ctrl = self.check_errors()
         h = self.history_buffers[1 - self.active]
         count = int(ctrl[2])
@@ -652,6 +819,8 @@ class Engine:
         e.write_timestamp(pool, 0)
         self.dispatch("beginStep", self.n, e, b)
         self.dispatch("advanceCell", 1, e, b)
+        if self.wall_count:
+            self.dispatch("advanceWalls", 1, e, b)
         self.dispatch("checkRebuild", self.n, e, b)
         e.write_timestamp(pool, 1)
         self.dispatch("clearBins", self.bin_count, e, b)
@@ -669,6 +838,8 @@ class Engine:
         self.dispatch("buildHistoryHash", self.contact_capacity, e, b)
         e.write_timestamp(pool, 4)
         self.dispatch("gather", self.n, e, b)
+        if self.wall_count:
+            self.dispatch("gatherWallRows", self.n * self.wall_count, e, b)
         e.write_timestamp(pool, 5)
         self.dispatch("finishStep", self.n, e, b)
         e.write_timestamp(pool, 6)
@@ -703,6 +874,28 @@ class Engine:
         }
 
     def restore(self, state, step):
+        if self.wall_count:
+            for name in WALL_STATE:
+                value = finite_array(state[name])
+                if value.shape != (self.buffers[name].size // 16, 4):
+                    raise ValueError("Checkpoint wall state shape mismatch")
+            normals = np.array(
+                [plane["normal"] for plane in self.spec.planes], np.float32
+            )
+            if not np.array_equal(state["wallPlane"][:, :3], normals):
+                raise ValueError("Checkpoint plane normal identity mismatch")
+            offsets = (
+                np.asarray(state["wallPlane"][:, 3], float)
+                + state["wallRemainder"][:, 3]
+            ) * self.length_unit
+            if self.spec.boundary_box is not None:
+                box_extents(
+                    offsets,
+                    self.spec.boundary_box,
+                    np.asarray(state["cell"][0, :3], float) * self.length_unit,
+                )
+            for name in WALL_STATE:
+                self.buffers[name].copy_from_numpy(state[name])
         for name in (
             "position",
             "velocity",

@@ -1,0 +1,36 @@
+{
+  "identity": "wall-cli-smoke-v1",
+  "passed": true,
+  "gates": {
+    "first_paused": true,
+    "resumed_complete": true,
+    "versions": true,
+    "positive_contacts": true,
+    "positive_wall_work": true,
+    "zero_cell_work": true,
+    "conventions": true,
+    "vtk_export": true,
+    "source_unchanged": true
+  },
+  "final_wall_work_j": 8.000500262284049e-10,
+  "contacts": [
+    2,
+    2,
+    2,
+    2,
+    2
+  ],
+  "final_step": 20,
+  "checkpoint_format": "sand-dem-checkpoint/4",
+  "snapshot_versions": [
+    "sand-dem-snapshot/3"
+  ],
+  "vtk_files": [
+    "particles-000000020.vtu"
+  ],
+  "first_manifest_sha256": "6d3d9aceaa0b6d8e7d185f80e029b845778267945202f0cca9ebdaad3effe7e1",
+  "resumed_manifest_sha256": "3a27fdb9bb4be5c12f72446b87241d1e01404150364ab289cd8119818556aa00",
+  "export_sha256": "efc42539bac36d7402771ca29947c1300ed30785ad49d01789e52bf0720a5b71",
+  "source_freeze_sha256": "c3cb86db318fb312ebdff16ed71bf4ea181897281e94910c9d778965f3a0a971",
+  "scientific_admission": false
+}

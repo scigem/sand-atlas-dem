@@ -6,7 +6,7 @@ MECHANICS_QUALIFICATION.md. Source-scale acquisition is now resolved for a docum
 resolutions are prepared. The bounded 216-sphere controller case passes; Hostun
 preparation remains open. Optional exact-feature mesh queries pass fixed-quadrature
 force checks, while source-triangle quadrature convergence is being studied.
-The current full test suite passes 131 tests, with one skipped. Historical entries below retain
+The current full test suite passes 145 tests, with one skipped. Historical entries below retain
 their original evidence identities and are superseded where explicitly stated.
 
 2026-10-31 — research development build, Apple M4 Max (32 GPU cores, 36 GB unified
@@ -428,3 +428,34 @@ The new boundary boolean persists in the existing complete checkpoint /3 experim
 no wall state has been added. Exported volume is labelled computational-domain
 volume. No physical wall confinement, reactions or moving-plane work is claimed.
 See WALL_CONTACT.md for the remaining production-wall integration.
+
+## Production translating-plane laboratory
+
+Fixed-normal planes now integrate with the GPU contact collector, friction hash,
+particle gather and kick–drift–kick solver. Mesh sample hierarchies reject plane
+subtrees conservatively. Per-plane reactions and common-origin moments use integer
+contact counts and multilevel GPU reductions without floating force atomics.
+Compensated imposed-wall work is separate from cell work and participates in the
+laboratory proxy balance. Optional explicit axis-aligned wall gaps define volume
+and engineering strains while the computational domain stays fixed.
+Wall state joins transactional rollback, automatic capacity growth and checkpoint /4;
+wall snapshots /3 export through the existing particle VTK path.
+
+`wall-boundaries-metal-v1` passes ten frozen checks.
+`wall-boundaries-integration-v1` passes 143 tests with one skipped, including
+257-body/two-wall reductions, mixed grain/wall histories and full memory inventory.
+The subsequent `wall-friction-return-v1` adds independent closed cap integrals for
+production partial-slip force, torque and Coulomb return loss at unchanged 0.1%
+gates; its full serial actual-Metal suite passes 144 tests, one skipped.
+`wall-cli-smoke-v1` pauses at step 10, resumes to step 20, retains positive contacts
+at every diagnostic observation, reports positive wall work and zero cell work,
+and exports CSV/JSON/VTK with explicit wall-boundary/measurement-volume identity.
+The one-sphere CLI case is a software check only. Restitution, wall servos,
+long assembly convergence, benchmark reconstruction and material acceptance remain
+open; no earlier failed or partial Hostun quadrature study is superseded.
+
+`wall-final-integration-v1` is the final reviewed wall build: 145 tests passed,
+one skipped on Metal. Immutable checkpoint-normal identity and normalized-FP32
+velocity bounds are checked before mutation. An unintended profiling-time reduction
+buffer reallocation was removed. Earlier study source snapshots/results remain
+unchanged; the final identity repeats the complete suite and identical CLI smoke.

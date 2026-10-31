@@ -1,0 +1,46 @@
+{
+  "identity": "wall-final-integration-v1",
+  "passed": true,
+  "gates": {
+    "full_suite": true,
+    "source_unchanged": true,
+    "source_snapshot_unchanged": true,
+    "library_unchanged": true,
+    "first_paused": true,
+    "resumed_complete": true,
+    "checkpoint_version": true,
+    "snapshot_version": true,
+    "contacts": true,
+    "work": true,
+    "export_identity": true,
+    "vtk_export": true
+  },
+  "pytest_result": "145 passed, 1 skipped in 39.32s",
+  "final_step": 20,
+  "contacts": [
+    2,
+    2,
+    2,
+    2,
+    2
+  ],
+  "final_wall_work_j": 8.000500262284049e-10,
+  "backend": "metal",
+  "scientific_admission": false,
+  "source_freeze_sha256": "2ab652a17f3c4472798ef8e90f517fed463ebbc913cbe04ede54599b21d7a0f3",
+  "log_sha256": "89cdedc5dbecf3c78046a8581c94c201dea48529652ef72d396db7cbbe8c691a",
+  "private_artifact_hashes": {
+    "private/export/atlas-comparison.json": "7af0a2fecc8d34333d491019f0c00d0be1cc728edad54d5893d6773c4a6acd57",
+    "private/export/history.csv": "e083969c32dd3f01b0b2469a9e3c71156519ee13dfad93077ee8cd4fe3c29053",
+    "private/export/particles-000000020.vtu": "504e84051eeb20f36ea7132a52bb2814dc31a5c72b6bb6ba605e196bb8549454",
+    "private/export/response.png": "3d145a6ec7f4399398dd9892b43ab63d0d1c0e00be35067ef065caca3981f293",
+    "private/first/checkpoint.h5": "feff9af6ee8cf560bb59f25a840f59659837224ea5487ae64d1e69ebb392de24",
+    "private/first/history.json": "e6c2999d5b7f0b476e04a31f55bb7d30a80fe6709c352cc96807a0388bf7fad1",
+    "private/first/manifest.json": "26eddb855da6b431d433417605f0ea18e848eb3b41f64fd173fb236bfb3c5f8c",
+    "private/first/particles-000000010.h5": "c181da3eb0224a3b41717d8b1e33cc6dd316b0c50f27e2311143141c6829eebd",
+    "private/resumed/checkpoint.h5": "05ea9cd7829275b4225c8c62b23baf19b7f9880b80a63f81b8c4432f92ae8c36",
+    "private/resumed/history.json": "a94ab07191d810591fad782678250babcbb29a80df5c55ce1dac0156171c2dea",
+    "private/resumed/manifest.json": "cb5176a7d2717f7df6bc23aa6a507c6c46d0222059fcc45f736da00371af34d2",
+    "private/resumed/particles-000000020.h5": "a3fa7cb4d066c7f57c1a690ba9a4963fb9ce7188a8892442c9ec73ea9ba5bffc"
+  }
+}

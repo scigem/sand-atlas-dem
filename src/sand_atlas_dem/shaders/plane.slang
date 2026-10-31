@@ -1,16 +1,17 @@
 // Qualification operator for a fixed-normal translating penalty plane.
 // Full one-sided surface traction: this is an explicit project wall variant.
-// Engine collection, plane motion, rollback and checkpoint integration are pending.
+// Reused by the Engine wall collector and the independent qualification probe.
 struct PlaneResponse {
     float4 forceEnergy;
     float4 slipLoss;
+    bool sliding;
 };
 
 PlaneResponse planeResponse(float3 normal, float signedDistance, float area,
                             float3 relativeVelocity, float3 oldSlip,
                             float kn, float kt, float mu, float dt) {
     PlaneResponse value;
-    value.forceEnergy=0; value.slipLoss=0;
+    value.forceEnergy=0; value.slipLoss=0; value.sliding=false;
     if(signedDistance>=0)return value;
     float depth=-signedDistance;
     float3 tangent=relativeVelocity-normal*dot(relativeVelocity,normal);
@@ -20,6 +21,7 @@ PlaneResponse planeResponse(float3 normal, float signedDistance, float area,
     float3 ft=-kt*area*slip;
     float magnitude=length(ft);
     if(magnitude>mu*fn && magnitude>0){
+        value.sliding=true;
         ft*=mu*fn/magnitude;
         slip=-ft/(kt*area);
     }

@@ -124,3 +124,14 @@ active grain pairs; coordination is twice active grain pairs divided by all grai
 The work residual subtracts kinetic and elastic-proxy changes from cell work minus
 losses. Its quadrature and proxy-potential interpretation remain qualification
 work; the exact no-contact exponential drag case has an independent regression check.
+
+Fixed-normal translating planes are an explicit additional project boundary
+variant; see WALL_CONTACT.md. They require nonperiodic neighbours, full one-sided
+area weighting, common-node reactions and separately integrated wall work.
+Optional orthogonal wall gaps provide the declared specimen measurement volume;
+the computational domain otherwise stays distinct and fixed. Plane motion,
+velocity schedules and compensated work participate in rollback and checkpoint /4.
+The plane-free periodic contract and checkpoint /3 remain supported. The current
+full Metal suite passes 145 tests with one skipped, including independent bounded
+plane force/torque/return-loss and work checks. No restitution dashpot or published
+wall-confined assembly reproduction is inferred from those results.
