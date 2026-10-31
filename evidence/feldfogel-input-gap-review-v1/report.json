@@ -1,0 +1,73 @@
+{
+  "identity": "feldfogel-input-gap-review-v1",
+  "source_review_complete": true,
+  "benchmark_reproduction_complete": false,
+  "scientific_admission": false,
+  "input_sha256": {
+    "/Users/bmar5496/code/sand-atlas-dem/evidence/feldfogel-source-acquisition-v1/private/paper.pdf": "7946df872661b81445c82e1b7bf9e544290fae325b4009876112c2b9c1e44b5f",
+    "/Users/bmar5496/code/sand-atlas-dem/evidence/feldfogel-source-acquisition-v1/private/readMe.pdf": "2ef872c4c39f40a2a11bb2da7988667cbcc16504f1c03c58b523d5c2e5ff198c",
+    "/Users/bmar5496/code/sand-atlas-dem/evidence/feldfogel-source-acquisition-v1/private/rawData.zip": "0648960a2ff40bab2c708399371beb7c2f81e6452368ffb075483cccbb7ac20c"
+  },
+  "article_locators": [
+    "published page7 Figure4 panelsA-E and caption; section3.2",
+    "published page11 data availability statement"
+  ],
+  "readme_locators": [
+    "page1 two-sphere/3x3x3 parameter lists",
+    "page2 generic column convention"
+  ],
+  "archive_file_inventory": [
+    "fig_1/data_figure_1d.txt",
+    "fig_1/data_figure_1c.txt",
+    "fig_3/data_figure_3b.txt",
+    "fig_3/data_figure_3a.txt",
+    "fig_4/displacement_fig_4.txt",
+    "fig_4/load_array_fig_4c.txt",
+    "fig_4/load_array_fig_4e.txt",
+    "fig_4/load_array_fig_4d.txt",
+    "fig_4/load_array_fig_4b.txt",
+    "fig_5/load_deflection_data_figure_5h.txt",
+    "fig_5/load_deflection_data_figure_5g.txt",
+    "fig_5/load_deflection_data_figure_5f.txt",
+    "fig_5/load_deflection_data_figure_5e.txt",
+    "fig_6/load_deflection_data_figure_6b.txt",
+    "fig_6/load_deflection_data_figure_6a.txt",
+    "fig_6/c/positions_coarse.dat",
+    "fig_6/c/rotations_coarse.dat",
+    "fig_6/d/positions_fine.dat",
+    "fig_6/d/rotations_fine.dat"
+  ],
+  "archive_contains_supplied_solver_or_input_deck": false,
+  "publication_identity": "IJNME125(5)e7400, DOI10.1002/nme.7400",
+  "preprint_identity": "arXiv2209.15431v1,2022-09-30",
+  "preprint_warning": "This earlier version has different results section and omits the published27-sphere Figure4 benchmark; do not use it as a source for missing published inputs.",
+  "visual_review": {
+    "page": 7,
+    "render_sha256": "c7eecb00199dea0e2a192c74741908a30083cec1316c5371edf6d1e3d929d04c",
+    "publication_figure_d_surface_counts": [
+      500,
+      1000,
+      2000,
+      3000,
+      4000,
+      6000
+    ],
+    "caption_realizations_per_curve": 3,
+    "unresolved": "Six curves times three realizations is count-consistent with18 columns but does not establish column mapping. PanelB showsfive curves butrawarray has12 columns. No grouping/averaging is adopted."
+  },
+  "missing_inputs": [
+    "density",
+    "timestep or physical simulation duration",
+    "exact initial placement and orientation seeds",
+    "wall loading velocity/history",
+    "contact restitution mass/traction convention",
+    "published load-column and realization ordering"
+  ],
+  "reviewed_primary_urls": [
+    "https://doi.org/10.1002/nme.7400",
+    "https://doi.org/10.3929/ethz-b-000640908",
+    "https://arxiv.org/html/2209.15431"
+  ],
+  "source_access_note": "Acquired hashed private PDFs and raw archive reviewed locally; currentETH entity page returned403 via browser. Current primary listing still identifies theZIP/readme only.",
+  "smallest_next_action": "Acquire author input deck/column map or an institutional archived revision. A separately specified project sphere benchmark cannot replace exact published reproduction."
+}

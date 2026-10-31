@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "tests_passed": 8,
+  "gpu_executed": false,
+  "log_sha256": "aaf1f7dd01f8c8eaaef96520fbc3ef24cd2d841ee98b3dcc41b9a4964714848f",
+  "source_sha256": "6f64c38e447c225c6a8acc7a323c095f6df37ff2ceef7d38ae67fc02f7a436f8",
+  "scope": "CPU metadata contract only: immutable workload/source preservation and rejection of unaccepted, wrong-inventory, wrong-geometry, viscous, wrong-pressure, changed-shape and changed-receipt preparations. No numerical or scientific qualification."
+}

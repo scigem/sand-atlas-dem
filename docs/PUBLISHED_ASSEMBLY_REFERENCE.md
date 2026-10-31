@@ -55,7 +55,9 @@ different interlocked-block benchmark requiring its own input/geometry audit.
 The laboratory now implements both periodic orthogonal cells and nonperiodic
 fixed-normal translating planes. Production wall collection, reactions/work,
 checkpoint/retry and the CLI are independently checked in WALL_CONTACT.md.
-Contact restitution damping remains absent; global drag alone does not implement it.
+Explicit project normal traction viscosity is now implemented; it does not
+establish the source-specific conversion from restitution0.5. Global drag alone
+does not implement contact restitution.
 A periodic-cell approximation would therefore be a different study and cannot
 complete the published-benchmark gate. Source acquisition must establish dimensions,
 initial placement/orientations, loading schedule, contact parameters, surface/grid
@@ -77,3 +79,10 @@ Both the isolated plane-traction kernel and production wall laboratory now pass
 their distinct frozen engineering studies in WALL_CONTACT.md. The inspected
 original contact/global-damping source and unresolved restitution mapping
 are recorded separately in CONTACT_SOURCE_AUDIT.md; no coefficient is inferred.
+
+The 2026-11-01 source/figure recheck is recorded in
+PUBLISHED_ASSEMBLY_INPUT_AUDIT.md and `feldfogel-input-gap-review-v1`.
+It confirms the published/preprint identity distinction and the absence of an
+input deck in the acquired archive. Six panel-D curves times three realizations
+is count-consistent with18 columns, but column mapping is still unproven and no
+averaging is adopted. This source review does not complete benchmark reproduction.

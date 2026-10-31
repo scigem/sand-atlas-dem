@@ -149,6 +149,11 @@ work alongside the scientific gates below; naming a material must not infer cali
   is 0.05120%, and independently integrated work differs by at most 0.0001164% of
   initial energy. Mesh-assembly energy coverage remains open. The reported elastic energy is a proxy; work residual is diagnostic, with no
   asserted exact potential/conservation identity. Audit signs and quadrature.
+  The dependent all-53-shape/424-particle mesh-work workload is prospectively
+  frozen at2,1,0.5ns for all nine original static/drag/cyclic cases. Its resolver
+  binds accepted preparation/audit/shape hashes and executes immutable sources.
+  Eight CPU contract checks and pending-preparation rejection pass; actual mesh
+  work/timestep execution awaits preparation. No energy gate is marked complete.
 - [X] Freeze controller settings independently of the final material study. Require
   pressure tolerance 1%, kinetic/elastic proxy <=1e-5, unbalanced force <=1e-3 for
   100 consecutive diagnostic samples unless a separately justified policy is

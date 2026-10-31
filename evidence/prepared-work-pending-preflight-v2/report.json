@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "pending_preparation_rejected": true,
+  "gpu_started": false,
+  "command": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "examples/resolve_prepared_work.py",
+    "studies/prepared-hostun424-assembly-work-v1.json",
+    "--output",
+    "evidence/prepared-work-pending-preflight-v2/must-not-exist",
+    "--run"
+  ],
+  "returncode": 1,
+  "stderr": "Traceback (most recent call last):\n  File \"/private/tmp/sand-atlas-dem-walls/examples/resolve_prepared_work.py\", line 11, in <module>\n    import h5py\nModuleNotFoundError: No module named 'h5py'\n",
+  "source_sha256": "6f64c38e447c225c6a8acc7a323c095f6df37ff2ceef7d38ae67fc02f7a436f8"
+}

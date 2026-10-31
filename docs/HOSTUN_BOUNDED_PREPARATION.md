@@ -63,3 +63,31 @@ studies, timestep refinement and loading-rate studies using the exact checkpoint
 A prepared packing alone does not qualify dynamic/frictional accuracy or a
 constitutive response. The larger material pilot, dense performance study and
 independent published/experimental comparison remain separate plan gates.
+
+## Frozen dependent mesh-work workload
+
+Before observing Hostun preparation or work results,
+`studies/prepared-hostun424-assembly-work-v1.json` freezes all nine work cases:
+static and drag for 100 microseconds, cyclic affine compression/expansion for
+40 microseconds, each at 2, 1 and 0.5 ns. The existing 2% proxy balance,
+0.1% independent work, 1% endpoint refinement and 1% overlap limits remain.
+It requires at least 424 active grain pairs and every original grain eight times.
+Use only after accepted preparation:
+
+```sh
+PYTHONPATH=src python examples/resolve_prepared_work.py \
+  studies/prepared-hostun424-assembly-work-v1.json \
+  --output evidence/prepared-hostun424-assembly-work-v1 --run
+```
+
+The resolver refuses incomplete preparation, changed audited inputs, mismatched
+solver/geometry, wrong inventory, pressure or positive viscosity. It binds the
+accepted checkpoint/audit/shape hashes, archives sources and executes the existing
+assembly-work driver from that immutable copy. Omitting `--run` resolves/freezes
+inputs without Metal execution. The actual pending preparation is rejected before
+output creation (`prepared-work-pending-preflight-v2`). This workload is frozen,
+not executed or accepted, until its preparation dependency passes.
+
+Eight CPU metadata-contract tests pass in `prepared-work-resolution-tests-v1`,
+covering successful resolution/archive preservation and seven distinct invalid
+preparation cases. These fixtures never execute Metal or qualify a specimen.

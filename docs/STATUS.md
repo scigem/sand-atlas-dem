@@ -645,3 +645,22 @@ Its five overlapping forces agree exactly with the parent; final change is
 not full-library or L2-asset admission. The original 106-pose study continues
 without source mutation or case exclusion; consolidation and GPU comparison
 remain open. See HOSTUN_CONTACT_ACCURACY.md.
+
+## Frozen Hostun mesh-work dependency and published-input recheck
+
+Before observing preparation/work results, the dependent
+`prepared-hostun424-assembly-work-v1` freezes static/drag100us and cyclic40us
+cases at2,1,0.5ns, with the unchanged2% proxy/0.1% independent work/1% endpoint
+refinement and overlap gates. `resolve_prepared_work.py` requires accepted
+preparation, audited unchanged inputs, identical solver/mesh bytes and all53
+shapes eight times; it runs the existing work driver from immutable archived
+sources. The pending actual preparation is rejected before output/Metal in
+`prepared-work-pending-preflight-v2`. Eight CPU metadata-contract tests pass in
+`prepared-work-resolution-tests-v1`; no work case has yet executed.
+
+The published assembly source recheck is recorded in
+PUBLISHED_ASSEMBLY_INPUT_AUDIT.md and `feldfogel-input-gap-review-v1`.
+It preserves the applicable published/preprint identity distinction and remaining
+input gaps. An output-column count consistent with six curves and three
+realizations does not prove the column assignment; no guessed grouping is used.
+Exact published reproduction and experimental validation remain open.
