@@ -1,5 +1,12 @@
 # Status and evidence
 
+The contact-storage ledger isolates 41.858 GiB of logical contact/history/hash/
+scratch/adjacency storage at 50k with current capacities. This alone exceeds the
+Mac's 36 GiB; reducing geometry storage cannot close that resource gap. Frozen
+constructor declarations and independent algebra agree exactly without GPU or
+capacity-sized host allocations. See CONTACT_STORAGE.md. No storage optimization
+or dense capacity adequacy is claimed by the audit.
+
 Ottawa follow-up: the independent inertia-axis diagnostic separates the original
 54/84 volume ambiguity, but reveals other descriptor inconsistencies and a
 remaining duplicate match. All 173 supported meshes and all 244 descriptors are

@@ -1,0 +1,65 @@
+{
+  "identity": "contact-storage-ledger-v1",
+  "input_sha256": {
+    "/private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/gpu.py": "57ca8c6dbad237f5ce29c52a95e43b49d9e45abf1578c4abe70014f85624ca9a",
+    "/private/tmp/sand-atlas-dem-walls/evidence/hostun-resolution-memory-intake-v1/report.json": "da62b4770eb1796930f3801b6cd21de95049b842641bd0f646718487d3e82d0a",
+    "/private/tmp/sand-atlas-dem-walls/evidence/contact-storage-ledger-v1/analyze.py": "fde6f11ec0f0a094107a49dfda4b946a66faaed9823513e8f70f56119c2199a3"
+  },
+  "inputs_unchanged": true,
+  "symbolic_allocations_only": true,
+  "gpu_executed": false,
+  "rows": [
+    {
+      "particles": 424,
+      "contact_capacity": 1736704,
+      "hash_slots": 4194304,
+      "component_bytes": {
+        "two_history_state_sides": 166723584,
+        "history_state_rollback": 83361792,
+        "three_hash_tables": 50331648,
+        "point_force_loss_scratch": 62521344,
+        "contact_adjacency": 13893632
+      },
+      "contact_storage_bytes": 376832000,
+      "contact_storage_GiB": 0.3509521484375,
+      "alone_exceeds_36GiB": false
+    },
+    {
+      "particles": 10000,
+      "contact_capacity": 40960000,
+      "hash_slots": 134217728,
+      "component_bytes": {
+        "two_history_state_sides": 3932160000,
+        "history_state_rollback": 1966080000,
+        "three_hash_tables": 1610612736,
+        "point_force_loss_scratch": 1474560000,
+        "contact_adjacency": 327680000
+      },
+      "contact_storage_bytes": 9311092736,
+      "contact_storage_GiB": 8.671630859375,
+      "alone_exceeds_36GiB": false
+    },
+    {
+      "particles": 50000,
+      "contact_capacity": 204800000,
+      "hash_slots": 536870912,
+      "component_bytes": {
+        "two_history_state_sides": 19660800000,
+        "history_state_rollback": 9830400000,
+        "three_hash_tables": 6442450944,
+        "point_force_loss_scratch": 7372800000,
+        "contact_adjacency": 1638400000
+      },
+      "contact_storage_bytes": 44944850944,
+      "contact_storage_GiB": 41.858154296875,
+      "alone_exceeds_36GiB": true
+    }
+  ],
+  "engineering_implication": "At 50k, contact storage alone exceeds installed unified memory, independently of geometry resolution. Geometry-only optimization cannot make this configuration fit.",
+  "limitations": [
+    "No real device or host capacity-sized buffer is allocated.",
+    "Excludes geometry, particle/pair/bin state, scans, compiler, driver and host peaks.",
+    "Current capacities are not established as sufficient for a dense specimen.",
+    "No smaller capacity, altered force law, or actual storage optimization is qualified."
+  ]
+}

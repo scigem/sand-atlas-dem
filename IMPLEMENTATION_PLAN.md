@@ -184,6 +184,11 @@ work alongside the scientific gates below; naming a material must not infer cali
   Exact-mesh enclosure/compaction isolated-pair timings are also complete at
   15.20/60.32 ms per step for 10k/50k. Dense-specimen performance remains open.
   Sphere throughput is only an engineering baseline.
+  Symbolic execution of the current allocation declarations now establishes a
+  41.858 GiB contact-storage subtotal at 50k with unchanged 4096-contact capacity,
+  exceeding installed 36 GiB before geometry. Active-history/rollback storage
+  needs implementation and actual-device qualification; geometry-only changes
+  cannot close this resource gap. See docs/CONTACT_STORAGE.md.
 - [ ] Reproduce a complete published assembly benchmark and compare with independent
   experimental evidence. Calibration and validation datasets must remain distinct.
   Published wall-confined sphere benchmark source bytes are acquired with verified

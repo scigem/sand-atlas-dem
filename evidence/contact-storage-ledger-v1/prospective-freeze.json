@@ -1,0 +1,10 @@
+{
+  "input_sha256": {
+    "/private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/gpu.py": "57ca8c6dbad237f5ce29c52a95e43b49d9e45abf1578c4abe70014f85624ca9a",
+    "/private/tmp/sand-atlas-dem-walls/evidence/hostun-resolution-memory-intake-v1/report.json": "da62b4770eb1796930f3801b6cd21de95049b842641bd0f646718487d3e82d0a",
+    "/private/tmp/sand-atlas-dem-walls/evidence/contact-storage-ledger-v1/analyze.py": "fde6f11ec0f0a094107a49dfda4b946a66faaed9823513e8f70f56119c2199a3"
+  },
+  "scope": "Execute only frozen allocation declarations with symbolic buffers, never a GPU.",
+  "workload": "424, 10000 and 50000 particles; 4096 contacts/particle; original power-of-two hash sizing. No capacities changed.",
+  "acceptance": "Exact declaration-versus-independent-algebra equality. Allocation lower bounds only, not total measured memory or scientific acceptance."
+}
