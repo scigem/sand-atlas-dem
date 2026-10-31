@@ -1,0 +1,1754 @@
+{
+  "identity": "normalized-stiffness-contacts-v2",
+  "backend": "metal",
+  "cases": [
+    {
+      "fixture": "faceted-sphere",
+      "kappa": 1000,
+      "static": {
+        "fixture": "faceted-sphere",
+        "kappa": 1000,
+        "normal_stiffness_N_m3": 29468280348.03716,
+        "reference_pressure_Pa": 10000,
+        "nominal_target_force_N": 0.0011515701905165064,
+        "reference_diameter_m": 0.0003393479321458297,
+        "separation_m": 0.0003270262376179378,
+        "rotations": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "transverse_m": [
+          0.0,
+          0.0
+        ],
+        "library_sha256": "abc9d390a501ebcc26fb82235ec8b7ce8a5f385cac537a1db2d25401fa98d27e",
+        "sample_count": 15360,
+        "coarse_reference": {
+          "force_integral_m3": [
+            -3.897223671528952e-14,
+            1.910522504832138e-31,
+            0.0
+          ],
+          "torque_integral_m4": [
+            [
+              -5.581606348968817e-36,
+              -5.298058768630067e-35,
+              1.909002825735395e-34
+            ],
+            [
+              5.581606348968817e-36,
+              5.298058768630067e-35,
+              1.909002825735395e-34
+            ]
+          ],
+          "maximum_depth_m": 1.4777916956232702e-05,
+          "active_contacts": 616
+        },
+        "fine_reference": {
+          "force_integral_m3": [
+            -3.9078296286942954e-14,
+            4.9766029762966174e-31,
+            0.0
+          ],
+          "torque_integral_m4": [
+            [
+              -3.1385699166955076e-36,
+              -7.695961514833516e-35,
+              -9.509279100411977e-34
+            ],
+            [
+              3.1385699166955076e-36,
+              7.695961514833516e-35,
+              -9.509279100411977e-34
+            ]
+          ],
+          "maximum_depth_m": 1.5391164225410332e-05,
+          "active_contacts": 2360
+        },
+        "finest_reference": {
+          "force_integral_m3": [
+            -3.906654703955177e-14,
+            4.821758208767884e-30,
+            0.0
+          ],
+          "torque_integral_m4": [
+            [
+              -5.525007119857067e-36,
+              -3.1160885872360314e-35,
+              2.2881820384801402e-33
+            ],
+            [
+              5.525007119857067e-36,
+              3.1160885872360314e-35,
+              2.2881820384801402e-33
+            ]
+          ],
+          "maximum_depth_m": 1.569778785999912e-05,
+          "active_contacts": 9540
+        },
+        "coarse_quadrature_error": 0.002714027522455496,
+        "reference_quadrature_change": 0.0003007495742914914,
+        "reference_overlap_fraction": 0.04535511422770718,
+        "production_overlap_comparison_passed": false,
+        "normal_tangent_N_m": 198.65381639323846,
+        "local_normal_period_s": 7.340175991848867e-05,
+        "gpu_oracle_force_error": 1.5907583783987834e-06,
+        "gpu_oracle_torque_error": 1.3269661953983256e-08
+      },
+      "comparisons": [
+        {
+          "timestep_s": 1e-09,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 0.0,
+            "velocity": 0.0,
+            "rotation": 0.0,
+            "force": 0.0,
+            "torque": 0.0
+          },
+          "reference_is_self": true
+        },
+        {
+          "timestep_s": 2e-09,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 6.32750066840964e-11,
+            "velocity": 3.4703599590128077e-09,
+            "rotation": 3.6110833752801115e-11,
+            "force": 6.081889496218095e-07,
+            "torque": 6.825318404155609e-08
+          },
+          "reference_is_self": false
+        },
+        {
+          "timestep_s": 4e-09,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 7.281290597525619e-11,
+            "velocity": 2.8560667126114585e-09,
+            "rotation": 4.7911065462775254e-11,
+            "force": 5.054747760945505e-07,
+            "torque": 4.134741594209776e-08
+          },
+          "reference_is_self": false
+        },
+        {
+          "timestep_s": 8e-09,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 8.272362254340794e-11,
+            "velocity": 4.1131909883428595e-09,
+            "rotation": 1.1083227400464932e-10,
+            "force": 5.076909269886815e-07,
+            "torque": 3.65319106156588e-08
+          },
+          "reference_is_self": false
+        },
+        {
+          "timestep_s": 1.6e-08,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 3.6626213918203367e-10,
+            "velocity": 1.0828450998806917e-08,
+            "rotation": 5.207855017846327e-10,
+            "force": 5.26909396871214e-07,
+            "torque": 1.1364649780172696e-07
+          },
+          "reference_is_self": false
+        },
+        {
+          "timestep_s": 3.2e-08,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 1.379877458423603e-09,
+            "velocity": 4.238145630916546e-08,
+            "rotation": 2.4061684427322146e-09,
+            "force": 2.5570195673912104e-06,
+            "torque": 3.000185195896519e-07
+          },
+          "reference_is_self": false
+        },
+        {
+          "timestep_s": 6.4e-08,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 5.521061382168339e-09,
+            "velocity": 1.74971117410304e-07,
+            "rotation": 1.0919166226822963e-08,
+            "force": 3.7512252421062705e-06,
+            "torque": 6.56849745482826e-07
+          },
+          "reference_is_self": false
+        },
+        {
+          "timestep_s": 1.28e-07,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 2.0530316829990377e-08,
+            "velocity": 7.825487819758536e-07,
+            "rotation": 4.446468502627386e-08,
+            "force": 4.38697191377657e-06,
+            "torque": 1.7023427819478437e-06
+          },
+          "reference_is_self": false
+        },
+        {
+          "timestep_s": 2.56e-07,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 8.433904425677511e-08,
+            "velocity": 3.0014226896714835e-06,
+            "rotation": 1.8091282197365809e-07,
+            "force": 1.1975270682609905e-05,
+            "torque": 4.800192996638125e-06
+          },
+          "reference_is_self": false
+        }
+      ],
+      "reference_supported_by_2ns": true,
+      "largest_tested_accurate_timestep_s": 2.56e-07,
+      "reference_maximum_observed_overlap": 0.04355122521519661,
+      "note": "Accuracy is agreement with a 1ns same-discretization trajectory, not an independent dynamic solution; 1ns versus2ns must also agree. Static quadrature checks and production-overlap comparison remain separate."
+    },
+    {
+      "fixture": "faceted-sphere",
+      "kappa": 3000,
+      "static": {
+        "fixture": "faceted-sphere",
+        "kappa": 3000,
+        "normal_stiffness_N_m3": 88404841044.11147,
+        "reference_pressure_Pa": 10000,
+        "nominal_target_force_N": 0.0011515701905165064,
+        "reference_diameter_m": 0.0003393479321458297,
+        "separation_m": 0.0003320578771202289,
+        "rotations": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "transverse_m": [
+          0.0,
+          0.0
+        ],
+        "library_sha256": "abc9d390a501ebcc26fb82235ec8b7ce8a5f385cac537a1db2d25401fa98d27e",
+        "sample_count": 15360,
+        "coarse_reference": {
+          "force_integral_m3": [
+            -1.3016536487741106e-14,
+            -4.529787229198779e-31,
+            0.0
+          ],
+          "torque_integral_m4": [
+            [
+              -4.109879596729494e-37,
+              6.630021802241003e-35,
+              4.198865821137211e-35
+            ],
+            [
+              4.109879596729494e-37,
+              -6.630021802241003e-35,
+              4.198865821137211e-35
+            ]
+          ],
+          "maximum_depth_m": 9.81870358182814e-06,
+          "active_contacts": 308
+        },
+        "fine_reference": {
+          "force_integral_m3": [
+            -1.302609876241841e-14,
+            -1.0765948389124648e-31,
+            0.0
+          ],
+          "torque_integral_m4": [
+            [
+              1.2992885996432597e-36,
+              -2.411894002696555e-35,
+              -2.08121274813086e-34
+            ],
+            [
+              -1.2992885996432597e-36,
+              2.411894002696555e-35,
+              -2.08121274813086e-34
+            ]
+          ],
+          "maximum_depth_m": 1.0431950851005743e-05,
+          "active_contacts": 1236
+        },
+        "finest_reference": {
+          "force_integral_m3": [
+            -1.3025847596163741e-14,
+            9.338112076604561e-31,
+            0.0
+          ],
+          "torque_integral_m4": [
+            [
+              4.2518113007417807e-38,
+              -2.6873279474712393e-35,
+              -1.4881391139425528e-35
+            ],
+            [
+              -4.2518113007417807e-38,
+              2.6873279474712393e-35,
+              -1.4881391139425528e-35
+            ]
+          ],
+          "maximum_depth_m": 1.073857448559453e-05,
+          "active_contacts": 4876
+        },
+        "coarse_quadrature_error": 0.0007340858419477379,
+        "reference_quadrature_change": 1.9282142894316262e-05,
+        "reference_overlap_fraction": 0.030741165225438204,
+        "production_overlap_comparison_passed": false,
+        "normal_tangent_N_m": 312.97895029801356,
+        "local_normal_period_s": 5.847865353839844e-05,
+        "gpu_oracle_force_error": 1.0253603050164827e-06,
+        "gpu_oracle_torque_error": 4.04229939660595e-08
+      },
+      "comparisons": [
+        {
+          "timestep_s": 1e-09,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 0.0,
+            "velocity": 0.0,
+            "rotation": 0.0,
+            "force": 0.0,
+            "torque": 0.0
+          },
+          "reference_is_self": true
+        },
+        {
+          "timestep_s": 2e-09,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 9.255637244786154e-11,
+            "velocity": 3.8140381356372064e-09,
+            "rotation": 1.6624055473603654e-10,
+            "force": 4.0442775176573697e-07,
+            "torque": 6.818573310008612e-08
+          },
+          "reference_is_self": false
+        },
+        {
+          "timestep_s": 4e-09,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 1.9575664975352944e-10,
+            "velocity": 6.284797968467234e-09,
+            "rotation": 2.3195589751357473e-10,
+            "force": 5.181053134581561e-07,
+            "torque": 7.273570204292398e-08
+          },
+          "reference_is_self": false
+        },
+        {
+          "timestep_s": 8e-09,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 3.2045488328936e-10,
+            "velocity": 5.2938227581164904e-09,
+            "rotation": 1.5417344099063193e-10,
+            "force": 5.167520172819452e-07,
+            "torque": 8.636767253315075e-08
+          },
+          "reference_is_self": false
+        },
+        {
+          "timestep_s": 1.6e-08,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 6.315856223081193e-10,
+            "velocity": 1.3012035995118277e-08,
+            "rotation": 7.405398855824655e-10,
+            "force": 5.511815132601555e-06,
+            "torque": 2.2955667707724108e-07
+          },
+          "reference_is_self": false
+        },
+        {
+          "timestep_s": 3.2e-08,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 1.9444057177888667e-09,
+            "velocity": 6.290991940286685e-08,
+            "rotation": 3.3276359600629485e-09,
+            "force": 5.256914605331251e-06,
+            "torque": 4.818424848593755e-07
+          },
+          "reference_is_self": false
+        },
+        {
+          "timestep_s": 6.4e-08,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 7.347243473585427e-09,
+            "velocity": 2.6320511292875695e-07,
+            "rotation": 1.4402855058075803e-08,
+            "force": 5.431442759841872e-06,
+            "torque": 9.909511890572291e-07
+          },
+          "reference_is_self": false
+        },
+        {
+          "timestep_s": 1.28e-07,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 2.8403737171555757e-08,
+            "velocity": 1.1064407753905865e-06,
+            "rotation": 5.985153949435079e-08,
+            "force": 5.768708637333138e-06,
+            "torque": 2.375099998455259e-06
+          },
+          "reference_is_self": false
+        },
+        {
+          "timestep_s": 2.56e-07,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 1.1209967298022769e-07,
+            "velocity": 4.522981543811488e-06,
+            "rotation": 2.3793457493998532e-07,
+            "force": 1.969797770849157e-05,
+            "torque": 6.6025362486419714e-06
+          },
+          "reference_is_self": false
+        }
+      ],
+      "reference_supported_by_2ns": true,
+      "largest_tested_accurate_timestep_s": 2.56e-07,
+      "reference_maximum_observed_overlap": 0.028937172144651413,
+      "note": "Accuracy is agreement with a 1ns same-discretization trajectory, not an independent dynamic solution; 1ns versus2ns must also agree. Static quadrature checks and production-overlap comparison remain separate."
+    },
+    {
+      "fixture": "faceted-sphere",
+      "kappa": 10000,
+      "static": {
+        "fixture": "faceted-sphere",
+        "kappa": 10000,
+        "normal_stiffness_N_m3": 294682803480.3716,
+        "reference_pressure_Pa": 10000,
+        "nominal_target_force_N": 0.0011515701905165064,
+        "reference_diameter_m": 0.0003393479321458297,
+        "separation_m": 0.0003357674325886247,
+        "rotations": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "transverse_m": [
+          0.0,
+          0.0
+        ],
+        "library_sha256": "abc9d390a501ebcc26fb82235ec8b7ce8a5f385cac537a1db2d25401fa98d27e",
+        "sample_count": 15360,
+        "coarse_reference": {
+          "force_integral_m3": [
+            -3.855480330545196e-15,
+            -1.217187724852733e-31,
+            0.0
+          ],
+          "torque_integral_m4": [
+            [
+              2.4097634191856894e-37,
+              3.667542374565537e-36,
+              -1.0438389835301913e-35
+            ],
+            [
+              -2.4097634191856894e-37,
+              -3.667542374565537e-36,
+              -1.0438389835301913e-35
+            ]
+          ],
+          "maximum_depth_m": 6.162543977471046e-06,
+          "active_contacts": 128
+        },
+        "fine_reference": {
+          "force_integral_m3": [
+            -3.907829628688481e-15,
+            3.0314137324655092e-31,
+            0.0
+          ],
+          "torque_integral_m4": [
+            [
+              6.712584279226047e-39,
+              -1.7628937144987457e-35,
+              1.1096666671762394e-35
+            ],
+            [
+              -6.712584279226047e-39,
+              1.7628937144987457e-35,
+              1.1096666671762394e-35
+            ]
+          ],
+          "maximum_depth_m": 6.775791246648648e-06,
+          "active_contacts": 540
+        },
+        "finest_reference": {
+          "force_integral_m3": [
+            -3.898355330572552e-15,
+            1.9259299443872359e-32,
+            0.0
+          ],
+          "torque_integral_m4": [
+            [
+              2.3372133772208763e-37,
+              -1.357695975199742e-36,
+              3.4682960821011593e-35
+            ],
+            [
+              -2.3372133772208763e-37,
+              1.357695975199742e-36,
+              3.4682960821011593e-35
+            ]
+          ],
+          "maximum_depth_m": 7.0824148812374354e-06,
+          "active_contacts": 2164
+        },
+        "coarse_quadrature_error": 0.01339600318268079,
+        "reference_quadrature_change": 0.0024303321048309468,
+        "reference_overlap_fraction": 0.019967091603601855,
+        "production_overlap_comparison_passed": false,
+        "normal_tangent_N_m": 454.1529536951548,
+        "local_normal_period_s": 4.8546045408661666e-05,
+        "gpu_oracle_force_error": 2.718416032286379e-06,
+        "gpu_oracle_torque_error": 3.178320482897661e-08
+      },
+      "comparisons": [
+        {
+          "timestep_s": 1e-09,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 0.0,
+            "velocity": 0.0,
+            "rotation": 0.0,
+            "force": 0.0,
+            "torque": 0.0
+          },
+          "reference_is_self": true
+        },
+        {
+          "timestep_s": 2e-09,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 1.2599954645395565e-10,
+            "velocity": 4.182171021361847e-09,
+            "rotation": 4.93617493099872e-11,
+            "force": 2.028028138240394e-07,
+            "torque": 4.5461435617125285e-08
+          },
+          "reference_is_self": false
+        },
+        {
+          "timestep_s": 4e-09,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 2.956210085867267e-10,
+            "velocity": 1.1504949197979801e-08,
+            "rotation": 1.8670776646883192e-10,
+            "force": 2.0237483772382314e-07,
+            "torque": 8.185031850318226e-08
+          },
+          "reference_is_self": false
+        },
+        {
+          "timestep_s": 8e-09,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 4.246805103423378e-10,
+            "velocity": 1.2413479028443966e-08,
+            "rotation": 1.968069473540657e-10,
+            "force": 6.512750996832147e-07,
+            "torque": 2.909231957314458e-07
+          },
+          "reference_is_self": false
+        },
+        {
+          "timestep_s": 1.6e-08,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 8.444364024595658e-10,
+            "velocity": 2.0463792562406038e-08,
+            "rotation": 9.452890716237952e-10,
+            "force": 1.363112714357379e-06,
+            "torque": 6.682098030132187e-07
+          },
+          "reference_is_self": false
+        },
+        {
+          "timestep_s": 3.2e-08,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 2.418031264166846e-09,
+            "velocity": 7.181745466844379e-08,
+            "rotation": 4.298272469657358e-09,
+            "force": 6.023639800403749e-06,
+            "torque": 1.231867747382286e-06
+          },
+          "reference_is_self": false
+        },
+        {
+          "timestep_s": 6.4e-08,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 8.935212795573198e-09,
+            "velocity": 3.462479600315643e-07,
+            "rotation": 1.6925711179075463e-08,
+            "force": 7.122193822646918e-06,
+            "torque": 2.531923617377513e-06
+          },
+          "reference_is_self": false
+        },
+        {
+          "timestep_s": 1.28e-07,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 3.54227724708944e-08,
+            "velocity": 1.4546681245845103e-06,
+            "rotation": 6.698224613676017e-08,
+            "force": 1.1897640603408281e-05,
+            "torque": 5.727502333083014e-06
+          },
+          "reference_is_self": false
+        },
+        {
+          "timestep_s": 2.56e-07,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 1.4208671106530045e-07,
+            "velocity": 6.063843089839222e-06,
+            "rotation": 2.9399345787466427e-07,
+            "force": 3.5358033484120806e-05,
+            "torque": 1.5200605311918746e-05
+          },
+          "reference_is_self": false
+        }
+      ],
+      "reference_supported_by_2ns": true,
+      "largest_tested_accurate_timestep_s": 2.56e-07,
+      "reference_maximum_observed_overlap": 0.01816316321492195,
+      "note": "Accuracy is agreement with a 1ns same-discretization trajectory, not an independent dynamic solution; 1ns versus2ns must also agree. Static quadrature checks and production-overlap comparison remain separate."
+    },
+    {
+      "fixture": "faceted-sphere",
+      "kappa": 30000,
+      "static": {
+        "fixture": "faceted-sphere",
+        "kappa": 30000,
+        "normal_stiffness_N_m3": 884048410441.1147,
+        "reference_pressure_Pa": 10000,
+        "nominal_target_force_N": 0.0011515701905165064,
+        "reference_diameter_m": 0.0003393479321458297,
+        "separation_m": 0.0003380679762962818,
+        "rotations": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "transverse_m": [
+          0.0,
+          0.0
+        ],
+        "library_sha256": "abc9d390a501ebcc26fb82235ec8b7ce8a5f385cac537a1db2d25401fa98d27e",
+        "sample_count": 15360,
+        "coarse_reference": {
+          "force_integral_m3": [
+            -1.3125808577026855e-15,
+            1.09392820841195e-31,
+            0.0
+          ],
+          "torque_integral_m4": [
+            [
+              1.4172053767101204e-36,
+              -7.658345695607203e-36,
+              1.0767528253532154e-35
+            ],
+            [
+              -1.4172053767101204e-36,
+              7.658345695607203e-36,
+              1.0767528253532154e-35
+            ]
+          ],
+          "maximum_depth_m": 3.8951146200577374e-06,
+          "active_contacts": 68
+        },
+        "fine_reference": {
+          "force_integral_m3": [
+            -1.302609876241871e-15,
+            -2.1714860122966084e-32,
+            0.0
+          ],
+          "torque_integral_m4": [
+            [
+              1.1315278829148026e-37,
+              -5.318496603829661e-37,
+              -1.0212107172768623e-35
+            ],
+            [
+              -1.1315278829148026e-37,
+              5.318496603829661e-37,
+              -1.0212107172768623e-35
+            ]
+          ],
+          "maximum_depth_m": 4.50836188923534e-06,
+          "active_contacts": 260
+        },
+        "finest_reference": {
+          "force_integral_m3": [
+            -1.298361331085782e-15,
+            9.658538671101988e-32,
+            0.0
+          ],
+          "torque_integral_m4": [
+            [
+              -3.093969830948297e-38,
+              5.103889272674954e-36,
+              2.295446593568222e-35
+            ],
+            [
+              3.093969830948297e-38,
+              -5.103889272674954e-36,
+              2.295446593568222e-35
+            ]
+          ],
+          "maximum_depth_m": 4.814985523824154e-06,
+          "active_contacts": 1052
+        },
+        "coarse_quadrature_error": 0.00765461834941825,
+        "reference_quadrature_change": 0.0032722363600709656,
+        "reference_overlap_fraction": 0.013285367206239343,
+        "production_overlap_comparison_passed": false,
+        "normal_tangent_N_m": 658.1156224941175,
+        "local_normal_period_s": 4.032773486531535e-05,
+        "gpu_oracle_force_error": 6.163642108298042e-06,
+        "gpu_oracle_torque_error": 4.833318948060782e-08
+      },
+      "comparisons": [
+        {
+          "timestep_s": 1e-09,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 0.0,
+            "velocity": 0.0,
+            "rotation": 0.0,
+            "force": 0.0,
+            "torque": 0.0
+          },
+          "reference_is_self": true
+        },
+        {
+          "timestep_s": 2e-09,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 1.067146623634442e-10,
+            "velocity": 4.387332557148887e-09,
+            "rotation": 4.920813121585949e-10,
+            "force": 5.1111985416874e-07,
+            "torque": 1.0456022672684754e-07
+          },
+          "reference_is_self": false
+        },
+        {
+          "timestep_s": 4e-09,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 2.4633330846883976e-10,
+            "velocity": 1.1874896203940887e-08,
+            "rotation": 1.0149446598693326e-09,
+            "force": 8.206003486374073e-07,
+            "torque": 2.4092032478527405e-07
+          },
+          "reference_is_self": false
+        },
+        {
+          "timestep_s": 8e-09,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 5.77947649509068e-10,
+            "velocity": 2.362103594735139e-08,
+            "rotation": 1.3784445845692832e-09,
+            "force": 1.1664738976631902e-06,
+            "torque": 5.409309679293838e-07
+          },
+          "reference_is_self": false
+        },
+        {
+          "timestep_s": 1.6e-08,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 8.762796515567187e-10,
+            "velocity": 4.807461942307943e-08,
+            "rotation": 1.6249225319422642e-09,
+            "force": 1.1584808271875478e-05,
+            "torque": 1.2364128446272126e-06
+          },
+          "reference_is_self": false
+        },
+        {
+          "timestep_s": 3.2e-08,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 3.0350860339827245e-09,
+            "velocity": 1.0818449062529095e-07,
+            "rotation": 4.9241971952374935e-09,
+            "force": 1.1677189762258064e-05,
+            "torque": 2.518282028879758e-06
+          },
+          "reference_is_self": false
+        },
+        {
+          "timestep_s": 6.4e-08,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 1.1527032672549484e-08,
+            "velocity": 4.290980180104053e-07,
+            "rotation": 1.9928897917712205e-08,
+            "force": 1.1666356079559523e-05,
+            "torque": 4.918390339820177e-06
+          },
+          "reference_is_self": false
+        },
+        {
+          "timestep_s": 1.28e-07,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 4.971697144875994e-08,
+            "velocity": 1.635302708794662e-06,
+            "rotation": 8.745267726990135e-08,
+            "force": 2.131013946061645e-05,
+            "torque": 1.0573156379795859e-05
+          },
+          "reference_is_self": false
+        },
+        {
+          "timestep_s": 2.56e-07,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 1.9119576359347014e-07,
+            "velocity": 6.7442053064740514e-06,
+            "rotation": 3.401726717163029e-07,
+            "force": 5.675245184050992e-05,
+            "torque": 2.4155507894154442e-05
+          },
+          "reference_is_self": false
+        }
+      ],
+      "reference_supported_by_2ns": true,
+      "largest_tested_accurate_timestep_s": 2.56e-07,
+      "reference_maximum_observed_overlap": 0.011481383815407753,
+      "note": "Accuracy is agreement with a 1ns same-discretization trajectory, not an independent dynamic solution; 1ns versus2ns must also agree. Static quadrature checks and production-overlap comparison remain separate."
+    },
+    {
+      "fixture": "asymmetric-angular",
+      "kappa": 1000,
+      "static": {
+        "fixture": "asymmetric-angular",
+        "kappa": 1000,
+        "normal_stiffness_N_m3": 29468280348.03716,
+        "reference_pressure_Pa": 10000,
+        "nominal_target_force_N": 0.0011515701905165064,
+        "reference_diameter_m": 0.0003393479321458297,
+        "separation_m": 0.0003204210521385797,
+        "rotations": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.2279775235351884,
+            0.9736663950053749
+          ]
+        ],
+        "transverse_m": [
+          4.0721751857499564e-05,
+          2.3754355250208082e-05
+        ],
+        "library_sha256": "690f1f60596b37547272bad19c6546ef6a35aed0fec2b3f9cec033cdeca369c7",
+        "sample_count": 15360,
+        "coarse_reference": {
+          "force_integral_m3": [
+            -3.898860002349222e-14,
+            7.022852504039569e-16,
+            -3.902686708435247e-16
+          ],
+          "torque_integral_m4": [
+            [
+              -1.0737398561906021e-20,
+              -4.805719911383872e-19,
+              -6.556242237920787e-19
+            ],
+            [
+              -2.1837358735017108e-20,
+              -3.205267663995112e-19,
+              2.4683352980558736e-18
+            ]
+          ],
+          "maximum_depth_m": 1.461484201114964e-05,
+          "active_contacts": 490
+        },
+        "fine_reference": {
+          "force_integral_m3": [
+            -3.907829628725566e-14,
+            9.9222609044967e-16,
+            -4.062025999740943e-16
+          ],
+          "torque_integral_m4": [
+            [
+              -2.0985358765169612e-20,
+              -4.808391038471302e-19,
+              -6.110194668486084e-19
+            ],
+            [
+              -1.9125613755912947e-20,
+              -3.172847642681021e-19,
+              2.5202862791333086e-18
+            ]
+          ],
+          "maximum_depth_m": 1.4740245419926688e-05,
+          "active_contacts": 1958
+        },
+        "finest_reference": {
+          "force_integral_m3": [
+            -3.906543478643946e-14,
+            9.484269191475716e-16,
+            -3.9825056769965025e-16
+          ],
+          "torque_integral_m4": [
+            [
+              -1.7185121777779913e-20,
+              -4.811088708388586e-19,
+              -6.180072881124217e-19
+            ],
+            [
+              -2.1561608983485244e-20,
+              -3.192574791649519e-19,
+              2.5127161810009542e-18
+            ]
+          ],
+          "maximum_depth_m": 1.4802947124315213e-05,
+          "active_contacts": 7825
+        },
+        "coarse_quadrature_error": 0.007774182010417059,
+        "reference_quadrature_change": 0.001185700274838021,
+        "reference_overlap_fraction": 0.043436968443327034,
+        "production_overlap_comparison_passed": false,
+        "normal_tangent_N_m": 156.69070718177787,
+        "local_normal_period_s": 8.26481827809934e-05,
+        "gpu_oracle_force_error": 2.794077656582245e-07,
+        "gpu_oracle_torque_error": 2.431986862995688e-08
+      },
+      "comparisons": [
+        {
+          "timestep_s": 1e-09,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 0.0,
+            "velocity": 0.0,
+            "rotation": 0.0,
+            "force": 0.0,
+            "torque": 0.0
+          },
+          "reference_is_self": true
+        },
+        {
+          "timestep_s": 2e-09,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 2.4899338479700623e-10,
+            "velocity": 7.800814497188243e-09,
+            "rotation": 1.0157076888116908e-09,
+            "force": 4.275598571008495e-07,
+            "torque": 2.0427738984853845e-07
+          },
+          "reference_is_self": false
+        },
+        {
+          "timestep_s": 4e-09,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 2.992069099807469e-10,
+            "velocity": 1.730007171680585e-08,
+            "rotation": 1.3754702388352057e-09,
+            "force": 7.594708813218064e-07,
+            "torque": 3.5304904360378014e-07
+          },
+          "reference_is_self": false
+        },
+        {
+          "timestep_s": 8e-09,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 1.4648466957229511e-09,
+            "velocity": 3.798181508347537e-08,
+            "rotation": 6.037565042021182e-09,
+            "force": 8.905991710131813e-07,
+            "torque": 4.000637519077466e-07
+          },
+          "reference_is_self": false
+        },
+        {
+          "timestep_s": 1.6e-08,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 1.887049072255288e-09,
+            "velocity": 6.67891069925258e-08,
+            "rotation": 8.327721518759261e-09,
+            "force": 1.3746752438553843e-06,
+            "torque": 6.135347674303859e-07
+          },
+          "reference_is_self": false
+        },
+        {
+          "timestep_s": 3.2e-08,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 2.2420976483410637e-09,
+            "velocity": 6.85544826801958e-08,
+            "rotation": 1.0672304236628074e-08,
+            "force": 1.350408524039821e-06,
+            "torque": 6.366396769696348e-07
+          },
+          "reference_is_self": false
+        },
+        {
+          "timestep_s": 6.4e-08,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 7.939029370598416e-09,
+            "velocity": 2.3540923284872525e-07,
+            "rotation": 3.4320101050364514e-08,
+            "force": 3.6307214005983643e-06,
+            "torque": 1.5837613609542324e-06
+          },
+          "reference_is_self": false
+        },
+        {
+          "timestep_s": 1.28e-07,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 1.63846299208134e-08,
+            "velocity": 9.709140416295523e-07,
+            "rotation": 3.676718349548582e-08,
+            "force": 4.022813209498027e-06,
+            "torque": 1.5323277687190737e-06
+          },
+          "reference_is_self": false
+        },
+        {
+          "timestep_s": 2.56e-07,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 6.70073849245987e-08,
+            "velocity": 3.674543778260628e-06,
+            "rotation": 1.717236990074534e-07,
+            "force": 8.229458249054016e-06,
+            "torque": 2.9658336261490056e-06
+          },
+          "reference_is_self": false
+        }
+      ],
+      "reference_supported_by_2ns": true,
+      "largest_tested_accurate_timestep_s": 2.56e-07,
+      "reference_maximum_observed_overlap": 0.043071046471595764,
+      "note": "Accuracy is agreement with a 1ns same-discretization trajectory, not an independent dynamic solution; 1ns versus2ns must also agree. Static quadrature checks and production-overlap comparison remain separate."
+    },
+    {
+      "fixture": "asymmetric-angular",
+      "kappa": 3000,
+      "static": {
+        "fixture": "asymmetric-angular",
+        "kappa": 3000,
+        "normal_stiffness_N_m3": 88404841044.11147,
+        "reference_pressure_Pa": 10000,
+        "nominal_target_force_N": 0.0011515701905165064,
+        "reference_diameter_m": 0.0003393479321458297,
+        "separation_m": 0.0003267488402925824,
+        "rotations": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.2279775235351884,
+            0.9736663950053749
+          ]
+        ],
+        "transverse_m": [
+          4.0721751857499564e-05,
+          2.3754355250208082e-05
+        ],
+        "library_sha256": "690f1f60596b37547272bad19c6546ef6a35aed0fec2b3f9cec033cdeca369c7",
+        "sample_count": 15360,
+        "coarse_reference": {
+          "force_integral_m3": [
+            -1.302703799805924e-14,
+            7.718552619398735e-16,
+            -3.3511669065841034e-16
+          ],
+          "torque_integral_m4": [
+            [
+              -7.457526569254593e-21,
+              -1.2540570807208618e-19,
+              -1.3054525934393082e-19
+            ],
+            [
+              -2.4523936244905806e-20,
+              -7.454419035644889e-20,
+              9.132318798516983e-19
+            ]
+          ],
+          "maximum_depth_m": 8.338320943665348e-06,
+          "active_contacts": 264
+        },
+        "fine_reference": {
+          "force_integral_m3": [
+            -1.3026098762418598e-14,
+            8.848118847052042e-16,
+            -2.734641290496906e-16
+          ],
+          "torque_integral_m4": [
+            [
+              -1.2688306631960145e-20,
+              -1.3519972650496675e-19,
+              -1.1126269393183025e-19
+            ],
+            [
+              -1.9465767612022157e-20,
+              -8.487276399321258e-20,
+              9.308195126108423e-19
+            ]
+          ],
+          "maximum_depth_m": 8.463724352442397e-06,
+          "active_contacts": 1065
+        },
+        "finest_reference": {
+          "force_integral_m3": [
+            -1.3028683877735846e-14,
+            8.90054293623453e-16,
+            -2.782440557618867e-16
+          ],
+          "torque_integral_m4": [
+            [
+              -1.2538307010171035e-20,
+              -1.346325015349259e-19,
+              -1.105901793492466e-19
+            ],
+            [
+              -1.9934944267093347e-20,
+              -8.39395612009683e-20,
+              9.319652194871076e-19
+            ]
+          ],
+          "maximum_depth_m": 8.526426056830921e-06,
+          "active_contacts": 4257
+        },
+        "coarse_quadrature_error": 0.009854523478711142,
+        "reference_quadrature_change": 0.0005780670368677368,
+        "reference_overlap_fraction": 0.02494114020062818,
+        "production_overlap_comparison_passed": false,
+        "normal_tangent_N_m": 265.5883700849164,
+        "local_normal_period_s": 6.348197101921597e-05,
+        "gpu_oracle_force_error": 1.0441148175514237e-06,
+        "gpu_oracle_torque_error": 1.173608654784908e-07
+      },
+      "comparisons": [
+        {
+          "timestep_s": 1e-09,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 0.0,
+            "velocity": 0.0,
+            "rotation": 0.0,
+            "force": 0.0,
+            "torque": 0.0
+          },
+          "reference_is_self": true
+        },
+        {
+          "timestep_s": 2e-09,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 2.49514116357145e-10,
+            "velocity": 1.4926720924906002e-08,
+            "rotation": 1.3642954596111504e-09,
+            "force": 4.7253269359890824e-07,
+            "torque": 2.285008464500887e-07
+          },
+          "reference_is_self": false
+        },
+        {
+          "timestep_s": 4e-09,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 2.226613985393416e-09,
+            "velocity": 8.108967897312987e-08,
+            "rotation": 1.2573069911378103e-08,
+            "force": 1.0100231215724064e-06,
+            "torque": 4.92241571662932e-07
+          },
+          "reference_is_self": false
+        },
+        {
+          "timestep_s": 8e-09,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 1.2232335526492196e-09,
+            "velocity": 6.856934099162774e-08,
+            "rotation": 6.5497175759829615e-09,
+            "force": 1.4105862786665828e-06,
+            "torque": 6.759483565625191e-07
+          },
+          "reference_is_self": false
+        },
+        {
+          "timestep_s": 1.6e-08,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 3.1757217157002867e-09,
+            "velocity": 1.4670956334005974e-07,
+            "rotation": 1.8415894153449984e-08,
+            "force": 2.4631153492671113e-06,
+            "torque": 1.265725044001422e-06
+          },
+          "reference_is_self": false
+        },
+        {
+          "timestep_s": 3.2e-08,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 8.162292429232155e-09,
+            "velocity": 4.1437025740194287e-07,
+            "rotation": 4.8134235203879386e-08,
+            "force": 3.78358922936151e-06,
+            "torque": 1.938352558297553e-06
+          },
+          "reference_is_self": false
+        },
+        {
+          "timestep_s": 6.4e-08,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 1.7628242082867554e-08,
+            "velocity": 1.0106705365770592e-06,
+            "rotation": 1.0772717942920554e-07,
+            "force": 8.708478543675834e-06,
+            "torque": 4.2905130448466934e-06
+          },
+          "reference_is_self": false
+        },
+        {
+          "timestep_s": 1.28e-07,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 4.36296657260789e-08,
+            "velocity": 1.4098643556858445e-06,
+            "rotation": 2.0011536578821566e-07,
+            "force": 1.2531165010702011e-05,
+            "torque": 5.767849187831032e-06
+          },
+          "reference_is_self": false
+        },
+        {
+          "timestep_s": 2.56e-07,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 1.3958824014587762e-07,
+            "velocity": 5.639526877067128e-06,
+            "rotation": 4.78466279257036e-07,
+            "force": 3.304818247923347e-05,
+            "torque": 1.5086610292648683e-05
+          },
+          "reference_is_self": false
+        }
+      ],
+      "reference_supported_by_2ns": true,
+      "largest_tested_accurate_timestep_s": 2.56e-07,
+      "reference_maximum_observed_overlap": 0.024575119838118553,
+      "note": "Accuracy is agreement with a 1ns same-discretization trajectory, not an independent dynamic solution; 1ns versus2ns must also agree. Static quadrature checks and production-overlap comparison remain separate."
+    },
+    {
+      "fixture": "asymmetric-angular",
+      "kappa": 10000,
+      "static": {
+        "fixture": "asymmetric-angular",
+        "kappa": 10000,
+        "normal_stiffness_N_m3": 294682803480.3716,
+        "reference_pressure_Pa": 10000,
+        "nominal_target_force_N": 0.0011515701905165064,
+        "reference_diameter_m": 0.0003393479321458297,
+        "separation_m": 0.00033066514605026016,
+        "rotations": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.2279775235351884,
+            0.9736663950053749
+          ]
+        ],
+        "transverse_m": [
+          4.0721751857499564e-05,
+          2.3754355250208082e-05
+        ],
+        "library_sha256": "690f1f60596b37547272bad19c6546ef6a35aed0fec2b3f9cec033cdeca369c7",
+        "sample_count": 15360,
+        "coarse_reference": {
+          "force_integral_m3": [
+            -3.927378651881849e-15,
+            3.2368761169364095e-16,
+            -1.2921529675353215e-16
+          ],
+          "torque_integral_m4": [
+            [
+              -3.266803510341731e-21,
+              -2.9143325532091555e-20,
+              -1.8751631747638107e-20
+            ],
+            [
+              -9.684060258510924e-21,
+              -2.142202719385875e-20,
+              2.857135820553496e-19
+            ]
+          ],
+          "maximum_depth_m": 4.453744691025526e-06,
+          "active_contacts": 136
+        },
+        "fine_reference": {
+          "force_integral_m3": [
+            -3.907829628725515e-15,
+            4.004390883642521e-16,
+            -1.1748083382265804e-16
+          ],
+          "torque_integral_m4": [
+            [
+              -4.208535912198075e-21,
+              -3.03882941846409e-20,
+              -5.293266793068443e-21
+            ],
+            [
+              -1.0087661811814261e-20,
+              -2.3592861999318162e-20,
+              2.9683818487361205e-19
+            ]
+          ],
+          "maximum_depth_m": 4.579148099802602e-06,
+          "active_contacts": 571
+        },
+        "finest_reference": {
+          "force_integral_m3": [
+            -3.9126554501756154e-15,
+            3.8490714134273587e-16,
+            -1.1958687011920584e-16
+          ],
+          "torque_integral_m4": [
+            [
+              -4.25041375886108e-21,
+              -3.013892271966097e-20,
+              -8.131612489884973e-21
+            ],
+            [
+              -9.762594065345651e-21,
+              -2.3260474941812705e-20,
+              2.9473717294371325e-19
+            ]
+          ],
+          "maximum_depth_m": 4.641849804191099e-06,
+          "active_contacts": 2285
+        },
+        "coarse_quadrature_error": 0.020372911497358856,
+        "reference_quadrature_change": 0.004169503641967171,
+        "reference_overlap_fraction": 0.013493961996016471,
+        "production_overlap_comparison_passed": false,
+        "normal_tangent_N_m": 492.96587689686027,
+        "local_normal_period_s": 4.659577077308521e-05,
+        "gpu_oracle_force_error": 2.929527614215729e-06,
+        "gpu_oracle_torque_error": 6.351970954876477e-07
+      },
+      "comparisons": [
+        {
+          "timestep_s": 1e-09,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 0.0,
+            "velocity": 0.0,
+            "rotation": 0.0,
+            "force": 0.0,
+            "torque": 0.0
+          },
+          "reference_is_self": true
+        },
+        {
+          "timestep_s": 2e-09,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 6.716914469902459e-10,
+            "velocity": 2.937598113931222e-08,
+            "rotation": 3.758385329599599e-09,
+            "force": 4.512605911331678e-07,
+            "torque": 2.0812421036223397e-07
+          },
+          "reference_is_self": false
+        },
+        {
+          "timestep_s": 4e-09,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 1.0673801557780517e-09,
+            "velocity": 3.342458411087931e-08,
+            "rotation": 6.2409476144365004e-09,
+            "force": 1.49635862461906e-06,
+            "torque": 7.50950083677134e-07
+          },
+          "reference_is_self": false
+        },
+        {
+          "timestep_s": 8e-09,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 3.7155454403006996e-09,
+            "velocity": 1.21611330607915e-07,
+            "rotation": 2.0984341128249716e-08,
+            "force": 7.423177292280341e-06,
+            "torque": 1.96612529975601e-06
+          },
+          "reference_is_self": false
+        },
+        {
+          "timestep_s": 1.6e-08,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 8.286793304309783e-09,
+            "velocity": 2.9918757369231e-07,
+            "rotation": 4.662520678945031e-08,
+            "force": 8.002526245155231e-06,
+            "torque": 2.3121815562085493e-06
+          },
+          "reference_is_self": false
+        },
+        {
+          "timestep_s": 3.2e-08,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 7.684578817377063e-09,
+            "velocity": 8.425556177421644e-07,
+            "rotation": 4.131418620915227e-08,
+            "force": 1.445467317310905e-05,
+            "torque": 7.298041361994369e-06
+          },
+          "reference_is_self": false
+        },
+        {
+          "timestep_s": 6.4e-08,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 2.1099729771343847e-08,
+            "velocity": 8.372489496954155e-07,
+            "rotation": 1.1407841637702541e-07,
+            "force": 1.9302165197973633e-05,
+            "torque": 8.81731552183363e-06
+          },
+          "reference_is_self": false
+        },
+        {
+          "timestep_s": 1.28e-07,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 6.582938912963999e-08,
+            "velocity": 2.6440738416324152e-06,
+            "rotation": 3.465206792500415e-07,
+            "force": 2.939536534856197e-05,
+            "torque": 1.1271922452311562e-05
+          },
+          "reference_is_self": false
+        },
+        {
+          "timestep_s": 2.56e-07,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 1.8719756775806283e-07,
+            "velocity": 1.0581402726966383e-05,
+            "rotation": 6.675055745402103e-07,
+            "force": 6.570097529688489e-05,
+            "torque": 2.0090823878318875e-05
+          },
+          "reference_is_self": false
+        }
+      ],
+      "reference_supported_by_2ns": true,
+      "largest_tested_accurate_timestep_s": 2.56e-07,
+      "reference_maximum_observed_overlap": 0.013127804733812809,
+      "note": "Accuracy is agreement with a 1ns same-discretization trajectory, not an independent dynamic solution; 1ns versus2ns must also agree. Static quadrature checks and production-overlap comparison remain separate."
+    },
+    {
+      "fixture": "asymmetric-angular",
+      "kappa": 30000,
+      "static": {
+        "fixture": "asymmetric-angular",
+        "kappa": 30000,
+        "normal_stiffness_N_m3": 884048410441.1147,
+        "reference_pressure_Pa": 10000,
+        "nominal_target_force_N": 0.0011515701905165064,
+        "reference_diameter_m": 0.0003393479321458297,
+        "separation_m": 0.0003326091439474373,
+        "rotations": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.2279775235351884,
+            0.9736663950053749
+          ]
+        ],
+        "transverse_m": [
+          4.0721751857499564e-05,
+          2.3754355250208082e-05
+        ],
+        "library_sha256": "690f1f60596b37547272bad19c6546ef6a35aed0fec2b3f9cec033cdeca369c7",
+        "sample_count": 15360,
+        "coarse_reference": {
+          "force_integral_m3": [
+            -1.301931601079249e-15,
+            1.1752777730170338e-16,
+            -5.4462193934928115e-17
+          ],
+          "torque_integral_m4": [
+            [
+              -9.07034697689194e-22,
+              -5.7206484969533155e-21,
+              -1.026544272052251e-21
+            ],
+            [
+              -4.10255782313597e-21,
+              -7.091273564359602e-21,
+              9.313429326500316e-20
+            ]
+          ],
+          "maximum_depth_m": 2.52549686416691e-06,
+          "active_contacts": 84
+        },
+        "fine_reference": {
+          "force_integral_m3": [
+            -1.3026098762418624e-15,
+            1.5050805095382263e-16,
+            -5.0985509612822043e-17
+          ],
+          "torque_integral_m4": [
+            [
+              -1.0477645689554923e-21,
+              -6.0537216303750756e-21,
+              4.224776571697448e-21
+            ],
+            [
+              -4.603676412199527e-21,
+              -7.930689416259123e-21,
+              9.888013356070008e-20
+            ]
+          ],
+          "maximum_depth_m": 2.6700737956649183e-06,
+          "active_contacts": 340
+        },
+        "finest_reference": {
+          "force_integral_m3": [
+            -1.2983558958243823e-15,
+            1.4415718645238054e-16,
+            -5.195918934468143e-17
+          ],
+          "torque_integral_m4": [
+            [
+              -1.0781266401522286e-21,
+              -5.863016327397711e-21,
+              3.2396302437090206e-21
+            ],
+            [
+              -4.462103593919051e-21,
+              -7.696489375079525e-21,
+              9.757969474857039e-20
+            ]
+          ],
+          "maximum_depth_m": 2.71360197733251e-06,
+          "active_contacts": 1346
+        },
+        "coarse_quadrature_error": 0.025276833018734575,
+        "reference_quadrature_change": 0.005894062724327894,
+        "reference_overlap_fraction": 0.00786824831606015,
+        "production_overlap_comparison_passed": true,
+        "normal_tangent_N_m": 898.1604019948492,
+        "local_normal_period_s": 3.4520571524967355e-05,
+        "gpu_oracle_force_error": 2.1437884547538423e-06,
+        "gpu_oracle_torque_error": 4.5173665601495594e-07
+      },
+      "comparisons": [
+        {
+          "timestep_s": 1e-09,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 0.0,
+            "velocity": 0.0,
+            "rotation": 0.0,
+            "force": 0.0,
+            "torque": 0.0
+          },
+          "reference_is_self": true
+        },
+        {
+          "timestep_s": 2e-09,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 2.366856470478375e-09,
+            "velocity": 8.613516174752938e-08,
+            "rotation": 9.081172278432912e-09,
+            "force": 1.3103909207144512e-06,
+            "torque": 5.905582232947129e-07
+          },
+          "reference_is_self": false
+        },
+        {
+          "timestep_s": 4e-09,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 4.427874197343562e-09,
+            "velocity": 1.8424727875145777e-07,
+            "rotation": 2.386434466035955e-08,
+            "force": 1.2127780293740904e-05,
+            "torque": 3.488378920401927e-06
+          },
+          "reference_is_self": false
+        },
+        {
+          "timestep_s": 8e-09,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 7.0118329159586846e-09,
+            "velocity": 2.765739732228083e-07,
+            "rotation": 4.0756862916269217e-08,
+            "force": 1.63501599147522e-05,
+            "torque": 6.490919298935925e-06
+          },
+          "reference_is_self": false
+        },
+        {
+          "timestep_s": 1.6e-08,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 1.1980744938981794e-08,
+            "velocity": 5.950384357953827e-07,
+            "rotation": 6.899307874890973e-08,
+            "force": 2.3372440202710362e-05,
+            "torque": 1.0925040787392545e-05
+          },
+          "reference_is_self": false
+        },
+        {
+          "timestep_s": 3.2e-08,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 5.502689865057614e-08,
+            "velocity": 1.6511639201363439e-06,
+            "rotation": 3.147132456353046e-07,
+            "force": 3.786268829753507e-05,
+            "torque": 1.895717254095991e-05
+          },
+          "reference_is_self": false
+        },
+        {
+          "timestep_s": 6.4e-08,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 4.2444163374591e-08,
+            "velocity": 2.0792292192900183e-06,
+            "rotation": 2.275784185028103e-07,
+            "force": 5.175526160760124e-05,
+            "torque": 2.620437720148429e-05
+          },
+          "reference_is_self": false
+        },
+        {
+          "timestep_s": 1.28e-07,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 1.4552385968809944e-07,
+            "velocity": 5.728377508319188e-06,
+            "rotation": 7.456391351009507e-07,
+            "force": 0.00016002399191311688,
+            "torque": 8.129205133547403e-05
+          },
+          "reference_is_self": false
+        },
+        {
+          "timestep_s": 2.56e-07,
+          "accurate": true,
+          "maximum_errors": {
+            "position": 2.9865399267742473e-07,
+            "velocity": 1.2461955583620277e-05,
+            "rotation": 1.4653635838515691e-06,
+            "force": 0.00028210048552142897,
+            "torque": 0.00014086960565818477
+          },
+          "reference_is_self": false
+        }
+      ],
+      "reference_supported_by_2ns": true,
+      "largest_tested_accurate_timestep_s": 2.56e-07,
+      "reference_maximum_observed_overlap": 0.007445616647601128,
+      "note": "Accuracy is agreement with a 1ns same-discretization trajectory, not an independent dynamic solution; 1ns versus2ns must also agree. Static quadrature checks and production-overlap comparison remain separate."
+    }
+  ],
+  "sources_unchanged": true,
+  "all_cases_recorded": true,
+  "scientific_admission": false,
+  "scope": "Exploratory isolated grain-pair stiffness and timestep study on Metal; stiffness kn*=kappa*p_ref/d_ref fixed during each run, kt/kn=0.5, unchanged physical density. Nominal target force p_ref*d_ref^2 is a declared single-contact load scale, not bulk pressure or a specimen. Convex half-space FP64 reference supplies static force/torque and root load poses; no CPU dynamics. Fixed quadrature per fixture, with two finer static challenges. Study-only preflight bypass records production rejection. 15% diagnostic overlap guard allows soft-contact observations; the original 1% production comparison remains separately reported. No calibration or material admission. All roots, refinement failures, GPU rejections and timestep errors retained; no gate retuning."
+}

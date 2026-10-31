@@ -1,0 +1,8 @@
+{
+  "identity": "normalized-stiffness-contacts-v1",
+  "status": "failed",
+  "phase": "independent static root intake",
+  "gpu_executed": false,
+  "reason": "Fixed .25d..2.5d bracket had no sign change; deep interpenetration reverses the resultant. Trace retained in run.log.",
+  "scientific_admission": false
+}

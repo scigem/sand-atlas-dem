@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/private/tmp/sand-atlas-dem-walls/examples/normalized_stiffness_study.py", line 471, in <module>
+    main()
+  File "/private/tmp/sand-atlas-dem-walls/examples/normalized_stiffness_study.py", line 318, in main
+    sep = brentq(lambda x: load(x) - target, 0.25 * d, 2.5 * d, xtol=d * 1e-10)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bmar5496/code/sand-atlas-dem/.venv/lib/python3.12/site-packages/scipy/optimize/_zeros_py.py", line 858, in brentq
+    r = _zeros._brentq(f, a, b, xtol, rtol, maxiter, args, full_output, disp)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: f(a) and f(b) must have different signs

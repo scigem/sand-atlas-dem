@@ -1,0 +1,8 @@
+{
+  "passed": 4,
+  "scope": "CPU-only independent convex force oracle checked against exact opposing flat-face traction and empty separated contact. No CPU dynamics.",
+  "input_sha256": {
+    "tests/test_normalized_stiffness_reference.py": "700a122f8fddb580629f61cee0428277887e489d09cf6e5f455429706195dc1c",
+    "examples/normalized_stiffness_study.py": "a54df2a5ea22b3a836477302496f29ca537bd2934ed80dc921b0ecfacc84f185"
+  }
+}

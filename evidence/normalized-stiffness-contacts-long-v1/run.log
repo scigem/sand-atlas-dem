@@ -1,0 +1,112 @@
+static faceted-sphere 1000 overlap 0.04535511422770718 quadrature 0.002714027522455496
+static faceted-sphere 30000 overlap 0.013285367206239343 quadrature 0.00765461834941825
+static asymmetric-angular 1000 overlap 0.043436968443327034 quadrature 0.007774182010417059
+static asymmetric-angular 30000 overlap 0.00786824831606015 quadrature 0.025276833018734575
+[WARN] No supported shader model found, pretending to support sm_6_0.
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(178): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(178): warning :  unused variable '_S5' [-Wunused-variable]
+    uint _S5 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(178): warning :  unused variable '_S5' [-Wunused-variable]
+    uint _S5 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(372): warning :  unused variable '_S26' [-Wunused-variable]
+    uint _S26 = findPairs_0(id_2, true, &kernelContext_5);
+         ^
+2 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(178): warning :  unused variable '_S35' [-Wunused-variable]
+    uint _S35 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_4->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(414): warning :  unused variable '_S82' [-Wunused-variable]
+                        uint _S82 = atomic_fetch_add_explicit(((atomic_uint device*)((&kernelContext_8)->r_0->contactCounts_0+pair_0)), 1U, memory_order_relaxed);
+                             ^
+2 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(178): warning :  unused variable '_S10' [-Wunused-variable]
+    uint _S10 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_2->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(618): warning :  unused variable '_S23' [-Wunused-variable]
+            uint _S23 = atomic_fetch_add_explicit(((atomic_uint device*)(r_1->control_0+int(6))), 1U, memory_order_relaxed);
+                 ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(633): warning :  unused variable '_S29' [-Wunused-variable]
+        uint _S29 = atomic_fetch_add_explicit(((atomic_uint device*)(r_1->control_0+int(6))), 1U, memory_order_relaxed);
+             ^
+3 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(178): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_1->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(178): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(178): warning :  unused variable '_S22' [-Wunused-variable]
+    uint _S22 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_10->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(178): warning :  unused variable '_S5' [-Wunused-variable]
+    uint _S5 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_2->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(753): warning :  unused variable '_S3' [-Wunused-variable]
+        uint _S3 = atomic_fetch_or_explicit(((atomic_uint device*)((&kernelContext_1)->r_0->control_0+int(4))), 1U, memory_order_relaxed);
+             ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/shaders/solver.slang(178): warning :  unused variable '_S15' [-Wunused-variable]
+    uint _S15 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_9->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+dynamic faceted-sphere 1000 8e-09 True None
+dynamic faceted-sphere 1000 1.6e-08 True None
+dynamic faceted-sphere 1000 3.2e-08 True None
+dynamic faceted-sphere 1000 6.4e-08 True None
+dynamic faceted-sphere 1000 1.28e-07 True None
+dynamic faceted-sphere 1000 2.56e-07 True None
+dynamic faceted-sphere 1000 5.12e-07 True None
+dynamic faceted-sphere 1000 1.024e-06 True None
+dynamic faceted-sphere 1000 2.048e-06 True None
+dynamic faceted-sphere 1000 4.096e-06 True None
+dynamic faceted-sphere 30000 8e-09 True None
+dynamic faceted-sphere 30000 1.6e-08 True None
+dynamic faceted-sphere 30000 3.2e-08 True None
+dynamic faceted-sphere 30000 6.4e-08 True None
+dynamic faceted-sphere 30000 1.28e-07 True None
+dynamic faceted-sphere 30000 2.56e-07 True None
+dynamic faceted-sphere 30000 5.12e-07 True None
+dynamic faceted-sphere 30000 1.024e-06 True None
+dynamic faceted-sphere 30000 2.048e-06 True None
+dynamic faceted-sphere 30000 4.096e-06 True None
+dynamic asymmetric-angular 1000 8e-09 True None
+dynamic asymmetric-angular 1000 1.6e-08 True None
+dynamic asymmetric-angular 1000 3.2e-08 True None
+dynamic asymmetric-angular 1000 6.4e-08 True None
+dynamic asymmetric-angular 1000 1.28e-07 True None
+dynamic asymmetric-angular 1000 2.56e-07 True None
+dynamic asymmetric-angular 1000 5.12e-07 True None
+dynamic asymmetric-angular 1000 1.024e-06 True None
+dynamic asymmetric-angular 1000 2.048e-06 True None
+dynamic asymmetric-angular 1000 4.096e-06 True None
+dynamic asymmetric-angular 30000 8e-09 True None
+dynamic asymmetric-angular 30000 1.6e-08 True None
+dynamic asymmetric-angular 30000 3.2e-08 True None
+dynamic asymmetric-angular 30000 6.4e-08 True None
+dynamic asymmetric-angular 30000 1.28e-07 True None
+dynamic asymmetric-angular 30000 2.56e-07 True None
+dynamic asymmetric-angular 30000 5.12e-07 True None
+dynamic asymmetric-angular 30000 1.024e-06 True None
+dynamic asymmetric-angular 30000 2.048e-06 True None
+dynamic asymmetric-angular 30000 4.096e-06 True None

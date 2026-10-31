@@ -1,0 +1,146 @@
+{
+  "static_cases": [
+    {
+      "fixture": "faceted-sphere",
+      "kappa": 1000,
+      "stiffness_N_m3": 29468280348.03716,
+      "overlap_fraction": 0.04535511422770718,
+      "production_overlap_comparison_passed": false,
+      "quadrature_passed": true,
+      "gpu_static_passed": true,
+      "local_normal_period_us": 73.40175991848868,
+      "short_reference_supported": true,
+      "short_largest_tested_accurate_ns": 256.0,
+      "short_upper_sweep_boundary_reached": true
+    },
+    {
+      "fixture": "faceted-sphere",
+      "kappa": 3000,
+      "stiffness_N_m3": 88404841044.11147,
+      "overlap_fraction": 0.030741165225438204,
+      "production_overlap_comparison_passed": false,
+      "quadrature_passed": true,
+      "gpu_static_passed": true,
+      "local_normal_period_us": 58.47865353839844,
+      "short_reference_supported": true,
+      "short_largest_tested_accurate_ns": 256.0,
+      "short_upper_sweep_boundary_reached": true
+    },
+    {
+      "fixture": "faceted-sphere",
+      "kappa": 10000,
+      "stiffness_N_m3": 294682803480.3716,
+      "overlap_fraction": 0.019967091603601855,
+      "production_overlap_comparison_passed": false,
+      "quadrature_passed": true,
+      "gpu_static_passed": true,
+      "local_normal_period_us": 48.54604540866167,
+      "short_reference_supported": true,
+      "short_largest_tested_accurate_ns": 256.0,
+      "short_upper_sweep_boundary_reached": true
+    },
+    {
+      "fixture": "faceted-sphere",
+      "kappa": 30000,
+      "stiffness_N_m3": 884048410441.1147,
+      "overlap_fraction": 0.013285367206239343,
+      "production_overlap_comparison_passed": false,
+      "quadrature_passed": true,
+      "gpu_static_passed": true,
+      "local_normal_period_us": 40.32773486531535,
+      "short_reference_supported": true,
+      "short_largest_tested_accurate_ns": 256.0,
+      "short_upper_sweep_boundary_reached": true
+    },
+    {
+      "fixture": "asymmetric-angular",
+      "kappa": 1000,
+      "stiffness_N_m3": 29468280348.03716,
+      "overlap_fraction": 0.043436968443327034,
+      "production_overlap_comparison_passed": false,
+      "quadrature_passed": true,
+      "gpu_static_passed": true,
+      "local_normal_period_us": 82.6481827809934,
+      "short_reference_supported": true,
+      "short_largest_tested_accurate_ns": 256.0,
+      "short_upper_sweep_boundary_reached": true
+    },
+    {
+      "fixture": "asymmetric-angular",
+      "kappa": 3000,
+      "stiffness_N_m3": 88404841044.11147,
+      "overlap_fraction": 0.02494114020062818,
+      "production_overlap_comparison_passed": false,
+      "quadrature_passed": true,
+      "gpu_static_passed": true,
+      "local_normal_period_us": 63.481971019215976,
+      "short_reference_supported": true,
+      "short_largest_tested_accurate_ns": 256.0,
+      "short_upper_sweep_boundary_reached": true
+    },
+    {
+      "fixture": "asymmetric-angular",
+      "kappa": 10000,
+      "stiffness_N_m3": 294682803480.3716,
+      "overlap_fraction": 0.013493961996016471,
+      "production_overlap_comparison_passed": false,
+      "quadrature_passed": true,
+      "gpu_static_passed": true,
+      "local_normal_period_us": 46.59577077308521,
+      "short_reference_supported": true,
+      "short_largest_tested_accurate_ns": 256.0,
+      "short_upper_sweep_boundary_reached": true
+    },
+    {
+      "fixture": "asymmetric-angular",
+      "kappa": 30000,
+      "stiffness_N_m3": 884048410441.1147,
+      "overlap_fraction": 0.00786824831606015,
+      "production_overlap_comparison_passed": true,
+      "quadrature_passed": true,
+      "gpu_static_passed": true,
+      "local_normal_period_us": 34.52057152496735,
+      "short_reference_supported": true,
+      "short_largest_tested_accurate_ns": 256.0,
+      "short_upper_sweep_boundary_reached": true
+    }
+  ],
+  "long_cases": [
+    {
+      "fixture": "faceted-sphere",
+      "kappa": 1000,
+      "reference_supported": true,
+      "largest_tested_accurate_ns": 4096.0,
+      "observed_rotation_excursion_rad": 0.014764612275469536,
+      "final_friction_loss_J": 9.166407910488061e-11,
+      "maximum_observed_overlap": 0.04354796186089516
+    },
+    {
+      "fixture": "faceted-sphere",
+      "kappa": 30000,
+      "reference_supported": true,
+      "largest_tested_accurate_ns": 4096.0,
+      "observed_rotation_excursion_rad": 0.015754596877556256,
+      "final_friction_loss_J": 4.9475711721980176e-11,
+      "maximum_observed_overlap": 0.011478181928396225
+    },
+    {
+      "fixture": "asymmetric-angular",
+      "kappa": 1000,
+      "reference_supported": true,
+      "largest_tested_accurate_ns": 4096.0,
+      "observed_rotation_excursion_rad": 0.10895018963242234,
+      "final_friction_loss_J": 1.5538861863895193e-10,
+      "maximum_observed_overlap": 0.04306739196181297
+    },
+    {
+      "fixture": "asymmetric-angular",
+      "kappa": 30000,
+      "reference_supported": true,
+      "largest_tested_accurate_ns": 2048.0,
+      "observed_rotation_excursion_rad": 0.05663807994291931,
+      "final_friction_loss_J": 1.59849408015722e-11,
+      "maximum_observed_overlap": 0.0074422238394618034
+    }
+  ]
+}

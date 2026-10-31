@@ -1,5 +1,18 @@
 # Status and evidence
 
+## Pressure-normalized stiffness sweep
+
+Eight independent static pair-load setups and112 actual-Metal trajectories are
+complete with frozen sources and unchanged accuracy gates. At kappa1000,
+maximum penetration is4.3–4.5% for the two synthetic convex fixtures, exceeding
+the unchanged1% production comparison. The longer65.536us endpoint study passes
+through its4096ns upper sweep boundary in three cases; the stiff angular pair
+passes2048ns and fails4096ns on the1mrad rotation gate. Upper-boundary passes
+are not identified timestep limits or assembly qualification. Four independent
+flat-face/empty-contact reference checks pass. The original pre-GPU root-bracket
+failure remains retained. Production settings remain unchanged and the specimen
+is stopped. See [NORMALIZED_STIFFNESS.md](NORMALIZED_STIFFNESS.md).
+
 ## Local plane frame and initial-position precision
 
 Production plane penetration now uses a particle-centred plane offset and

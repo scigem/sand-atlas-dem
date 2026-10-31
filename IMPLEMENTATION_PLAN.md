@@ -56,6 +56,12 @@ The subsequent [local-plane precision fix](docs/LOCAL_FRAME_CONTACTS.md) passes
 12 translated static cases, all 128 original/translated dynamic repetitions and
 the complete 286-pass/eight-skip Metal-enabled suite. It reduces coordinate
 sensitivity while retaining the original failures and production timestep policy.
+The subsequent [pressure-normalized stiffness sweep](docs/NORMALIZED_STIFFNESS.md)
+retains eight static setups and112 actual-Metal trajectories. Kappa1000 exceeds
+the original1% penetration criterion; isolated-pair long-duration accuracy extends
+through microsecond-scale tested steps, with upper-boundary censoring in three
+cases. Multi-contact rotational/assembly qualification remains open; no production
+stiffness or timestep policy changes and no preparation restart are inferred.
 Earlier running-preparation statements below describe historical progress.
 
 Public workflow requirement clarified by the user: implement the named-material

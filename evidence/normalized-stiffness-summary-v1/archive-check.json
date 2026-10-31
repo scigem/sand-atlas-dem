@@ -1,0 +1,21 @@
+{
+  "studies": [
+    {
+      "identity": "normalized-stiffness-contacts-v2",
+      "archive_sources": 28,
+      "trajectory_count": 72,
+      "complete_ordered_trajectories": true,
+      "private_assets_unchanged": true
+    },
+    {
+      "identity": "normalized-stiffness-contacts-long-v1",
+      "archive_sources": 28,
+      "trajectory_count": 40,
+      "complete_ordered_trajectories": true,
+      "private_assets_unchanged": true
+    }
+  ],
+  "source_archives_verified": true,
+  "production_solver_changed": false,
+  "production_settings_changed": false
+}

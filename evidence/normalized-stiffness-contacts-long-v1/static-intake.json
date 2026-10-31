@@ -1,0 +1,397 @@
+{
+  "cases": [
+    {
+      "fixture": "faceted-sphere",
+      "kappa": 1000,
+      "normal_stiffness_N_m3": 29468280348.03716,
+      "reference_pressure_Pa": 10000,
+      "nominal_target_force_N": 0.0011515701905165064,
+      "reference_diameter_m": 0.0003393479321458297,
+      "separation_m": 0.0003270262376179378,
+      "rotations": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "transverse_m": [
+        0.0,
+        0.0
+      ],
+      "library_sha256": "abc9d390a501ebcc26fb82235ec8b7ce8a5f385cac537a1db2d25401fa98d27e",
+      "sample_count": 15360,
+      "coarse_reference": {
+        "force_integral_m3": [
+          -3.897223671528952e-14,
+          1.910522504832138e-31,
+          0.0
+        ],
+        "torque_integral_m4": [
+          [
+            -5.581606348968817e-36,
+            -5.298058768630067e-35,
+            1.909002825735395e-34
+          ],
+          [
+            5.581606348968817e-36,
+            5.298058768630067e-35,
+            1.909002825735395e-34
+          ]
+        ],
+        "maximum_depth_m": 1.4777916956232702e-05,
+        "active_contacts": 616
+      },
+      "fine_reference": {
+        "force_integral_m3": [
+          -3.9078296286942954e-14,
+          4.9766029762966174e-31,
+          0.0
+        ],
+        "torque_integral_m4": [
+          [
+            -3.1385699166955076e-36,
+            -7.695961514833516e-35,
+            -9.509279100411977e-34
+          ],
+          [
+            3.1385699166955076e-36,
+            7.695961514833516e-35,
+            -9.509279100411977e-34
+          ]
+        ],
+        "maximum_depth_m": 1.5391164225410332e-05,
+        "active_contacts": 2360
+      },
+      "finest_reference": {
+        "force_integral_m3": [
+          -3.906654703955177e-14,
+          4.821758208767884e-30,
+          0.0
+        ],
+        "torque_integral_m4": [
+          [
+            -5.525007119857067e-36,
+            -3.1160885872360314e-35,
+            2.2881820384801402e-33
+          ],
+          [
+            5.525007119857067e-36,
+            3.1160885872360314e-35,
+            2.2881820384801402e-33
+          ]
+        ],
+        "maximum_depth_m": 1.569778785999912e-05,
+        "active_contacts": 9540
+      },
+      "coarse_quadrature_error": 0.002714027522455496,
+      "reference_quadrature_change": 0.0003007495742914914,
+      "reference_overlap_fraction": 0.04535511422770718,
+      "production_overlap_comparison_passed": false,
+      "normal_tangent_N_m": 198.65381639323846,
+      "local_normal_period_s": 7.340175991848867e-05
+    },
+    {
+      "fixture": "faceted-sphere",
+      "kappa": 30000,
+      "normal_stiffness_N_m3": 884048410441.1147,
+      "reference_pressure_Pa": 10000,
+      "nominal_target_force_N": 0.0011515701905165064,
+      "reference_diameter_m": 0.0003393479321458297,
+      "separation_m": 0.0003380679762962818,
+      "rotations": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "transverse_m": [
+        0.0,
+        0.0
+      ],
+      "library_sha256": "abc9d390a501ebcc26fb82235ec8b7ce8a5f385cac537a1db2d25401fa98d27e",
+      "sample_count": 15360,
+      "coarse_reference": {
+        "force_integral_m3": [
+          -1.3125808577026855e-15,
+          1.09392820841195e-31,
+          0.0
+        ],
+        "torque_integral_m4": [
+          [
+            1.4172053767101204e-36,
+            -7.658345695607203e-36,
+            1.0767528253532154e-35
+          ],
+          [
+            -1.4172053767101204e-36,
+            7.658345695607203e-36,
+            1.0767528253532154e-35
+          ]
+        ],
+        "maximum_depth_m": 3.8951146200577374e-06,
+        "active_contacts": 68
+      },
+      "fine_reference": {
+        "force_integral_m3": [
+          -1.302609876241871e-15,
+          -2.1714860122966084e-32,
+          0.0
+        ],
+        "torque_integral_m4": [
+          [
+            1.1315278829148026e-37,
+            -5.318496603829661e-37,
+            -1.0212107172768623e-35
+          ],
+          [
+            -1.1315278829148026e-37,
+            5.318496603829661e-37,
+            -1.0212107172768623e-35
+          ]
+        ],
+        "maximum_depth_m": 4.50836188923534e-06,
+        "active_contacts": 260
+      },
+      "finest_reference": {
+        "force_integral_m3": [
+          -1.298361331085782e-15,
+          9.658538671101988e-32,
+          0.0
+        ],
+        "torque_integral_m4": [
+          [
+            -3.093969830948297e-38,
+            5.103889272674954e-36,
+            2.295446593568222e-35
+          ],
+          [
+            3.093969830948297e-38,
+            -5.103889272674954e-36,
+            2.295446593568222e-35
+          ]
+        ],
+        "maximum_depth_m": 4.814985523824154e-06,
+        "active_contacts": 1052
+      },
+      "coarse_quadrature_error": 0.00765461834941825,
+      "reference_quadrature_change": 0.0032722363600709656,
+      "reference_overlap_fraction": 0.013285367206239343,
+      "production_overlap_comparison_passed": false,
+      "normal_tangent_N_m": 658.1156224941175,
+      "local_normal_period_s": 4.032773486531535e-05
+    },
+    {
+      "fixture": "asymmetric-angular",
+      "kappa": 1000,
+      "normal_stiffness_N_m3": 29468280348.03716,
+      "reference_pressure_Pa": 10000,
+      "nominal_target_force_N": 0.0011515701905165064,
+      "reference_diameter_m": 0.0003393479321458297,
+      "separation_m": 0.0003204210521385797,
+      "rotations": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.2279775235351884,
+          0.9736663950053749
+        ]
+      ],
+      "transverse_m": [
+        4.0721751857499564e-05,
+        2.3754355250208082e-05
+      ],
+      "library_sha256": "690f1f60596b37547272bad19c6546ef6a35aed0fec2b3f9cec033cdeca369c7",
+      "sample_count": 15360,
+      "coarse_reference": {
+        "force_integral_m3": [
+          -3.898860002349222e-14,
+          7.022852504039569e-16,
+          -3.902686708435247e-16
+        ],
+        "torque_integral_m4": [
+          [
+            -1.0737398561906021e-20,
+            -4.805719911383872e-19,
+            -6.556242237920787e-19
+          ],
+          [
+            -2.1837358735017108e-20,
+            -3.205267663995112e-19,
+            2.4683352980558736e-18
+          ]
+        ],
+        "maximum_depth_m": 1.461484201114964e-05,
+        "active_contacts": 490
+      },
+      "fine_reference": {
+        "force_integral_m3": [
+          -3.907829628725566e-14,
+          9.9222609044967e-16,
+          -4.062025999740943e-16
+        ],
+        "torque_integral_m4": [
+          [
+            -2.0985358765169612e-20,
+            -4.808391038471302e-19,
+            -6.110194668486084e-19
+          ],
+          [
+            -1.9125613755912947e-20,
+            -3.172847642681021e-19,
+            2.5202862791333086e-18
+          ]
+        ],
+        "maximum_depth_m": 1.4740245419926688e-05,
+        "active_contacts": 1958
+      },
+      "finest_reference": {
+        "force_integral_m3": [
+          -3.906543478643946e-14,
+          9.484269191475716e-16,
+          -3.9825056769965025e-16
+        ],
+        "torque_integral_m4": [
+          [
+            -1.7185121777779913e-20,
+            -4.811088708388586e-19,
+            -6.180072881124217e-19
+          ],
+          [
+            -2.1561608983485244e-20,
+            -3.192574791649519e-19,
+            2.5127161810009542e-18
+          ]
+        ],
+        "maximum_depth_m": 1.4802947124315213e-05,
+        "active_contacts": 7825
+      },
+      "coarse_quadrature_error": 0.007774182010417059,
+      "reference_quadrature_change": 0.001185700274838021,
+      "reference_overlap_fraction": 0.043436968443327034,
+      "production_overlap_comparison_passed": false,
+      "normal_tangent_N_m": 156.69070718177787,
+      "local_normal_period_s": 8.26481827809934e-05
+    },
+    {
+      "fixture": "asymmetric-angular",
+      "kappa": 30000,
+      "normal_stiffness_N_m3": 884048410441.1147,
+      "reference_pressure_Pa": 10000,
+      "nominal_target_force_N": 0.0011515701905165064,
+      "reference_diameter_m": 0.0003393479321458297,
+      "separation_m": 0.0003326091439474373,
+      "rotations": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.2279775235351884,
+          0.9736663950053749
+        ]
+      ],
+      "transverse_m": [
+        4.0721751857499564e-05,
+        2.3754355250208082e-05
+      ],
+      "library_sha256": "690f1f60596b37547272bad19c6546ef6a35aed0fec2b3f9cec033cdeca369c7",
+      "sample_count": 15360,
+      "coarse_reference": {
+        "force_integral_m3": [
+          -1.301931601079249e-15,
+          1.1752777730170338e-16,
+          -5.4462193934928115e-17
+        ],
+        "torque_integral_m4": [
+          [
+            -9.07034697689194e-22,
+            -5.7206484969533155e-21,
+            -1.026544272052251e-21
+          ],
+          [
+            -4.10255782313597e-21,
+            -7.091273564359602e-21,
+            9.313429326500316e-20
+          ]
+        ],
+        "maximum_depth_m": 2.52549686416691e-06,
+        "active_contacts": 84
+      },
+      "fine_reference": {
+        "force_integral_m3": [
+          -1.3026098762418624e-15,
+          1.5050805095382263e-16,
+          -5.0985509612822043e-17
+        ],
+        "torque_integral_m4": [
+          [
+            -1.0477645689554923e-21,
+            -6.0537216303750756e-21,
+            4.224776571697448e-21
+          ],
+          [
+            -4.603676412199527e-21,
+            -7.930689416259123e-21,
+            9.888013356070008e-20
+          ]
+        ],
+        "maximum_depth_m": 2.6700737956649183e-06,
+        "active_contacts": 340
+      },
+      "finest_reference": {
+        "force_integral_m3": [
+          -1.2983558958243823e-15,
+          1.4415718645238054e-16,
+          -5.195918934468143e-17
+        ],
+        "torque_integral_m4": [
+          [
+            -1.0781266401522286e-21,
+            -5.863016327397711e-21,
+            3.2396302437090206e-21
+          ],
+          [
+            -4.462103593919051e-21,
+            -7.696489375079525e-21,
+            9.757969474857039e-20
+          ]
+        ],
+        "maximum_depth_m": 2.71360197733251e-06,
+        "active_contacts": 1346
+      },
+      "coarse_quadrature_error": 0.025276833018734575,
+      "reference_quadrature_change": 0.005894062724327894,
+      "reference_overlap_fraction": 0.00786824831606015,
+      "production_overlap_comparison_passed": true,
+      "normal_tangent_N_m": 898.1604019948492,
+      "local_normal_period_s": 3.4520571524967355e-05
+    }
+  ],
+  "scope": "Independent convex geometry and fixed-quadrature static load roots; no dynamics"
+}
