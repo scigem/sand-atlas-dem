@@ -21,7 +21,11 @@ def validate_planes(planes, periodic, boundary_box):
     if not isinstance(planes, list) or (planes and periodic):
         raise ValueError("Planes require a nonperiodic domain and a list")
     for plane in planes:
-        if not isinstance(plane, dict) or set(plane) != PLANE_FIELDS:
+        if (
+            not isinstance(plane, dict)
+            or not PLANE_FIELDS <= set(plane)
+            or set(plane) - PLANE_FIELDS - {"normal_viscosity"}
+        ):
             raise ValueError(
                 "Every plane requires explicit normal, offset, velocity and contact properties"
             )
@@ -32,6 +36,8 @@ def validate_planes(planes, periodic, boundary_box):
             )
         finite_array(plane["velocity"], (3,))
         finite_array(plane["offset"], ())
+        if finite_array(plane.get("normal_viscosity", 0), ()) < 0:
+            raise ValueError("Plane normal viscosity must be nonnegative")
         for name in ("normal_stiffness", "tangential_stiffness", "friction"):
             value = finite_array(plane[name], ())
             if value < 0 or (name != "friction" and value == 0):

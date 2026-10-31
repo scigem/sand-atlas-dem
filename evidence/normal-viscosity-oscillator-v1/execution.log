@@ -1,0 +1,15 @@
+[WARN] No supported shader model found, pretending to support sm_6_0.
+Traceback (most recent call last):
+  File "/private/tmp/sand-atlas-dem-walls/examples/normal_viscosity_oscillator.py", line 205, in <module>
+    main()
+  File "/private/tmp/sand-atlas-dem-walls/examples/normal_viscosity_oscillator.py", line 171, in main
+    result = run(metal, policy, dt)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/sand-atlas-dem-walls/examples/normal_viscosity_oscillator.py", line 64, in run
+    engine = Engine(
+             ^^^^^^^
+  File "/private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/gpu.py", line 168, in __init__
+    self._preflight_dt()
+  File "/private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/gpu.py", line 399, in _preflight_dt
+    raise ValueError(
+ValueError: Timestep exceeds conservative estimate 1.80876e-08 s

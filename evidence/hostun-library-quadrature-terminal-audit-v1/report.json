@@ -1,0 +1,62 @@
+{
+  "identity": "hostun-library-quadrature-terminal-audit-v1",
+  "parent": "hostun-library-quadrature-deterministic-v1",
+  "parent_exit_code": 1,
+  "parent_status": "failed-final-source-integrity",
+  "completed_cases": 106,
+  "exception_failures": [],
+  "numeric_refinement_failures": [
+    {
+      "shape": "hostun-particle_00038",
+      "target_sampled_depth_fraction": 0.0025,
+      "finest_relative_change": 0.08076725133960745
+    },
+    {
+      "shape": "hostun-particle_00054",
+      "target_sampled_depth_fraction": 0.01,
+      "finest_relative_change": 0.026275756234853107
+    }
+  ],
+  "changed_files": [
+    {
+      "path": "src/sand_atlas_dem/cases.py",
+      "frozen_sha256": "f225b09ee7207a50b35da0b6301626f124c7555cf9cd1a1786b3a73a7300ebb6",
+      "terminal_sha256": "196fb7b3bd86e1708363a0df78b7362e975641b64b9f1588fa9936f8e13073ca"
+    },
+    {
+      "path": "src/sand_atlas_dem/cli.py",
+      "frozen_sha256": "142294d050f55130524fa79b2a22a8182e13bdf786b09a8194aca8c284b229db",
+      "terminal_sha256": "504ce1f7c5f30ab1cee320e31420bec02dfe08022ca1d895ce7005b3045ff225"
+    },
+    {
+      "path": "src/sand_atlas_dem/simulation.py",
+      "frozen_sha256": "caa4aa1bf30e92d61b1f2292dfbfbf3a195bc982e1c83ac489ff4afa0f02867e",
+      "terminal_sha256": "aa6ecf2655fd87c119e7344953f25a8ade237ad459db9b9a783c768bc6f02f1e"
+    }
+  ],
+  "terminal_main_commit": "ff7a7666685dfc9d5185d4325416d971836964eb",
+  "all_unchanged_source_files": [
+    "examples/library_quadrature_deterministic.py",
+    "examples/triangle_quadrature_minimum.py",
+    "examples/reference_inside.py",
+    "examples/reference_rays.py",
+    "examples/reference_winding.py",
+    "src/sand_atlas_dem/__init__.py",
+    "src/sand_atlas_dem/acquisition.py",
+    "src/sand_atlas_dem/atlas_bridge.py",
+    "src/sand_atlas_dem/backend.py",
+    "src/sand_atlas_dem/benchmark.py",
+    "src/sand_atlas_dem/geometry.py",
+    "src/sand_atlas_dem/gpu.py",
+    "src/sand_atlas_dem/mesh.py",
+    "src/sand_atlas_dem/qualification.py",
+    "src/sand_atlas_dem/reference.py",
+    "src/sand_atlas_dem/spec.py",
+    "src/sand_atlas_dem/util.py",
+    "src/sand_atlas_dem/visualize.py"
+  ],
+  "passed": false,
+  "whole_library_qualified": false,
+  "scientific_admission": false,
+  "note": "All completed rows retained. Final gate failed; no original report repaired or success inferred from unchanged numerical operators. Separate prospective reference consolidation/requalification required."
+}

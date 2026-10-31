@@ -59,7 +59,10 @@ compute `Ft = -0.5 * kt_star * A * slip`, project onto the Coulomb disk
 `|Ft| <= mu * |Fn|`, then make the elastic spring consistent with the returned force.
 Dissipation from return mapping is recorded. Slip is deleted on separation; neighbour
 rebuild and periodic wrapping do not reset a continuing contact. There is no added
-rolling resistance, cohesion or dashpot.
+rolling resistance or cohesion. Optional explicit `normal_viscosity` adds a
+repulsive clamped area-weighted normal traction dashpot; see
+CONTACT_DAMPING_DESIGN.md for the law, units, force timing, separate loss channel
+and bounded verification. It does not infer a restitution coefficient.
 
 ## Periodic cell and motion
 

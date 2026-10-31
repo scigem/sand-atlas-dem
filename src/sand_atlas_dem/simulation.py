@@ -72,9 +72,7 @@ class Simulation:
         state = self.engine.state()
         with h5py.File(path, "w") as f:
             f.attrs.update(
-                format="sand-dem-checkpoint/4"
-                if self.engine.wall_count
-                else "sand-dem-checkpoint/3",
+                format=self.engine.spec.checkpoint_format,
                 step=self.engine.step,
                 stage_index=self.stage_index,
                 stage_steps=self.stage_steps,
@@ -98,10 +96,11 @@ class Simulation:
             if f.attrs.get("format") not in {
                 "sand-dem-checkpoint/3",
                 "sand-dem-checkpoint/4",
+                "sand-dem-checkpoint/5",
             }:
                 raise ValueError("Unsupported checkpoint")
             spec = Experiment(**json.loads(f.attrs["experiment"]))
-            if bool(spec.planes) != (f.attrs["format"] == "sand-dem-checkpoint/4"):
+            if spec.checkpoint_format != f.attrs["format"]:
                 raise ValueError("Checkpoint boundary version mismatch")
             if sha256(spec.shape_library) != f.attrs["shape_sha256"]:
                 raise ValueError("Shape library changed since checkpoint")
@@ -158,9 +157,7 @@ class Simulation:
             numerics=dict(
                 state_accumulation="compensated_fp32",
                 cell_update="accumulated_log_strain",
-                checkpoint_format="sand-dem-checkpoint/4"
-                if self.engine.wall_count
-                else "sand-dem-checkpoint/3",
+                checkpoint_format=self.engine.spec.checkpoint_format,
             ),
             experiment=spec.to_dict(),
             shape_sha256=sha256(spec.shape_library),
@@ -237,6 +234,8 @@ class Simulation:
                     - origin["cell_work"]
                     + row["wall_work"]
                     - origin.get("wall_work", 0)
+                    - row["normal_contact_dissipation"]
+                    + origin.get("normal_contact_dissipation", 0)
                     - row["friction_dissipation"]
                     + origin["friction_dissipation"]
                     - row["drag_dissipation"]
@@ -368,6 +367,8 @@ def export_run(path, output):
         "drag_dissipation",
         "cell_work",
         "wall_work",
+        "normal_contact_dissipation",
+        "normal_contact_power",
         "work_balance_proxy_residual",
     ]
     with open(out / "history.csv", "w", newline="") as f:

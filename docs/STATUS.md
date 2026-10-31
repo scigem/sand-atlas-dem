@@ -6,13 +6,38 @@ MECHANICS_QUALIFICATION.md. Source-scale acquisition is now resolved for a docum
 resolutions are prepared. The bounded 216-sphere controller case passes; Hostun
 preparation remains open. Optional exact-feature mesh queries pass fixed-quadrature
 force checks, while source-triangle quadrature convergence is being studied.
-The latest complete Metal test run passes 145 tests, with one skipped; additional
+The latest complete Metal test run passes 166 tests, including actual Atlas request
+consumers; additional
 bounded CPU studies are listed below. Historical entries below retain
 their original evidence identities and are superseded where explicitly stated.
 
 2026-10-31 — research development build, Apple M4 Max (32 GPU cores, 36 GB unified
 memory), Python 3.12, SlangPy 0.43.1, Metal. The solver and CLI execute actual GPU
 kernels; scientific pilot acceptance remains open.
+
+## Latest explicit-viscosity and reference results
+
+`normal-viscosity-integration-v1` passes all 166 tests serially on Metal.
+The optional normal traction viscosity is explicit in SI units for grain contacts
+and each plane; it preserves separate compensated normal loss and force-evaluation
+kinematics through checkpoint /5, rollback and capacity growth. The independently
+frozen constant-area oscillator v2 passes at three timesteps with 4.27-fold phase
+refinement and 0.3327% finest cumulative-loss error. Its v1 preflight rejection
+is retained. See CONTACT_DAMPING_DESIGN.md; restitution calibration and dynamic
+mesh-assembly admission remain open.
+
+The whole-library deterministic CPU run is terminal with all 106 rows retained,
+but failed its final source-integrity gate. While it ran, separate main commit
+`ff7a766` changed three broadly frozen Python files (cases, CLI and simulation).
+The numerical reference helpers, geometry, reference and utility files remained
+byte-identical. This observation does not override the failed frozen gate.
+`hostun-library-quadrature-terminal-audit-v1` retains the terminal log, exact rows,
+source changes and receipt. Two rows exceed the 2% numerical finest-change gate:
+grain 38 shallow (8.0767%) and grain 54 deeper (2.6276%). The grain-38 level-six
+diagnostic passes; a separately frozen grain-54 level-six diagnostic runs from an
+isolated immutable source copy. Full-library consolidation/GPU checks remain open.
+
+Historical entries below describe their original executed sources and scopes.
 
 ## Evidence identities
 

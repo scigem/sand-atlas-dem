@@ -1,0 +1,12 @@
+{
+  "identity": "normal-viscosity-operator-v1",
+  "backend": "metal",
+  "passed": true,
+  "pytest_passed": 8,
+  "pytest_exit_code": 0,
+  "executed_snapshot": "source_snapshot",
+  "core_sources_unchanged": true,
+  "test_log_sha256": "fb9fad2b0af057700ca6a2fec644685bfd28e0310109b6e457fb0f4ac949a051",
+  "scientific_admission": false,
+  "later_test_expansion": "Current tests add pair/HDF5/growth cases after the eight-check run. Original executed tests preserved in source_snapshot. Later full integration result has distinct identity."
+}

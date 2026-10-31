@@ -1,0 +1,7 @@
+{
+  "identity": "normal-viscosity-oscillator-v1",
+  "passed": false,
+  "status": "preflight-rejected",
+  "reason": "Coarse timestep 2e-8 s exceeds unchanged conservative estimate 1.80876e-8 s; no trajectory executed",
+  "scientific_admission": false
+}

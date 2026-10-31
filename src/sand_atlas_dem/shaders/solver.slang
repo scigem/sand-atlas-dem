@@ -12,7 +12,7 @@ void smoke(uint tid: SV_DispatchThreadID, uniform uint N,
 struct Config {
     uint N; uint shapes; uint pairCapacity; uint contactCapacity;
     uint binCapacity; uint binCount; uint3 bins; uint hashSize;
-    float dt; float kn; float kt; float mu;
+    float dt; float kn; float kt; float mu; float normalViscosity;
     float skin; float drag; float maxOverlap; uint historyStep;
     uint meshGeometry; uint periodic; uint wallCount; uint wallBoxEnabled;
 };
@@ -68,6 +68,10 @@ struct Resources {
     RWStructuredBuffer<float4> normalArea;
     RWStructuredBuffer<float4> slip;
     RWStructuredBuffer<float4> contactForce;
+    RWStructuredBuffer<float> normalLossPower;
+    RWStructuredBuffer<float4> normalDamping; // cumulative high,low; current power
+    RWStructuredBuffer<float4> forceVelocity; // committed contact-evaluation kinematics
+    RWStructuredBuffer<float4> forceOmega;
     StructuredBuffer<uint4> oldMeta;
     StructuredBuffer<float4> oldSlip;
     StructuredBuffer<float4> oldNormal;
@@ -151,6 +155,18 @@ float rotationalEnergy(uint i,float3 l){
     float3 b=qinv(r.rotation[i],l);
     float3 w=float3(dot(r.invI[3*i].xyz,b),dot(r.invI[3*i+1].xyz,b),dot(r.invI[3*i+2].xyz,b));
     return .5*dot(b,w);
+}
+void accumulateNormalLoss(uint id,float dt){
+    float4 value=r.normalDamping[id];
+    float3 high=float3(value.x,0,0),low=float3(value.y,0,0);
+    compensated3(high,low,float3(value.z*dt,0,0));
+    value.x=high.x;value.y=low.x;r.normalDamping[id]=value;
+}
+[shader("compute")][numthreads(64,1,1)]
+void captureContactKinematics(uint id:SV_DispatchThreadID){
+    if(id>=r.c.N||r.control[0]!=0)return;
+    r.forceVelocity[id]=float4(r.velocity[id].xyz+r.velocityRemainder[id].xyz,0);
+    r.forceOmega[id]=float4(omega(id),0);
 }
 float cellPower(uint i){
     float3 diagonal=float3(r.particleStress[3*i].x,r.particleStress[3*i+1].y,r.particleStress[3*i+2].z);
@@ -542,7 +558,10 @@ void resolveContacts(uint id:SV_DispatchThreadID){
     if(id>=min(r.control[2],r.c.contactCapacity)||r.control[0]!=0)return;
     uint4 key=r.meta[id];uint i=key.x,j=key.y;float3 n=r.normalArea[id].xyz;
     bool wall=j>=r.c.N;
-    float3 wi=omega(i),wj=0;if(!wall)wj=omega(j);float3 elastic=0;uint slot=hashKey(key);
+    float viscosity=r.c.normalViscosity;if(wall)viscosity=r.wallMaterial[j-r.c.N].w;
+    float3 wi=viscosity>0?r.forceOmega[i].xyz:omega(i),wj=0;
+    if(!wall)wj=viscosity>0?r.forceOmega[j].xyz:omega(j);
+    float3 elastic=0;uint slot=hashKey(key);
     if(r.c.historyStep!=0){
         for(uint probe=0;probe<r.c.hashSize;probe++){
             uint old=r.oldHash[slot];if(old==EMPTY)break;
@@ -553,24 +572,32 @@ void resolveContacts(uint id:SV_DispatchThreadID){
     float3 arm=r.pointDepth[id].xyz;
     if(wall){
         uint w=j-r.c.N;float4 material=r.wallMaterial[w];
-        float3 rv=r.velocity[i].xyz+r.velocityRemainder[i].xyz+cross(wi,arm)-r.wallVelocity[w].xyz;
-        PlaneResponse response=planeResponse(n,-r.pointDepth[id].w,r.normalArea[id].w,rv,elastic,
-            material.x,material.y,material.z,r.c.dt);
+        float3 v=viscosity>0?r.forceVelocity[i].xyz:r.velocity[i].xyz+r.velocityRemainder[i].xyz;
+        float3 rv=v+cross(wi,arm)-r.wallVelocity[w].xyz;
+        PlaneResponse response=planeViscousResponse(n,-r.pointDepth[id].w,r.normalArea[id].w,rv,elastic,
+            material.x,material.y,material.z,material.w,r.c.dt);
         r.slip[id]=response.slipLoss;r.contactForce[id]=response.forceEnergy;
+        r.normalLossPower[id]=response.normalLossPower;
+        if(any(!isfinite(response.forceEnergy))||!isfinite(response.normalLossPower)){fail(512);return;}
         if(response.sliding){uint unused;InterlockedAdd(r.control[6],1,unused);}
         uint oldHead;InterlockedExchange(r.heads[i],2*id,oldHead);
         r.next[2*id]=oldHead;r.next[2*id+1]=EMPTY;
         return;
     }
     float3 branch=centerBranch(i,j);
-    float3 rv=r.velocity[i].xyz-r.velocity[j].xyz-r.cell[1].xyz*branch+cross(wi,arm)-cross(wj,arm-branch);
+    float3 translation=r.velocity[i].xyz-r.velocity[j].xyz;
+    if(viscosity>0)translation=r.forceVelocity[i].xyz-r.forceVelocity[j].xyz;
+    float3 rv=translation-r.cell[1].xyz*branch+cross(wi,arm)-cross(wj,arm-branch);
     elastic+=(rv-n*dot(rv,n))*r.c.dt;
     float3 trial=elastic;
     float area=r.normalArea[id].w,depth=r.pointDepth[id].w;
-    float fn=.5*r.c.kn*area*depth;float3 ft=-.5*r.c.kt*area*elastic;float magnitude=length(ft);
+    NormalResponse response=normalResponse(depth,area,dot(rv,n),r.c.kn,viscosity,.5);
+    float fn=response.force;r.normalLossPower[id]=response.lossPower;
+    float3 ft=-.5*r.c.kt*area*elastic;float magnitude=length(ft);
     if(magnitude>r.c.mu*fn&&magnitude>0){ft*=r.c.mu*fn/magnitude;elastic=-ft/(.5*r.c.kt*area);uint unused;InterlockedAdd(r.control[6],1,unused);}
     r.slip[id]=float4(elastic,max(0.,-dot(ft,trial-elastic)));
     r.contactForce[id]=float4(fn*n+ft,.25*area*(r.c.kn*depth*depth+r.c.kt*dot(elastic,elastic)));
+    if(any(!isfinite(r.contactForce[id]))||!isfinite(response.lossPower)){fail(512);return;}
     uint oldHead;InterlockedExchange(r.heads[i],2*id,oldHead);r.next[2*id]=oldHead;
     InterlockedExchange(r.heads[j],2*id+1,oldHead);r.next[2*id+1]=oldHead;
 }
@@ -587,7 +614,7 @@ void buildHistoryHash(uint id:SV_DispatchThreadID){
 [shader("compute")][numthreads(64,1,1)]
 void gather(uint id:SV_DispatchThreadID){
     if(id>=r.c.N||r.control[0]!=0)return;
-    float3 f=0,t=0;float3 stress0=0,stress1=0,stress2=0;float energy=0,denom=0,maxDepth=0,dissipation=0;
+    float3 f=0,t=0;float3 stress0=0,stress1=0,stress2=0;float energy=0,denom=0,maxDepth=0,dissipation=0,normalPower=0;
     uint entry=r.heads[id];uint visited=0;
     while(entry!=EMPTY){
         if(visited++>2*r.c.contactCapacity){fail(128);return;}
@@ -599,7 +626,7 @@ void gather(uint id:SV_DispatchThreadID){
             stress0-=force.x*arm;stress1-=force.y*arm;stress2-=force.z*arm;
             energy+=r.contactForce[contact].w;denom+=length(force);
             maxDepth=max(maxDepth,r.pointDepth[contact].w/r.body[key.x].w);
-            dissipation+=r.slip[contact].w;entry=r.next[entry];continue;
+            dissipation+=r.slip[contact].w;normalPower+=r.normalLossPower[contact];entry=r.next[entry];continue;
         }
         float3 branch=centerBranch(key.x,key.y);
         f+=source?force:-force;t+=source?cross(arm,force):cross(arm-branch,-force);
@@ -607,9 +634,10 @@ void gather(uint id:SV_DispatchThreadID){
         stress0-=.5*force.x*branch;stress1-=.5*force.y*branch;stress2-=.5*force.z*branch;
         energy+=.5*r.contactForce[contact].w;denom+=length(force);
         maxDepth=max(maxDepth,r.pointDepth[contact].w/min(r.body[key.x].w,r.body[key.y].w));
-        dissipation+=.5*r.slip[contact].w;
+        dissipation+=.5*r.slip[contact].w;normalPower+=.5*r.normalLossPower[contact];
         entry=r.next[entry];
     }
+    float4 normalState=r.normalDamping[id];normalState.z=normalPower;r.normalDamping[id]=normalState;
     r.force[id]=float4(f,maxDepth);r.torque[id]=float4(t,dissipation);
     r.particleStress[3*id]=float4(stress0,0);r.particleStress[3*id+1]=float4(stress1,0);r.particleStress[3*id+2]=float4(stress2,0);
     float kinetic=.5*(r.body[id].y*dot(r.velocity[id].xyz,r.velocity[id].xyz)+dot(r.momentum[id].xyz,omega(id)));
@@ -645,6 +673,7 @@ void gatherWallRows(uint index:SV_DispatchThreadID){
 void beginStep(uint id:SV_DispatchThreadID){
     if(id>=r.c.N||r.control[0]!=0)return;
     float dt=r.c.dt;float3 rate=r.cell[1].xyz;
+    accumulateNormalLoss(id,.5*dt);
     float3 v=r.velocity[id].xyz,vl=r.velocityRemainder[id].xyz;
     float3 l=r.momentum[id].xyz,ll=r.momentumRemainder[id].xyz;
     compensated3(v,vl,.5*dt*r.force[id].xyz/r.body[id].y);
@@ -690,6 +719,7 @@ void checkRebuild(uint id:SV_DispatchThreadID){
 [shader("compute")][numthreads(64,1,1)]
 void finishStep(uint id:SV_DispatchThreadID){
     if(id>=r.c.N||r.control[0]!=0)return;
+    accumulateNormalLoss(id,.5*r.c.dt);
     float3 v=r.velocity[id].xyz,vl=r.velocityRemainder[id].xyz;
     float3 l=r.momentum[id].xyz,ll=r.momentumRemainder[id].xyz;
     compensated3(v,vl,.5*r.c.dt*r.force[id].xyz/r.body[id].y);
@@ -708,13 +738,15 @@ void diagnosticRows(uint id:SV_DispatchThreadID){
     if(id>=r.c.N)return;
     float3 v=r.velocity[id].xyz;float m=r.body[id].y;
     float kinetic=.5*(m*dot(v,v)+dot(r.momentum[id].xyz,omega(id)));
-    r.diagnosticRows[id*7]=float4(r.particleStress[id*3].xyz,kinetic);
-    r.diagnosticRows[id*7+1]=float4(r.particleStress[id*3+1].xyz,r.particleDiagnostic[id].y);
-    r.diagnosticRows[id*7+2]=float4(r.particleStress[id*3+2].xyz,length(r.force[id].xyz));
-    r.diagnosticRows[id*7+3]=float4(m*v.x*v,r.particleDiagnostic[id].w);
-    r.diagnosticRows[id*7+4]=float4(m*v.y*v,r.force[id].w);
-    r.diagnosticRows[id*7+5]=float4(m*v.z*v,r.torque[id].w);
-    r.diagnosticRows[id*7+6]=r.accumulated[id];
+    r.diagnosticRows[id*8]=float4(r.particleStress[id*3].xyz,kinetic);
+    r.diagnosticRows[id*8+1]=float4(r.particleStress[id*3+1].xyz,r.particleDiagnostic[id].y);
+    r.diagnosticRows[id*8+2]=float4(r.particleStress[id*3+2].xyz,length(r.force[id].xyz));
+    r.diagnosticRows[id*8+3]=float4(m*v.x*v,r.particleDiagnostic[id].w);
+    r.diagnosticRows[id*8+4]=float4(m*v.y*v,r.force[id].w);
+    r.diagnosticRows[id*8+5]=float4(m*v.z*v,r.torque[id].w);
+    r.diagnosticRows[id*8+6]=r.accumulated[id];
+    float4 normalState=r.normalDamping[id];
+    r.diagnosticRows[id*8+7]=float4(normalState.x+normalState.y,normalState.z,0,0);
 }
 
 [shader("compute")][numthreads(64,1,1)]

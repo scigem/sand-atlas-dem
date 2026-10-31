@@ -11,6 +11,7 @@ from pathlib import Path
 import h5py
 import numpy as np
 
+from .spec import Experiment
 from .util import finite_array, read_json, sha256, write_json
 
 POLICY = {
@@ -267,11 +268,17 @@ def export_replay(
             "History and accepted-preparation checkpoint receipts required"
         )
     with h5py.File(run / "prepared-stage-0.h5") as f:
+        spec = Experiment(**manifest["experiment"])
         if (
-            f.attrs["format"] != "sand-dem-checkpoint/3"
+            f.attrs["format"] != spec.checkpoint_format
             or f.attrs["shape_sha256"] != manifest["shape_sha256"]
         ):
             raise ValueError("Prepared checkpoint identity mismatch")
+        if spec.viscous:
+            for name in ("normalDamping", "forceVelocity", "forceOmega"):
+                if name not in f:
+                    raise ValueError("Prepared checkpoint missing normal damping state")
+                finite_array(f[name][:], (spec.particles, 4))
         prepared = {k: int(f.attrs[k]) for k in ["stage_index", "stage_steps", "step"]}
         prepared["initial_cell"] = json.loads(f.attrs["initial_cell"])
     history, history_hash = _snapshot(run / "history.json")

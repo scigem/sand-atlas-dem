@@ -217,8 +217,24 @@ def test_source_hash_mismatch_rejects_before_consumer(run_fixture, tmp_path):
 @pytest.mark.skipif(
     not os.environ.get("SAND_DEM_ATLAS_ROOT"), reason="Explicit Atlas checkout required"
 )
-def test_actual_atlas_python_and_browser_request_consumers(run_fixture, tmp_path):
+@pytest.mark.parametrize("viscosity", [0, 1e6])
+def test_actual_atlas_python_and_browser_request_consumers(
+    run_fixture, tmp_path, viscosity
+):
     run, policy = run_fixture
+    if viscosity:
+        manifest = read_json(run / "manifest.json")
+        manifest["experiment"]["normal_viscosity"] = viscosity
+        with h5py.File(run / "prepared-stage-0.h5", "r+") as f:
+            f.attrs["format"] = "sand-dem-checkpoint/5"
+            for name in ("normalDamping", "forceVelocity", "forceOmega"):
+                f.create_dataset(
+                    name, data=np.zeros((manifest["experiment"]["particles"], 4))
+                )
+        manifest["artifacts"]["prepared-stage-0.h5"] = sha256(
+            run / "prepared-stage-0.h5"
+        )
+        write_json(run / "manifest.json", manifest)
     atlas = Path(os.environ["SAND_DEM_ATLAS_ROOT"])
     output = tmp_path / "handoff"
     result = export_replay(

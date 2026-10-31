@@ -1,0 +1,11 @@
+{
+  "identity": "normal-viscosity-integration-v1",
+  "backend": "metal",
+  "passed": true,
+  "pytest_passed": 166,
+  "pytest_exit_code": 0,
+  "executed_snapshot": "source_snapshot",
+  "core_sources_unchanged": true,
+  "test_log_sha256": "b72d6c6f52910219ce60df6d24a31e66694242bc28964ceb987504bd62854533",
+  "scientific_admission": false
+}

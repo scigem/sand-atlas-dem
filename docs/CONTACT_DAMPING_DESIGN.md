@@ -1,9 +1,9 @@
 # Contact damping: source audit and explicit traction contract
 
-Status: independent dimensional/scalar analysis, not implemented contact damping.
-The current Engine has global drag and elastic/frictional contact, without a
-normal restitution dashpot. A restitution number must not silently select an
-unverified nodal mass or coefficient conversion.
+Status: explicit traction viscosity is implemented on Metal, with bounded operator,
+pair, restart and analytical oscillator verification. It is not a restitution
+calibration. A restitution number must not silently select an unverified nodal
+mass or coefficient conversion.
 
 ## Bounded primary source
 
@@ -63,7 +63,7 @@ units. Traction stiffness is N/m^3; normal traction viscosity must be N*s/m^3,
 whereas an ordinary nodal dashpot is N*s/m. Its area factor and mass convention
 must be derived, not supplied by a restitution label.
 
-## Explicit project extension to implement
+## Explicit project extension
 
 Use an optional, explicitly supplied normal traction viscosity `cn_star` in
 N*s/m^3. Zero retains the existing undamped method. For a source node of area A,
@@ -88,10 +88,38 @@ For a translating spherical cap with inward speed u>=0, before unloading/clippin
 The local tangent damping ratio is proportional to sqrt(d), even for fixed cn_star.
 Scalar surface quadrature independently verifies these integrals.
 
-Implementation must extend conservative viscous timestep bounds, GPU force/history
-and reduction paths, checkpoint state, rollback/growth, versioned outputs and work
-balance. Freeze compressive/unloading/clipped nodal tests, cap-integral convergence,
-constant-area analytical oscillators, timestep refinement, action/reaction,
-objectivity, restart and zero-viscosity regression before executing studies.
+Public `normal_viscosity` defaults to zero for grain contacts and independently
+for every plane. Positive values add a conservative whole-surface translational
+and rotational viscous timestep estimate. GPU reduction reports
+`normal_contact_power` (W) and compensated `normal_contact_dissipation` (J).
+The latter enters the proxy work balance separately from other losses.
+
+The force uses the kinematics available after drift and before the final kick.
+It remains explicit: no implicit dashpot solve or second-order claim is made for
+velocity-dependent forces. Loss power is integrated with half-step contributions
+from the stored old and newly evaluated powers. At an imposed wall velocity change,
+forces are refreshed at zero elapsed time before advancing. Persisted
+`forceVelocity`, `forceOmega` and `normalDamping` preserve this force timing and
+cumulative loss across restart. Viscous checkpoints are /5; undamped periodic and
+wall checkpoints remain /3 and /4. Geometry-only snapshot formats are unchanged.
+All damping state joins transaction backup and capacity-growth replacement.
+
+`normal-viscosity-operator-v1` passes eight checks, including hand-evaluated
+compression/unloading/clamping tables and 32768-node cap force/power at the frozen
+0.1% gates. `normal-viscosity-integration-v1` passes all 166 tests on actual Metal,
+including independent FP64 grain-pair resultants/power, common rigid-motion
+invariance, action/reaction, common moment, restart, HDF5, growth and rollback.
+Actual Atlas Python/browser request consumers also pass with checkpoint /5.
+
+`normal-viscosity-oscillator-v1` is retained as a preflight rejection: its coarse
+2e-8 s timestep exceeded the unchanged 1.80876e-8 s estimate. Separately frozen
+v2 halves all three timesteps to 1e-8, 5e-9 and 2.5e-9 s, retaining all gates.
+The six-face-centre cube fixture has one active face with an exactly linear
+constant-area resultant. Over 1 microsecond, maximum normalized phase error falls
+from 0.01810% to 0.004237% (4.27-fold); finest proxy balance error is 0.004544%,
+and cumulative loss differs from independent analytical-velocity integration by
+0.3327%. The initial rejected workload and every trajectory remain preserved.
+These are bounded checks, not complete dynamic mesh/assembly qualification.
+
 A benchmark-specific restitution mapping still needs source evidence or a separately
 identified and justified calibration study, followed by independent validation.

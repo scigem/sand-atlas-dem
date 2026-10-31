@@ -1,0 +1,37 @@
+{
+  "identity": "normal-viscosity-oscillator-v2",
+  "backend": "metal",
+  "cases": [
+    {
+      "timestep_s": 1e-08,
+      "steps": 100,
+      "maximum_relative_phase_error": 0.0001810200290555588,
+      "maximum_relative_balance_error": 0.00013455203406938533,
+      "relative_loss_error": 0.013193338797775844,
+      "exact_loss_J": 8.324956851518074e-07,
+      "minimum_exact_repulsive_traction": 7534569.323400286
+    },
+    {
+      "timestep_s": 5e-09,
+      "steps": 200,
+      "maximum_relative_phase_error": 8.891798273313067e-05,
+      "maximum_relative_balance_error": 7.488008668606352e-05,
+      "relative_loss_error": 0.006626916890124401,
+      "exact_loss_J": 8.324956851518074e-07,
+      "minimum_exact_repulsive_traction": 7534569.323400286
+    },
+    {
+      "timestep_s": 2.5e-09,
+      "steps": 400,
+      "maximum_relative_phase_error": 4.2366965456971165e-05,
+      "maximum_relative_balance_error": 4.544201692642827e-05,
+      "relative_loss_error": 0.003327181997965112,
+      "exact_loss_J": 8.324956851518074e-07,
+      "minimum_exact_repulsive_traction": 7534569.323400286
+    }
+  ],
+  "phase_refinement_factor": 4.272669215344365,
+  "passed": true,
+  "scientific_admission": false,
+  "scope": "Fixed-area plane-contact oscillator versus a closed independent linear solution.\n\nThe cube has one face-centre quadrature node per face, each with its true face\narea. Only the bottom face is active; its linear traction resultant is exact.\nThis is a declared analytical fixture, not a resolved mesh-assembly experiment.\n"
+}

@@ -1,0 +1,16 @@
+{
+  "identity": "normal-viscosity-oscillator-v1",
+  "side_m": 0.001,
+  "initial_depth_m": 0.00001,
+  "density_kg_m3": 2650,
+  "stiffness_N_m3": 1e12,
+  "viscosity_N_s_m3": 200000,
+  "duration_s": 0.000001,
+  "timesteps_s": [2e-8, 1e-8, 5e-9],
+  "maximum_phase_error": 0.01,
+  "maximum_finest_balance_error": 0.005,
+  "maximum_finest_loss_error": 0.01,
+  "minimum_refinement_factor": 1.5,
+  "reference": "Closed underdamped oscillator x=d0*exp(-alpha*t)*(cos(w*t)+alpha/w*sin(w*t)); v=-d0*exp(-alpha*t)*w0^2/w*sin(w*t), m=rho*h^3,K=kn*h^2,C=cn*h^2; independent quadrature of C*v^2 for cumulative loss",
+  "gate_scope": "Maximum phase error normalized by d0 and d0*w0 over every step; positive exact repulsive traction and exactly one active node; finest energy balance and loss error; coarse/fine phase refinement. No claim of second order velocity-dependent integration."
+}

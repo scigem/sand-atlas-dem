@@ -86,14 +86,18 @@ work alongside the scientific gates below; naming a material must not infer cali
   preserved. The independently frozen deterministic replacement uses bidirectional
   parity and exhaustive winding for every disagreement. All 1,024 disputed-point
   regression checks pass; the analytical integral/culling checks also pass.
-  `hostun-library-quadrature-deterministic-v1` is running all 106 original poses
-  at levels zero through four, with the unchanged 2% finest-change gate. Its
-  completion and passing full-library GPU comparison remain required.
+  `hostun-library-quadrature-deterministic-v1` completed all 106 original poses
+  at levels zero through four, but failed its final broad source-integrity gate
+  after separate visualization commit ff7a766 changed cases/CLI/simulation.
+  All numerical reference dependencies remained unchanged; the failed gate and
+  all rows are retained in hostun-library-quadrature-terminal-audit-v1.
+  Grain 54 deeper also exceeds the unchanged 2% finest-change gate (2.6276%).
+  A separately frozen targeted level-six diagnostic is running in an immutable
+  source copy. Full-library reference consolidation and GPU comparison remain required.
   Its completed shallow grain-00038 row exceeds the level-four reference gate
   (8.0767% change). The separately frozen targeted level-six study retains the
   same pose, reproduces all five overlapping levels exactly and reduces the final
-  change to 0.3765%, passing the unchanged 2% gate. The whole-library parent keeps
-  running, with no case removed. Full-library reference consolidation and GPU
+  change to 0.3765%, passing the unchanged 2% gate. The terminal parent retains every original case. Full-library reference consolidation and GPU
   comparison remain required; this targeted diagnostic does not admit the L2 asset.
 - [X] Freeze and run rolling/objectivity tests, separating/returning contact,
   changing normal orientation, strongly anisotropic torque-free rotation and
@@ -147,8 +151,11 @@ work alongside the scientific gates below; naming a material must not infer cali
   A later primary-source damping audit and independent oscillator/area-scaling
   checks now pass their bounded analytical gates. They demonstrate why applying
   an ordinary nodal restitution coefficient without a mass convention is
-  nonconvergent. CONTACT_DAMPING_DESIGN.md declares the separate traction-viscosity
-  extension to implement; no benchmark-specific mapping or dashpot is claimed.
+  nonconvergent. The separate explicit traction-viscosity extension is now implemented;
+  normal-viscosity-integration-v1 passes all 166 tests on Metal. The independent
+  constant-area oscillator v2 passes at three timesteps (4.27-fold phase refinement;
+  0.3327% finest cumulative-loss error), preserving v1 preflight rejection.
+  No benchmark-specific restitution mapping is claimed; see CONTACT_DAMPING_DESIGN.md.
 - [ ] Complete atlas adapters and material comparison. The bounded recorded-path
   adapter checks protocol, signed stress/strain mapping, prepared origins, frozen
   approximation declarations and synthetic provenance; actual Python/browser

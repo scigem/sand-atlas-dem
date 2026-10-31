@@ -23,6 +23,7 @@ class Experiment:
     normal_stiffness: float = 1e12  # traction/penetration: Pa/m
     tangential_stiffness: float = 5e11
     friction: float = 0.5
+    normal_viscosity: float = 0.0  # normal traction / normal speed: N*s/m^3
     timestep: float = 1e-7
     initial_solid_fraction: float = 0.15
     scale: float = 1.0
@@ -79,6 +80,8 @@ class Experiment:
         if (
             not np.isfinite(self.friction)
             or self.friction < 0
+            or not np.isfinite(self.normal_viscosity)
+            or self.normal_viscosity < 0
             or not 0 < self.initial_solid_fraction < 0.5
         ):
             raise ValueError("Invalid friction or initial solid fraction")
@@ -158,3 +161,19 @@ class Experiment:
 
     def to_dict(self):
         return asdict(self)
+
+    @property
+    def viscous(self):
+        return self.normal_viscosity > 0 or any(
+            p.get("normal_viscosity", 0) > 0 for p in self.planes
+        )
+
+    @property
+    def checkpoint_format(self):
+        return (
+            "sand-dem-checkpoint/5"
+            if self.viscous
+            else "sand-dem-checkpoint/4"
+            if self.planes
+            else "sand-dem-checkpoint/3"
+        )

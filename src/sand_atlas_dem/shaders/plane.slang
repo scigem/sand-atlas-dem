@@ -1,3 +1,5 @@
+#include "normal.slang"
+
 // Qualification operator for a fixed-normal translating penalty plane.
 // Full one-sided surface traction: this is an explicit project wall variant.
 // Reused by the Engine wall collector and the independent qualification probe.
@@ -5,19 +7,21 @@ struct PlaneResponse {
     float4 forceEnergy;
     float4 slipLoss;
     bool sliding;
+    float normalLossPower;
 };
 
-PlaneResponse planeResponse(float3 normal, float signedDistance, float area,
+PlaneResponse planeViscousResponse(float3 normal, float signedDistance, float area,
                             float3 relativeVelocity, float3 oldSlip,
-                            float kn, float kt, float mu, float dt) {
+                            float kn, float kt, float mu, float viscosity, float dt) {
     PlaneResponse value;
-    value.forceEnergy=0; value.slipLoss=0; value.sliding=false;
+    value.forceEnergy=0; value.slipLoss=0; value.sliding=false; value.normalLossPower=0;
     if(signedDistance>=0)return value;
     float depth=-signedDistance;
     float3 tangent=relativeVelocity-normal*dot(relativeVelocity,normal);
     float3 trial=oldSlip-normal*dot(oldSlip,normal)+dt*tangent;
     float3 slip=trial;
-    float fn=kn*area*depth;
+    NormalResponse response=normalResponse(depth,area,dot(relativeVelocity,normal),kn,viscosity,1.);
+    float fn=response.force;value.normalLossPower=response.lossPower;
     float3 ft=-kt*area*slip;
     float magnitude=length(ft);
     if(magnitude>mu*fn && magnitude>0){
@@ -29,6 +33,13 @@ PlaneResponse planeResponse(float3 normal, float signedDistance, float area,
         .5*area*(kn*depth*depth+kt*dot(slip,slip)));
     value.slipLoss=float4(slip,max(0.,-dot(ft,trial-slip)));
     return value;
+}
+
+// Retain the independently qualified zero-viscosity probe API.
+PlaneResponse planeResponse(float3 normal,float signedDistance,float area,
+                            float3 relativeVelocity,float3 oldSlip,
+                            float kn,float kt,float mu,float dt){
+    return planeViscousResponse(normal,signedDistance,area,relativeVelocity,oldSlip,kn,kt,mu,0,dt);
 }
 
 [shader("compute")][numthreads(64,1,1)]

@@ -24,6 +24,9 @@ ERRORS = {
 }
 
 
+DAMPING_STATE = ("normalDamping", "forceVelocity", "forceOmega")
+
+
 WALL_STATE = (
     "wallPlane",
     "wallRemainder",
@@ -105,6 +108,7 @@ class Engine:
         self.library = library
         self.n = len(positions)
         self.wall_count = len(spec.planes)
+        self.viscous = spec.viscous
         self.step = 0
         self.history = False
         self.active = 0
@@ -163,11 +167,11 @@ class Engine:
         self.bin_capacity = spec.bin_capacity
         self._preflight_dt()
         estimated = (
-            240 * self.contact_capacity
+            244 * self.contact_capacity
             + 8 * self.hash_size
             + 64 * self.pair_capacity
             + 8 * self.bin_count * self.bin_capacity
-            + 1024 * self.n
+            + 1152 * self.n
         )
         estimated += 160 * self.wall_count * self.n + 256 * self.wall_count
         if spec.contact_geometry == "mesh":
@@ -197,8 +201,10 @@ class Engine:
         ):
             self.add(name, np.zeros((self.n, 4), np.float32))
         self.add("particleStress", np.zeros((3 * self.n, 4), np.float32))
-        self.add("diagnosticRows", np.zeros((7 * self.n, 4), np.float32))
+        self.add("diagnosticRows", np.zeros((8 * self.n, 4), np.float32))
         self.add("accumulated", np.zeros((self.n, 4), np.float32))
+        for name in DAMPING_STATE:
+            self.add(name, np.zeros((self.n, 4), np.float32))
         for name in RESIDUAL_STATE:
             self.add(
                 name, np.zeros((2 if name == "cellLog" else self.n, 4), np.float32)
@@ -225,6 +231,9 @@ class Engine:
                 plane["tangential_stiffness"] / spec.normal_stiffness,
                 plane["friction"],
             ]
+            wall_material[index, 3] = plane.get("normal_viscosity", 0) / (
+                spec.normal_stiffness * self.time_unit
+            )
         rounded_plane = wall_plane.astype(np.float32)
         residual_plane = (wall_plane - rounded_plane).astype(np.float32)
         if (
@@ -240,6 +249,19 @@ class Engine:
             raise ValueError(
                 "Plane data cannot be represented in normalized FP32 units"
             )
+        cn = spec.normal_viscosity / (spec.normal_stiffness * self.time_unit)
+        if not np.isfinite(np.float32(cn)) or (cn > 0 and np.float32(cn) <= 0):
+            raise ValueError(
+                "Normal viscosity cannot be represented in normalized FP32 units"
+            )
+        for index, plane in enumerate(spec.planes):
+            if (
+                plane.get("normal_viscosity", 0) > 0
+                and np.float32(wall_material[index, 3]) <= 0
+            ):
+                raise ValueError(
+                    "Plane viscosity cannot be represented in normalized FP32 units"
+                )
         self.add("wallPlane", rounded_plane)
         self.add("wallRemainder", residual_plane)
         self.add("wallVelocity", wall_velocity.astype(np.float32))
@@ -285,13 +307,14 @@ class Engine:
             )
         self.allocate("pointDepth", self.contact_capacity, 16)
         self.allocate("contactForce", self.contact_capacity, 16)
+        self.allocate("normalLossPower", self.contact_capacity)
         self.scan_pairs = Scan(self.m, self.n)
         self.scan_contacts = Scan(self.m, self.pair_capacity)
         self.diag_buffers = []
         size = self.n
         while size > 1:
             size = (size + 255) // 256
-            self.diag_buffers.append((size, self.m.buffer(count=size * 7, stride=16)))
+            self.diag_buffers.append((size, self.m.buffer(count=size * 8, stride=16)))
         self.fabric_buffers = []
         size = self.pair_capacity
         while size > 1:
@@ -323,6 +346,7 @@ class Engine:
             "accumulated",
             "referencePositionRemainder",
             *RESIDUAL_STATE,
+            *DAMPING_STATE,
             *(WALL_STATE if self.wall_count else ()),
         )
         self.backups = {
@@ -354,7 +378,23 @@ class Engine:
             rotation = np.linalg.eigvalsh(
                 sh.inertia * self.spec.density * s**5
             ).min() / (stiffness * (sh.radius * s) ** 2)
-            limits.append(0.1 * math.sqrt(min(mass / stiffness, rotation)))
+            elastic_limit = math.sqrt(min(mass / stiffness, rotation))
+            viscosity = (
+                (
+                    self.spec.normal_viscosity
+                    + sum(p.get("normal_viscosity", 0) for p in self.spec.planes)
+                )
+                * sh.areas.sum()
+                * s**2
+            )
+            viscous_limit = math.inf
+            if viscosity > 0:
+                viscous_limit = min(
+                    mass / viscosity,
+                    np.linalg.eigvalsh(sh.inertia * self.spec.density * s**5).min()
+                    / (viscosity * (sh.radius * s) ** 2),
+                )
+            limits.append(0.1 * min(elastic_limit, viscous_limit))
         if self.spec.timestep > min(limits):
             raise ValueError(
                 f"Timestep exceeds conservative estimate {min(limits):.6g} s"
@@ -447,6 +487,8 @@ class Engine:
             "kn": 1.0,
             "kt": self.spec.tangential_stiffness / self.spec.normal_stiffness,
             "mu": self.spec.friction,
+            "normalViscosity": self.spec.normal_viscosity
+            / (self.spec.normal_stiffness * self.time_unit),
             "skin": self.skin,
             "drag": drag * self.time_unit,
             "maxOverlap": self.spec.max_overlap_fraction,
@@ -483,7 +525,9 @@ class Engine:
         if self.wall_count:
             self.dispatch("collectWallContacts", 64 * self.n * self.wall_count, e, b)
 
-    def forces(self, e, b):
+    def forces(self, e, b, *, capture_kinematics=True):
+        if self.viscous and capture_kinematics:
+            self.dispatch("captureContactKinematics", self.n, e, b)
         self.dispatch("clearBins", self.bin_count, e, b)
         self.dispatch("fillBins", self.n, e, b)
         self.dispatch("countPairs", self.n, e, b)
@@ -599,9 +643,16 @@ class Engine:
         for name, backup in self.history_backup.items():
             e.copy_buffer(backup, 0, committed[name], 0, committed[name].size)
         if original_wall_velocity is not None:
-            self.dispatch(
-                "refreshWallPower", self.n * self.wall_count, e, self.bindings()
-            )
+            if any(
+                p.get("normal_viscosity", 0) > 0 for p in self.spec.planes
+            ) and not np.array_equal(original_wall_velocity, normalized_velocity):
+                self.forces(e, self.bindings(dt=0))
+                self.active = 1 - self.active
+                self.history = True
+            else:
+                self.dispatch(
+                    "refreshWallPower", self.n * self.wall_count, e, self.bindings()
+                )
         for _ in range(steps):
             b = self.bindings(drag=drag)
             self.dispatch("beginStep", self.n, e, b)
@@ -676,7 +727,7 @@ class Engine:
             n = size
         self.m.submit(e)
         self.m.device.wait()
-        data = self.m.read(source, shape=(7, 4))
+        data = self.m.read(source, shape=(8, 4))
         fabric_data = self.m.read(fabric_source, shape=(2, 4))
         active_pairs = round(float(fabric_data[1, 2]))
         fabric = np.array(
@@ -770,6 +821,10 @@ class Engine:
             "drag_dissipation": float(data[6, 1] * self.energy_unit),
             "cell_work": float(data[6, 2] * self.energy_unit),
             "wall_work": float(data[6, 3] * self.energy_unit),
+            "normal_contact_dissipation": float(data[7, 0] * self.energy_unit),
+            "normal_contact_power": float(
+                data[7, 1] * self.energy_unit / self.time_unit
+            ),
         }
 
     def state(self):
@@ -793,6 +848,9 @@ class Engine:
                 *RESIDUAL_STATE,
             )
         }
+        if self.viscous:
+            for name in DAMPING_STATE:
+                out[name] = self.m.read(self.buffers[name], shape=(self.n, 4))
         if self.wall_count:
             for name in WALL_STATE:
                 size = (
@@ -831,6 +889,8 @@ class Engine:
         )
         self.dispatch("emitPairs", self.n, e, b)
         e.write_timestamp(pool, 2)
+        if self.viscous:
+            self.dispatch("captureContactKinematics", self.n, e, b)
         self._encode_contacts(e, b)
         e.write_timestamp(pool, 3)
         self.dispatch("clearContactStorage", max(self.n, self.hash_size), e, b)
@@ -874,6 +934,9 @@ class Engine:
         }
 
     def restore(self, state, step):
+        if self.viscous:
+            for name in DAMPING_STATE:
+                finite_array(state[name], (self.n, 4))
         if self.wall_count:
             for name in WALL_STATE:
                 value = finite_array(state[name])
@@ -896,6 +959,10 @@ class Engine:
                 )
             for name in WALL_STATE:
                 self.buffers[name].copy_from_numpy(state[name])
+        for name in DAMPING_STATE:
+            self.buffers[name].copy_from_numpy(
+                state[name] if self.viscous else np.zeros((self.n, 4), np.float32)
+            )
         for name in (
             "position",
             "velocity",
@@ -937,7 +1004,7 @@ class Engine:
         ctrl[4] = 1
         self.buffers["control"].copy_from_numpy(ctrl)
         e = self.m.device.create_command_encoder()
-        self.forces(e, self.bindings(dt=0))
+        self.forces(e, self.bindings(dt=0), capture_kinematics=False)
         self.m.submit(e)
         self.m.device.wait()
         self.check_errors()
