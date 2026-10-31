@@ -18,6 +18,7 @@ ERRORS = {
     256: "periodic image ambiguity",
     512: "nonfinite state",
     1024: "mesh traversal stack capacity",
+    2048: "nonperiodic domain escape",
 }
 
 
@@ -78,6 +79,12 @@ class Engine:
     def __init__(
         self, library, spec, positions, cell, shape_ids, scales, *, metal=None
     ):
+        positions = finite_array(positions)
+        cell = finite_array(cell, (3,), positive=True)
+        if positions.ndim != 2 or positions.shape[1] != 3 or len(positions) < 1:
+            raise ValueError("At least one three-dimensional position required")
+        if not spec.periodic and (np.any(positions < 0) or np.any(positions >= cell)):
+            raise ValueError("Nonperiodic particle centres must lie in [0, cell)")
         self.m = metal or Metal()
         self.spec = spec
         self.library = library
@@ -128,7 +135,7 @@ class Engine:
         self.skin = float(spec.skin * 2 * self.body[:, 2].max())
         self.cutoff = float(2 * self.body[:, 2].max() + self.skin)
         box = np.asarray(cell, float) / l
-        if self.cutoff >= 0.5 * box.min():
+        if spec.periodic and self.cutoff >= 0.5 * box.min():
             raise ValueError("Cell too small for unique periodic images")
         self.bins = np.maximum(1, np.minimum(64, np.floor(box / self.cutoff))).astype(
             np.uint32
@@ -371,6 +378,7 @@ class Engine:
             "maxOverlap": self.spec.max_overlap_fraction,
             "historyStep": int(self.history),
             "meshGeometry": int(self.spec.contact_geometry == "mesh"),
+            "periodic": int(self.spec.periodic),
         }
         return dict(
             self.buffers,
@@ -434,6 +442,8 @@ class Engine:
         if type(steps) is not int or steps < 0:
             raise ValueError("Nonnegative integer step count required")
         rate = finite_array(rate, (3,))
+        if not self.spec.periodic and np.any(rate != 0):
+            raise ValueError("Affine cell rates require a periodic domain")
         if not np.isfinite(drag) or drag < 0:
             raise ValueError("Finite nonnegative drag required")
         for attempt in range(5):

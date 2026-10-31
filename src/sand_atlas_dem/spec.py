@@ -13,6 +13,7 @@ class Experiment:
     format: str = "sand-dem-experiment/1"
     shape_library: str = ""
     contact_geometry: str = "sdf"
+    periodic: bool = True
     particles: int = 1000
     seed: int = 42
     density: float = 2650.0
@@ -40,6 +41,8 @@ class Experiment:
             raise ValueError("Unsupported experiment format")
         if self.contact_geometry not in {"sdf", "mesh"}:
             raise ValueError("Unsupported contact geometry")
+        if type(self.periodic) is not bool:
+            raise ValueError("periodic must be an explicit boolean")
         for name in (
             "particles",
             "seed",
@@ -96,6 +99,10 @@ class Experiment:
             "force_tolerance",
         }
         for s in self.stages:
+            if not self.periodic and s.get("kind") != "hold":
+                raise ValueError(
+                    "Nonperiodic domains currently support hold stages only"
+                )
             if set(s) - allowed or s.get("kind") not in {
                 "hold",
                 "isotropic",

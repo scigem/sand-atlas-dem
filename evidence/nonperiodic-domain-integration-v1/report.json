@@ -1,0 +1,13 @@
+{
+  "identity": "nonperiodic-domain-integration-v1",
+  "passed": true,
+  "checked_utc": "2026-10-31T13:03:27.150973+00:00",
+  "backend": "metal",
+  "pytest_result": "131 passed, 1 skipped in 29.40s",
+  "source_snapshot_unchanged": true,
+  "current_sources_match": true,
+  "source_freeze_sha256": "e5a19343575ef3a542f044069fd340a1500e774a70278bc81f18de1cff38ed53",
+  "log_sha256": "a568cdc7f762cdce2d0d40b5ecdd0634dd33c645bcbffb605d5ef5219999f437",
+  "scientific_admission": false,
+  "scope": "Nonperiodic computational domain only; no plane mechanics"
+}

@@ -12,7 +12,7 @@ struct Config {
     uint binCapacity; uint binCount; uint3 bins; uint hashSize;
     float dt; float kn; float kt; float mu;
     float skin; float drag; float maxOverlap; uint historyStep;
-    uint meshGeometry;
+    uint meshGeometry; uint periodic;
 };
 struct Resources {
     Config c;
@@ -116,7 +116,7 @@ void accumulate(uint id,float3 increment){
 float3 centerBranch(uint i,uint j){
     float3 box=r.cell[0].xyz;
     float3 d=(r.position[j].xyz-r.position[i].xyz)+(r.positionRemainder[j].xyz-r.positionRemainder[i].xyz);
-    return d-floor(d/box+.5)*box;
+    return r.c.periodic!=0?d-floor(d/box+.5)*box:d;
 }
 float3 omega(uint i){
     float3 b=qinv(r.rotation[i],r.momentum[i].xyz+r.momentumRemainder[i].xyz);
@@ -133,8 +133,8 @@ float cellPower(uint i){
     float3 v=r.velocity[i].xyz;
     return -dot(diagonal+r.body[i].y*v*v,r.cell[1].xyz);
 }
-float3 image(float3 d){float3 box=r.cell[0].xyz;return d-floor(d/box+0.5)*box;}
-float3 wrap(float3 x){float3 box=r.cell[0].xyz;return x-floor(x/box)*box;}
+float3 image(float3 d){float3 box=r.cell[0].xyz;return r.c.periodic!=0?d-floor(d/box+0.5)*box:d;}
+float3 wrap(float3 x){float3 box=r.cell[0].xyz;return r.c.periodic!=0?x-floor(x/box)*box:x;}
 void fail(uint bit){uint unused;InterlockedOr(r.control[0],bit,unused);}
 uint3 binIndex(uint i){return min((uint3)floor(r.position[i].xyz/r.cell[0].xyz*float3(r.c.bins)),r.c.bins-1);}
 uint binFlat(uint3 b){return (b.x*r.c.bins.y+b.y)*r.c.bins.z+b.z;}
@@ -294,6 +294,9 @@ void clearBins(uint id:SV_DispatchThreadID){
 [shader("compute")][numthreads(64,1,1)]
 void fillBins(uint id:SV_DispatchThreadID){
     if(id>=r.c.N||r.control[4]==0)return;
+    float3 p=r.position[id].xyz,pl=r.positionRemainder[id].xyz;
+    if(any(!isfinite(p))||any(!isfinite(pl))){fail(512);return;}
+    if(r.c.periodic==0&&(any(p+pl<0)||any((p-r.cell[0].xyz)+pl>=0))){fail(2048);return;}
     uint bin=binFlat(binIndex(id));uint slot;InterlockedAdd(r.binCounts[bin],1,slot);
     if(slot<r.c.binCapacity)r.binParticles[bin*r.c.binCapacity+slot]=id;
     else fail(8);
@@ -303,9 +306,12 @@ uint findPairs(uint id,bool emit){
     // Global conservative radius is supplied through referenceCell[1].w.
     cutoff=r.referenceCell[1].w;
     int3 reach=int3(ceil(cutoff/r.cell[0].xyz*float3(r.c.bins)));
-    uint3 width=min(uint3(2*reach+1),r.c.bins);uint count=0;
+    int3 low=max(int3(b)-reach,int3(0));
+    int3 high=min(int3(b)+reach,int3(r.c.bins)-1);
+    uint3 width=r.c.periodic!=0?min(uint3(2*reach+1),r.c.bins):uint3(high-low+1);uint count=0;
     for(uint x=0;x<width.x;x++)for(uint y=0;y<width.y;y++)for(uint z=0;z<width.z;z++){
         uint3 c=uint3(modIndex(int(b.x)-reach.x+int(x),r.c.bins.x),modIndex(int(b.y)-reach.y+int(y),r.c.bins.y),modIndex(int(b.z)-reach.z+int(z),r.c.bins.z));
+        if(r.c.periodic==0)c=uint3(low+int3(x,y,z));
         uint bi=binFlat(c);uint occupancy=min(r.binCounts[bi],r.c.binCapacity);
         for(uint slot=0;slot<occupancy;slot++){
             uint j=r.binParticles[bi*r.c.binCapacity+slot];
@@ -509,7 +515,9 @@ void beginStep(uint id:SV_DispatchThreadID){
     float3 box=r.cell[2].xyz*exp(logarithm);
     float3 p=r.position[id].xyz,pl=r.positionRemainder[id].xyz;
     compensated3(p,pl,expm1Stable3(rate*dt)*(p+pl)+dt*(v+vl));
-    p-=floor(p/box)*box;
+    if(any(!isfinite(p))||any(!isfinite(pl))){fail(512);return;}
+    if(r.c.periodic!=0)p-=floor(p/box)*box;
+    else if(any(p+pl<0)||any((p-box)+pl>=0)){fail(2048);return;}
     r.position[id]=float4(p,0);r.positionRemainder[id]=float4(pl,0);
     compensated3(v,vl,expm1Stable3(-rate*dt)*(v+vl));
     r.velocity[id]=float4(v,0);r.velocityRemainder[id]=float4(vl,0);
@@ -521,7 +529,7 @@ void advanceCell(uint id:SV_DispatchThreadID){
     compensated3(logarithm,residual,r.cell[1].xyz*r.c.dt);
     r.cellLog[0]=float4(logarithm,0);r.cellLog[1]=float4(residual,0);
     r.cell[0]=float4(r.cell[2].xyz*exp(logarithm),0);r.control[4]=0;
-    if(r.referenceCell[1].w>=.5*min(r.cell[0].x,min(r.cell[0].y,r.cell[0].z)))fail(256);
+    if(r.c.periodic!=0&&r.referenceCell[1].w>=.5*min(r.cell[0].x,min(r.cell[0].y,r.cell[0].z)))fail(256);
 }
 [shader("compute")][numthreads(64,1,1)]
 void checkRebuild(uint id:SV_DispatchThreadID){

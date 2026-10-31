@@ -164,6 +164,10 @@ class Simulation:
                 strain="engineering_compression_positive",
                 volumetric_strain="sum_of_axial_engineering_strains",
                 void_ratio="cell_volume_over_sum_rigid_grain_volumes_minus_one",
+                boundary="periodic" if spec.periodic else "nonperiodic-centre-domain",
+                measurement_volume="periodic_cell"
+                if spec.periodic
+                else "computational_domain",
             ),
             units=dict(length="m", stress="Pa", time="s", strain="1"),
             created_utc=time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),

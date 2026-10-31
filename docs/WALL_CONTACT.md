@@ -59,7 +59,31 @@ The authorized host execution has a separate identity and no relaxed gate.
 
 ## Remaining laboratory integration
 
-Nonperiodic neighbour search must reject domain escape and avoid image wrapping.
+The nonperiodic foundation is now implemented: `periodic: false` selects a fixed
+computational domain, with clipped neighbour-bin traversal and Euclidean centre
+branches. Opposite faces do not interact. The domain may be smaller than twice
+the pair cutoff; the periodic minimum-image restriction does not apply. Particle
+centres must remain in `[0, cell)` on each axis. Grain surfaces may extend outside
+that envelope: these bounds do not generate physical wall forces. Escape rejects
+the entire advancement chunk with flag 2048 and restores its committed state.
+Nonfinite positions fail separately. Nonperiodic cases currently allow hold stages
+only and reject nonzero affine rates before mutation.
+
+Checkpoint /3 already stores the complete experiment, including the new explicit
+boolean, so no extra state-array version is needed for this foundation. Older
+experiments retain the historical periodic default. Checkpoints and synthetic
+exports retain the boundary setting; manifests explicitly label nonperiodic
+measurement volume as the computational domain. That volume is not an established
+wall-confined specimen volume.
+
+`nonperiodic-domain-v1` passes all eleven prospective checks. The expanded
+`nonperiodic-domain-integration-v1` passes the complete serial Metal suite:
+131 passed, one skipped. This covers exact unique neighbour sets including a
+single-bin domain, six-face transactional escape, analytical free drift/rebuild,
+state restore, SDF/mesh interior contacts and continuing friction, and HDF5
+checkpoint/export semantics. Protocols, source snapshots and logs are retained.
+These checks do not establish plane-contact integration or assembly acceptance.
+
 GPU source transformations and conservative sample-hierarchy plane rejection must
 feed capacity-checked collection; an O(all nodes times all particles) host loop is
 not an integration path. Persistent keys must distinguish planes from grain targets.

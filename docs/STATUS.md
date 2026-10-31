@@ -6,7 +6,7 @@ MECHANICS_QUALIFICATION.md. Source-scale acquisition is now resolved for a docum
 resolutions are prepared. The bounded 216-sphere controller case passes; Hostun
 preparation remains open. Optional exact-feature mesh queries pass fixed-quadrature
 force checks, while source-triangle quadrature convergence is being studied.
-The current full test suite passes 84 tests. Historical entries below retain
+The current full test suite passes 131 tests, with one skipped. Historical entries below retain
 their original evidence identities and are superseded where explicitly stated.
 
 2026-10-31 — research development build, Apple M4 Max (32 GPU cores, 36 GB unified
@@ -414,3 +414,17 @@ Production collection, reactions/work, nonperiodic neighbours, transactional
 restart and source-derived restitution remain open. The inspected original thesis
 contact/global-drag equations do not resolve the later benchmark damping choice.
 See WALL_CONTACT.md and CONTACT_SOURCE_AUDIT.md for exact derivations and scope.
+
+## Nonperiodic domain foundation
+
+`nonperiodic-domain-v1` passes eleven frozen Metal checks. The expanded
+`nonperiodic-domain-integration-v1` passes the complete actual-Metal suite:
+131 passed, one skipped. Fixed nonperiodic domains use clipped neighbour bins,
+Euclidean separation and no wrapping. All six centre-domain escapes reject and
+roll back the entire chunk; independent all-pairs sets, free drift, restart,
+SDF/mesh interior-contact equivalence and HDF5/export boundary identity pass.
+Affine rates and non-hold laboratory stages are explicitly rejected in this mode.
+The new boundary boolean persists in the existing complete checkpoint /3 experiment;
+no wall state has been added. Exported volume is labelled computational-domain
+volume. No physical wall confinement, reactions or moving-plane work is claimed.
+See WALL_CONTACT.md for the remaining production-wall integration.
