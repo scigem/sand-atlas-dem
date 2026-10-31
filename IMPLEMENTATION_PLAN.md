@@ -186,8 +186,9 @@ work alongside the scientific gates below; naming a material must not infer cali
   Sphere throughput is only an engineering baseline.
   Symbolic execution of the current allocation declarations now establishes a
   41.858 GiB contact-storage subtotal at 50k with unchanged 4096-contact capacity,
-  exceeding installed 36 GiB before geometry. Active-history/rollback storage
-  needs implementation and actual-device qualification; geometry-only changes
+  exceeding installed 36 GiB before geometry. Active-prefix rollback allocation
+  is now implemented and CPU-verified; actual-device qualification and measured
+  dense savings remain required. Further storage work may be needed; geometry-only changes
   cannot close this resource gap. See docs/CONTACT_STORAGE.md.
 - [ ] Reproduce a complete published assembly benchmark and compare with independent
   experimental evidence. Calibration and validation datasets must remain distinct.

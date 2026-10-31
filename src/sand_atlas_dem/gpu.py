@@ -353,7 +353,7 @@ class Engine:
             name: self.m.buffer(count=self.buffers[name].size // 4) for name in names
         }
         self.history_backup = {
-            name: self.m.buffer(count=self.history_buffers[0][name].size // 4)
+            name: self.m.buffer(count=self.hash_size if name == "hash" else 4)
             for name in ("meta", "slip", "normalArea", "hash")
         }
 
@@ -612,11 +612,36 @@ class Engine:
                 self.__dict__.update(replacement.__dict__)
                 self.capacity_retries = log
 
+    def _reserve_history_backup(self):
+        """Reserve only the committed prefix; unused history rows are unreachable."""
+        count = int(self.m.read(self.buffers["control"], np.uint32)[2])
+        if count < 0 or count > self.contact_capacity:
+            raise ValueError("Committed contact count is outside capacity")
+        size = max(16, count * 16)
+        replacements = {
+            name: self.m.buffer(count=size // 4)
+            for name in ("meta", "slip", "normalArea")
+            if self.history_backup[name].size < size
+        }
+        self.history_backup.update(replacements)
+        return count
+
+    def _copy_history_backup(self, encoder, committed, count, *, restore=False):
+        for name, backup in self.history_backup.items():
+            size = committed[name].size if name == "hash" else count * 16
+            if size:
+                source, destination = (
+                    (backup, committed[name]) if restore else (committed[name], backup)
+                )
+                encoder.copy_buffer(destination, 0, source, 0, size)
+
     def _advance_once(self, steps, *, rate=(0, 0, 0), drag=0, wall_velocities=None):
         if getattr(self, "invalid", False):
             raise RuntimeError("Engine is invalid; restore a checkpoint")
         if steps < 1:
             return
+        # Reserve before mutating cell/wall state so allocation failure is atomic.
+        history_count = self._reserve_history_backup()
         cell = self.m.read(self.buffers["cell"], shape=(3, 4))
         original_cell = cell.copy()
         original_wall_velocity = None
@@ -640,8 +665,7 @@ class Engine:
         original_active = self.active
         original_history = self.history
         committed = self.history_buffers[1 - self.active]
-        for name, backup in self.history_backup.items():
-            e.copy_buffer(backup, 0, committed[name], 0, committed[name].size)
+        self._copy_history_backup(e, committed, history_count)
         if original_wall_velocity is not None:
             if any(
                 p.get("normal_viscosity", 0) > 0 for p in self.spec.planes
@@ -672,8 +696,7 @@ class Engine:
             e = self.m.device.create_command_encoder()
             for name, backup in self.backups.items():
                 e.copy_buffer(self.buffers[name], 0, backup, 0, backup.size)
-            for name, backup in self.history_backup.items():
-                e.copy_buffer(committed[name], 0, backup, 0, backup.size)
+            self._copy_history_backup(e, committed, history_count, restore=True)
             self.m.submit(e)
             self.m.device.wait()
             self.buffers["cell"].copy_from_numpy(original_cell)

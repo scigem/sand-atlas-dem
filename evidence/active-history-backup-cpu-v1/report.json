@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "exit_code": 0,
+  "passed_tests": 221,
+  "skipped_tests": 8,
+  "deselected_tests": 59,
+  "sources_unchanged": true,
+  "frozen_source_files": 63,
+  "freeze_sha256": "8f1f07556a6908052fb93ff980853ddcd074f1582ea9aed07bf33c7ccc752586",
+  "log_sha256": "676ded19af81fa8e099f3e9054199e8858fa5ae3d87e55baf6e503d7a64bda49",
+  "scope": "CPU regression only; actual Metal rollback tests remain queued. No GPU execution or dense memory-fit claim.",
+  "gpu_executed": false,
+  "scientific_admission": false
+}

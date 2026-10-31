@@ -131,6 +131,52 @@ def test_overlap_rollback(metal, shape):
     assert e.step == 0
 
 
+@pytest.mark.parametrize("initial_steps", [1, 2])
+def test_active_history_backup_restores_after_multiple_encoded_steps(
+    metal, shape, initial_steps, monkeypatch
+):
+    e, _ = engine(metal, shape)
+    e.initialize()
+    velocity = np.zeros((2, 4), np.float32)
+    velocity[0, 1] = 0.01
+    e.buffers["velocity"].copy_from_numpy(velocity)
+    e.advance(initial_steps)
+    before = e.state()
+    assert 0 < before["contacts"] < e.contact_capacity
+    original_side = e.active
+    committed = e.history_buffers[1 - e.active]
+    original_hash = metal.read(committed["hash"], np.uint32).copy()
+    expected_backup_sizes = {
+        name: max(e.history_backup[name].size, before["contacts"] * 16)
+        for name in ("meta", "slip", "normalArea")
+    }
+
+    def injected_rejection():
+        raise RuntimeError("injected rejection after encoded chunk")
+
+    with monkeypatch.context() as context:
+        context.setattr(e, "check_errors", injected_rejection)
+        with pytest.raises(RuntimeError, match="injected rejection"):
+            e._advance_once(3)
+    after = e.state()
+    assert e.active == original_side
+    assert e.step == initial_steps
+    for name, value in before.items():
+        if isinstance(value, np.ndarray):
+            np.testing.assert_array_equal(after[name], value, err_msg=name)
+        else:
+            assert after[name] == value, name
+    np.testing.assert_array_equal(
+        metal.read(committed["hash"], np.uint32), original_hash
+    )
+    for name in ("meta", "slip", "normalArea"):
+        assert e.history_backup[name].size == expected_backup_sizes[name]
+    # Successful continuation must preserve the restored, valid friction history.
+    e.advance(2)
+    resumed = e.state()
+    assert np.all(np.isfinite(resumed["slip"]))
+
+
 def test_affine_cell_and_no_particle_fallback(metal, shape):
     spec = Experiment(particles=2, timestep=1e-8)
     x = np.array([[0.001, 0.001, 0.001], [0.004, 0.004, 0.004]])

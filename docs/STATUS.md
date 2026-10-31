@@ -1,5 +1,12 @@
 # Status and evidence
 
+Active-prefix rollback storage is implemented after the original contact ledger:
+history rollback rows allocate to observed high-water activity and copies use
+the current committed prefix. Full hashes and capacities remain unchanged.
+Nine CPU byte-copy contracts and full 221-test CPU regression pass (eight skipped,
+59 Metal cases deselected). Actual-Metal multi-step rollback/parity checks remain
+queued; the live preparation uses unchanged archived sources. See CONTACT_STORAGE.md.
+
 The contact-storage ledger isolates 41.858 GiB of logical contact/history/hash/
 scratch/adjacency storage at 50k with current capacities. This alone exceeds the
 Mac's 36 GiB; reducing geometry storage cannot close that resource gap. Frozen

@@ -41,3 +41,34 @@ reduction without evidence is not an optimization. Shared hash/scratch layouts
 would also need an explicit dispatch-lifetime audit before aliasing allocations.
 Any implemented change requires serial actual-Metal verification and new measured
 peak accounting. Neither such optimization nor dense 50k fit is claimed here.
+
+## Active-prefix rollback implementation
+
+The subsequent implementation reserves the three history rollback buffers from
+the committed active count rather than allocating full contact capacity at
+construction. Each begins at one row, grows to a new observed high-water count,
+and is reused for smaller active sets. Both backup and restore copy only the
+current committed prefix. The complete hash backup remains unchanged, so copied
+hash entries retain their exact original indices and bytes. Unused history tails
+are unreachable after the original control count/hash is restored.
+
+Reservation happens before cell or wall mutation. Replacement references are
+installed together after successful allocation, and invalid counts reject before
+allocation. Contact capacity, overflow handling, shaders and contact equations are
+unchanged. The conservative preflight estimate still reserves the full possible
+history backup; it is not lowered to predict an unobserved active count.
+
+Potential logical savings are 48 times the difference between capacity and the
+three-buffer high-water count, with a one-row minimum. Actual dense savings are
+unknown, and new allocations can temporarily coexist with previous buffers during
+growth. The 41.858 GiB ledger above retains its original frozen eager-allocation
+identity and remains the full-capacity upper configuration for these components.
+
+Nine independent CPU byte-copy contracts cover empty/full prefixes, arbitrary
+overwrites, untouched unused tails, shrinking active sets, high-water reuse,
+allocation failure and invalid counts. Full CPU regression passes 221 tests,
+with eight skipped and 59 Metal cases deselected (`active-history-backup-cpu-v1`).
+Two new actual-Metal cases cover both history-side parities and an injected
+rejection after three encoded steps, checking complete exposed state and exact
+hash restoration. They remain queued behind the ongoing immutable preparation.
+No actual-device verification, measured saving or dense memory fit is claimed.
