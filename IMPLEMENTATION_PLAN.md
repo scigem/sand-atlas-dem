@@ -66,8 +66,8 @@ work alongside the scientific gates below; naming a material must not infer cali
   Subdivided Gauss3 assets and conservative GPU sample hierarchies are implemented.
   The first ten-pose GPU quadrature study failed its 0.1% fixed-reference gate;
   an exhaustive per-node audit identified a proximity tie-substitution error in
-  the FP64 reference. A new strict-minimum reference study is running with the same
-  source poses, refinement levels and thresholds. Preserve the failed study;
+  the FP64 reference. The new strict-minimum reference retains the same source
+  poses, refinement levels and thresholds. Preserve the failed study;
   the separately identified strict reference and GPU requalification now pass all
   ten original poses. Worst refined integral error is 1.28981%, and same-quadrature
   GPU error is 0.01504%, below the unchanged 10% and 0.1% gates. This is bounded
@@ -79,6 +79,16 @@ work alongside the scientific gates below; naming a material must not infer cali
   pass all 106 cases, with worst force error 0.02588% and exact active counts.
   This verifies the fixed 2,048-node computation only; full-library
   refined quadrature, dynamic contacts and assembly convergence remain required.
+  Expanded fine-node comparisons exposed randomized Trimesh parity fallback;
+  three strict pruning-equivalence attempts remain failed and incomplete. A direct
+  solid-angle audit found batch/repeat-dependent labels at real Hostun points.
+  The stochastic full-library study was stopped with its ten completed cases
+  preserved. The independently frozen deterministic replacement uses bidirectional
+  parity and exhaustive winding for every disagreement. All 1,024 disputed-point
+  regression checks pass; the analytical integral/culling checks also pass.
+  `hostun-library-quadrature-deterministic-v1` is running all 106 original poses
+  at levels zero through four, with the unchanged 2% finest-change gate. Its
+  completion and passing full-library GPU comparison remain required.
 - [X] Freeze and run rolling/objectivity tests, separating/returning contact,
   changing normal orientation, strongly anisotropic torque-free rotation and
   capacity-growth stress tests. Test timestep refinement over useful physical time.

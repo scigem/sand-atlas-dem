@@ -1,0 +1,17 @@
+{
+  "status": "terminated_after_reference_classifier_audit",
+  "complete": false,
+  "passed": false,
+  "completed_cases": 10,
+  "failures": 0,
+  "source_hashes_unchanged": true,
+  "reason": "Repeated original Trimesh parity classification was proven nondeterministic on fine Hostun nodes; see hostun-parity-audit-v1 and hostun-deterministic-inside-v1. All partial results retained. New deterministic reference has a distinct identity and unchanged refinement gate.",
+  "parent_pid": 55251,
+  "worker_pids": [
+    55270,
+    55271,
+    55272,
+    55273
+  ],
+  "exit_code": 143
+}

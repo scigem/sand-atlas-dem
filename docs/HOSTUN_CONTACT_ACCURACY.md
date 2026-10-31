@@ -145,3 +145,43 @@ relative force error is 0.02588%, below the unchanged 0.1% gate, and every activ
 count matches exactly. This verifies the fixed 2,048-node computation across all
 53 shapes. These checks do not qualify refined surface integration,
 friction, dynamics, dense specimens or material response.
+
+
+## Deterministic inside/outside reference audit
+
+The expanded fine-node work exposed a second, distinct reference issue: Trimesh's
+ray-parity disagreement fallback can draw a random ray. Three strict equivalence
+attempts (`hostun-triangle-enclosure-equivalence-v1`, `-v2`, `-v3`) failed their
+unchanged 1e-12 force-equivalence gate and were stopped with all partial data and
+failed reports retained. These are reference-method failures, separate from the
+GPU 0.1% force gate. No failed study was converted into a pass.
+
+`hostun-parity-audit-v1` examines sixteen disputed grain-00021 points: nine vary
+under repeated unpruned classification and seven under repeated ray-pruned
+classification. Exhaustive oriented solid-angle sums consistently give zero or
+one, with maximum integer residual 3.54e-16. The points have positive source
+surface distances, rather than being exactly on the surface.
+
+The new reference retains bidirectional primary rays but replaces every parity
+disagreement with exhaustive solid-angle winding over the original triangles.
+Only values within the prospectively frozen 1e-8 of zero or positive one are
+accepted; unresolved queries fail. No random fallback remains. The sixteen-point
+regression passes 1,024 classifications over repeats, ordering and batch sizes
+(`hostun-deterministic-inside-v1`). Separate analytical solid/cavity integrals
+match exhaustive winding classification before and after conservative pruning.
+The current CPU suite passes 85 tests, with one skipped and 17 Metal tests
+deselected (`deterministic-reference-tests-v1/verification.log`).
+
+The old stochastic whole-library study is interrupted after ten completed cases;
+its source hashes, private partial levels and interruption receipt are retained.
+The distinct `hostun-library-quadrature-deterministic-v1` now evaluates all 106
+frozen poses and levels zero through four, preserving the 2% finest-change gate.
+Its result is pending. The historical five-grain studies retain their original
+scope and identities; the point regression does not independently requalify their
+complete integrals. Full-library quadrature, GPU comparison, assembly and material
+acceptance remain open.
+
+The integrated actual-Metal suite subsequently passes 107 tests with one skipped
+(`deterministic-reference-tests-v2/verification.log`), including the explicit empty
+reference rejection checks. This is software verification; the full-library
+reference and scientific gates above remain pending.

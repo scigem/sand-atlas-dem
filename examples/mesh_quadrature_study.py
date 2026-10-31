@@ -14,6 +14,23 @@ from sand_atlas_dem.spec import Experiment
 from sand_atlas_dem.util import read_json, sha256, write_json
 
 
+def fixed_level_error(force, fixed, gpu_active, reference_active, policy):
+    """Relative force error; an empty reference requires an exactly empty contact."""
+    if not np.isfinite(force).all() or not np.isfinite(fixed).all():
+        raise ValueError("Nonfinite fixed-level force comparison")
+    norm = float(np.linalg.norm(fixed))
+    if norm:
+        return float(np.linalg.norm(force - fixed) / norm)
+    if (
+        policy.get("zero_fixed_reference")
+        != "require-exact-zero-force-and-zero-active-nodes"
+    ):
+        raise ValueError("A zero fixed reference needs an explicit policy")
+    if np.any(force != 0) or gpu_active != 0 or reference_active != 0:
+        raise ValueError("Zero reference does not match an empty GPU contact set")
+    return 0.0
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("protocol", type=Path)
@@ -25,6 +42,11 @@ def main():
     if sha256(reference_path) != policy["reference_report_sha256"]:
         raise ValueError("Reference bytes changed")
     reference = read_json(reference_path)
+    if policy.get("reference_inside_policy") is not None and (
+        reference["protocol"].get("inside_policy") != policy["reference_inside_policy"]
+        or reference["protocol"].get("winding_tolerance") != 1e-8
+    ):
+        raise ValueError("Independent reference uses a different inside policy")
     if (
         not reference["passed"]
         or max(r["finest_relative_change"] for r in reference["rows"]) > 0.02
@@ -145,6 +167,14 @@ def main():
                     np.array(same_level["force_integral_m3"]) * spec.normal_stiffness
                 )
                 diag = engine.diagnostics()
+                fixed_norm = np.linalg.norm(fixed)
+                fixed_error = fixed_level_error(
+                    force,
+                    fixed,
+                    diag["active_surface_contacts"],
+                    same_level["active_nodes"],
+                    policy,
+                )
                 row.update(
                     status="complete",
                     force_N=force,
@@ -152,9 +182,9 @@ def main():
                     relative_force_error=float(
                         np.linalg.norm(force - expected) / np.linalg.norm(expected)
                     ),
-                    fixed_level_gpu_relative_error=float(
-                        np.linalg.norm(force - fixed) / np.linalg.norm(fixed)
-                    ),
+                    fixed_level_gpu_relative_error=fixed_error,
+                    fixed_level_reference_force_norm_N=float(fixed_norm),
+                    zero_fixed_level_reference=bool(fixed_norm == 0),
                     active_contacts=diag["active_surface_contacts"],
                     fp64_reference_active_nodes=same_level["active_nodes"],
                     max_overlap_fraction=diag["max_overlap_fraction"],
@@ -225,7 +255,7 @@ def main():
             if np.isfinite(coarse_worst)
             else None,
             fine_worst_relative_error=fine_worst if np.isfinite(fine_worst) else None,
-            scope="Ten frozen static source poses; comparison to independently refined normal-traction integral. FP64/FP32 active counts are diagnostic; the separate unchanged fixed-node force/count oracle remains required. No dynamic/friction/assembly/material or sustained throughput qualification.",
+            scope=f"All {len(reference['rows'])} frozen static source poses; comparison to independently refined normal-traction integral. FP64/FP32 active counts are diagnostic; the separate unchanged fixed-node force/count oracle remains required. No dynamic/friction/assembly/material or sustained throughput qualification.",
         ),
     )
     return 0 if passed else 1

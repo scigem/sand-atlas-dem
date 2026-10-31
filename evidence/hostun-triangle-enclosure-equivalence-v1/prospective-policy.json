@@ -1,0 +1,46 @@
+{
+  "identity": "hostun-triangle-enclosure-equivalence-v1",
+  "frozen_before_execution": true,
+  "cases": [
+    {
+      "path": "evidence/hostun-triangle-enclosure-equivalence-v1/reference_snapshot/hostun-particle_00020-0.0025.json",
+      "sha256": "c503109f67480d2c7b84ef3df49a93baca8620119ff0a2eed2be9c17e9ad9f23"
+    },
+    {
+      "path": "evidence/hostun-triangle-enclosure-equivalence-v1/reference_snapshot/hostun-particle_00020-0.01.json",
+      "sha256": "e8e1b205861783519b656441cfcb09f686f0963212bbfac7af5fe1e8e06e3264"
+    },
+    {
+      "path": "evidence/hostun-triangle-enclosure-equivalence-v1/reference_snapshot/hostun-particle_00021-0.0025.json",
+      "sha256": "317b6754cd08a38ae53e6b1c568daabbe29ef482d1e20664a174524183d50555"
+    },
+    {
+      "path": "evidence/hostun-triangle-enclosure-equivalence-v1/reference_snapshot/hostun-particle_00021-0.01.json",
+      "sha256": "90b5e3e3e47fdb0dc131e5201eedcadaba991656bd5153bb40de6b2d4e83cb64"
+    },
+    {
+      "path": "evidence/hostun-triangle-enclosure-equivalence-v1/reference_snapshot/hostun-particle_00022-0.0025.json",
+      "sha256": "2d5c920704275fc10f9139319ca0235a766527365c32e7a71dbf54b621d2904d"
+    },
+    {
+      "path": "evidence/hostun-triangle-enclosure-equivalence-v1/reference_snapshot/hostun-particle_00022-0.01.json",
+      "sha256": "66783645ea1ca25fa38c1082fa29a3ee0dbe87fa16806e724361cbc7df7f9a71"
+    },
+    {
+      "path": "evidence/hostun-triangle-enclosure-equivalence-v1/reference_snapshot/hostun-particle_00023-0.0025.json",
+      "sha256": "c79caddb711ccf46fe5c471c0764629b477cc4410b5881a5a26bc7f987deb014"
+    },
+    {
+      "path": "evidence/hostun-triangle-enclosure-equivalence-v1/reference_snapshot/hostun-particle_00023-0.01.json",
+      "sha256": "da86d3f038baad9e28debd43bcc650fa39f9861df615f53fd098e913de20e1c6"
+    },
+    {
+      "path": "evidence/hostun-triangle-enclosure-equivalence-v1/reference_snapshot/hostun-particle_00024-0.0025.json",
+      "sha256": "7831f6c9540e065339960d86102f1ca72e9ccbba947b9657e9bafa72b3ae2207"
+    }
+  ],
+  "maximum_relative_force_difference": 1e-12,
+  "maximum_absolute_depth_difference": 1e-14,
+  "exact_active_counts_required": true,
+  "scope": "Every readable in-progress Hostun reference with at least two completed levels at snapshot time. Compare every available level, without changing the prior study or its gates. This verifies conservative pruning, not complete quadrature convergence."
+}

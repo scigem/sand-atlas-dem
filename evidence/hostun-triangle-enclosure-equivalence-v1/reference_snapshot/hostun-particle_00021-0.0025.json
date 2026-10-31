@@ -1,0 +1,109 @@
+{
+  "case": {
+    "shape": "hostun-particle_00021",
+    "source_sha256": "38c86dc9c810b73b299f690ad8866d777229b201e7670a9b03fc26fd1bc7b3e6",
+    "target_sampled_depth_fraction": 0.0025,
+    "separation_m": 0.00028474810225339545,
+    "maximum_sampled_depth_fraction": 0.0024999999987875337,
+    "exact_normal_traction_integral_m3": [
+      -7.772190247461837e-17,
+      -4.10848788078279e-17,
+      -2.5294879222196444e-17
+    ],
+    "exact_active_nodes": [
+      1,
+      1
+    ],
+    "sample_count": 2048,
+    "initial_bracket_diameters": [
+      0.8963266448290085,
+      0.9025946633243163
+    ],
+    "final_bracket_diameters": [
+      0.9005103755053833,
+      0.9005103755068427
+    ]
+  },
+  "levels": [
+    {
+      "level": 0,
+      "force_integral_m3": [
+        -8.125187795992797e-17,
+        -3.7515378466088514e-17,
+        -1.167687794797705e-17
+      ],
+      "maximum_sampled_depth_fraction": 0.004411898857440678,
+      "active_nodes": 44,
+      "evaluated_nodes": 13755,
+      "triangle_queried_nodes": 44,
+      "candidate_subtriangles": [
+        2240,
+        2345
+      ]
+    },
+    {
+      "level": 1,
+      "force_integral_m3": [
+        -8.275908420530641e-17,
+        -3.744573554315242e-17,
+        -1.1167334289203214e-17
+      ],
+      "maximum_sampled_depth_fraction": 0.004997572895497193,
+      "active_nodes": 193,
+      "evaluated_nodes": 53151,
+      "triangle_queried_nodes": 193,
+      "candidate_subtriangles": [
+        8733,
+        8984
+      ]
+    },
+    {
+      "level": 2,
+      "force_integral_m3": [
+        -8.293245882059294e-17,
+        -3.8047563713882094e-17,
+        -1.0891622637693408e-17
+      ],
+      "maximum_sampled_depth_fraction": 0.005416139866742318,
+      "active_nodes": 762,
+      "evaluated_nodes": 209109,
+      "triangle_queried_nodes": 762,
+      "candidate_subtriangles": [
+        34427,
+        35276
+      ]
+    },
+    {
+      "level": 3,
+      "force_integral_m3": [
+        -8.281728417535171e-17,
+        -3.7889077460064746e-17,
+        -1.1365946515624893e-17
+      ],
+      "maximum_sampled_depth_fraction": 0.005404897664493773,
+      "active_nodes": 3046,
+      "evaluated_nodes": 828591,
+      "triangle_queried_nodes": 3046,
+      "candidate_subtriangles": [
+        136558,
+        139639
+      ]
+    },
+    {
+      "level": 4,
+      "force_integral_m3": [
+        -8.279297893243224e-17,
+        -3.7992299712718904e-17,
+        -1.127561027211053e-17
+      ],
+      "maximum_sampled_depth_fraction": 0.005469428097760876,
+      "active_nodes": 12166,
+      "evaluated_nodes": 3299427,
+      "triangle_queried_nodes": 12166,
+      "candidate_subtriangles": [
+        543928,
+        555881
+      ]
+    }
+  ]
+}

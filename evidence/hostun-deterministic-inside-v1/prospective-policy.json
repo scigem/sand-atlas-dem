@@ -1,0 +1,22 @@
+{
+  "identity": "hostun-deterministic-inside-v1",
+  "frozen_before_execution": true,
+  "audit_report": "evidence/hostun-parity-audit-v1/report.json",
+  "audit_report_sha256": "8b894ca1a5e4fd4c3210cff03d912f0880a0441f014c331a5e386b305d360acd",
+  "library": "assets/private/hostun-30-r64-s2048.h5",
+  "library_sha256": "1bc9f37a22b402ada31495ea7ff1ebef4bb6a27a26d68a8333f7f84a12ad16b7",
+  "batch_sizes": [
+    1,
+    2,
+    7,
+    16
+  ],
+  "repetitions": 8,
+  "winding_tolerance": 1e-08,
+  "source_hashes": {
+    "examples/reference_inside.py": "f70aa54d1fd691b268f2a9899ff1093da0865a29f6758504b4ff4bd3c6026f27",
+    "examples/reference_rays.py": "a79a17c07b9232157718376ba465e96377c9d52217bbe3357dc1a70593bb7585",
+    "examples/reference_winding.py": "b5712328f9fe61b74054725d7960f0110fa044a65482860cfe84a4d1213d9ac5"
+  },
+  "scope": "All sixteen directly audited ambiguous Hostun points. Require every classification to match its source solid-angle label across batch sizes, reversed order and repeats. Not whole-library force or material acceptance."
+}
