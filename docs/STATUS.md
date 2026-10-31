@@ -383,3 +383,16 @@ This is sphere-assembly engineering verification, without an exact potential or
 Hostun/material/experimental acceptance claim. Mesh-assembly coverage remains open.
 See MECHANICS_QUALIFICATION.md and PUBLISHED_ASSEMBLY_REFERENCE.md for the distinct
 published wall-boundary benchmark and source acquisition/capability gaps.
+
+
+## Published benchmark source acquisition
+
+The Feldfogel article PDF and ETH raw-data ZIP/readme are now acquired, with all
+three published MD5 values verified and SHA-256 receipts retained. The independent
+read-only archive inventory covers all 19 finite numeric files. Its initial
+text-header parser failure remains retained; v2 freezes the exact header lines.
+The Figure 4C load file is byte-identical to the displacement file; column and
+initial-state assignments are unresolved. Source reproduction also requires a
+generic wall-contact/reaction contract and restitution damping, which the current
+periodic solver does not implement. No benchmark, calibration or experimental
+acceptance is claimed by this inventory. See PUBLISHED_ASSEMBLY_REFERENCE.md.

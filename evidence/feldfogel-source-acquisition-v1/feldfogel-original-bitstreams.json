@@ -1,0 +1,183 @@
+{
+  "_embedded" : {
+    "bitstreams" : [ {
+      "id" : "bd081f87-eac3-4469-b53b-59a64405fd21",
+      "uuid" : "bd081f87-eac3-4469-b53b-59a64405fd21",
+      "name" : "rawData.zip",
+      "handle" : null,
+      "metadata" : {
+        "bitstream.uploader" : [ {
+          "value" : "sfeldfogel@ethz.ch",
+          "language" : null,
+          "authority" : null,
+          "confidence" : -1,
+          "place" : 0
+        } ],
+        "dc.description" : [ {
+          "value" : "",
+          "language" : null,
+          "authority" : null,
+          "confidence" : -1,
+          "place" : 0
+        } ],
+        "dc.source" : [ {
+          "value" : "rawData.zip",
+          "language" : null,
+          "authority" : null,
+          "confidence" : -1,
+          "place" : 0
+        } ],
+        "dc.title" : [ {
+          "value" : "rawData.zip",
+          "language" : null,
+          "authority" : null,
+          "confidence" : -1,
+          "place" : 0
+        } ],
+        "ethz.date.retentionend" : [ {
+          "value" : "15 years",
+          "language" : null,
+          "authority" : null,
+          "confidence" : -1,
+          "place" : 0
+        } ],
+        "fileaccess.group" : [ {
+          "value" : "public",
+          "language" : null,
+          "authority" : null,
+          "confidence" : -1,
+          "place" : 0
+        } ]
+      },
+      "bundleName" : "ORIGINAL",
+      "sizeBytes" : 278662,
+      "checkSum" : {
+        "checkSumAlgorithm" : "MD5",
+        "value" : "596077cd536dffbeb0d3f6822d4c739b"
+      },
+      "sequenceId" : 1,
+      "type" : "bitstream",
+      "_links" : {
+        "content" : {
+          "href" : "https://www.research-collection.ethz.ch/server/api/core/bitstreams/bd081f87-eac3-4469-b53b-59a64405fd21/content"
+        },
+        "bundle" : {
+          "href" : "https://www.research-collection.ethz.ch/server/api/core/bitstreams/bd081f87-eac3-4469-b53b-59a64405fd21/bundle"
+        },
+        "format" : {
+          "href" : "https://www.research-collection.ethz.ch/server/api/core/bitstreams/bd081f87-eac3-4469-b53b-59a64405fd21/format"
+        },
+        "thumbnail" : {
+          "href" : "https://www.research-collection.ethz.ch/server/api/core/bitstreams/bd081f87-eac3-4469-b53b-59a64405fd21/thumbnail"
+        },
+        "accessConditionsOptions" : {
+          "href" : "https://www.research-collection.ethz.ch/server/api/core/bitstreams/bd081f87-eac3-4469-b53b-59a64405fd21/accessConditionsOptions"
+        },
+        "accessConditions" : {
+          "href" : "https://www.research-collection.ethz.ch/server/api/core/bitstreams/bd081f87-eac3-4469-b53b-59a64405fd21/accessConditions"
+        },
+        "self" : {
+          "href" : "https://www.research-collection.ethz.ch/server/api/core/bitstreams/bd081f87-eac3-4469-b53b-59a64405fd21"
+        }
+      }
+    }, {
+      "id" : "3c3afbeb-7750-409e-894d-d681b7c21f2f",
+      "uuid" : "3c3afbeb-7750-409e-894d-d681b7c21f2f",
+      "name" : "readMe.pdf",
+      "handle" : null,
+      "metadata" : {
+        "bitstream.uploader" : [ {
+          "value" : "madeleine.fritschi@library.ethz.ch",
+          "language" : null,
+          "authority" : null,
+          "confidence" : -1,
+          "place" : 0
+        } ],
+        "bitstream.validation.invalidPdf" : [ {
+          "value" : "true",
+          "language" : null,
+          "authority" : null,
+          "confidence" : -1,
+          "place" : 0
+        } ],
+        "dc.description" : [ {
+          "value" : "",
+          "language" : null,
+          "authority" : null,
+          "confidence" : -1,
+          "place" : 0
+        } ],
+        "dc.source" : [ {
+          "value" : "readMe.pdf",
+          "language" : null,
+          "authority" : null,
+          "confidence" : -1,
+          "place" : 0
+        } ],
+        "dc.title" : [ {
+          "value" : "readMe.pdf",
+          "language" : null,
+          "authority" : null,
+          "confidence" : -1,
+          "place" : 0
+        } ],
+        "ethz.date.retentionend" : [ {
+          "value" : "15 years",
+          "language" : null,
+          "authority" : null,
+          "confidence" : -1,
+          "place" : 0
+        } ],
+        "fileaccess.group" : [ {
+          "value" : "public",
+          "language" : null,
+          "authority" : null,
+          "confidence" : -1,
+          "place" : 0
+        } ]
+      },
+      "bundleName" : "ORIGINAL",
+      "sizeBytes" : 33393,
+      "checkSum" : {
+        "checkSumAlgorithm" : "MD5",
+        "value" : "42c488904accf6c38659acfb5f177a17"
+      },
+      "sequenceId" : 5,
+      "type" : "bitstream",
+      "_links" : {
+        "content" : {
+          "href" : "https://www.research-collection.ethz.ch/server/api/core/bitstreams/3c3afbeb-7750-409e-894d-d681b7c21f2f/content"
+        },
+        "bundle" : {
+          "href" : "https://www.research-collection.ethz.ch/server/api/core/bitstreams/3c3afbeb-7750-409e-894d-d681b7c21f2f/bundle"
+        },
+        "format" : {
+          "href" : "https://www.research-collection.ethz.ch/server/api/core/bitstreams/3c3afbeb-7750-409e-894d-d681b7c21f2f/format"
+        },
+        "thumbnail" : {
+          "href" : "https://www.research-collection.ethz.ch/server/api/core/bitstreams/3c3afbeb-7750-409e-894d-d681b7c21f2f/thumbnail"
+        },
+        "accessConditionsOptions" : {
+          "href" : "https://www.research-collection.ethz.ch/server/api/core/bitstreams/3c3afbeb-7750-409e-894d-d681b7c21f2f/accessConditionsOptions"
+        },
+        "accessConditions" : {
+          "href" : "https://www.research-collection.ethz.ch/server/api/core/bitstreams/3c3afbeb-7750-409e-894d-d681b7c21f2f/accessConditions"
+        },
+        "self" : {
+          "href" : "https://www.research-collection.ethz.ch/server/api/core/bitstreams/3c3afbeb-7750-409e-894d-d681b7c21f2f"
+        }
+      }
+    } ]
+  },
+  "page" : {
+    "number" : 0,
+    "size" : 20,
+    "totalPages" : 1,
+    "totalElements" : 2
+  },
+  "_links" : {
+    "self" : {
+      "href" : "https://www.research-collection.ethz.ch/server/api/core/bundles/cecf18c1-7d3f-4667-93af-2c729d350330/bitstreams"
+    }
+  }
+}

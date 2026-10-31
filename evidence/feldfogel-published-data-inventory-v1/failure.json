@@ -1,0 +1,7 @@
+{
+  "status": "parse_failed",
+  "inventory_complete": false,
+  "scientific_admission": false,
+  "error": "ValueError: could not convert string data_figure_1 to float64 at row 0, column 1",
+  "reason": "Original reader declared only the literal dum header. Figure 3B has an explicit five-column text header. Retain v1 source/freeze and use separately identified v2 with all three exact header lines declared before execution."
+}

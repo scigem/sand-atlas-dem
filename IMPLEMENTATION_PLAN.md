@@ -124,10 +124,11 @@ work alongside the scientific gates below; naming a material must not infer cali
   Sphere throughput is only an engineering baseline.
 - [ ] Reproduce a complete published assembly benchmark and compare with independent
   experimental evidence. Calibration and validation datasets must remain distinct.
-  The published wall-confined sphere benchmark and raw-data record are identified;
-  source download currently returns 403/429. Exact reproduction requires a generic
-  wall-contact/reaction contract, not periodic-cell substitution. See
-  docs/PUBLISHED_ASSEMBLY_REFERENCE.md for bounded source/capability gaps.
+  Published wall-confined sphere benchmark source bytes are acquired with verified
+  publisher checksums; all 19 numerical files are inventoried. A load file duplicates
+  displacement data, and curve-column/initial-state inputs remain unresolved.
+  Reproduction also requires generic walls/reactions and source-derived restitution
+  damping. See docs/PUBLISHED_ASSEMBLY_REFERENCE.md for retained source/capability gaps.
 - [ ] Complete atlas adapters and material comparison. The bounded recorded-path
   adapter checks protocol, signed stress/strain mapping, prepared origins, frozen
   approximation declarations and synthetic provenance; actual Python/browser

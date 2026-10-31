@@ -1,0 +1,524 @@
+{
+  "protocol": {
+    "identity": "feldfogel-published-data-inventory-v2",
+    "frozen_before_inventory": true,
+    "access_date": "2026-10-31",
+    "dataset_doi": "10.3929/ethz-b-000640908",
+    "article_doi": "10.1002/nme.7400",
+    "archive": "evidence/feldfogel-source-acquisition-v1/private/rawData.zip",
+    "sources": [
+      {
+        "path": "evidence/feldfogel-source-acquisition-v1/private/rawData.zip",
+        "url": "https://www.research-collection.ethz.ch/server/api/core/bitstreams/bd081f87-eac3-4469-b53b-59a64405fd21/content",
+        "publisher_md5": "596077cd536dffbeb0d3f6822d4c739b",
+        "sha256": "0648960a2ff40bab2c708399371beb7c2f81e6452368ffb075483cccbb7ac20c"
+      },
+      {
+        "path": "evidence/feldfogel-source-acquisition-v1/private/readMe.pdf",
+        "url": "https://www.research-collection.ethz.ch/server/api/core/bitstreams/3c3afbeb-7750-409e-894d-d681b7c21f2f/content",
+        "publisher_md5": "42c488904accf6c38659acfb5f177a17",
+        "sha256": "2ef872c4c39f40a2a11bb2da7988667cbcc16504f1c03c58b523d5c2e5ff198c"
+      },
+      {
+        "path": "evidence/feldfogel-source-acquisition-v1/private/paper.pdf",
+        "url": "https://authors.library.caltech.edu/records/9c0re-55s09",
+        "publisher_md5": "393a36963dbc3d08d5f767274ffd707e",
+        "sha256": "7946df872661b81445c82e1b7bf9e544290fae325b4009876112c2b9c1e44b5f"
+      }
+    ],
+    "rights": "ETH dataset listing: CC BY 4.0; Caltech article record: Creative Commons Attribution. Original files retained privately.",
+    "initial_access_failures": [
+      {
+        "surface": "web-reader landing page",
+        "http_status": 403
+      },
+      {
+        "surface": "curl public item API",
+        "http_status": 429
+      }
+    ],
+    "retrieval": "Later retry of public ETH API with an identified research client succeeded; Caltech file download succeeded. No supplied binaries or scripts were executed.",
+    "headers": {
+      "fig_3/data_figure_3b.txt": "data_figure_1\tdata_figure_2\tdata_figure_3\tdata_figure_4\tdata_figure_5",
+      "fig_4/displacement_fig_4.txt": "dum",
+      "fig_4/load_array_fig_4c.txt": "dum"
+    }
+  },
+  "protocol_sha256": "1b07a670255f224881832934811073021972ccd44cb5e56c6c96b952568d796e",
+  "inventory_source_sha256": "5eab395dfed45269f951a89a903ac77e9d13fcda1438269408171398b929cc2a",
+  "members": [
+    {
+      "name": "fig_1/data_figure_1d.txt",
+      "size_bytes": 14874,
+      "sha256": "b53541b71e454cef766cd068d5b4b8faaad8b0a1db4ef1c9266582a8d78ad0bc",
+      "source_header": null,
+      "rows": 1000,
+      "columns": 5,
+      "finite": true,
+      "minimum_by_column": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum_by_column": [
+        5.0,
+        1156.68,
+        2313.37,
+        3470.05,
+        4626.73
+      ]
+    },
+    {
+      "name": "fig_1/data_figure_1c.txt",
+      "size_bytes": 14876,
+      "sha256": "a07fa3a51505d8bc20e1ec590f93c5be6aa8307152f0107141a31dfa92487d32",
+      "source_header": null,
+      "rows": 1000,
+      "columns": 5,
+      "finite": true,
+      "minimum_by_column": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum_by_column": [
+        5.0,
+        1190.04,
+        2399.62,
+        3437.64,
+        4626.73
+      ]
+    },
+    {
+      "name": "fig_3/data_figure_3b.txt",
+      "size_bytes": 14497,
+      "sha256": "efb224aae92ffae10476749c192193bdbf8dcc5c3487e2c7e0151e7e910565a1",
+      "source_header": "data_figure_1\tdata_figure_2\tdata_figure_3\tdata_figure_4\tdata_figure_5",
+      "rows": 1000,
+      "columns": 5,
+      "finite": true,
+      "minimum_by_column": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum_by_column": [
+        5.0,
+        72.92,
+        145.84,
+        218.76,
+        291.68
+      ]
+    },
+    {
+      "name": "fig_3/data_figure_3a.txt",
+      "size_bytes": 16868,
+      "sha256": "0594d51dcd3f6173312bcf6641979c1ca012647e1b497c3d881e923b233ca1c6",
+      "source_header": null,
+      "rows": 1000,
+      "columns": 6,
+      "finite": true,
+      "minimum_by_column": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum_by_column": [
+        5.0,
+        295.07,
+        287.25,
+        299.9,
+        296.5,
+        291.68
+      ]
+    },
+    {
+      "name": "fig_4/displacement_fig_4.txt",
+      "size_bytes": 584,
+      "sha256": "d1b791145059d45cb8b89a1c4328583c8aa39afb8efe4ba065613109c739fd30",
+      "source_header": "dum",
+      "rows": 101,
+      "columns": 1,
+      "finite": true,
+      "minimum_by_column": [
+        0.0
+      ],
+      "maximum_by_column": [
+        0.2
+      ]
+    },
+    {
+      "name": "fig_4/load_array_fig_4c.txt",
+      "size_bytes": 584,
+      "sha256": "d1b791145059d45cb8b89a1c4328583c8aa39afb8efe4ba065613109c739fd30",
+      "source_header": "dum",
+      "rows": 101,
+      "columns": 1,
+      "finite": true,
+      "minimum_by_column": [
+        0.0
+      ],
+      "maximum_by_column": [
+        0.2
+      ]
+    },
+    {
+      "name": "fig_4/load_array_fig_4e.txt",
+      "size_bytes": 7552,
+      "sha256": "f22efabcde5133a46c9224433074b8f9bd331ad399263374da8225d1895f7aba",
+      "source_header": null,
+      "rows": 101,
+      "columns": 12,
+      "finite": true,
+      "minimum_by_column": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum_by_column": [
+        154.09,
+        145.08,
+        146.15,
+        254.34,
+        245.11,
+        245.58,
+        349.76,
+        348.45,
+        353.22,
+        437.11,
+        447.77,
+        446.48
+      ]
+    },
+    {
+      "name": "fig_4/load_array_fig_4d.txt",
+      "size_bytes": 11756,
+      "sha256": "b09d835b364c5bf1b2942a44ce5acb5c81df6019f95ea35da6b8ab6c21095163",
+      "source_header": null,
+      "rows": 101,
+      "columns": 18,
+      "finite": true,
+      "minimum_by_column": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum_by_column": [
+        633.99,
+        579.32,
+        686.16,
+        456.04,
+        435.03,
+        447.9,
+        437.11,
+        447.77,
+        446.48,
+        433.04,
+        435.6,
+        449.77,
+        448.61,
+        438.79,
+        432.75,
+        447.73,
+        444.67,
+        453.54
+      ]
+    },
+    {
+      "name": "fig_4/load_array_fig_4b.txt",
+      "size_bytes": 7466,
+      "sha256": "554920b1fb126409b869f5cb7b4fa981b93a4e6f41312a3ac5d4f18ec59aa6e0",
+      "source_header": null,
+      "rows": 101,
+      "columns": 12,
+      "finite": true,
+      "minimum_by_column": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum_by_column": [
+        96.45,
+        104.44,
+        92.31,
+        255.21,
+        259.74,
+        254.15,
+        342.26,
+        344.3,
+        330.4,
+        429.86,
+        422.13,
+        443.58
+      ]
+    },
+    {
+      "name": "fig_5/load_deflection_data_figure_5h.txt",
+      "size_bytes": 26964,
+      "sha256": "13c09c877ce5ad30704468fd891cac98526f5bf308e69bd4771da8be4f90fc04",
+      "source_header": null,
+      "rows": 1000,
+      "columns": 4,
+      "finite": true,
+      "minimum_by_column": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum_by_column": [
+        4.995,
+        244.392,
+        489.231,
+        741.759
+      ]
+    },
+    {
+      "name": "fig_5/load_deflection_data_figure_5g.txt",
+      "size_bytes": 25703,
+      "sha256": "5f17e6947560cb606d642fe4d1aac535ca89a4d4c5729a60776e167bfadfafc8",
+      "source_header": null,
+      "rows": 1000,
+      "columns": 4,
+      "finite": true,
+      "minimum_by_column": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum_by_column": [
+        4.995,
+        244.392,
+        246.523,
+        251.369
+      ]
+    },
+    {
+      "name": "fig_5/load_deflection_data_figure_5f.txt",
+      "size_bytes": 32490,
+      "sha256": "453969caaead6761ad2edd8358f87cbad95df36620d2dcf3bb31dd0574233a1c",
+      "source_header": null,
+      "rows": 1000,
+      "columns": 5,
+      "finite": true,
+      "minimum_by_column": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum_by_column": [
+        4.995,
+        256.512,
+        513.977,
+        770.644,
+        1028.152
+      ]
+    },
+    {
+      "name": "fig_5/load_deflection_data_figure_5e.txt",
+      "size_bytes": 34886,
+      "sha256": "dec058aa2f9d6a2889f7cbb178d283ee321efab51b9b3f6d892db01c20f4b601",
+      "source_header": null,
+      "rows": 1000,
+      "columns": 5,
+      "finite": true,
+      "minimum_by_column": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum_by_column": [
+        4.995,
+        251.673,
+        497.369,
+        746.18,
+        1028.152
+      ]
+    },
+    {
+      "name": "fig_6/load_deflection_data_figure_6b.txt",
+      "size_bytes": 37087,
+      "sha256": "367715104485d7f13735ac6235cdd5e7d60efd3b6d0eb3e182f947c988961460",
+      "source_header": null,
+      "rows": 1000,
+      "columns": 6,
+      "finite": true,
+      "minimum_by_column": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum_by_column": [
+        4.995,
+        268.938,
+        269.239,
+        245.888,
+        212.75,
+        186.176
+      ]
+    },
+    {
+      "name": "fig_6/load_deflection_data_figure_6a.txt",
+      "size_bytes": 32054,
+      "sha256": "712d6f29cf04c0619de7a48706b1297596847a0ffd2ab53b8a4df12a23fcfa75",
+      "source_header": null,
+      "rows": 1000,
+      "columns": 5,
+      "finite": true,
+      "minimum_by_column": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maximum_by_column": [
+        4.995,
+        268.938,
+        281.774,
+        561.331,
+        392.582
+      ]
+    },
+    {
+      "name": "fig_6/c/positions_coarse.dat",
+      "size_bytes": 182472,
+      "sha256": "5da450110960a0665f4f312859f752873c914d79c52a8f6cd351a9c0a6b19ffe",
+      "source_header": null,
+      "rows": 5050,
+      "columns": 3,
+      "finite": true,
+      "minimum_by_column": [
+        -22.95137069,
+        -22.95137069,
+        -76.28552304
+      ],
+      "maximum_by_column": [
+        22.95137069,
+        22.95137069,
+        2.5
+      ]
+    },
+    {
+      "name": "fig_6/c/rotations_coarse.dat",
+      "size_bytes": 229595,
+      "sha256": "277bea4289b0794938518305e8ced9ab898d00ec62c0a146a5140aa6ed73ebd4",
+      "source_header": null,
+      "rows": 5050,
+      "columns": 4,
+      "finite": true,
+      "minimum_by_column": [
+        -0.97989473,
+        -0.49624097,
+        -0.66395842,
+        0.0
+      ],
+      "maximum_by_column": [
+        1.0,
+        0.53702372,
+        0.5081781,
+        0.91021963
+      ]
+    },
+    {
+      "name": "fig_6/d/positions_fine.dat",
+      "size_bytes": 182093,
+      "sha256": "f3b4e33bfe4635aa4c745b6aae684a432b33e0ca25b86a6e0720d0879b118e39",
+      "source_header": null,
+      "rows": 5050,
+      "columns": 3,
+      "finite": true,
+      "minimum_by_column": [
+        -22.95137069,
+        -22.95137069,
+        -6.64959471
+      ],
+      "maximum_by_column": [
+        22.95137069,
+        22.95137069,
+        2.5
+      ]
+    },
+    {
+      "name": "fig_6/d/rotations_fine.dat",
+      "size_bytes": 232207,
+      "sha256": "70d9c0bbbca612e0f87b5284c76d9e2c4a715937f2b1560a0aba1ea2cc07d02a",
+      "source_header": null,
+      "rows": 5050,
+      "columns": 4,
+      "finite": true,
+      "minimum_by_column": [
+        -0.71467521,
+        -0.50810375,
+        -0.65966116,
+        0.0
+      ],
+      "maximum_by_column": [
+        1.0,
+        0.49624097,
+        0.5081781,
+        0.71473732
+      ]
+    }
+  ],
+  "identical_member_groups": [
+    [
+      "fig_4/displacement_fig_4.txt",
+      "fig_4/load_array_fig_4c.txt"
+    ]
+  ],
+  "inventory_complete": true,
+  "all_numeric_values_finite": true,
+  "scientific_admission": false,
+  "scope": "Source-byte and numerical-array inventory only. No simulation, curve-column assignment, parameter calibration, benchmark reproduction or validation."
+}
