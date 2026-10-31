@@ -1,0 +1,8 @@
+{
+  "status": "ready",
+  "gpu_executed": false,
+  "gpu_protocol_sha256": "85cbee5caa37287942c50440f300d58fb9e1ea07efab66870abc0cebc9b55ebd",
+  "reference_cases": 106,
+  "expected_gpu_cases": 212,
+  "scientific_admission": false
+}

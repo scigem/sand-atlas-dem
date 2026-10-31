@@ -1,0 +1,9 @@
+{
+  "identity": "hostun-library-gpu-quadrature-adaptive-v3",
+  "passed": true,
+  "source_unchanged": true,
+  "scientific_admission": false,
+  "whole_library_static_only": true,
+  "completed_gpu_cases": 212,
+  "expected_gpu_cases": 212
+}

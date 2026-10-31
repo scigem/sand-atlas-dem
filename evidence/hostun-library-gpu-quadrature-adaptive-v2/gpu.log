@@ -1,0 +1,8 @@
+[WARN] No supported shader model found, pretending to support sm_6_0.
+Traceback (most recent call last):
+  File "/private/tmp/sand-atlas-dem-walls/examples/mesh_quadrature_study.py", line 326, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/private/tmp/sand-atlas-dem-walls/examples/mesh_quadrature_study.py", line 167, in main
+    raise ValueError("Prepared quadrature level differs from frozen policy")
+ValueError: Prepared quadrature level differs from frozen policy

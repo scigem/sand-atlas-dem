@@ -1,0 +1,6 @@
+{
+  "passed": false,
+  "identity": "hostun-library-quadrature-consolidated-v1",
+  "error": "Consolidator rejected unrelated CLI/simulation/spec differences between independently source-stable studies before producing consolidated evidence.",
+  "gpu_executed": false
+}

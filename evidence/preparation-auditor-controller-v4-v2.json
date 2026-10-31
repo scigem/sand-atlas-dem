@@ -1,0 +1,10 @@
+{
+  "format": "sand-dem-preparation-audit/1",
+  "passed": false,
+  "scientific_admission": false,
+  "error": "KeyError: \"Unable to synchronously open object (object 'shape_id' doesn't exist)\"",
+  "auditor_input_hashes": {
+    "/private/tmp/sand-atlas-dem-walls/examples/audit_preparation.py": "ee286077d29c45e7b50fa669e2ebdf9800af1275d246cf5546dce4eaee371a5e",
+    "/private/tmp/sand-atlas-dem-walls/studies/preparation-auditor-controller-v4-v1.json": "12b039faf99ca7d77ffde19e73c715b657f1ff29da8c0dea91d22c8814956625"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "format": "sand-dem-preparation-audit/1",
+  "passed": true,
+  "scientific_admission": false,
+  "prepared_checkpoint": "/Users/bmar5496/code/sand-atlas-dem/evidence/controller-v4/run/chunk-0011/prepared-stage-0.h5",
+  "prepared_checkpoint_sha256": "4b56731060b7f4e8fa8af521f143ac69863dcc9137994a90d14f9a8917116555",
+  "shape_library": "/Users/bmar5496/code/sand-atlas-dem/evidence/controller-v4/private/shapes.h5",
+  "shape_library_sha256": "57dfdaa56e2a4542c3f88b9daee0f5838c0e149e420a8248bfa5cc862d624500",
+  "step": 617425,
+  "checked_samples": 100,
+  "shape_counts": {
+    "analytical-sphere": 216
+  },
+  "max_pressure_error": 9.579500353684711e-05,
+  "max_energy_ratio": 9.999083242485466e-06,
+  "max_force_imbalance": 0.0002253817510791123,
+  "max_overlap": 0.007887477986514568,
+  "minimum_active_grain_pairs": 577,
+  "final_solid_fraction": 0.52938479965038,
+  "policy": {
+    "identity": "preparation-auditor-controller-v4-v1",
+    "scope": "Retrospective software check of the independent auditor against an already accepted unchanged 216-sphere checkpoint; no new physics admission or reinterpretation of the original study.",
+    "expected_particles": 216,
+    "expected_shapes": 1,
+    "expected_contact_geometry": "sdf",
+    "accepted_samples": 100,
+    "pressure_relative_tolerance": 0.01,
+    "maximum_kinetic_elastic_ratio": 1e-05,
+    "maximum_unbalanced_force": 0.001,
+    "maximum_overlap_fraction": 0.01,
+    "minimum_final_solid_fraction": 0.45,
+    "minimum_active_grain_pairs": 216
+  },
+  "input_hashes": {
+    "/Users/bmar5496/code/sand-atlas-dem/evidence/controller-v4/frozen-manifest.json": "fe0401bfe0a602a003e40e00e21feae6f8b6facda92c7b695e57f6721b61e308",
+    "/Users/bmar5496/code/sand-atlas-dem/evidence/controller-v4/run/result.json": "ce0b8f7c5fa2674fb25dbd1ec03e8480416dfbcf09b2b710953e69907521529f",
+    "/Users/bmar5496/code/sand-atlas-dem/evidence/controller-v4/run/chunk-0011/prepared-stage-0.h5": "4b56731060b7f4e8fa8af521f143ac69863dcc9137994a90d14f9a8917116555",
+    "/Users/bmar5496/code/sand-atlas-dem/evidence/controller-v4/private/shapes.h5": "57dfdaa56e2a4542c3f88b9daee0f5838c0e149e420a8248bfa5cc862d624500"
+  },
+  "source_unchanged": true,
+  "note": "Independent recorded-state audit only. No solver execution, contact/timestep convergence, constitutive calibration or scientific admission is inferred.",
+  "auditor_input_hashes": {
+    "/private/tmp/sand-atlas-dem-walls/examples/audit_preparation.py": "1fddf9506633cfebefa366f58b9cce26e58892c77138bf08c5731296d7b6d40b",
+    "/private/tmp/sand-atlas-dem-walls/studies/preparation-auditor-controller-v4-v1.json": "12b039faf99ca7d77ffde19e73c715b657f1ff29da8c0dea91d22c8814956625"
+  }
+}

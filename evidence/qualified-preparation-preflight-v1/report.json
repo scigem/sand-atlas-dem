@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "rejected_unaccepted_static_qualification": true,
+  "preparation_started": false,
+  "command": [
+    "/Users/bmar5496/code/sand-atlas-dem/.venv/bin/python",
+    "examples/qualified_preparation.py",
+    "studies/hostun-balanced424-preparation-policy-v2.json",
+    "--output",
+    "evidence/qualified-preparation-preflight-v1/must-not-exist"
+  ],
+  "returncode": 1,
+  "stderr": "Traceback (most recent call last):\n  File \"/private/tmp/sand-atlas-dem-walls/examples/qualified_preparation.py\", line 138, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"/private/tmp/sand-atlas-dem-walls/examples/qualified_preparation.py\", line 21, in main\n    outer, gpu = read_json(outer_path), read_json(gpu_path)\n                                        ^^^^^^^^^^^^^^^^^^^\n  File \"/private/tmp/sand-atlas-dem-walls/src/sand_atlas_dem/util.py\", line 42, in read_json\n    Path(path).read_text(),\n    ^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.12/3.12.14/Frameworks/Python.framework/Versions/3.12/lib/python3.12/pathlib.py\", line 1027, in read_text\n    with self.open(mode='r', encoding=encoding, errors=errors) as f:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.12/3.12.14/Frameworks/Python.framework/Versions/3.12/lib/python3.12/pathlib.py\", line 1013, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: 'evidence/hostun-library-gpu-quadrature-adaptive-v2/gpu/report.json'\n",
+  "source_sha256": "205af0c0a633784c66ae8c03f957e2c1838cace19c64508b342229c8a7feaaed"
+}

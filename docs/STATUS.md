@@ -15,6 +15,59 @@ their original evidence identities and are superseded where explicitly stated.
 memory), Python 3.12, SlangPy 0.43.1, Metal. The solver and CLI execute actual GPU
 kernels; scientific pilot acceptance remains open.
 
+## Whole-library reference consolidation and bounded preparation setup
+
+`hostun-library-quadrature-adaptive-v2` completed all 106 original poses with
+unchanged archived sources and the unchanged 2% reference gate. Worst final
+refinement change is 1.8014%. Grain 38 shallow and grain 54 deeper extended through
+level six; every other pose retained its original level-four reference.
+
+The adaptive GPU v1 preflight correctly refused grain 38: its shallow pose needs
+production level four, while its deeper reference initially stopped at level four.
+The separate `hostun-grain38-deep-quadrature-l6-v1` extends the same deeper pose
+through six. All five overlapping forces agree exactly; final change is 0.1910%.
+`hostun-library-quadrature-consolidated-v2` retains all 106 poses and both complete
+source archives. Numerical reference dependencies match; unrelated CLI/spec/solver
+changes remain visible in the two archives. The v1 overly broad consolidation
+rejection is retained. Fixed selected levels are two for 51 grains, three for one
+and four for one; worst selected reference error is 2.0861% (target 5%).
+
+The adaptive GPU v2 run rejected legacy coarse provenance before force execution:
+the old L0 asset predates an explicit subdivision field. The separately rebuilt
+`hostun-explicit-l0-asset-v2` matches all geometry, field, mass and quadrature arrays
+of all 53 old coarse shapes exactly, with explicit zero-level provenance.
+Its v1 missing-output-directory failure is retained. The distinct adaptive GPU v3
+study passes all 212 original coarse/adaptive cases at unchanged numerical gates,
+with unchanged sources. Worst integral error falls from 100% to 2.0751%; worst
+same-level GPU force error is 0.021873%, below 0.1%. The unchanged fixed-node
+force/count baseline remains mandatory and passes its identity checks. This closes
+the static sampled-pose quadrature gate, not mesh-assembly or material admission.
+
+`hostun-balanced424-intake-v3` passes independent periodic bounding-sphere gaps,
+exact 53-times-eight inventory and algebraic timestep/resource checks. Minimum
+initial gap is 0.299662 mm; the declared 2 ns step is below the 4.9154 ns parent
+bound. This CPU intake does not prepare or qualify a specimen. The periodic image
+ceiling permits nominal solid fraction 0.65 but does not predict packing density.
+The prospective preparation limits the run to 16 million steps (32 ms physical),
+uses the existing 100-sample/1% pressure/1e-5 kinetic/1e-3 imbalance gates and
+fails on budget exhaustion. Additional final density/contact-count checks are
+frozen before execution. `qualified_preparation.py` requires complete accepted
+static qualification and identical candidate bytes before starting the immutable
+controller; the actual failed static study is rejected by its preflight check.
+
+The qualified launcher has started `hostun-balanced424-preparation-v3` using those
+accepted candidate bytes. Terminal preparation and its independent audit remain
+pending; see HOSTUN_BOUNDED_PREPARATION.md.
+
+The new independent preparation auditor checks complete ordered diagnostics,
+accepted checkpoint/shape/source hashes, all-history overlap, rigid-volume void
+ratio, and immutable shape assignment under the archived checkpoint-resume
+constructor. Checkpoint formats /3 and /5 reconstruct IDs/scales rather than
+storing them; an attempted direct-field check is retained as a failed software
+study. `preparation-auditor-controller-v4-v3` passes on the earlier accepted
+216-sphere checkpoint. This is retrospective software verification of that
+unchanged sphere evidence, without Hostun or scientific admission.
+
 ## Latest explicit-viscosity and reference results
 
 `atlas-comparison-integration-v4` is the final reviewed comparison build:

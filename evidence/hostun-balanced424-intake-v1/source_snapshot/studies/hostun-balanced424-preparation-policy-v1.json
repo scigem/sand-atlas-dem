@@ -1,0 +1,22 @@
+{
+  "identity": "hostun-balanced424-preparation-v1",
+  "frozen_before_execution": true,
+  "requires_qualification": "evidence/hostun-library-gpu-quadrature-adaptive-v1/report.json",
+  "requires_static_gpu_report": "evidence/hostun-library-gpu-quadrature-adaptive-v1/gpu/report.json",
+  "expected_reference_cases": 106,
+  "expected_gpu_cases": 212,
+  "expected_shapes": 53,
+  "copies_per_shape": 8,
+  "experiment": "studies/hostun-balanced424-preparation-v1.json",
+  "chunks_per_checkpoint": 2000,
+  "minimum_final_solid_fraction": 0.45,
+  "minimum_active_grain_pairs": 424,
+  "accepted_samples": 100,
+  "pressure_relative_tolerance": 0.01,
+  "maximum_kinetic_elastic_ratio": 1e-05,
+  "maximum_unbalanced_force": 0.001,
+  "maximum_overlap_fraction": 0.01,
+  "scope": "Bounded all-53-shape preparation engineering study, not the 10k material pilot. Must await complete accepted adaptive reference and all 212 static GPU comparisons, matching candidate hash and unchanged fixed-node baseline. Sixteen million steps at 2ns provide at most32ms physical time; budget exhaustion fails. Controller diagnostic period0.25us and 100-sample25us acceptance window match the qualified sphere case. Explicit example mechanical parameters are not a Hostun calibration. No source-shape removal, silent gate changes, automatic continuation or material/scientific admission.",
+  "intake_parent_library": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r64-s2048.h5",
+  "intake_parent_library_sha256": "1bc9f37a22b402ada31495ea7ff1ebef4bb6a27a26d68a8333f7f84a12ad16b7"
+}

@@ -122,6 +122,18 @@ work alongside the scientific gates below; naming a material must not infer cali
   rejection of the actual pending Hostun reference pass; no Hostun gate is closed.
   The adaptive Hostun asset, all-106 mixed GPU comparison and assembly studies
   remain open; see docs/ADAPTIVE_QUADRATURE.md.
+  Latest reference consolidation passes all 106 original cases; the additional
+  deeper grain-38 level-six reference permits independent fixed level-four
+  production selection at both depths. Worst final reference change is 1.8014%;
+  selected levels are 51 grains at two, one at three and one at four (worst selected
+  error 2.0861%). Full 212-case adaptive GPU v3 passes unchanged gates and source hashes. Worst
+  integral error falls from 100% to 2.0751%; same-level GPU error is at most
+  0.021873%. This closes the sampled-pose static quadrature gate. Earlier preflight,
+  archive-consolidation and legacy provenance failures remain retained.
+  A 424-grain/all-53-shape preparation protocol and independent geometry intake
+  are frozen; the qualification-gated immutable preparation is now running, with
+  an independent checkpoint/diagnostic audit required on terminal success.
+  No Hostun assembly acceptance is inferred before completion.
 - [X] Freeze and run rolling/objectivity tests, separating/returning contact,
   changing normal orientation, strongly anisotropic torque-free rotation and
   capacity-growth stress tests. Test timestep refinement over useful physical time.

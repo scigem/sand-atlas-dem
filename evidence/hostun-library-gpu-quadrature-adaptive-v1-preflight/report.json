@@ -1,0 +1,9 @@
+{
+  "identity": "hostun-library-gpu-quadrature-adaptive-v1-preflight",
+  "passed": false,
+  "gpu_executed": false,
+  "error": "No independently supported quadrature level for hostun-particle_00038",
+  "reference_report_sha256": "03f0d8358ac01b70a458a1298618787c719d7c1fd74ad4147527c55c2b30de4e",
+  "reason": "Shallow pose needs level 4; deeper pose reference ends at level 4, which cannot independently qualify itself.",
+  "remedy": "Extend deeper original pose to level 6 with unchanged numerical gates."
+}

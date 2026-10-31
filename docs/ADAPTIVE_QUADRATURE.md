@@ -4,8 +4,9 @@ The CPU preprocessor selects a fixed Gauss3 subdivision level for each grain.
 It requires a completed, passing, source-stable whole-library reference report,
 its original protocol and archived prospective source freeze. Missing/duplicate
 poses, changed inputs and failed reference convergence reject preparation.
-The Hostun reference rerun is still in progress; no adaptive Hostun asset has
-been admitted or assigned to the default material recipe.
+The consolidated Hostun reference and all 212 static GPU comparisons now pass.
+The adaptive asset has not been assigned to the default material recipe;
+assembly and material qualification remain separate.
 
 For each shape, selection chooses the smallest level from 2 through 4 whose signed
 force vector agrees with every supplied reference pose within `--target-error`
@@ -20,8 +21,8 @@ mkdir -p assets/private
 sand-dem geometry adaptive-quadrature \
   assets/private/hostun-30-r64-s2048.h5 \
   assets/private/hostun-r64-adaptive-v1.h5 \
-  --reference evidence/hostun-library-quadrature-adaptive-v2/report.json \
-  --reference-protocol evidence/hostun-library-quadrature-adaptive-v2/protocol.json \
+  --reference evidence/hostun-library-quadrature-consolidated-v2/report.json \
+  --reference-protocol evidence/hostun-library-quadrature-consolidated-v2/protocol.json \
   --target-error 0.05 > assets/private/hostun-r64-adaptive-v1.receipt.json
 ```
 
@@ -44,7 +45,7 @@ The unchanged 10% refined-integral limit, 0.1% same-level GPU limit and twofold
 pooled worst-error improvement remain required, alongside the existing fixed-2048
 node force/count baseline. Levels are checked against asset provenance, and
 adaptive reference sidecars remain bound to their protocol and source archive.
-The full mixed Hostun GPU study awaits the accepted reference.
+The full mixed Hostun GPU study now passes; see the terminal result below.
 
 ## Whole-library assembly inventory
 
@@ -85,8 +86,8 @@ After the immutable Hostun reference finishes successfully, the complete next st
 
 ```sh
 PYTHONPATH=src python examples/adaptive_gpu_study.py \
-  studies/hostun-library-gpu-quadrature-adaptive-v1.json \
-  --output evidence/hostun-library-gpu-quadrature-adaptive-v1 --run
+  studies/hostun-library-gpu-quadrature-adaptive-v3.json \
+  --output evidence/hostun-library-gpu-quadrature-adaptive-v3 --run
 ```
 
 Omit `--run` to prepare a separate private asset and a hash-resolved GPU protocol
@@ -106,5 +107,27 @@ before execution. Capacity or numerical failure remains a failed study.
 
 `adaptive-gpu-workflow-box-v1` passes all twelve original analytical-box GPU cases
 through this resolver; its separate pending-reference check verifies that the
-actual unfinished Hostun report cannot start preparation or GPU work. The Hostun
-study itself remains pending; neither software check admits a Hostun asset.
+actual unfinished Hostun report cannot start preparation or GPU work. The later Hostun v3 study passes as recorded below; the analytical software checks
+retain their original bounded scope.
+
+## Whole-library static qualification result
+
+`hostun-library-quadrature-adaptive-v2` completes all 106 original poses with
+unchanged sources and worst finest change 1.8014%. One additional same-pose
+level-six extension (`hostun-grain38-deep-quadrature-l6-v1`) supports independent
+production level-four selection at both grain-38 depths; all overlapping forces
+agree exactly. `hostun-library-quadrature-consolidated-v2` retains both original
+reports and complete source archives. Numerical reference dependencies agree.
+
+The selected fixed levels are two for 51 grains, three for one and four for one.
+Worst selected CPU reference error is 2.0861%. Adaptive GPU v3 passes all 212
+coarse/adaptive cases with unchanged sources: worst integral error decreases from
+100% to 2.0751%, and worst same-level GPU error is 0.021873%. No numerical gate
+changes. The rebuilt coarse asset has explicit L0 provenance and exactly matches
+all 53 older coarse shapes' geometry, quadrature, field and mass arrays.
+
+Earlier self-reference preflight, unrelated-source consolidation and legacy-L0
+provenance rejections remain retained. This passes static qualification for the
+original sampled poses, without claiming all orientations, tangential histories,
+dynamic assemblies or material validation. The next dependent engineering study
+is the frozen balanced 424-grain preparation; see HOSTUN_BOUNDED_PREPARATION.md.

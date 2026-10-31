@@ -223,3 +223,28 @@ overlap forces. The v1 intake rejection for an inherited predecessor-script hash
 is preserved separately; all numerical gates are unchanged. Reference acceptance,
 production quadrature selection, matching GPU comparison and assembly qualification
 remain separate gates.
+
+## Accepted whole-library reference and independent production selection
+
+The immutable `hostun-library-quadrature-adaptive-v2` passes all 106 original
+cases with worst finest change 1.8014%, below the unchanged 2% limit.
+`hostun-grain38-deep-quadrature-l6-v1` additionally extends the original deeper
+grain-38 pose so production level four has a strictly finer independent reference
+at both depths. Its final change is 0.1910%, with exact agreement at levels zero
+through four. `hostun-library-quadrature-consolidated-v2` preserves the original
+and supplemental full reports/source archives and replaces only that same-pose
+row, retaining every original force level. The first consolidation attempt's
+rejection of unrelated archived CLI/spec/simulation differences remains retained;
+all actual numerical reference dependency hashes agree between the two studies.
+
+Selection at unchanged 5% target yields 51 grains at level two, one at three and
+one at four. Worst selected error is 2.0861%. The adaptive GPU v1 preflight correctly
+refuses the old self-reference situation. GPU v2 rejects missing explicit L0
+provenance before any force comparison. A separate rebuilt explicit L0 asset
+matches every geometry and quadrature array of all 53 old coarse grains exactly.
+Adaptive GPU v3 passes the full original 212 coarse/adaptive comparisons with
+unchanged sources. Worst integral error falls from 100% to 2.0751%; worst same-level
+GPU error is 0.021873%. The unchanged 10% integral/0.1% same-level GPU/twofold
+improvement gates and fixed-node baseline identity checks pass. This qualifies
+static quadrature at the sampled poses only.
+Dynamic assembly, frictional-history and material studies remain separate.

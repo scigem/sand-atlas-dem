@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "tests_passed": 25,
+  "log_sha256": "8b7d926b78876c6f0b5282c903beb9fcea149057a57c9d29a2edc26f0a7841a3",
+  "scope": "CPU software regression for existing adaptive selector, mixed protocols and deterministic reference. Full library numerical results have their separate frozen studies."
+}

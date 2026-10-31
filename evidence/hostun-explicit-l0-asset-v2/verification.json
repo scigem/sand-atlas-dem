@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "source_unchanged": true,
+  "all_53_shapes_exact_array_agreement": true,
+  "hashes": {
+    "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r64-gauss3.h5": "097a6a14df21513e8cf3b936fe0404baa488e38316a0e4233e6f59ba94bc2270",
+    "/private/tmp/sand-atlas-dem-walls/evidence/hostun-explicit-l0-asset-v2/private/coarse.h5": "8b1898ac3bdb70cb18e3513a4bac126d75d29f9a18a29353cff6d4fa6be3cde7",
+    "/private/tmp/sand-atlas-dem-walls/evidence/hostun-explicit-l0-asset-v2/verify.py": "df69cdf6c19b22b4cc3d0f1370cb7db6ea8cf831b74518290109b75c44d0c3b1"
+  },
+  "scope": "Only explicit L0 provenance differs. No force, assembly or material admission."
+}
