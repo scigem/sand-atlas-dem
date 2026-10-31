@@ -97,8 +97,12 @@ work alongside the scientific gates below; naming a material must not infer cali
   force/interpolation error and full-assembly qualification remain limitations;
   tiny state increments now pass the frozen precision study (docs/PRECISION.md).
 - [ ] Freeze and run energy/work studies in static-cell, drag and affine-cell cases.
-  Bounded static-cell, exact drag and contact-free affine cases now pass; extended
-  assembly studies remain open. The reported elastic energy is a proxy; work residual is diagnostic, with no
+  Bounded static-cell, exact drag and contact-free affine cases pass. The frozen
+  `prepared-sphere-assembly-work-v1` extends coverage to the qualified 216-sphere
+  assembly under static, drag and cyclic affine conditions at three timesteps;
+  all nine cases and three timestep comparisons pass. Worst proxy-balance residual
+  is 0.05120%, and independently integrated work differs by at most 0.0001164% of
+  initial energy. Mesh-assembly energy coverage remains open. The reported elastic energy is a proxy; work residual is diagnostic, with no
   asserted exact potential/conservation identity. Audit signs and quadrature.
 - [X] Freeze controller settings independently of the final material study. Require
   pressure tolerance 1%, kinetic/elastic proxy <=1e-5, unbalanced force <=1e-3 for
@@ -120,6 +124,10 @@ work alongside the scientific gates below; naming a material must not infer cali
   Sphere throughput is only an engineering baseline.
 - [ ] Reproduce a complete published assembly benchmark and compare with independent
   experimental evidence. Calibration and validation datasets must remain distinct.
+  The published wall-confined sphere benchmark and raw-data record are identified;
+  source download currently returns 403/429. Exact reproduction requires a generic
+  wall-contact/reaction contract, not periodic-cell substitution. See
+  docs/PUBLISHED_ASSEMBLY_REFERENCE.md for bounded source/capability gaps.
 - [ ] Complete atlas adapters and material comparison. The bounded recorded-path
   adapter checks protocol, signed stress/strain mapping, prepared origins, frozen
   approximation declarations and synthetic provenance; actual Python/browser

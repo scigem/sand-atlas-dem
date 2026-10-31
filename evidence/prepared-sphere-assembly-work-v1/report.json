@@ -1,0 +1,1288 @@
+{
+  "protocol": {
+    "identity": "prepared-sphere-assembly-work-v1",
+    "frozen_before_execution": true,
+    "particles": 216,
+    "initial_pressure_Pa": 10000.0,
+    "prepared_checkpoint": "evidence/controller-v4/run/chunk-0011/prepared-stage-0.h5",
+    "acceptance_audit": "evidence/controller-v4/acceptance-audit.json",
+    "shape_library": "evidence/controller-v4/private/shapes.h5",
+    "timesteps_s": [
+      1e-08,
+      5e-09,
+      2.5e-09
+    ],
+    "diagnostic_period_s": 1e-07,
+    "maximum_relative_proxy_balance_residual": 0.02,
+    "maximum_relative_independent_work_error": 0.001,
+    "maximum_relative_refinement_difference": 0.01,
+    "dissipation_roundoff_fraction": 1e-06,
+    "minimum_active_grain_pairs": 100,
+    "overlap_guard_fraction": 0.01,
+    "cases": [
+      {
+        "name": "static",
+        "phases": [
+          {
+            "duration_s": 0.0001,
+            "rate_s": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "drag_s": 0.0
+          }
+        ]
+      },
+      {
+        "name": "drag",
+        "phases": [
+          {
+            "duration_s": 0.0001,
+            "rate_s": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "drag_s": 100000.0
+          }
+        ]
+      },
+      {
+        "name": "cyclic-affine",
+        "phases": [
+          {
+            "duration_s": 2e-05,
+            "rate_s": [
+              -50.0,
+              -50.0,
+              -50.0
+            ],
+            "drag_s": 0.0
+          },
+          {
+            "duration_s": 2e-05,
+            "rate_s": [
+              50.0,
+              50.0,
+              50.0
+            ],
+            "drag_s": 0.0
+          }
+        ]
+      }
+    ],
+    "scope": "Extended actual-Metal 216-sphere prepared-assembly work-accounting and spring-energy-proxy study. New initial-value cases cloned from one hash-pinned qualified checkpoint; physical parameters and histories retained, timestep explicitly varied. Three complete cases at three timesteps, no case removal. Static/drag relaxation lasts 100 microseconds; cyclic isotropic affine compression/expansion lasts 40 microseconds. Independent sampled Cauchy-stress power audits device work. A 2% proxy residual is an engineering bound, not proof of an exact elastic potential; 1% fine/middle endpoint agreement is bounded refinement, not an order claim. Not Hostun, mesh quadrature, material or experimental qualification. No sustained timing claim under concurrent CPU reference work.",
+    "prepared_checkpoint_sha256": "4b56731060b7f4e8fa8af521f143ac69863dcc9137994a90d14f9a8917116555",
+    "acceptance_audit_sha256": "caa332e78afef14c4f141a25a265b17415133be3a37bf9eb30ab66e4c6107210",
+    "shape_library_sha256": "57dfdaa56e2a4542c3f88b9daee0f5838c0e149e420a8248bfa5cc862d624500"
+  },
+  "inputs": {
+    "studies/prepared-sphere-assembly-work-v1.json": "bae716a8d6094bebc80866919095b714d36af53c60a5400b3d37831575a32729",
+    "evidence/controller-v4/run/chunk-0011/prepared-stage-0.h5": "4b56731060b7f4e8fa8af521f143ac69863dcc9137994a90d14f9a8917116555",
+    "evidence/controller-v4/acceptance-audit.json": "caa332e78afef14c4f141a25a265b17415133be3a37bf9eb30ab66e4c6107210",
+    "evidence/controller-v4/private/shapes.h5": "57dfdaa56e2a4542c3f88b9daee0f5838c0e149e420a8248bfa5cc862d624500"
+  },
+  "source_hashes": {
+    "examples/assembly_work_study.py": "5f34a7fb4e67a3e778b02b170191641dcb2615f53c105936fb1cd3f05ff21565",
+    "src/sand_atlas_dem/__init__.py": "25ef40efbf7fa452aaa142bbe8d9ac35c90756e1a6f09cdacdcd2723cdd1636d",
+    "src/sand_atlas_dem/acquisition.py": "3c9379de9c9f24b4c762ae4608e73d70b76b558d4cbdae48e75196c747594ddd",
+    "src/sand_atlas_dem/atlas_bridge.py": "c60052f83b256a6b5f2a415f5e2cfeb16e399f6f3bfe100e0d4a4a99b972c87f",
+    "src/sand_atlas_dem/backend.py": "2184575342f265dfd744d799af8e9b03a73dcb195e06e94a59f21e1525cbab5c",
+    "src/sand_atlas_dem/benchmark.py": "6624caaa956f7d5c8825520cd5c901b559f561f8ff407bb4d719cb1c06f1f83c",
+    "src/sand_atlas_dem/cases.py": "f225b09ee7207a50b35da0b6301626f124c7555cf9cd1a1786b3a73a7300ebb6",
+    "src/sand_atlas_dem/cli.py": "142294d050f55130524fa79b2a22a8182e13bdf786b09a8194aca8c284b229db",
+    "src/sand_atlas_dem/geometry.py": "d84592edef45221d589ed22b8a2a36f53be39bb5b8972ec55a548913c929c6a5",
+    "src/sand_atlas_dem/gpu.py": "084b2992ef08441f030f4d171e533a1bbc1a1c5c135112d8f4a33c56b679a5f7",
+    "src/sand_atlas_dem/mesh.py": "a72264dd2f8730997fa0c794e16ca45ded0a61acd1f0042456c940354211a1af",
+    "src/sand_atlas_dem/qualification.py": "b59751cc6fcc81b834dd90174ff9859e21efffa389dc36bc514ced75ef41b2fb",
+    "src/sand_atlas_dem/reference.py": "972bdbec1a08a8f01097758503296d3581ab6f558145ceac70b02c27603c7730",
+    "src/sand_atlas_dem/simulation.py": "caa4aa1bf30e92d61b1f2292dfbfbf3a195bc982e1c83ac489ff4afa0f02867e",
+    "src/sand_atlas_dem/spec.py": "de79f1ec1dd5a08fcf5313c189a608d7a5772042209fdc35d4e99bdf9a82bd34",
+    "src/sand_atlas_dem/util.py": "0f9dc71429a87057dc08216f3c51425d8b76be9c4fd30f2cab6c3f98b70397c2",
+    "src/sand_atlas_dem/visualize.py": "9874362fa98cdd00d73b42867f7ecc9254b820d08915baed25eee4b02ecba339",
+    "src/sand_atlas_dem/shaders/diagnostic.slang": "4f738fbef3ee79c370f74596a51d0de80b5ddd12375615afd18004df0bec7bb0",
+    "src/sand_atlas_dem/shaders/scan.slang": "51900fe7d78347d2274488b1b5c328ed53714be3043d221ad1d48555e1c5cbac",
+    "src/sand_atlas_dem/shaders/solver.slang": "fd62cc9e45145c06e853990f35f13bc98fb6f45516080e4942cc70a525715ba1"
+  },
+  "rows": [
+    {
+      "initial_energy_J": 1.0372655728112246e-05,
+      "maximum_relative_proxy_balance_residual": 2.7889369053148993e-05,
+      "maximum_relative_independent_work_error": 0.0,
+      "minimum_incremental_dissipation_J": 0.0,
+      "independent_cell_work_J": 0.0,
+      "final": {
+        "step": 627425,
+        "elapsed_time": 0.00627425,
+        "cell": [
+          0.005979595184326175,
+          0.005976731300354006,
+          0.005977855205535891
+        ],
+        "stress": [
+          [
+            9942.564400877705,
+            9.798806235128051,
+            161.3473097412066
+          ],
+          [
+            11.06487930447063,
+            9957.174568495273,
+            89.26473123499876
+          ],
+          [
+            162.91142184064643,
+            89.06149474687807,
+            9946.449695728777
+          ]
+        ],
+        "contact_stress": [
+          [
+            9942.56372125702,
+            9.798770134073994,
+            161.34732785679006
+          ],
+          [
+            11.064843203420631,
+            9957.173998175642,
+            89.26469250464794
+          ],
+          [
+            162.91143995623395,
+            89.06145601652725,
+            9946.44896944551
+          ]
+        ],
+        "kinetic_stress": [
+          [
+            0.0006796206848304948,
+            3.610105405798734e-05,
+            -1.811558346837554e-05
+          ],
+          [
+            3.610104999804979e-05,
+            0.0005703196306048809,
+            3.873035081737838e-05
+          ],
+          [
+            -1.811558752831309e-05,
+            3.873035081737838e-05,
+            0.0007262832685640224
+          ]
+        ],
+        "stress_antisymmetry": 0.0001659720136935315,
+        "p": 9948.729555033919,
+        "q": -3.4197889577117166,
+        "axial_strain": 0.0,
+        "volumetric_strain": 0.0,
+        "volume_ratio": 1.0,
+        "log_strain": [
+          -0.0,
+          -0.0,
+          -0.0
+        ],
+        "void_ratio": 0.8889851024442423,
+        "kinetic_energy": 1.0277092954424916e-08,
+        "elastic_energy_proxy": 1.0263929652865045e-05,
+        "unbalanced_force": 0.0004224260919727385,
+        "max_overlap_fraction": 0.006142591591924429,
+        "friction_dissipation_last_step": 1.8676601931666426e-11,
+        "candidate_pairs": 648,
+        "active_surface_contacts": 1290,
+        "active_grain_pairs": 577,
+        "coordination": 5.342592592592593,
+        "fabric": [
+          [
+            0.3240465521812439,
+            8.140424142766278e-06,
+            -0.00031689967727288604
+          ],
+          [
+            8.140424142766278e-06,
+            0.3379758894443512,
+            -4.072025330970064e-05
+          ],
+          [
+            -0.00031689967727288604,
+            -4.072025330970064e-05,
+            0.3379775285720825
+          ]
+        ],
+        "sliding_fraction": 0.16511627906976745,
+        "cell_log_rate": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "friction_dissipation": 2.1167519662412815e-05,
+        "drag_dissipation": 5.2371171477716416e-05,
+        "cell_work": 8.380862709600478e-05,
+        "study_time_s": 0.0001,
+        "interval_rate_s": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "phase": 0
+      },
+      "case": "static",
+      "timestep_s": 1e-08,
+      "steps": 10000,
+      "minimum_active_grain_pairs": 576,
+      "maximum_overlap_fraction": 0.006142591591924429,
+      "passed": true
+    },
+    {
+      "initial_energy_J": 1.0372655728112246e-05,
+      "maximum_relative_proxy_balance_residual": 3.2985026244691957e-05,
+      "maximum_relative_independent_work_error": 0.0,
+      "minimum_incremental_dissipation_J": 0.0,
+      "independent_cell_work_J": 0.0,
+      "final": {
+        "step": 637425,
+        "elapsed_time": 0.003187125,
+        "cell": [
+          0.005979595184326175,
+          0.005976731300354006,
+          0.005977855205535891
+        ],
+        "stress": [
+          [
+            9942.555682971584,
+            9.843511111962579,
+            161.37023110496634
+          ],
+          [
+            11.061759323593378,
+            9957.114627758187,
+            89.26877622380687
+          ],
+          [
+            162.90534347761965,
+            89.07943508334893,
+            9946.447517347458
+          ]
+        ],
+        "contact_stress": [
+          [
+            9942.555002607509,
+            9.843474498585001,
+            161.37024836898198
+          ],
+          [
+            11.06172271021174,
+            9957.114057460252,
+            89.26873680007556
+          ],
+          [
+            162.90536074163325,
+            89.07939565961355,
+            9946.446789783133
+          ]
+        ],
+        "kinetic_stress": [
+          [
+            0.0006803640756365717,
+            3.6613377578057074e-05,
+            -1.7264015626144736e-05
+          ],
+          [
+            3.661338163799463e-05,
+            0.0005702979342985868,
+            3.942373131265239e-05
+          ],
+          [
+            -1.726401359617596e-05,
+            3.942373537258994e-05,
+            0.0007275643250203875
+          ]
+        ],
+        "stress_antisymmetry": 0.00016156976102118308,
+        "p": 9948.70594269241,
+        "q": -3.3876380174278893,
+        "axial_strain": 0.0,
+        "volumetric_strain": 0.0,
+        "volume_ratio": 1.0,
+        "log_strain": [
+          -0.0,
+          -0.0,
+          -0.0
+        ],
+        "void_ratio": 0.8889851024442423,
+        "kinetic_energy": 1.027781948437223e-08,
+        "elastic_energy_proxy": 1.0263888725603465e-05,
+        "unbalanced_force": 0.0004208050377201289,
+        "max_overlap_fraction": 0.0061426241882145405,
+        "friction_dissipation_last_step": 9.87332438029398e-12,
+        "candidate_pairs": 648,
+        "active_surface_contacts": 1291,
+        "active_grain_pairs": 578,
+        "coordination": 5.351851851851852,
+        "fabric": [
+          [
+            0.3234860599040985,
+            2.2908356186235324e-05,
+            -0.00031619719811715186
+          ],
+          [
+            2.2908356186235324e-05,
+            0.3391209542751312,
+            -2.277798739669379e-05
+          ],
+          [
+            -0.00031619719811715186,
+            -2.277798739669379e-05,
+            0.33739298582077026
+          ]
+        ],
+        "sliding_fraction": 0.13400464756003097,
+        "cell_log_rate": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "friction_dissipation": 2.1167585146031342e-05,
+        "drag_dissipation": 5.2371171477716416e-05,
+        "cell_work": 8.380862709600478e-05,
+        "study_time_s": 0.0001,
+        "interval_rate_s": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "phase": 0
+      },
+      "case": "static",
+      "timestep_s": 5e-09,
+      "steps": 20000,
+      "minimum_active_grain_pairs": 576,
+      "maximum_overlap_fraction": 0.0061426241882145405,
+      "passed": true
+    },
+    {
+      "initial_energy_J": 1.0372655728112246e-05,
+      "maximum_relative_proxy_balance_residual": 3.2224488063289086e-05,
+      "maximum_relative_independent_work_error": 0.0,
+      "minimum_incremental_dissipation_J": 0.0,
+      "independent_cell_work_J": 0.0,
+      "final": {
+        "step": 657425,
+        "elapsed_time": 0.0016435625,
+        "cell": [
+          0.005979595184326175,
+          0.005976731300354006,
+          0.005977855205535891
+        ],
+        "stress": [
+          [
+            9942.653766306357,
+            9.819952147668694,
+            161.35647191781865
+          ],
+          [
+            11.020362887887137,
+            9957.114628881653,
+            89.19396972420026
+          ],
+          [
+            162.86757394709724,
+            89.03601231625255,
+            9946.45732598302
+          ]
+        ],
+        "contact_stress": [
+          [
+            9942.653087414512,
+            9.819915413430834,
+            161.3564892502219
+          ],
+          [
+            11.020326153645218,
+            9957.114057460252,
+            89.1939301061238
+          ],
+          [
+            162.86759127949236,
+            89.03597269818015,
+            9946.456598263832
+          ]
+        ],
+        "kinetic_stress": [
+          [
+            0.0006788918448406152,
+            3.673423785913287e-05,
+            -1.7332403244290504e-05
+          ],
+          [
+            3.673424191907043e-05,
+            0.0005714214002188158,
+            3.9618076463474305e-05
+          ],
+          [
+            -1.7332395124415394e-05,
+            3.961807240353675e-05,
+            0.0007277191872784867
+          ]
+        ],
+        "stress_antisymmetry": 0.0001588966807542473,
+        "p": 9948.74190705701,
+        "q": -3.426871610985472,
+        "axial_strain": 0.0,
+        "volumetric_strain": 0.0,
+        "volume_ratio": 1.0,
+        "log_strain": [
+          -0.0,
+          -0.0,
+          -0.0
+        ],
+        "void_ratio": 0.8889851024442423,
+        "kinetic_energy": 1.0278430551124984e-08,
+        "elastic_energy_proxy": 1.0263940566801466e-05,
+        "unbalanced_force": 0.0004226253367960453,
+        "max_overlap_fraction": 0.006142571568489075,
+        "friction_dissipation_last_step": 4.432847318380784e-12,
+        "candidate_pairs": 648,
+        "active_surface_contacts": 1291,
+        "active_grain_pairs": 578,
+        "coordination": 5.351851851851852,
+        "fabric": [
+          [
+            0.3234860599040985,
+            2.290638440172188e-05,
+            -0.0003161976346746087
+          ],
+          [
+            2.290638440172188e-05,
+            0.33912092447280884,
+            -2.2778262064093724e-05
+          ],
+          [
+            -0.0003161976346746087,
+            -2.2778262064093724e-05,
+            0.33739298582077026
+          ]
+        ],
+        "sliding_fraction": 0.08520526723470179,
+        "cell_log_rate": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "friction_dissipation": 2.116760879289359e-05,
+        "drag_dissipation": 5.2371171477716416e-05,
+        "cell_work": 8.380862709600478e-05,
+        "study_time_s": 0.0001,
+        "interval_rate_s": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "phase": 0
+      },
+      "case": "static",
+      "timestep_s": 2.5e-09,
+      "steps": 40000,
+      "minimum_active_grain_pairs": 576,
+      "maximum_overlap_fraction": 0.00614265538752079,
+      "passed": true
+    },
+    {
+      "initial_energy_J": 1.0372655728112246e-05,
+      "maximum_relative_proxy_balance_residual": 9.225444887351773e-06,
+      "maximum_relative_independent_work_error": 0.0,
+      "minimum_incremental_dissipation_J": 0.0,
+      "independent_cell_work_J": 0.0,
+      "final": {
+        "step": 627425,
+        "elapsed_time": 0.00627425,
+        "cell": [
+          0.005979595184326175,
+          0.005976731300354006,
+          0.005977855205535891
+        ],
+        "stress": [
+          [
+            9989.249914570726,
+            12.644021733143125,
+            166.00720715756182
+          ],
+          [
+            12.675716237836404,
+            9992.614223776065,
+            91.75937618689683
+          ],
+          [
+            166.0291740674635,
+            91.87495789306513,
+            9989.525643418976
+          ]
+        ],
+        "contact_stress": [
+          [
+            9989.249909727849,
+            12.644021367620667,
+            166.00720762002675
+          ],
+          [
+            12.675715872313978,
+            9992.614218608036,
+            91.7593756962222
+          ],
+          [
+            166.02917452992835,
+            91.87495740239054,
+            9989.525637018645
+          ]
+        ],
+        "kinetic_stress": [
+          [
+            4.842878242803149e-06,
+            3.6552245829560436e-07,
+            -4.624649177146736e-07
+          ],
+          [
+            3.6552242657734223e-07,
+            5.168028491741924e-06,
+            4.906746325775349e-07
+          ],
+          [
+            -4.624648542781493e-07,
+            4.906746008592727e-07,
+            6.400330172993077e-06
+          ]
+        ],
+        "stress_antisymmetry": 9.956901677347436e-06,
+        "p": 9990.463260588589,
+        "q": -1.4064257544196153,
+        "axial_strain": 0.0,
+        "volumetric_strain": 0.0,
+        "volume_ratio": 1.0,
+        "log_strain": [
+          -0.0,
+          -0.0,
+          -0.0
+        ],
+        "void_ratio": 0.8889851024442423,
+        "kinetic_energy": 9.306281439913633e-11,
+        "elastic_energy_proxy": 1.035383866110351e-05,
+        "unbalanced_force": 0.0002071774797514081,
+        "max_overlap_fraction": 0.006130687426775694,
+        "friction_dissipation_last_step": 1.3623798270079313e-12,
+        "candidate_pairs": 648,
+        "active_surface_contacts": 1292,
+        "active_grain_pairs": 577,
+        "coordination": 5.342592592592593,
+        "fabric": [
+          [
+            0.3240463137626648,
+            2.7710206268238835e-05,
+            -0.0003351525228936225
+          ],
+          [
+            2.7710206268238835e-05,
+            0.34144172072410583,
+            -3.9753424061927944e-05
+          ],
+          [
+            -0.0003351525228936225,
+            -3.9753424061927944e-05,
+            0.33451196551322937
+          ]
+        ],
+        "sliding_fraction": 0.06578947368421052,
+        "cell_log_rate": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "friction_dissipation": 2.108568514813669e-05,
+        "drag_dissipation": 5.237311779637821e-05,
+        "cell_work": 8.380862709600478e-05,
+        "study_time_s": 0.0001,
+        "interval_rate_s": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "phase": 0
+      },
+      "case": "drag",
+      "timestep_s": 1e-08,
+      "steps": 10000,
+      "minimum_active_grain_pairs": 577,
+      "maximum_overlap_fraction": 0.006130755878984928,
+      "passed": true
+    },
+    {
+      "initial_energy_J": 1.0372655728112246e-05,
+      "maximum_relative_proxy_balance_residual": 1.5085612545995826e-05,
+      "maximum_relative_independent_work_error": 0.0,
+      "minimum_incremental_dissipation_J": 0.0,
+      "independent_cell_work_J": 0.0,
+      "final": {
+        "step": 637425,
+        "elapsed_time": 0.003187125,
+        "cell": [
+          0.005979595184326175,
+          0.005976731300354006,
+          0.005977855205535891
+        ],
+        "stress": [
+          [
+            9989.261902700842,
+            12.6689729094258,
+            166.00608326371065
+          ],
+          [
+            12.708615518922626,
+            9992.673074670143,
+            91.77036818064153
+          ],
+          [
+            166.0276585155288,
+            91.86772075731398,
+            9989.547440063909
+          ]
+        ],
+        "contact_stress": [
+          [
+            9989.261897870927,
+            12.668972541832552,
+            166.0060837316132
+          ],
+          [
+            12.70861515132941,
+            9992.673069492237,
+            91.77036766547916
+          ],
+          [
+            166.02765898343128,
+            91.86772024215163,
+            9989.547433642423
+          ]
+        ],
+        "kinetic_stress": [
+          [
+            4.82991536968212e-06,
+            3.675932484765067e-07,
+            -4.6790253798613634e-07
+          ],
+          [
+            3.6759321675824456e-07,
+            5.177906319813322e-06,
+            5.151623679685566e-07
+          ],
+          [
+            -4.679024745496121e-07,
+            5.151623362502944e-07,
+            6.421484985115775e-06
+          ]
+        ],
+        "stress_antisymmetry": 8.768766206829049e-06,
+        "p": 9990.494139144963,
+        "q": -1.4200486215831916,
+        "axial_strain": 0.0,
+        "volumetric_strain": 0.0,
+        "volume_ratio": 1.0,
+        "log_strain": [
+          -0.0,
+          -0.0,
+          -0.0
+        ],
+        "void_ratio": 0.8889851024442423,
+        "kinetic_energy": 9.30947263722004e-11,
+        "elastic_energy_proxy": 1.0353922334616072e-05,
+        "unbalanced_force": 0.00020768973627127707,
+        "max_overlap_fraction": 0.006130672059953213,
+        "friction_dissipation_last_step": 3.2420173858883905e-13,
+        "candidate_pairs": 648,
+        "active_surface_contacts": 1292,
+        "active_grain_pairs": 577,
+        "coordination": 5.342592592592593,
+        "fabric": [
+          [
+            0.3240463137626648,
+            2.771016806946136e-05,
+            -0.0003351534833200276
+          ],
+          [
+            2.771016806946136e-05,
+            0.34144172072410583,
+            -3.975187428295612e-05
+          ],
+          [
+            -0.0003351534833200276,
+            -3.975187428295612e-05,
+            0.33451196551322937
+          ]
+        ],
+        "sliding_fraction": 0.0565015479876161,
+        "cell_log_rate": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "friction_dissipation": 2.1085692424094304e-05,
+        "drag_dissipation": 5.237311779637821e-05,
+        "cell_work": 8.380862709600478e-05,
+        "study_time_s": 0.0001,
+        "interval_rate_s": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "phase": 0
+      },
+      "case": "drag",
+      "timestep_s": 5e-09,
+      "steps": 20000,
+      "minimum_active_grain_pairs": 577,
+      "maximum_overlap_fraction": 0.006130759138613939,
+      "passed": true
+    },
+    {
+      "initial_energy_J": 1.0372655728112246e-05,
+      "maximum_relative_proxy_balance_residual": 1.1531884544773772e-05,
+      "maximum_relative_independent_work_error": 0.0,
+      "minimum_incremental_dissipation_J": 0.0,
+      "independent_cell_work_J": 0.0,
+      "final": {
+        "step": 657425,
+        "elapsed_time": 0.0016435625,
+        "cell": [
+          0.005979595184326175,
+          0.005976731300354006,
+          0.005977855205535891
+        ],
+        "stress": [
+          [
+            9989.139841619335,
+            12.661463271529565,
+            165.99314151688745
+          ],
+          [
+            12.737278910761688,
+            9992.791866267102,
+            91.85231837445238
+          ],
+          [
+            166.0234354182169,
+            91.96153989391671,
+            9989.573596017617
+          ]
+        ],
+        "contact_stress": [
+          [
+            9989.139836777767,
+            12.661462923796421,
+            165.99314198624478
+          ],
+          [
+            12.737278563028545,
+            9992.79186109183,
+            91.85231786230202
+          ],
+          [
+            166.0234358875742,
+            91.9615393817663,
+            9989.573589590957
+          ]
+        ],
+        "kinetic_stress": [
+          [
+            4.8415668829728735e-06,
+            3.477331440964562e-07,
+            -4.693573277978487e-07
+          ],
+          [
+            3.477331440964562e-07,
+            5.175271420340104e-06,
+            5.121503700766537e-07
+          ],
+          [
+            -4.693572960795866e-07,
+            5.121504017949159e-07,
+            6.42665988302186e-06
+          ]
+        ],
+        "stress_antisymmetry": 1.114329286607403e-05,
+        "p": 9990.501767968019,
+        "q": -1.3922579256013705,
+        "axial_strain": 0.0,
+        "volumetric_strain": 0.0,
+        "volume_ratio": 1.0,
+        "log_strain": [
+          -0.0,
+          -0.0,
+          -0.0
+        ],
+        "void_ratio": 0.8889851024442423,
+        "kinetic_energy": 9.314442273034018e-11,
+        "elastic_energy_proxy": 1.0353929610573687e-05,
+        "unbalanced_force": 0.00020855679758824408,
+        "max_overlap_fraction": 0.006130650173872709,
+        "friction_dissipation_last_step": 5.619337460627261e-13,
+        "candidate_pairs": 648,
+        "active_surface_contacts": 1292,
+        "active_grain_pairs": 577,
+        "coordination": 5.342592592592593,
+        "fabric": [
+          [
+            0.3240463137626648,
+            2.7708258130587637e-05,
+            -0.0003351533960085362
+          ],
+          [
+            2.7708258130587637e-05,
+            0.34144172072410583,
+            -3.97524781874381e-05
+          ],
+          [
+            -0.0003351533960085362,
+            -3.97524781874381e-05,
+            0.33451196551322937
+          ]
+        ],
+        "sliding_fraction": 0.0456656346749226,
+        "cell_log_rate": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "friction_dissipation": 2.1085523258079775e-05,
+        "drag_dissipation": 5.237311779637821e-05,
+        "cell_work": 8.380862709600478e-05,
+        "study_time_s": 0.0001,
+        "interval_rate_s": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "phase": 0
+      },
+      "case": "drag",
+      "timestep_s": 2.5e-09,
+      "steps": 40000,
+      "minimum_active_grain_pairs": 577,
+      "maximum_overlap_fraction": 0.006130715366452932,
+      "passed": true
+    },
+    {
+      "initial_energy_J": 1.0372655728112246e-05,
+      "maximum_relative_proxy_balance_residual": 0.0005109369477621864,
+      "maximum_relative_independent_work_error": 1.0246341189828115e-06,
+      "minimum_incremental_dissipation_J": 0.0,
+      "independent_cell_work_J": 4.7691221989864e-07,
+      "final": {
+        "step": 621425,
+        "elapsed_time": 0.00621425,
+        "cell": [
+          0.005979595184326175,
+          0.005976731300354006,
+          0.005977855205535891
+        ],
+        "stress": [
+          [
+            9180.876411713485,
+            -11.967787481919075,
+            158.09340930077192
+          ],
+          [
+            12.550570490455765,
+            9350.853345370208,
+            55.46348279770706
+          ],
+          [
+            118.51021263232286,
+            65.46221141202885,
+            9286.594714651907
+          ]
+        ],
+        "contact_stress": [
+          [
+            9180.562472615737,
+            -11.962813017251293,
+            158.0582003000261
+          ],
+          [
+            12.555544955123548,
+            9350.557610956583,
+            55.45373989961409
+          ],
+          [
+            118.47500363157705,
+            65.45246851393588,
+            9286.284816590201
+          ]
+        ],
+        "kinetic_stress": [
+          [
+            0.31393909774931367,
+            -0.004974464667782599,
+            0.035209000745814255
+          ],
+          [
+            -0.004974464667782599,
+            0.2957344136246548,
+            0.009742898092964372
+          ],
+          [
+            0.035209000745814255,
+            0.009742898092964372,
+            0.30989806170452006
+          ]
+        ],
+        "stress_antisymmetry": 0.004192857092072065,
+        "p": 9272.774823911866,
+        "q": 20.729836110060205,
+        "axial_strain": 0.0,
+        "volumetric_strain": 0.0,
+        "volume_ratio": 1.0,
+        "log_strain": [
+          -0.0,
+          -0.0,
+          -0.0
+        ],
+        "void_ratio": 0.8889851024442423,
+        "kinetic_energy": 1.5322285662477952e-07,
+        "elastic_energy_proxy": 9.909026630339213e-06,
+        "unbalanced_force": 0.05193062499165535,
+        "max_overlap_fraction": 0.006032106466591358,
+        "friction_dissipation_last_step": 5.123291790809503e-10,
+        "candidate_pairs": 648,
+        "active_surface_contacts": 1203,
+        "active_grain_pairs": 559,
+        "coordination": 5.175925925925926,
+        "fabric": [
+          [
+            0.32196441292762756,
+            -7.154756895033643e-05,
+            -0.0001422669447492808
+          ],
+          [
+            -7.154756895033643e-05,
+            0.3452758193016052,
+            -0.00025139516219496727
+          ],
+          [
+            -0.0001422669447492808,
+            -0.00025139516219496727,
+            0.3327597677707672
+          ]
+        ],
+        "sliding_fraction": 0.457190357439734,
+        "cell_log_rate": [
+          50.0,
+          50.0,
+          50.0
+        ],
+        "friction_dissipation": 2.1856638340977952e-05,
+        "drag_dissipation": 5.2371171477716416e-05,
+        "cell_work": 8.428553701378405e-05,
+        "study_time_s": 4e-05,
+        "interval_rate_s": [
+          50.0,
+          50.0,
+          50.0
+        ],
+        "phase": 1
+      },
+      "case": "cyclic-affine",
+      "timestep_s": 1e-08,
+      "steps": 4000,
+      "minimum_active_grain_pairs": 559,
+      "maximum_overlap_fraction": 0.007018343545496464,
+      "passed": true
+    },
+    {
+      "initial_energy_J": 1.0372655728112246e-05,
+      "maximum_relative_proxy_balance_residual": 0.0005119233697223035,
+      "maximum_relative_independent_work_error": 1.163022714885213e-06,
+      "minimum_incremental_dissipation_J": 0.0,
+      "independent_cell_work_J": 4.769131886440087e-07,
+      "final": {
+        "step": 625425,
+        "elapsed_time": 0.003127125,
+        "cell": [
+          0.005979595184326175,
+          0.005976731300354006,
+          0.005977855205535891
+        ],
+        "stress": [
+          [
+            9180.875323412212,
+            -11.96136071691615,
+            158.10533300452116
+          ],
+          [
+            12.548738378480177,
+            9350.821737804561,
+            55.456996463741305
+          ],
+          [
+            118.50881144692633,
+            65.44778123041263,
+            9286.62195697269
+          ]
+        ],
+        "contact_stress": [
+          [
+            9180.561382784548,
+            -11.956388973250997,
+            158.0701203286549
+          ],
+          [
+            12.55371012214533,
+            9350.526005852103,
+            55.44725199831757
+          ],
+          [
+            118.47359877106008,
+            65.4380367649889,
+            9286.312062369923
+          ]
+        ],
+        "kinetic_stress": [
+          [
+            0.3139406276637024,
+            -0.004971743665153715,
+            0.03521267586624807
+          ],
+          [
+            -0.004971743665153715,
+            0.29573195245802947,
+            0.009744465423737619
+          ],
+          [
+            0.03521267586624807,
+            0.009744465423737619,
+            0.30989460276764114
+          ]
+        ],
+        "stress_antisymmetry": 0.0041933121032979095,
+        "p": 9272.773006063153,
+        "q": 20.773426364305124,
+        "axial_strain": 0.0,
+        "volumetric_strain": 0.0,
+        "volume_ratio": 1.0,
+        "log_strain": [
+          -0.0,
+          -0.0,
+          -0.0
+        ],
+        "void_ratio": 0.8889851024442423,
+        "kinetic_energy": 1.532225439859758e-07,
+        "elastic_energy_proxy": 9.909027539833914e-06,
+        "unbalanced_force": 0.05193118378520012,
+        "max_overlap_fraction": 0.00603209063410759,
+        "friction_dissipation_last_step": 2.5908325484991224e-10,
+        "candidate_pairs": 648,
+        "active_surface_contacts": 1203,
+        "active_grain_pairs": 559,
+        "coordination": 5.175925925925926,
+        "fabric": [
+          [
+            0.3219643831253052,
+            -7.154768536565825e-05,
+            -0.00014226716302800924
+          ],
+          [
+            -7.154768536565825e-05,
+            0.3452758193016052,
+            -0.0002513954241294414
+          ],
+          [
+            -0.00014226716302800924,
+            -0.0002513954241294414,
+            0.3327597677707672
+          ]
+        ],
+        "sliding_fraction": 0.4397339983374896,
+        "cell_log_rate": [
+          50.0,
+          50.0,
+          50.0
+        ],
+        "friction_dissipation": 2.185676021326799e-05,
+        "drag_dissipation": 5.2371171477716416e-05,
+        "cell_work": 8.428554428974167e-05,
+        "study_time_s": 4e-05,
+        "interval_rate_s": [
+          50.0,
+          50.0,
+          50.0
+        ],
+        "phase": 1
+      },
+      "case": "cyclic-affine",
+      "timestep_s": 5e-09,
+      "steps": 8000,
+      "minimum_active_grain_pairs": 559,
+      "maximum_overlap_fraction": 0.007018310949206352,
+      "passed": true
+    },
+    {
+      "initial_energy_J": 1.0372655728112246e-05,
+      "maximum_relative_proxy_balance_residual": 0.0005111684829167139,
+      "maximum_relative_independent_work_error": 1.0333868653029657e-06,
+      "minimum_incremental_dissipation_J": 0.0,
+      "independent_cell_work_J": 4.769168028962931e-07,
+      "final": {
+        "step": 633425,
+        "elapsed_time": 0.0015835625000000001,
+        "cell": [
+          0.005979595184326175,
+          0.005976731300354006,
+          0.005977855205535891
+        ],
+        "stress": [
+          [
+            9180.875310175126,
+            -11.952687110495697,
+            158.10655662422894
+          ],
+          [
+            12.549553286547862,
+            9350.80539036999,
+            55.4479768794461
+          ],
+          [
+            118.49047770121939,
+            65.43177991506342,
+            9286.563097574184
+          ]
+        ],
+        "contact_stress": [
+          [
+            9180.561382784548,
+            -11.947717152423559,
+            158.07134638874243
+          ],
+          [
+            12.554523238383936,
+            9350.509658384271,
+            55.438235348090515
+          ],
+          [
+            118.45526746989026,
+            65.42203838370783,
+            9286.253211485722
+          ]
+        ],
+        "kinetic_stress": [
+          [
+            0.31392739057833896,
+            -0.00496995807213751,
+            0.03521023548650299
+          ],
+          [
+            -0.004969951836073426,
+            0.2957319857170379,
+            0.009741531355585847
+          ],
+          [
+            0.035210231329126936,
+            0.009741531355585847,
+            0.30988608846147775
+          ]
+        ],
+        "stress_antisymmetry": 0.004194270397272679,
+        "p": 9272.747932706434,
+        "q": 20.72274730162644,
+        "axial_strain": 0.0,
+        "volumetric_strain": 0.0,
+        "volume_ratio": 1.0,
+        "log_strain": [
+          -0.0,
+          -0.0,
+          -0.0
+        ],
+        "void_ratio": 0.8889851024442423,
+        "kinetic_energy": 1.5322099500281183e-07,
+        "elastic_energy_proxy": 9.908957508741878e-06,
+        "unbalanced_force": 0.05193071439862251,
+        "max_overlap_fraction": 0.006032061297446489,
+        "friction_dissipation_last_step": 1.5002911413208864e-10,
+        "candidate_pairs": 648,
+        "active_surface_contacts": 1203,
+        "active_grain_pairs": 559,
+        "coordination": 5.175925925925926,
+        "fabric": [
+          [
+            0.3219643831253052,
+            -7.154708146117628e-05,
+            -0.00014226691564545035
+          ],
+          [
+            -7.154708146117628e-05,
+            0.3452758193016052,
+            -0.00025139536592178047
+          ],
+          [
+            -0.00014226691564545035,
+            -0.00025139536592178047,
+            0.3327597677707672
+          ]
+        ],
+        "sliding_fraction": 0.4081463009143807,
+        "cell_log_rate": [
+          50.0,
+          50.0,
+          50.0
+        ],
+        "friction_dissipation": 2.185687844757922e-05,
+        "drag_dissipation": 5.2371171477716416e-05,
+        "cell_work": 8.428554428974167e-05,
+        "study_time_s": 4e-05,
+        "interval_rate_s": [
+          50.0,
+          50.0,
+          50.0
+        ],
+        "phase": 1
+      },
+      "case": "cyclic-affine",
+      "timestep_s": 2.5e-09,
+      "steps": 16000,
+      "minimum_active_grain_pairs": 559,
+      "maximum_overlap_fraction": 0.007018310949206352,
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "refinement": [
+    {
+      "case": "static",
+      "relative_stress_difference": 1.4519862717450468e-05,
+      "relative_energy_difference": 5.056782576100842e-06,
+      "passed": true
+    },
+    {
+      "case": "drag",
+      "relative_stress_difference": 2.151177764722418e-05,
+      "relative_energy_difference": 7.062467090726851e-07,
+      "passed": true
+    },
+    {
+      "case": "cyclic-affine",
+      "relative_stress_difference": 6.695208420178778e-06,
+      "relative_energy_difference": 6.900843629319951e-06,
+      "passed": true
+    }
+  ],
+  "complete": true,
+  "passed": true,
+  "backend": {
+    "format": "sand-dem-doctor/1",
+    "backend": "metal",
+    "adapter": "Apple M4 Max",
+    "slangpy": "0.43.1",
+    "python": "3.12.14",
+    "smoke_elements": 257,
+    "smoke_max_error": 0.0,
+    "fallback": false,
+    "floating_point_mode_requested": "precise"
+  },
+  "scope": "Extended actual-Metal 216-sphere prepared-assembly work-accounting and spring-energy-proxy study. New initial-value cases cloned from one hash-pinned qualified checkpoint; physical parameters and histories retained, timestep explicitly varied. Three complete cases at three timesteps, no case removal. Static/drag relaxation lasts 100 microseconds; cyclic isotropic affine compression/expansion lasts 40 microseconds. Independent sampled Cauchy-stress power audits device work. A 2% proxy residual is an engineering bound, not proof of an exact elastic potential; 1% fine/middle endpoint agreement is bounded refinement, not an order claim. Not Hostun, mesh quadrature, material or experimental qualification. No sustained timing claim under concurrent CPU reference work."
+}

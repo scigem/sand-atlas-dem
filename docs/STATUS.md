@@ -365,3 +365,21 @@ The integrated actual-Metal suite subsequently passes 107 tests with one skipped
 (`deterministic-reference-tests-v2/verification.log`), including the explicit empty
 reference rejection checks. This is software verification; the full-library
 reference and scientific gates above remain pending.
+
+
+## Extended prepared-sphere assembly work verification
+
+`prepared-sphere-assembly-work-v1` passes all nine actual-Metal cases: static and
+drag relaxation over 100 microseconds, and cyclic affine compression/expansion over
+40 microseconds, each at 10, 5 and 2.5 ns. Every case starts from the same audited
+216-sphere prepared checkpoint, with frozen physical properties and histories.
+Worst kinetic-plus-spring-proxy balance residual is 0.05120% (limit 2%); independent
+sampled stress-power integration differs from device cell work by at most
+0.0001164% of initial energy (limit 0.1%). Dissipation increments are nonnegative;
+at least 559 grain pairs remain active, and maximum overlap is 0.70184%.
+All three fine/middle endpoint stress/energy comparisons pass their 1% gates.
+Three independent analytic pressure-volume/time-order regressions also pass.
+This is sphere-assembly engineering verification, without an exact potential or
+Hostun/material/experimental acceptance claim. Mesh-assembly coverage remains open.
+See MECHANICS_QUALIFICATION.md and PUBLISHED_ASSEMBLY_REFERENCE.md for the distinct
+published wall-boundary benchmark and source acquisition/capability gaps.

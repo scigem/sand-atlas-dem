@@ -1,0 +1,6 @@
+{
+  "command": "PYTHONPATH=src .venv/bin/python -m pytest -q tests/test_assembly_work_audit.py",
+  "result": "3 passed in 0.56s",
+  "source_sha256": "3e761d5f48f9c99e5e3ec2d8802e5f7ec727b652003303adb58ee767fdb8b419",
+  "recorded_after_execution": true
+}

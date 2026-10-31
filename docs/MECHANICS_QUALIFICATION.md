@@ -75,3 +75,32 @@ remaining floor includes geometry/quadrature and the lack of an exact proxy pote
 errors are 4.286e-4, 1.0504e-4 and 2.6811e-5 rad (15.99-fold coarse/fine improvement).
 Spatial angular momentum is unchanged. These results qualify the current solver
 within the frozen engineering workloads; full-assembly studies remain separate.
+
+
+## Extended prepared-assembly study
+
+The frozen `prepared-sphere-assembly-work-v1` protocol and
+`examples/assembly_work_study.py` start independent initial-value cases from the
+hash-pinned, audited 216-sphere preparation. Three timesteps cover static release,
+drag relaxation and cyclic isotropic affine loading. The unchanged 2% engineering
+proxy-balance bound is accompanied by an independent sampled stress-power work
+audit (0.1% of initial energy), nonnegative dissipation and 1% fine/middle endpoint
+stress/energy agreement. Initial contacts, preparation identity and 1% overlap
+guard remain required. All nine cases and all three endpoint comparisons pass.
+Worst proxy-balance residual is 0.05120%; independent stress-power work discrepancy
+is 0.0001164% of initial energy. At least 559 grain pairs remain active, and maximum
+overlap is 0.70184%, below the unchanged 1% guard. Fine/middle stress and energy
+differences are at most 2.152e-5 and 6.901e-6, respectively, below 1%. The three
+independent analytical pressure-volume/time-order checks pass as well. The study
+report and prospective source/input freeze are retained in
+`evidence/prepared-sphere-assembly-work-v1/`.
+
+History JSONL records are private. `study_time_s` is the physical clock for each
+new initial-value case; inherited engine step counters and `elapsed_time` are not
+a physical time continuation across changed timesteps. All work/loss counters are
+differenced from the restored initial observation. The spring energy is still a
+proxy, with no exact potential asserted. Sphere assembly coverage cannot qualify
+Hostun quadrature or material behaviour.
+
+The source-supported published assembly candidate and current access/capability
+gaps are recorded in [PUBLISHED_ASSEMBLY_REFERENCE.md](PUBLISHED_ASSEMBLY_REFERENCE.md).
