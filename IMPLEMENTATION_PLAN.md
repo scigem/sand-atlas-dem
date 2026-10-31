@@ -68,7 +68,17 @@ work alongside the scientific gates below; naming a material must not infer cali
   an exhaustive per-node audit identified a proximity tie-substitution error in
   the FP64 reference. A new strict-minimum reference study is running with the same
   source poses, refinement levels and thresholds. Preserve the failed study;
-  corrected reference and GPU requalification are still required before proceeding.
+  the separately identified strict reference and GPU requalification now pass all
+  ten original poses. Worst refined integral error is 1.28981%, and same-quadrature
+  GPU error is 0.01504%, below the unchanged 10% and 0.1% gates. This is bounded
+  five-grain static coverage, not whole-library or assembly admission.
+  The strict-minimum 2,048-node oracle and all ten corresponding GPU force/count
+  checks now pass. A separately frozen whole-library source-pose/reference study
+  passes for all 53 accepted grains at both prescribed sampled depths (106 cases),
+  with no grain omitted. Corresponding whole-library GPU force/count checks also
+  pass all 106 cases, with worst force error 0.02588% and exact active counts.
+  This verifies the fixed 2,048-node computation only; full-library
+  refined quadrature, dynamic contacts and assembly convergence remain required.
 - [X] Freeze and run rolling/objectivity tests, separating/returning contact,
   changing normal orientation, strongly anisotropic torque-free rotation and
   capacity-growth stress tests. Test timestep refinement over useful physical time.

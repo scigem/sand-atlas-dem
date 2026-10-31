@@ -1,0 +1,2756 @@
+{
+  "protocol": {
+    "library": "assets/private/hostun-30-r64-s2048.h5",
+    "library_sha256": "1bc9f37a22b402ada31495ea7ff1ebef4bb6a27a26d68a8333f7f84a12ad16b7",
+    "nearest_point_policy": "strict-fp64-minimum-squared-distance",
+    "query_batch_size": 2048,
+    "identity": "hostun-library-contact-poses-minimum-v1",
+    "frozen_before_execution": true,
+    "shape_ids": [
+      "hostun-particle_00020",
+      "hostun-particle_00021",
+      "hostun-particle_00022",
+      "hostun-particle_00023",
+      "hostun-particle_00024",
+      "hostun-particle_00025",
+      "hostun-particle_00026",
+      "hostun-particle_00027",
+      "hostun-particle_00028",
+      "hostun-particle_00029",
+      "hostun-particle_00030",
+      "hostun-particle_00031",
+      "hostun-particle_00032",
+      "hostun-particle_00033",
+      "hostun-particle_00034",
+      "hostun-particle_00035",
+      "hostun-particle_00036",
+      "hostun-particle_00037",
+      "hostun-particle_00038",
+      "hostun-particle_00039",
+      "hostun-particle_00040",
+      "hostun-particle_00041",
+      "hostun-particle_00042",
+      "hostun-particle_00043",
+      "hostun-particle_00044",
+      "hostun-particle_00045",
+      "hostun-particle_00046",
+      "hostun-particle_00047",
+      "hostun-particle_00048",
+      "hostun-particle_00049",
+      "hostun-particle_00050",
+      "hostun-particle_00051",
+      "hostun-particle_00052",
+      "hostun-particle_00053",
+      "hostun-particle_00054",
+      "hostun-particle_00055",
+      "hostun-particle_00056",
+      "hostun-particle_00057",
+      "hostun-particle_00058",
+      "hostun-particle_00059",
+      "hostun-particle_00060",
+      "hostun-particle_00061",
+      "hostun-particle_00062",
+      "hostun-particle_00063",
+      "hostun-particle_00064",
+      "hostun-particle_00065",
+      "hostun-particle_00066",
+      "hostun-particle_00067",
+      "hostun-particle_00068",
+      "hostun-particle_00070",
+      "hostun-particle_00071",
+      "hostun-particle_00072",
+      "hostun-particle_00073"
+    ],
+    "target_sampled_depth_fractions": [
+      0.0025,
+      0.01
+    ],
+    "bracket_scan_intervals": 256,
+    "bisection_iterations": 32,
+    "maximum_depth_shortfall_fraction": 1e-08,
+    "maximum_bracket_width_fraction": 1e-08,
+    "cpu_workers": 4,
+    "scope": "All 53 accepted source grains, original 2048 nodes and source triangles. First outside-to-inside brackets from a fixed 256-interval scan, followed by strict FP64 source-distance bisection. Record every failure; no shape repair, skipped grain or overlap/force-gate relaxation. These new poses do not replace the original ten frozen poses."
+  },
+  "protocol_sha256": "f35045bbfc051a1b0dbd38095968a5fa79fa26c10714157ee829e82c382155e0",
+  "source_hashes": {
+    "examples/library_contact_poses.py": "af9bd2e7011ed6d4d443aad4e13321bd847c23454ffff10c082be784d424ae5b",
+    "src/sand_atlas_dem/__init__.py": "25ef40efbf7fa452aaa142bbe8d9ac35c90756e1a6f09cdacdcd2723cdd1636d",
+    "src/sand_atlas_dem/acquisition.py": "3c9379de9c9f24b4c762ae4608e73d70b76b558d4cbdae48e75196c747594ddd",
+    "src/sand_atlas_dem/atlas_bridge.py": "c60052f83b256a6b5f2a415f5e2cfeb16e399f6f3bfe100e0d4a4a99b972c87f",
+    "src/sand_atlas_dem/backend.py": "2184575342f265dfd744d799af8e9b03a73dcb195e06e94a59f21e1525cbab5c",
+    "src/sand_atlas_dem/benchmark.py": "6624caaa956f7d5c8825520cd5c901b559f561f8ff407bb4d719cb1c06f1f83c",
+    "src/sand_atlas_dem/cases.py": "f225b09ee7207a50b35da0b6301626f124c7555cf9cd1a1786b3a73a7300ebb6",
+    "src/sand_atlas_dem/cli.py": "142294d050f55130524fa79b2a22a8182e13bdf786b09a8194aca8c284b229db",
+    "src/sand_atlas_dem/geometry.py": "d84592edef45221d589ed22b8a2a36f53be39bb5b8972ec55a548913c929c6a5",
+    "src/sand_atlas_dem/gpu.py": "084b2992ef08441f030f4d171e533a1bbc1a1c5c135112d8f4a33c56b679a5f7",
+    "src/sand_atlas_dem/mesh.py": "a72264dd2f8730997fa0c794e16ca45ded0a61acd1f0042456c940354211a1af",
+    "src/sand_atlas_dem/qualification.py": "b59751cc6fcc81b834dd90174ff9859e21efffa389dc36bc514ced75ef41b2fb",
+    "src/sand_atlas_dem/reference.py": "972bdbec1a08a8f01097758503296d3581ab6f558145ceac70b02c27603c7730",
+    "src/sand_atlas_dem/simulation.py": "caa4aa1bf30e92d61b1f2292dfbfbf3a195bc982e1c83ac489ff4afa0f02867e",
+    "src/sand_atlas_dem/spec.py": "de79f1ec1dd5a08fcf5313c189a608d7a5772042209fdc35d4e99bdf9a82bd34",
+    "src/sand_atlas_dem/util.py": "0f9dc71429a87057dc08216f3c51425d8b76be9c4fd30f2cab6c3f98b70397c2",
+    "src/sand_atlas_dem/visualize.py": "9874362fa98cdd00d73b42867f7ecc9254b820d08915baed25eee4b02ecba339"
+  },
+  "rows": [
+    {
+      "shape": "hostun-particle_00020",
+      "source_sha256": "0bc5fb6b04a62ff9b693776339db9660b829d52422c8b575b9379575282967d6",
+      "target_sampled_depth_fraction": 0.0025,
+      "separation_m": 0.0001630195728154383,
+      "maximum_sampled_depth_fraction": 0.002499999999232316,
+      "exact_normal_traction_integral_m3": [
+        -1.7190595850901064e-16,
+        6.083663363340695e-17,
+        7.834716740206793e-17
+      ],
+      "exact_active_nodes": [
+        3,
+        2
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.5311755399086608,
+        0.5393474712918711
+      ],
+      "final_bracket_diameters": [
+        0.53579881968065,
+        0.5357988196825527
+      ]
+    },
+    {
+      "shape": "hostun-particle_00020",
+      "source_sha256": "0bc5fb6b04a62ff9b693776339db9660b829d52422c8b575b9379575282967d6",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.00016042446185429149,
+      "maximum_sampled_depth_fraction": 0.009999999999879524,
+      "exact_normal_traction_integral_m3": [
+        -2.7659995355240025e-15,
+        8.549643082101937e-16,
+        1.1164459563147134e-15
+      ],
+      "exact_active_nodes": [
+        9,
+        9
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.5230036085254506,
+        0.5311755399086608
+      ],
+      "final_bracket_diameters": [
+        0.5272694304428196,
+        0.5272694304447223
+      ]
+    },
+    {
+      "shape": "hostun-particle_00021",
+      "source_sha256": "38c86dc9c810b73b299f690ad8866d777229b201e7670a9b03fc26fd1bc7b3e6",
+      "target_sampled_depth_fraction": 0.0025,
+      "separation_m": 0.00028474810225339545,
+      "maximum_sampled_depth_fraction": 0.0024999999987875337,
+      "exact_normal_traction_integral_m3": [
+        -7.772190247461837e-17,
+        -4.10848788078279e-17,
+        -2.5294879222196444e-17
+      ],
+      "exact_active_nodes": [
+        1,
+        1
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.8963266448290085,
+        0.9025946633243163
+      ],
+      "final_bracket_diameters": [
+        0.9005103755053833,
+        0.9005103755068427
+      ]
+    },
+    {
+      "shape": "hostun-particle_00021",
+      "source_sha256": "38c86dc9c810b73b299f690ad8866d777229b201e7670a9b03fc26fd1bc7b3e6",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.0002818647476625738,
+      "maximum_sampled_depth_fraction": 0.009999999999215605,
+      "exact_normal_traction_integral_m3": [
+        -9.211621983574951e-16,
+        -4.573196855439301e-16,
+        -2.0490364420926276e-16
+      ],
+      "exact_active_nodes": [
+        3,
+        6
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.8900586263337007,
+        0.8963266448290085
+      ],
+      "final_bracket_diameters": [
+        0.8913918222832458,
+        0.8913918222847051
+      ]
+    },
+    {
+      "shape": "hostun-particle_00022",
+      "source_sha256": "ad32ae7020a7688171acfb454a65511f648c1b4d4e27c2c874bc003605db927d",
+      "target_sampled_depth_fraction": 0.0025,
+      "separation_m": 0.00038053608747357846,
+      "maximum_sampled_depth_fraction": 0.0024999999991481238,
+      "exact_normal_traction_integral_m3": [
+        -5.005139038631153e-16,
+        -4.0355667190210743e-17,
+        -2.917328727469296e-16
+      ],
+      "exact_active_nodes": [
+        1,
+        2
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.8416908172722036,
+        0.8482665267821428
+      ],
+      "final_bracket_diameters": [
+        0.8453589667398616,
+        0.8453589667413925
+      ]
+    },
+    {
+      "shape": "hostun-particle_00022",
+      "source_sha256": "ad32ae7020a7688171acfb454a65511f648c1b4d4e27c2c874bc003605db927d",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.00037671056817700267,
+      "maximum_sampled_depth_fraction": 0.009999999999268734,
+      "exact_normal_traction_integral_m3": [
+        -3.969447040290278e-15,
+        -5.744268824309448e-16,
+        -1.7060191787129133e-15
+      ],
+      "exact_active_nodes": [
+        7,
+        7
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.8351151077622645,
+        0.8416908172722036
+      ],
+      "final_bracket_diameters": [
+        0.8368605952417125,
+        0.8368605952432435
+      ]
+    },
+    {
+      "shape": "hostun-particle_00023",
+      "source_sha256": "97970e677f81c0145a6dd47e0cfdf41941931f6e96ac521b0f96c0c155a12372",
+      "target_sampled_depth_fraction": 0.0025,
+      "separation_m": 0.00024396163995434655,
+      "maximum_sampled_depth_fraction": 0.002499999999453058,
+      "exact_normal_traction_integral_m3": [
+        -1.5948761413173641e-16,
+        8.894734465111269e-19,
+        8.274556887864689e-18
+      ],
+      "exact_active_nodes": [
+        1,
+        3
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.7312003601730874,
+        0.7395094551750543
+      ],
+      "final_bracket_diameters": [
+        0.7322349331773474,
+        0.7322349331792821
+      ]
+    },
+    {
+      "shape": "hostun-particle_00023",
+      "source_sha256": "97970e677f81c0145a6dd47e0cfdf41941931f6e96ac521b0f96c0c155a12372",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.0002414585744761113,
+      "maximum_sampled_depth_fraction": 0.009999999998074969,
+      "exact_normal_traction_integral_m3": [
+        -2.271169249670586e-15,
+        -4.6738924871752755e-17,
+        9.813588405234285e-17
+      ],
+      "exact_active_nodes": [
+        5,
+        7
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.7228912651711206,
+        0.7312003601730874
+      ],
+      "final_bracket_diameters": [
+        0.7247221455786828,
+        0.7247221455806173
+      ]
+    },
+    {
+      "shape": "hostun-particle_00024",
+      "source_sha256": "31c5139f5719c9744f1e3fa8616ad0978f7acedb9af3256822c4cd928a7823ea",
+      "target_sampled_depth_fraction": 0.0025,
+      "separation_m": 0.00039763880254179107,
+      "maximum_sampled_depth_fraction": 0.0024999999986125136,
+      "exact_normal_traction_integral_m3": [
+        -1.1374623382399783e-16,
+        -3.0961436980772044e-17,
+        4.976579649460715e-17
+      ],
+      "exact_active_nodes": [
+        0,
+        1
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        1.1493355535004264,
+        1.1590756853097521
+      ],
+      "final_bracket_diameters": [
+        1.152905335094363,
+        1.1529053350966307
+      ]
+    },
+    {
+      "shape": "hostun-particle_00024",
+      "source_sha256": "31c5139f5719c9744f1e3fa8616ad0978f7acedb9af3256822c4cd928a7823ea",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.00039472882621926646,
+      "maximum_sampled_depth_fraction": 0.009999999998784165,
+      "exact_normal_traction_integral_m3": [
+        -8.675130218694135e-16,
+        -2.759803043207369e-16,
+        4.547356270490381e-16
+      ],
+      "exact_active_nodes": [
+        1,
+        3
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        1.1395954216911006,
+        1.1493355535004264
+      ],
+      "final_bracket_diameters": [
+        1.1444682127466492,
+        1.144468212748917
+      ]
+    },
+    {
+      "shape": "hostun-particle_00025",
+      "source_sha256": "1e071a54d56bcedbdde06a98ec149482614b53b8e90d0d004139870f7c637979",
+      "target_sampled_depth_fraction": 0.0025,
+      "separation_m": 0.0004783310930880435,
+      "maximum_sampled_depth_fraction": 0.002499999999604825,
+      "exact_normal_traction_integral_m3": [
+        -2.1886229624667448e-16,
+        2.8639003769536315e-17,
+        4.99894985820772e-17
+      ],
+      "exact_active_nodes": [
+        2,
+        1
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        1.2657520768507171,
+        1.2726311642249057
+      ],
+      "final_bracket_diameters": [
+        1.2658621339300926,
+        1.2658621339316942
+      ]
+    },
+    {
+      "shape": "hostun-particle_00025",
+      "source_sha256": "1e071a54d56bcedbdde06a98ec149482614b53b8e90d0d004139870f7c637979",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.000475408478471582,
+      "maximum_sampled_depth_fraction": 0.00999999999951772,
+      "exact_normal_traction_integral_m3": [
+        -1.5003404937677156e-15,
+        2.008768323196583e-16,
+        3.6438231758024026e-16
+      ],
+      "exact_active_nodes": [
+        2,
+        2
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        1.2519939021023396,
+        1.2588729894765285
+      ],
+      "final_bracket_diameters": [
+        1.258127685493614,
+        1.2581276854952157
+      ]
+    },
+    {
+      "shape": "hostun-particle_00026",
+      "source_sha256": "ab69f83cd684ceb2f75953653979b1d03cf83f5047a895fa583d58021fc0ba11",
+      "target_sampled_depth_fraction": 0.0025,
+      "separation_m": 0.000323670078475515,
+      "maximum_sampled_depth_fraction": 0.0024999999989313623,
+      "exact_normal_traction_integral_m3": [
+        -5.507470381138553e-16,
+        -4.025621605675685e-16,
+        1.2245225526974382e-16
+      ],
+      "exact_active_nodes": [
+        4,
+        1
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.7510815960879973,
+        0.759815103019253
+      ],
+      "final_bracket_diameters": [
+        0.7578659097600582,
+        0.7578659097620917
+      ]
+    },
+    {
+      "shape": "hostun-particle_00026",
+      "source_sha256": "ab69f83cd684ceb2f75953653979b1d03cf83f5047a895fa583d58021fc0ba11",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.00031966611876364635,
+      "maximum_sampled_depth_fraction": 0.009999999999364484,
+      "exact_normal_traction_integral_m3": [
+        -5.8032439446858804e-15,
+        -3.4027913233419398e-15,
+        4.653707621129639e-16
+      ],
+      "exact_active_nodes": [
+        10,
+        6
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.7423480891567416,
+        0.7510815960879973
+      ],
+      "final_bracket_diameters": [
+        0.7484907318505696,
+        0.7484907318526031
+      ]
+    },
+    {
+      "shape": "hostun-particle_00027",
+      "source_sha256": "f3a13407ebd387bcfbf4bd210243ded6c508e9a3a071b8863e814efd6af0641c",
+      "target_sampled_depth_fraction": 0.0025,
+      "separation_m": 0.0003786752368330023,
+      "maximum_sampled_depth_fraction": 0.002499999999584983,
+      "exact_normal_traction_integral_m3": [
+        -5.317159839062574e-16,
+        -2.981747837490997e-17,
+        -2.9299154844770773e-16
+      ],
+      "exact_active_nodes": [
+        3,
+        2
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.8488779169612585,
+        0.8549413306538389
+      ],
+      "final_bracket_diameters": [
+        0.8534180345574747,
+        0.8534180345588864
+      ]
+    },
+    {
+      "shape": "hostun-particle_00027",
+      "source_sha256": "f3a13407ebd387bcfbf4bd210243ded6c508e9a3a071b8863e814efd6af0641c",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.000374782735180271,
+      "maximum_sampled_depth_fraction": 0.00999999999936334,
+      "exact_normal_traction_integral_m3": [
+        -4.415589981073225e-15,
+        -6.825317907706319e-16,
+        -2.734633436499732e-15
+      ],
+      "exact_active_nodes": [
+        5,
+        6
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.842814503268678,
+        0.8488779169612585
+      ],
+      "final_bracket_diameters": [
+        0.8446455277049705,
+        0.8446455277063821
+      ]
+    },
+    {
+      "shape": "hostun-particle_00028",
+      "source_sha256": "3a792841a26455cf4265b87583d3c1736b4e7368856222ec9f183defa4cd0954",
+      "target_sampled_depth_fraction": 0.0025,
+      "separation_m": 0.0005047710536153248,
+      "maximum_sampled_depth_fraction": 0.0024999999986711355,
+      "exact_normal_traction_integral_m3": [
+        -2.335866469604932e-16,
+        1.9473562505265253e-18,
+        -7.421728228641598e-17
+      ],
+      "exact_active_nodes": [
+        1,
+        0
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        1.111907961431036,
+        1.1209478635564918
+      ],
+      "final_bracket_diameters": [
+        1.11749592132823,
+        1.117495921330335
+      ]
+    },
+    {
+      "shape": "hostun-particle_00028",
+      "source_sha256": "3a792841a26455cf4265b87583d3c1736b4e7368856222ec9f183defa4cd0954",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.0004980397973679094,
+      "maximum_sampled_depth_fraction": 0.009999999999082514,
+      "exact_normal_traction_integral_m3": [
+        -2.439894622622848e-15,
+        -5.720616276456668e-16,
+        -3.282898913437257e-16
+      ],
+      "exact_active_nodes": [
+        2,
+        2
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        1.0938281571801252,
+        1.1028680593055806
+      ],
+      "final_bracket_diameters": [
+        1.1025938160112947,
+        1.1025938160133995
+      ]
+    },
+    {
+      "shape": "hostun-particle_00029",
+      "source_sha256": "42cb845b399b1b80cb35f5a56475613a3546ced3221016e2e9a4435a13dd8a0f",
+      "target_sampled_depth_fraction": 0.0025,
+      "separation_m": 0.0004324245531918169,
+      "maximum_sampled_depth_fraction": 0.0024999999995484047,
+      "exact_normal_traction_integral_m3": [
+        -3.746029456777156e-16,
+        -2.886213153852315e-17,
+        2.89835440133952e-16
+      ],
+      "exact_active_nodes": [
+        2,
+        2
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        1.0282519198537807,
+        1.0348432783143817
+      ],
+      "final_bracket_diameters": [
+        1.029559719744745,
+        1.0295597197462796
+      ]
+    },
+    {
+      "shape": "hostun-particle_00029",
+      "source_sha256": "42cb845b399b1b80cb35f5a56475613a3546ced3221016e2e9a4435a13dd8a0f",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.00042845895785271825,
+      "maximum_sampled_depth_fraction": 0.009999999999750656,
+      "exact_normal_traction_integral_m3": [
+        -2.949168091886654e-15,
+        1.933199795833729e-16,
+        2.421322692045539e-15
+      ],
+      "exact_active_nodes": [
+        6,
+        4
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        1.0150692029325783,
+        1.0216605613931795
+      ],
+      "final_bracket_diameters": [
+        1.0201180328751778,
+        1.0201180328767125
+      ]
+    },
+    {
+      "shape": "hostun-particle_00030",
+      "source_sha256": "49b7d7275a9d8ec4502f905a3e4046ac821830a3949060550d67aa7cf7d4eef1",
+      "target_sampled_depth_fraction": 0.0025,
+      "separation_m": 0.0003762722462386821,
+      "maximum_sampled_depth_fraction": 0.0024999999999937676,
+      "exact_normal_traction_integral_m3": [
+        -1.3273218803030668e-16,
+        5.866782248217691e-18,
+        -8.015793048647735e-18
+      ],
+      "exact_active_nodes": [
+        0,
+        1
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.9723036374673819,
+        0.9785363530921728
+      ],
+      "final_bracket_diameters": [
+        0.9751634969149124,
+        0.9751634969163636
+      ]
+    },
+    {
+      "shape": "hostun-particle_00030",
+      "source_sha256": "49b7d7275a9d8ec4502f905a3e4046ac821830a3949060550d67aa7cf7d4eef1",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.0003733702369697251,
+      "maximum_sampled_depth_fraction": 0.009999999999306178,
+      "exact_normal_traction_integral_m3": [
+        -1.051744467350739e-15,
+        2.7521413512989705e-17,
+        5.422899930814003e-17
+      ],
+      "exact_active_nodes": [
+        2,
+        2
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.966070921842591,
+        0.9723036374673819
+      ],
+      "final_bracket_diameters": [
+        0.9676425236433289,
+        0.9676425236447801
+      ]
+    },
+    {
+      "shape": "hostun-particle_00031",
+      "source_sha256": "6db9417877adbee1a23f27f0f7dd91f3ce0ee09169869785d1614b8c711e7133",
+      "target_sampled_depth_fraction": 0.0025,
+      "separation_m": 0.0004340634797103128,
+      "maximum_sampled_depth_fraction": 0.002499999999145969,
+      "exact_normal_traction_integral_m3": [
+        -1.9269072766352714e-16,
+        1.0846135421736882e-16,
+        -1.3139658368411185e-16
+      ],
+      "exact_active_nodes": [
+        2,
+        0
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.9330858639534689,
+        0.9393064363798254
+      ],
+      "final_bracket_diameters": [
+        0.9360853937706913,
+        0.9360853937721396
+      ]
+    },
+    {
+      "shape": "hostun-particle_00031",
+      "source_sha256": "6db9417877adbee1a23f27f0f7dd91f3ce0ee09169869785d1614b8c711e7133",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.000429069830745623,
+      "maximum_sampled_depth_fraction": 0.009999999999991498,
+      "exact_normal_traction_integral_m3": [
+        -1.8732407641589207e-15,
+        1.5585909118250108e-15,
+        -2.3122686540692545e-16
+      ],
+      "exact_active_nodes": [
+        3,
+        3
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.920644719100756,
+        0.9268652915271125
+      ],
+      "final_bracket_diameters": [
+        0.9253162734093303,
+        0.9253162734107787
+      ]
+    },
+    {
+      "shape": "hostun-particle_00032",
+      "source_sha256": "de2901707b173b08fede31d9824c476604cdb7c2ae1c92b1a7c6b71e36804f5d",
+      "target_sampled_depth_fraction": 0.0025,
+      "separation_m": 0.00047552189506657323,
+      "maximum_sampled_depth_fraction": 0.0024999999993505118,
+      "exact_normal_traction_integral_m3": [
+        -1.660707863210291e-16,
+        2.2379900665887214e-17,
+        -5.752698655208839e-17
+      ],
+      "exact_active_nodes": [
+        2,
+        1
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        1.4789322955553734,
+        1.4866350679280578
+      ],
+      "final_bracket_diameters": [
+        1.485411255856364,
+        1.4854112558581574
+      ]
+    },
+    {
+      "shape": "hostun-particle_00032",
+      "source_sha256": "de2901707b173b08fede31d9824c476604cdb7c2ae1c92b1a7c6b71e36804f5d",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.0004729113012650726,
+      "maximum_sampled_depth_fraction": 0.009999999999169812,
+      "exact_normal_traction_integral_m3": [
+        -1.7833662781068383e-15,
+        2.732952929565052e-16,
+        -4.0997331436259736e-16
+      ],
+      "exact_active_nodes": [
+        4,
+        4
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        1.4712295231826893,
+        1.4789322955553734
+      ],
+      "final_bracket_diameters": [
+        1.477256414917484,
+        1.4772564149192775
+      ]
+    },
+    {
+      "shape": "hostun-particle_00033",
+      "source_sha256": "fdf9f25e839c46f61a2bed324eaddda950e8241c3087fa34c354875989081a8f",
+      "target_sampled_depth_fraction": 0.0025,
+      "separation_m": 0.00041684533129727347,
+      "maximum_sampled_depth_fraction": 0.002499999998711595,
+      "exact_normal_traction_integral_m3": [
+        -1.7540967802799884e-16,
+        -3.729240399141948e-18,
+        -3.883898513214123e-17
+      ],
+      "exact_active_nodes": [
+        1,
+        1
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        1.2236870829506195,
+        1.2298986925087443
+      ],
+      "final_bracket_diameters": [
+        1.228371508442402,
+        1.2283715084438482
+      ]
+    },
+    {
+      "shape": "hostun-particle_00033",
+      "source_sha256": "fdf9f25e839c46f61a2bed324eaddda950e8241c3087fa34c354875989081a8f",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.0004142800998617514,
+      "maximum_sampled_depth_fraction": 0.009999999999572528,
+      "exact_normal_traction_integral_m3": [
+        -8.452765739539072e-16,
+        -7.115115057523806e-17,
+        -2.226214345749416e-16
+      ],
+      "exact_active_nodes": [
+        3,
+        1
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        1.2174754733924944,
+        1.2236870829506195
+      ],
+      "final_bracket_diameters": [
+        1.2208122125324459,
+        1.220812212533892
+      ]
+    },
+    {
+      "shape": "hostun-particle_00034",
+      "source_sha256": "759d2a46a56ffafb048ef48b9903e9b12d2302fb8339e0286dbd8eba11060f82",
+      "target_sampled_depth_fraction": 0.0025,
+      "separation_m": 0.00034649769030461113,
+      "maximum_sampled_depth_fraction": 0.0024999999993325956,
+      "exact_normal_traction_integral_m3": [
+        -5.587118362083018e-17,
+        -3.776788024422376e-17,
+        2.9185806430860534e-17
+      ],
+      "exact_active_nodes": [
+        1,
+        0
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        1.1138450927549817,
+        1.1202099218564388
+      ],
+      "final_bracket_diameters": [
+        1.1200214912684223,
+        1.1200214912699042
+      ]
+    },
+    {
+      "shape": "hostun-particle_00034",
+      "source_sha256": "759d2a46a56ffafb048ef48b9903e9b12d2302fb8339e0286dbd8eba11060f82",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.00034344602606246053,
+      "maximum_sampled_depth_fraction": 0.009999999999306577,
+      "exact_normal_traction_integral_m3": [
+        -4.765006293201716e-16,
+        -1.5740360902836672e-16,
+        1.0339647983181646e-16
+      ],
+      "exact_active_nodes": [
+        1,
+        1
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        1.1074802636535246,
+        1.1138450927549817
+      ],
+      "final_bracket_diameters": [
+        1.1101572710124552,
+        1.1101572710139371
+      ]
+    },
+    {
+      "shape": "hostun-particle_00035",
+      "source_sha256": "bfc481c6092031e7067f7b2b0ad0c749e8c73ffe30b0c988b7169da742cff6c4",
+      "target_sampled_depth_fraction": 0.0025,
+      "separation_m": 0.0005197771901869787,
+      "maximum_sampled_depth_fraction": 0.002499999999448279,
+      "exact_normal_traction_integral_m3": [
+        -1.4750688000979622e-16,
+        -6.65042356728778e-17,
+        2.776417172374307e-18
+      ],
+      "exact_active_nodes": [
+        1,
+        1
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        1.4761149812915098,
+        1.48353264451408
+      ],
+      "final_bracket_diameters": [
+        1.4829104382943479,
+        1.482910438296075
+      ]
+    },
+    {
+      "shape": "hostun-particle_00035",
+      "source_sha256": "bfc481c6092031e7067f7b2b0ad0c749e8c73ffe30b0c988b7169da742cff6c4",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.0005169147323895825,
+      "maximum_sampled_depth_fraction": 0.009999999998499674,
+      "exact_normal_traction_integral_m3": [
+        -8.98106242999642e-16,
+        -3.564420019394938e-16,
+        1.0934904734067197e-16
+      ],
+      "exact_active_nodes": [
+        2,
+        2
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        1.4686973180689393,
+        1.4761149812915098
+      ],
+      "final_bracket_diameters": [
+        1.474743922665961,
+        1.4747439226676882
+      ]
+    },
+    {
+      "shape": "hostun-particle_00036",
+      "source_sha256": "78ad852e896da73302484b66b9502a0ad24ab82232b54252138eeda64098c3c7",
+      "target_sampled_depth_fraction": 0.0025,
+      "separation_m": 0.0004535648751486879,
+      "maximum_sampled_depth_fraction": 0.0024999999995550257,
+      "exact_normal_traction_integral_m3": [
+        -5.489144665808193e-17,
+        8.757525988356172e-17,
+        -2.0996952472397806e-17
+      ],
+      "exact_active_nodes": [
+        1,
+        0
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        1.3991729381175908,
+        1.4093858792717338
+      ],
+      "final_bracket_diameters": [
+        1.4047011833296121,
+        1.40470118333199
+      ]
+    },
+    {
+      "shape": "hostun-particle_00036",
+      "source_sha256": "78ad852e896da73302484b66b9502a0ad24ab82232b54252138eeda64098c3c7",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.0004489119054237316,
+      "maximum_sampled_depth_fraction": 0.009999999999925612,
+      "exact_normal_traction_integral_m3": [
+        -4.1841823470946827e-16,
+        6.649140439502319e-16,
+        -2.3343138757664713e-16
+      ],
+      "exact_active_nodes": [
+        1,
+        3
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        1.3889599969634479,
+        1.3991729381175908
+      ],
+      "final_bracket_diameters": [
+        1.3902908256569388,
+        1.3902908256593167
+      ]
+    },
+    {
+      "shape": "hostun-particle_00037",
+      "source_sha256": "f7223956f18b9a27b07b1d2dfcb7547b961c59270d89967320656c2875aa4c7f",
+      "target_sampled_depth_fraction": 0.0025,
+      "separation_m": 0.0003110010604871071,
+      "maximum_sampled_depth_fraction": 0.002499999999065579,
+      "exact_normal_traction_integral_m3": [
+        -1.2420426810489336e-16,
+        1.398608220101365e-17,
+        -7.106465976451113e-17
+      ],
+      "exact_active_nodes": [
+        1,
+        2
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.9341929893966372,
+        0.9399596127879745
+      ],
+      "final_bracket_diameters": [
+        0.9346975403364131,
+        0.9346975403377558
+      ]
+    },
+    {
+      "shape": "hostun-particle_00037",
+      "source_sha256": "f7223956f18b9a27b07b1d2dfcb7547b961c59270d89967320656c2875aa4c7f",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.0003081927904694138,
+      "maximum_sampled_depth_fraction": 0.00999999999946212,
+      "exact_normal_traction_integral_m3": [
+        -1.3790690308534906e-15,
+        2.8200732093973135e-16,
+        -5.33687829534338e-16
+      ],
+      "exact_active_nodes": [
+        5,
+        6
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.9226597426139627,
+        0.9284263660052999
+      ],
+      "final_bracket_diameters": [
+        0.9262574306016393,
+        0.926257430602982
+      ]
+    },
+    {
+      "shape": "hostun-particle_00038",
+      "source_sha256": "029b5bc8707a8a9d658403d6d8e4e65ebfada1e2e76b8035761d8ba5e562a29e",
+      "target_sampled_depth_fraction": 0.0025,
+      "separation_m": 0.0003720462605601217,
+      "maximum_sampled_depth_fraction": 0.00249999999972033,
+      "exact_normal_traction_integral_m3": [
+        -1.6931208761603056e-15,
+        1.683520378587531e-16,
+        -4.4390058866579244e-18
+      ],
+      "exact_active_nodes": [
+        12,
+        13
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.9164467195971292,
+        0.921837582653583
+      ],
+      "final_bracket_diameters": [
+        0.9180667123240012,
+        0.9180667123252563
+      ]
+    },
+    {
+      "shape": "hostun-particle_00038",
+      "source_sha256": "029b5bc8707a8a9d658403d6d8e4e65ebfada1e2e76b8035761d8ba5e562a29e",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.00036897802754473576,
+      "maximum_sampled_depth_fraction": 0.009999999999432874,
+      "exact_normal_traction_integral_m3": [
+        -2.096537637450672e-14,
+        1.2407848748169968e-15,
+        -2.5803018432474566e-16
+      ],
+      "exact_active_nodes": [
+        27,
+        31
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.9056649934842218,
+        0.9110558565406754
+      ],
+      "final_bracket_diameters": [
+        0.9104954963337036,
+        0.9104954963349587
+      ]
+    },
+    {
+      "shape": "hostun-particle_00039",
+      "source_sha256": "c104417f34e90536354696bb8af6d2aa6e9666e7b38ec15856ced3cf7b59c167",
+      "target_sampled_depth_fraction": 0.0025,
+      "separation_m": 0.00042587759407778205,
+      "maximum_sampled_depth_fraction": 0.0024999999994390603,
+      "exact_normal_traction_integral_m3": [
+        -8.653535522285214e-17,
+        3.181491840279848e-17,
+        8.857709273998905e-17
+      ],
+      "exact_active_nodes": [
+        0,
+        1
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        1.1276880845330317,
+        1.1337185020973797
+      ],
+      "final_bracket_diameters": [
+        1.1306264453457073,
+        1.1306264453471115
+      ]
+    },
+    {
+      "shape": "hostun-particle_00039",
+      "source_sha256": "c104417f34e90536354696bb8af6d2aa6e9666e7b38ec15856ced3cf7b59c167",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.0004203444630809376,
+      "maximum_sampled_depth_fraction": 0.009999999999499071,
+      "exact_normal_traction_integral_m3": [
+        -9.484965154099499e-16,
+        9.320949604138958e-16,
+        -1.932830005667692e-16
+      ],
+      "exact_active_nodes": [
+        4,
+        2
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        1.1156272494043362,
+        1.121657666968684
+      ],
+      "final_bracket_diameters": [
+        1.1159370033144849,
+        1.1159370033158889
+      ]
+    },
+    {
+      "shape": "hostun-particle_00040",
+      "source_sha256": "d9b685172cd56610c39d483458f12ef2d752e3d24f0f0bedee2a6d14f0c25a9c",
+      "target_sampled_depth_fraction": 0.0025,
+      "separation_m": 0.00044419004687524773,
+      "maximum_sampled_depth_fraction": 0.0024999999996620126,
+      "exact_normal_traction_integral_m3": [
+        -1.1051644433254277e-16,
+        1.0509047620328888e-16,
+        1.9818075646768372e-17
+      ],
+      "exact_active_nodes": [
+        2,
+        0
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        1.3338833309563851,
+        1.3412528521218898
+      ],
+      "final_bracket_diameters": [
+        1.3357063710267423,
+        1.3357063710284582
+      ]
+    },
+    {
+      "shape": "hostun-particle_00040",
+      "source_sha256": "d9b685172cd56610c39d483458f12ef2d752e3d24f0f0bedee2a6d14f0c25a9c",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.0004410112564361129,
+      "maximum_sampled_depth_fraction": 0.009999999999721504,
+      "exact_normal_traction_integral_m3": [
+        -1.4104156652452625e-15,
+        1.070819866679414e-15,
+        5.266095662286963e-16
+      ],
+      "exact_active_nodes": [
+        5,
+        4
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        1.3191442886253752,
+        1.3265138097908802
+      ],
+      "final_bracket_diameters": [
+        1.326147555669249,
+        1.326147555670965
+      ]
+    },
+    {
+      "shape": "hostun-particle_00041",
+      "source_sha256": "5f8cd6063976090db960e3092b3a73c41716d7410c4038e63c73314f60a31391",
+      "target_sampled_depth_fraction": 0.0025,
+      "separation_m": 0.00020197265490291016,
+      "maximum_sampled_depth_fraction": 0.0024999999995531973,
+      "exact_normal_traction_integral_m3": [
+        -6.316934117560245e-17,
+        8.964586681100264e-18,
+        -1.1814179134950575e-17
+      ],
+      "exact_active_nodes": [
+        0,
+        1
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.6880884848392437,
+        0.695109795909032
+      ],
+      "final_bracket_diameters": [
+        0.6890757603579827,
+        0.6890757603596175
+      ]
+    },
+    {
+      "shape": "hostun-particle_00041",
+      "source_sha256": "5f8cd6063976090db960e3092b3a73c41716d7410c4038e63c73314f60a31391",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.00019971458563341384,
+      "maximum_sampled_depth_fraction": 0.009999999999244997,
+      "exact_normal_traction_integral_m3": [
+        -3.568493476707869e-16,
+        6.402151448776932e-17,
+        -6.356528045683465e-17
+      ],
+      "exact_active_nodes": [
+        3,
+        2
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.6810671737694556,
+        0.6880884848392437
+      ],
+      "final_bracket_diameters": [
+        0.6813718422232687,
+        0.6813718422249035
+      ]
+    },
+    {
+      "shape": "hostun-particle_00042",
+      "source_sha256": "3f0da63d3bb054eb6b2e4367aaca5b67f6d00c884786a9e0f2d0759b47ab8459",
+      "target_sampled_depth_fraction": 0.0025,
+      "separation_m": 0.00026866351586751904,
+      "maximum_sampled_depth_fraction": 0.0024999999993926426,
+      "exact_normal_traction_integral_m3": [
+        -1.581842703135871e-16,
+        -2.0144814900297976e-17,
+        2.0787072991379003e-17
+      ],
+      "exact_active_nodes": [
+        0,
+        2
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.7306418618111397,
+        0.737805017319092
+      ],
+      "final_bracket_diameters": [
+        0.7332517261285943,
+        0.7332517261302622
+      ]
+    },
+    {
+      "shape": "hostun-particle_00042",
+      "source_sha256": "3f0da63d3bb054eb6b2e4367aaca5b67f6d00c884786a9e0f2d0759b47ab8459",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.0002658399952791795,
+      "maximum_sampled_depth_fraction": 0.009999999999390333,
+      "exact_normal_traction_integral_m3": [
+        -1.5459462801548902e-15,
+        -9.732467027083745e-17,
+        1.7006786200863172e-16
+      ],
+      "exact_active_nodes": [
+        3,
+        2
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.7234787063031873,
+        0.7306418618111397
+      ],
+      "final_bracket_diameters": [
+        0.7255456133783049,
+        0.7255456133799727
+      ]
+    },
+    {
+      "shape": "hostun-particle_00043",
+      "source_sha256": "aa09a41aab6946bd7bcc4e7eff756e708be90bd9939137b0ad5e985244d44e3f",
+      "target_sampled_depth_fraction": 0.0025,
+      "separation_m": 0.00038952154699055223,
+      "maximum_sampled_depth_fraction": 0.0024999999996843645,
+      "exact_normal_traction_integral_m3": [
+        -1.3857365928950048e-16,
+        4.879737918922945e-17,
+        -7.592264908160201e-17
+      ],
+      "exact_active_nodes": [
+        1,
+        0
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.9451896062103463,
+        0.9521395297854224
+      ],
+      "final_bracket_diameters": [
+        0.9515858472863199,
+        0.9515858472879382
+      ]
+    },
+    {
+      "shape": "hostun-particle_00043",
+      "source_sha256": "aa09a41aab6946bd7bcc4e7eff756e708be90bd9939137b0ad5e985244d44e3f",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.0003859709587126887,
+      "maximum_sampled_depth_fraction": 0.00999999999897228,
+      "exact_normal_traction_integral_m3": [
+        -1.4352808621241707e-15,
+        2.2068344495653432e-16,
+        -6.289075248305799e-16
+      ],
+      "exact_active_nodes": [
+        3,
+        1
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.9382396826352702,
+        0.9451896062103463
+      ],
+      "final_bracket_diameters": [
+        0.9429118995140717,
+        0.9429118995156899
+      ]
+    },
+    {
+      "shape": "hostun-particle_00044",
+      "source_sha256": "0cf081f4c98f4c5879a93a64cd6d61ddcd56a65f276d254adbaf682d1640949b",
+      "target_sampled_depth_fraction": 0.0025,
+      "separation_m": 0.0002757970894879082,
+      "maximum_sampled_depth_fraction": 0.0024999999991886204,
+      "exact_normal_traction_integral_m3": [
+        -1.2558227266767798e-16,
+        2.7671664881104145e-17,
+        2.8992029656284375e-17
+      ],
+      "exact_active_nodes": [
+        1,
+        2
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.8702202390822846,
+        0.8766189173108309
+      ],
+      "final_bracket_diameters": [
+        0.8729535805030018,
+        0.8729535805044916
+      ]
+    },
+    {
+      "shape": "hostun-particle_00044",
+      "source_sha256": "0cf081f4c98f4c5879a93a64cd6d61ddcd56a65f276d254adbaf682d1640949b",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.0002732769041098748,
+      "maximum_sampled_depth_fraction": 0.009999999999262427,
+      "exact_normal_traction_integral_m3": [
+        -1.556837596086364e-15,
+        5.157390384908832e-16,
+        3.717553975839827e-16
+      ],
+      "exact_active_nodes": [
+        6,
+        8
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.8638215608537384,
+        0.8702202390822846
+      ],
+      "final_bracket_diameters": [
+        0.864976683961511,
+        0.8649766839630008
+      ]
+    },
+    {
+      "shape": "hostun-particle_00045",
+      "source_sha256": "2c8a8eda8d7dab15dd4da16cae6f10c9ffbe9798f101dd4e54dcd12dcde76b0b",
+      "target_sampled_depth_fraction": 0.0025,
+      "separation_m": 0.00023290830762728087,
+      "maximum_sampled_depth_fraction": 0.002499999999148103,
+      "exact_normal_traction_integral_m3": [
+        -7.227309598101957e-17,
+        2.1142005499007955e-17,
+        -6.598630203840678e-19
+      ],
+      "exact_active_nodes": [
+        1,
+        2
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.8460958748710411,
+        0.8531466738282998
+      ],
+      "final_bracket_diameters": [
+        0.8493292075519665,
+        0.8493292075536081
+      ]
+    },
+    {
+      "shape": "hostun-particle_00045",
+      "source_sha256": "2c8a8eda8d7dab15dd4da16cae6f10c9ffbe9798f101dd4e54dcd12dcde76b0b",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.00023082139689348748,
+      "maximum_sampled_depth_fraction": 0.009999999998711026,
+      "exact_normal_traction_integral_m3": [
+        -7.387273866686372e-16,
+        2.3186145722703837e-16,
+        1.410063851826295e-17
+      ],
+      "exact_active_nodes": [
+        4,
+        3
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.8390450759137824,
+        0.8460958748710411
+      ],
+      "final_bracket_diameters": [
+        0.8417190271430979,
+        0.8417190271447396
+      ]
+    },
+    {
+      "shape": "hostun-particle_00046",
+      "source_sha256": "cc052e79359b065f7a988f20ccba23ede744cb023b661f8c5476d4ec3a151431",
+      "target_sampled_depth_fraction": 0.0025,
+      "separation_m": 0.0002955814244891113,
+      "maximum_sampled_depth_fraction": 0.002499999999296976,
+      "exact_normal_traction_integral_m3": [
+        -9.607379982395717e-17,
+        -7.903141473810478e-17,
+        4.5940801434310286e-18
+      ],
+      "exact_active_nodes": [
+        1,
+        1
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.992102367359886,
+        0.9988975890541317
+      ],
+      "final_bracket_diameters": [
+        0.9945094267935163,
+        0.9945094267950985
+      ]
+    },
+    {
+      "shape": "hostun-particle_00046",
+      "source_sha256": "cc052e79359b065f7a988f20ccba23ede744cb023b661f8c5476d4ec3a151431",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.0002929340224854687,
+      "maximum_sampled_depth_fraction": 0.009999999999205594,
+      "exact_normal_traction_integral_m3": [
+        -9.60521327035853e-16,
+        -4.933880381391287e-16,
+        -1.0221146032213636e-16
+      ],
+      "exact_active_nodes": [
+        4,
+        4
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.9853071456656401,
+        0.992102367359886
+      ],
+      "final_bracket_diameters": [
+        0.9856020123519981,
+        0.9856020123535802
+      ]
+    },
+    {
+      "shape": "hostun-particle_00047",
+      "source_sha256": "b09bf2755c607f35653723ceaf8363caab2303fa9cffcaf73fcccf83c9b1fa13",
+      "target_sampled_depth_fraction": 0.0025,
+      "separation_m": 0.00046495203981799317,
+      "maximum_sampled_depth_fraction": 0.0024999999993707603,
+      "exact_normal_traction_integral_m3": [
+        -1.4421304203677183e-16,
+        3.115534109365823e-17,
+        -4.0974241947532066e-17
+      ],
+      "exact_active_nodes": [
+        1,
+        1
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        1.437088927590271,
+        1.4448152121472078
+      ],
+      "final_bracket_diameters": [
+        1.4371630598708813,
+        1.4371630598726801
+      ]
+    },
+    {
+      "shape": "hostun-particle_00047",
+      "source_sha256": "b09bf2755c607f35653723ceaf8363caab2303fa9cffcaf73fcccf83c9b1fa13",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.0004622619790225107,
+      "maximum_sampled_depth_fraction": 0.00999999999983024,
+      "exact_normal_traction_integral_m3": [
+        -6.454269970773232e-16,
+        1.9709493373676722e-16,
+        -1.7775835541741032e-16
+      ],
+      "exact_active_nodes": [
+        2,
+        1
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        1.421636358476397,
+        1.429362643033334
+      ],
+      "final_bracket_diameters": [
+        1.4288481033312936,
+        1.4288481033330926
+      ]
+    },
+    {
+      "shape": "hostun-particle_00048",
+      "source_sha256": "8ecae546d13de00e6efff92d304408a1022f3961f3e79537e9ecf66c75a94891",
+      "target_sampled_depth_fraction": 0.0025,
+      "separation_m": 0.0003634650865738693,
+      "maximum_sampled_depth_fraction": 0.002499999998884495,
+      "exact_normal_traction_integral_m3": [
+        -2.2821128933033655e-16,
+        -2.7926448526600166e-17,
+        -7.523892915238046e-17
+      ],
+      "exact_active_nodes": [
+        1,
+        2
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.9949620192185629,
+        1.0009920920623117
+      ],
+      "final_bracket_diameters": [
+        0.9970981496797593,
+        0.9970981496811633
+      ]
+    },
+    {
+      "shape": "hostun-particle_00048",
+      "source_sha256": "8ecae546d13de00e6efff92d304408a1022f3961f3e79537e9ecf66c75a94891",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.0003605445073270099,
+      "maximum_sampled_depth_fraction": 0.009999999999165836,
+      "exact_normal_traction_integral_m3": [
+        -1.5594236264416795e-15,
+        -2.084203710689927e-16,
+        -4.307599994672586e-16
+      ],
+      "exact_active_nodes": [
+        4,
+        5
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.988931946374814,
+        0.9949620192185629
+      ],
+      "final_bracket_diameters": [
+        0.9890860894555131,
+        0.9890860894569171
+      ]
+    },
+    {
+      "shape": "hostun-particle_00049",
+      "source_sha256": "48e9480d41709ee3553ed2c96e212a23af6a971521182813995bc4db1412d3e5",
+      "target_sampled_depth_fraction": 0.0025,
+      "separation_m": 0.0002442899300692371,
+      "maximum_sampled_depth_fraction": 0.0024999999999133515,
+      "exact_normal_traction_integral_m3": [
+        -7.317423159048272e-17,
+        -1.9798455910325612e-17,
+        -1.8560834149294862e-17
+      ],
+      "exact_active_nodes": [
+        2,
+        0
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.8001712644893516,
+        0.806471825627063
+      ],
+      "final_bracket_diameters": [
+        0.8044534132558077,
+        0.8044534132572747
+      ]
+    },
+    {
+      "shape": "hostun-particle_00049",
+      "source_sha256": "48e9480d41709ee3553ed2c96e212a23af6a971521182813995bc4db1412d3e5",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.00024182351047479943,
+      "maximum_sampled_depth_fraction": 0.00999999999991409,
+      "exact_normal_traction_integral_m3": [
+        -6.831125452890638e-16,
+        -1.8470004104070306e-16,
+        -1.6906506566359384e-16
+      ],
+      "exact_active_nodes": [
+        4,
+        1
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.7938707033516401,
+        0.8001712644893516
+      ],
+      "final_bracket_diameters": [
+        0.7963314261534018,
+        0.7963314261548687
+      ]
+    },
+    {
+      "shape": "hostun-particle_00050",
+      "source_sha256": "fe2b010ab1723a34b7ffdfa0da3c6a6fac242f39e355358cbaeebc0dac32dcb4",
+      "target_sampled_depth_fraction": 0.0025,
+      "separation_m": 0.00039594234768905434,
+      "maximum_sampled_depth_fraction": 0.002499999999430099,
+      "exact_normal_traction_integral_m3": [
+        -3.072423999728791e-16,
+        7.514730671263252e-17,
+        5.257554839850606e-19
+      ],
+      "exact_active_nodes": [
+        2,
+        1
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        1.0428783034974969,
+        1.0504353926532757
+      ],
+      "final_bracket_diameters": [
+        1.0497390683236127,
+        1.0497390683253722
+      ]
+    },
+    {
+      "shape": "hostun-particle_00050",
+      "source_sha256": "fe2b010ab1723a34b7ffdfa0da3c6a6fac242f39e355358cbaeebc0dac32dcb4",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.00039294579748809825,
+      "maximum_sampled_depth_fraction": 0.009999999998336003,
+      "exact_normal_traction_integral_m3": [
+        -1.814939160118697e-15,
+        3.335066564721314e-16,
+        -1.8391723048114534e-16
+      ],
+      "exact_active_nodes": [
+        4,
+        2
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        1.0353212143417179,
+        1.0428783034974969
+      ],
+      "final_bracket_diameters": [
+        1.0417944879206793,
+        1.041794487922439
+      ]
+    },
+    {
+      "shape": "hostun-particle_00051",
+      "source_sha256": "0452237103d97402f6406f58765f41cd734569ae37484a535709f30f26d23034",
+      "target_sampled_depth_fraction": 0.0025,
+      "separation_m": 0.0002612216361926673,
+      "maximum_sampled_depth_fraction": 0.0024999999999463594,
+      "exact_normal_traction_integral_m3": [
+        -7.077788702311549e-17,
+        -1.5030326055666882e-18,
+        3.032393719684632e-17
+      ],
+      "exact_active_nodes": [
+        1,
+        0
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.8007004858894284,
+        0.8071577478724078
+      ],
+      "final_bracket_diameters": [
+        0.8049176600359813,
+        0.8049176600374848
+      ]
+    },
+    {
+      "shape": "hostun-particle_00051",
+      "source_sha256": "0452237103d97402f6406f58765f41cd734569ae37484a535709f30f26d23034",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.00025861273054251935,
+      "maximum_sampled_depth_fraction": 0.009999999998711063,
+      "exact_normal_traction_integral_m3": [
+        -3.0071382171329694e-16,
+        -6.4300207018531396e-18,
+        1.0670124660642783e-16
+      ],
+      "exact_active_nodes": [
+        1,
+        1
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.7942432239064492,
+        0.8007004858894284
+      ],
+      "final_bracket_diameters": [
+        0.7968786849274003,
+        0.7968786849289038
+      ]
+    },
+    {
+      "shape": "hostun-particle_00052",
+      "source_sha256": "51da6fccd04f192e399a6d0f4b2106ec48358f2f08a4b85e3592e2110d595e54",
+      "target_sampled_depth_fraction": 0.0025,
+      "separation_m": 0.00037010064263418615,
+      "maximum_sampled_depth_fraction": 0.0024999999986174363,
+      "exact_normal_traction_integral_m3": [
+        -1.3036133793352472e-16,
+        3.8541495537722403e-17,
+        -5.083025988244177e-17
+      ],
+      "exact_active_nodes": [
+        0,
+        2
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        1.1057191249515481,
+        1.1147087113332679
+      ],
+      "final_bracket_diameters": [
+        1.1145064150186754,
+        1.1145064150207684
+      ]
+    },
+    {
+      "shape": "hostun-particle_00052",
+      "source_sha256": "51da6fccd04f192e399a6d0f4b2106ec48358f2f08a4b85e3592e2110d595e54",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.00036704720705492877,
+      "maximum_sampled_depth_fraction": 0.009999999998854162,
+      "exact_normal_traction_integral_m3": [
+        -8.969355953900144e-16,
+        4.538745289044344e-16,
+        -5.886192469772689e-16
+      ],
+      "exact_active_nodes": [
+        1,
+        3
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        1.0967295385698281,
+        1.1057191249515481
+      ],
+      "final_bracket_diameters": [
+        1.1053114200661844,
+        1.1053114200682774
+      ]
+    },
+    {
+      "shape": "hostun-particle_00053",
+      "source_sha256": "912d2affdd4efa3cbe93e770e7ab3281f4a9722655069d786d90a98c4363b084",
+      "target_sampled_depth_fraction": 0.0025,
+      "separation_m": 0.00029436565288779227,
+      "maximum_sampled_depth_fraction": 0.0024999999999632283,
+      "exact_normal_traction_integral_m3": [
+        -3.920071073979931e-17,
+        1.2833161946948978e-17,
+        -1.3602793903480027e-17
+      ],
+      "exact_active_nodes": [
+        1,
+        1
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        1.1616433570241935,
+        1.1676312093799883
+      ],
+      "final_bracket_diameters": [
+        1.1656501571572715,
+        1.1656501571586655
+      ]
+    },
+    {
+      "shape": "hostun-particle_00053",
+      "source_sha256": "912d2affdd4efa3cbe93e770e7ab3281f4a9722655069d786d90a98c4363b084",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.0002922030033296935,
+      "maximum_sampled_depth_fraction": 0.009999999999185511,
+      "exact_normal_traction_integral_m3": [
+        -2.7647701059739855e-16,
+        8.04546167332127e-17,
+        -1.123907499770508e-16
+      ],
+      "exact_active_nodes": [
+        2,
+        3
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        1.1556555046683987,
+        1.1616433570241935
+      ],
+      "final_bracket_diameters": [
+        1.1570863428244968,
+        1.157086342825891
+      ]
+    },
+    {
+      "shape": "hostun-particle_00054",
+      "source_sha256": "b00c923172cd0090fa19621d7142f210a920623b8ab63043fce2a9b174443239",
+      "target_sampled_depth_fraction": 0.0025,
+      "separation_m": 0.00014124146466865768,
+      "maximum_sampled_depth_fraction": 0.002499999999486978,
+      "exact_normal_traction_integral_m3": [
+        -3.8554212030096746e-16,
+        -3.547839723165495e-18,
+        -2.3742952998631615e-18
+      ],
+      "exact_active_nodes": [
+        3,
+        5
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.4052667557186225,
+        0.4129132982793511
+      ],
+      "final_bracket_diameters": [
+        0.40538045031066583,
+        0.4053804503124462
+      ]
+    },
+    {
+      "shape": "hostun-particle_00054",
+      "source_sha256": "b00c923172cd0090fa19621d7142f210a920623b8ab63043fce2a9b174443239",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.00013862776581757743,
+      "maximum_sampled_depth_fraction": 0.009999999999978233,
+      "exact_normal_traction_integral_m3": [
+        -1.8140351410335484e-14,
+        -1.6829010255249078e-16,
+        -6.023806651292189e-17
+      ],
+      "exact_active_nodes": [
+        54,
+        54
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.39762021315789364,
+        0.4052667557186225
+      ],
+      "final_bracket_diameters": [
+        0.3978788117534784,
+        0.39787881175525874
+      ]
+    },
+    {
+      "shape": "hostun-particle_00055",
+      "source_sha256": "e9718139ba02a9b341595a91e60b03fc37fa13d8d31b8c08ac6b246b6e7f7d5e",
+      "target_sampled_depth_fraction": 0.0025,
+      "separation_m": 0.0002766391291865612,
+      "maximum_sampled_depth_fraction": 0.0024999999997531736,
+      "exact_normal_traction_integral_m3": [
+        -1.163602680890261e-16,
+        -3.1875378806057503e-17,
+        3.747627462646612e-17
+      ],
+      "exact_active_nodes": [
+        2,
+        1
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.8892706702679101,
+        0.8957616970581868
+      ],
+      "final_bracket_diameters": [
+        0.8943074240995968,
+        0.8943074241011082
+      ]
+    },
+    {
+      "shape": "hostun-particle_00055",
+      "source_sha256": "e9718139ba02a9b341595a91e60b03fc37fa13d8d31b8c08ac6b246b6e7f7d5e",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.0002739792292697406,
+      "maximum_sampled_depth_fraction": 0.009999999999826488,
+      "exact_normal_traction_integral_m3": [
+        -1.1470386733691877e-15,
+        -2.653206544422267e-16,
+        2.342397510370195e-16
+      ],
+      "exact_active_nodes": [
+        5,
+        1
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.8827796434776334,
+        0.8892706702679101
+      ],
+      "final_bracket_diameters": [
+        0.8857086107286425,
+        0.8857086107301538
+      ]
+    },
+    {
+      "shape": "hostun-particle_00056",
+      "source_sha256": "495af93dbd6de7fb69352aebdcd896160e56885c5826009310eacfae0afed0c8",
+      "target_sampled_depth_fraction": 0.0025,
+      "separation_m": 0.00032635837948107537,
+      "maximum_sampled_depth_fraction": 0.0024999999997896384,
+      "exact_normal_traction_integral_m3": [
+        -3.695371333729742e-16,
+        9.538694058980268e-17,
+        -3.3540494271591576e-18
+      ],
+      "exact_active_nodes": [
+        2,
+        1
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.8312730696092783,
+        0.8390419768018884
+      ],
+      "final_bracket_diameters": [
+        0.8329571641454582,
+        0.8329571641472671
+      ]
+    },
+    {
+      "shape": "hostun-particle_00056",
+      "source_sha256": "495af93dbd6de7fb69352aebdcd896160e56885c5826009310eacfae0afed0c8",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.00032324465218713935,
+      "maximum_sampled_depth_fraction": 0.009999999998648914,
+      "exact_normal_traction_integral_m3": [
+        -2.206574830133288e-15,
+        5.82976664031698e-16,
+        1.0605800928936659e-16
+      ],
+      "exact_active_nodes": [
+        3,
+        2
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.8235041624166681,
+        0.8312730696092783
+      ],
+      "final_bracket_diameters": [
+        0.8250100678864044,
+        0.8250100678882133
+      ]
+    },
+    {
+      "shape": "hostun-particle_00057",
+      "source_sha256": "10ad9b68bc7697f311995f20784ba19ccd149ec1d210bc3f3ce809077c85945a",
+      "target_sampled_depth_fraction": 0.0025,
+      "separation_m": 0.0003358570444855006,
+      "maximum_sampled_depth_fraction": 0.0024999999987092,
+      "exact_normal_traction_integral_m3": [
+        -7.521910153930312e-17,
+        0.0,
+        -1.229251060302414e-17
+      ],
+      "exact_active_nodes": [
+        1,
+        0
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        1.0561690349980881,
+        1.0629830287722695
+      ],
+      "final_bracket_diameters": [
+        1.057050465282579,
+        1.0570504652841655
+      ]
+    },
+    {
+      "shape": "hostun-particle_00057",
+      "source_sha256": "10ad9b68bc7697f311995f20784ba19ccd149ec1d210bc3f3ce809077c85945a",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.0003323996647017883,
+      "maximum_sampled_depth_fraction": 0.009999999999375673,
+      "exact_normal_traction_integral_m3": [
+        -7.514379387806996e-16,
+        -1.245743028307088e-16,
+        -4.1952562418106124e-16
+      ],
+      "exact_active_nodes": [
+        3,
+        2
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        1.0425410474497259,
+        1.049355041223907
+      ],
+      "final_bracket_diameters": [
+        1.046168975764812,
+        1.0461689757663986
+      ]
+    },
+    {
+      "shape": "hostun-particle_00058",
+      "source_sha256": "3173043b1d10888aa77d6333322b4e46de8e74e215c90170c344717f8d732a65",
+      "target_sampled_depth_fraction": 0.0025,
+      "separation_m": 0.00032736849692177085,
+      "maximum_sampled_depth_fraction": 0.0024999999988910794,
+      "exact_normal_traction_integral_m3": [
+        -9.591097646785783e-17,
+        -6.036181287741569e-17,
+        -1.0833869371311504e-17
+      ],
+      "exact_active_nodes": [
+        0,
+        1
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.8906988845152075,
+        0.8969275480432859
+      ],
+      "final_bracket_diameters": [
+        0.8918008843537417,
+        0.891800884355192
+      ]
+    },
+    {
+      "shape": "hostun-particle_00058",
+      "source_sha256": "3173043b1d10888aa77d6333322b4e46de8e74e215c90170c344717f8d732a65",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.00032410459822715485,
+      "maximum_sampled_depth_fraction": 0.009999999999140826,
+      "exact_normal_traction_integral_m3": [
+        -1.5749079334266897e-15,
+        -9.549621108038901e-16,
+        -1.9878917241275903e-16
+      ],
+      "exact_active_nodes": [
+        3,
+        7
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.8782415574590507,
+        0.8844702209871291
+      ],
+      "final_bracket_diameters": [
+        0.8829095347899507,
+        0.8829095347914009
+      ]
+    },
+    {
+      "shape": "hostun-particle_00059",
+      "source_sha256": "c91100d7042f1aacb8f20630ff908d362e41ebafd1b805031867675bbb68f909",
+      "target_sampled_depth_fraction": 0.0025,
+      "separation_m": 0.00024808861944325205,
+      "maximum_sampled_depth_fraction": 0.0024999999996683175,
+      "exact_normal_traction_integral_m3": [
+        -6.326658054965172e-17,
+        6.658540107928701e-18,
+        8.893964275599903e-18
+      ],
+      "exact_active_nodes": [
+        0,
+        1
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.8356860341123564,
+        0.8432147371223777
+      ],
+      "final_bracket_diameters": [
+        0.8368373957651024,
+        0.8368373957668553
+      ]
+    },
+    {
+      "shape": "hostun-particle_00059",
+      "source_sha256": "c91100d7042f1aacb8f20630ff908d362e41ebafd1b805031867675bbb68f909",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.0002458384441738947,
+      "maximum_sampled_depth_fraction": 0.00999999999929385,
+      "exact_normal_traction_integral_m3": [
+        -4.0941211538579715e-16,
+        2.4068391253127145e-17,
+        4.376879143047683e-17
+      ],
+      "exact_active_nodes": [
+        1,
+        1
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.8281573311023351,
+        0.8356860341123564
+      ],
+      "final_bracket_diameters": [
+        0.8292472418247331,
+        0.829247241826486
+      ]
+    },
+    {
+      "shape": "hostun-particle_00060",
+      "source_sha256": "07fef318a4044a3971b956a9c5d775afc6f9e038fc07c037c2fb65546b060bdf",
+      "target_sampled_depth_fraction": 0.0025,
+      "separation_m": 0.00027353173444468745,
+      "maximum_sampled_depth_fraction": 0.002499999998903654,
+      "exact_normal_traction_integral_m3": [
+        -1.6608427163859478e-16,
+        -6.938059826010279e-18,
+        -9.022803386052204e-17
+      ],
+      "exact_active_nodes": [
+        2,
+        1
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.7471988877098203,
+        0.7549822094567977
+      ],
+      "final_bracket_diameters": [
+        0.7475150051538701,
+        0.7475150051556824
+      ]
+    },
+    {
+      "shape": "hostun-particle_00060",
+      "source_sha256": "07fef318a4044a3971b956a9c5d775afc6f9e038fc07c037c2fb65546b060bdf",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.0002702927279865078,
+      "maximum_sampled_depth_fraction": 0.009999999998917864,
+      "exact_normal_traction_integral_m3": [
+        -2.151890921387156e-15,
+        -1.2842742600051965e-16,
+        -1.032705610957385e-15
+      ],
+      "exact_active_nodes": [
+        3,
+        6
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.7316322442158658,
+        0.739415565962843
+      ],
+      "final_bracket_diameters": [
+        0.7386633597160899,
+        0.7386633597179021
+      ]
+    },
+    {
+      "shape": "hostun-particle_00061",
+      "source_sha256": "d66e62d7a19dc83d7aa9c8539ce5cc52b02c122c17798da546e4d4d4f2aacaf7",
+      "target_sampled_depth_fraction": 0.0025,
+      "separation_m": 0.00032780371184011327,
+      "maximum_sampled_depth_fraction": 0.00249999999977308,
+      "exact_normal_traction_integral_m3": [
+        -8.946822278006568e-17,
+        1.437909790071368e-17,
+        -4.4199457824752404e-17
+      ],
+      "exact_active_nodes": [
+        1,
+        0
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.9514109042671522,
+        0.9583051861821317
+      ],
+      "final_bracket_diameters": [
+        0.9557593180861985,
+        0.9557593180878038
+      ]
+    },
+    {
+      "shape": "hostun-particle_00061",
+      "source_sha256": "d66e62d7a19dc83d7aa9c8539ce5cc52b02c122c17798da546e4d4d4f2aacaf7",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.00032490496945443827,
+      "maximum_sampled_depth_fraction": 0.00999999999974345,
+      "exact_normal_traction_integral_m3": [
+        -3.5787289114356285e-16,
+        5.751639160660561e-17,
+        -1.767978313105237e-16
+      ],
+      "exact_active_nodes": [
+        1,
+        0
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.9445166223521729,
+        0.9514109042671522
+      ],
+      "final_bracket_diameters": [
+        0.9473076137711594,
+        0.9473076137727645
+      ]
+    },
+    {
+      "shape": "hostun-particle_00062",
+      "source_sha256": "fd69fe5e1eeae37f472027833ff7f0794f7da303575cf3378376d6ba19f060b3",
+      "target_sampled_depth_fraction": 0.0025,
+      "separation_m": 0.00019482051477702096,
+      "maximum_sampled_depth_fraction": 0.002499999999040652,
+      "exact_normal_traction_integral_m3": [
+        -4.4901645310320426e-17,
+        -6.803257601362881e-18,
+        -1.58689887854095e-17
+      ],
+      "exact_active_nodes": [
+        1,
+        0
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.7572245221402711,
+        0.7659282522798145
+      ],
+      "final_bracket_diameters": [
+        0.757226064744811,
+        0.7572260647468375
+      ]
+    },
+    {
+      "shape": "hostun-particle_00062",
+      "source_sha256": "fd69fe5e1eeae37f472027833ff7f0794f7da303575cf3378376d6ba19f060b3",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.00019273957193039913,
+      "maximum_sampled_depth_fraction": 0.009999999999801844,
+      "exact_normal_traction_integral_m3": [
+        -5.3853384667683705e-16,
+        -1.538927133762995e-16,
+        -1.5142741709820393e-16
+      ],
+      "exact_active_nodes": [
+        3,
+        3
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.748520792000728,
+        0.7572245221402711
+      ],
+      "final_bracket_diameters": [
+        0.749137880784749,
+        0.7491378807867755
+      ]
+    },
+    {
+      "shape": "hostun-particle_00063",
+      "source_sha256": "0f767dcd6ef72a1e28bae27962dd7e726f07abe678e413297b6f4f5876fa5f18",
+      "target_sampled_depth_fraction": 0.0025,
+      "separation_m": 0.00027520963485718576,
+      "maximum_sampled_depth_fraction": 0.002499999998555818,
+      "exact_normal_traction_integral_m3": [
+        -6.118575322672966e-17,
+        4.49378233928551e-19,
+        3.5593133589107436e-17
+      ],
+      "exact_active_nodes": [
+        2,
+        0
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.9527130868390292,
+        0.9612194536858063
+      ],
+      "final_bracket_diameters": [
+        0.9571866507395902,
+        0.9571866507415707
+      ]
+    },
+    {
+      "shape": "hostun-particle_00063",
+      "source_sha256": "0f767dcd6ef72a1e28bae27962dd7e726f07abe678e413297b6f4f5876fa5f18",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.00027267217369489403,
+      "maximum_sampled_depth_fraction": 0.00999999999978885,
+      "exact_normal_traction_integral_m3": [
+        -8.321830720911684e-16,
+        -9.777087947372454e-17,
+        4.3750502893390146e-16
+      ],
+      "exact_active_nodes": [
+        4,
+        4
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.9442067199922524,
+        0.9527130868390292
+      ],
+      "final_bracket_diameters": [
+        0.9483612912910331,
+        0.9483612912930136
+      ]
+    },
+    {
+      "shape": "hostun-particle_00064",
+      "source_sha256": "7468bd6dce63c6d012328f1b62f2230edcee00f32e00c4c4e4d981af94b7308c",
+      "target_sampled_depth_fraction": 0.0025,
+      "separation_m": 0.00041052253637023937,
+      "maximum_sampled_depth_fraction": 0.0024999999991543445,
+      "exact_normal_traction_integral_m3": [
+        -1.3605186193396745e-16,
+        5.865531704745182e-18,
+        2.844374031882658e-17
+      ],
+      "exact_active_nodes": [
+        1,
+        1
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        1.1591718974153886,
+        1.1655761620419929
+      ],
+      "final_bracket_diameters": [
+        1.1643952800822044,
+        1.1643952800836954
+      ]
+    },
+    {
+      "shape": "hostun-particle_00064",
+      "source_sha256": "7468bd6dce63c6d012328f1b62f2230edcee00f32e00c4c4e4d981af94b7308c",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.0004078759149077614,
+      "maximum_sampled_depth_fraction": 0.009999999999512468,
+      "exact_normal_traction_integral_m3": [
+        -1.0180942251851446e-15,
+        -5.402213755886767e-17,
+        2.0834306586383236e-16
+      ],
+      "exact_active_nodes": [
+        2,
+        2
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        1.1527676327887841,
+        1.1591718974153886
+      ],
+      "final_bracket_diameters": [
+        1.1568884728644437,
+        1.1568884728659348
+      ]
+    },
+    {
+      "shape": "hostun-particle_00065",
+      "source_sha256": "710cb456519e9250a8d173a5a5f5acd1d03ac7c14a83b8da727ba901b156448f",
+      "target_sampled_depth_fraction": 0.0025,
+      "separation_m": 0.0003282070520746349,
+      "maximum_sampled_depth_fraction": 0.0024999999991794477,
+      "exact_normal_traction_integral_m3": [
+        -1.794604407623956e-16,
+        -1.853109471693513e-18,
+        -1.1735845327219398e-16
+      ],
+      "exact_active_nodes": [
+        1,
+        1
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.8615104988679911,
+        0.8692025568935982
+      ],
+      "final_bracket_diameters": [
+        0.8637930192439256,
+        0.8637930192457165
+      ]
+    },
+    {
+      "shape": "hostun-particle_00065",
+      "source_sha256": "710cb456519e9250a8d173a5a5f5acd1d03ac7c14a83b8da727ba901b156448f",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.00032481529958428213,
+      "maximum_sampled_depth_fraction": 0.009999999998968598,
+      "exact_normal_traction_integral_m3": [
+        -2.0466207487689206e-15,
+        4.364831716538849e-17,
+        -1.2161242907276869e-15
+      ],
+      "exact_active_nodes": [
+        4,
+        4
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.8538184408423841,
+        0.8615104988679911
+      ],
+      "final_bracket_diameters": [
+        0.8548664221289135,
+        0.8548664221307045
+      ]
+    },
+    {
+      "shape": "hostun-particle_00066",
+      "source_sha256": "6261b496a0cf321ffcf0c4bce1d476c07b10c64e2e3c85b7ef04425b08ff6e0f",
+      "target_sampled_depth_fraction": 0.0025,
+      "separation_m": 0.00040971187824236045,
+      "maximum_sampled_depth_fraction": 0.0024999999989657497,
+      "exact_normal_traction_integral_m3": [
+        -1.1617074523888765e-16,
+        -9.985759300678062e-18,
+        -2.9412239836053544e-17
+      ],
+      "exact_active_nodes": [
+        1,
+        1
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        1.1487973625673327,
+        1.1551795701371512
+      ],
+      "final_bracket_diameters": [
+        1.1515392086966116,
+        1.1515392086980978
+      ]
+    },
+    {
+      "shape": "hostun-particle_00066",
+      "source_sha256": "6261b496a0cf321ffcf0c4bce1d476c07b10c64e2e3c85b7ef04425b08ff6e0f",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.00040695649474189804,
+      "maximum_sampled_depth_fraction": 0.009999999999646304,
+      "exact_normal_traction_integral_m3": [
+        -1.4761218144178852e-15,
+        -1.1720320117153704e-16,
+        -5.401443611687483e-16
+      ],
+      "exact_active_nodes": [
+        4,
+        3
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        1.1424151549975141,
+        1.1487973625673327
+      ],
+      "final_bracket_diameters": [
+        1.14379490762974,
+        1.1437949076312262
+      ]
+    },
+    {
+      "shape": "hostun-particle_00067",
+      "source_sha256": "c6ab3aa11e34aec93978a9e80b3ef54212bc5f1264ee8b95d34111809bc31fa8",
+      "target_sampled_depth_fraction": 0.0025,
+      "separation_m": 0.0003181693603731821,
+      "maximum_sampled_depth_fraction": 0.002499999999780926,
+      "exact_normal_traction_integral_m3": [
+        -2.470670866404564e-16,
+        -6.056391785220836e-17,
+        -2.9334411754985063e-18
+      ],
+      "exact_active_nodes": [
+        1,
+        3
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.9141924262357852,
+        0.9212246756683682
+      ],
+      "final_bracket_diameters": [
+        0.9185544618097308,
+        0.9185544618113681
+      ]
+    },
+    {
+      "shape": "hostun-particle_00067",
+      "source_sha256": "c6ab3aa11e34aec93978a9e80b3ef54212bc5f1264ee8b95d34111809bc31fa8",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.0003154363769235218,
+      "maximum_sampled_depth_fraction": 0.009999999998509526,
+      "exact_normal_traction_integral_m3": [
+        -1.7325808749338707e-15,
+        -3.790422974983157e-16,
+        7.689237618771599e-17
+      ],
+      "exact_active_nodes": [
+        2,
+        4
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.9071601768032023,
+        0.9141924262357852
+      ],
+      "final_bracket_diameters": [
+        0.9106643427272471,
+        0.9106643427288843
+      ]
+    },
+    {
+      "shape": "hostun-particle_00068",
+      "source_sha256": "70c10509475fade5f3d2e38470f8a564ac1d2cd04561d26cf0d71647b147b3d3",
+      "target_sampled_depth_fraction": 0.0025,
+      "separation_m": 0.0003184429187557091,
+      "maximum_sampled_depth_fraction": 0.0024999999990968653,
+      "exact_normal_traction_integral_m3": [
+        -4.9172767383942383e-17,
+        7.917764970018281e-18,
+        -2.016760973337767e-18
+      ],
+      "exact_active_nodes": [
+        1,
+        0
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        1.1370421980802594,
+        1.1431883721239364
+      ],
+      "final_bracket_diameters": [
+        1.1388344828482264,
+        1.1388344828496575
+      ]
+    },
+    {
+      "shape": "hostun-particle_00068",
+      "source_sha256": "70c10509475fade5f3d2e38470f8a564ac1d2cd04561d26cf0d71647b147b3d3",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.0003163170019082239,
+      "maximum_sampled_depth_fraction": 0.009999999999509275,
+      "exact_normal_traction_integral_m3": [
+        -3.786761482621124e-16,
+        6.395761917122841e-17,
+        3.180832923257448e-17
+      ],
+      "exact_active_nodes": [
+        3,
+        2
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        1.1308960240365822,
+        1.1370421980802594
+      ],
+      "final_bracket_diameters": [
+        1.131231652730203,
+        1.1312316527316342
+      ]
+    },
+    {
+      "shape": "hostun-particle_00070",
+      "source_sha256": "675c37d2cfca2f66a42d6339302fd7a7dad85bb546722def6e3908fa9d425be3",
+      "target_sampled_depth_fraction": 0.0025,
+      "separation_m": 0.00019284800181482988,
+      "maximum_sampled_depth_fraction": 0.0024999999990540484,
+      "exact_normal_traction_integral_m3": [
+        -6.06469212860503e-17,
+        -8.644858718021743e-19,
+        5.287028861053463e-18
+      ],
+      "exact_active_nodes": [
+        2,
+        0
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.7174072820567643,
+        0.7241752752837147
+      ],
+      "final_bracket_diameters": [
+        0.723420529159432,
+        0.7234205291610079
+      ]
+    },
+    {
+      "shape": "hostun-particle_00070",
+      "source_sha256": "675c37d2cfca2f66a42d6339302fd7a7dad85bb546722def6e3908fa9d425be3",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.0001908424151224877,
+      "maximum_sampled_depth_fraction": 0.009999999998448039,
+      "exact_normal_traction_integral_m3": [
+        -5.795142898934308e-16,
+        -1.0287222908665232e-16,
+        4.650828657102465e-17
+      ],
+      "exact_active_nodes": [
+        3,
+        4
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.7106392888298136,
+        0.7174072820567643
+      ],
+      "final_bracket_diameters": [
+        0.7158970776712202,
+        0.715897077672796
+      ]
+    },
+    {
+      "shape": "hostun-particle_00071",
+      "source_sha256": "d95fdbc826d279b9878021fec4677aa2ac8c27585ec22b42eb06df3c5b7cbc10",
+      "target_sampled_depth_fraction": 0.0025,
+      "separation_m": 0.00042335687971913234,
+      "maximum_sampled_depth_fraction": 0.0024999999999365525,
+      "exact_normal_traction_integral_m3": [
+        -6.504105401236647e-17,
+        -3.9003007317199586e-17,
+        7.378789755004548e-17
+      ],
+      "exact_active_nodes": [
+        1,
+        0
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        1.1778060173777691,
+        1.1836080174633739
+      ],
+      "final_bracket_diameters": [
+        1.1785509319511216,
+        1.1785509319524725
+      ]
+    },
+    {
+      "shape": "hostun-particle_00071",
+      "source_sha256": "d95fdbc826d279b9878021fec4677aa2ac8c27585ec22b42eb06df3c5b7cbc10",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.0004189560098202765,
+      "maximum_sampled_depth_fraction": 0.009999999999381596,
+      "exact_normal_traction_integral_m3": [
+        -7.353462672334273e-16,
+        -2.939890859545274e-16,
+        2.0141908680841062e-16
+      ],
+      "exact_active_nodes": [
+        2,
+        2
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        1.1662020172065595,
+        1.1720040172921644
+      ],
+      "final_bracket_diameters": [
+        1.1662996858531742,
+        1.1662996858545251
+      ]
+    },
+    {
+      "shape": "hostun-particle_00072",
+      "source_sha256": "12e82225b03777b9f6c7012b0fdf6be3b5af1dfa130e8e5c0c1293dc6ad7c59b",
+      "target_sampled_depth_fraction": 0.0025,
+      "separation_m": 0.0003575842477224035,
+      "maximum_sampled_depth_fraction": 0.0024999999987855666,
+      "exact_normal_traction_integral_m3": [
+        -1.150659521938101e-16,
+        -2.592228517423005e-17,
+        -4.023797295682663e-17
+      ],
+      "exact_active_nodes": [
+        1,
+        1
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        1.1453170881751804,
+        1.1529019695538243
+      ],
+      "final_bracket_diameters": [
+        1.1505060756246306,
+        1.1505060756263965
+      ]
+    },
+    {
+      "shape": "hostun-particle_00072",
+      "source_sha256": "12e82225b03777b9f6c7012b0fdf6be3b5af1dfa130e8e5c0c1293dc6ad7c59b",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.00035495892643854084,
+      "maximum_sampled_depth_fraction": 0.00999999999985614,
+      "exact_normal_traction_integral_m3": [
+        -5.716782716103172e-16,
+        -1.2569708371774334e-16,
+        -1.814451549846991e-16
+      ],
+      "exact_active_nodes": [
+        1,
+        1
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        1.137732206796537,
+        1.1453170881751804
+      ],
+      "final_bracket_diameters": [
+        1.1420592603446127,
+        1.1420592603463786
+      ]
+    },
+    {
+      "shape": "hostun-particle_00073",
+      "source_sha256": "d6026481f78171047518c7f0a82f5a9e4c2dbe8441a33ac9f3139f46ce22267c",
+      "target_sampled_depth_fraction": 0.0025,
+      "separation_m": 0.0002666688385704309,
+      "maximum_sampled_depth_fraction": 0.0024999999996916412,
+      "exact_normal_traction_integral_m3": [
+        -1.2651129592651144e-16,
+        -2.4972536316045242e-17,
+        -2.762972217125644e-17
+      ],
+      "exact_active_nodes": [
+        1,
+        1
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.864227772095826,
+        0.8715517362661298
+      ],
+      "final_bracket_diameters": [
+        0.8660824607066209,
+        0.8660824607083262
+      ]
+    },
+    {
+      "shape": "hostun-particle_00073",
+      "source_sha256": "d6026481f78171047518c7f0a82f5a9e4c2dbe8441a33ac9f3139f46ce22267c",
+      "target_sampled_depth_fraction": 0.01,
+      "separation_m": 0.0002643112853025177,
+      "maximum_sampled_depth_fraction": 0.009999999999548977,
+      "exact_normal_traction_integral_m3": [
+        -6.185411136813904e-16,
+        -1.3482840223298624e-16,
+        -1.6810223101025871e-16
+      ],
+      "exact_active_nodes": [
+        3,
+        1
+      ],
+      "sample_count": 2048,
+      "initial_bracket_diameters": [
+        0.8569038079255225,
+        0.864227772095826
+      ],
+      "final_bracket_diameters": [
+        0.8584256398104444,
+        0.8584256398121497
+      ]
+    }
+  ],
+  "failures": [],
+  "passed": true,
+  "runtime_versions": {
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "trimesh": "5.2.0",
+    "rtree": "1.4.1"
+  },
+  "scope": "Frozen original-node poses and strict FP64 force references for the whole accepted source library. No refined surface-quadrature, dynamic, friction, assembly or material qualification."
+}

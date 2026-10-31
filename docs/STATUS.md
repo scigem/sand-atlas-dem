@@ -314,7 +314,14 @@ The per-node audit identifies a Trimesh proximity-query tie substitution that ca
 choose a farther triangle. A strict FP64 minimum agrees with exhaustive source
 triangle searches at the twelve largest discrepancies in each failed row; GPU
 force error over retained rounded query points is <=4.40e-6 relative. The corrected
-reference utility is tested, and a separate full ten-pose/five-level CPU reference
-study is running. Its result and a new GPU study are required; the old failure is
-not converted into a pass. See `HOSTUN_CONTACT_ACCURACY.md`. Whole-library,
+reference utility is tested. The separate ten-pose/five-level CPU reference now
+passes, with worst finest-level change 0.39498%. The corresponding new twenty-row
+GPU study also passes: worst same-quadrature force error 0.01504%, and level-two
+error against the refined integral 1.28981% versus 15.1993% at level zero. All
+original gates remain unchanged; the old failure is not converted into a pass.
+The strict 2,048-node baseline retains exact counts and its 0.00965% worst force
+error. The separate whole-library source-pose/reference study passes all 106 cases
+over all 53 accepted grains; corresponding GPU force/count checks also pass all
+106 cases, with worst relative force error 0.02588% and exact active counts.
+See `HOSTUN_CONTACT_ACCURACY.md`. Whole-library quadrature,
 dense-assembly, material and experimental qualification remain open.

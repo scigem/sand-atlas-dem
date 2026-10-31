@@ -1,0 +1,8 @@
+{
+  "status": "complete",
+  "observed_process_exit_code": 0,
+  "report": "evidence/hostun-gpu-triangle-quadrature-minimum-v1/report.json",
+  "report_sha256": "09ecb2f726ff98541394ea346e63dcc58070e47d38fb203ba8d8ef88c82212bf",
+  "launcher_script_sha256": "9046d2be15c071af56ca5493ccc19fb1a6047bc672622bcb53d1842784a3c42f",
+  "caveat": "The report writer uses a direct write, despite the launcher source comment describing an atomic replacement. A partial JSON observation would fail the launcher; this execution completed successfully. The executed launcher snapshot is preserved unchanged."
+}

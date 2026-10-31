@@ -30,6 +30,34 @@ def main():
         or max(r["finest_relative_change"] for r in reference["rows"]) > 0.02
     ):
         raise ValueError("Independent reference failed its unchanged refinement gate")
+    nearest_policy = policy.get("reference_nearest_point_policy")
+    if nearest_policy is not None:
+        if reference["protocol"].get("nearest_point_policy") != nearest_policy:
+            raise ValueError("Independent reference uses a different distance policy")
+        baseline = policy["fixed_node_baseline"]
+        if sha256(baseline["path"]) != baseline["sha256"]:
+            raise ValueError("Fixed-node baseline bytes changed")
+        fixed = read_json(baseline["path"])
+        fixed_reference_path = Path(fixed["protocol"]["reference_report"])
+        fixed_reference_hash = fixed["protocol"]["reference_report_sha256"]
+        if sha256(fixed_reference_path) != fixed_reference_hash:
+            raise ValueError("Fixed-node reference bytes changed")
+        fixed_reference = read_json(fixed_reference_path)
+        if (
+            not fixed["passed"]
+            or fixed["protocol"]["library_sha256"] != policy["parent_library_sha256"]
+            or fixed["protocol"]["maximum_relative_force_error"] != 0.001
+            or fixed["protocol"]["overlap_guard_fraction"] != 0.03
+            or len(fixed["rows"]) != len(reference["rows"])
+            or fixed_reference["protocol"].get("nearest_point_policy") != nearest_policy
+            or {(row["shape"], row["separation_m"]) for row in fixed["rows"]}
+            != {(row["shape"], row["separation_m"]) for row in reference["rows"]}
+            or any(
+                row["active_contacts"] != row["reference_active_contacts"]
+                for row in fixed["rows"]
+            )
+        ):
+            raise ValueError("Required unchanged fixed-node GPU baseline failed")
     for item in policy["libraries"]:
         if sha256(item["path"]) != item["sha256"]:
             raise ValueError("Prepared asset bytes changed")
@@ -176,6 +204,11 @@ def main():
         or sha256(reference_path) != policy["reference_report_sha256"]
     ):
         raise ValueError("Frozen protocol/reference changed during the study")
+    if nearest_policy is not None and (
+        sha256(baseline["path"]) != baseline["sha256"]
+        or sha256(fixed_reference_path) != fixed_reference_hash
+    ):
+        raise ValueError("Required fixed-node evidence changed during the study")
     write_json(
         args.output / "report.json",
         dict(

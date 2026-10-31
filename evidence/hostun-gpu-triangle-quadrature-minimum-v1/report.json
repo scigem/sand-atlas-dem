@@ -1,0 +1,592 @@
+{
+  "protocol": {
+    "identity": "hostun-gpu-triangle-quadrature-minimum-v1",
+    "frozen_before_gpu_execution": true,
+    "reference_report": "evidence/hostun-triangle-quadrature-minimum-v1/report.json",
+    "reference_report_sha256": "7c06efacecb958d4b57dcc1ad41ca82c4c91a1ce00d1ce204882852d908240ac",
+    "parent_library_sha256": "1bc9f37a22b402ada31495ea7ff1ebef4bb6a27a26d68a8333f7f84a12ad16b7",
+    "libraries": [
+      {
+        "path": "assets/private/hostun-30-r64-gauss3.h5",
+        "sha256": "097a6a14df21513e8cf3b936fe0404baa488e38316a0e4233e6f59ba94bc2270",
+        "subdivisions": 0
+      },
+      {
+        "path": "assets/private/hostun-30-r64-gauss3-l2.h5",
+        "sha256": "4c57ed2f02bcc232fa4e1c83121a1441228b4fc44cebac1f8accff238432f3c0",
+        "subdivisions": 2
+      }
+    ],
+    "maximum_relative_force_error": 0.1,
+    "maximum_fixed_level_gpu_error": 0.001,
+    "minimum_worst_error_improvement_factor": 2,
+    "timestep_s": 2e-09,
+    "overlap_guard_fraction": 0.03,
+    "contacts_per_particle": 4096,
+    "active_counts": "Diagnostic for FP64/FP32 boundary classification; separate unchanged 2048-node exact-count oracle required.",
+    "scope": "Same ten independently frozen source poses. Preserve the existing 10% integral-force gate and 0.1% GPU/oracle gate; require at least twofold worst-error reduction. Not full-library, friction, assembly or material acceptance. Corrected strict-distance reference and passing exact-count baseline required; all accuracy and overlap thresholds unchanged.",
+    "reference_nearest_point_policy": "strict-fp64-minimum-squared-distance",
+    "fixed_node_baseline": {
+      "path": "evidence/hostun-mesh-force-minimum-v1/report.json",
+      "sha256": "9fc8511004de83f94352edc721aa840e2cb2d8d90aea0cb7a41af47c2771253b"
+    }
+  },
+  "protocol_sha256": "24af0ff76fc84e4416444163e08c3aae0338033ae101a83193317509e7505034",
+  "reference_report_sha256": "7c06efacecb958d4b57dcc1ad41ca82c4c91a1ce00d1ce204882852d908240ac",
+  "source_hashes": {
+    "examples/mesh_quadrature_study.py": "582acdf54542ababfb4d2f98599d12fbe94da52e1056fdf346b69282689c91d6",
+    "src/sand_atlas_dem/__init__.py": "25ef40efbf7fa452aaa142bbe8d9ac35c90756e1a6f09cdacdcd2723cdd1636d",
+    "src/sand_atlas_dem/acquisition.py": "3c9379de9c9f24b4c762ae4608e73d70b76b558d4cbdae48e75196c747594ddd",
+    "src/sand_atlas_dem/atlas_bridge.py": "c60052f83b256a6b5f2a415f5e2cfeb16e399f6f3bfe100e0d4a4a99b972c87f",
+    "src/sand_atlas_dem/backend.py": "2184575342f265dfd744d799af8e9b03a73dcb195e06e94a59f21e1525cbab5c",
+    "src/sand_atlas_dem/benchmark.py": "6624caaa956f7d5c8825520cd5c901b559f561f8ff407bb4d719cb1c06f1f83c",
+    "src/sand_atlas_dem/cases.py": "f225b09ee7207a50b35da0b6301626f124c7555cf9cd1a1786b3a73a7300ebb6",
+    "src/sand_atlas_dem/cli.py": "142294d050f55130524fa79b2a22a8182e13bdf786b09a8194aca8c284b229db",
+    "src/sand_atlas_dem/geometry.py": "d84592edef45221d589ed22b8a2a36f53be39bb5b8972ec55a548913c929c6a5",
+    "src/sand_atlas_dem/gpu.py": "084b2992ef08441f030f4d171e533a1bbc1a1c5c135112d8f4a33c56b679a5f7",
+    "src/sand_atlas_dem/mesh.py": "a72264dd2f8730997fa0c794e16ca45ded0a61acd1f0042456c940354211a1af",
+    "src/sand_atlas_dem/qualification.py": "b59751cc6fcc81b834dd90174ff9859e21efffa389dc36bc514ced75ef41b2fb",
+    "src/sand_atlas_dem/reference.py": "972bdbec1a08a8f01097758503296d3581ab6f558145ceac70b02c27603c7730",
+    "src/sand_atlas_dem/simulation.py": "caa4aa1bf30e92d61b1f2292dfbfbf3a195bc982e1c83ac489ff4afa0f02867e",
+    "src/sand_atlas_dem/spec.py": "de79f1ec1dd5a08fcf5313c189a608d7a5772042209fdc35d4e99bdf9a82bd34",
+    "src/sand_atlas_dem/util.py": "0f9dc71429a87057dc08216f3c51425d8b76be9c4fd30f2cab6c3f98b70397c2",
+    "src/sand_atlas_dem/visualize.py": "9874362fa98cdd00d73b42867f7ecc9254b820d08915baed25eee4b02ecba339",
+    "src/sand_atlas_dem/shaders/diagnostic.slang": "4f738fbef3ee79c370f74596a51d0de80b5ddd12375615afd18004df0bec7bb0",
+    "src/sand_atlas_dem/shaders/scan.slang": "51900fe7d78347d2274488b1b5c328ed53714be3043d221ad1d48555e1c5cbac",
+    "src/sand_atlas_dem/shaders/solver.slang": "fd62cc9e45145c06e853990f35f13bc98fb6f45516080e4942cc70a525715ba1"
+  },
+  "backend": {
+    "format": "sand-dem-doctor/1",
+    "backend": "metal",
+    "adapter": "Apple M4 Max",
+    "slangpy": "0.43.1",
+    "python": "3.12.14",
+    "smoke_elements": 257,
+    "smoke_max_error": 0.0,
+    "fallback": false,
+    "floating_point_mode_requested": "precise"
+  },
+  "libraries": [
+    {
+      "path": "assets/private/hostun-30-r64-gauss3.h5",
+      "sha256": "097a6a14df21513e8cf3b936fe0404baa488e38316a0e4233e6f59ba94bc2270",
+      "subdivisions": 0,
+      "shape_count": 53,
+      "sample_count": 3343608
+    },
+    {
+      "path": "assets/private/hostun-30-r64-gauss3-l2.h5",
+      "sha256": "4c57ed2f02bcc232fa4e1c83121a1441228b4fc44cebac1f8accff238432f3c0",
+      "subdivisions": 2,
+      "shape_count": 53,
+      "sample_count": 53497728
+    }
+  ],
+  "rows": [
+    {
+      "subdivisions": 0,
+      "shape": "hostun-particle_00053",
+      "separation_m": 0.000294365652887935,
+      "target_sampled_depth_fraction": 0.0025,
+      "status": "complete",
+      "force_N": [
+        -1.1515015103213955e-05,
+        3.982036560046254e-06,
+        -2.1653511339536635e-06
+      ],
+      "reference_N": [
+        -1.2912497216637437e-05,
+        5.544066170940888e-06,
+        -2.751828845564684e-06
+      ],
+      "relative_force_error": 0.15199298506750622,
+      "fixed_level_gpu_relative_error": 0.0001503657252776198,
+      "active_contacts": 28,
+      "fp64_reference_active_nodes": 28,
+      "max_overlap_fraction": 0.0027090224903076887,
+      "sample_count": 44916,
+      "estimated_working_bytes": 8939280,
+      "setup_and_initialization_wall_seconds": 1.7773516670567915
+    },
+    {
+      "subdivisions": 0,
+      "shape": "hostun-particle_00053",
+      "separation_m": 0.00029220300335055485,
+      "target_sampled_depth_fraction": 0.01,
+      "status": "complete",
+      "force_N": [
+        -0.00017499500245321542,
+        6.321291584754363e-05,
+        -2.958358709292952e-05
+      ],
+      "reference_N": [
+        -0.00017042473391914352,
+        6.524282790680661e-05,
+        -3.422260697521884e-05
+      ],
+      "relative_force_error": 0.036738658273688704,
+      "fixed_level_gpu_relative_error": 6.271062571187012e-06,
+      "active_contacts": 85,
+      "fp64_reference_active_nodes": 85,
+      "max_overlap_fraction": 0.01022541243582964,
+      "sample_count": 44916,
+      "estimated_working_bytes": 8939280,
+      "setup_and_initialization_wall_seconds": 0.20346566603984684
+    },
+    {
+      "subdivisions": 0,
+      "shape": "hostun-particle_00034",
+      "separation_m": 0.0003464976903378844,
+      "target_sampled_depth_fraction": 0.0025,
+      "status": "complete",
+      "force_N": [
+        -4.6909688535379246e-05,
+        -1.894762499432545e-05,
+        1.3784764632873703e-05
+      ],
+      "reference_N": [
+        -4.4789421765845035e-05,
+        -1.7973110134004468e-05,
+        1.448387831722122e-05
+      ],
+      "relative_force_error": 0.048344739797946304,
+      "fixed_level_gpu_relative_error": 5.759098626403635e-05,
+      "active_contacts": 28,
+      "fp64_reference_active_nodes": 28,
+      "max_overlap_fraction": 0.005792782176285982,
+      "sample_count": 52764,
+      "estimated_working_bytes": 10131504,
+      "setup_and_initialization_wall_seconds": 0.24029999994672835
+    },
+    {
+      "subdivisions": 0,
+      "shape": "hostun-particle_00034",
+      "separation_m": 0.00034344602608644894,
+      "target_sampled_depth_fraction": 0.01,
+      "status": "complete",
+      "force_N": [
+        -0.0003870773361995816,
+        -0.00013754407700616866,
+        0.00013042015780229121
+      ],
+      "reference_N": [
+        -0.000377999385044354,
+        -0.00014151519696814691,
+        0.00013802828073328108
+      ],
+      "relative_force_error": 0.029285934918587473,
+      "fixed_level_gpu_relative_error": 3.5156562147251634e-05,
+      "active_contacts": 77,
+      "fp64_reference_active_nodes": 77,
+      "max_overlap_fraction": 0.01401198748499155,
+      "sample_count": 52764,
+      "estimated_working_bytes": 10131504,
+      "setup_and_initialization_wall_seconds": 0.24193900008685887
+    },
+    {
+      "subdivisions": 0,
+      "shape": "hostun-particle_00033",
+      "separation_m": 0.00041684533132007955,
+      "target_sampled_depth_fraction": 0.0025,
+      "status": "complete",
+      "force_N": [
+        -0.0001970925513887778,
+        -8.10398196335882e-05,
+        -9.263717220164835e-05
+      ],
+      "reference_N": [
+        -0.0001975120513250886,
+        -7.581246085629894e-05,
+        -9.476175854466142e-05
+      ],
+      "relative_force_error": 0.024408187461867105,
+      "fixed_level_gpu_relative_error": 2.74552533335558e-05,
+      "active_contacts": 60,
+      "fp64_reference_active_nodes": 60,
+      "max_overlap_fraction": 0.009608836844563484,
+      "sample_count": 49332,
+      "estimated_working_bytes": 9591248,
+      "setup_and_initialization_wall_seconds": 0.22138104203622788
+    },
+    {
+      "subdivisions": 0,
+      "shape": "hostun-particle_00033",
+      "separation_m": 0.00041428009988057446,
+      "target_sampled_depth_fraction": 0.01,
+      "status": "complete",
+      "force_N": [
+        -0.000681401405017823,
+        -0.00022653551422990859,
+        -0.00032941222889348865
+      ],
+      "reference_N": [
+        -0.0006868954334931836,
+        -0.0002311872402870697,
+        -0.00032042879679653987
+      ],
+      "relative_force_error": 0.014527375777320682,
+      "fixed_level_gpu_relative_error": 1.286872812982143e-05,
+      "active_contacts": 112,
+      "fp64_reference_active_nodes": 112,
+      "max_overlap_fraction": 0.015548357740044594,
+      "sample_count": 49332,
+      "estimated_working_bytes": 9591248,
+      "setup_and_initialization_wall_seconds": 0.20266329101286829
+    },
+    {
+      "subdivisions": 0,
+      "shape": "hostun-particle_00039",
+      "separation_m": 0.00042587759408392346,
+      "target_sampled_depth_fraction": 0.0025,
+      "status": "complete",
+      "force_N": [
+        -6.142855272628367e-05,
+        4.8668618546798825e-05,
+        -2.2038500901544467e-05
+      ],
+      "reference_N": [
+        -6.362932120571948e-05,
+        5.4426590013034486e-05,
+        -2.134161234347354e-05
+      ],
+      "relative_force_error": 0.07179267108955631,
+      "fixed_level_gpu_relative_error": 8.858321479792474e-05,
+      "active_contacts": 43,
+      "fp64_reference_active_nodes": 43,
+      "max_overlap_fraction": 0.005736714228987694,
+      "sample_count": 57900,
+      "estimated_working_bytes": 10418592,
+      "setup_and_initialization_wall_seconds": 0.29667591699399054
+    },
+    {
+      "subdivisions": 0,
+      "shape": "hostun-particle_00039",
+      "separation_m": 0.000420344463081,
+      "target_sampled_depth_fraction": 0.01,
+      "status": "complete",
+      "force_N": [
+        -0.001060338574461639,
+        0.000843531044665724,
+        -0.00023906264686957002
+      ],
+      "reference_N": [
+        -0.0010563101595434227,
+        0.000845999115278909,
+        -0.00024229653310874093
+      ],
+      "relative_force_error": 0.004164210154581778,
+      "fixed_level_gpu_relative_error": 9.506885537978026e-05,
+      "active_contacts": 168,
+      "fp64_reference_active_nodes": 168,
+      "max_overlap_fraction": 0.01608356460928917,
+      "sample_count": 57900,
+      "estimated_working_bytes": 10418592,
+      "setup_and_initialization_wall_seconds": 0.2755347079364583
+    },
+    {
+      "subdivisions": 0,
+      "shape": "hostun-particle_00031",
+      "separation_m": 0.0004340634797394704,
+      "target_sampled_depth_fraction": 0.0025,
+      "status": "complete",
+      "force_N": [
+        -5.554595190915279e-05,
+        4.4655527744907886e-05,
+        -7.018663382041268e-06
+      ],
+      "reference_N": [
+        -6.44639693821266e-05,
+        4.660449434102043e-05,
+        -1.3046958301649357e-05
+      ],
+      "relative_force_error": 0.13570911462137922,
+      "fixed_level_gpu_relative_error": 4.9547706802418736e-05,
+      "active_contacts": 24,
+      "fp64_reference_active_nodes": 24,
+      "max_overlap_fraction": 0.002680104924365878,
+      "sample_count": 51648,
+      "estimated_working_bytes": 10025376,
+      "setup_and_initialization_wall_seconds": 0.22735054197255522
+    },
+    {
+      "subdivisions": 0,
+      "shape": "hostun-particle_00031",
+      "separation_m": 0.00042906983079780514,
+      "target_sampled_depth_fraction": 0.01,
+      "status": "complete",
+      "force_N": [
+        -0.0014144753804430366,
+        0.0010798872681334615,
+        -0.00029047628049738705
+      ],
+      "reference_N": [
+        -0.001430322763792479,
+        0.0010535800012780165,
+        -0.0002812966412997692
+      ],
+      "relative_force_error": 0.017821746574558248,
+      "fixed_level_gpu_relative_error": 1.0126253855496078e-05,
+      "active_contacts": 113,
+      "fp64_reference_active_nodes": 113,
+      "max_overlap_fraction": 0.01095843967050314,
+      "sample_count": 51648,
+      "estimated_working_bytes": 10025376,
+      "setup_and_initialization_wall_seconds": 0.25042816693894565
+    },
+    {
+      "subdivisions": 2,
+      "shape": "hostun-particle_00053",
+      "separation_m": 0.000294365652887935,
+      "target_sampled_depth_fraction": 0.0025,
+      "status": "complete",
+      "force_N": [
+        -1.2936700841237325e-05,
+        5.706951469619526e-06,
+        -2.7946632599196164e-06
+      ],
+      "reference_N": [
+        -1.2912497216637437e-05,
+        5.544066170940888e-06,
+        -2.751828845564684e-06
+      ],
+      "relative_force_error": 0.011882826002073625,
+      "fixed_level_gpu_relative_error": 0.0001274761917148094,
+      "active_contacts": 385,
+      "fp64_reference_active_nodes": 385,
+      "max_overlap_fraction": 0.0029590637423098087,
+      "sample_count": 718656,
+      "estimated_working_bytes": 35888880,
+      "setup_and_initialization_wall_seconds": 1.361444624955766
+    },
+    {
+      "subdivisions": 2,
+      "shape": "hostun-particle_00053",
+      "separation_m": 0.00029220300335055485,
+      "target_sampled_depth_fraction": 0.01,
+      "status": "complete",
+      "force_N": [
+        -0.00017043888510670513,
+        6.60130608594045e-05,
+        -3.435043981880881e-05
+      ],
+      "reference_N": [
+        -0.00017042473391914352,
+        6.524282790680661e-05,
+        -3.422260697521884e-05
+      ],
+      "relative_force_error": 0.004205891191775979,
+      "fixed_level_gpu_relative_error": 6.80527424523055e-06,
+      "active_contacts": 1349,
+      "fp64_reference_active_nodes": 1349,
+      "max_overlap_fraction": 0.010656289756298065,
+      "sample_count": 718656,
+      "estimated_working_bytes": 35888880,
+      "setup_and_initialization_wall_seconds": 1.3689506249502301
+    },
+    {
+      "subdivisions": 2,
+      "shape": "hostun-particle_00034",
+      "separation_m": 0.0003464976903378844,
+      "target_sampled_depth_fraction": 0.0025,
+      "status": "complete",
+      "force_N": [
+        -4.4592670747078955e-05,
+        -1.7866777852759697e-05,
+        1.4617465240007732e-05
+      ],
+      "reference_N": [
+        -4.4789421765845035e-05,
+        -1.7973110134004468e-05,
+        1.448387831722122e-05
+      ],
+      "relative_force_error": 0.005170029436295906,
+      "fixed_level_gpu_relative_error": 5.4613307944405084e-05,
+      "active_contacts": 418,
+      "fp64_reference_active_nodes": 418,
+      "max_overlap_fraction": 0.0065068029798567295,
+      "sample_count": 844224,
+      "estimated_working_bytes": 41789904,
+      "setup_and_initialization_wall_seconds": 1.660613749991171
+    },
+    {
+      "subdivisions": 2,
+      "shape": "hostun-particle_00034",
+      "separation_m": 0.00034344602608644894,
+      "target_sampled_depth_fraction": 0.01,
+      "status": "complete",
+      "force_N": [
+        -0.00037728986353613436,
+        -0.00014171228394843638,
+        0.00013842164480593055
+      ],
+      "reference_N": [
+        -0.000377999385044354,
+        -0.00014151519696814691,
+        0.00013802828073328108
+      ],
+      "relative_force_error": 0.001957158335084335,
+      "fixed_level_gpu_relative_error": 3.55965064734196e-05,
+      "active_contacts": 1190,
+      "fp64_reference_active_nodes": 1190,
+      "max_overlap_fraction": 0.015735846012830734,
+      "sample_count": 844224,
+      "estimated_working_bytes": 41789904,
+      "setup_and_initialization_wall_seconds": 1.6446290420135483
+    },
+    {
+      "subdivisions": 2,
+      "shape": "hostun-particle_00033",
+      "separation_m": 0.00041684533132007955,
+      "target_sampled_depth_fraction": 0.0025,
+      "status": "complete",
+      "force_N": [
+        -0.00019761781732086092,
+        -7.586921856272966e-05,
+        -9.451724326936528e-05
+      ],
+      "reference_N": [
+        -0.0001975120513250886,
+        -7.581246085629894e-05,
+        -9.476175854466142e-05
+      ],
+      "relative_force_error": 0.0011750247087318625,
+      "fixed_level_gpu_relative_error": 2.5831621611276213e-05,
+      "active_contacts": 949,
+      "fp64_reference_active_nodes": 948,
+      "max_overlap_fraction": 0.009896188974380493,
+      "sample_count": 789312,
+      "estimated_working_bytes": 39190448,
+      "setup_and_initialization_wall_seconds": 1.5122581250034273
+    },
+    {
+      "subdivisions": 2,
+      "shape": "hostun-particle_00033",
+      "separation_m": 0.00041428009988057446,
+      "target_sampled_depth_fraction": 0.01,
+      "status": "complete",
+      "force_N": [
+        -0.0006848078919574618,
+        -0.0002324110537301749,
+        -0.0003214221214875579
+      ],
+      "reference_N": [
+        -0.0006868954334931836,
+        -0.0002311872402870697,
+        -0.00032042879679653987
+      ],
+      "relative_force_error": 0.0033009396228991846,
+      "fixed_level_gpu_relative_error": 1.292251426481303e-05,
+      "active_contacts": 1768,
+      "fp64_reference_active_nodes": 1768,
+      "max_overlap_fraction": 0.01568373665213585,
+      "sample_count": 789312,
+      "estimated_working_bytes": 39190448,
+      "setup_and_initialization_wall_seconds": 1.4945719999959692
+    },
+    {
+      "subdivisions": 2,
+      "shape": "hostun-particle_00039",
+      "separation_m": 0.00042587759408392346,
+      "target_sampled_depth_fraction": 0.0025,
+      "status": "complete",
+      "force_N": [
+        -6.394801312126219e-05,
+        5.4242471378529444e-05,
+        -2.0289638996473514e-05
+      ],
+      "reference_N": [
+        -6.362932120571948e-05,
+        5.4426590013034486e-05,
+        -2.134161234347354e-05
+      ],
+      "relative_force_error": 0.012898063899403822,
+      "fixed_level_gpu_relative_error": 8.810119861132442e-05,
+      "active_contacts": 673,
+      "fp64_reference_active_nodes": 673,
+      "max_overlap_fraction": 0.006377378944307566,
+      "sample_count": 926400,
+      "estimated_working_bytes": 45158592,
+      "setup_and_initialization_wall_seconds": 1.7175201668869704
+    },
+    {
+      "subdivisions": 2,
+      "shape": "hostun-particle_00039",
+      "separation_m": 0.000420344463081,
+      "target_sampled_depth_fraction": 0.01,
+      "status": "complete",
+      "force_N": [
+        -0.0010574590414762497,
+        0.0008448474109172821,
+        -0.00024159708118531853
+      ],
+      "reference_N": [
+        -0.0010563101595434227,
+        0.000845999115278909,
+        -0.00024229653310874093
+      ],
+      "relative_force_error": 0.0012879646073234042,
+      "fixed_level_gpu_relative_error": 2.8484587397073182e-05,
+      "active_contacts": 2709,
+      "fp64_reference_active_nodes": 2709,
+      "max_overlap_fraction": 0.016739292070269585,
+      "sample_count": 926400,
+      "estimated_working_bytes": 45158592,
+      "setup_and_initialization_wall_seconds": 1.7820767079247162
+    },
+    {
+      "subdivisions": 2,
+      "shape": "hostun-particle_00031",
+      "separation_m": 0.0004340634797394704,
+      "target_sampled_depth_fraction": 0.0025,
+      "status": "complete",
+      "force_N": [
+        -6.406832835637033e-05,
+        4.647820969694294e-05,
+        -1.2861224604421295e-05
+      ],
+      "reference_N": [
+        -6.44639693821266e-05,
+        4.660449434102043e-05,
+        -1.3046958301649357e-05
+      ],
+      "relative_force_error": 0.005643874083606951,
+      "fixed_level_gpu_relative_error": 5.891793754819246e-05,
+      "active_contacts": 423,
+      "fp64_reference_active_nodes": 423,
+      "max_overlap_fraction": 0.003046253463253379,
+      "sample_count": 826368,
+      "estimated_working_bytes": 41014176,
+      "setup_and_initialization_wall_seconds": 1.5584904589923099
+    },
+    {
+      "subdivisions": 2,
+      "shape": "hostun-particle_00031",
+      "separation_m": 0.00042906983079780514,
+      "target_sampled_depth_fraction": 0.01,
+      "status": "complete",
+      "force_N": [
+        -0.0014285668730735779,
+        0.0010560465743765235,
+        -0.000279588537523523
+      ],
+      "reference_N": [
+        -0.001430322763792479,
+        0.0010535800012780165,
+        -0.0002812966412997692
+      ],
+      "relative_force_error": 0.0019327824647389347,
+      "fixed_level_gpu_relative_error": 9.044483667141934e-06,
+      "active_contacts": 1807,
+      "fp64_reference_active_nodes": 1807,
+      "max_overlap_fraction": 0.01136506162583828,
+      "sample_count": 826368,
+      "estimated_working_bytes": 41014176,
+      "setup_and_initialization_wall_seconds": 1.580773291992955
+    }
+  ],
+  "passed": true,
+  "complete": true,
+  "coarse_worst_relative_error": 0.15199298506750622,
+  "fine_worst_relative_error": 0.012898063899403822,
+  "scope": "Ten frozen static source poses; comparison to independently refined normal-traction integral. FP64/FP32 active counts are diagnostic; the separate unchanged fixed-node force/count oracle remains required. No dynamic/friction/assembly/material or sustained throughput qualification."
+}

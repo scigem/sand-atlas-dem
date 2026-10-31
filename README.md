@@ -70,6 +70,7 @@ is not used. See the
 ```sh
 .venv/bin/sand-dem geometry prepare grain.stl grain.h5 --unit mm --resolution 64 --samples 2048
 .venv/bin/sand-dem geometry inspect grain.h5 --output runs/grain-inspection
+.venv/bin/sand-dem geometry face-quadrature grain.h5 grain-gauss3-l2.h5 --rule gauss3 --subdivisions 2
 ```
 
 Input coordinates need a source-supported unit. Exact coordinate welding decodes

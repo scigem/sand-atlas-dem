@@ -92,6 +92,56 @@ opposed normals and a separate randomized candidate-versus-exhaustive check.
 `hostun-triangle-quadrature-minimum-v1` freezes the strict-distance query and reruns
 all ten original poses and all five levels. Source geometry, placements and the
 2% finest-change threshold are unchanged. The original reference and failed GPU
-study are retained byte for byte. The corrected study is pending; a new GPU study
-must use its separately hashed result and retain the original 0.1%, 10% and overlap
-gates. No shader change was made in response to this reference discrepancy.
+study are retained byte for byte. The corrected CPU study now passes all ten poses;
+worst level-three to level-four change is 0.39498%, below the unchanged 2% threshold.
+No shader change was made in response to this reference discrepancy.
+
+`hostun-gpu-triangle-quadrature-minimum-v1` passes all twenty GPU rows against the
+separately hashed strict reference. Worst same-level GPU force error is 0.01504%,
+below the unchanged 0.1% gate. Worst error against the refined integral falls from
+15.1993% at level zero to 1.28981% at level two, exceeding the required twofold
+improvement and passing the unchanged 10% integral gate. Maximum sampled overlap
+is 1.67393%, below the unchanged 3% guard. The prior study remains failed.
+
+One level-two shallow case has 949 FP32 contacts versus 948 in the FP64 reference.
+As declared prospectively, these counts are diagnostic for boundary classification;
+all force gates still apply. The separate strict 2,048-node baseline retains exact
+active counts. These results cover the same ten static, frictionless poses on five
+grains; they do not qualify the remaining grains, sustained performance, friction,
+dynamic response, assembly convergence or physical material behaviour.
+
+The separately frozen `hostun-fixed-node-minimum-reference-v1` recomputes the
+original 2,048-node oracle at all ten unchanged poses, without repeating placement
+bisection or moving the grains. Its largest force difference from the historical
+oracle is 5.01e-14 relative; all per-pass active counts are unchanged.
+`hostun-mesh-force-minimum-v1` passes all ten actual Metal cases against this strict
+reference, with worst relative force error 9.6541e-5 (0.00965%) and exact active
+counts. This baseline remains a fixed-quadrature check, not continuum convergence.
+The next subdivided GPU study additionally requires this passing baseline, its
+strict-query reference identity and the exact same physical pose set before any
+GPU initialization, then checks the evidence hashes again after execution.
+
+## Whole-library source-pose coverage
+
+`hostun-library-contact-poses-minimum-v1` freezes all 53 accepted grain identities
+and their original 2,048 nodes before execution. For each grain it brackets the
+first approach along its body x axis with a fixed 256-interval scan, then performs
+32 FP64 source-distance bisections at target sampled depths 0.0025 and 0.01
+equivalent diameters. It chooses the no-deeper side, requires both bracket width
+and depth shortfall <=1e-8 diameters, and retains every failed grain and private
+per-grain progress. These new poses do not replace the original ten poses.
+
+Parity classification runs before nearest-point evaluation because exterior nodes
+contribute exactly zero to traction. Active nodes use the independently tested
+strict FP64 distance minimum. Analytical cube and anisotropic-box fixtures check
+separation, traction vectors and active counts; the initial dimensionful zero-force
+assertion error and corrected vector comparison are retained separately in
+`library-contact-poses-check-v1` and `-v2`. The CPU suite passes 69 tests with 17
+Metal tests deselected (`library-contact-poses-check-v3`). The whole-library source
+study passes all 106 cases, with maximum depth shortfall 1.93e-12 diameters and
+maximum final bracket width 2.38e-12 diameters. The corresponding
+`hostun-library-mesh-force-minimum-v1` GPU study passes all 106 cases: worst
+relative force error is 0.02588%, below the unchanged 0.1% gate, and every active
+count matches exactly. This verifies the fixed 2,048-node computation across all
+53 shapes. These checks do not qualify refined surface integration,
+friction, dynamics, dense specimens or material response.
