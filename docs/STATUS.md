@@ -1,5 +1,20 @@
 # Status and evidence
 
+The continuing Hostun preparation has completed step 1,000,000 (2 ms physical).
+The new independent observation retains all 8,001 ordered diagnostics and exactly
+preserves the preceding 6,001-row history. Controller replay still differs by
+zero; integrated-cell and rigid-volume discrepancies remain at the previous
+2.112e-7 relative / 1.848e-13 absolute maxima. Archived sources and shape bytes
+are hash-verified. All 1,087 active history rows have valid unique keys and finite
+values; maximum recorded overlap remains 0.666968%, below the unchanged 1% guard.
+
+Preparation is not accepted: nominal solid fraction 0.071663, pressure 0.266400 Pa
+against 10 kPa, three active grain pairs, kinetic/proxy ratio 0.241198 and imbalance
+0.951356. The newest 250k steps take 3337.532 s of recorded advance intervals
+(13.350 ms/step mean). The next chunk continues under the original controller
+and budget. These dilute observations close no dense-performance, work/timestep,
+equilibrium or material gate. See `hostun-balanced424-1m-observation-v1`.
+
 The continuing Hostun preparation has completed step 750,000 (1.5 ms physical).
 Independent read-only observation retains all 6,001 ordered diagnostics and
 exactly preserves the preceding 4,001-row history. Controller replay differs by

@@ -1,5 +1,12 @@
 # Refined Hostun preparation cost update
 
+At the subsequently completed 1M checkpoint, the newest 250k-step interval takes
+3337.532 s: mean 13.350 ms/step, median 13.393 and p95 13.595. Nominal solid
+fraction is 0.071663, with three active grain pairs. All 8,001 diagnostics retain
+exact controller replay and preserve the prior history; source and shape hashes
+remain unchanged (`hostun-balanced424-1m-observation-v1`). This remains a dilute
+observation, not a dense benchmark or an ETA. The frozen preparation continues.
+
 The subsequent completed 750k checkpoint retains the preceding trajectory
 exactly. Its latest 250k-step interval takes 3210.239 s: mean 12.841 ms/step,
 median 12.855 and p95 13.006. Nominal solid fraction is still only 0.066485,
