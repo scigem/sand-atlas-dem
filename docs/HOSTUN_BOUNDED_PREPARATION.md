@@ -91,3 +91,13 @@ not executed or accepted, until its preparation dependency passes.
 Eight CPU metadata-contract tests pass in `prepared-work-resolution-tests-v1`,
 covering successful resolution/archive preservation and seven distinct invalid
 preparation cases. These fixtures never execute Metal or qualify a specimen.
+
+## Initial execution observation
+
+The first completed 250,000-step chunk retains 2,001 ordered diagnostics and advances
+0.5 ms physical time in 453.756 s, still without active contacts. Nominal solid
+fraction reaches 0.0448169. Its independent retrospective cell/void-volume check is
+retained in `hostun-balanced424-precontact-observation-v2`; no new pass threshold
+or acceptance claim is introduced. V1's typed-history parser failure is retained.
+Zero force/energy during dilute contraction cannot satisfy target-pressure
+preparation. This early timing must not be extrapolated as dense-pilot throughput.

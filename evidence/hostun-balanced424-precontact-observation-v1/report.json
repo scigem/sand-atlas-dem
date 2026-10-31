@@ -1,0 +1,7 @@
+{
+  "identity": "hostun-balanced424-precontact-observation-v1",
+  "diagnostic_complete": false,
+  "preparation_accepted": false,
+  "scientific_admission": false,
+  "error": "TypeError: history.json is a typed object containing rows, not a bare list. Source and failed attempt retained."
+}

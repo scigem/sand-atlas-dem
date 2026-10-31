@@ -215,6 +215,10 @@ work alongside the scientific gates below; naming a material must not infer cali
   graphical rendering skips; all frozen repository and external inputs are unchanged.
   Qualified DEM loading, continuum execution/comparison
   and dedicated Atlas browser overlays remain open (docs/ATLAS_BRIDGE.md).
+  A read-only intake now binds all ten existing curated Hostun triaxial records
+  and prior source-conflict reviews. State/strain and physical batch correspondence
+  remain unresolved; no normalization, inferred preparation, fit or calibration/
+  validation split is introduced. See docs/HOSTUN_EXPERIMENTAL_ADMISSION.md.
 - [ ] Verify a second backend/device separately before advertising portability.
 
 ## Indicative effort and cost

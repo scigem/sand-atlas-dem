@@ -1,0 +1,423 @@
+{
+  "identity": "hostun-experimental-intake-v1",
+  "source_unchanged": true,
+  "input_sha256": {
+    "/Users/bmar5496/code/constitutive-atlas/data/curated/GEOLAB-HOSTUN-TRIAX-CD-1-C15-C16.json.gz": "4f2d1b0f33eff9fc8585aa0cd29a1ee9d1fde335890b094203a8bd537dc3af3a",
+    "/Users/bmar5496/code/constitutive-atlas/data/curated/GEOLAB-HOSTUN-TRIAX-CD-1-C18-C19.json.gz": "e99eaf7706fb18c275437b2dfaf2463d1c2e3eb64539469444cbbc6b6de9b9dd",
+    "/Users/bmar5496/code/constitutive-atlas/data/curated/GEOLAB-HOSTUN-TRIAX-CD-1-C2-C3.json.gz": "5f2996c65383a89a5d53e5dd25fb08ac44d2f7e1dd666a462336b19d54c636f4",
+    "/Users/bmar5496/code/constitutive-atlas/data/curated/GEOLAB-HOSTUN-TRIAX-CD-1-C21-C22.json.gz": "8751d12b3ef9deec007f0dfd71a6b666f9422bd41e045a3277e24ca44325a659",
+    "/Users/bmar5496/code/constitutive-atlas/data/curated/GEOLAB-HOSTUN-TRIAX-CD-2-C15-C16.json.gz": "099527aabc1a4315f0ebdb2a27df76ef8a69ef35d8e4e68266f240b2c92453cf",
+    "/Users/bmar5496/code/constitutive-atlas/data/curated/GEOLAB-HOSTUN-TRIAX-CD-2-C18-C19.json.gz": "8fde9963a61a025e37ac4c321eadc12886aae36986f1f07b64bc3205fa2035ec",
+    "/Users/bmar5496/code/constitutive-atlas/data/curated/GEOLAB-HOSTUN-TRIAX-CD-2-C2-C3.json.gz": "9ac5aee438a2cacd69ce062de455efd4b31f9bef3064479d902d181d90afc537",
+    "/Users/bmar5496/code/constitutive-atlas/data/curated/GEOLAB-HOSTUN-TRIAX-CD-2-C21-C22.json.gz": "7d60167dc8ea9c6733a453267b97fda802ea0fb337d797ed5be7893e644dd35b",
+    "/Users/bmar5496/code/constitutive-atlas/data/curated/GEOLAB-HOSTUN-TRIAX-CD-2-C24-C25.json.gz": "e4c9b21dacd1050c85b7a59a3dbefddff7c743fc81cbf6a9970f84c615301916",
+    "/Users/bmar5496/code/constitutive-atlas/data/curated/GEOLAB-HOSTUN-TRIAX-CD-2-C27-C28.json.gz": "5405cafe6e33e33886badab7be8bb34e95b569d2eb3bebdadd2c82b6405f3e14",
+    "/Users/bmar5496/code/constitutive-atlas/paper/study/hostun_feasibility.json": "a8dceff67bf8040b7eb4f48dac8e7052bc231077381038f388d6bc915ed1e3b1",
+    "/Users/bmar5496/code/constitutive-atlas/paper/study/hostun_source_metadata.json": "c8b2691de8a9b1f0c7c13dcec4767ca51e5453453e9348a9c150c57dd2e3f520",
+    "/Users/bmar5496/code/sand-atlas/_data/json/hostun-0000005.json": "1469c9ffecc6d25a43d844aef2362a1e8ebc4e585e78bf546bb57784246e193e",
+    "/private/tmp/sand-atlas-dem-walls/evidence/hostun-experimental-intake-v1/inventory.py": "d7af567871d88a95ed83e93cbd4e212d1f94298de1b3407d779dd7d50b4c0e46"
+  },
+  "series_count": 10,
+  "series": [
+    {
+      "id": "GEOLAB-HOSTUN-TRIAX-CD-1-C15-C16",
+      "path": "/Users/bmar5496/code/constitutive-atlas/data/curated/GEOLAB-HOSTUN-TRIAX-CD-1-C15-C16.json.gz",
+      "sha256": "4f2d1b0f33eff9fc8585aa0cd29a1ee9d1fde335890b094203a8bd537dc3af3a",
+      "columns": [
+        {
+          "key": "c15",
+          "name": "Axial strain",
+          "unit": "(%)",
+          "source_column": 15
+        },
+        {
+          "key": "c16",
+          "name": "Deviatoric stress",
+          "unit": "(kPa)",
+          "source_column": 16
+        }
+      ],
+      "initial": {},
+      "conventions": {
+        "stress": "source-defined",
+        "strain": "source-defined",
+        "stress_unit": "per-channel",
+        "strain_unit": "per-channel"
+      },
+      "native_complete_pairs": 74,
+      "consecutive_duplicate_native_abscissae": 36,
+      "native_abscissa_decreases": 1,
+      "source_url": "https://doi.org/10.5281/zenodo.12697903",
+      "workbook_sha256": "8389a770fd1ec553df4897c203fe514669676d387bfa70fddc8c8d328a6238bd",
+      "selected_cells_sha256": "e32e5c7e7fb9ab9a83dc3695004c416f027c36de875d08bddf6be1cae31f13b5",
+      "warnings": [
+        "Source units and signs are retained as reported; this series is not a normalized triaxial model overlay.",
+        "Source/reference metadata may include template or copied entries; specimen state is not automatically applied.",
+        "A separately digitized stress\u2013strain curve; group-specific relative density and confinement remain in source metadata."
+      ],
+      "normalized": false,
+      "admitted_for_calibration": false
+    },
+    {
+      "id": "GEOLAB-HOSTUN-TRIAX-CD-1-C18-C19",
+      "path": "/Users/bmar5496/code/constitutive-atlas/data/curated/GEOLAB-HOSTUN-TRIAX-CD-1-C18-C19.json.gz",
+      "sha256": "e99eaf7706fb18c275437b2dfaf2463d1c2e3eb64539469444cbbc6b6de9b9dd",
+      "columns": [
+        {
+          "key": "c18",
+          "name": "Axial strain",
+          "unit": "(%)",
+          "source_column": 18
+        },
+        {
+          "key": "c19",
+          "name": "Deviatoric stress",
+          "unit": "(kPa)",
+          "source_column": 19
+        }
+      ],
+      "initial": {},
+      "conventions": {
+        "stress": "source-defined",
+        "strain": "source-defined",
+        "stress_unit": "per-channel",
+        "strain_unit": "per-channel"
+      },
+      "native_complete_pairs": 121,
+      "consecutive_duplicate_native_abscissae": 12,
+      "native_abscissa_decreases": 1,
+      "source_url": "https://doi.org/10.5281/zenodo.12697903",
+      "workbook_sha256": "8389a770fd1ec553df4897c203fe514669676d387bfa70fddc8c8d328a6238bd",
+      "selected_cells_sha256": "91bbccd07a7bb986d4edef674beb75053260e29b07f773486985f39aadadb554",
+      "warnings": [
+        "Source units and signs are retained as reported; this series is not a normalized triaxial model overlay.",
+        "Source/reference metadata may include template or copied entries; specimen state is not automatically applied.",
+        "A separately digitized stress\u2013strain curve; group-specific relative density and confinement remain in source metadata."
+      ],
+      "normalized": false,
+      "admitted_for_calibration": false
+    },
+    {
+      "id": "GEOLAB-HOSTUN-TRIAX-CD-1-C2-C3",
+      "path": "/Users/bmar5496/code/constitutive-atlas/data/curated/GEOLAB-HOSTUN-TRIAX-CD-1-C2-C3.json.gz",
+      "sha256": "5f2996c65383a89a5d53e5dd25fb08ac44d2f7e1dd666a462336b19d54c636f4",
+      "columns": [
+        {
+          "key": "c2",
+          "name": "Axial strain",
+          "unit": "(%)",
+          "source_column": 2
+        },
+        {
+          "key": "c3",
+          "name": "Deviatoric stress",
+          "unit": "(kPa)",
+          "source_column": 3
+        }
+      ],
+      "initial": {},
+      "conventions": {
+        "stress": "source-defined",
+        "strain": "source-defined",
+        "stress_unit": "per-channel",
+        "strain_unit": "per-channel"
+      },
+      "native_complete_pairs": 130,
+      "consecutive_duplicate_native_abscissae": 26,
+      "native_abscissa_decreases": 1,
+      "source_url": "https://doi.org/10.5281/zenodo.12697903",
+      "workbook_sha256": "8389a770fd1ec553df4897c203fe514669676d387bfa70fddc8c8d328a6238bd",
+      "selected_cells_sha256": "c0f2682896b0c10978307c9fbc3b4162a41bb0e444c3e3d89aff2f83c4e4c3b3",
+      "warnings": [
+        "Source units and signs are retained as reported; this series is not a normalized triaxial model overlay.",
+        "Source/reference metadata may include template or copied entries; specimen state is not automatically applied.",
+        "A separately digitized stress\u2013strain curve; group-specific relative density and confinement remain in source metadata."
+      ],
+      "normalized": false,
+      "admitted_for_calibration": false
+    },
+    {
+      "id": "GEOLAB-HOSTUN-TRIAX-CD-1-C21-C22",
+      "path": "/Users/bmar5496/code/constitutive-atlas/data/curated/GEOLAB-HOSTUN-TRIAX-CD-1-C21-C22.json.gz",
+      "sha256": "8751d12b3ef9deec007f0dfd71a6b666f9422bd41e045a3277e24ca44325a659",
+      "columns": [
+        {
+          "key": "c21",
+          "name": "Axial strain",
+          "unit": "(%)",
+          "source_column": 21
+        },
+        {
+          "key": "c22",
+          "name": "Deviatoric stress",
+          "unit": "(kPa)",
+          "source_column": 22
+        }
+      ],
+      "initial": {},
+      "conventions": {
+        "stress": "source-defined",
+        "strain": "source-defined",
+        "stress_unit": "per-channel",
+        "strain_unit": "per-channel"
+      },
+      "native_complete_pairs": 80,
+      "consecutive_duplicate_native_abscissae": 7,
+      "native_abscissa_decreases": 3,
+      "source_url": "https://doi.org/10.5281/zenodo.12697903",
+      "workbook_sha256": "8389a770fd1ec553df4897c203fe514669676d387bfa70fddc8c8d328a6238bd",
+      "selected_cells_sha256": "6cf278550385ba2cfe1cd55eeea0e15fae4a3b5af1188d675adf21fec7260f4b",
+      "warnings": [
+        "Source units and signs are retained as reported; this series is not a normalized triaxial model overlay.",
+        "Source/reference metadata may include template or copied entries; specimen state is not automatically applied.",
+        "A separately digitized stress\u2013strain curve; group-specific relative density and confinement remain in source metadata."
+      ],
+      "normalized": false,
+      "admitted_for_calibration": false
+    },
+    {
+      "id": "GEOLAB-HOSTUN-TRIAX-CD-2-C15-C16",
+      "path": "/Users/bmar5496/code/constitutive-atlas/data/curated/GEOLAB-HOSTUN-TRIAX-CD-2-C15-C16.json.gz",
+      "sha256": "099527aabc1a4315f0ebdb2a27df76ef8a69ef35d8e4e68266f240b2c92453cf",
+      "columns": [
+        {
+          "key": "c15",
+          "name": "Axial strain",
+          "unit": "(%)",
+          "source_column": 15
+        },
+        {
+          "key": "c16",
+          "name": "Deviatoric stress",
+          "unit": "(kPa)",
+          "source_column": 16
+        }
+      ],
+      "initial": {},
+      "conventions": {
+        "stress": "source-defined",
+        "strain": "source-defined",
+        "stress_unit": "per-channel",
+        "strain_unit": "per-channel"
+      },
+      "native_complete_pairs": 157,
+      "consecutive_duplicate_native_abscissae": 0,
+      "native_abscissa_decreases": 12,
+      "source_url": "https://doi.org/10.5281/zenodo.12697903",
+      "workbook_sha256": "8389a770fd1ec553df4897c203fe514669676d387bfa70fddc8c8d328a6238bd",
+      "selected_cells_sha256": "5e1f1cbe1dd1b02fc1b389c04533d1de7de369d24f3339d6bd9ca7d44b459220",
+      "warnings": [
+        "Source units and signs are retained as reported; this series is not a normalized triaxial model overlay.",
+        "Source/reference metadata may include template or copied entries; specimen state is not automatically applied.",
+        "A separately digitized stress\u2013strain curve; group-specific relative density and confinement remain in source metadata."
+      ],
+      "normalized": false,
+      "admitted_for_calibration": false
+    },
+    {
+      "id": "GEOLAB-HOSTUN-TRIAX-CD-2-C18-C19",
+      "path": "/Users/bmar5496/code/constitutive-atlas/data/curated/GEOLAB-HOSTUN-TRIAX-CD-2-C18-C19.json.gz",
+      "sha256": "8fde9963a61a025e37ac4c321eadc12886aae36986f1f07b64bc3205fa2035ec",
+      "columns": [
+        {
+          "key": "c18",
+          "name": "Axial strain",
+          "unit": "(%)",
+          "source_column": 18
+        },
+        {
+          "key": "c19",
+          "name": "Deviatoric stress",
+          "unit": "(kPa)",
+          "source_column": 19
+        }
+      ],
+      "initial": {},
+      "conventions": {
+        "stress": "source-defined",
+        "strain": "source-defined",
+        "stress_unit": "per-channel",
+        "strain_unit": "per-channel"
+      },
+      "native_complete_pairs": 213,
+      "consecutive_duplicate_native_abscissae": 4,
+      "native_abscissa_decreases": 9,
+      "source_url": "https://doi.org/10.5281/zenodo.12697903",
+      "workbook_sha256": "8389a770fd1ec553df4897c203fe514669676d387bfa70fddc8c8d328a6238bd",
+      "selected_cells_sha256": "123ea1cbb5288c82d38feb7c0c2b1c3f92322cbc7123b16ba4f2980919ea1d31",
+      "warnings": [
+        "Source units and signs are retained as reported; this series is not a normalized triaxial model overlay.",
+        "Source/reference metadata may include template or copied entries; specimen state is not automatically applied.",
+        "A separately digitized stress\u2013strain curve; group-specific relative density and confinement remain in source metadata."
+      ],
+      "normalized": false,
+      "admitted_for_calibration": false
+    },
+    {
+      "id": "GEOLAB-HOSTUN-TRIAX-CD-2-C2-C3",
+      "path": "/Users/bmar5496/code/constitutive-atlas/data/curated/GEOLAB-HOSTUN-TRIAX-CD-2-C2-C3.json.gz",
+      "sha256": "9ac5aee438a2cacd69ce062de455efd4b31f9bef3064479d902d181d90afc537",
+      "columns": [
+        {
+          "key": "c2",
+          "name": "Axial strain",
+          "unit": "(%)",
+          "source_column": 2
+        },
+        {
+          "key": "c3",
+          "name": "Deviatoric stress",
+          "unit": "(kPa)",
+          "source_column": 3
+        }
+      ],
+      "initial": {},
+      "conventions": {
+        "stress": "source-defined",
+        "strain": "source-defined",
+        "stress_unit": "per-channel",
+        "strain_unit": "per-channel"
+      },
+      "native_complete_pairs": 206,
+      "consecutive_duplicate_native_abscissae": 0,
+      "native_abscissa_decreases": 1,
+      "source_url": "https://doi.org/10.5281/zenodo.12697903",
+      "workbook_sha256": "8389a770fd1ec553df4897c203fe514669676d387bfa70fddc8c8d328a6238bd",
+      "selected_cells_sha256": "37255dc04c42c27fa112fd950551c3ec45d5c377508faad44d496fec1781f9ed",
+      "warnings": [
+        "Source units and signs are retained as reported; this series is not a normalized triaxial model overlay.",
+        "Source/reference metadata may include template or copied entries; specimen state is not automatically applied.",
+        "A separately digitized stress\u2013strain curve; group-specific relative density and confinement remain in source metadata."
+      ],
+      "normalized": false,
+      "admitted_for_calibration": false
+    },
+    {
+      "id": "GEOLAB-HOSTUN-TRIAX-CD-2-C21-C22",
+      "path": "/Users/bmar5496/code/constitutive-atlas/data/curated/GEOLAB-HOSTUN-TRIAX-CD-2-C21-C22.json.gz",
+      "sha256": "7d60167dc8ea9c6733a453267b97fda802ea0fb337d797ed5be7893e644dd35b",
+      "columns": [
+        {
+          "key": "c21",
+          "name": "Axial strain",
+          "unit": "(%)",
+          "source_column": 21
+        },
+        {
+          "key": "c22",
+          "name": "Deviatoric stress",
+          "unit": "(kPa)",
+          "source_column": 22
+        }
+      ],
+      "initial": {},
+      "conventions": {
+        "stress": "source-defined",
+        "strain": "source-defined",
+        "stress_unit": "per-channel",
+        "strain_unit": "per-channel"
+      },
+      "native_complete_pairs": 191,
+      "consecutive_duplicate_native_abscissae": 0,
+      "native_abscissa_decreases": 6,
+      "source_url": "https://doi.org/10.5281/zenodo.12697903",
+      "workbook_sha256": "8389a770fd1ec553df4897c203fe514669676d387bfa70fddc8c8d328a6238bd",
+      "selected_cells_sha256": "8e6fafdfe0cb6d339154773d8ee1c329c5103bc93c604f201aa12654f0860475",
+      "warnings": [
+        "Source units and signs are retained as reported; this series is not a normalized triaxial model overlay.",
+        "Source/reference metadata may include template or copied entries; specimen state is not automatically applied.",
+        "A separately digitized stress\u2013strain curve; group-specific relative density and confinement remain in source metadata."
+      ],
+      "normalized": false,
+      "admitted_for_calibration": false
+    },
+    {
+      "id": "GEOLAB-HOSTUN-TRIAX-CD-2-C24-C25",
+      "path": "/Users/bmar5496/code/constitutive-atlas/data/curated/GEOLAB-HOSTUN-TRIAX-CD-2-C24-C25.json.gz",
+      "sha256": "e4c9b21dacd1050c85b7a59a3dbefddff7c743fc81cbf6a9970f84c615301916",
+      "columns": [
+        {
+          "key": "c24",
+          "name": "Axial strain",
+          "unit": "(%)",
+          "source_column": 24
+        },
+        {
+          "key": "c25",
+          "name": "Deviatoric stress",
+          "unit": "(kPa)",
+          "source_column": 25
+        }
+      ],
+      "initial": {},
+      "conventions": {
+        "stress": "source-defined",
+        "strain": "source-defined",
+        "stress_unit": "per-channel",
+        "strain_unit": "per-channel"
+      },
+      "native_complete_pairs": 171,
+      "consecutive_duplicate_native_abscissae": 8,
+      "native_abscissa_decreases": 14,
+      "source_url": "https://doi.org/10.5281/zenodo.12697903",
+      "workbook_sha256": "8389a770fd1ec553df4897c203fe514669676d387bfa70fddc8c8d328a6238bd",
+      "selected_cells_sha256": "b3181dbf62403aedcf448423b78354a2ff0098057c8d604a8fedee50779df603",
+      "warnings": [
+        "Source units and signs are retained as reported; this series is not a normalized triaxial model overlay.",
+        "Source/reference metadata may include template or copied entries; specimen state is not automatically applied.",
+        "A separately digitized stress\u2013strain curve; group-specific relative density and confinement remain in source metadata."
+      ],
+      "normalized": false,
+      "admitted_for_calibration": false
+    },
+    {
+      "id": "GEOLAB-HOSTUN-TRIAX-CD-2-C27-C28",
+      "path": "/Users/bmar5496/code/constitutive-atlas/data/curated/GEOLAB-HOSTUN-TRIAX-CD-2-C27-C28.json.gz",
+      "sha256": "5405cafe6e33e33886badab7be8bb34e95b569d2eb3bebdadd2c82b6405f3e14",
+      "columns": [
+        {
+          "key": "c27",
+          "name": "Axial strain",
+          "unit": "(%)",
+          "source_column": 27
+        },
+        {
+          "key": "c28",
+          "name": "Deviatoric stress",
+          "unit": "(kPa)",
+          "source_column": 28
+        }
+      ],
+      "initial": {},
+      "conventions": {
+        "stress": "source-defined",
+        "strain": "source-defined",
+        "stress_unit": "per-channel",
+        "strain_unit": "per-channel"
+      },
+      "native_complete_pairs": 228,
+      "consecutive_duplicate_native_abscissae": 10,
+      "native_abscissa_decreases": 31,
+      "source_url": "https://doi.org/10.5281/zenodo.12697903",
+      "workbook_sha256": "8389a770fd1ec553df4897c203fe514669676d387bfa70fddc8c8d328a6238bd",
+      "selected_cells_sha256": "a90b5523dbc0819c93a2fd28996e7f2f75eee9ca23fc1f83d82e2adf24b2017e",
+      "warnings": [
+        "Source units and signs are retained as reported; this series is not a normalized triaxial model overlay.",
+        "Source/reference metadata may include template or copied entries; specimen state is not automatically applied.",
+        "A separately digitized stress\u2013strain curve; group-specific relative density and confinement remain in source metadata."
+      ],
+      "normalized": false,
+      "admitted_for_calibration": false
+    }
+  ],
+  "shape_material_source_url": "https://iopscience.iop.org/article/10.1088/1361-6501/aa8dbf",
+  "geometry_to_experimental_batch_identity_established": false,
+  "scientific_admission": false,
+  "calibration_executed": false,
+  "normalization_executed": false,
+  "retained_prior_atlas_review_ids": [
+    "hostun-geolab-state-mapping-2026-10-31",
+    "hostun-primary-followup-2026-10-31"
+  ],
+  "scope": "Native read-only intake of existing Atlas Hostun records and prior source-conflict packets. All points remain untouched. No source channel relabeling, state inference, curve joining, calibration/validation split or fit. A shared material name does not identify the same physical batch."
+}

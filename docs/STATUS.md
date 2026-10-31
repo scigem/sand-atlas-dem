@@ -664,3 +664,31 @@ It preserves the applicable published/preprint identity distinction and remainin
 input gaps. An output-column count consistent with six curves and three
 realizations does not prove the column assignment; no guessed grouping is used.
 Exact published reproduction and experimental validation remain open.
+
+## First completed Hostun preparation chunk
+
+The ongoing immutable preparation reaches 250,000 steps (0.5 ms physical) in its
+first completed chunk. All 2,001 diagnostics are ordered and still precontact:
+pressure, kinetic energy and spring proxy are zero; nominal solid fraction grows
+from 0.01 to 0.0448169. Independent read-only retrospective observation
+`hostun-balanced424-precontact-observation-v2` finds maximum relative deviation
+from the prescribed exponential cell contraction 1.66988e-7 and maximum absolute
+rigid-volume void-ratio difference 1.84741e-13. No acceptance threshold is added or
+gate closed. V1's typed-history parser failure and source remain retained.
+
+The first chunk takes 453.756 s including its run diagnostics/checkpoint; summed
+advancement intervals take 452.536 s. Estimated solver buffers are 2,899,755,024 bytes.
+These are measurements for this dilute 424-grain workload only, not a dense or
+sustained performance claim or a prediction of preparation completion time.
+The second chunk continues under the original frozen controller and budget.
+
+## Experimental Hostun intake
+
+`hostun-experimental-intake-v1` inventories all ten existing curated GEOLAB
+Hostun drained-triaxial records and the adjacent Atlas's earlier feasibility/
+source-conflict packets without modifying that repository. Native units, row
+order, repetitions and decreases are retained; no normalization or fitting runs.
+The source's initial-state/axial-versus-shear strain conflicts and the unproven
+correspondence between the experimental batches and the Sand Atlas shape subset
+remain explicit admission gaps. See HOSTUN_EXPERIMENTAL_ADMISSION.md. This does
+not substitute experimental admission for the running mesh engineering studies.

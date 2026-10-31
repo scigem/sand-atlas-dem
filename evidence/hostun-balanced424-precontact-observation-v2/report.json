@@ -1,0 +1,41 @@
+{
+  "identity": "hostun-balanced424-precontact-observation-v2",
+  "retrospective_diagnostic": true,
+  "acceptance_policy_added": false,
+  "preparation_accepted": false,
+  "scientific_admission": false,
+  "source_unchanged": true,
+  "input_sha256": {
+    "/private/tmp/sand-atlas-dem-walls/evidence/hostun-balanced424-preparation-v3/study/run/chunk-0000/checkpoint.h5": "2468d73c118f56a31a06f7f516fd53b935c9ab3566b090ff2ec6f0381d14575c",
+    "/private/tmp/sand-atlas-dem-walls/evidence/hostun-balanced424-preparation-v3/study/run/chunk-0000/history.json": "9351119f6c47b23554639edda7eb6f405a19507bca1965739a92d1c08d1983be",
+    "/private/tmp/sand-atlas-dem-walls/evidence/hostun-balanced424-preparation-v3/study/run/chunk-0000/manifest.json": "49c1d8173530aa1363ff8b9896b1719da6730f0ab7f61b9a15f5cf7467668425",
+    "/private/tmp/sand-atlas-dem-walls/evidence/hostun-balanced424-precontact-observation-v2/analyze.py": "d7d4c55a2257e134dc9290832659644f7f1665576496b3fc9497ba776f1ecb3e"
+  },
+  "step": 250000,
+  "samples": 2001,
+  "ordered_complete_diagnostic_steps": true,
+  "physical_time_s": 0.0005,
+  "contact_phase": false,
+  "accepted_stage": 0,
+  "maximum_active_grain_pairs": 0,
+  "maximum_pressure_Pa": 0.0,
+  "maximum_kinetic_energy_J": 0.0,
+  "maximum_spring_proxy_energy_J": 0.0,
+  "maximum_relative_cell_difference_from_prescribed_exp": 1.669879867716162e-07,
+  "maximum_absolute_void_ratio_difference_from_rigid_volume": 1.8474111129762605e-13,
+  "initial_cell_m": [
+    0.009901010737804115,
+    0.009901010737804115,
+    0.009901010737804115
+  ],
+  "final_cell_m": [
+    0.006005267061769753,
+    0.006005267061769753,
+    0.006005267061769753
+  ],
+  "initial_nominal_solid_fraction": 0.009999999383759669,
+  "final_nominal_solid_fraction": 0.04481687979673637,
+  "estimated_device_working_bytes": 2899755024,
+  "cumulative_advance_wall_seconds": 452.5357841363875,
+  "note": "Observation of the first immutable completed chunk only. No thresholds are fitted or gates closed. Zero force/energy before contacts is not equilibrium acceptance. Timing is a dilute actual-workload observation, not dense or sustained benchmark throughput."
+}
