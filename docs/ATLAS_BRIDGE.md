@@ -126,5 +126,71 @@ It does not turn that fixture into a GPU-produced specimen or establish agreemen
 for qualified Hostun loading. The native API returns model state and strain;
 a generic comparison tool must resolve the model's explicit stress binding and
 state layout, rather than assume the first six values are stress. This study
-checks the pinned linear-elastic layout only. Dedicated comparison overlays and
-qualified material replay remain open.
+checks the pinned linear-elastic layout only. Dedicated Atlas browser overlays and
+qualified material replay remain open; the standalone comparison command below is implemented.
+
+## Execute and compare a prepared handoff
+
+The standalone DEM CLI can now execute the handoff and write a dedicated synthetic
+comparison without changing either atlas:
+
+```sh
+sand-dem atlas compare runs/hostun-tc/atlas \
+  --atlas-root ../constitutive-atlas \
+  --solver ../constitutive-atlas/build/atlas_solver \
+  --catalogue ../constitutive-atlas/build/generated/models.json \
+  --output runs/hostun-tc/comparison --plots
+```
+
+Supply an existing native solver and its generated catalogue. Nothing is built.
+`--plots` requires the `inspect` extra and writes SVG and PNG overlays of signed q
+and the sum of normal compression strains against axial compression strain.
+The artifact distinguishes source engineering strain from continuum infinitesimal
+strain and records the exact Mandel component order.
+Without it, the complete ordered comparison is still written as JSON.
+
+The command verifies handoff artifacts, the model definition hash from conversion,
+the generated catalogue's canonical hash and parameter order, and the binary's
+actual `--describe` catalogue. Atlas validates the model and executes its native
+recorded replay. The response must identify the same request, binary catalogue,
+parameters, initial state and every original source-row coordinate. Truncated and
+failed responses cannot become completed comparisons; their native response/log
+and a failed report are retained. Source, binary and input hashes are checked
+again after execution. Reusing an output directory fails rather than overwriting.
+
+Supported explicit v0.3 profiles must declare strain-path incremental/rate execution,
+fixed spatial Mandel components, compression-positive signs, supported small-strain
+kinematics and effective Cauchy stress bound to persistent state `sigma`.
+Existing v0.1 records use Atlas's documented legacy incremental contract and retain
+that identity in the report; no model is migrated. Physical-time observable stress,
+total stress and absent/unsupported stress bindings reject. This matches the
+current recorded-path consumer's capabilities. The model's actual state layout
+and optional scalar void ratio are read from the matched compiled definition.
+Void output requires exactly one persistent scalar whose explicit quantity is
+`void_ratio`; absent or ambiguous semantics yield `null`. Legacy fields named `e`
+remain in the raw native response rather than acquiring inferred semantics.
+
+`comparison.json` contains every source observation, continuum stress/strain,
+signed q and p, optional continuum void ratio, elapsed-time provenance and absolute
+differences. Continuum strain changes are relative to the explicitly configured
+initial strain. The raw handoff, full native response and compiled catalogue are
+copied alongside the source freeze and `report.json`. No interpolation, sorting,
+fitting or automatic scientific-admission decision occurs. Radial stress remains
+a prescribed synthetic-history constraint; agreement is not independent validation.
+
+`atlas-native-comparison-v3` passes this CLI on the five original analytical fixture
+observations, including reversal and duplicate, and exports visually inspected
+SVG/PNG plots. Worst q and p differences are 3.991e-9 Pa and 1.328e-9 Pa; engineering
+volumetric-strain difference is 2.175e-16. V1's more crowded tick layout and v2's earlier metadata/labels are retained
+under their own identities. These are software-fixture results, not GPU-generated sand
+response. Qualified Hostun loading/comparison and Atlas browser overlay import/UI
+remain open.
+
+`atlas-v03-comparison-v1` separately exercises the explicit v0.3 `barodesy-sand`
+strain-path-rate model through prepare and compare, with all five original ordered
+analytical-source observations. Its maximum normalized control error is
+3.1484e-11, below the frozen 1e-10 gate; the duplicate retains the exact state and
+strain. The plots show the different nonlinear response instead of forcing a match
+to the elastic source fixture. `cases/atlas-barodesy-sand-software-replay.json`
+contains its complete, explicit example coefficients and initial history. These
+are software inputs, not a calibration for Hostun or validation of this DEM method.

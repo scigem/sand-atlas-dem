@@ -1,0 +1,27 @@
+{
+  "format": "sand-dem-atlas-response-report/1",
+  "kind": "synthetic-dem",
+  "status": "complete",
+  "scientific_admission": false,
+  "model": "linear-elastic",
+  "observation_count": 5,
+  "binary_sha256": "da23f66eda19e4b14c3eea85422572809b87e24d37ca6ebdf8f4a05f21af2a82",
+  "catalogue_sha256": "bc08858bba18517f7398a383db1a3c8c38474e6ad7dc88db147364df7d6dc040",
+  "source_unchanged": true,
+  "artifacts": {
+    "prospective-freeze.json": "bb2780a3f91f04adf49aceac595bb9fb67af6f93fb3a52e3d92824e912df46b4",
+    "handoff.json": "e2ca9ea59ce9c0fea9f228a866357cb1c7d76d3b19b84938ac7dd6a49a66384b",
+    "comparison.svg": "3e3880571ee7c3779e26e16f9ace9166e002eb252db28c3fca501a6943c32007",
+    "replay-request.json": "ec9d5e3e9a5075914742e059b9ebe21f33f6fba2cb93ce3dc9e769b9467d8852",
+    "virtual-test.json": "5339009eac4b8677aec23bdec97ddce1dbb5e350589507fe3f92dedbeda78c71",
+    "projection-policy.json": "6cb038897998e21d4d943610fb5609981f7caf04684b6e043d4970ee31562c00",
+    "comparison.png": "47d4e1055e762d147e6c7b58853312b625d5a71305f7520da9fa68453371d7c7",
+    "comparison.json": "9d2f7a074f4d371f933e580bae074df3fc97e64bc119ea71b65ea98a995a8e79",
+    "native.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "configuration.json": "896542402211ce09d127a4b5626cac2c14a15db8674865af1ad319591c6344f0",
+    "compiled-catalogue.json": "7abdf1ad1c2569862c0f9f384a6bde0620bd90c863dcb055ef49db18b79bc99e",
+    "native-describe.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-response.json": "b33a7ed4c80de5127ef3aa796439b255649062844f23e535f169ab4fd439decb",
+    "native-describe.json": "a51b5587cba1f81b96c0db336b82798f20a40bfba74439a5809f2fb20fede0a4"
+  }
+}

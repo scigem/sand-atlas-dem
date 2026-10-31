@@ -50,7 +50,7 @@ case runner and direct, explicitly synthetic Atlas handoff described in
 [CASE_WORKFLOW.md](docs/CASE_WORKFLOW.md). Named-material registration, hash-checked
 resolution, case overrides, dry-run and automatic exports are now implemented.
 Reviewed Hostun acquisition/preparation is implemented; additional material recipes
-and dedicated synthetic comparison overlays remain open. The recorded-path
+and dedicated Atlas browser comparison overlays remain open. The recorded-path
 adapter now uses the actual Atlas converter and browser contract with a typed
 synthetic sidecar and explicit policy. This is required software
 work alongside the scientific gates below; naming a material must not infer calibrated properties.
@@ -188,8 +188,16 @@ work alongside the scientific gates below; naming a material must not infer cali
   fixture observations, including reversal/duplicate ordering, against independent
   Hooke stress/strain and void-evolution checks (atlas-native-replay-v2). This is
   bounded software coverage, not a qualified DEM response comparison.
+  The standalone native comparison command now validates the generated catalogue,
+  binary, explicit/legacy supported stress contract and complete ordered observations,
+  and writes synthetic JSON plus optional SVG/PNG overlays. The five-observation
+  analytical fixture passes; dedicated Atlas browser overlay integration remains open.
+  Actual v0.3 barodesy-sand replay also completes all five original fixture
+  observations (worst normalized control error 3.1484e-11, limit 1e-10).
+  Final serial actual-Metal/native Atlas regression passes 225 tests with three
+  graphical rendering skips; all frozen repository and external inputs are unchanged.
   Qualified DEM loading, continuum execution/comparison
-  and dedicated synthetic overlays remain open (docs/ATLAS_BRIDGE.md).
+  and dedicated Atlas browser overlays remain open (docs/ATLAS_BRIDGE.md).
 - [ ] Verify a second backend/device separately before advertising portability.
 
 ## Indicative effort and cost

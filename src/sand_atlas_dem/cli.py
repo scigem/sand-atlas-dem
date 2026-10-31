@@ -97,6 +97,20 @@ def main(argv=None):
     a.add_argument("--policy", type=Path, required=True)
     a.add_argument("--configuration", type=Path, required=True)
     a.add_argument("--atlas-root", type=Path, required=True)
+    a = atlas.add_parser(
+        "compare",
+        help="Replay a synthetic handoff through an existing Atlas native solver",
+    )
+    a.add_argument("handoff", type=Path)
+    a.add_argument("--output", type=Path, required=True)
+    a.add_argument("--atlas-root", type=Path, required=True)
+    a.add_argument("--solver", type=Path, required=True)
+    a.add_argument("--catalogue", type=Path, required=True)
+    a.add_argument(
+        "--plots",
+        action="store_true",
+        help="Write an SVG response comparison (requires inspect extra)",
+    )
     doctor = sub.add_parser("doctor")
     doctor.add_argument("--output", type=Path)
     g = sub.add_parser("geometry").add_subparsers(
@@ -268,15 +282,27 @@ def main(argv=None):
                 print(json.dumps(report, indent=2, allow_nan=False))
                 return 1 if report["status"] == "failed" else 0
         elif args.command == "atlas":
-            from .atlas_bridge import export_replay
+            if args.atlas_command == "compare":
+                from .atlas_compare import replay_comparison
 
-            report = export_replay(
-                args.run,
-                args.output,
-                policy_path=args.policy,
-                configuration=args.configuration,
-                atlas_root=args.atlas_root,
-            )
+                report = replay_comparison(
+                    args.handoff,
+                    args.output,
+                    atlas_root=args.atlas_root,
+                    solver=args.solver,
+                    catalogue=args.catalogue,
+                    plots=args.plots,
+                )
+            else:
+                from .atlas_bridge import export_replay
+
+                report = export_replay(
+                    args.run,
+                    args.output,
+                    policy_path=args.policy,
+                    configuration=args.configuration,
+                    atlas_root=args.atlas_root,
+                )
         elif args.command == "doctor":
             from .backend import Metal
 

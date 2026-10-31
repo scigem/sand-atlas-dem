@@ -1,0 +1,12 @@
+{
+  "identity": "atlas-native-comparison-v3",
+  "request_sha256": "ec9d5e3e9a5075914742e059b9ebe21f33f6fba2cb93ce3dc9e769b9467d8852",
+  "solver_sha256": "da23f66eda19e4b14c3eea85422572809b87e24d37ca6ebdf8f4a05f21af2a82",
+  "catalogue_file_sha256": "7abdf1ad1c2569862c0f9f384a6bde0620bd90c863dcb055ef49db18b79bc99e",
+  "expected_observations": 5,
+  "maximum_fixture_stress_difference_Pa": 1e-07,
+  "maximum_fixture_volumetric_strain_difference": 1e-12,
+  "scope": "Public compare CLI, existing native solver/catalogue, ordered analytical handoff fixture, JSON and SVG/PNG artifacts. No GPU specimen or material/experimental qualification.",
+  "parent": "atlas-native-comparison-v2",
+  "revision": "Explicit source versus continuum strain measures and Mandel component ordering; neutral normal-strain plot label. Optional void output requires unique declared semantics. Original observations and numerical gates unchanged."
+}

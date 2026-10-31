@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "returncode": 0,
+  "source_unchanged": true,
+  "changed": [],
+  "frozen_files": 166,
+  "external_inputs": 54,
+  "backend": "metal",
+  "native_atlas": true,
+  "scientific_admission": false,
+  "test_log_sha256": "3739f62717375ba7af4a1113015ee7fe6c59ad9fb10ca9af8d03ab3ccdfb4fd5"
+}

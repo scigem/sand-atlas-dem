@@ -147,6 +147,11 @@ Run GPU compilation/tests **serially**:
 ```sh
 .venv/bin/python -m pytest -q -m 'not metal'
 SAND_DEM_METAL=1 .venv/bin/python -m pytest -q
+# Include the actual Atlas converter and native comparison checks:
+SAND_DEM_METAL=1 SAND_DEM_ATLAS_ROOT=../constitutive-atlas \
+  SAND_DEM_ATLAS_SOLVER=../constitutive-atlas/build/atlas_solver \
+  SAND_DEM_ATLAS_CATALOGUE=../constitutive-atlas/build/generated/models.json \
+  .venv/bin/python -m pytest -q
 .venv/bin/python examples/contact_refinement.py
 .venv/bin/sand-dem qualify studies/mechanics-v2.json --output runs/mechanics
 .venv/bin/sand-dem benchmark --particles 10000 --resolution 64 --samples 2048 --steps 20 --repeats 3 --output runs/benchmark-10000
@@ -180,6 +185,9 @@ Each run contains a manifest, synthetic history, checkpoints and scheduled snaps
 Exports provide CSV, a distinctly typed synthetic comparison bundle, response plots
 and VTK geometry for offline inspection. The optional recorded-path adapter uses
 Atlas’s actual converter with an explicit projection policy and model configuration.
+The separate `sand-dem atlas compare` command executes a prepared handoff through
+an existing matching Atlas native solver/catalogue and produces an ordered synthetic
+comparison with optional SVG/PNG overlays; see [the bridge workflow](docs/ATLAS_BRIDGE.md).
 Constitutive Atlas is not modified and its measured-data importer is not reused. Stress is compression-positive; engineering,
 logarithmic and volume-ratio measures are explicitly distinguished.
 

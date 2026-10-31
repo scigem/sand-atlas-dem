@@ -6,7 +6,7 @@ MECHANICS_QUALIFICATION.md. Source-scale acquisition is now resolved for a docum
 resolutions are prepared. The bounded 216-sphere controller case passes; Hostun
 preparation remains open. Optional exact-feature mesh queries pass fixed-quadrature
 force checks, while source-triangle quadrature convergence is being studied.
-The latest complete Metal test run passes 202 tests, with three optional rendering
+The latest complete Metal test run passes 225 tests, with three optional rendering
 checks skipped, including actual Atlas request consumers; additional
 bounded CPU studies are listed below. Historical entries below retain
 their original evidence identities and are superseded where explicitly stated.
@@ -16,6 +16,32 @@ memory), Python 3.12, SlangPy 0.43.1, Metal. The solver and CLI execute actual G
 kernels; scientific pilot acceptance remains open.
 
 ## Latest explicit-viscosity and reference results
+
+`atlas-comparison-integration-v4` is the final reviewed comparison build:
+225 tests pass serially on actual Metal with native Atlas legacy/v0.3 comparisons
+and deliberate mismatched-catalogue rejection enabled. Three explicit graphical
+rendering checks are skipped; the standalone comparison SVG/PNG exports are
+separately rendered and inspected. All 167 frozen repository inputs and 55 external
+Atlas inputs remain unchanged. Earlier integration identities retain their exact
+results. No Hostun/material or experimental gate is closed by this regression.
+
+`atlas-v03-comparison-v1` also completes actual native `barodesy-sand` replay under
+its explicit v0.3 strain-path-rate/effective-Cauchy-stress contract. All five original
+analytical-source observations remain ordered, including the duplicate state.
+Maximum normalized control error is 3.1484e-11 (limit 1e-10). Its separately declared
+example coefficients are not a Hostun calibration, and its nonlinear curve is not
+expected to equal the elastic fixture. Optional continuum void output now requires
+a unique explicitly declared persistent `void_ratio` quantity; a field name alone
+is insufficient. Legacy raw state remains in the retained native response.
+
+`atlas-native-comparison-v3` passes the public `atlas compare` command against an
+existing native Atlas binary and matching generated catalogue. It preserves all
+five analytical-fixture observations and exports inspected SVG/PNG overlays. Worst
+q/p differences are 3.991e-9/1.328e-9 Pa, and volumetric-strain difference is
+2.175e-16. Binary/catalogue/model contracts and ordered complete observations are
+checked; unsupported physical-time/total-stress bindings reject. Standalone
+comparison is implemented; qualified Hostun response and Atlas browser overlay
+integration remain open. Earlier plot layouts/metadata retain their own identities.
 
 `adaptive-gpu-workflow-box-v1` passes twelve actual-Metal cases through the new
 accepted-reference resolver, with source hashes unchanged. The actual pending
@@ -31,8 +57,8 @@ analytical bridge observations with exact coordinate/order identity. Independent
 Hooke compliance and exponential void evolution pass the frozen stress/strain/void
 gates (worst 1.819e-12 Pa, 1.525e-20 and 2.221e-16 respectively). Binary, request,
 handoff and consumer sources remain unchanged. This is continuum software-path
-verification; qualified DEM loading, generic stress-binding-aware comparison and
-dedicated overlays remain open. See ATLAS_BRIDGE.md.
+verification. Standalone profile-aware native comparison is now implemented;
+qualified DEM loading and Atlas browser overlays remain open. See ATLAS_BRIDGE.md.
 
 `mixed-quadrature-box-integration-v2` passes 202 tests serially on actual Metal,
 including the actual Atlas Python/browser consumers, with three explicit graphical

@@ -1,0 +1,16 @@
+{
+  "identity": "wall-boundaries-integration-v1",
+  "parent": "wall-boundaries-metal-v1",
+  "backend": "metal",
+  "scope": "Multi-particle wall reductions, simultaneous grain/plane histories, memory inventory and complete serial regression of the fixed-normal wall laboratory",
+  "gates": {
+    "parent": "All unchanged wall-boundaries-metal-v1 assertions",
+    "multiwall_reduction": "257 bodies, two planes and two reduction levels: exact integer active counts per plane and in total; force and origin moment errors <1e-4 of independently summed force and force*0.04m scales",
+    "mixed_history": "Active grain pair and wall contacts coexist with unique stable source keys and nonzero continuing springs for both target types",
+    "multi_body_work": "Total and per-wall work agreement <1e-5 current elastic-energy proxy",
+    "force_moment_balance": "All grain forces/moments plus wall reactions balance within 1e-5 force and force*0.006m scales",
+    "memory_inventory": "Logical device-buffer byte count exactly equals independent traversal over every owned Slang buffer, including reduction trees and backup state",
+    "regression": "Complete serial actual-Metal pytest suite, with no relaxed existing assertions"
+  },
+  "limitations": ["No restitution law", "No rotating or inertial walls", "No wall servo controller", "No published benchmark or material acceptance"]
+}

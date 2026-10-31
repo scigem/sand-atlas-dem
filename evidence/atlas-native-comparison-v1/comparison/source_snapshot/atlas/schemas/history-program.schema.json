@@ -1,0 +1,314 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://benjym.github.io/constitutive-atlas/schemas/history-program.schema.json",
+  "title": "Experimental immutable history phase program; not an executable material model",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "id",
+    "sources",
+    "fields",
+    "inputs",
+    "phases"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "experimental-history-0.1"
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 64,
+      "pattern": "^[A-Za-z][A-Za-z0-9_-]*$"
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 32,
+      "items": {
+        "type": "object",
+        "required": [
+          "url",
+          "locator"
+        ],
+        "properties": {
+          "url": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4096,
+            "pattern": "^https?://"
+          },
+          "locator": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4096
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "fields": {
+      "type": "object",
+      "minProperties": 1,
+      "maxProperties": 32,
+      "propertyNames": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 64,
+        "pattern": "^[A-Za-z][A-Za-z0-9_]*$"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "shape",
+          "unit",
+          "storage"
+        ],
+        "properties": {
+          "shape": {
+            "enum": [
+              "scalar",
+              "sym"
+            ]
+          },
+          "unit": {
+            "oneOf": [
+              {
+                "enum": [
+                  "1",
+                  "Pa",
+                  "s",
+                  "K"
+                ]
+              },
+              {
+                "type": "object",
+                "required": [
+                  "si"
+                ],
+                "properties": {
+                  "si": {
+                    "type": "array",
+                    "minItems": 4,
+                    "maxItems": 4,
+                    "items": {
+                      "oneOf": [
+                        {
+                          "type": "number"
+                        },
+                        {
+                          "type": "string",
+                          "pattern": "^-?[0-9]{1,3}/[1-9][0-9]?$"
+                        }
+                      ]
+                    }
+                  }
+                },
+                "additionalProperties": false
+              }
+            ]
+          },
+          "storage": {
+            "enum": [
+              "state",
+              "preparation",
+              "lag",
+              "mode",
+              "context"
+            ]
+          },
+          "enum": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 64,
+            "items": {
+              "type": "number"
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "inputs": {
+      "type": "object",
+      "maxProperties": 64,
+      "propertyNames": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 64,
+        "pattern": "^[A-Za-z][A-Za-z0-9_]*$"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "shape",
+          "unit"
+        ],
+        "properties": {
+          "shape": {
+            "enum": [
+              "scalar",
+              "sym"
+            ]
+          },
+          "unit": {
+            "oneOf": [
+              {
+                "enum": [
+                  "1",
+                  "Pa",
+                  "s",
+                  "K"
+                ]
+              },
+              {
+                "type": "object",
+                "required": [
+                  "si"
+                ],
+                "properties": {
+                  "si": {
+                    "type": "array",
+                    "minItems": 4,
+                    "maxItems": 4,
+                    "items": {
+                      "oneOf": [
+                        {
+                          "type": "number"
+                        },
+                        {
+                          "type": "string",
+                          "pattern": "^-?[0-9]{1,3}/[1-9][0-9]?$"
+                        }
+                      ]
+                    }
+                  }
+                },
+                "additionalProperties": false
+              }
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "phases": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 64,
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "kind",
+          "base",
+          "bindings",
+          "writes"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 64,
+            "pattern": "^[A-Za-z][A-Za-z0-9_]*$"
+          },
+          "kind": {
+            "enum": [
+              "prepare",
+              "advance"
+            ]
+          },
+          "base": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 64,
+            "pattern": "^[A-Za-z][A-Za-z0-9_]*$"
+          },
+          "bindings": {
+            "type": "object",
+            "maxProperties": 64,
+            "propertyNames": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 64,
+              "pattern": "^[A-Za-z][A-Za-z0-9_]*$"
+            },
+            "additionalProperties": {
+              "oneOf": [
+                {
+                  "type": "object",
+                  "required": [
+                    "snapshot",
+                    "field"
+                  ],
+                  "properties": {
+                    "snapshot": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 64,
+                      "pattern": "^[A-Za-z][A-Za-z0-9_]*$"
+                    },
+                    "field": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 64,
+                      "pattern": "^[A-Za-z][A-Za-z0-9_]*$"
+                    }
+                  },
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "required": [
+                    "input"
+                  ],
+                  "properties": {
+                    "input": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 64,
+                      "pattern": "^[A-Za-z][A-Za-z0-9_]*$"
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              ]
+            }
+          },
+          "writes": {
+            "type": "object",
+            "maxProperties": 32,
+            "propertyNames": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 64,
+              "pattern": "^[A-Za-z][A-Za-z0-9_]*$"
+            },
+            "additionalProperties": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 10000
+            }
+          },
+          "guard": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 10000
+          },
+          "checks": {
+            "type": "array",
+            "maxItems": 64,
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 10000
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false,
+  "description": "Python reference only. Semantic validation additionally checks dimensions, scopes, expression types, ancestry, mode enums, <=32 scalarized fields and at least one advance phase."
+}

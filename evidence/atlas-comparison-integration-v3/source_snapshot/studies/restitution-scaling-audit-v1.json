@@ -1,0 +1,20 @@
+{
+  "identity": "restitution-scaling-audit-v1",
+  "scope": "Independent linear oscillator, tributary-area scaling and sphere-cap damping analysis; no DEM solver or inferred benchmark mass allocation",
+  "restitution_values": [0.1, 0.5, 0.9, 1.0],
+  "maximum_oscillator_error": 1e-10,
+  "mass_kg": 2.0,
+  "ordinary_stiffness_n_per_m": 30.0,
+  "patch_restitution": 0.5,
+  "patch_area_m2": 0.02,
+  "traction_stiffness_n_per_m3": 1000000000000.0,
+  "node_counts": [1, 4, 16, 64, 256, 1024],
+  "contact_area_fractions": [0.01, 0.1, 1.0],
+  "cap_radius_m": 0.01,
+  "cap_depths_m": [0.00001, 0.00004, 0.00016],
+  "normal_viscosity_n_s_per_m3": 100000.0,
+  "compression_speed_m_per_s": 0.001,
+  "scaling_relative_tolerance": 1e-12,
+  "gates": ["Closed underdamped restitution agrees with independent solve_ivp endpoint within 1e-10", "Full body mass at every node grows aggregate damping as sqrt(node_count)", "Area-partitioned mass gives invariant full-patch damping, without asserting it is the source prescription", "Partial contact changes the effective linear restitution", "Fixed traction viscosity gives cap tangent damping ratio proportional to sqrt(depth)"],
+  "limitations": ["No validation of thesis sign convention or ambiguous printed logarithm", "No nonattractive clipping or nonlinear impact restitution prediction", "Not benchmark reproduction or material admission"]
+}

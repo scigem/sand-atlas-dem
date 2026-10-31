@@ -2,8 +2,8 @@
 
 The named-material runner and reviewed Hostun source acquisition are implemented.
 The recorded-path Atlas bridge is implemented with an explicit synthetic sidecar.
-Source recipes for other materials, named numerical profiles and dedicated synthetic
-comparison overlays remain open. The existing
+Source recipes for other materials, named numerical profiles and dedicated Atlas
+browser overlays remain open; standalone native comparisons are available. The existing
 `run`, `resume`, geometry and export commands remain available as lower-level tools.
 
 ## User interface
@@ -147,6 +147,11 @@ interpretation, axisymmetric projection and continuum kinematic compatibility
 must be declared. Successful import does not establish material calibration or
 experimental validation.
 
+The separate `sand-dem atlas compare` command executes a prepared handoff through
+an existing matching native Atlas solver/catalogue and writes ordered synthetic
+response comparisons, with optional SVG/PNG overlays. See ATLAS_BRIDGE.md. This
+standalone path does not modify the Atlas browser or its measurement importer.
+
 ## Deliverables and acceptance
 
 - [X] Named-material listing/resolution and hash-checked prepared-asset registry.
@@ -156,8 +161,10 @@ experimental validation.
 - [X] One output directory with resolved case, manifest, history, checkpoint and exports.
 - [X] Typed synthetic virtual-test projection, preparation audit and raw-observation provenance.
 - [X] Actual Atlas converter/browser recorded-request validation with explicit synthetic metadata.
-- [ ] Dedicated Atlas synthetic-evidence overlay import and UI labeling; recorded
-  requests already work, while automatic comparison overlays remain unsupported.
+- [X] Standalone native replay/comparison command with explicit synthetic JSON and
+  optional SVG/PNG overlays, compiled-catalogue identity and ordered observations.
+- [ ] Dedicated Atlas browser synthetic-evidence overlay import and UI labeling;
+  standalone comparisons are available, while browser overlays remain unsupported.
 - [X] End-to-end synthetic-fixture execution and failed-preparation tests on Metal.
 - [ ] Qualified named Hostun preparation/loading study; the two-step named-material
   smoke run checks execution only. Contact and material qualification remain open.
