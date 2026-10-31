@@ -121,3 +121,15 @@ overlap is 0.666968% against the unchanged 1% guard. At this checkpoint only two
 grain pairs are active, nominal solid fraction is 0.061681 and pressure is
 0.180739 Pa. This is an observation of dilute first contacts, not successful
 preparation. Keep the original terminal audit and all convergence gates.
+
+## User-requested stop for timestep studies
+
+On2026-11-01 the user requested termination of this simulation and isolated-contact
+timestep studies. The verified process tree was sentSIGTERM, all processes exited,
+and the original session returned143. See
+`evidence/hostun-balanced424-user-stop-v1/report.json`. The latest completed audited
+checkpoint remains step1,000,000; the partially executing next chunk is not admitted.
+Original manifests/logs/checkpoints remain intact, including the interrupted
+running status. This is a user stop, not convergence or budget-exhaustion evidence.
+The separate [contact studies](CONTACT_TIMESTEP_LIMITS.md) do not change this
+preparation's frozen timestep or admit its specimen.

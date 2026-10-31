@@ -1,5 +1,26 @@
 # Status and evidence
 
+## Preparation stopped; isolated contact timestep evidence
+
+The user requested termination of the ongoing Hostun preparation to investigate
+single-contact timestep limits. All three verified processes exited; the original
+session returned143. Completed million-step checkpoint and interrupted artifacts
+remain preserved; no specimen acceptance is claimed. See
+`evidence/hostun-balanced424-user-stop-v1/report.json`.
+
+Two prospectively frozen actual-Metal studies record96 analytical contact cases
+and32 translated rebound cases, with unchanged source hashes. Confined cubes at
+0.1/0.5/1mm pass1% sampled path and dynamic-energy checks at tested32/64/128ns,
+respectively, exceeding the existing conservative preflight bounds. Large stable
+steps can still be inaccurate. The smallest rebound's2ns error changes from3.76%
+to0.073% under whole-fixture translation, demonstrating coordinate sensitivity
+independent of step refinement. Failures remain retained. Production timestep
+policy is unchanged; irregular mesh/rotation/friction and assembly studies remain
+open. See [CONTACT_TIMESTEP_LIMITS.md](CONTACT_TIMESTEP_LIMITS.md).
+
+Earlier descriptions of preparation as running below are historical observations;
+the process is now stopped.
+
 The continuing Hostun preparation has completed step 1,000,000 (2 ms physical).
 The new independent observation retains all 8,001 ordered diagnostics and exactly
 preserves the preceding 6,001-row history. Controller replay still differs by

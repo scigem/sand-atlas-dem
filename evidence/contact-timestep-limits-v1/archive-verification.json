@@ -1,0 +1,8 @@
+{
+  "archive_hashes_match": true,
+  "files": 27,
+  "cases": 96,
+  "ordered_observations": true,
+  "rejections_not_counted_accurate": true,
+  "report_sha256": "fd08c6c863342901ff69e909dd4e116848eb74260f856d04e57dff0b6a6bad80"
+}

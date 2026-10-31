@@ -45,6 +45,15 @@ implemented software from studies that still require scientific acceptance.
 
 ## Remaining study gates, in dependency order
 
+Current steering: the user stopped the ongoing Hostun preparation after its
+million-step checkpoint to study individual-contact timestep limits. Completed
+96-case analytical and32-case coordinate-translation Metal sweeps are retained in
+[CONTACT_TIMESTEP_LIMITS.md](docs/CONTACT_TIMESTEP_LIMITS.md). They expose excessive
+conservatism in the existing preflight for these fixtures and a coordinate-error
+floor. Production policy remains unchanged. Irregular pair contacts, rotation,
+friction and loading-rate/refinement remain required before a new preparation.
+Earlier running-preparation statements below describe historical progress.
+
 Public workflow requirement clarified by the user: implement the named-material
 case runner and direct, explicitly synthetic Atlas handoff described in
 [CASE_WORKFLOW.md](docs/CASE_WORKFLOW.md). Named-material registration, hash-checked

@@ -1,0 +1,13 @@
+{
+  "identity": "hostun-balanced424-user-stop-v1",
+  "reason": "User requested termination to investigate single-contact timestep limits",
+  "termination": "SIGTERM sent to verified process tree 58427,58417,58398; subsequent ps returned no processes; original exec session exited 143",
+  "recorded_at_utc": "2026-10-31T18:58:24.572372+00:00",
+  "latest_completed_checkpoint": "evidence/hostun-balanced424-preparation-v3/study/run/chunk-0003/checkpoint.h5",
+  "checkpoint_sha256": "b0f986547b93f250d4b81518db985c25eb2ff6ba9c236f99407189d866783dfd",
+  "step": 1000000,
+  "preparation_accepted": false,
+  "scientific_admission": false,
+  "original_files_preserved": true,
+  "note": "Original running manifests are retained as interrupted evidence, not terminal acceptance. Partial next chunk is not a qualified checkpoint."
+}

@@ -1,0 +1,93 @@
+{
+  "mode": "rebound",
+  "side_m": 0.001,
+  "timestep_s": 2.56e-07,
+  "omega_rad_s": 614295.1168339512,
+  "omega_dt": 0.1572595499094915,
+  "linear_verlet_stability_threshold_s": 3.255764119219941e-06,
+  "production_bound_s": 1.8087578440110786e-08,
+  "production_preflight": "Timestep exceeds conservative estimate 1.80876e-08 s",
+  "requested_steps": 80,
+  "completed_step": 80,
+  "failure": null,
+  "analytical_domain_exit": false,
+  "completed": true,
+  "bounded_observed": true,
+  "accurate": false,
+  "maximum_normalized_path_error": 0.0293057473769327,
+  "maximum_relative_dynamic_energy_error": 0.005607733155474137,
+  "rows": [
+    {
+      "step": 0,
+      "time_s": 0.0,
+      "displacement_m": 1.0000472098897761e-06,
+      "velocity_m_s": -0.0,
+      "exact_displacement_m": 1e-06,
+      "exact_velocity_m_s": -0.0,
+      "normalized_path_error": 4.7209889776179414e-05,
+      "relative_dynamic_energy_error": 9.442200832587844e-05,
+      "dynamic_energy_multiple": 1.0000944220083259,
+      "active_contacts": 1
+    },
+    {
+      "step": 16,
+      "time_s": 4.096e-06,
+      "displacement_m": -9.443100041778285e-07,
+      "velocity_m_s": -0.6125702938006307,
+      "exact_displacement_m": -9.453564717569678e-07,
+      "exact_velocity_m_s": -0.6142951168339512,
+      "normalized_path_error": 0.002807808471944582,
+      "relative_dynamic_energy_error": 0.005607733155474137,
+      "dynamic_energy_multiple": 0.9943922668445259,
+      "active_contacts": 0
+    },
+    {
+      "step": 32,
+      "time_s": 8.192e-06,
+      "displacement_m": -3.453397982780028e-06,
+      "velocity_m_s": -0.6125702938006307,
+      "exact_displacement_m": -3.4615092703088322e-06,
+      "exact_velocity_m_s": -0.6142951168339512,
+      "normalized_path_error": 0.008111287528804304,
+      "relative_dynamic_energy_error": 0.005607733155474137,
+      "dynamic_energy_multiple": 0.9943922668445259,
+      "active_contacts": 0
+    },
+    {
+      "step": 48,
+      "time_s": 1.2288000000000002e-05,
+      "displacement_m": -5.962485961383095e-06,
+      "velocity_m_s": -0.6125702938006307,
+      "exact_displacement_m": -5.977662068860697e-06,
+      "exact_velocity_m_s": -0.6142951168339512,
+      "normalized_path_error": 0.015176107477602195,
+      "relative_dynamic_energy_error": 0.005607733155474137,
+      "dynamic_energy_multiple": 0.9943922668445259,
+      "active_contacts": 0
+    },
+    {
+      "step": 64,
+      "time_s": 1.6384e-05,
+      "displacement_m": -8.471573939985294e-06,
+      "velocity_m_s": -0.6125702938006307,
+      "exact_displacement_m": -8.493814867412562e-06,
+      "exact_velocity_m_s": -0.6142951168339512,
+      "normalized_path_error": 0.022240927427267448,
+      "relative_dynamic_energy_error": 0.005607733155474137,
+      "dynamic_energy_multiple": 0.9943922668445259,
+      "active_contacts": 0
+    },
+    {
+      "step": 80,
+      "time_s": 2.048e-05,
+      "displacement_m": -1.0980661918587493e-05,
+      "velocity_m_s": -0.6125702938006307,
+      "exact_displacement_m": -1.1009967665964426e-05,
+      "exact_velocity_m_s": -0.6142951168339512,
+      "normalized_path_error": 0.0293057473769327,
+      "relative_dynamic_energy_error": 0.005607733155474137,
+      "dynamic_energy_multiple": 0.9943922668445259,
+      "active_contacts": 0
+    }
+  ]
+}
