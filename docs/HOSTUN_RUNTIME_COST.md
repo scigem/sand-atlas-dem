@@ -1,5 +1,14 @@
 # Refined Hostun preparation cost update
 
+The subsequent completed 750k checkpoint retains the preceding trajectory
+exactly. Its latest 250k-step interval takes 3210.239 s: mean 12.841 ms/step,
+median 12.855 and p95 13.006. Nominal solid fraction is still only 0.066485,
+with two active grain pairs. This newer observation does not turn the original
+conditional runtime scenarios below into an ETA or a dense benchmark. The exact
+checkpoint, source/shape hashes and independent controller/geometric replay are
+retained under `hostun-balanced424-750k-observation-v1`. Preparation continues
+unchanged; no gate is relaxed and no queued GPU work is started concurrently.
+
 The original short sphere timings do not describe the later 53.6-million-node,
 all-53-shape exact-mesh Hostun preparation. The independently reproducible
 `hostun-preparation-cost-update-v1` uses the completed 500,000-step checkpoint,

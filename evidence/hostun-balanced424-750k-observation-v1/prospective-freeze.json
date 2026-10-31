@@ -1,0 +1,11 @@
+{
+  "files": {
+    "evidence/hostun-balanced424-first-contact-observation-v1/analyze.py": "748c55a5a425bec5fac83ca7da574d089039ed372631638012a32f97bdc33a6b",
+    "evidence/hostun-balanced424-750k-observation-v1/analyze.py": "6a8ef1edbe966df2d9195c940d63327d4a5f65de19611934eefb7ab48efbab5b",
+    "evidence/hostun-balanced424-preparation-v3/study/run/chunk-0002/checkpoint.h5": "095cde768206383ea007ddb340d6546eab87ec508d9b3095172c87a85e632a3e",
+    "evidence/hostun-balanced424-preparation-v3/study/run/chunk-0002/history.json": "a398600f3b65335d8b28b2fadfd70ab904ce5e44dedfa949036b3005350b2700",
+    "evidence/hostun-balanced424-preparation-v3/study/run/chunk-0002/manifest.json": "2cb97b9c9495906d48a8ef990c1483982de4c71308ba6f0e90220eb781f3b03c",
+    "evidence/hostun-balanced424-preparation-v3/study/run/chunk-0001/history.json": "62c1b4d4c777ca79dac4fbd1d849a97f9cdc1bf008255cec2400e6ff513b7e30"
+  },
+  "scope": "Read-only 750k checkpoint trajectory/contact/controller audit plus preserved-prefix and interval runtime observations; no new acceptance gate or GPU execution."
+}

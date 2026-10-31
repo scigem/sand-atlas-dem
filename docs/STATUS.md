@@ -1,5 +1,22 @@
 # Status and evidence
 
+The continuing Hostun preparation has completed step 750,000 (1.5 ms physical).
+Independent read-only observation retains all 6,001 ordered diagnostics and
+exactly preserves the preceding 4,001-row history. Controller replay differs by
+zero; the maximum integrated-cell discrepancy remains 2.112e-7 relative and
+rigid-volume void discrepancy 1.848e-13 absolute. Shape bytes and the complete
+archived solver remain hash-verified. All 890 checkpoint history keys/rows are
+valid, unique and finite. All-history maximum overlap remains 0.666968%, below
+the unchanged 1% guard.
+
+The specimen is still unaccepted: nominal solid fraction 0.066485, pressure
+0.184658 Pa against 10 kPa, two active grain pairs, kinetic/proxy ratio 0.235390,
+and imbalance 0.935706. The latest 250k steps take 3210.239 s of recorded advance
+intervals (12.841 ms/step mean). The next chunk is running under the original
+controller/budget. These remain dilute observations, not dense performance,
+equilibrium or material qualification. See
+`evidence/hostun-balanced424-750k-observation-v1`.
+
 Active-prefix rollback storage is implemented after the original contact ledger:
 history rollback rows allocate to observed high-water activity and copies use
 the current committed prefix. Full hashes and capacities remain unchanged.
