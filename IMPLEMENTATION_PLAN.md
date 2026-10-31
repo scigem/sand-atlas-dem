@@ -103,6 +103,14 @@ work alongside the scientific gates below; naming a material must not infer cali
   same pose, reproduces all five overlapping levels exactly and reduces the final
   change to 0.3765%, passing the unchanged 2% gate. The terminal parent retains every original case. Full-library reference consolidation and GPU
   comparison remain required; this targeted diagnostic does not admit the L2 asset.
+  Fixed per-shape quadrature selection/preparation and mixed-level GPU study
+  support are now implemented. Selection requires every pose and a passing,
+  source-stable archived reference; it cannot use a level as its own reference.
+  Physical geometry, mass and inertia stay unchanged. Balanced shape sampling
+  supports complete source inventories in subsequent assemblies. The final
+  combined suite passes 201 tests on Metal with three optional rendering skips.
+  The adaptive Hostun asset, all-106 mixed GPU comparison and assembly studies
+  remain open; see docs/ADAPTIVE_QUADRATURE.md.
 - [X] Freeze and run rolling/objectivity tests, separating/returning contact,
   changing normal orientation, strongly anisotropic torque-free rotation and
   capacity-growth stress tests. Test timestep refinement over useful physical time.

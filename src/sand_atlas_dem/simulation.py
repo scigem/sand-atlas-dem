@@ -26,7 +26,14 @@ class RunResult:
 def initial_assembly(library, spec):
     rng = np.random.default_rng(spec.seed)
     n = spec.particles
-    ids = rng.integers(len(library.shapes), size=n, dtype=np.uint32)
+    if spec.shape_sampling == "balanced":
+        if n < len(library.shapes):
+            raise ValueError(
+                "Balanced sampling requires at least one particle per shape"
+            )
+        ids = rng.permutation(np.arange(n, dtype=np.uint32) % len(library.shapes))
+    else:
+        ids = rng.integers(len(library.shapes), size=n, dtype=np.uint32)
     scales = np.full(n, spec.scale)
     radius = max(s.radius for s in library.shapes) * spec.scale
     side = int(np.ceil(n ** (1 / 3)))
@@ -201,13 +208,18 @@ class Simulation:
         try:
             if view_options is not None:
                 from .viewer import Renderer
+
                 try:
                     renderer = Renderer(self, path, view_options)
                     renderer.update()
                 except Exception as exc:
                     failure_text = f"{type(exc).__name__}: {exc}"
-                    warnings.warn(f"Visualization unavailable; simulation continues: {failure_text}")
-                    manifest["visualization"] = dict(status="failed", failure=failure_text)
+                    warnings.warn(
+                        f"Visualization unavailable; simulation continues: {failure_text}"
+                    )
+                    manifest["visualization"] = dict(
+                        status="failed", failure=failure_text
+                    )
             while self.stage_index < len(spec.stages):
                 stage = spec.stages[self.stage_index]
                 if self.stage_steps >= stage["steps"]:
@@ -307,7 +319,9 @@ class Simulation:
                 try:
                     manifest["visualization"] = renderer.close()
                 except Exception as exc:
-                    manifest["visualization"] = dict(status="failed", failure=f"{type(exc).__name__}: {exc}")
+                    manifest["visualization"] = dict(
+                        status="failed", failure=f"{type(exc).__name__}: {exc}"
+                    )
                     warnings.warn(f"Could not save rendering report: {exc}")
             write_json(
                 path / "history.json",

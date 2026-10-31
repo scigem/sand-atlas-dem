@@ -1,0 +1,10 @@
+{
+  "files": {
+    "src/sand_atlas_dem/quadrature.py": "a51db08da58986a58d2982c618823b6ad880e450f1dca8742d58fc881b5bff24",
+    "src/sand_atlas_dem/geometry.py": "d84592edef45221d589ed22b8a2a36f53be39bb5b8972ec55a548913c929c6a5",
+    "src/sand_atlas_dem/util.py": "0f9dc71429a87057dc08216f3c51425d8b76be9c4fd30f2cab6c3f98b70397c2",
+    "src/sand_atlas_dem/cli.py": "e27dc3eadf408f3abbdc3516d8ae7ecac6ff0e2240d12976c11045f99fa08253",
+    "tests/test_adaptive_quadrature.py": "ebcd5ea050c00f8937b2eb87e330454095497efff644b9f9f906a601beeb06c5"
+  },
+  "scope": "CPU software checks of fixed per-shape selection, frozen reference binding, exact preservation of source geometry/mass/inertia, actual CLI preparation; synthetic tables do not qualify Hostun or GPU accuracy"
+}

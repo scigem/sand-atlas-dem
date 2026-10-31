@@ -123,6 +123,10 @@ is not used. See the
 .venv/bin/sand-dem geometry face-quadrature grain.h5 grain-gauss3-l2.h5 --rule gauss3 --subdivisions 2
 ```
 
+Fixed [per-grain quadrature selection](docs/ADAPTIVE_QUADRATURE.md) is available
+through `geometry adaptive-quadrature` once a complete reference study passes.
+It preserves physical geometry and keeps GPU/material qualification separate.
+
 Input coordinates need a source-supported unit. Exact coordinate welding decodes
 STL triangle soup; there is no automatic hole filling, smoothing, component removal
 or winding repair. Invalid solids are rejected. VDB density volumes are not accepted

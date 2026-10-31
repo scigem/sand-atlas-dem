@@ -1,0 +1,13 @@
+{
+  "identity": "adaptive-geometry-integration-v1",
+  "backend": "metal",
+  "pytest_passed": 193,
+  "pytest_skipped": 3,
+  "pytest_exit_code": 0,
+  "passed": true,
+  "executed_snapshot": "source_snapshot",
+  "test_log_sha256": "a1c62469a065c998de95abf3b880f5cc9ac71478e9d42118e4eaaff726bf6650",
+  "post_execution_changes": [],
+  "scientific_admission": false,
+  "note": "Full serial actual-Metal regression; three optional rendering checks skipped. No mixed Hostun asset admitted."
+}

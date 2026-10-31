@@ -1,0 +1,19 @@
+{
+  "identity": "hostun-triangle-quadrature-culled-v1",
+  "frozen_before_execution": true,
+  "library": "assets/private/hostun-30-r64-s2048.h5",
+  "library_sha256": "1bc9f37a22b402ada31495ea7ff1ebef4bb6a27a26d68a8333f7f84a12ad16b7",
+  "pose_report": "evidence/hostun-exact-contact-poses-v1/report.json",
+  "pose_report_sha256": "2fe27ce043ccda54f65ac91a37e30e92f34cc100e87ac4cced5beb626ef38a70",
+  "subdivision_levels": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "query_batch_size": 2048,
+  "maximum_finest_relative_change": 0.02,
+  "scope": "Independent static source-triangle normal traction: symmetric three-point quadrature after 0 through 4 uniform triangle subdivisions, conservative AABB exclusion only. Finest-change gate is not a rigorous absolute error bound. No friction/material acceptance. Same original source nodes and 2% finest-change gate; skip exact queries only outside support planes enclosing every original triangle. Distinct accelerated reference identity; prior partial study retained.",
+  "outside_point_rejection": "fp64-original-vertex-support-planes"
+}

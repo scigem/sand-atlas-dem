@@ -18,6 +18,7 @@ class Experiment:
     planes: list = field(default_factory=list)
     boundary_box: list | None = None
     particles: int = 1000
+    shape_sampling: str = "random"
     seed: int = 42
     density: float = 2650.0
     normal_stiffness: float = 1e12  # traction/penetration: Pa/m
@@ -45,6 +46,8 @@ class Experiment:
             raise ValueError("Unsupported experiment format")
         if self.contact_geometry not in {"sdf", "mesh"}:
             raise ValueError("Unsupported contact geometry")
+        if self.shape_sampling not in {"random", "balanced"}:
+            raise ValueError("shape_sampling must be random or balanced")
         if type(self.periodic) is not bool:
             raise ValueError("periodic must be an explicit boolean")
         validate_planes(self.planes, self.periodic, self.boundary_box)

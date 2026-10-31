@@ -6,7 +6,7 @@ MECHANICS_QUALIFICATION.md. Source-scale acquisition is now resolved for a docum
 resolutions are prepared. The bounded 216-sphere controller case passes; Hostun
 preparation remains open. Optional exact-feature mesh queries pass fixed-quadrature
 force checks, while source-triangle quadrature convergence is being studied.
-The latest complete Metal test run passes 174 tests, with three optional rendering
+The latest complete Metal test run passes 201 tests, with three optional rendering
 checks skipped, including actual Atlas request consumers; additional
 bounded CPU studies are listed below. Historical entries below retain
 their original evidence identities and are superseded where explicitly stated.
@@ -16,6 +16,18 @@ memory), Python 3.12, SlangPy 0.43.1, Metal. The solver and CLI execute actual G
 kernels; scientific pilot acceptance remains open.
 
 ## Latest explicit-viscosity and reference results
+
+`adaptive-quadrature-preparation-v1` passes 14 CPU checks of reference-driven fixed
+per-grain resolution, archived-source/protocol binding and exact preservation of
+physical geometry, mass and inertia. Balanced source sampling is now explicit and
+keeps the default random sequence unchanged. `adaptive-geometry-integration-v1`
+passes 193 tests; after extending the GPU study interface to mixed levels,
+`mixed-quadrature-integration-v1` passes 201 tests serially on Metal, with three
+optional rendering skips. The latter archives all source/test/research-helper and
+public case/protocol bytes. Mixed static GPU comparisons preserve the existing
+10% refined-integral, 0.1% same-level and twofold pooled-improvement gates. The
+actual 106-pose mixed Hostun study awaits the accepted reference; no adaptive
+Hostun asset or assembly is admitted. See ADAPTIVE_QUADRATURE.md.
 
 `normal-viscosity-integration-v1` passes all 166 tests serially on Metal.
 After merging the existing visualization commit, the independently frozen

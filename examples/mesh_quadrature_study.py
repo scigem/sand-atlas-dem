@@ -14,6 +14,47 @@ from sand_atlas_dem.spec import Experiment
 from sand_atlas_dem.util import read_json, sha256, write_json
 
 
+def subdivision_for(item, shape_id):
+    """A fixed asset declares either one level or a complete per-shape map."""
+    if ("subdivisions" in item) == ("subdivisions_by_shape" in item):
+        raise ValueError("Declare exactly one fixed quadrature level policy")
+    value = (
+        item["subdivisions"]
+        if "subdivisions" in item
+        else item["subdivisions_by_shape"][shape_id]
+    )
+    if type(value) is not int or not 0 <= value <= 4:
+        raise ValueError("Invalid fixed quadrature subdivision level")
+    return value
+
+
+def reference_protocol(reference, path, policy):
+    """Legacy embedded policy, or the prospectively frozen adaptive sidecar."""
+    if "protocol" in reference:
+        return reference["protocol"]
+    protocol_path = Path(policy["reference_protocol"])
+    if sha256(protocol_path) != policy["reference_protocol_sha256"]:
+        raise ValueError("Reference protocol bytes changed")
+    freeze_path = path.parent / "prospective-freeze.json"
+    if sha256(freeze_path) != policy["reference_freeze_sha256"]:
+        raise ValueError("Reference freeze bytes changed")
+    freeze = read_json(freeze_path)
+    if (
+        freeze["protocol_sha256"] != policy["reference_protocol_sha256"]
+        or not freeze.get("source_hashes")
+        or not reference.get("source_unchanged")
+        or not reference.get("reference_refinement_passed")
+    ):
+        raise ValueError("Adaptive reference failed its source/refinement contract")
+    for name, digest in freeze["source_hashes"].items():
+        relative = Path(name)
+        if relative.is_absolute() or ".." in relative.parts:
+            raise ValueError("Invalid archived source path")
+        if sha256(path.parent / "source_snapshot" / relative) != digest:
+            raise ValueError("Archived reference source changed")
+    return read_json(protocol_path)
+
+
 def fixed_level_error(force, fixed, gpu_active, reference_active, policy):
     """Relative force error; an empty reference requires an exactly empty contact."""
     if not np.isfinite(force).all() or not np.isfinite(fixed).all():
@@ -42,6 +83,7 @@ def main():
     if sha256(reference_path) != policy["reference_report_sha256"]:
         raise ValueError("Reference bytes changed")
     reference = read_json(reference_path)
+    reference["protocol"] = reference_protocol(reference, reference_path, policy)
     if policy.get("reference_inside_policy") is not None and (
         reference["protocol"].get("inside_policy") != policy["reference_inside_policy"]
         or reference["protocol"].get("winding_tolerance") != 1e-8
@@ -103,7 +145,7 @@ def main():
     metal = Metal()
     rows = []
     library_records = []
-    for item in policy["libraries"]:
+    for library_index, item in enumerate(policy["libraries"]):
         library = ShapeLibrary.load(item["path"])
         if any(
             s.provenance.get("parent_shape_library_sha256")
@@ -114,6 +156,15 @@ def main():
                 "Quadrature asset does not name the frozen physical source library"
             )
         shapes = {s.id: s for s in library.shapes}
+        if "subdivisions_by_shape" in item and set(
+            item["subdivisions_by_shape"]
+        ) != set(shapes):
+            raise ValueError("Per-shape levels must cover exactly the physical library")
+        if any(
+            s.provenance.get("quadrature_subdivisions") != subdivision_for(item, s.id)
+            for s in library.shapes
+        ):
+            raise ValueError("Prepared quadrature level differs from frozen policy")
         library_records.append(
             dict(
                 **item,
@@ -122,9 +173,17 @@ def main():
             )
         )
         for case in reference["rows"]:
+            if (
+                "subdivisions_by_shape" in item
+                and subdivision_for(item, case["shape"]) >= case["levels"][-1]["level"]
+            ):
+                raise ValueError(
+                    "Adaptive asset cannot serve as its own refined reference"
+                )
             shape = shapes[case["shape"]]
             row = dict(
-                subdivisions=item["subdivisions"],
+                library_index=library_index,
+                subdivisions=subdivision_for(item, case["shape"]),
                 shape=shape.id,
                 separation_m=case["separation_m"],
                 target_sampled_depth_fraction=case["target_sampled_depth_fraction"],
@@ -161,7 +220,7 @@ def main():
                     * spec.normal_stiffness
                 )
                 same_level = next(
-                    l for l in case["levels"] if l["level"] == item["subdivisions"]
+                    l for l in case["levels"] if l["level"] == row["subdivisions"]
                 )
                 fixed = (
                     np.array(same_level["force_integral_m3"]) * spec.normal_stiffness
@@ -201,12 +260,8 @@ def main():
             )
             print(row, flush=True)
         del shapes, library
-    coarse = [
-        r for r in rows if r["subdivisions"] == policy["libraries"][0]["subdivisions"]
-    ]
-    fine = [
-        r for r in rows if r["subdivisions"] == policy["libraries"][-1]["subdivisions"]
-    ]
+    coarse = [r for r in rows if r["library_index"] == 0]
+    fine = [r for r in rows if r["library_index"] == len(policy["libraries"]) - 1]
     complete = all(r["status"] == "complete" for r in rows)
     coarse_worst = max(
         (r.get("relative_force_error", float("inf")) for r in coarse),
@@ -234,6 +289,12 @@ def main():
         or sha256(reference_path) != policy["reference_report_sha256"]
     ):
         raise ValueError("Frozen protocol/reference changed during the study")
+    if "reference_protocol" in policy:
+        reference_protocol(
+            reference={k: v for k, v in reference.items() if k != "protocol"},
+            path=reference_path,
+            policy=policy,
+        )
     if nearest_policy is not None and (
         sha256(baseline["path"]) != baseline["sha256"]
         or sha256(fixed_reference_path) != fixed_reference_hash

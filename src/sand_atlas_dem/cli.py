@@ -10,24 +10,44 @@ from .util import sha256, write_json
 
 def _view_arguments(parser):
     from .viewer import FIELDS, VECTORS
-    parser.add_argument("--live", action="store_true", help="Interactive 3D viewer during simulation")
-    parser.add_argument("--record-video", action="store_true", help="Write x/y/z/isometric MP4s under the run's visualization directory")
-    parser.add_argument("--view-every", type=int, default=1, help="Render every N diagnostic chunks")
+
+    parser.add_argument(
+        "--live", action="store_true", help="Interactive 3D viewer during simulation"
+    )
+    parser.add_argument(
+        "--record-video",
+        action="store_true",
+        help="Write x/y/z/isometric MP4s under the run's visualization directory",
+    )
+    parser.add_argument(
+        "--view-every", type=int, default=1, help="Render every N diagnostic chunks"
+    )
     parser.add_argument("--video-fps", type=int, default=24)
     parser.add_argument("--color-by", choices=FIELDS, default="speed")
     parser.add_argument("--vectors", choices=VECTORS, default="none")
-    parser.add_argument("--color-max", type=float, help="Fixed colour scale maximum in SI units")
+    parser.add_argument(
+        "--color-max", type=float, help="Fixed colour scale maximum in SI units"
+    )
     parser.add_argument("--max-vectors", type=int, default=1000)
     parser.add_argument("--view-geometry", choices=["mesh", "sphere"], default="mesh")
 
 
 def _view_options(args):
     from .viewer import ViewOptions
+
     if not (args.live or args.record_video):
         return None
-    options = ViewOptions(args.live, args.record_video, args.view_every, args.video_fps,
-                          args.color_by, args.vectors, args.color_max, args.max_vectors,
-                          args.view_geometry)
+    options = ViewOptions(
+        args.live,
+        args.record_video,
+        args.view_every,
+        args.video_fps,
+        args.color_by,
+        args.vectors,
+        args.color_max,
+        args.max_vectors,
+        args.view_geometry,
+    )
     options.preflight()
     return options
 
@@ -94,6 +114,12 @@ def main(argv=None):
     a.add_argument("output", type=Path)
     a.add_argument("--rule", choices=["centroid", "gauss3"], default="gauss3")
     a.add_argument("--subdivisions", type=int, default=0)
+    a = g.add_parser("adaptive-quadrature")
+    a.add_argument("library", type=Path)
+    a.add_argument("output", type=Path)
+    a.add_argument("--reference", type=Path, required=True)
+    a.add_argument("--reference-protocol", type=Path, required=True)
+    a.add_argument("--target-error", type=float, default=0.05)
     a = g.add_parser("inspect")
     a.add_argument("library", type=Path)
     a.add_argument("--output", type=Path)
@@ -217,7 +243,9 @@ def main(argv=None):
                         "--output is required unless --dry-run is specified"
                     )
                 view_options = _view_options(args)
-                view_kwargs = {"view_options": view_options} if view_options is not None else {}
+                view_kwargs = (
+                    {"view_options": view_options} if view_options is not None else {}
+                )
                 report = run_case(report, args.output, args.max_chunks, **view_kwargs)
                 if all(handoff) and report["status"] == "complete":
                     from .atlas_bridge import export_replay
@@ -295,6 +323,16 @@ def main(argv=None):
                     subdivisions=args.subdivisions,
                     samples=[len(shape.samples) for shape in shapes],
                 )
+            elif args.geometry_command == "adaptive-quadrature":
+                from .quadrature import prepare_adaptive
+
+                report = prepare_adaptive(
+                    args.library,
+                    args.reference,
+                    args.reference_protocol,
+                    args.output,
+                    target=args.target_error,
+                )
             elif args.geometry_command == "sphere":
                 ShapeLibrary([sphere(args.radius, args.resolution, args.samples)]).save(
                     args.output
@@ -330,7 +368,9 @@ def main(argv=None):
                 if args.command == "run"
                 else Simulation.resume(args.checkpoint)
             )
-            result = sim.run(args.output, max_chunks=args.max_chunks, view_options=view_options)
+            result = sim.run(
+                args.output, max_chunks=args.max_chunks, view_options=view_options
+            )
             report = dict(
                 path=str(result.path), status=result.status, rows=len(result.rows)
             )

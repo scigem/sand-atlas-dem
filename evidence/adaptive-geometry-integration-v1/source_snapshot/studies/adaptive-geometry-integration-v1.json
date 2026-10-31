@@ -1,0 +1,13 @@
+{
+  "identity": "adaptive-geometry-integration-v1",
+  "backend": "metal",
+  "scope": "Full existing serial Metal suite plus CPU per-shape quadrature/preparation and balanced-inventory checks. Synthetic CPU tables verify selection logic only, not Hostun force accuracy.",
+  "gates": {
+    "reference": "Require passing source-stable complete unique pose inventory; recompute 2% finest-change gate; candidate strictly coarser than reference",
+    "selection": "Minimum Gauss3 level2..4 meeting every pose at target5%; explicit error if unavailable",
+    "preparation": "Preserve source vertices, faces, field, origin, inertia, mass geometry and measure; new stable sample identity",
+    "binding": "Reject protocol, physical library or archived source hash change before producing output",
+    "inventory": "Balanced sampling includes every shape with counts differing by at most one; deterministic seed; nonoverlap; default random sequence unchanged"
+  },
+  "regression": "All existing assertions retained; actual Atlas Python/browser request consumers; rendering opt-in unchanged"
+}

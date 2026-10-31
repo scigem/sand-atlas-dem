@@ -48,6 +48,12 @@ number is not substituted for this coefficient. Resolved inputs retain these
 values, and output histories include normal contact power and cumulative loss
 separately from friction and global drag. See CONTACT_DAMPING_DESIGN.md.
 
+`shape_sampling: "balanced"` includes every registered shape with counts differing
+by at most one and requires at least one particle per shape. Default `"random"`
+retains the original seeded behavior. This is numerical sampling, not an inferred
+material size distribution. See ADAPTIVE_QUADRATURE.md for fixed per-grain surface
+resolution and its separate reference/GPU qualification gates.
+
 `sand-dem-case/1` case files contain an `experiment` object without a geometry path.
 Density, both contact stiffnesses, friction, timestep and stages must be explicit.
 `cases/drained-triaxial.json` is a provisional research template, not a qualified
