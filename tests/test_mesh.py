@@ -65,14 +65,44 @@ def test_spatial_clusters_preserve_every_original_node_key_and_enclose_points(
     for first, clusters, _, _ in data["meshClusterInfo"]:
         keys = []
         for cluster in range(first, first + clusters):
-            start, size, _, _ = data["meshClusterRanges"][cluster]
-            assert 0 < size <= 64
+            start, size, escape, _ = data["meshClusterRanges"][cluster]
+            assert cluster < escape <= first + clusters
+            assert 0 <= size <= 64
+            if size == 0:
+                assert escape > cluster + 2
+                # Both children are contiguous complete subtrees.
+                left = cluster + 1
+                right = data["meshClusterRanges"][left, 2]
+                assert left < right < escape
+                assert data["meshClusterRanges"][right, 2] == escape
+                for child in [left, right]:
+                    assert np.all(
+                        data["meshClusterMin"][cluster, :3]
+                        <= data["meshClusterMin"][child, :3]
+                    )
+                    assert np.all(
+                        data["meshClusterMax"][cluster, :3]
+                        >= data["meshClusterMax"][child, :3]
+                    )
+                continue
+            assert escape == cluster + 1
             node_ids = data["meshSampleIndices"][start : start + size]
             keys.extend(node_ids.tolist())
             rounded = (points[node_ids] / 0.001).astype(np.float32)
             assert np.all(rounded >= data["meshClusterMin"][cluster, :3])
             assert np.all(rounded <= data["meshClusterMax"][cluster, :3])
         assert sorted(keys) == list(range(count))
+    sample_bytes = sum(
+        data[key].nbytes
+        for key in [
+            "meshClusterInfo",
+            "meshClusterRanges",
+            "meshClusterMin",
+            "meshClusterMax",
+            "meshSampleIndices",
+        ]
+    )
+    assert sample_bytes <= 2 * (8 * count + 224)
 
 
 def test_disconnected_vertex_fans_are_rejected(box):
@@ -95,12 +125,13 @@ def test_display_only_mesh_cannot_replace_analytical_geometry():
         pack_meshes(ShapeLibrary([sphere(resolution=8, samples=32)]), 0.001)
 
 
-def test_face_quadrature_integrates_known_surface_polynomial(box):
+@pytest.mark.parametrize("subdivisions", [0, 1, 2])
+def test_face_quadrature_integrates_known_surface_polynomial(box, subdivisions):
     from sand_atlas_dem.geometry import with_face_quadrature
 
     original_samples = box.samples.copy()
-    sampled = with_face_quadrature(box)
-    assert len(sampled.samples) == 3 * len(box.faces)
+    sampled = with_face_quadrature(box, subdivisions=subdivisions)
+    assert len(sampled.samples) == 3 * 4**subdivisions * len(box.faces)
     assert sampled.vertices is box.vertices and sampled.sdf is box.sdf
     assert np.isclose(sampled.areas.sum(), 6e-6, rtol=1e-12)
     # On a cube of side a: two x faces give a^4/2, four others a^4/3.
@@ -111,4 +142,7 @@ def test_face_quadrature_integrates_known_surface_polynomial(box):
         atol=1e-25,
     )
     assert np.array_equal(box.samples, original_samples)
-    assert sampled.provenance["sampling"] == "source_triangle_gauss3"
+    assert sampled.provenance["quadrature_subdivisions"] == subdivisions
+    assert sampled.provenance["sampling"] == "source_triangle_gauss3" + (
+        "_subdivided" if subdivisions else ""
+    )

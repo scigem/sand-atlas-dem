@@ -63,6 +63,12 @@ work alongside the scientific gates below; naming a material must not infer cali
   assembly convergence remain required. The source-triangle force audit fails
   the frozen 10% gate (48.39% worst at 64 cells); see
   docs/HOSTUN_CONTACT_ACCURACY.md. Current geometry is not material-qualified.
+  Subdivided Gauss3 assets and conservative GPU sample hierarchies are implemented.
+  The first ten-pose GPU quadrature study failed its 0.1% fixed-reference gate;
+  an exhaustive per-node audit identified a proximity tie-substitution error in
+  the FP64 reference. A new strict-minimum reference study is running with the same
+  source poses, refinement levels and thresholds. Preserve the failed study;
+  corrected reference and GPU requalification are still required before proceeding.
 - [X] Freeze and run rolling/objectivity tests, separating/returning contact,
   changing normal orientation, strongly anisotropic torque-free rotation and
   capacity-growth stress tests. Test timestep refinement over useful physical time.

@@ -82,7 +82,9 @@ does not make 2,048 surface nodes a converged approximation of every contact pat
 or symmetric three-point Gaussian quadrature on every source triangle. Source
 vertices, faces, SDF, mass and inertia are preserved. The three-point rule integrates
 quadratic polynomials exactly on planar triangles; clipped contact tractions need
-a separate refinement study. Sample keys are stable original-face/local-node IDs.
+a separate refinement study. Uniform midpoint subdivision is available through
+`--subdivisions 0..4`. Sample keys encode original face, base-four child path and
+local quadrature node.
 The private Hostun Gauss3 asset has 3,343,608 source nodes across 53 shapes.
 No contact accuracy or throughput claim follows from that node count.
 
@@ -137,6 +139,24 @@ keeps every lane at each group barrier even when a contact-capacity error is fla
 The sustained timing numbers above identify the preceding enclosure/compaction
 snapshot. Cluster performance, especially with much larger quadrature assets,
 still needs its own uncontended timing study.
+
+The current collector uses a full preorder sample hierarchy with at most 64 nodes
+per leaf. Internal bounds enclose both children; escape links skip complete
+rejected subtrees. The leaf index map preserves every original sample key exactly
+once. All lanes follow the same traversal and reach both barriers, including on
+overflow; each lane captures the current candidate before the next iteration can
+overwrite shared state. CPU structure checks and the independently rotated/scaled
+GPU retention probe now cover internal ancestors as well as leaves.
+`mesh-sample-hierarchy-tests-v1/verification.log` records 81 passing tests;
+`hostun-mesh-force-hierarchy-v1` retains all ten unchanged fixed-node force/count
+gates, with worst relative force error 0.00965%.
+
+The two-subdivision Gauss3 asset has 53,497,728 shared nodes across all 53 grains.
+`hostun-gauss3-l2-asset-v1` verifies exact preservation of source geometry, field,
+mass properties and scale, and total surface area to a frozen 1e-12 tolerance.
+This asset identity does not itself qualify integration accuracy. The first GPU
+quadrature study failed its stricter same-quadrature reference comparison; see
+`HOSTUN_CONTACT_ACCURACY.md` for the retained failure and reference-query audit.
 
 The frozen functional workload `hostun-gauss3-mesh-cluster-smoke-v1` completes with
 all 53 original grain shapes and 3,343,608 shared Gauss3 nodes. Its 106 particles

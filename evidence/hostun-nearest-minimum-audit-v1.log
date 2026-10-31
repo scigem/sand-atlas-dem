@@ -1,0 +1,45 @@
+[WARN] No supported shader model found, pretending to support sm_6_0.
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(138): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_2->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(138): warning :  unused variable '_S4' [-Wunused-variable]
+    uint _S4 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(138): warning :  unused variable '_S4' [-Wunused-variable]
+    uint _S4 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(326): warning :  unused variable '_S19' [-Wunused-variable]
+    uint _S19 = findPairs_0(id_2, true, &kernelContext_5);
+         ^
+2 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(138): warning :  unused variable '_S34' [-Wunused-variable]
+    uint _S34 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_4->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(368): warning :  unused variable '_S81' [-Wunused-variable]
+                        uint _S81 = atomic_fetch_add_explicit(((atomic_uint device*)((&kernelContext_8)->r_0->contactCounts_0+pair_0)), 1U, memory_order_relaxed);
+                             ^
+2 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(449): warning :  unused variable '_S15' [-Wunused-variable]
+        uint _S15 = atomic_fetch_add_explicit(((atomic_uint device*)(r_1->control_0+int(6))), 1U, memory_order_relaxed);
+             ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(138): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_1->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/shaders/solver.slang(138): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+{'shape': 'hostun-particle_00034', 'subdivisions': 0, 'active_nodes': 28, 'maximum_gpu_displacement_error_diameters': 5.117904573157004e-08, 'strict_minimum_gpu_relative_force_error': 1.7605202478382395e-06, 'maximum_legacy_excess_squared_distance': 6.709682467152272e-09, 'exhaustive_checked_nodes': 12, 'maximum_candidate_vs_exhaustive_squared_distance_error': 0.0}
+{'shape': 'hostun-particle_00034', 'subdivisions': 2, 'active_nodes': 418, 'maximum_gpu_displacement_error_diameters': 7.125840137984408e-08, 'strict_minimum_gpu_relative_force_error': 1.5933430107092664e-06, 'maximum_legacy_excess_squared_distance': 8.787829134679325e-09, 'exhaustive_checked_nodes': 12, 'maximum_candidate_vs_exhaustive_squared_distance_error': 0.0}
+{'shape': 'hostun-particle_00031', 'subdivisions': 2, 'active_nodes': 423, 'maximum_gpu_displacement_error_diameters': 6.613432142404227e-08, 'strict_minimum_gpu_relative_force_error': 4.399117794170533e-06, 'maximum_legacy_excess_squared_distance': 6.808741710730449e-09, 'exhaustive_checked_nodes': 12, 'maximum_candidate_vs_exhaustive_squared_distance_error': 0.0}

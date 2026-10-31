@@ -53,5 +53,45 @@ the 2,048-node force error ranges from 10.65% to 229.67%; exact distance evaluat
 does not resolve surface integration. Unsubdivided face Gauss3 has up to 15.20%
 error; two subdivisions reduce the worst observed difference to 1.323%. These
 are static, frictionless comparisons over ten poses, not rigorous error bounds
-or whole-library/material qualification. Subdivided GPU assets and corresponding
-performance/assembly studies remain to be implemented and qualified.
+or whole-library/material qualification. These historical results use the original
+proximity query; the reference-query correction below requires a new study.
+
+## Subdivided GPU quadrature and retained reference discrepancy
+
+`hostun-gauss3-l2-asset-v1` verifies the new full 53-grain Gauss3 asset after two
+uniform subdivisions (53,497,728 nodes). Original vertices, faces, SDF, mass,
+inertia and scales are preserved; area error is at most 2.22e-16 relative. The
+GPU collector now traverses a conservative hierarchy of sample bounds rather
+than visiting every leaf block. This preserves sample coordinates, weights and
+friction keys. Whole-library contact and assembly qualification remain open.
+
+`hostun-gpu-triangle-quadrature-v1` completes all ten poses at levels zero and two
+but **fails** its frozen 0.1% GPU/same-level-reference gate. Three rows across two
+shallow poses exceed it, with worst error 0.1991%. Against the historical level-four
+integral, worst error falls from 15.208% to 1.3012%, satisfying its separate 10%
+integral gate and twofold improvement requirement. The study remains failed;
+these partial improvements do not override the failed gate.
+
+`hostun-nearest-minimum-audit-v1` traces the discrepancy to the FP64 reference
+query. Trimesh 5.2's public `proximity.closest_point` can replace the true minimum
+with a farther candidate when squared distances differ by less than `tol.merge`,
+using face-normal alignment to select a candidate. This affects both displacement
+and traction, not just the reported triangle identity. The observed excess squared
+distance reaches 8.79e-9 in diameter-normalized coordinates.
+
+The audit evaluates every retained active node in the three failing rows with a
+strict FP64 minimum over independently projected candidate triangles. GPU force
+error on those same rounded query points is at most 4.40e-6 relative; maximum nodal
+displacement error is 7.13e-8 diameters. Exhaustive searches over every source
+triangle agree exactly with candidate minima at the twelve largest legacy-query
+discrepancies per row. This diagnosis does not establish that all active nodes
+were retained or validate the complete integral.
+
+The corrected CPU utility has an analytical two-plane regression with deliberately
+opposed normals and a separate randomized candidate-versus-exhaustive check.
+`hostun-triangle-quadrature-minimum-v1` freezes the strict-distance query and reruns
+all ten original poses and all five levels. Source geometry, placements and the
+2% finest-change threshold are unchanged. The original reference and failed GPU
+study are retained byte for byte. The corrected study is pending; a new GPU study
+must use its separately hashed result and retain the original 0.1%, 10% and overlap
+gates. No shader change was made in response to this reference discrepancy.

@@ -351,12 +351,14 @@ void collectMeshContacts(uint3 group:SV_GroupID,uint lane:SV_GroupIndex){
     for(uint pass=0;pass<2;pass++){
         uint i=pass==0?ij.x:ij.y,j=pass==0?ij.y:ij.x;
         uint4 info=r.meshClusterInfo[r.shapeId[i]];
-        for(uint c=0;c<info.y;c++){
-            uint cluster=info.x+c;
+        uint cluster=info.x;
+        while(cluster<info.x+info.y){
             if(lane==0)meshClusterCandidate=meshClusterMayContact(i,j,cluster)?1:0;
             GroupMemoryBarrierWithGroupSync();
+            uint candidate=meshClusterCandidate;
             uint4 range=r.meshClusterRanges[cluster];
-            if(meshClusterCandidate!=0&&lane<range.y){
+            uint nextCluster=candidate!=0?cluster+1:range.z;
+            if(candidate!=0&&lane<range.y){
                 uint node=r.meshSampleIndices[range.x+lane];float4 pd,na;
                 if(nodeContact(i,j,node,pd,na)){
                     uint offset;InterlockedAdd(r.control[2],1,offset);
@@ -368,6 +370,9 @@ void collectMeshContacts(uint3 group:SV_GroupID,uint lane:SV_GroupIndex){
                 }
             }
             GroupMemoryBarrierWithGroupSync();
+            // Uniform, stackless preorder traversal. All lanes make the same
+            // decision and reach every barrier, also for rejected subtrees.
+            cluster=nextCluster;
         }
     }
 }

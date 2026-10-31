@@ -6,7 +6,7 @@ MECHANICS_QUALIFICATION.md. Source-scale acquisition is now resolved for a docum
 resolutions are prepared. The bounded 216-sphere controller case passes; Hostun
 preparation remains open. Optional exact-feature mesh queries pass fixed-quadrature
 force checks, while source-triangle quadrature convergence is being studied.
-The current full test suite passes 37 tests. Historical entries below retain
+The current full test suite passes 84 tests. Historical entries below retain
 their original evidence identities and are superseded where explicitly stated.
 
 2026-10-31 — research development build, Apple M4 Max (32 GPU cores, 36 GB unified
@@ -292,3 +292,29 @@ See `docs/ATLAS_BRIDGE.md` and the prospective `atlas-bridge-software-v3` eviden
 This does not execute a continuum solver, establish qualified DEM loading or add
 synthetic measurement overlays to the current GUI. Scientific material comparison
 and physical experimental validation remain open.
+
+## Subdivided surface quadrature and reference-query audit
+
+The current GPU collector uses a conservative hierarchy over reusable sample
+bounds, with stable original sample keys and full-group barriers. The full suite
+passes **84 tests** (`mesh-minimum-reference-tests-v1/verification.log`), including
+internal-bound retention and independent analytical/exhaustive nearest-point checks.
+The unchanged ten-pose 2,048-node force/count study also passes
+(`hostun-mesh-force-hierarchy-v1`, worst relative error 0.00965%). These results do
+not supply new sustained performance timings.
+
+A two-subdivision Gauss3 asset contains 53,497,728 shared nodes across all 53
+Hostun grains. Its source geometry, fields and mass properties are exactly
+preserved, with area error <=2.22e-16 relative (`hostun-gauss3-l2-asset-v1`). The
+first GPU quadrature study completes all twenty rows but fails its unchanged
+0.1% same-level force-reference gate in three rows. The failed report remains
+immutable despite substantial improvement against its refined integral.
+
+The per-node audit identifies a Trimesh proximity-query tie substitution that can
+choose a farther triangle. A strict FP64 minimum agrees with exhaustive source
+triangle searches at the twelve largest discrepancies in each failed row; GPU
+force error over retained rounded query points is <=4.40e-6 relative. The corrected
+reference utility is tested, and a separate full ten-pose/five-level CPU reference
+study is running. Its result and a new GPU study are required; the old failure is
+not converted into a pass. See `HOSTUN_CONTACT_ACCURACY.md`. Whole-library,
+dense-assembly, material and experimental qualification remain open.

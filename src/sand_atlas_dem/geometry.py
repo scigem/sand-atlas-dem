@@ -318,7 +318,7 @@ def sphere(radius=5e-4, resolution=32, samples=512):
     )
 
 
-def with_face_quadrature(shape, rule="gauss3"):
+def with_face_quadrature(shape, rule="gauss3", subdivisions=0):
     """Fixed source-triangle quadrature; preserves source geometry and physical data.
 
     Centroid integrates degree one; the symmetric three-point rule integrates
@@ -329,6 +329,8 @@ def with_face_quadrature(shape, rule="gauss3"):
 
     if shape.provenance.get("display_mesh_only"):
         raise ValueError("Face quadrature requires physical source triangles")
+    if type(subdivisions) is not int or not 0 <= subdivisions <= 4:
+        raise ValueError("Triangle subdivisions must be an integer from zero to four")
     if rule == "centroid":
         barycentric = np.full((1, 3), 1 / 3)
         degree = 1
@@ -338,6 +340,18 @@ def with_face_quadrature(shape, rule="gauss3"):
     else:
         raise ValueError("Unsupported triangle quadrature")
     triangles = np.asarray(shape.vertices)[shape.faces]
+    for _ in range(subdivisions):
+        a, b, c = triangles[:, 0], triangles[:, 1], triangles[:, 2]
+        ab, bc, ca = (a + b) / 2, (b + c) / 2, (c + a) / 2
+        triangles = np.stack(
+            [
+                np.stack([a, ab, ca], axis=1),
+                np.stack([ab, b, bc], axis=1),
+                np.stack([ca, bc, c], axis=1),
+                np.stack([ab, bc, ca], axis=1),
+            ],
+            axis=1,
+        ).reshape(-1, 3, 3)
     areas = (
         np.linalg.norm(
             np.cross(
@@ -356,10 +370,17 @@ def with_face_quadrature(shape, rule="gauss3"):
         provenance=dict(
             shape.provenance,
             prior_sampling=shape.provenance.get("sampling"),
-            sampling="source_triangle_" + rule,
+            sampling="source_triangle_"
+            + rule
+            + ("_subdivided" if subdivisions else ""),
             sample_count=len(points),
             quadrature_degree=degree,
-            sample_key="original source face index * nodes_per_face + local node index",
+            quadrature_subdivisions=subdivisions,
+            sample_key=(
+                "original source face index * nodes_per_face + local node index"
+                if not subdivisions
+                else "(original source face index * 4**subdivisions + base-4 child index) * nodes_per_child + local node index"
+            ),
         ),
     )
     result.validate()

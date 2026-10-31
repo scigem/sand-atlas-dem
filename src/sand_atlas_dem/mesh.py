@@ -30,21 +30,26 @@ def pack_meshes(library, length_unit):
         first_cluster = len(cluster_ranges)
 
         def partition(ids, points=points):
-            if len(ids) > 64:
-                axis = np.ptp(points[ids], axis=0).argmax()
-                order = ids[np.argsort(points[ids, axis], kind="stable")]
-                middle = len(order) // 2
-                partition(order[:middle])
-                partition(order[middle:])
-                return
-            cluster_ranges.append([len(sample_indices), len(ids), 0, 0])
-            sample_indices.extend(ids.tolist())
+            node = len(cluster_ranges)
+            cluster_ranges.append([0, 0, 0, 0])
             cluster_min.append(
                 [*np.nextafter(points[ids].min(0), np.float32(-np.inf)), 0]
             )
             cluster_max.append(
                 [*np.nextafter(points[ids].max(0), np.float32(np.inf)), 0]
             )
+            if len(ids) > 64:
+                axis = np.ptp(points[ids], axis=0).argmax()
+                order = ids[np.argsort(points[ids, axis], kind="stable")]
+                middle = len(order) // 2
+                partition(order[:middle])
+                partition(order[middle:])
+            else:
+                cluster_ranges[node][:2] = [len(sample_indices), len(ids)]
+                sample_indices.extend(ids.tolist())
+            # Preorder layout: skip the entire subtree through its escape link.
+            # A zero sample count marks an internal node, never a surface key.
+            cluster_ranges[node][2] = len(cluster_ranges)
 
         partition(np.arange(len(points)))
         cluster_info.append([first_cluster, len(cluster_ranges) - first_cluster, 0, 0])

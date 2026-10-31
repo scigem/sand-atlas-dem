@@ -268,7 +268,23 @@ def test_cluster_culling_retains_all_analytical_inside_nodes_under_rotation_and_
         rejected += int((keep == 0).sum())
         for cluster in range(count):
             start, size = map(int, ranges[first + cluster, :2])
-            keys = indices[start : start + size]
+            if size:
+                keys = indices[start : start + size]
+            else:
+                # A rejected ancestor would hide every descendant from the
+                # stackless collector, even if its individual leaf is safe.
+                escape = int(ranges[first + cluster, 2])
+                keys = np.concatenate(
+                    [
+                        indices[
+                            int(ranges[node, 0]) : int(
+                                ranges[node, 0] + ranges[node, 1]
+                            )
+                        ]
+                        for node in range(first + cluster + 1, escape)
+                        if ranges[node, 1] > 0
+                    ]
+                )
             if inside[keys].any():
                 assert keep[cluster] == 1
     assert penetrating > 0 and rejected > 0

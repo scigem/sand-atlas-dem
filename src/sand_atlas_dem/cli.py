@@ -68,6 +68,7 @@ def main(argv=None):
     a.add_argument("library", type=Path)
     a.add_argument("output", type=Path)
     a.add_argument("--rule", choices=["centroid", "gauss3"], default="gauss3")
+    a.add_argument("--subdivisions", type=int, default=0)
     a = g.add_parser("inspect")
     a.add_argument("library", type=Path)
     a.add_argument("--output", type=Path)
@@ -251,7 +252,8 @@ def main(argv=None):
                 parent_hash = sha256(args.library)
                 library = ShapeLibrary.load(args.library)
                 shapes = [
-                    with_face_quadrature(shape, args.rule) for shape in library.shapes
+                    with_face_quadrature(shape, args.rule, args.subdivisions)
+                    for shape in library.shapes
                 ]
                 for shape in shapes:
                     shape.provenance["parent_shape_library_sha256"] = parent_hash
@@ -261,6 +263,7 @@ def main(argv=None):
                     sha256=sha256(args.output),
                     parent_sha256=parent_hash,
                     rule=args.rule,
+                    subdivisions=args.subdivisions,
                     samples=[len(shape.samples) for shape in shapes],
                 )
             elif args.geometry_command == "sphere":

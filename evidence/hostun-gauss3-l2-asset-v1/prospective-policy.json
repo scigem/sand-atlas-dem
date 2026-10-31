@@ -1,0 +1,19 @@
+{
+  "parent_sha256": "1bc9f37a22b402ada31495ea7ff1ebef4bb6a27a26d68a8333f7f84a12ad16b7",
+  "fine_sha256": "4c57ed2f02bcc232fa4e1c83121a1441228b4fc44cebac1f8accff238432f3c0",
+  "subdivisions": 2,
+  "physical_arrays_exact": [
+    "vertices",
+    "faces",
+    "sdf",
+    "origin",
+    "inertia"
+  ],
+  "physical_scalars_exact": [
+    "volume",
+    "radius",
+    "spacing"
+  ],
+  "surface_area_relative_tolerance": 1e-12,
+  "nodes_per_original_face": 48
+}

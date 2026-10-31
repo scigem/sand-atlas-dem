@@ -5,6 +5,42 @@ import numpy as np
 from .util import finite_array, quat_matrix
 
 
+def triangle_nearest_points(mesh, points):
+    """FP64 minimum over candidate triangles, without proximity tie substitution.
+
+    Trimesh's public proximity query may replace the closest point with a
+    farther candidate inside its squared-distance merge tolerance. That policy
+    is unsuitable for a distance-gradient traction oracle. Use its conservative
+    nearby-face search and independent FP64 triangle projection, then select
+    the actual minimum squared distance. Equal minima keep candidate order;
+    the distance gradient is not unique on medial loci.
+
+    Callers bound batch size because candidate expansion can be large. This
+    verification utility is never used to advance GPU dynamics.
+    """
+    import trimesh
+
+    points = np.asarray(points, dtype=np.float64)
+    if points.ndim != 2 or points.shape[1] != 3 or not np.isfinite(points).all():
+        raise ValueError("Expected finite (n, 3) query points")
+    if not len(points):
+        return np.empty((0, 3)), np.empty(0), np.empty(0, dtype=np.int64)
+    candidates = trimesh.proximity.nearby_faces(mesh, points)
+    counts = np.array([len(ids) for ids in candidates], dtype=np.int64)
+    if np.any(counts == 0):
+        raise ValueError("Nearest-face search returned no candidates")
+    face_ids = np.concatenate(candidates)
+    expanded = points[np.repeat(np.arange(len(points)), counts)]
+    nearest = trimesh.triangles.closest_point(mesh.triangles[face_ids], expanded)
+    squared = np.sum((nearest - expanded) ** 2, axis=1)
+    ends = np.cumsum(counts)
+    starts = ends - counts
+    selected = np.array(
+        [start + np.argmin(squared[start:end]) for start, end in zip(starts, ends)]
+    )
+    return nearest[selected], np.sqrt(squared[selected]), face_ids[selected]
+
+
 def minimum_image(delta, cell):
     return delta - np.floor(delta / cell + 0.5) * cell
 
