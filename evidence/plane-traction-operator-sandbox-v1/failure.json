@@ -1,0 +1,8 @@
+{
+  "status": "device_initialization_failed",
+  "error": "No adapters found; Failed to create device",
+  "execution": "default filesystem/process sandbox",
+  "completed": false,
+  "passed": false,
+  "scope": "No GPU kernel compiled or executed. Repeat in the authorized host execution context with unchanged numerical gates."
+}

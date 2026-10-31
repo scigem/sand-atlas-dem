@@ -68,3 +68,9 @@ publication. Its wall counterpart needs a declared derivation rather than an
 inferred weight. Missing inputs must be acquired before freezing a complete
 reproduction; independently chosen numerical settings need explicit identities and
 convergence studies. Physical sand validation remains a separate gate.
+
+
+The isolated plane-traction kernel now passes the independently derived project
+operator study in WALL_CONTACT.md. It does not add walls to the laboratory. The
+inspected original contact/global-damping source and unresolved restitution mapping
+are recorded separately in CONTACT_SOURCE_AUDIT.md; no coefficient is inferred.

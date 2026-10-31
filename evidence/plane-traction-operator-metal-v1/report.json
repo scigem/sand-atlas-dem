@@ -1,0 +1,409 @@
+{
+  "protocol": {
+    "identity": "plane-traction-operator-metal-v1",
+    "frozen_before_execution": true,
+    "variant": "single-directed-full-area-spring-Coulomb-traction",
+    "sample_counts": [
+      2048,
+      8192,
+      32768
+    ],
+    "depths": [
+      0.05,
+      0.1,
+      0.2
+    ],
+    "kn": 1.0,
+    "kt": 0.5,
+    "mu": 0.3,
+    "transition_fraction": 0.25,
+    "maximum_fine_relative_error": 0.001,
+    "maximum_nodal_relative_error": 1e-05,
+    "scope": "Actual-Metal isolated plane traction operator verification in normalized units, sphere radius one. Independent analytical sphere-cap force, torque and normal work; prescribed nodal history continuation, separation/return, Coulomb loss and common rigid-frame rotation. Full one-sided area weighting is an explicit project extension of continuum traction integration, not an assertion of equivalence to the published benchmark wall algorithm. Final 32768-node force, torque and normal energy errors bounded by 0.1% of the declared analytical scales; all coarser observations retained. No particle advancement, plane motion driver, nonperiodic neighbour search, integrated reactions/checkpoints/rollback, restitution, assembly or material qualification."
+  },
+  "protocol_sha256": "3367dc5794739a2ca6bb1ef47a53ab8df7a77c92172b03eaa6b54e06271343de",
+  "source_hashes": {
+    "examples/plane_contact_study.py": "264e829c01a3391b4fd762209e19387b36824a15a6f4d47d1a9fc316616341b4",
+    "examples/plane_reference.py": "b0993d020947c40f714836bbc90aaee765441c3d5309687f1f8d1eb2a6d91253",
+    "src/sand_atlas_dem/shaders/plane.slang": "1de7c60031f81786af767ab2bd33a136feccebc1c782b44bdcb1313eac0cce82",
+    "src/sand_atlas_dem/backend.py": "2184575342f265dfd744d799af8e9b03a73dcb195e06e94a59f21e1525cbab5c",
+    "src/sand_atlas_dem/geometry.py": "d84592edef45221d589ed22b8a2a36f53be39bb5b8972ec55a548913c929c6a5",
+    "src/sand_atlas_dem/util.py": "0f9dc71429a87057dc08216f3c51425d8b76be9c4fd30f2cab6c3f98b70397c2"
+  },
+  "nodal_errors": {
+    "initial_force": 2.5704777327809527e-07,
+    "continued_force": 2.570560012176322e-07,
+    "returned_force": 2.570450305730554e-07,
+    "clipped_force": 2.742959857713754e-07,
+    "clipped_loss": 2.5352456731306137e-07,
+    "rotated_force": 3.364871755080335e-07,
+    "rotated_torque": 9.418214344662252e-08
+  },
+  "nodal_passed": true,
+  "rows": [
+    {
+      "samples": 2048,
+      "depth": 0.05,
+      "frictional": false,
+      "force": [
+        0.0,
+        0.0,
+        0.007853865736706211
+      ],
+      "torque": [
+        -3.2400012059952132e-06,
+        -6.709326783038705e-07,
+        0.0
+      ],
+      "relative_force_error": 1.47564985090715e-05,
+      "relative_torque_error": 0.00042128182429956634,
+      "active_nodes": 51,
+      "finite": true,
+      "relative_normal_energy_error": 9.43163051382312e-05
+    },
+    {
+      "samples": 2048,
+      "depth": 0.05,
+      "frictional": true,
+      "force": [
+        -0.0010309432599342472,
+        0.0,
+        0.007853865736706211
+      ],
+      "torque": [
+        -3.2400012059952132e-06,
+        0.0010075639318358753,
+        -1.756543301922875e-07
+      ],
+      "relative_force_error": 2.0185175525223717e-05,
+      "relative_torque_error": 0.00041942298640979946,
+      "active_nodes": 51,
+      "finite": true
+    },
+    {
+      "samples": 2048,
+      "depth": 0.1,
+      "frictional": false,
+      "force": [
+        0.0,
+        0.0,
+        0.031415463000030286
+      ],
+      "torque": [
+        -6.098026034351278e-06,
+        -1.8368479004493565e-07,
+        0.0
+      ],
+      "relative_force_error": 1.4754804927314714e-05,
+      "relative_torque_error": 0.00019419423703793737,
+      "active_nodes": 102,
+      "finite": true,
+      "relative_normal_energy_error": 2.3079300083495013e-05
+    },
+    {
+      "samples": 2048,
+      "depth": 0.1,
+      "frictional": true,
+      "force": [
+        -0.004123233689369954,
+        0.0,
+        0.031415463000030286
+      ],
+      "torque": [
+        -6.098026034351278e-06,
+        0.0039414345908426185,
+        -4.997830664876801e-07
+      ],
+      "relative_force_error": 1.5140434492864905e-05,
+      "relative_torque_error": 0.00019496442317963115,
+      "active_nodes": 102,
+      "finite": true
+    },
+    {
+      "samples": 2048,
+      "depth": 0.2,
+      "frictional": false,
+      "force": [
+        0.0,
+        0.0,
+        0.1256635746730126
+      ],
+      "torque": [
+        -1.2340797610477239e-05,
+        -1.050643078315261e-06,
+        0.0
+      ],
+      "relative_force_error": 1.0462096271082812e-06,
+      "relative_torque_error": 9.856020394923492e-05,
+      "active_nodes": 205,
+      "finite": true,
+      "relative_normal_energy_error": 6.1156305307674685e-06
+    },
+    {
+      "samples": 2048,
+      "depth": 0.2,
+      "frictional": true,
+      "force": [
+        -0.016493468541909806,
+        0.0,
+        0.1256635746730126
+      ],
+      "torque": [
+        -1.2340797610477239e-05,
+        0.015039409630730916,
+        -7.568032813765058e-07
+      ],
+      "relative_force_error": 1.3494702944080155e-06,
+      "relative_torque_error": 9.868878496113861e-05,
+      "active_nodes": 205,
+      "finite": true
+    },
+    {
+      "samples": 8192,
+      "depth": 0.05,
+      "frictional": false,
+      "force": [
+        0.0,
+        0.0,
+        0.00785397809835331
+      ],
+      "torque": [
+        -1.4784645818721742e-07,
+        3.571676665536927e-07,
+        0.0
+      ],
+      "relative_force_error": 4.501692694328599e-07,
+      "relative_torque_error": 4.921813104982191e-05,
+      "active_nodes": 205,
+      "finite": true,
+      "relative_normal_energy_error": 5.21735096137288e-06
+    },
+    {
+      "samples": 8192,
+      "depth": 0.05,
+      "frictional": true,
+      "force": [
+        -0.0010308421334066509,
+        0.0,
+        0.00785397809835331
+      ],
+      "torque": [
+        -1.4784645818721742e-07,
+        0.0010084960288816447,
+        -6.469569324707436e-11
+      ],
+      "relative_force_error": 1.0035018992358477e-06,
+      "relative_torque_error": 5.0005922024610144e-05,
+      "active_nodes": 205,
+      "finite": true
+    },
+    {
+      "samples": 8192,
+      "depth": 0.1,
+      "frictional": false,
+      "force": [
+        0.0,
+        0.0,
+        0.031415912456147055
+      ],
+      "torque": [
+        -3.404867450207405e-07,
+        6.883656276102101e-07,
+        0.0
+      ],
+      "relative_force_error": 4.4817238998164984e-07,
+      "relative_torque_error": 2.4445255518408282e-05,
+      "active_nodes": 410,
+      "finite": true,
+      "relative_normal_energy_error": 7.460420790028621e-07
+    },
+    {
+      "samples": 8192,
+      "depth": 0.1,
+      "frictional": true,
+      "force": [
+        -0.004123334836519277,
+        0.0,
+        0.031415912456147055
+      ],
+      "torque": [
+        -3.404867450207405e-07,
+        0.003942400261882195,
+        -2.7677009462045987e-08
+      ],
+      "relative_force_error": 4.814002474799903e-07,
+      "relative_torque_error": 2.431478275047449e-05,
+      "active_nodes": 410,
+      "finite": true
+    },
+    {
+      "samples": 8192,
+      "depth": 0.2,
+      "frictional": false,
+      "force": [
+        0.0,
+        0.0,
+        0.1256636871370631
+      ],
+      "torque": [
+        -6.373117313884791e-07,
+        1.4790956481824935e-06,
+        0.0
+      ],
+      "relative_force_error": 1.5124914911407947e-07,
+      "relative_torque_error": 1.2816396315337409e-05,
+      "active_nodes": 819,
+      "finite": true,
+      "relative_normal_energy_error": 5.233336661802923e-07
+    },
+    {
+      "samples": 8192,
+      "depth": 0.2,
+      "frictional": true,
+      "force": [
+        -0.01649336740892693,
+        0.0,
+        0.1256636871370631
+      ],
+      "torque": [
+        -6.373117313884791e-07,
+        0.015041858695575172,
+        -3.159535427732507e-08
+      ],
+      "relative_force_error": 1.58552914835415e-07,
+      "relative_torque_error": 1.2853730838907095e-05,
+      "active_nodes": 819,
+      "finite": true
+    },
+    {
+      "samples": 32768,
+      "depth": 0.05,
+      "frictional": false,
+      "force": [
+        0.0,
+        0.0,
+        0.007853985129564478
+      ],
+      "torque": [
+        -5.022286964084799e-08,
+        -3.582620311526341e-09,
+        0.0
+      ],
+      "relative_force_error": 4.4507234132358604e-07,
+      "relative_torque_error": 6.410823445927024e-06,
+      "active_nodes": 819,
+      "finite": true,
+      "relative_normal_energy_error": 3.7104169781088103e-07
+    },
+    {
+      "samples": 32768,
+      "depth": 0.05,
+      "frictional": true,
+      "force": [
+        -0.0010308358143813479,
+        0.0,
+        0.007853985129564478
+      ],
+      "torque": [
+        -5.022286964084799e-08,
+        0.0010081292817465948,
+        -3.587576055674724e-09
+      ],
+      "relative_force_error": 4.5454226621356025e-07,
+      "relative_torque_error": 6.4214347914087685e-06,
+      "active_nodes": 819,
+      "finite": true
+    },
+    {
+      "samples": 32768,
+      "depth": 0.1,
+      "frictional": false,
+      "force": [
+        0.0,
+        0.0,
+        0.03141594051590069
+      ],
+      "torque": [
+        -1.014110850849903e-07,
+        -8.528605766056074e-09,
+        0.0
+      ],
+      "relative_force_error": 4.4499730850470067e-07,
+      "relative_torque_error": 3.23941037250667e-06,
+      "active_nodes": 1638,
+      "finite": true,
+      "relative_normal_energy_error": 6.500253986185811e-07
+    },
+    {
+      "samples": 32768,
+      "depth": 0.1,
+      "frictional": true,
+      "force": [
+        -0.0041233411487930915,
+        0.0,
+        0.03141594051590069
+      ],
+      "torque": [
+        -1.014110850849903e-07,
+        0.003941709223277412,
+        -8.545717689045773e-09
+      ],
+      "relative_force_error": 4.4570896583715563e-07,
+      "relative_torque_error": 3.2489792350595323e-06,
+      "active_nodes": 1638,
+      "finite": true
+    },
+    {
+      "samples": 32768,
+      "depth": 0.2,
+      "frictional": false,
+      "force": [
+        0.0,
+        0.0,
+        0.12566369418121148
+      ],
+      "torque": [
+        -1.9801729567170412e-07,
+        -1.9636414494428323e-08,
+        0.0
+      ],
+      "relative_force_error": 9.519359742071228e-08,
+      "relative_torque_error": 1.5835004701459984e-06,
+      "active_nodes": 3277,
+      "finite": true,
+      "relative_normal_energy_error": 1.7421083531310444e-07
+    },
+    {
+      "samples": 32768,
+      "depth": 0.2,
+      "frictional": true,
+      "force": [
+        -0.01649336109152344,
+        0.0,
+        0.12566369418121148
+      ],
+      "torque": [
+        -1.9801729567170412e-07,
+        0.01504035490453326,
+        -1.424132922700494e-08
+      ],
+      "relative_force_error": 9.523200000236404e-08,
+      "relative_torque_error": 1.587777996762022e-06,
+      "active_nodes": 3277,
+      "finite": true
+    }
+  ],
+  "passed": true,
+  "backend": {
+    "format": "sand-dem-doctor/1",
+    "backend": "metal",
+    "adapter": "Apple M4 Max",
+    "slangpy": "0.43.1",
+    "python": "3.12.14",
+    "smoke_elements": 257,
+    "smoke_max_error": 0.0,
+    "fallback": false,
+    "floating_point_mode_requested": "precise"
+  },
+  "scope": "Actual-Metal isolated plane traction operator verification in normalized units, sphere radius one. Independent analytical sphere-cap force, torque and normal work; prescribed nodal history continuation, separation/return, Coulomb loss and common rigid-frame rotation. Full one-sided area weighting is an explicit project extension of continuum traction integration, not an assertion of equivalence to the published benchmark wall algorithm. Final 32768-node force, torque and normal energy errors bounded by 0.1% of the declared analytical scales; all coarser observations retained. No particle advancement, plane motion driver, nonperiodic neighbour search, integrated reactions/checkpoints/rollback, restitution, assembly or material qualification."
+}

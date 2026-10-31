@@ -1,0 +1,29 @@
+{
+  "title": "The Avatar Paradigm in Granular Materials",
+  "author": "Reid Y. Kawamoto",
+  "year": 2018,
+  "url": "https://thesis.caltech.edu/11042/6/RYKawamoto-2018-thesis.pdf",
+  "access_date": "2026-10-31",
+  "sha256": "c60c79155d2b08aa0fb6fbc72143f4c41571fab920cbd4bf9e355ea671076099",
+  "size_bytes": 58822286,
+  "private_path": "evidence/kawamoto-thesis-contact-audit-v1/private/kawamoto-2018-thesis.pdf",
+  "rights": "Copyright 2018 Reid Y. Kawamoto; all rights reserved, as printed on PDF page 2. Retained privately.",
+  "inspected_pdf_pages": [
+    51,
+    52,
+    53,
+    56
+  ],
+  "printed_pages": [
+    39,
+    40,
+    41,
+    44
+  ],
+  "equation_locators": [
+    "3.9-3.12 normal force and common-node moments",
+    "3.13-3.20 relative velocity and shear history",
+    "3.24-3.27 global drag equations"
+  ],
+  "status": "Bounded source reading; does not establish the later Feldfogel benchmark restitution implementation or complete author-input deck."
+}

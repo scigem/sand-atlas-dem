@@ -396,3 +396,21 @@ initial-state assignments are unresolved. Source reproduction also requires a
 generic wall-contact/reaction contract and restitution damping, which the current
 periodic solver does not implement. No benchmark, calibration or experimental
 acceptance is claimed by this inventory. See PUBLISHED_ASSEMBLY_REFERENCE.md.
+
+
+## Isolated Metal plane-traction operator
+
+The explicit project full-area one-sided plane operator passes
+`plane-traction-operator-metal-v1`: all eighteen sphere-cap observations are
+retained, and the finest 32768-node cases pass 0.1% analytical force/torque/normal
+energy bounds. Worst fine force, torque and normal energy errors are 4.55e-7,
+6.43e-6 and 6.51e-7 relative. Nodal continuation, separation/return, Coulomb loss
+and common-frame covariance pass the frozen 1e-5 limit. Six independent scalar
+surface-quadrature/work checks pass. The sandbox adapter-initialization failure is
+retained separately; the host Metal execution preserves the same numerical gates.
+
+The operator does not advance particles or implement a wall-confined laboratory.
+Production collection, reactions/work, nonperiodic neighbours, transactional
+restart and source-derived restitution remain open. The inspected original thesis
+contact/global-drag equations do not resolve the later benchmark damping choice.
+See WALL_CONTACT.md and CONTACT_SOURCE_AUDIT.md for exact derivations and scope.

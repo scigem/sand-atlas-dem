@@ -127,8 +127,11 @@ work alongside the scientific gates below; naming a material must not infer cali
   Published wall-confined sphere benchmark source bytes are acquired with verified
   publisher checksums; all 19 numerical files are inventoried. A load file duplicates
   displacement data, and curve-column/initial-state inputs remain unresolved.
-  Reproduction also requires generic walls/reactions and source-derived restitution
-  damping. See docs/PUBLISHED_ASSEMBLY_REFERENCE.md for retained source/capability gaps.
+  The standalone Metal plane-traction operator now passes frozen analytical force,
+  torque, energy and history checks. Production wall collection, motion, reactions,
+  nonperiodic neighbours and checkpoint/rollback integration remain required, as does
+  source-derived restitution damping. See docs/WALL_CONTACT.md,
+  docs/CONTACT_SOURCE_AUDIT.md and docs/PUBLISHED_ASSEMBLY_REFERENCE.md.
 - [ ] Complete atlas adapters and material comparison. The bounded recorded-path
   adapter checks protocol, signed stress/strain mapping, prepared origins, frozen
   approximation declarations and synthetic provenance; actual Python/browser

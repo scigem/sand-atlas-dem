@@ -1,0 +1,11 @@
+{
+  "protocol_sha256": "3367dc5794739a2ca6bb1ef47a53ab8df7a77c92172b03eaa6b54e06271343de",
+  "source_hashes": {
+    "examples/plane_contact_study.py": "264e829c01a3391b4fd762209e19387b36824a15a6f4d47d1a9fc316616341b4",
+    "examples/plane_reference.py": "b0993d020947c40f714836bbc90aaee765441c3d5309687f1f8d1eb2a6d91253",
+    "src/sand_atlas_dem/shaders/plane.slang": "1de7c60031f81786af767ab2bd33a136feccebc1c782b44bdcb1313eac0cce82",
+    "src/sand_atlas_dem/backend.py": "2184575342f265dfd744d799af8e9b03a73dcb195e06e94a59f21e1525cbab5c",
+    "src/sand_atlas_dem/geometry.py": "d84592edef45221d589ed22b8a2a36f53be39bb5b8972ec55a548913c929c6a5",
+    "src/sand_atlas_dem/util.py": "0f9dc71429a87057dc08216f3c51425d8b76be9c4fd30f2cab6c3f98b70397c2"
+  }
+}

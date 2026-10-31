@@ -1,0 +1,14 @@
+[ERROR] (rhi) layer: No adapters found
+
+Traceback (most recent call last):
+  File "/private/tmp/sand-atlas-dem-work/examples/plane_contact_study.py", line 296, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/private/tmp/sand-atlas-dem-work/examples/plane_contact_study.py", line 77, in main
+    metal = Metal()
+            ^^^^^^^
+  File "/private/tmp/sand-atlas-dem-work/src/sand_atlas_dem/backend.py", line 14, in __init__
+    self.device = spy.Device(
+                  ^^^^^^^^^^^
+RuntimeError: Failed to create device!
+/Users/runner/work/slangpy/slangpy/src/sgl/device/device.cpp:280 in function Device
