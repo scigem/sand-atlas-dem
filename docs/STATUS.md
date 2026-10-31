@@ -1,5 +1,11 @@
 # Status and evidence
 
+Ottawa follow-up: the independent inertia-axis diagnostic separates the original
+54/84 volume ambiguity, but reveals other descriptor inconsistencies and a
+remaining duplicate match. All 173 supported meshes and all 244 descriptors are
+retained; no correspondence, scale or material recipe is admitted. Analytical
+box/rigid-transform checks pass without GPU execution. See OTTAWA_SOURCE_INTAKE.md.
+
 Current qualification update: see HOSTUN_ACQUISITION_V2.md and
 MECHANICS_QUALIFICATION.md. Source-scale acquisition is now resolved for a documented
 53-grain subset. Seven mechanics cases pass under compensated FP32 state updates; both geometry

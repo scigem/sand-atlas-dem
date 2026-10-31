@@ -56,3 +56,35 @@ and scale. Vertex-link/inertia/field qualification, static contact refinement,
 GPU checks and assembly studies would follow separately. No density, friction,
 loading calibration, size distribution or experimental correspondence is inferred.
 The named-material CLI remains unchanged and this dataset is not registered.
+
+## Inertia fingerprint diagnostic
+
+`evidence/ottawa1um-axis-crosswalk-v1` independently compares signed volume and
+three volume-enforced inertia-ellipsoid full axes for all 173 basic-topology
+supported members. The CPU-only script freezes archive/table/source/script hashes
+before computation, preserves the top two candidates, and verifies unchanged
+inputs afterward. No matching threshold or forced global assignment is introduced.
+
+The [current primary SPAM definition](https://www.spam-project.dev/docs/_modules/spam/label/label.html)
+documents half axes with volume enforcement enabled by default. The current Sand
+Atlas generator uses that convention for its full-axis columns. All 244 descriptor
+ellipsoid volumes equal their tabulated volumes within 4.441e-16 relative.
+These axes consequently add shape-ratio information, not three independent size
+measurements. Current source versions still do not identify the historical producer.
+Downloaded source stays private and is not executed; the independent calculation
+uses the classical central-inertia identity. An analytical box and its rigidly
+transformed copy agree within 2.643e-14 relative.
+
+The original volume ambiguity is separated: mesh 54's leading candidate is
+descriptor 89 (maximum feature difference about 0.0335%), while mesh 84's is
+descriptor 119 (about 0.0757%). This is stronger diagnostic evidence for those
+pairs, without an admitted identity or scale.
+
+The full assignment remains nonunique. Meshes 90 and 120 both rank descriptor
+125 first; mesh 120 differs by up to about 2.25% across features. Mesh 98 has
+no similarly close four-feature candidate: its leading candidate is descriptor
+198, with about 5.00% volume difference. Volume-only candidates for meshes 98
+and 120 were 133 and 155 respectively. The exact signed discrepancies and second
+candidates are retained in the report. No outliers are silently dropped and no
+post-observation gate is fitted. Historical label/export provenance remains the
+next source dependency; the diagnostic does not register another material.

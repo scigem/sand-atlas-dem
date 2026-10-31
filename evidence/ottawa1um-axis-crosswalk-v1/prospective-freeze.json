@@ -1,0 +1,15 @@
+{
+  "input_sha256": {
+    "/private/tmp/sand-atlas-dem-walls/evidence/ottawa1um-source-intake-v1/private/meshes_30.zip": "2273714017391b9aa018e755a2416a09b69aacf8132ca7c777533a12ae721a9d",
+    "/private/tmp/sand-atlas-dem-walls/evidence/ottawa1um-source-intake-v1/source_snapshot/sand-atlas/assets/sands/ottawa-0000008.csv": "7dc724725eebf288001e8b751068370a43c579ab2aefdfa92691cdcfd3368f0b",
+    "/private/tmp/sand-atlas-dem-walls/evidence/ottawa1um-source-intake-v2/report.json": "fd63659cb0d790d4b7cde5288bb5a965dda4db8de0d1548be1fb1219effa1b55",
+    "/private/tmp/sand-atlas-dem-walls/evidence/ottawa1um-axis-crosswalk-v1/source-receipt.json": "c24a0950eab920cdbe9f3b2a13d52b070a023e50e112395e161d1edb3bd32e9a",
+    "/private/tmp/sand-atlas-dem-walls/evidence/ottawa1um-axis-crosswalk-v1/private/spam-label-source.html": "f626ebb513683b596b8aac25e926b27f938e2c5048c1593e2f4df52d058ba0d8",
+    "/private/tmp/sand-atlas-dem-walls/evidence/ottawa1um-axis-crosswalk-v1/analyze.py": "5f9b609c4a1e418ac6f8cee3175ac7618dccd988d616c457aa434cdcd75768bc"
+  },
+  "numpy": "2.5.4",
+  "trimesh": "5.2.0",
+  "scope": "Independent CPU inertia fingerprint diagnostic; no identity/scale admission.",
+  "matching": "Rank all descriptors by maximum absolute log ratio across raw volume and three full axes; retain top two, no fitted thresholds or global reassignment.",
+  "limitations": "Current SPAM convention is not proof of the historical producer version; axes and volume are not statistically independent after volume enforcement."
+}
