@@ -728,3 +728,22 @@ tests (eight skipped, 55 Metal cases deselected). It removes capacity-sized
 host-history readbacks from checkpoint extraction; actual Metal verification
 remains queued behind the running preparation. This does not reduce the dense
 solver's fixed device allocation. See [CHECKPOINT_READBACK.md](CHECKPOINT_READBACK.md).
+
+## First Hostun contacts observed
+
+The unchanged preparation has completed its 500,000-step checkpoint (1 ms
+physical time), retaining 4,001 ordered diagnostics. First surface contact is
+recorded at step 292,875; the latched rate cap applies from step 293,000. A
+read-only independent replay exactly reproduces every recorded controller rate.
+Integrated-rate cell discrepancy is at most 2.112e-7 relative; rigid-volume void
+identity differs by at most 1.848e-13. Checkpoint keys are valid/unique and all
+955 history rows match the reported active surface count. Maximum recorded
+overlap is 0.666968%, below the declared 1% guard.
+
+At step 500,000 the nominal solid fraction is 0.061681, pressure 0.180739 Pa,
+active grain pairs two, kinetic/proxy ratio 0.249105 and force imbalance 0.936798.
+These values do not meet preparation acceptance. The actual 10 kPa target, dense
+inventory and 100-sample equilibrium window remain unchanged. See
+`hostun-balanced424-first-contact-observation-v1`; no dynamic, work, timestep or
+material gate is closed. A one-second CPU stack sample finds the main thread
+waiting on Metal; it is not a GPU utilization or sustained-throughput measurement.

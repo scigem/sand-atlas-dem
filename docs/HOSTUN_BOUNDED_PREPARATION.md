@@ -109,3 +109,15 @@ is no longer supported. The running study retains its original asset and solver;
 a new candidate cannot replace its friction keys or checkpoint identity.
 Dependent work resolution now copies the complete hash-checked accepted preparation
 solver archive rather than substituting a later checkout implementation.
+
+### Completed first-contact interval
+
+`hostun-balanced424-first-contact-observation-v1` independently audits the
+completed 500,000-step checkpoint while the same frozen process continues. First
+contact appears at step 292,875 and the slower cap applies from 293,000. Every
+controller rate replays exactly; all 4,001 diagnostic steps and 955 checkpoint
+contact histories are retained and internally consistent. Maximum observed
+overlap is 0.666968% against the unchanged 1% guard. At this checkpoint only two
+grain pairs are active, nominal solid fraction is 0.061681 and pressure is
+0.180739 Pa. This is an observation of dilute first contacts, not successful
+preparation. Keep the original terminal audit and all convergence gates.

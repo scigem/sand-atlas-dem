@@ -1,0 +1,13 @@
+{
+  "process_id": 58427,
+  "command": "/usr/bin/sample 58427 1 10 -file /private/tmp/hostun-preparation-live-sample-v1.txt",
+  "private_source_sha256": "df93a78d90a7e3427761ae0854d4019824b358543e515c188140bb63891d144f",
+  "sampled_main_thread_observations": 83,
+  "main_thread_stack": [
+    "sgl::Device wait binding",
+    "rhi::debug::DebugCommandQueue::waitOnHost",
+    "rhi::metal::CommandQueueImpl::waitOnHost",
+    "dispatch semaphore wait"
+  ],
+  "scope": "One-second CPU stack observation of the existing process only. This does not measure GPU utilization, per-kernel time, thermal state or a deadlock. A separately completed 500000-step checkpoint establishes advancement."
+}
