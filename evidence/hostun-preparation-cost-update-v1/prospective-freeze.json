@@ -1,0 +1,10 @@
+{
+  "files": {
+    "/private/tmp/sand-atlas-dem-walls/evidence/hostun-balanced424-preparation-v3/study/run/chunk-0001/checkpoint.h5": "831a722b693cb13534cea220524d24641c6040af70109622056c2d331f87102b",
+    "/private/tmp/sand-atlas-dem-walls/evidence/hostun-balanced424-preparation-v3/study/run/chunk-0001/history.json": "62c1b4d4c777ca79dac4fbd1d849a97f9cdc1bf008255cec2400e6ff513b7e30",
+    "/private/tmp/sand-atlas-dem-walls/studies/hostun-balanced424-preparation-policy-v3.json": "e68d4e89a1d8df4979b8f123b5fb5c4ab8c6df4abcfbbf6259c38cd866dc15a3",
+    "/private/tmp/sand-atlas-dem-walls/evidence/hostun-preparation-cost-update-v1/analyze.py": "9cdf0cd4d106bb7bbe50379a804a34ef4a616ff01561d05a88bc764bda4ecc3c"
+  },
+  "scope": "Conditional remaining-cost diagnostic, with no acceptance gate or ETA promise.",
+  "method": "For rigid total volume and a latched per-axis compression-rate cap c, nominal phi can grow no faster than exp(3*c*t) in the continuous model. Compute log(phi_min/phi_now)/(3*c), then divide by dt. Ignore arithmetic roundoff; do not infer packing feasibility, pressure convergence or future step cost. Runtime scenarios apply observed phase step costs unchanged, not as an upper or lower wall-time bound."
+}

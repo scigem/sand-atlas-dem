@@ -762,3 +762,13 @@ matching is not one-to-one. All evidence and the initial reporting failure are
 retained. No recipe, scale, material registration or scientific admission is
 introduced; the historical identity/export receipt is the next source action.
 See [OTTAWA_SOURCE_INTAKE.md](OTTAWA_SOURCE_INTAKE.md).
+
+## Refined-mesh runtime cost
+
+The frozen contact-rate cap implies roughly 6.624 million further 2 ns steps
+from the 500k checkpoint merely to reach the nominal density floor 0.45. Holding
+observed first-contact step costs fixed gives approximately 22 additional wall
+hours for that compression; dense contacts and equilibrium can require more.
+This is a conditional cost scenario, not an ETA or a scientific acceptance.
+Original short sphere timings must not be used for the 53.6-million-node mesh
+workload. See [HOSTUN_RUNTIME_COST.md](HOSTUN_RUNTIME_COST.md).

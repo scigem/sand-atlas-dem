@@ -1,0 +1,51 @@
+{
+  "identity": "hostun-preparation-cost-update-v1",
+  "input_sha256": {
+    "/private/tmp/sand-atlas-dem-walls/evidence/hostun-balanced424-preparation-v3/study/run/chunk-0001/checkpoint.h5": "831a722b693cb13534cea220524d24641c6040af70109622056c2d331f87102b",
+    "/private/tmp/sand-atlas-dem-walls/evidence/hostun-balanced424-preparation-v3/study/run/chunk-0001/history.json": "62c1b4d4c777ca79dac4fbd1d849a97f9cdc1bf008255cec2400e6ff513b7e30",
+    "/private/tmp/sand-atlas-dem-walls/studies/hostun-balanced424-preparation-policy-v3.json": "e68d4e89a1d8df4979b8f123b5fb5c4ab8c6df4abcfbbf6259c38cd866dc15a3",
+    "/private/tmp/sand-atlas-dem-walls/evidence/hostun-preparation-cost-update-v1/analyze.py": "9cdf0cd4d106bb7bbe50379a804a34ef4a616ff01561d05a88bc764bda4ecc3c"
+  },
+  "inputs_unchanged": true,
+  "retrospective_diagnostic": true,
+  "acceptance_policy_added": false,
+  "gpu_executed": false,
+  "preparation_accepted": false,
+  "scientific_admission": false,
+  "checkpoint_step": 500000,
+  "checkpoint_physical_time_s": 0.001,
+  "nominal_solid_fraction": 0.06168077892009986,
+  "minimum_final_solid_fraction": 0.45,
+  "latched_per_axis_compression_cap_s_inv": 50,
+  "maximum_continuous_log_solid_fraction_growth_s_inv": 150,
+  "continuous_model_minimum_additional_physical_time_s": 0.013248501501218273,
+  "approximate_minimum_additional_steps_ignoring_roundoff": 6624251,
+  "minimum_density_first_diagnostic_step_ignoring_roundoff": 7124375,
+  "declared_remaining_step_budget": 15500000,
+  "declared_remaining_physical_time_budget_s": 0.031000000000000003,
+  "post_latch_observed_steps": 207125,
+  "post_latch_observed_wall_seconds": 2427.4278589237947,
+  "runtime_scenarios": [
+    {
+      "cost_basis": "observed-post-latch-mean",
+      "seconds_per_step": 0.011719627562697862,
+      "wall_hours_for_minimum_density_steps": 21.564931021961343
+    },
+    {
+      "cost_basis": "observed-post-latch-median",
+      "seconds_per_step": 0.012060285000130535,
+      "wall_hours_for_minimum_density_steps": 22.19176443463189
+    },
+    {
+      "cost_basis": "observed-post-latch-p95",
+      "seconds_per_step": 0.012548169462010265,
+      "wall_hours_for_minimum_density_steps": 23.089505827081148
+    }
+  ],
+  "limitations": [
+    "The physical bound concerns only the nominal 0.45 density floor, not stable packing, 10kPa pressure, contact inventory or a 100-sample equilibrium window.",
+    "Continuous-model arithmetic ignores FP32/log-state roundoff, so the integer diagnostic step is approximate.",
+    "Scenarios hold observed dilute first-contact step cost fixed. Future dense contacts, allocation growth, compilation, thermals and interruptions may change it. These are not measured dense benchmark results or an ETA.",
+    "No automatic controller rate increase, step-budget extension, gate revision or restart is authorized by this diagnostic."
+  ]
+}

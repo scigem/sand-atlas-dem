@@ -248,3 +248,11 @@ stable timestep: at 1e-7 s, one million steps advances only 0.1 s. Dense irregul
 contacts and higher resolution can be substantially more expensive. No cloud spend
 is required for this Mac path. No monetary cloud estimate is claimed without a
 verified backend and provider quote.
+
+The later 53.6-million-node Hostun mesh workload has substantially different
+cost: completed dilute post-contact intervals average 11.720 ms/step for 424
+grains. The frozen rate cap requires approximately 6.624 million additional
+steps from the 500k checkpoint to the nominal 0.45 density floor. Holding the
+observed cost fixed gives about 22 wall hours for compression alone, not a
+completion ETA or dense-performance claim. See docs/HOSTUN_RUNTIME_COST.md;
+subsystem profiling and requalified optimization remain required.
