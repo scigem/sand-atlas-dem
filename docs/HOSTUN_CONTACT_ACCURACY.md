@@ -248,3 +248,12 @@ GPU error is 0.021873%. The unchanged 10% integral/0.1% same-level GPU/twofold
 improvement gates and fixed-node baseline identity checks pass. This qualifies
 static quadrature at the sampled poses only.
 Dynamic assembly, frictional-history and material studies remain separate.
+
+## Stronger reference challenge (2026-11-01)
+
+The later same-pose level-eight reference raises the existing adaptive asset's
+worst retained GPU force error to 5.04564%, still below its unchanged 10% gate.
+Its previous 5% preprocessing selection target is no longer supported. A revised
+level-five candidate preserves physical geometry but awaits GPU verification; see
+[HOSTUN_REFERENCE_EXTENSION.md](HOSTUN_REFERENCE_EXTENSION.md). Original reports
+and the running preparation retain their original identities.

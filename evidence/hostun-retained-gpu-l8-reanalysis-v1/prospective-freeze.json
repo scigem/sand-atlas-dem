@@ -1,0 +1,13 @@
+{
+  "inputs": {
+    "/private/tmp/sand-atlas-dem-walls/evidence/hostun-library-gpu-quadrature-adaptive-v3/gpu/report.json": "e44a6b0347557d1efc5c15bf16e2101060bcde7490fada75202eb6fac23334dd",
+    "/private/tmp/sand-atlas-dem-walls/evidence/hostun-library-quadrature-consolidated-v4/report.json": "de7eb2adfbede7ce385b56d603386eaa962429bf24895310a476f9d9d99508a6",
+    "/Users/bmar5496/code/sand-atlas-dem/evidence/hostun-library-mesh-force-minimum-v1/report.json": "51f2190cb728e555e41bf116f2173f3a9ae3f9ba0907a2c44472075cb9513182",
+    "/private/tmp/sand-atlas-dem-walls/evidence/hostun-retained-gpu-l8-reanalysis-v1/analyze.py": "474f0a401585657f0b73f03c60596317a3c6449cb01f591689bf62e786975e98"
+  },
+  "maximum_relative_force_error": 0.1,
+  "maximum_fixed_level_gpu_error": 0.001,
+  "minimum_worst_error_improvement_factor": 2,
+  "selection_target_diagnostic_only": 0.05,
+  "gpu_executed": false
+}

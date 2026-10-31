@@ -329,8 +329,8 @@ def with_face_quadrature(shape, rule="gauss3", subdivisions=0):
 
     if shape.provenance.get("display_mesh_only"):
         raise ValueError("Face quadrature requires physical source triangles")
-    if type(subdivisions) is not int or not 0 <= subdivisions <= 4:
-        raise ValueError("Triangle subdivisions must be an integer from zero to four")
+    if type(subdivisions) is not int or not 0 <= subdivisions <= 6:
+        raise ValueError("Triangle subdivisions must be an integer from zero to six")
     if rule == "centroid":
         barycentric = np.full((1, 3), 1 / 3)
         degree = 1
@@ -339,6 +339,8 @@ def with_face_quadrature(shape, rule="gauss3", subdivisions=0):
         degree = 2
     else:
         raise ValueError("Unsupported triangle quadrature")
+    if len(shape.faces) * len(barycentric) * 4**subdivisions > np.iinfo(np.uint32).max:
+        raise ValueError("Surface sample keys exceed uint32 capacity")
     triangles = np.asarray(shape.vertices)[shape.faces]
     for _ in range(subdivisions):
         a, b, c = triangles[:, 0], triangles[:, 1], triangles[:, 2]

@@ -8,7 +8,7 @@ The consolidated Hostun reference and all 212 static GPU comparisons now pass.
 The adaptive asset has not been assigned to the default material recipe;
 assembly and material qualification remain separate.
 
-For each shape, selection chooses the smallest level from 2 through 4 whose signed
+For each shape, selection defaults to the smallest level from 2 through 4 whose signed
 force vector agrees with every supplied reference pose within `--target-error`
 (default 0.05). The existing 2% finest-reference-change gate is recomputed from
 the force vectors. A selected level must be strictly coarser than each reference,
@@ -131,3 +131,15 @@ provenance rejections remain retained. This passes static qualification for the
 original sampled poses, without claiming all orientations, tangential histories,
 dynamic assemblies or material validation. The next dependent engineering study
 is the frozen balanced 424-grain preparation; see HOSTUN_BOUNDED_PREPARATION.md.
+
+## Subsequent reference challenge
+
+The stronger grain-54 level-eight references expose a 5.04175% shallow error for
+the old selected level three, just above the unchanged 5% preprocessing target.
+The older GPU v3 study remains immutable; retained-force reanalysis still passes
+its original 10% integral gate against the stronger reference. The revised
+level-five candidate and its pending GPU v4 policy are documented in
+HOSTUN_REFERENCE_EXTENSION.md. Adaptive selection retains maximum four by default;
+`--maximum-level 5` or `6` explicitly enables higher candidates, still strictly
+coarser than every independent pose reference and under the same target.
+CPU asset preparation is not GPU, dynamic assembly or material qualification.

@@ -80,7 +80,7 @@ PYTHONPATH=src python examples/resolve_prepared_work.py \
   --output evidence/prepared-hostun424-assembly-work-v1 --run
 ```
 
-The resolver refuses incomplete preparation, changed audited inputs, mismatched
+The resolver refuses incomplete preparation, changed audited inputs, corrupted archived
 solver/geometry, wrong inventory, pressure or positive viscosity. It binds the
 accepted checkpoint/audit/shape hashes, archives sources and executes the existing
 assembly-work driver from that immutable copy. Omitting `--run` resolves/freezes
@@ -101,3 +101,11 @@ retained in `hostun-balanced424-precontact-observation-v2`; no new pass threshol
 or acceptance claim is introduced. V1's typed-history parser failure is retained.
 Zero force/energy during dilute contraction cannot satisfy target-pressure
 preparation. This early timing must not be extrapolated as dense-pilot throughput.
+
+Later grain-54 references and an explicitly revised CPU quadrature candidate are
+recorded in HOSTUN_REFERENCE_EXTENSION.md. Retained-force reanalysis still passes
+the original asset's unchanged 10% integral gate, while its 5% preprocessing target
+is no longer supported. The running study retains its original asset and solver;
+a new candidate cannot replace its friction keys or checkpoint identity.
+Dependent work resolution now copies the complete hash-checked accepted preparation
+solver archive rather than substituting a later checkout implementation.

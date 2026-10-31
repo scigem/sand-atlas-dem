@@ -12,12 +12,14 @@ from .geometry import ShapeLibrary, with_face_quadrature
 from .util import finite_array, read_json, sha256
 
 
-def select_levels(reference, protocol, shape_ids, *, target=0.05):
+def select_levels(reference, protocol, shape_ids, *, target=0.05, maximum_level=4):
     """Choose the smallest level >=2 satisfying every supplied pose of a shape.
 
     A selected level must be strictly coarser than its independent reference.
     The existing 2% finest-reference-change gate remains mandatory.
     """
+    if type(maximum_level) is not int or not 2 <= maximum_level <= 6:
+        raise ValueError("Maximum quadrature level must be an integer from two to six")
     if not np.isfinite(target) or not 0 < target <= 0.1:
         raise ValueError("Quadrature selection target must be in (0, 0.1]")
     if (
@@ -80,7 +82,7 @@ def select_levels(reference, protocol, shape_ids, *, target=0.05):
         cases = by_shape[name]
         candidates = [
             level
-            for level in range(2, 5)
+            for level in range(2, maximum_level + 1)
             if all(
                 level < case["reference_finest_level"]
                 and case["level_relative_errors"][level] <= target
@@ -104,7 +106,7 @@ def select_levels(reference, protocol, shape_ids, *, target=0.05):
 
 
 def prepare_adaptive(
-    library_path, reference_path, protocol_path, output, *, target=0.05
+    library_path, reference_path, protocol_path, output, *, target=0.05, maximum_level=4
 ):
     """Create a separate asset and receipt; reject failed/incomplete references."""
     library_path, reference_path, protocol_path, output = map(
@@ -137,7 +139,11 @@ def prepare_adaptive(
     reference = read_json(reference_path)
     library = ShapeLibrary.load(library_path)
     selection = select_levels(
-        reference, protocol, [s.id for s in library.shapes], target=target
+        reference,
+        protocol,
+        [s.id for s in library.shapes],
+        target=target,
+        maximum_level=maximum_level,
     )
     chosen = {r["shape"]: r for r in selection}
     shapes = []
@@ -172,7 +178,7 @@ def prepare_adaptive(
         rule="gauss3",
         selection_target_relative_error=target,
         minimum_level=2,
-        maximum_level=4,
+        maximum_level=maximum_level,
         shapes=selection,
         total_samples=sum(len(s.samples) for s in shapes),
         static_reference_target_passed=True,

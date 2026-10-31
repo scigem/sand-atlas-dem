@@ -16,6 +16,20 @@ reference = importlib.util.module_from_spec(module_spec)
 module_spec.loader.exec_module(reference)
 
 
+def overlap_difference(previous, current):
+    """Exact zero stays zero; relative differences require a nonzero denominator.
+
+    None denotes a failed zero-reference overlap, never a relaxed tolerance.
+    """
+    a, b = np.asarray(previous, float), np.asarray(current, float)
+    if a.shape != (3,) or b.shape != (3,) or not np.isfinite([a, b]).all():
+        raise ValueError("Finite three-vector overlap forces required")
+    norm = np.linalg.norm(a)
+    if norm == 0:
+        return 0.0 if np.array_equal(a, b) else None
+    return float(np.linalg.norm(a - b) / norm)
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("policy", type=Path)
@@ -28,7 +42,7 @@ def main():
     if sha256(source) != policy["reference_source_sha256"]:
         raise ValueError("Changed reference operator")
     if (
-        policy["subdivision_levels"] != list(range(7))
+        policy["subdivision_levels"] not in (list(range(7)), list(range(9)))
         or policy["maximum_finest_relative_change"] != 0.02
         or policy["maximum_overlap_relative_difference"] != 1e-12
     ):
@@ -77,11 +91,14 @@ def main():
             np.array(previous["force_integral_m3"]),
             np.array(current["force_integral_m3"]),
         )
-        differences.append(float(np.linalg.norm(a - b) / np.linalg.norm(a)))
+        differences.append(overlap_difference(a, b))
     unchanged = all(sha256(root / p) == h for p, h in hashes.items()) and sha256(
         args.policy
     ) == sha256(args.output / "protocol.json")
-    overlap_passed = max(differences) <= policy["maximum_overlap_relative_difference"]
+    overlap_passed = bool(differences) and all(
+        d is not None and d <= policy["maximum_overlap_relative_difference"]
+        for d in differences
+    )
     refinement_passed = (
         row["finest_relative_change"] <= policy["maximum_finest_relative_change"]
     )

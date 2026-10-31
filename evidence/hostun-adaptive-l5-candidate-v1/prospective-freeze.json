@@ -1,0 +1,14 @@
+{
+  "source_hashes": {
+    "src/sand_atlas_dem/geometry.py": "85056b1690a0d731b5095c096f3de41595305ea5ad25739dc71d4553a9d74fc8",
+    "src/sand_atlas_dem/quadrature.py": "f8bc3eee681747fcc3ecddc59f8cc886b457303d324e6c55571b3e465dbd735f",
+    "src/sand_atlas_dem/cli.py": "e5b831d0377ba919e5963e37b83bbc791ddda385d54e184bcb8ac6bed63fc301",
+    "src/sand_atlas_dem/util.py": "0f9dc71429a87057dc08216f3c51425d8b76be9c4fd30f2cab6c3f98b70397c2"
+  },
+  "reference_report_sha256": "de7eb2adfbede7ce385b56d603386eaa962429bf24895310a476f9d9d99508a6",
+  "reference_protocol_sha256": "cccbd9554152cd9304e1e75f9d1d97d42f207ba9024d1e6e022383f364986ce5",
+  "maximum_level": 5,
+  "selection_target": 0.05,
+  "gpu_executed": false,
+  "scientific_admission": false
+}

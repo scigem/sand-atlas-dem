@@ -76,20 +76,40 @@ def main():
             raise ValueError("Preparation audit input changed")
     if frozen["shape_sha256"] != resolved["shape_library_sha256"]:
         raise ValueError("Preparation source receipt names different geometry")
+    archive = preparation / "study/source_snapshot"
+    sources = {
+        "examples/resolve_prepared_work.py": Path(__file__).resolve(),
+        "examples/assembly_work_study.py": root / "examples/assembly_work_study.py",
+    }
     for name, digest in frozen["sources"].items():
-        if name.startswith("sand_atlas_dem/") and sha256(root / "src" / name) != digest:
-            raise ValueError("Solver differs from prepared-state solver")
+        relative = Path(name)
+        if relative.is_absolute() or ".." in relative.parts:
+            raise ValueError("Unsafe preparation source path")
+        source = archive / relative
+        if sha256(source) != digest:
+            raise ValueError("Prepared-state source archive changed")
+        target = "src/" + name if name.startswith("sand_atlas_dem/") else name
+        if target in sources:
+            raise ValueError("Preparation source collides with study driver")
+        sources[target] = source
+    required = {
+        "src/sand_atlas_dem/" + name
+        for name in (
+            "__init__.py",
+            "gpu.py",
+            "simulation.py",
+            "geometry.py",
+            "spec.py",
+            "backend.py",
+            "shaders/solver.slang",
+        )
+    }
+    if not required.issubset(sources):
+        raise ValueError("Complete archived preparation solver required")
     output = args.output.resolve()
     output.mkdir(parents=True, exist_ok=False)
-    sources = [
-        Path(__file__).resolve(),
-        root / "examples/assembly_work_study.py",
-        *sorted((root / "src/sand_atlas_dem").glob("*.py")),
-        *sorted((root / "src/sand_atlas_dem/shaders").glob("*.slang")),
-    ]
     hashes = {}
-    for path in sources:
-        name = str(path.relative_to(root))
+    for name, path in sources.items():
         dest = output / "source_snapshot" / name
         dest.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(path, dest)
@@ -107,6 +127,7 @@ def main():
             preparation_report_sha256=sha256(preparation / "report.json"),
             acceptance_audit_sha256=sha256(audit_path),
             scientific_admission=False,
+            solver_source="Accepted preparation immutable archive; current checkout source is not substituted",
         ),
     )
     if not args.run:

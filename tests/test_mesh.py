@@ -125,7 +125,7 @@ def test_display_only_mesh_cannot_replace_analytical_geometry():
         pack_meshes(ShapeLibrary([sphere(resolution=8, samples=32)]), 0.001)
 
 
-@pytest.mark.parametrize("subdivisions", [0, 1, 2])
+@pytest.mark.parametrize("subdivisions", [0, 1, 2, 5, 6])
 def test_face_quadrature_integrates_known_surface_polynomial(box, subdivisions):
     from sand_atlas_dem.geometry import with_face_quadrature
 

@@ -203,3 +203,64 @@ def test_actual_cli_prepares_mixed_level_library(frozen_fixture, tmp_path, capsy
     assert receipt["total_samples"] == (4**3 + 4**2) * 12 * 3
     assert not receipt["gpu_verified"]
     assert read_json(protocol)["library_sha256"] == receipt["parent_sha256"]
+
+
+def high_resolution_reference():
+    reference, protocol = reference_fixture()
+    for row in reference["rows"]:
+        scale = 1 if row["target_sampled_depth_fraction"] == 0.0025 else 2
+        row["levels"] = [
+            dict(level=i, force_integral_m3=[-scale * m, 0, 0])
+            for i, m in enumerate([2, 1.5, 1.3, 1.2, 1.1, 1.02, 1.005, 1.001, 1])
+        ]
+        row["reference_finest_level"] = 8
+        row["finest_relative_change"] = 0.001
+    return reference, protocol
+
+
+def test_higher_candidate_limit_requires_explicit_opt_in():
+    reference, protocol = high_resolution_reference()
+    with pytest.raises(ValueError, match="No independently supported"):
+        select_levels(reference, protocol, ["a", "b"])
+    for limit in (5, 6):
+        selected = select_levels(reference, protocol, ["a", "b"], maximum_level=limit)
+        assert [r["subdivisions"] for r in selected] == [5, 5]
+
+
+@pytest.mark.parametrize("limit", [1, 7, True, 4.0])
+def test_invalid_candidate_limit_rejects(limit):
+    reference, protocol = high_resolution_reference()
+    with pytest.raises(ValueError, match="Maximum quadrature level"):
+        select_levels(reference, protocol, ["a", "b"], maximum_level=limit)
+
+
+def test_high_level_cli_preserves_physical_data_and_explicit_bound(
+    frozen_fixture, tmp_path
+):
+    library, reference_path, protocol = frozen_fixture
+    reference, _ = high_resolution_reference()
+    write_json(reference_path, reference)
+    output = tmp_path / "high.h5"
+    assert (
+        main(
+            [
+                "geometry",
+                "adaptive-quadrature",
+                str(library),
+                str(output),
+                "--reference",
+                str(reference_path),
+                "--reference-protocol",
+                str(protocol),
+                "--maximum-level",
+                "5",
+            ]
+        )
+        == 0
+    )
+    before, after = ShapeLibrary.load(library), ShapeLibrary.load(output)
+    for a, b in zip(before.shapes, after.shapes):
+        assert b.provenance["quadrature_subdivisions"] == 5
+        assert len(b.samples) == len(a.faces) * 3 * 4**5
+        for name in ("vertices", "faces", "sdf", "origin", "inertia"):
+            assert np.array_equal(getattr(a, name), getattr(b, name))

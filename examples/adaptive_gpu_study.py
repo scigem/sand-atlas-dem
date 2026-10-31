@@ -30,7 +30,11 @@ def main():
     protocol = read_json(reference_protocol)
     # Fail before creating an output or preparing any asset unless all poses pass.
     selection = select_levels(
-        reference, protocol, protocol["shape_ids"], target=policy["selection_target"]
+        reference,
+        protocol,
+        protocol["shape_ids"],
+        target=policy["selection_target"],
+        maximum_level=policy.get("maximum_level", 4),
     )
     if sha256(parent) != policy["parent_library_sha256"]:
         raise ValueError("Frozen physical library changed")
@@ -84,6 +88,7 @@ def main():
         reference_protocol,
         output / "private/adaptive.h5",
         target=policy["selection_target"],
+        maximum_level=policy.get("maximum_level", 4),
     )
     write_json(output / "preparation-receipt.json", receipt)
     gpu = {

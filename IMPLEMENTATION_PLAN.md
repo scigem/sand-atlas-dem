@@ -134,6 +134,14 @@ work alongside the scientific gates below; naming a material must not infer cali
   are frozen; the qualification-gated immutable preparation is now running, with
   an independent checkpoint/diagnostic audit required on terminal success.
   No Hostun assembly acceptance is inferred before completion.
+  A subsequent same-pose level-eight challenge for grain 54 exposes nonmonotone
+  coarse error: the old selected level three exceeds its 5% preprocessing target.
+  Both extended references pass unchanged gates with exact overlaps. Retained GPU
+  observations still pass the original 10% integral gate against stronger references
+  (worst 5.04564%). A physically identical revised level-five CPU candidate is
+  prepared, with GPU v4 qualification queued. The running preparation remains
+  unchanged and bounded; no material gate is closed. Higher-level preprocessing
+  is explicit opt-in and CPU-tested; actual higher-level Metal remains pending.
 - [X] Freeze and run rolling/objectivity tests, separating/returning contact,
   changing normal orientation, strongly anisotropic torque-free rotation and
   capacity-growth stress tests. Test timestep refinement over useful physical time.

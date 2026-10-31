@@ -23,7 +23,7 @@ def subdivision_for(item, shape_id):
         if "subdivisions" in item
         else item["subdivisions_by_shape"][shape_id]
     )
-    if type(value) is not int or not 0 <= value <= 4:
+    if type(value) is not int or not 0 <= value <= 6:
         raise ValueError("Invalid fixed quadrature subdivision level")
     return value
 

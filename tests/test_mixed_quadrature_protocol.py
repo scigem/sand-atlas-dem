@@ -28,7 +28,7 @@ def test_fixed_and_mixed_levels_are_explicit():
         {},
         {"subdivisions": 2, "subdivisions_by_shape": {"a": 2}},
         {"subdivisions": True},
-        {"subdivisions": 5},
+        {"subdivisions": 7},
         {"subdivisions_by_shape": {"a": -1}},
     ],
 )

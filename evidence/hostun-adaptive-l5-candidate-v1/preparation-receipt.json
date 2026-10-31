@@ -1,0 +1,1781 @@
+{
+  "format": "sand-dem-adaptive-quadrature/1",
+  "output": "/private/tmp/sand-atlas-dem-walls/evidence/hostun-adaptive-l5-candidate-v1/private/adaptive.h5",
+  "sha256": "0749b2bc3bdde4a7da9cd0946acd0d377ffbffa37dd5df8f4e8529f579f73b32",
+  "parent_sha256": "1bc9f37a22b402ada31495ea7ff1ebef4bb6a27a26d68a8333f7f84a12ad16b7",
+  "reference_report_sha256": "de7eb2adfbede7ce385b56d603386eaa962429bf24895310a476f9d9d99508a6",
+  "reference_protocol_sha256": "cccbd9554152cd9304e1e75f9d1d97d42f207ba9024d1e6e022383f364986ce5",
+  "reference_freeze_sha256": "683254f54d54e67d2fb09c548e4b131187a4bc14765aa447de298fec42a31cfc",
+  "rule": "gauss3",
+  "selection_target_relative_error": 0.05,
+  "minimum_level": 2,
+  "maximum_level": 5,
+  "shapes": [
+    {
+      "shape": "hostun-particle_00020",
+      "subdivisions": 2,
+      "worst_reference_relative_error": 0.00011596730001774273,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.0025,
+          "separation_m": 0.0001630195728154383,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.0021172791136172962,
+            0.000830880614296217,
+            0.00011596730001774273,
+            6.3788514242653e-05,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.00016042446185429149,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.0004799094937844684,
+            0.00016719031957163825,
+            0.00010965869364016841,
+            3.701720003073241e-05,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 2329152,
+      "source_face_count": 48524
+    },
+    {
+      "shape": "hostun-particle_00021",
+      "subdivisions": 2,
+      "worst_reference_relative_error": 0.004491337001417849,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.0025,
+          "separation_m": 0.00028474810225339545,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.018110752461616572,
+            0.006081527106578032,
+            0.004491337001417849,
+            0.001517683056658902,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.0002818647476625738,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.004194426836876185,
+            0.006159911987672494,
+            0.001954523884324932,
+            0.0006725144092787347,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 1183872,
+      "source_face_count": 24664
+    },
+    {
+      "shape": "hostun-particle_00022",
+      "subdivisions": 2,
+      "worst_reference_relative_error": 0.0015117308111156566,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.0025,
+          "separation_m": 0.00038053608747357846,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.012625161021145963,
+            0.007781479801233794,
+            0.0015117308111156566,
+            0.00018962050235924678,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.00037671056817700267,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.0068849080369456335,
+            0.0013993633212293676,
+            0.0006619846404581067,
+            0.000478590741093939,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 681984,
+      "source_face_count": 14208
+    },
+    {
+      "shape": "hostun-particle_00023",
+      "subdivisions": 2,
+      "worst_reference_relative_error": 0.004052218153493978,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.0025,
+          "separation_m": 0.00024396163995434655,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.009791106139499595,
+            0.0032476491835635307,
+            0.004052218153493978,
+            0.0004672662818669098,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.0002414585744761113,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.002495614199464707,
+            0.002771261939564657,
+            0.0008907573823925746,
+            0.00015166661845953606,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 1083648,
+      "source_face_count": 22576
+    },
+    {
+      "shape": "hostun-particle_00024",
+      "subdivisions": 2,
+      "worst_reference_relative_error": 0.0016952594338938204,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.0025,
+          "separation_m": 0.00039763880254179107,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.012226641516762964,
+            0.005213002139669927,
+            0.0016952594338938204,
+            0.0007898944026245851,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.00039472882621926646,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.012451164960427584,
+            0.0003800442765447651,
+            0.0007034682163378979,
+            0.0003887316544145365,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 2873856,
+      "source_face_count": 59872
+    },
+    {
+      "shape": "hostun-particle_00025",
+      "subdivisions": 2,
+      "worst_reference_relative_error": 0.0034796976155322032,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.0025,
+          "separation_m": 0.0004783310930880435,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.05251268259201598,
+            0.011131140202679022,
+            0.0034796976155322032,
+            0.0012268134157382756,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.000475408478471582,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.006581675234876169,
+            0.002814757477760029,
+            0.0019154767172661195,
+            0.0005836331673201913,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 919488,
+      "source_face_count": 19156
+    },
+    {
+      "shape": "hostun-particle_00026",
+      "subdivisions": 2,
+      "worst_reference_relative_error": 0.0010601015045021342,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.0025,
+          "separation_m": 0.000323670078475515,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.0070199519492965615,
+            0.004438409540062959,
+            0.0010601015045021342,
+            0.0007930835125139019,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.00031966611876364635,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.008411680956338194,
+            0.0009313094040038641,
+            0.0003553270012170443,
+            0.00026740753754907594,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 1999872,
+      "source_face_count": 41664
+    },
+    {
+      "shape": "hostun-particle_00027",
+      "subdivisions": 2,
+      "worst_reference_relative_error": 0.003947674556864323,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.0025,
+          "separation_m": 0.0003786752368330023,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.022812874728629633,
+            0.01384936745499427,
+            0.003947674556864323,
+            0.0009415551316225133,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.000374782735180271,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.00793068825527841,
+            0.00429955223538456,
+            0.0013956851279156711,
+            5.56794356253752e-05,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 735552,
+      "source_face_count": 15324
+    },
+    {
+      "shape": "hostun-particle_00028",
+      "subdivisions": 2,
+      "worst_reference_relative_error": 0.002791199441693993,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.0025,
+          "separation_m": 0.0005047710536153248,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.038600179937212695,
+            0.009598932814678912,
+            0.002791199441693993,
+            0.0014042875886744063,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.0004980397973679094,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.009420948745928142,
+            0.0035936493351147805,
+            0.0026071260196713097,
+            0.00017298565581498225,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 946176,
+      "source_face_count": 19712
+    },
+    {
+      "shape": "hostun-particle_00029",
+      "subdivisions": 2,
+      "worst_reference_relative_error": 0.002307667149705865,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.0025,
+          "separation_m": 0.0004324245531918169,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.01850828144597513,
+            0.004845514238584742,
+            0.002307667149705865,
+            0.0010356360277623791,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.00042845895785271825,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.014433713716677374,
+            0.0022658319093216794,
+            0.0015440385352558728,
+            0.0006684170021649385,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 760704,
+      "source_face_count": 15848
+    },
+    {
+      "shape": "hostun-particle_00030",
+      "subdivisions": 2,
+      "worst_reference_relative_error": 0.004180772818775,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.0025,
+          "separation_m": 0.0003762722462386821,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.06771725258921184,
+            0.011841182358731635,
+            0.004180772818775,
+            0.0009413527200879128,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.0003733702369697251,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.003034026789697235,
+            0.003916733265457101,
+            0.003027105689292273,
+            0.00178817340633573,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 657408,
+      "source_face_count": 13696
+    },
+    {
+      "shape": "hostun-particle_00031",
+      "subdivisions": 2,
+      "worst_reference_relative_error": 0.005589551535072156,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.0025,
+          "separation_m": 0.0004340634797103128,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.13567342956392722,
+            0.035624634358429476,
+            0.005589551535072156,
+            0.0015714275138281888,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.000429069830745623,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.017822291571058895,
+            0.005311463851195859,
+            0.0019311817227454292,
+            0.0006820554722982472,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 826368,
+      "source_face_count": 17216
+    },
+    {
+      "shape": "hostun-particle_00032",
+      "subdivisions": 2,
+      "worst_reference_relative_error": 0.0025612183611508263,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.0025,
+          "separation_m": 0.00047552189506657323,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.03268551303427931,
+            0.004796861034007177,
+            0.0025612183611508263,
+            0.0005642262033378089,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.0004729113012650726,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.004253278696531308,
+            0.002991912965660578,
+            0.0008731795532552817,
+            0.0007574717524903432,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 2151552,
+      "source_face_count": 44824
+    },
+    {
+      "shape": "hostun-particle_00033",
+      "subdivisions": 2,
+      "worst_reference_relative_error": 0.003295162278623763,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.0025,
+          "separation_m": 0.00041684533129727347,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.024408644170248173,
+            0.024882319734841594,
+            0.001176908369118263,
+            0.002405957376940665,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.0004142800998617514,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.014524170478175074,
+            0.0035874986416551567,
+            0.003295162278623763,
+            0.0009249156816138354,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 789312,
+      "source_face_count": 16444
+    },
+    {
+      "shape": "hostun-particle_00034",
+      "subdivisions": 2,
+      "worst_reference_relative_error": 0.005205349945997745,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.0025,
+          "separation_m": 0.00034649769030461113,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.04829592991708517,
+            0.019942959563551528,
+            0.005205349945997745,
+            0.003949762093370893,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.00034344602606246053,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.029271226170846848,
+            0.0065021124265389,
+            0.0019795888786952455,
+            0.0007026348878605728,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 844224,
+      "source_face_count": 17588
+    },
+    {
+      "shape": "hostun-particle_00035",
+      "subdivisions": 2,
+      "worst_reference_relative_error": 0.001034235039238202,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.0025,
+          "separation_m": 0.0005197771901869787,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.023208519793492567,
+            0.0029276400404783117,
+            0.001034235039238202,
+            0.00042777529237147233,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.0005169147323895825,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.00941202675045586,
+            0.0033989246470773177,
+            0.0005781304751276367,
+            0.00019601805794971716,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 982464,
+      "source_face_count": 20468
+    },
+    {
+      "shape": "hostun-particle_00036",
+      "subdivisions": 2,
+      "worst_reference_relative_error": 0.0018092394043350225,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.0025,
+          "separation_m": 0.0004535648751486879,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.02028073408411987,
+            0.009052322172894284,
+            0.0018092394043350225,
+            0.003036440278606749,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.0004489119054237316,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.007379966659994219,
+            0.008890375708136828,
+            0.001047838800790031,
+            0.0003558433178241381,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 2061696,
+      "source_face_count": 42952
+    },
+    {
+      "shape": "hostun-particle_00037",
+      "subdivisions": 2,
+      "worst_reference_relative_error": 0.0032806716816940655,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.0025,
+          "separation_m": 0.0003110010604871071,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.03282792612047914,
+            0.0069254789722441494,
+            0.0032806716816940655,
+            0.0008208225753782605,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.0003081927904694138,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.012048494831104699,
+            0.004056174869832852,
+            0.0008309853843349792,
+            0.00017695892397356013,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 747840,
+      "source_face_count": 15580
+    },
+    {
+      "shape": "hostun-particle_00038",
+      "subdivisions": 4,
+      "worst_reference_relative_error": 0.020861430904749817,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.0025,
+          "separation_m": 0.0003720462605601217,
+          "reference_finest_level": 6,
+          "level_relative_errors": [
+            0.1629195403586457,
+            0.16066142959807428,
+            0.09153354870036408,
+            0.09418897965349965,
+            0.020861430904749817,
+            0.003764847682268128,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.00036897802754473576,
+          "reference_finest_level": 6,
+          "level_relative_errors": [
+            0.2707349901260256,
+            0.023854712326288267,
+            0.01669278457475811,
+            0.009283753970652607,
+            0.007502994998866249,
+            0.001910035705161495,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 64512,
+      "source_face_count": 84
+    },
+    {
+      "shape": "hostun-particle_00039",
+      "subdivisions": 2,
+      "worst_reference_relative_error": 0.012906252547198132,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.0025,
+          "separation_m": 0.00042587759407778205,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.07186036926433761,
+            0.016454167502731144,
+            0.012906252547198132,
+            0.003460904913711888,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.0004203444630809376,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.004137468385511135,
+            0.002885597351228283,
+            0.0012827195686211457,
+            0.0005574834153824663,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 926400,
+      "source_face_count": 19300
+    },
+    {
+      "shape": "hostun-particle_00040",
+      "subdivisions": 2,
+      "worst_reference_relative_error": 0.004569993660352258,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.0025,
+          "separation_m": 0.00044419004687524773,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.04031695382926761,
+            0.00692712882072479,
+            0.004569993660352258,
+            0.0011348357854638592,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.0004410112564361129,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.01920973423484044,
+            0.007246581072299913,
+            0.0025324368923000233,
+            0.0006340736694196243,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 987840,
+      "source_face_count": 20580
+    },
+    {
+      "shape": "hostun-particle_00041",
+      "subdivisions": 2,
+      "worst_reference_relative_error": 0.002301533837319543,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.0025,
+          "separation_m": 0.00020197265490291016,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.036494273766496596,
+            0.009385977863145725,
+            0.002301533837319543,
+            0.000741301341882972,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.00019971458563341384,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.007853900246555254,
+            0.003193743208532723,
+            0.0007044574124022413,
+            0.00022689555029936786,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 1271808,
+      "source_face_count": 26496
+    },
+    {
+      "shape": "hostun-particle_00042",
+      "subdivisions": 2,
+      "worst_reference_relative_error": 0.002618595722361529,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.0025,
+          "separation_m": 0.00026866351586751904,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.025244981358942792,
+            0.00380393424804048,
+            0.002618595722361529,
+            0.00104321004948387,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.0002658399952791795,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.006176893483179028,
+            0.003904307949744661,
+            0.0016629902494817773,
+            0.0007990377709365465,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 1162944,
+      "source_face_count": 24228
+    },
+    {
+      "shape": "hostun-particle_00043",
+      "subdivisions": 2,
+      "worst_reference_relative_error": 0.0031977018824829225,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.0025,
+          "separation_m": 0.00038952154699055223,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.03967544886983569,
+            0.007038948877823671,
+            0.002449063174196668,
+            0.0004463708708442612,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.0003859709587126887,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.012287997144537823,
+            0.008776872709701717,
+            0.0031977018824829225,
+            0.0001816940051643364,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 774720,
+      "source_face_count": 16140
+    },
+    {
+      "shape": "hostun-particle_00044",
+      "subdivisions": 2,
+      "worst_reference_relative_error": 0.0005988761781562344,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.0025,
+          "separation_m": 0.0002757970894879082,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.021206697704250318,
+            0.004894931620193565,
+            0.0005988761781562344,
+            0.0005652359953749696,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.0002732769041098748,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.0026495456870604564,
+            0.0019733373097233398,
+            0.00039191447702693644,
+            0.000265557002912443,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 677184,
+      "source_face_count": 14108
+    },
+    {
+      "shape": "hostun-particle_00045",
+      "subdivisions": 2,
+      "worst_reference_relative_error": 0.0009746347454368071,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.0025,
+          "separation_m": 0.00023290830762728087,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.03684339312681609,
+            0.013765701846775226,
+            0.0009746347454368071,
+            0.0011294736806096368,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.00023082139689348748,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.014323291465232119,
+            0.0038440271761709492,
+            0.0007034006348480831,
+            0.000152428589838238,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 929664,
+      "source_face_count": 19368
+    },
+    {
+      "shape": "hostun-particle_00046",
+      "subdivisions": 2,
+      "worst_reference_relative_error": 0.004898617230509797,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.0025,
+          "separation_m": 0.0002955814244891113,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.04932934342820398,
+            0.007979509712374188,
+            0.004898617230509797,
+            0.0032434878466667074,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.0002929340224854687,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.023345155101445757,
+            0.004411512942520266,
+            0.0023589217349595463,
+            0.0005419879478137902,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 659328,
+      "source_face_count": 13736
+    },
+    {
+      "shape": "hostun-particle_00047",
+      "subdivisions": 2,
+      "worst_reference_relative_error": 0.002540992787855528,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.0025,
+          "separation_m": 0.00046495203981799317,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.03589162008433035,
+            0.019161553139669836,
+            0.002540992787855528,
+            0.002212388124217318,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.0004622619790225107,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.006413825828331998,
+            0.0008694837366234031,
+            0.0016069253902348736,
+            0.0005328319092591036,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 1082304,
+      "source_face_count": 22548
+    },
+    {
+      "shape": "hostun-particle_00048",
+      "subdivisions": 2,
+      "worst_reference_relative_error": 0.002888833900957336,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.0025,
+          "separation_m": 0.0003634650865738693,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.02215510375517076,
+            0.011260387391682867,
+            0.002888833900957336,
+            0.001252683363767345,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.0003605445073270099,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.026718115712395272,
+            0.006336318439954939,
+            0.00168972146753969,
+            0.0011719840658847636,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 629376,
+      "source_face_count": 13112
+    },
+    {
+      "shape": "hostun-particle_00049",
+      "subdivisions": 2,
+      "worst_reference_relative_error": 0.007083547154148597,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.0025,
+          "separation_m": 0.0002442899300692371,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.07907459466063753,
+            0.009445833339319764,
+            0.007083547154148597,
+            0.0022380462546829163,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.00024182351047479943,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.013865435117022448,
+            0.0035727636440586936,
+            0.0009875054120328031,
+            0.0004803994942349853,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 903360,
+      "source_face_count": 18820
+    },
+    {
+      "shape": "hostun-particle_00050",
+      "subdivisions": 2,
+      "worst_reference_relative_error": 0.0029445031713575365,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.0025,
+          "separation_m": 0.00039594234768905434,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.013658175542706277,
+            0.004612531985955024,
+            0.0029445031713575365,
+            0.0012074400976302747,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.00039294579748809825,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.012859634123344395,
+            0.006123870421044814,
+            0.0024967582558455743,
+            0.000967459443455638,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 1069632,
+      "source_face_count": 22284
+    },
+    {
+      "shape": "hostun-particle_00051",
+      "subdivisions": 2,
+      "worst_reference_relative_error": 0.010723144770500874,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.0025,
+          "separation_m": 0.0002612216361926673,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.1017541105660085,
+            0.004344724200574357,
+            0.010723144770500874,
+            0.0026070824313399123,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.00025861273054251935,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.01776588415700718,
+            0.005213480065691713,
+            0.003100766307671779,
+            0.0004211282233108414,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 855552,
+      "source_face_count": 17824
+    },
+    {
+      "shape": "hostun-particle_00052",
+      "subdivisions": 2,
+      "worst_reference_relative_error": 0.0023526490151441065,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.0025,
+          "separation_m": 0.00037010064263418615,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.04675423426809289,
+            0.009038678977620122,
+            0.0023526490151441065,
+            0.0032204668832858836,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.00036704720705492877,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.010168617036697119,
+            0.0023561849501725542,
+            0.0010844307892895707,
+            0.0004947161798452864,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 1636224,
+      "source_face_count": 34088
+    },
+    {
+      "shape": "hostun-particle_00053",
+      "subdivisions": 2,
+      "worst_reference_relative_error": 0.011953450993690329,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.0025,
+          "separation_m": 0.00029436565288779227,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.15188510205310224,
+            0.020213453396846996,
+            0.011953450993690329,
+            0.003178889443582801,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.0002922030033296935,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.03674152489942838,
+            0.0012068462183609603,
+            0.004208692412938444,
+            0.002907379442440464,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 718656,
+      "source_face_count": 14972
+    },
+    {
+      "shape": "hostun-particle_00054",
+      "subdivisions": 5,
+      "worst_reference_relative_error": 0.015341263657100267,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.0025,
+          "separation_m": 0.00014124146466865768,
+          "reference_finest_level": 8,
+          "level_relative_errors": [
+            1.0,
+            1.0,
+            0.2694666615646494,
+            0.05041750026785852,
+            0.0672198529125174,
+            0.015341263657100267,
+            0.004061666437294683,
+            0.0017751222708314058,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.00013862776581757743,
+          "reference_finest_level": 8,
+          "level_relative_errors": [
+            0.28896129438128254,
+            0.04350644966839138,
+            0.07302422121729692,
+            0.019734654725829862,
+            0.006719600269012213,
+            0.002193615889849985,
+            0.0009495371576126941,
+            0.00035144876228068055,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 135168,
+      "source_face_count": 44
+    },
+    {
+      "shape": "hostun-particle_00055",
+      "subdivisions": 2,
+      "worst_reference_relative_error": 0.004025172405175291,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.0025,
+          "separation_m": 0.0002766391291865612,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.027617672155683153,
+            0.013594431730533194,
+            0.004025172405175291,
+            0.0023088563851930005,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.0002739792292697406,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.01341428908679079,
+            0.006750656541292106,
+            0.0009982008790341873,
+            0.0010790056813698118,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 800064,
+      "source_face_count": 16668
+    },
+    {
+      "shape": "hostun-particle_00056",
+      "subdivisions": 2,
+      "worst_reference_relative_error": 0.0055235331361897155,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.0025,
+          "separation_m": 0.00032635837948107537,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.0125784937306788,
+            0.0054444656770278295,
+            0.0055235331361897155,
+            0.0013872146651096446,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.00032324465218713935,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.010123722239292495,
+            0.0031060319247964226,
+            0.0003038732029634663,
+            0.0008282981500404797,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 1014528,
+      "source_face_count": 21136
+    },
+    {
+      "shape": "hostun-particle_00057",
+      "subdivisions": 2,
+      "worst_reference_relative_error": 0.003561940702206961,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.0025,
+          "separation_m": 0.0003358570444855006,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.10617262094200725,
+            0.011372847863711398,
+            0.003561940702206961,
+            0.0005335776745436032,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.0003323996647017883,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.005738907245478649,
+            0.011286639474022581,
+            0.001162071389452282,
+            0.0005354477111633982,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 709440,
+      "source_face_count": 14780
+    },
+    {
+      "shape": "hostun-particle_00058",
+      "subdivisions": 2,
+      "worst_reference_relative_error": 0.0023372464030749413,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.0025,
+          "separation_m": 0.00032736849692177085,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.040284785612450094,
+            0.018939906814630793,
+            0.0023372464030749413,
+            0.0019502726104136437,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.00032410459822715485,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.009017337338382095,
+            0.004214603915496974,
+            0.0020569322060918463,
+            0.0006581446687731931,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 669504,
+      "source_face_count": 13948
+    },
+    {
+      "shape": "hostun-particle_00059",
+      "subdivisions": 2,
+      "worst_reference_relative_error": 0.005542205250286222,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.0025,
+          "separation_m": 0.00024808861944325205,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.060009538507243436,
+            0.02198379861591376,
+            0.005542205250286222,
+            0.00223960339732162,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.0002458384441738947,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.020751189753537673,
+            0.004518621927657857,
+            0.0028445856173429274,
+            0.0023434713721357907,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 913920,
+      "source_face_count": 19040
+    },
+    {
+      "shape": "hostun-particle_00060",
+      "subdivisions": 2,
+      "worst_reference_relative_error": 0.0020596758331036477,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.0025,
+          "separation_m": 0.00027353173444468745,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.022159299229761405,
+            0.018080945355243037,
+            0.0020596758331036477,
+            0.004070989559798859,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.0002702927279865078,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.0036673507521795016,
+            0.004202956359808675,
+            0.0007837479639139499,
+            0.000427826593688172,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 950784,
+      "source_face_count": 19808
+    },
+    {
+      "shape": "hostun-particle_00061",
+      "subdivisions": 2,
+      "worst_reference_relative_error": 0.002705388066831689,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.0025,
+          "separation_m": 0.00032780371184011327,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.012442929136785385,
+            0.0056395340785933305,
+            0.0025212144869111715,
+            0.00010078702630086866,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.00032490496945443827,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.023702358523057215,
+            0.004611012910330423,
+            0.002705388066831689,
+            0.0006381701505694385,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 1147584,
+      "source_face_count": 23908
+    },
+    {
+      "shape": "hostun-particle_00062",
+      "subdivisions": 2,
+      "worst_reference_relative_error": 0.005573620330816119,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.0025,
+          "separation_m": 0.00019482051477702096,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.02911075943335377,
+            0.009229153716502753,
+            0.005573620330816119,
+            0.0010212197460684339,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.00019273957193039913,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.010707510884196829,
+            0.005338087250499178,
+            0.0013524691574136724,
+            0.00023419305136770024,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 1413504,
+      "source_face_count": 29448
+    },
+    {
+      "shape": "hostun-particle_00063",
+      "subdivisions": 2,
+      "worst_reference_relative_error": 0.001666582847576512,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.0025,
+          "separation_m": 0.00027520963485718576,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.030230959036187575,
+            0.006872860306435427,
+            0.001666582847576512,
+            0.001159228567277119,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.00027267217369489403,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.0072066827856936315,
+            0.002508164216592579,
+            0.0012299829140446313,
+            0.00035287396015216136,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 980352,
+      "source_face_count": 20424
+    },
+    {
+      "shape": "hostun-particle_00064",
+      "subdivisions": 2,
+      "worst_reference_relative_error": 0.011457259132203993,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.0025,
+          "separation_m": 0.00041052253637023937,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.08368213719826088,
+            0.006807855869616057,
+            0.011457259132203993,
+            0.002823963163756849,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.0004078759149077614,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.03288623349168073,
+            0.0061192604201904055,
+            0.004573803810101561,
+            0.0021130790284658433,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 606336,
+      "source_face_count": 12632
+    },
+    {
+      "shape": "hostun-particle_00065",
+      "subdivisions": 2,
+      "worst_reference_relative_error": 0.0015708196931808818,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.0025,
+          "separation_m": 0.0003282070520746349,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.010715292225784467,
+            0.004264842225395901,
+            0.0015708196931808818,
+            0.00041709075606118724,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.00032481529958428213,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.00264313390529122,
+            0.0007918760625560517,
+            0.0005390217958220999,
+            0.00015234573590155144,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 1144704,
+      "source_face_count": 23848
+    },
+    {
+      "shape": "hostun-particle_00066",
+      "subdivisions": 2,
+      "worst_reference_relative_error": 0.0036715177019414525,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.0025,
+          "separation_m": 0.00040971187824236045,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.04791658737240618,
+            0.016682732544597338,
+            0.0036715177019414525,
+            0.0020049408893795897,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.00040695649474189804,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.016441833591910347,
+            0.00634482997587489,
+            0.0017340564321418669,
+            0.0009181621817673162,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 860928,
+      "source_face_count": 17936
+    },
+    {
+      "shape": "hostun-particle_00067",
+      "subdivisions": 2,
+      "worst_reference_relative_error": 0.008451744850820985,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.0025,
+          "separation_m": 0.0003181693603731821,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.026294453791613794,
+            0.008188498142220673,
+            0.008451744850820985,
+            0.0010048353907062357,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.0003154363769235218,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.006059605048624105,
+            0.004652686374376293,
+            0.0014654150299256584,
+            0.0009930297949283977,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 1079808,
+      "source_face_count": 22496
+    },
+    {
+      "shape": "hostun-particle_00068",
+      "subdivisions": 2,
+      "worst_reference_relative_error": 0.006782413091301533,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.0025,
+          "separation_m": 0.0003184429187557091,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.072021409582859,
+            0.023371998083812726,
+            0.006782413091301533,
+            0.0023347751646630396,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.0003163170019082239,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.024890044677194093,
+            0.008174428102446717,
+            0.0026467515584108507,
+            0.0009543562436514658,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 626112,
+      "source_face_count": 13044
+    },
+    {
+      "shape": "hostun-particle_00070",
+      "subdivisions": 2,
+      "worst_reference_relative_error": 0.0018041387574961596,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.0025,
+          "separation_m": 0.00019284800181482988,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.01831510553533077,
+            0.004040543210626366,
+            0.0018041387574961596,
+            0.0006490514660867887,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.0001908424151224877,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.010558151322249671,
+            0.002861831476620849,
+            0.00036450971925015634,
+            0.00016638684491784012,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 1125888,
+      "source_face_count": 23456
+    },
+    {
+      "shape": "hostun-particle_00071",
+      "subdivisions": 2,
+      "worst_reference_relative_error": 0.006061970403823956,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.0025,
+          "separation_m": 0.00042335687971913234,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.0420258054280943,
+            0.00907151741120565,
+            0.001627430837676666,
+            0.000232610517462544,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.0004189560098202765,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.020342390326088245,
+            0.01337506494321869,
+            0.006061970403823956,
+            0.001541188471775227,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 838272,
+      "source_face_count": 17464
+    },
+    {
+      "shape": "hostun-particle_00072",
+      "subdivisions": 2,
+      "worst_reference_relative_error": 0.0029293933050273412,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.0025,
+          "separation_m": 0.0003575842477224035,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.06921660355135383,
+            0.010270337638216824,
+            0.0029293933050273412,
+            0.0015842405676157877,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.00035495892643854084,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.014589448145038085,
+            0.006935529359547191,
+            0.002038054630392423,
+            0.0002802198139606532,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 972288,
+      "source_face_count": 20256
+    },
+    {
+      "shape": "hostun-particle_00073",
+      "subdivisions": 2,
+      "worst_reference_relative_error": 0.0019649270879216227,
+      "poses": [
+        {
+          "target_sampled_depth_fraction": 0.0025,
+          "separation_m": 0.0002666688385704309,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.04522760095538908,
+            0.04963793794318749,
+            0.0019649270879216227,
+            0.0044059880351338485,
+            0.0
+          ]
+        },
+        {
+          "target_sampled_depth_fraction": 0.01,
+          "separation_m": 0.0002643112853025177,
+          "reference_finest_level": 4,
+          "level_relative_errors": [
+            0.011067178148054201,
+            0.004304020661644492,
+            0.001201719906534559,
+            0.0005203039059571799,
+            0.0
+          ]
+        }
+      ],
+      "sample_count": 777408,
+      "source_face_count": 16196
+    }
+  ],
+  "total_samples": 53691264,
+  "static_reference_target_passed": true,
+  "gpu_verified": false,
+  "scientific_admission": false,
+  "note": "Fixed per-shape preprocessing; requires separate matching GPU and dynamic assembly qualification. New sample keys cannot replace a continuing contact history."
+}

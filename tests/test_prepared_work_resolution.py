@@ -2,6 +2,7 @@
 
 import importlib.util
 import json
+import shutil
 import sys
 from pathlib import Path
 
@@ -34,6 +35,12 @@ def fixture(tmp_path):
                 stages=[dict(pressure=10000)],
             )
         )
+    archive = preparation / "study/source_snapshot"
+    shutil.copytree(
+        root / "src/sand_atlas_dem",
+        archive / "sand_atlas_dem",
+        ignore=shutil.ignore_patterns("__pycache__", "*.pyc"),
+    )
     frozen = preparation / "study/frozen-manifest.json"
     write_json(
         frozen,
@@ -42,7 +49,9 @@ def fixture(tmp_path):
             return_code=0,
             shape_sha256=sha256(shape),
             sources={
-                "sand_atlas_dem/spec.py": sha256(root / "src/sand_atlas_dem/spec.py")
+                str(p.relative_to(archive)): sha256(p)
+                for p in archive.rglob("*")
+                if p.is_file()
             },
         ),
     )
@@ -111,6 +120,7 @@ def test_resolution_preserves_frozen_workload_and_archives_sources(
         "pressure",
         "changed-shape",
         "changed-manifest",
+        "changed-source-archive",
     ],
 )
 def test_invalid_preparation_rejects_before_output(
@@ -141,6 +151,10 @@ def test_invalid_preparation_rejects_before_output(
         write_json(path, data)
     elif mutation == "changed-shape":
         shape.write_bytes(b"changed")
+    elif mutation == "changed-source-archive":
+        (preparation / "study/source_snapshot/sand_atlas_dem/spec.py").write_text(
+            "# changed source"
+        )
     else:
         path = preparation / "study/frozen-manifest.json"
         data = read_json(path)

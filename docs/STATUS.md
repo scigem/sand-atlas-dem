@@ -15,6 +15,29 @@ their original evidence identities and are superseded where explicitly stated.
 memory), Python 3.12, SlangPy 0.43.1, Metal. The solver and CLI execute actual GPU
 kernels; scientific pilot acceptance remains open.
 
+## Stronger reference and revised candidate
+
+The later grain-54 level-eight challenge exposes a nonmonotone quadrature error:
+old level-three shallow force differs by 5.04175%, above the 5% preprocessing
+target, while level four is worse. Both grain-54 poses pass unchanged reference
+and exact-overlap gates through eight. Consolidated v4 preserves all 106 poses.
+The original GPU v3 report remains immutable. A separately identified retained-
+force reanalysis passes its unchanged 10% integral/0.1% same-level/twofold gates
+against stronger references (worst selected integral error 5.04564%), without
+new GPU execution or restored 5% selection support for that old asset.
+
+The explicit level-five candidate meets the unchanged selection target and
+preserves every physical field of all 53 grains exactly. Its 53,691,264 nodes are
+about 0.24% more than the old asset. Actual Metal qualification is queued as
+adaptive GPU v4; the running preparation is not changed. Face quadrature supports
+levels through six and adaptive higher levels require explicit opt-in; defaults
+remain capped at four. See HOSTUN_REFERENCE_EXTENSION.md for reports and scope.
+
+Dependent work studies now copy and hash-check the accepted preparation's complete
+archived solver, independently of later checkout edits. Archive tampering rejects;
+current preprocessing changes cannot substitute a different simulation method.
+The original workload, thresholds and checkpoint identities remain frozen.
+
 ## Whole-library reference consolidation and bounded preparation setup
 
 `hostun-library-quadrature-adaptive-v2` completed all 106 original poses with
@@ -692,3 +715,8 @@ The source's initial-state/axial-versus-shear strain conflicts and the unproven
 correspondence between the experimental batches and the Sand Atlas shape subset
 remain explicit admission gaps. See HOSTUN_EXPERIMENTAL_ADMISSION.md. This does
 not substitute experimental admission for the running mesh engineering studies.
+
+The stronger-reference software regression passes 189 CPU tests with 62 skips
+(`higher-reference-cpu-integration-v1`); all 60 frozen source/test files remain
+unchanged. This is CPU regression coverage only; revised higher-level Metal
+qualification remains queued behind the existing preparation.

@@ -79,7 +79,16 @@ def main():
     report["identity"] = policy["identity"]
     report["rows"][matches[0]] = row
     # The existing complete-inventory selector rechecks all 106 rows and gates.
-    selection = select_levels(report, protocol, protocol["shape_ids"], target=0.05)
+    selection_error = None
+    try:
+        selection = select_levels(report, protocol, protocol["shape_ids"], target=0.05)
+    except ValueError as exc:
+        # All reference/inventory gates run before production-level selection.
+        # A production capability gap must not erase valid finer reference data.
+        if not str(exc).startswith("No independently supported quadrature level for "):
+            raise
+        selection = None
+        selection_error = str(exc)
     numerical_dependencies = [
         "examples/library_quadrature_deterministic.py",
         "examples/triangle_quadrature_minimum.py",
@@ -91,7 +100,14 @@ def main():
         "src/sand_atlas_dem/util.py",
     ]
     for name in numerical_dependencies:
-        if sha256(sources[name]) != sha256(extra_sources[name]):
+        matching = [
+            path
+            for key, path in sources.items()
+            if key == name or key.endswith("/" + name)
+        ]
+        if not matching or any(
+            sha256(path) != sha256(extra_sources[name]) for path in matching
+        ):
             raise ValueError("Numerical reference operator changed")
     # Preserve both complete archives: unrelated CLI/controller files may differ.
     sources = {"parent/" + name: path for name, path in sources.items()} | {
@@ -112,7 +128,7 @@ def main():
     protocol.update(
         identity=policy["identity"],
         consolidation_policy=policy,
-        scope="All 106 original poses; one deeper grain-38 reference extended through level 6. Original and supplemental reports retained. No production, dynamic or material admission.",
+        scope="All 106 original poses retained; one original pose extended to a strictly finer reference, preserving every overlapping force exactly. Parent and supplement reports/archives retained. No production, dynamic or material admission.",
     )
     write_json(output / "protocol.json", protocol)
     write_json(
@@ -132,6 +148,8 @@ def main():
         scope=protocol["scope"],
         exact_overlapping_force_agreement=True,
         elapsed_seconds=None,
+        production_selection_supported=selection is not None,
+        production_selection_error=selection_error,
     )
     write_json(output / "selection.json", selection)
     write_json(output / "report.json", report)

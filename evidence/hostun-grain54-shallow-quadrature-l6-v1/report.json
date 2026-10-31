@@ -1,0 +1,8 @@
+{
+  "identity": "hostun-grain54-shallow-quadrature-l6-v1",
+  "passed": false,
+  "scientific_admission": false,
+  "error": "Overlap helper divided0/0 for an unchanged exactly zero coarse force; JSON nan serialization rejected the report. All seven computed levels and original source snapshot retained.",
+  "reference_computation_completed": true,
+  "reporting_failed": true
+}

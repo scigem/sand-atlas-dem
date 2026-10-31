@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "exit_code": 0,
+  "passed_tests": 189,
+  "skipped_tests": 62,
+  "elapsed_seconds": 6.02,
+  "frozen_source_files": 60,
+  "sources_unchanged": true,
+  "freeze_sha256": "4ccec3cc5c71562eebdf6eedbf239ce2b8953e43ebff5a46ab6131c83522593e",
+  "log_sha256": "c675305758bf94b3ca32915d7e742d7b67a83757279db7675d25ec422dfd5690",
+  "gpu_executed": false,
+  "scientific_admission": false,
+  "scope": "Full CPU software regression only, with no Metal initialization or scientific admission."
+}

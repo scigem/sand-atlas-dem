@@ -134,6 +134,7 @@ def main(argv=None):
     a.add_argument("--reference", type=Path, required=True)
     a.add_argument("--reference-protocol", type=Path, required=True)
     a.add_argument("--target-error", type=float, default=0.05)
+    a.add_argument("--maximum-level", type=int, choices=range(2, 7), default=4)
     a = g.add_parser("inspect")
     a.add_argument("library", type=Path)
     a.add_argument("--output", type=Path)
@@ -358,6 +359,7 @@ def main(argv=None):
                     args.reference_protocol,
                     args.output,
                     target=args.target_error,
+                    maximum_level=args.maximum_level,
                 )
             elif args.geometry_command == "sphere":
                 ShapeLibrary([sphere(args.radius, args.resolution, args.samples)]).save(
