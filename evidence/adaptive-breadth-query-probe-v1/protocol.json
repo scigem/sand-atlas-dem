@@ -1,0 +1,22 @@
+{
+  "seed": 791,
+  "random_points": 2048,
+  "resolution": 256,
+  "capacities": [
+    24,
+    1
+  ],
+  "distance_atol_m": 2e-09,
+  "native_max_abs": 0.0,
+  "complete_atol": 1e-12,
+  "files": {
+    "/private/tmp/sand-atlas-dem-walls/assets/generated/concave-prism.h5": "06ac75f00c247a9d25d871ff0a8209a8f471bf949052c2981c9b53ef795ed06a",
+    "/private/tmp/sand-atlas-dem-walls/examples/probe_breadth_mesh.py": "41ba4f62858fdcc7deaba2486bfe633a3e831abf2106a296e020984d5bc52637",
+    "/private/tmp/sand-atlas-dem-walls/examples/adaptive_breadth.py": "224eb846b0c8eb1217208e80c3b131bbe7659a621ab4cd6ed657b058fcc2bf02",
+    "/private/tmp/sand-atlas-dem-walls/examples/brick_mesh.py": "641c9551660f35dd077abaf915d8eedaf06907a785646a4f16b60e9a32d5c01d",
+    "/private/tmp/sand-atlas-dem-walls/examples/coherent_mesh_shader.py": "59d9db42b950a4484c0b1f78d95f56e5178f8fcf17cd9ecd79c18b761f293804",
+    "/private/tmp/sand-atlas-dem-walls/evidence/adaptive-breadth-query-probe-v1/baseline.slang": "3fd246f01596151621247e89a52748b03a7cb996011476e9314ac06e5461b209",
+    "/private/tmp/sand-atlas-dem-walls/evidence/adaptive-breadth-query-probe-v1/brick.slang": "5eee3176cdcdba6d1faaef89c0d706d36bf6ffc0d3ffe69c8fb2a04cab935d61"
+  },
+  "scope": "Refined192-triangle box forces child traversal at cap24. Independent FP64 all-triangle candidate completeness; box analytical and concave triangle distances; exact GPU normal/distance comparison; cell boundaries, ties, external points, shape offsets and forced-small-cap fallback. Freeze before compilation; no CPU DEM."
+}

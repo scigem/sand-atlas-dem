@@ -1,0 +1,19 @@
+{
+  "identity": "fused-slot-reduction-probe-v1",
+  "driver_sha256": "06d0ef73e7d71d3f210a6fdb5bd00a427bbf176dd58e8cf391bfc965dd4c1d7b",
+  "module": "/private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-persistent-fused-cached.slang",
+  "module_sha256": "99c7dc5c20e56b02cd05607ff252223e4e783aa60979ed9f06cd11bb0e18fb4c",
+  "contact_counts": [
+    191,
+    192,
+    193,
+    191,
+    0,
+    192,
+    192
+  ],
+  "threshold": 192,
+  "force_torque_rtol": 2e-06,
+  "force_torque_atol": 1e-10,
+  "scope": "Prescribed synthetic contact rows verify fused GPU resolution/reduction with fixed slots; no CPU DEM simulation. Exact full endpoint membership and expected order-kernel activity required. Independent FP64 sums from actual FP32 GPU contact forces and prescribed arms, zero momentum and physical history step0. No scientific admission."
+}

@@ -1,0 +1,5741 @@
+{
+  "contacts": 955,
+  "outside_directory": 0,
+  "outside_sphere": 0,
+  "over_capacity": 955,
+  "candidate_min": 99,
+  "candidate_max": 646,
+  "sources_unchanged": true,
+  "rows": [
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 184
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 184
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 184
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 184
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 184
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 184
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 184
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 184
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 184
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 184
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 184
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 184
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 184
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 184
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 184
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 128
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 128
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 114
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 184
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 184
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 184
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 184
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 184
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 199
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 199
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 201
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 201
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 199
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 199
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 199
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 199
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 201
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 201
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 199
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 199
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 201
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 201
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 201
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 201
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 199
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 201
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 199
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 201
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 184
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 201
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 201
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 184
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 201
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 201
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 201
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 184
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 184
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 184
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 184
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 201
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 184
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 184
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 184
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 201
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 184
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 184
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 184
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 184
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 184
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 184
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 184
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 201
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 201
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 201
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 201
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 201
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 201
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 201
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 646
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 646
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 646
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 646
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 646
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 646
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 646
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 646
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 646
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 380
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 646
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 380
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 380
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 380
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 380
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 380
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 380
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 380
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 380
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 380
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 380
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 380
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 380
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 380
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 380
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 380
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 380
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 380
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 380
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 380
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 646
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 646
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 380
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 361
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 361
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 361
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 361
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 361
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 361
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 361
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 361
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 380
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 352
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 380
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 380
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 380
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 361
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 361
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 361
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 646
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 361
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 646
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 646
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 385
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 646
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 352
+    },
+    {
+      "target_shape": 4,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 380
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 141
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 141
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 141
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 141
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 141
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 141
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 141
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 141
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 141
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 141
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 141
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 141
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 141
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 141
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 141
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 141
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 141
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 141
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 141
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 141
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 141
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 141
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 141
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 141
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 141
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 141
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 141
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 141
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 141
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 141
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 205
+    },
+    {
+      "target_shape": 30,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 222
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    },
+    {
+      "target_shape": 8,
+      "outside": false,
+      "inside_sphere": true,
+      "candidates": 99
+    }
+  ]
+}

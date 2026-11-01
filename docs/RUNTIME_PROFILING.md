@@ -141,3 +141,13 @@ reference comparison measures 1.405× speedup: 12.582 → 8.954 ms/step median,
 unchanged 2 ns timestep, six restored trials per mode. This remains the sparse
 checkpoint workload. See [PARALLEL_MESH_CONTACTS.md](PARALLEL_MESH_CONTACTS.md) for
 312-test Metal qualification, exact workload limits and retained failed revisions.
+
+## Systematic follow-up
+
+Verified static packing caching now addresses repeated startup. Additional
+rejection and scheduling variants did not produce an accepted per-step gain after
+independent production verification. Dense synthetic profiles shift the leading
+cost toward force gathering, with numerical repeatability limits retained as
+failed evidence. See [PERFORMANCE_FOLLOWUP.md](PERFORMANCE_FOLLOWUP.md) for the
+frozen studies, decisions and cache controls. The previous profiling percentages
+above remain historical measurements, not an updated universal cost model.

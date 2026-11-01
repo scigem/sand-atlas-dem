@@ -1,0 +1,12 @@
+{
+  "completed": true,
+  "library_load_seconds": 4.6082622080575675,
+  "cold_pack_and_write_seconds": 97.2394435419701,
+  "warm_median_seconds": 0.6108454999048263,
+  "speedup": 159.18827847159494,
+  "performance_passed": true,
+  "exact_arrays": true,
+  "sources_and_inputs_unchanged": true,
+  "scope": "CPU geometry preprocessing only, not a CPU DEM fallback. Includes input hashing, all cached-array integrity checks and disk reads/writes; excludes HDF5 library load and device upload. OS filesystem cache is not flushed.",
+  "scientific_admission": false
+}

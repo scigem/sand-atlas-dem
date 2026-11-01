@@ -1,0 +1,18 @@
+{
+  "evidence/dense27-segmented-gather-v1/report.json": "7bc968d85f9ac0a482c6407c7765bbc0dce39f5c90c622d5c7bd094d7b2a814a",
+  "evidence/dense27-segmented-gather-v1/protocol.json": "62ea69f82c8dc78926e59093a96747d700bebcdd11657da7c3996189552ac4f3",
+  "evidence/dense27-segmented-gather-v1/prospective-freeze.json": "3a75f3b7f1a657b0c59c6c4fab4f0a49d91c61fe232a757fc1d828e0a27a24af",
+  "evidence/hostun-segmented-gather-v1/report.json": "c95d7893e20e722a630fdb14d213505b5e5924ecc94c743945b6df77fa6cbd8d",
+  "evidence/hostun-segmented-gather-v1/protocol.json": "8a6c4a15ee454eb47f938c5a0f541414eb9ff135c3d19f4d14c7bdedd87344b4",
+  "evidence/hostun-segmented-gather-v1/prospective-freeze.json": "7e10393e0b41ec00589eac4b769016ea0d4bd257fd6909b5484f2085f83b9a89",
+  "evidence/dense27-zero-segmented-gather-v1/report.json": "d4db0703481e9640b7b02f2489d3969f1895908eda17ca49c0109303492710e6",
+  "evidence/dense27-zero-segmented-gather-v1/protocol.json": "83720738b142bc3082c33e37e138d84423471ba7e68ae9ce3943b134e5ae2f61",
+  "evidence/dense27-zero-segmented-gather-v1/prospective-freeze.json": "178300fb5e34c64724785c6146d50e1a229269518cdca3ae7675c4f35644451f",
+  "evidence/mesh-face-normal-probe-v1/report.json": "abbf50b46e6ccf6fbe5917a21ee673dcfc337969c816c6c68479e611773fa524",
+  "evidence/mesh-face-normal-probe-v1/protocol.json": "46d9fa1f7f90dd1682852e1880692bfd92cc8e89cc9d5a851da93b3ef2b8c70f",
+  "evidence/mesh-face-normal-probe-v1/driver.py": "4d418e90eeaf366283bbe040b43b6e90b978648dfb14853e678c507790b21d87",
+  "evidence/mesh-face-normal-probe-v2/report.json": "5585266688902f17b8c40cb17fb559a2f0e94d9b337fed2c4e62583429a8d783",
+  "evidence/mesh-face-normal-probe-v2/protocol.json": "bf32e2fe5908042a93add9bda82d0219296c054d8419d549c93bbc5c1d2d4ee1",
+  "evidence/mesh-face-normal-probe-v2/driver.py": "f8fb23605304e489afa98e46909d9fafd1146ae8edebdaa34546ca22f5737a9f",
+  "examples/summarize_segmented_gather.py": "81ff4c1f21365d3805d20574e709a84e6ee5b6e54d8a3eb77083229e721f1c65"
+}

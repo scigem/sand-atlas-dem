@@ -1,0 +1,625 @@
+{
+  "results": {
+    "dense27-spin-persistent-slots-v1": {
+      "completed": true,
+      "medians": {
+        "baseline": 0.0035981080741294136,
+        "segmented-ordered-cached": 0.002197776207140123,
+        "segmented-ordered-persistent-cached": 0.002260638507323165
+      },
+      "speedups": {
+        "baseline": 1.0,
+        "segmented-ordered-cached": 1.6371585343584576,
+        "segmented-ordered-persistent-cached": 1.5916335417952134
+      },
+      "equivalence_passed": true,
+      "repeat": {
+        "baseline": {
+          "passed": 5,
+          "total": 5,
+          "all_bitwise_body_fields": false
+        },
+        "segmented-ordered-cached": {
+          "passed": 5,
+          "total": 5,
+          "all_bitwise_body_fields": true
+        },
+        "segmented-ordered-persistent-cached": {
+          "passed": 5,
+          "total": 5,
+          "all_bitwise_body_fields": true
+        }
+      },
+      "failed_checks": [],
+      "phase_medians": null,
+      "binding_cache_counts": null,
+      "target_2x": {
+        "segmented-ordered-cached": false,
+        "segmented-ordered-persistent-cached": false
+      },
+      "production_promoted": false
+    },
+    "dense27-spin-fused-slots-v1": {
+      "completed": true,
+      "medians": {
+        "baseline": 0.003609018554470822,
+        "segmented-ordered-cached": 0.002316562824034918,
+        "segmented-ordered-persistent-cached": 0.002276534831707977,
+        "segmented-ordered-persistent-fused-cached": 0.0023723346366750775
+      },
+      "speedups": {
+        "baseline": 1.0,
+        "segmented-ordered-cached": 1.5579195681750364,
+        "segmented-ordered-persistent-cached": 1.5853122492148055,
+        "segmented-ordered-persistent-fused-cached": 1.5212940445573087
+      },
+      "equivalence_passed": true,
+      "repeat": {
+        "baseline": {
+          "passed": 5,
+          "total": 5,
+          "all_bitwise_body_fields": false
+        },
+        "segmented-ordered-cached": {
+          "passed": 5,
+          "total": 5,
+          "all_bitwise_body_fields": true
+        },
+        "segmented-ordered-persistent-cached": {
+          "passed": 5,
+          "total": 5,
+          "all_bitwise_body_fields": true
+        },
+        "segmented-ordered-persistent-fused-cached": {
+          "passed": 5,
+          "total": 5,
+          "all_bitwise_body_fields": true
+        }
+      },
+      "failed_checks": [],
+      "phase_medians": null,
+      "binding_cache_counts": null,
+      "target_2x": {
+        "segmented-ordered-cached": false,
+        "segmented-ordered-persistent-cached": false,
+        "segmented-ordered-persistent-fused-cached": false
+      },
+      "production_promoted": false
+    },
+    "dense27-gather-submission-profile-v1": {
+      "completed": true,
+      "medians": {
+        "baseline": 0.0035862307968272944,
+        "segmented-ordered-cached": 0.0022465758474936592,
+        "segmented-ordered-persistent-cached": 0.0022673709336231695,
+        "segmented-ordered-persistent-fused-cached": 0.002427833495858067
+      },
+      "speedups": {
+        "baseline": 1.0,
+        "segmented-ordered-cached": 1.5963096909584382,
+        "segmented-ordered-persistent-cached": 1.5816692115288955,
+        "segmented-ordered-persistent-fused-cached": 1.4771321027350006
+      },
+      "equivalence_passed": true,
+      "repeat": {
+        "baseline": {
+          "passed": 5,
+          "total": 5,
+          "all_bitwise_body_fields": false
+        },
+        "segmented-ordered-cached": {
+          "passed": 5,
+          "total": 5,
+          "all_bitwise_body_fields": true
+        },
+        "segmented-ordered-persistent-cached": {
+          "passed": 5,
+          "total": 5,
+          "all_bitwise_body_fields": true
+        },
+        "segmented-ordered-persistent-fused-cached": {
+          "passed": 5,
+          "total": 5,
+          "all_bitwise_body_fields": true
+        }
+      },
+      "failed_checks": [],
+      "phase_medians": {
+        "baseline": {
+          "host_before_submit": 0.0012886805002381152,
+          "submit_call": 3.296272598163341e-05,
+          "after_submit_wait_and_checks": 0.0022634373362961924
+        },
+        "segmented-ordered-cached": {
+          "host_before_submit": 0.0016271385120489867,
+          "submit_call": 4.0334468394576106e-05,
+          "after_submit_wait_and_checks": 0.0005682340506609762
+        },
+        "segmented-ordered-persistent-cached": {
+          "host_before_submit": 0.0017150904959635227,
+          "submit_call": 3.7895671994192526e-05,
+          "after_submit_wait_and_checks": 0.0005015275037294487
+        },
+        "segmented-ordered-persistent-fused-cached": {
+          "host_before_submit": 0.0017294438480348617,
+          "submit_call": 3.802636319960584e-05,
+          "after_submit_wait_and_checks": 0.0006560463903042546
+        }
+      },
+      "binding_cache_counts": null,
+      "target_2x": {
+        "segmented-ordered-cached": false,
+        "segmented-ordered-persistent-cached": false,
+        "segmented-ordered-persistent-fused-cached": false
+      },
+      "production_promoted": false
+    },
+    "dense27-immutable-bindings-v1": {
+      "completed": true,
+      "medians": {
+        "baseline": 0.0036732311168634624,
+        "baseline-bound": 0.002935586585863348,
+        "segmented-ordered-cached": 0.002286870773332339,
+        "segmented-ordered-cached-bound": 0.001325435386661411
+      },
+      "speedups": {
+        "baseline": 1.0,
+        "baseline-bound": 1.2512767072013224,
+        "segmented-ordered-cached": 1.6062259222067774,
+        "segmented-ordered-cached-bound": 2.7713392548812394
+      },
+      "equivalence_passed": false,
+      "repeat": {
+        "baseline": {
+          "passed": 5,
+          "total": 5,
+          "all_bitwise_body_fields": false
+        },
+        "baseline-bound": {
+          "passed": 4,
+          "total": 5,
+          "all_bitwise_body_fields": false
+        },
+        "segmented-ordered-cached": {
+          "passed": 5,
+          "total": 5,
+          "all_bitwise_body_fields": true
+        },
+        "segmented-ordered-cached-bound": {
+          "passed": 5,
+          "total": 5,
+          "all_bitwise_body_fields": true
+        }
+      },
+      "failed_checks": [
+        {
+          "mode": "baseline-bound",
+          "passed": false,
+          "errors": {
+            "position": 2.2737367544323206e-13,
+            "velocity": 4.547473508864641e-13,
+            "rotation": 5.684341886080802e-14,
+            "force": 1.6685632431290287e-08,
+            "torque": 9.202133099961429e-08
+          },
+          "keys_equal": true,
+          "history_equal": true,
+          "normals_equal": false,
+          "bitwise_body_state": {
+            "position": true,
+            "velocity": false,
+            "rotation": false,
+            "momentum": false,
+            "force": false,
+            "torque": false,
+            "positionRemainder": false,
+            "velocityRemainder": false,
+            "momentumRemainder": false,
+            "rotationRemainder": false,
+            "accumulated": true,
+            "accumulatedRemainder": true
+          }
+        }
+      ],
+      "phase_medians": {
+        "baseline": {
+          "host_before_submit": 0.001364621742595773,
+          "submit_call": 3.604329231166048e-05,
+          "after_submit_wait_and_checks": 0.0022648670274065807
+        },
+        "baseline-bound": {
+          "host_before_submit": 0.0006116359063526033,
+          "submit_call": 3.516959395710728e-05,
+          "after_submit_wait_and_checks": 0.0022895940783200786
+        },
+        "segmented-ordered-cached": {
+          "host_before_submit": 0.001724248206755874,
+          "submit_call": 4.2587730604282115e-05,
+          "after_submit_wait_and_checks": 0.0005524143866750819
+        },
+        "segmented-ordered-cached-bound": {
+          "host_before_submit": 0.0007257088241203746,
+          "submit_call": 4.1663573938421905e-05,
+          "after_submit_wait_and_checks": 0.0005815862618874235
+        }
+      },
+      "binding_cache_counts": {
+        "hits": 30332,
+        "misses": 94,
+        "entries": 94
+      },
+      "target_2x": {
+        "baseline-bound": false,
+        "segmented-ordered-cached": false,
+        "segmented-ordered-cached-bound": false
+      },
+      "production_promoted": false
+    },
+    "hostun-immutable-bindings-v1": {
+      "completed": true,
+      "medians": {
+        "baseline": 0.009015004554839834,
+        "baseline-bound": 0.00824914241411534,
+        "segmented-ordered-cached": 0.009293077312122477,
+        "segmented-ordered-cached-bound": 0.008308596191000106
+      },
+      "speedups": {
+        "baseline": 1.0,
+        "baseline-bound": 1.0928414254812724,
+        "segmented-ordered-cached": 0.9700774299036652,
+        "segmented-ordered-cached-bound": 1.0850213859959774
+      },
+      "equivalence_passed": true,
+      "repeat": {
+        "baseline": {
+          "passed": 5,
+          "total": 5,
+          "all_bitwise_body_fields": false
+        },
+        "baseline-bound": {
+          "passed": 5,
+          "total": 5,
+          "all_bitwise_body_fields": false
+        },
+        "segmented-ordered-cached": {
+          "passed": 5,
+          "total": 5,
+          "all_bitwise_body_fields": true
+        },
+        "segmented-ordered-cached-bound": {
+          "passed": 5,
+          "total": 5,
+          "all_bitwise_body_fields": true
+        }
+      },
+      "failed_checks": [],
+      "phase_medians": {
+        "baseline": {
+          "host_before_submit": 0.001365914222333231,
+          "submit_call": 4.154703947278904e-05,
+          "after_submit_wait_and_checks": 0.007608152832290216
+        },
+        "baseline-bound": {
+          "host_before_submit": 0.0006100175778556149,
+          "submit_call": 4.258903118170565e-05,
+          "after_submit_wait_and_checks": 0.007586287109006662
+        },
+        "segmented-ordered-cached": {
+          "host_before_submit": 0.0017177299805553048,
+          "submit_call": 5.596289065579185e-05,
+          "after_submit_wait_and_checks": 0.007508547527322662
+        },
+        "segmented-ordered-cached-bound": {
+          "host_before_submit": 0.0007406276017718483,
+          "submit_call": 5.376562921810546e-05,
+          "after_submit_wait_and_checks": 0.007508115886594169
+        }
+      },
+      "binding_cache_counts": {
+        "hits": 35548,
+        "misses": 98,
+        "entries": 98
+      },
+      "target_2x": {
+        "baseline-bound": false,
+        "segmented-ordered-cached": false,
+        "segmented-ordered-cached-bound": false
+      },
+      "production_promoted": false
+    },
+    "persistent-slot-transition-probe-v1": {
+      "passed": true,
+      "checks": [
+        {
+          "name": "first",
+          "passed": true,
+          "cache_hit_miss": [
+            0,
+            3
+          ],
+          "counts": [
+            3,
+            3,
+            2
+          ]
+        },
+        {
+          "name": "index-permutation",
+          "passed": true,
+          "cache_hit_miss": [
+            3,
+            0
+          ],
+          "counts": [
+            3,
+            3,
+            2
+          ]
+        },
+        {
+          "name": "equal-count-replacement",
+          "passed": true,
+          "cache_hit_miss": [
+            1,
+            2
+          ],
+          "counts": [
+            3,
+            3,
+            2
+          ]
+        },
+        {
+          "name": "remove",
+          "passed": true,
+          "cache_hit_miss": [
+            1,
+            2
+          ],
+          "counts": [
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "name": "add",
+          "passed": true,
+          "cache_hit_miss": [
+            1,
+            2
+          ],
+          "counts": [
+            4,
+            2,
+            2
+          ]
+        },
+        {
+          "name": "permuted",
+          "passed": true,
+          "cache_hit_miss": [
+            3,
+            0
+          ],
+          "counts": [
+            4,
+            2,
+            2
+          ]
+        },
+        {
+          "name": "empty",
+          "passed": true,
+          "cache_hit_miss": [
+            0,
+            3
+          ],
+          "counts": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "reappear",
+          "passed": true,
+          "cache_hit_miss": [
+            0,
+            3
+          ],
+          "counts": [
+            3,
+            3,
+            2
+          ]
+        },
+        {
+          "name": "full8192",
+          "passed": true,
+          "cache_hit_miss": [
+            0,
+            3
+          ],
+          "counts": [
+            8192,
+            8192,
+            0
+          ]
+        },
+        {
+          "name": "full8192-cache-hit",
+          "passed": true,
+          "cache_hit_miss": [
+            3,
+            0
+          ],
+          "counts": [
+            8192,
+            8192,
+            0
+          ]
+        },
+        {
+          "name": "reject8193",
+          "passed": true,
+          "flags": 16384
+        }
+      ],
+      "backend": {
+        "format": "sand-dem-doctor/1",
+        "backend": "metal",
+        "adapter": "Apple M4 Max",
+        "slangpy": "0.43.1",
+        "python": "3.12.14",
+        "smoke_elements": 257,
+        "smoke_max_error": 0.0,
+        "fallback": false,
+        "floating_point_mode_requested": "precise"
+      },
+      "module_unchanged": true,
+      "scientific_admission": false
+    },
+    "fused-slot-reduction-probe-v1": {
+      "passed": true,
+      "checks": [
+        {
+          "contacts": 191,
+          "dense": true,
+          "cache_hit_miss": [
+            0,
+            3
+          ],
+          "passed": true,
+          "force_max_abs": 1.7763568394002505e-15,
+          "torque_max_abs": 2.5464281348390087e-14
+        },
+        {
+          "contacts": 192,
+          "dense": true,
+          "cache_hit_miss": [
+            1,
+            2
+          ],
+          "passed": true,
+          "force_max_abs": 0.0,
+          "torque_max_abs": 3.008320224940947e-14
+        },
+        {
+          "contacts": 193,
+          "dense": true,
+          "cache_hit_miss": [
+            1,
+            2
+          ],
+          "passed": true,
+          "force_max_abs": 1.7763568394002505e-15,
+          "torque_max_abs": 3.690122375765012e-14
+        },
+        {
+          "contacts": 191,
+          "dense": true,
+          "cache_hit_miss": [
+            1,
+            2
+          ],
+          "passed": true,
+          "force_max_abs": 1.7763568394002505e-15,
+          "torque_max_abs": 2.5464281348390087e-14
+        },
+        {
+          "contacts": 0,
+          "dense": true,
+          "cache_hit_miss": [
+            1,
+            2
+          ],
+          "passed": true,
+          "force_max_abs": 0.0,
+          "torque_max_abs": 0.0
+        },
+        {
+          "contacts": 192,
+          "dense": true,
+          "cache_hit_miss": [
+            1,
+            2
+          ],
+          "passed": true,
+          "force_max_abs": 0.0,
+          "torque_max_abs": 3.008320224940947e-14
+        },
+        {
+          "contacts": 192,
+          "dense": true,
+          "cache_hit_miss": [
+            3,
+            0
+          ],
+          "passed": true,
+          "force_max_abs": 0.0,
+          "torque_max_abs": 3.008320224940947e-14
+        }
+      ],
+      "module_unchanged": true,
+      "backend": {
+        "format": "sand-dem-doctor/1",
+        "backend": "metal",
+        "adapter": "Apple M4 Max",
+        "slangpy": "0.43.1",
+        "python": "3.12.14",
+        "smoke_elements": 257,
+        "smoke_max_error": 0.0,
+        "fallback": false,
+        "floating_point_mode_requested": "precise"
+      },
+      "scientific_admission": false
+    },
+    "immutable-binding-transition-probe-v1": {
+      "passed": true,
+      "checks": [
+        {
+          "case": "queued_mutated_config_and_outputs",
+          "passed": true
+        },
+        {
+          "case": "content_change_reuses_binding",
+          "passed": true
+        },
+        {
+          "case": "resource_identity_invalidates",
+          "passed": true
+        },
+        {
+          "case": "revert_reuses_original_root",
+          "passed": true
+        },
+        {
+          "case": "zero_length_scalar_change",
+          "passed": true
+        },
+        {
+          "case": "retained_binding_tree_is_snapshot",
+          "passed": true
+        }
+      ],
+      "hits": 2,
+      "misses": 5,
+      "backend": {
+        "format": "sand-dem-doctor/1",
+        "backend": "metal",
+        "adapter": "Apple M4 Max",
+        "slangpy": "0.43.1",
+        "python": "3.12.14",
+        "smoke_elements": 257,
+        "smoke_max_error": 0.0,
+        "fallback": false,
+        "floating_point_mode_requested": "precise"
+      },
+      "sources_unchanged": true,
+      "scientific_admission": false
+    }
+  },
+  "production_promoted": false,
+  "scientific_admission": false
+}

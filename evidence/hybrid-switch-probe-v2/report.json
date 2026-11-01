@@ -1,0 +1,95 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "contacts": 191,
+      "dense": false,
+      "cache_hit_miss": [
+        0,
+        0
+      ],
+      "passed": true,
+      "force_max_abs": 1.7763568394002505e-15,
+      "torque_max_abs": 2.5464281348390087e-14
+    },
+    {
+      "contacts": 192,
+      "dense": true,
+      "cache_hit_miss": [
+        0,
+        3
+      ],
+      "passed": true,
+      "force_max_abs": 0.0,
+      "torque_max_abs": 3.008320224940947e-14
+    },
+    {
+      "contacts": 193,
+      "dense": true,
+      "cache_hit_miss": [
+        1,
+        2
+      ],
+      "passed": true,
+      "force_max_abs": 1.7763568394002505e-15,
+      "torque_max_abs": 3.690122375765012e-14
+    },
+    {
+      "contacts": 191,
+      "dense": false,
+      "cache_hit_miss": [
+        0,
+        0
+      ],
+      "passed": true,
+      "force_max_abs": 1.7763568394002505e-15,
+      "torque_max_abs": 2.5464281348390087e-14
+    },
+    {
+      "contacts": 0,
+      "dense": false,
+      "cache_hit_miss": [
+        0,
+        0
+      ],
+      "passed": true,
+      "force_max_abs": 0.0,
+      "torque_max_abs": 0.0
+    },
+    {
+      "contacts": 192,
+      "dense": true,
+      "cache_hit_miss": [
+        1,
+        2
+      ],
+      "passed": true,
+      "force_max_abs": 0.0,
+      "torque_max_abs": 3.008320224940947e-14
+    },
+    {
+      "contacts": 192,
+      "dense": true,
+      "cache_hit_miss": [
+        3,
+        0
+      ],
+      "passed": true,
+      "force_max_abs": 0.0,
+      "torque_max_abs": 3.008320224940947e-14
+    }
+  ],
+  "module_unchanged": true,
+  "backend": {
+    "format": "sand-dem-doctor/1",
+    "backend": "metal",
+    "adapter": "Apple M4 Max",
+    "slangpy": "0.43.1",
+    "python": "3.12.14",
+    "smoke_elements": 257,
+    "smoke_max_error": 0.0,
+    "fallback": false,
+    "floating_point_mode_requested": "precise"
+  },
+  "scientific_admission": false
+}

@@ -1,0 +1,132 @@
+[
+  {
+    "name": "first",
+    "passed": true,
+    "cache_hit_miss": [
+      0,
+      3
+    ],
+    "counts": [
+      3,
+      3,
+      2
+    ]
+  },
+  {
+    "name": "index-permutation",
+    "passed": true,
+    "cache_hit_miss": [
+      3,
+      0
+    ],
+    "counts": [
+      3,
+      3,
+      2
+    ]
+  },
+  {
+    "name": "equal-count-replacement",
+    "passed": true,
+    "cache_hit_miss": [
+      1,
+      2
+    ],
+    "counts": [
+      3,
+      3,
+      2
+    ]
+  },
+  {
+    "name": "remove",
+    "passed": true,
+    "cache_hit_miss": [
+      1,
+      2
+    ],
+    "counts": [
+      3,
+      2,
+      1
+    ]
+  },
+  {
+    "name": "add",
+    "passed": true,
+    "cache_hit_miss": [
+      1,
+      2
+    ],
+    "counts": [
+      4,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "permuted",
+    "passed": true,
+    "cache_hit_miss": [
+      3,
+      0
+    ],
+    "counts": [
+      4,
+      2,
+      2
+    ]
+  },
+  {
+    "name": "empty",
+    "passed": true,
+    "cache_hit_miss": [
+      0,
+      3
+    ],
+    "counts": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "reappear",
+    "passed": true,
+    "cache_hit_miss": [
+      0,
+      3
+    ],
+    "counts": [
+      3,
+      3,
+      2
+    ]
+  },
+  {
+    "name": "full8192",
+    "passed": true,
+    "cache_hit_miss": [
+      0,
+      3
+    ],
+    "counts": [
+      8192,
+      8192,
+      0
+    ]
+  },
+  {
+    "name": "full8192-cache-hit",
+    "passed": true,
+    "cache_hit_miss": [
+      3,
+      0
+    ],
+    "counts": [
+      8192,
+      8192,
+      0
+    ]
+  }
+]

@@ -1,0 +1,811 @@
+{
+  "identity": "hostun-adaptive-mesh-v1",
+  "completed": true,
+  "backend": {
+    "format": "sand-dem-doctor/1",
+    "backend": "metal",
+    "adapter": "Apple M4 Max",
+    "slangpy": "0.43.1",
+    "python": "3.12.14",
+    "smoke_elements": 257,
+    "smoke_max_error": 0.0,
+    "fallback": false,
+    "floating_point_mode_requested": "precise"
+  },
+  "sources_and_inputs_unchanged": true,
+  "median_seconds_per_step": {
+    "baseline": 0.008181647301171324,
+    "brick": 0.007970184241912648
+  },
+  "speedup": 1.0265317654950383,
+  "meets_2x": false,
+  "eligible": false,
+  "equivalence_passed": true,
+  "checks": [
+    {
+      "mode": "brick",
+      "kind": "repeat",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 6.661338147750939e-16,
+        "rotation": 3.552713678800501e-15,
+        "force": 2.9368023568565604e-09,
+        "torque": 3.5284257737799862e-09
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "baseline",
+      "kind": "repeat",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 4.440892098500626e-16,
+        "rotation": 7.105427357601002e-15,
+        "force": 2.9368023568565604e-09,
+        "torque": 1.454807119216639e-08
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "baseline",
+      "kind": "repeat",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 8.881784197001252e-16,
+        "rotation": 0.0,
+        "force": 2.9368023568565604e-09,
+        "torque": 3.5284257737799862e-09
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "brick",
+      "kind": "repeat",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 8.881784197001252e-16,
+        "rotation": 0.0,
+        "force": 2.9368023568565604e-09,
+        "torque": 0.0
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "brick",
+      "kind": "repeat",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 1.1102230246251565e-15,
+        "rotation": 0.0,
+        "force": 2.9368023568565604e-09,
+        "torque": 1.4113703095119945e-08
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "baseline",
+      "kind": "repeat",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 4.440892098500626e-16,
+        "rotation": 7.105427357601002e-15,
+        "force": 2.9368023568565604e-09,
+        "torque": 3.5284257737799862e-09
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "baseline",
+      "kind": "repeat",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 1.5543122344752192e-15,
+        "rotation": 7.105427357601002e-15,
+        "force": 2.0766328656662836e-09,
+        "torque": 3.5284257737799862e-09
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "brick",
+      "kind": "repeat",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 8.881784197001252e-16,
+        "rotation": 3.552713678800501e-15,
+        "force": 2.0766328656662836e-09,
+        "torque": 0.0
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "brick",
+      "kind": "repeat",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 1.5543122344752192e-15,
+        "rotation": 0.0,
+        "force": 2.0766328656662836e-09,
+        "torque": 1.454807119216639e-08
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "baseline",
+      "kind": "repeat",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 4.440892098500626e-16,
+        "rotation": 7.105427357601002e-15,
+        "force": 2.9368023568565604e-09,
+        "torque": 3.5284257737799862e-09
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "brick",
+      "kind": "baseline-comparison",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 4.440892098500626e-16,
+        "rotation": 7.105427357601002e-15,
+        "force": 2.9368023568565604e-09,
+        "torque": 0.0
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "baseline",
+      "kind": "split-comparison",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 4.440892098500626e-16,
+        "rotation": 0.0,
+        "force": 2.076649074922443e-09,
+        "torque": 3.530108649840713e-09
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "brick",
+      "kind": "split-comparison",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 2.220446049250313e-16,
+        "rotation": 0.0,
+        "force": 2.076649074922443e-09,
+        "torque": 0.0
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    }
+  ],
+  "counters": {
+    "baseline": {
+      "queries": 7601,
+      "bvh_nodes": 381597,
+      "triangles": 220555,
+      "seeded_queries": 0,
+      "list_queries": 0,
+      "fast_queries": 0,
+      "list_triangles": 0,
+      "tie_fallbacks": 0
+    },
+    "brick": {
+      "queries": 7601,
+      "bvh_nodes": 381597,
+      "triangles": 220555,
+      "seeded_queries": 0,
+      "list_queries": 0,
+      "fast_queries": 0,
+      "list_triangles": 0,
+      "tie_fallbacks": 0
+    }
+  },
+  "brick_build": {
+    "build_seconds": 97.51165000000037,
+    "resolution": 256,
+    "capacity": 24,
+    "max_depth": 8,
+    "node_budget_per_shape": 100000,
+    "per_shape": [
+      {
+        "triangles": 48524,
+        "nodes": 99993,
+        "list_leaves": 32948,
+        "fallback_leaves": 54546,
+        "max_depth_fallbacks": 46045,
+        "budget_fallbacks": 28,
+        "interior_fallbacks": 8473,
+        "deepest_level": 8
+      },
+      {
+        "triangles": 24664,
+        "nodes": 99993,
+        "list_leaves": 62031,
+        "fallback_leaves": 25463,
+        "max_depth_fallbacks": 16898,
+        "budget_fallbacks": 24,
+        "interior_fallbacks": 8541,
+        "deepest_level": 8
+      },
+      {
+        "triangles": 14208,
+        "nodes": 99993,
+        "list_leaves": 69171,
+        "fallback_leaves": 18323,
+        "max_depth_fallbacks": 4395,
+        "budget_fallbacks": 27,
+        "interior_fallbacks": 13901,
+        "deepest_level": 8
+      },
+      {
+        "triangles": 22576,
+        "nodes": 99993,
+        "list_leaves": 62030,
+        "fallback_leaves": 25464,
+        "max_depth_fallbacks": 16139,
+        "budget_fallbacks": 23,
+        "interior_fallbacks": 9302,
+        "deepest_level": 8
+      },
+      {
+        "triangles": 59872,
+        "nodes": 99993,
+        "list_leaves": 17544,
+        "fallback_leaves": 69950,
+        "max_depth_fallbacks": 61192,
+        "budget_fallbacks": 27,
+        "interior_fallbacks": 8731,
+        "deepest_level": 8
+      },
+      {
+        "triangles": 19156,
+        "nodes": 99993,
+        "list_leaves": 67788,
+        "fallback_leaves": 19706,
+        "max_depth_fallbacks": 9941,
+        "budget_fallbacks": 18,
+        "interior_fallbacks": 9747,
+        "deepest_level": 8
+      },
+      {
+        "triangles": 41664,
+        "nodes": 99993,
+        "list_leaves": 34820,
+        "fallback_leaves": 52674,
+        "max_depth_fallbacks": 44174,
+        "budget_fallbacks": 34,
+        "interior_fallbacks": 8466,
+        "deepest_level": 8
+      },
+      {
+        "triangles": 15324,
+        "nodes": 99993,
+        "list_leaves": 70680,
+        "fallback_leaves": 16814,
+        "max_depth_fallbacks": 6053,
+        "budget_fallbacks": 25,
+        "interior_fallbacks": 10736,
+        "deepest_level": 8
+      },
+      {
+        "triangles": 19712,
+        "nodes": 99993,
+        "list_leaves": 64661,
+        "fallback_leaves": 22833,
+        "max_depth_fallbacks": 14047,
+        "budget_fallbacks": 29,
+        "interior_fallbacks": 8757,
+        "deepest_level": 8
+      },
+      {
+        "triangles": 15848,
+        "nodes": 99993,
+        "list_leaves": 68687,
+        "fallback_leaves": 18807,
+        "max_depth_fallbacks": 7318,
+        "budget_fallbacks": 29,
+        "interior_fallbacks": 11460,
+        "deepest_level": 8
+      },
+      {
+        "triangles": 13696,
+        "nodes": 99993,
+        "list_leaves": 69668,
+        "fallback_leaves": 17826,
+        "max_depth_fallbacks": 4013,
+        "budget_fallbacks": 25,
+        "interior_fallbacks": 13788,
+        "deepest_level": 8
+      },
+      {
+        "triangles": 17216,
+        "nodes": 99993,
+        "list_leaves": 69006,
+        "fallback_leaves": 18488,
+        "max_depth_fallbacks": 7437,
+        "budget_fallbacks": 28,
+        "interior_fallbacks": 11023,
+        "deepest_level": 8
+      },
+      {
+        "triangles": 44824,
+        "nodes": 99993,
+        "list_leaves": 42989,
+        "fallback_leaves": 44505,
+        "max_depth_fallbacks": 35594,
+        "budget_fallbacks": 33,
+        "interior_fallbacks": 8878,
+        "deepest_level": 8
+      },
+      {
+        "triangles": 16444,
+        "nodes": 99993,
+        "list_leaves": 69810,
+        "fallback_leaves": 17684,
+        "max_depth_fallbacks": 6331,
+        "budget_fallbacks": 26,
+        "interior_fallbacks": 11327,
+        "deepest_level": 8
+      },
+      {
+        "triangles": 17588,
+        "nodes": 99993,
+        "list_leaves": 68827,
+        "fallback_leaves": 18667,
+        "max_depth_fallbacks": 8269,
+        "budget_fallbacks": 21,
+        "interior_fallbacks": 10377,
+        "deepest_level": 8
+      },
+      {
+        "triangles": 20468,
+        "nodes": 99993,
+        "list_leaves": 68093,
+        "fallback_leaves": 19401,
+        "max_depth_fallbacks": 9509,
+        "budget_fallbacks": 28,
+        "interior_fallbacks": 9864,
+        "deepest_level": 8
+      },
+      {
+        "triangles": 42952,
+        "nodes": 99993,
+        "list_leaves": 27227,
+        "fallback_leaves": 60267,
+        "max_depth_fallbacks": 51125,
+        "budget_fallbacks": 29,
+        "interior_fallbacks": 9113,
+        "deepest_level": 8
+      },
+      {
+        "triangles": 15580,
+        "nodes": 99993,
+        "list_leaves": 70965,
+        "fallback_leaves": 16529,
+        "max_depth_fallbacks": 2537,
+        "budget_fallbacks": 30,
+        "interior_fallbacks": 13962,
+        "deepest_level": 8
+      },
+      {
+        "triangles": 84,
+        "nodes": 26657,
+        "list_leaves": 12710,
+        "fallback_leaves": 10615,
+        "max_depth_fallbacks": 7637,
+        "budget_fallbacks": 0,
+        "interior_fallbacks": 2978,
+        "deepest_level": 8
+      },
+      {
+        "triangles": 19300,
+        "nodes": 99993,
+        "list_leaves": 68401,
+        "fallback_leaves": 19093,
+        "max_depth_fallbacks": 8156,
+        "budget_fallbacks": 29,
+        "interior_fallbacks": 10908,
+        "deepest_level": 8
+      },
+      {
+        "triangles": 20580,
+        "nodes": 99993,
+        "list_leaves": 66664,
+        "fallback_leaves": 20830,
+        "max_depth_fallbacks": 10664,
+        "budget_fallbacks": 26,
+        "interior_fallbacks": 10140,
+        "deepest_level": 8
+      },
+      {
+        "triangles": 26496,
+        "nodes": 99993,
+        "list_leaves": 59873,
+        "fallback_leaves": 27621,
+        "max_depth_fallbacks": 19225,
+        "budget_fallbacks": 27,
+        "interior_fallbacks": 8369,
+        "deepest_level": 8
+      },
+      {
+        "triangles": 24228,
+        "nodes": 99993,
+        "list_leaves": 60601,
+        "fallback_leaves": 26893,
+        "max_depth_fallbacks": 16686,
+        "budget_fallbacks": 20,
+        "interior_fallbacks": 10187,
+        "deepest_level": 8
+      },
+      {
+        "triangles": 16140,
+        "nodes": 99993,
+        "list_leaves": 69546,
+        "fallback_leaves": 17948,
+        "max_depth_fallbacks": 6962,
+        "budget_fallbacks": 22,
+        "interior_fallbacks": 10964,
+        "deepest_level": 8
+      },
+      {
+        "triangles": 14108,
+        "nodes": 99993,
+        "list_leaves": 71548,
+        "fallback_leaves": 15946,
+        "max_depth_fallbacks": 4735,
+        "budget_fallbacks": 29,
+        "interior_fallbacks": 11182,
+        "deepest_level": 8
+      },
+      {
+        "triangles": 19368,
+        "nodes": 99993,
+        "list_leaves": 67170,
+        "fallback_leaves": 20324,
+        "max_depth_fallbacks": 9604,
+        "budget_fallbacks": 24,
+        "interior_fallbacks": 10696,
+        "deepest_level": 8
+      },
+      {
+        "triangles": 13736,
+        "nodes": 99993,
+        "list_leaves": 69584,
+        "fallback_leaves": 17910,
+        "max_depth_fallbacks": 4878,
+        "budget_fallbacks": 22,
+        "interior_fallbacks": 13010,
+        "deepest_level": 8
+      },
+      {
+        "triangles": 22548,
+        "nodes": 99993,
+        "list_leaves": 66114,
+        "fallback_leaves": 21380,
+        "max_depth_fallbacks": 10888,
+        "budget_fallbacks": 29,
+        "interior_fallbacks": 10463,
+        "deepest_level": 8
+      },
+      {
+        "triangles": 13112,
+        "nodes": 99993,
+        "list_leaves": 69898,
+        "fallback_leaves": 17596,
+        "max_depth_fallbacks": 4436,
+        "budget_fallbacks": 24,
+        "interior_fallbacks": 13136,
+        "deepest_level": 8
+      },
+      {
+        "triangles": 18820,
+        "nodes": 99993,
+        "list_leaves": 68134,
+        "fallback_leaves": 19360,
+        "max_depth_fallbacks": 8644,
+        "budget_fallbacks": 34,
+        "interior_fallbacks": 10682,
+        "deepest_level": 8
+      },
+      {
+        "triangles": 22284,
+        "nodes": 99993,
+        "list_leaves": 65574,
+        "fallback_leaves": 21920,
+        "max_depth_fallbacks": 12214,
+        "budget_fallbacks": 24,
+        "interior_fallbacks": 9682,
+        "deepest_level": 8
+      },
+      {
+        "triangles": 17824,
+        "nodes": 99993,
+        "list_leaves": 69492,
+        "fallback_leaves": 18002,
+        "max_depth_fallbacks": 6868,
+        "budget_fallbacks": 22,
+        "interior_fallbacks": 11112,
+        "deepest_level": 8
+      },
+      {
+        "triangles": 34088,
+        "nodes": 99993,
+        "list_leaves": 47286,
+        "fallback_leaves": 40208,
+        "max_depth_fallbacks": 31476,
+        "budget_fallbacks": 30,
+        "interior_fallbacks": 8702,
+        "deepest_level": 8
+      },
+      {
+        "triangles": 14972,
+        "nodes": 99993,
+        "list_leaves": 69919,
+        "fallback_leaves": 17575,
+        "max_depth_fallbacks": 5775,
+        "budget_fallbacks": 25,
+        "interior_fallbacks": 11775,
+        "deepest_level": 8
+      },
+      {
+        "triangles": 44,
+        "nodes": 67873,
+        "list_leaves": 11945,
+        "fallback_leaves": 47444,
+        "max_depth_fallbacks": 43752,
+        "budget_fallbacks": 0,
+        "interior_fallbacks": 3692,
+        "deepest_level": 8
+      },
+      {
+        "triangles": 16668,
+        "nodes": 99993,
+        "list_leaves": 67130,
+        "fallback_leaves": 20364,
+        "max_depth_fallbacks": 9393,
+        "budget_fallbacks": 24,
+        "interior_fallbacks": 10947,
+        "deepest_level": 8
+      },
+      {
+        "triangles": 21136,
+        "nodes": 99993,
+        "list_leaves": 66717,
+        "fallback_leaves": 20777,
+        "max_depth_fallbacks": 12117,
+        "budget_fallbacks": 27,
+        "interior_fallbacks": 8633,
+        "deepest_level": 8
+      },
+      {
+        "triangles": 14780,
+        "nodes": 99993,
+        "list_leaves": 70042,
+        "fallback_leaves": 17452,
+        "max_depth_fallbacks": 4278,
+        "budget_fallbacks": 21,
+        "interior_fallbacks": 13153,
+        "deepest_level": 8
+      },
+      {
+        "triangles": 13948,
+        "nodes": 99993,
+        "list_leaves": 70427,
+        "fallback_leaves": 17067,
+        "max_depth_fallbacks": 4681,
+        "budget_fallbacks": 25,
+        "interior_fallbacks": 12361,
+        "deepest_level": 8
+      },
+      {
+        "triangles": 19040,
+        "nodes": 99993,
+        "list_leaves": 65951,
+        "fallback_leaves": 21543,
+        "max_depth_fallbacks": 11784,
+        "budget_fallbacks": 27,
+        "interior_fallbacks": 9732,
+        "deepest_level": 8
+      },
+      {
+        "triangles": 19808,
+        "nodes": 99993,
+        "list_leaves": 67496,
+        "fallback_leaves": 19998,
+        "max_depth_fallbacks": 8909,
+        "budget_fallbacks": 24,
+        "interior_fallbacks": 11065,
+        "deepest_level": 8
+      },
+      {
+        "triangles": 23908,
+        "nodes": 99993,
+        "list_leaves": 61912,
+        "fallback_leaves": 25582,
+        "max_depth_fallbacks": 16328,
+        "budget_fallbacks": 20,
+        "interior_fallbacks": 9234,
+        "deepest_level": 8
+      },
+      {
+        "triangles": 29448,
+        "nodes": 99993,
+        "list_leaves": 53158,
+        "fallback_leaves": 34336,
+        "max_depth_fallbacks": 25591,
+        "budget_fallbacks": 22,
+        "interior_fallbacks": 8723,
+        "deepest_level": 8
+      },
+      {
+        "triangles": 20424,
+        "nodes": 99993,
+        "list_leaves": 64941,
+        "fallback_leaves": 22553,
+        "max_depth_fallbacks": 13139,
+        "budget_fallbacks": 33,
+        "interior_fallbacks": 9381,
+        "deepest_level": 8
+      },
+      {
+        "triangles": 12632,
+        "nodes": 99993,
+        "list_leaves": 70610,
+        "fallback_leaves": 16884,
+        "max_depth_fallbacks": 3671,
+        "budget_fallbacks": 23,
+        "interior_fallbacks": 13190,
+        "deepest_level": 8
+      },
+      {
+        "triangles": 23848,
+        "nodes": 99993,
+        "list_leaves": 58052,
+        "fallback_leaves": 29442,
+        "max_depth_fallbacks": 21251,
+        "budget_fallbacks": 32,
+        "interior_fallbacks": 8159,
+        "deepest_level": 8
+      },
+      {
+        "triangles": 17936,
+        "nodes": 99993,
+        "list_leaves": 69926,
+        "fallback_leaves": 17568,
+        "max_depth_fallbacks": 6084,
+        "budget_fallbacks": 36,
+        "interior_fallbacks": 11448,
+        "deepest_level": 8
+      },
+      {
+        "triangles": 22496,
+        "nodes": 99993,
+        "list_leaves": 63557,
+        "fallback_leaves": 23937,
+        "max_depth_fallbacks": 14318,
+        "budget_fallbacks": 22,
+        "interior_fallbacks": 9597,
+        "deepest_level": 8
+      },
+      {
+        "triangles": 13044,
+        "nodes": 99993,
+        "list_leaves": 70885,
+        "fallback_leaves": 16609,
+        "max_depth_fallbacks": 3928,
+        "budget_fallbacks": 23,
+        "interior_fallbacks": 12658,
+        "deepest_level": 8
+      },
+      {
+        "triangles": 23456,
+        "nodes": 99993,
+        "list_leaves": 66783,
+        "fallback_leaves": 20711,
+        "max_depth_fallbacks": 11534,
+        "budget_fallbacks": 25,
+        "interior_fallbacks": 9152,
+        "deepest_level": 8
+      },
+      {
+        "triangles": 17464,
+        "nodes": 99993,
+        "list_leaves": 69072,
+        "fallback_leaves": 18422,
+        "max_depth_fallbacks": 8037,
+        "budget_fallbacks": 32,
+        "interior_fallbacks": 10353,
+        "deepest_level": 8
+      },
+      {
+        "triangles": 20256,
+        "nodes": 99993,
+        "list_leaves": 66570,
+        "fallback_leaves": 20924,
+        "max_depth_fallbacks": 12208,
+        "budget_fallbacks": 15,
+        "interior_fallbacks": 8701,
+        "deepest_level": 8
+      },
+      {
+        "triangles": 16196,
+        "nodes": 99993,
+        "list_leaves": 68944,
+        "fallback_leaves": 18550,
+        "max_depth_fallbacks": 7537,
+        "budget_fallbacks": 29,
+        "interior_fallbacks": 10984,
+        "deepest_level": 8
+      }
+    ],
+    "bytes": 490453880,
+    "array_sha256": {
+      "brickInfo": "97b5b125d02390158e05e8dfe2517d4ae5fbf73132af07419af7317536240e26",
+      "brickCenters": "20ebafc2f836cf87bc9dedb75ca758efeb2f8a8adaa7af75fcac74d8c3564ed6",
+      "brickHalf": "06c2c89b8f659a746b51776f4e64bba7a81524defff7f83dbd221089869c7b13",
+      "brickRanges": "766827c2405972a7142b78a8a082df1969d82465dce440f0750fed49ce2acad5",
+      "brickTriangles": "4fd724478791d82b77b2f0a3f0c475d450483452e9816f82f84d6ddbdbc85a94"
+    },
+    "margin_eps_multiplier": 128
+  },
+  "stage_median_seconds": {
+    "baseline": {
+      "drift": 0.0002787915291264653,
+      "neighbours": 0.00034943752689287066,
+      "contact_geometry": 0.007200417050626129,
+      "friction_and_history": 0.0005750835407525301,
+      "force_reduction": 0.00041274999966844916,
+      "final_kick": 0.00019268749747425318
+    },
+    "brick": {
+      "drift": 0.00028062501223757863,
+      "neighbours": 0.00033864652505144477,
+      "contact_geometry": 0.006981916434597224,
+      "friction_and_history": 0.0005753750447183847,
+      "force_reduction": 0.0004096659831702709,
+      "final_kick": 0.00019143748795613647
+    }
+  },
+  "stage_scope": "Synchronized wall times, not GPU timestamps; immutable binding reuse enabled equally in both modes.",
+  "scientific_admission": false
+}

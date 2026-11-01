@@ -1,0 +1,78 @@
+{
+  "format": "sand-dem-mechanics-protocol/1",
+  "identity": "mechanics-fast-rotation-v1",
+  "frozen_before_execution": true,
+  "sphere": {
+    "resolution": 64,
+    "samples": 2048
+  },
+  "objectivity": {
+    "angle": 0.8,
+    "increments": [
+      16,
+      32,
+      64
+    ],
+    "relative_force_limit": 0.005,
+    "relative_history_limit": 0.005
+  },
+  "separation": {
+    "returned_slip_limit": 1e-10
+  },
+  "growth": {
+    "initial_contacts_per_particle": 1,
+    "relative_state_limit": 0.0001
+  },
+  "rotation": {
+    "extents_m": [
+      0.0004,
+      0.0008,
+      0.002
+    ],
+    "angular_velocity_rad_s": [
+      1000000.0,
+      2000000.0,
+      3000000.0
+    ],
+    "duration_s": 2.5e-06,
+    "timesteps_s": [
+      5e-09,
+      2.5e-09,
+      1.25e-09
+    ],
+    "orientation_error_rad_limit": 0.0001,
+    "relative_energy_drift_limit": 0.002,
+    "minimum_refinement_ratio": 3
+  },
+  "affine_work": {
+    "rate_s": [
+      10000,
+      -20000,
+      10000
+    ],
+    "steps": 200,
+    "timestep_s": 1e-08,
+    "relative_velocity_limit": 0.0001,
+    "relative_work_limit": 0.001
+  },
+  "static_cell_energy": {
+    "duration_s": 2e-05,
+    "timesteps_s": [
+      2e-08,
+      1e-08,
+      5e-09
+    ],
+    "relative_proxy_drift_limit": 0.02
+  },
+  "scope": "Engineering mechanics qualification on original fixtures. Does not admit a Hostun material study or reproduce a published assembly benchmark. No energy-potential identity is assumed. Higher-spin rotation tests truncation-error refinement above the low-spin FP32 roundoff floor; limits are frozen before this new excitation.",
+  "rolling": {
+    "angular_velocity_rad_s": [
+      0,
+      100000,
+      0
+    ],
+    "relative_force_limit": 0.001,
+    "relative_torque_limit": 0.001,
+    "relative_history_limit": 0.001
+  }
+}

@@ -920,3 +920,73 @@ speedup at the same 2 ns timestep on the dilute 424-grain checkpoint. Dense Host
 throughput and scientific admission remain open. Static geometry caching is still
 unimplemented, and preparation remains stopped. Evidence and retained failures:
 [PARALLEL_MESH_CONTACTS.md](PARALLEL_MESH_CONTACTS.md).
+
+## Systematic performance follow-up — 2026-11-01
+
+Implemented verified content-addressed packed-mesh caching: the frozen Hostun
+study measures 97.239 s cold packing/write versus 0.611 s median verified hit
+(159.19× for packing, excluding library load/upload). Inputs, units, exact packer
+source, runtime versions and output-array hashes are checked. Corrupt entries
+warn and rebuild; the cache can be disabled or redirected. The final regression
+receipt and candidate decisions are in
+[PERFORMANCE_FOLLOWUP.md](PERFORMANCE_FOLLOWUP.md).
+
+Root rejection, pool/subtree scheduling and dense gather scheduling were evaluated
+with frozen gates. No additional per-step candidate survives independent
+verification: fine scheduling shows only 3.3–3.4% in production against a fixed 5%
+minimum and is withdrawn. Existing neighbour-list reuse is confirmed. Dense
+profiles identify gathering as the next architectural target, but strict dynamic
+normal/near-zero-torque repeatability failures remain open and are preserved.
+No numerical gate is relaxed, no preparation restarted and no scientific
+admission inferred.
+
+Final cache-only actual-Metal regression: **329 passed, eight skipped**, all 246
+frozen source inputs unchanged (`evidence/mesh-cache-qualification-v2/`).
+
+Contiguous force-gather prototype (local experiment): dense 27-cube step time
+3.61→2.02 ms (~1.79×), sparse Hostun ~0.5% slower. Unchanged equivalence gates
+fail dense normal/history or near-zero torque checks; no production promotion.
+Independent box probe verifies the isolated face-gradient correction at shallow
+separations, but it changes history relative to baseline. Exact snapshots and
+failed reports retained; see [SEGMENTED_FORCE_GATHER.md](SEGMENTED_FORCE_GATHER.md).
+
+Canonical-order follow-up resolves dense candidate repeatability: bitwise-identical
+zero-spin repeats and cached/uncached canonical agreement. Exact GPU order-cache
+reuse yields~1.60× dense throughput; spin and sparse Hostun studies pass all18
+comparisons each. Hybrid sparse cost+4.06% meets a prospective5% nonregression
+limit. The legacy zero-spin baseline torque comparison remains failed, so this is
+still experimental. Transition and8192-endpoint probes pass; no production default
+or scientific status changes. See
+[DETERMINISTIC_FORCE_GATHER.md](DETERMINISTIC_FORCE_GATHER.md).
+
+Persistent-slot/fusion follow-up finds no additional GPU-path speedup, but immutable
+shader bindings reduce dense canonical timing from 2.29 to 1.33 ms/step: 2.77×
+original baseline, 1.73× canonical native. Canonical native/binding results agree
+exactly; one original linked-list normal-repeat failure keeps the dense study's
+whole equivalence decision false. Sparse Hostun binding studies pass and improve
+~1.09×. Independent slot, fused-reduction and binding-transition probes pass.
+Experimental helpers only; production dispatch and prior admission unchanged.
+See [PERSISTENT_GATHER_AND_BINDINGS.md](PERSISTENT_GATHER_AND_BINDINGS.md).
+
+Coherent mesh-access screening preserves exact queries but yields only 1.021× on
+Hostun (8.181 → 8.013 ms/step), below the frozen 5% screening gate. BVH visits fall
+17.28%; triangle work barely changes and seed evaluations add work. All 13 simulation
+checks and eight query-probe cases pass; 8,192 distance/normal vectors match baseline
+bitwise. No production change. See [COHERENT_MESH_ACCESS.md](COHERENT_MESH_ACCESS.md).
+
+Conservative triangle bricks (32³ directory, 96-triangle cap) fail the performance
+screen: actual Hostun 8.196 → 17.368 ms/step, with all 7,601 diagnostic queries using
+BVH fallback. All 13 simulation checks and four independent shape/capacity probes
+pass; the latter exercise fast lists, ties and forced fallback. A separate static
+coverage diagnostic finds 99–646 candidates for all 955 checkpoint active contacts,
+above the fixed cap. Build cost100.35s; extra GPU storage63.41MiB. No promotion or
+changed gate. See [BRICK_MESH_ACCESS.md](BRICK_MESH_ACCESS.md).
+
+Adaptive triangle-tree screening finds no qualifying speedup. Depth-first,
+breadth-first and surface-only variants pass39 unchanged simulation comparisons
+but all use the BVH for all7601 specimen diagnostic queries. Final surface-only
+8.189→9.068ms/step;4376 budget and3225 interior fallbacks. Independent synthetic
+fast/child/tie/fallback probes pass16 cases and45120 query vectors with bitwise
+original-GPU agreement; this does not qualify Hostun fast-path execution. Original
+studies/gates retained, production unchanged. See
+[ADAPTIVE_MESH_ACCESS.md](ADAPTIVE_MESH_ACCESS.md).

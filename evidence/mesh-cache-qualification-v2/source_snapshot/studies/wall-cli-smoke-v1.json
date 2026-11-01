@@ -1,0 +1,16 @@
+{
+  "identity": "wall-cli-smoke-v1",
+  "backend": "metal",
+  "input": "examples/wall-smoke.json",
+  "scope": "Synthetic one-sphere wall command-line run, interrupted checkpoint, resumed run and VTK/CSV/JSON exports; software execution only",
+  "gates": {
+    "first": "Run with max-chunks=2 pauses at step 10",
+    "resume": "Resume completes at step 20 with checkpoint/4 and snapshot/3",
+    "contact": "Every diagnostic observation has positive wall-contact count",
+    "work": "Final wall work positive; cell work zero",
+    "identity": "Export labels translating-planes, orthogonal-wall-box and synthetic-dem",
+    "snapshots": "CLI export accepts new snapshots and writes VTK files",
+    "sources": "All frozen source, shader, input and synthetic-library hashes remain unchanged"
+  },
+  "scientific_admission": false
+}

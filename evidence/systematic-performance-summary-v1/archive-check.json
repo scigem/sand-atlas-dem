@@ -1,0 +1,82 @@
+{
+  "studies": [
+    {
+      "study": "hostun-mesh-cache-v1",
+      "archived_files": 27,
+      "archive_verified": true,
+      "original_inputs_verified": true,
+      "protocol_verified": true
+    },
+    {
+      "study": "mesh-cache-qualification-v1",
+      "archived_files": 235,
+      "archive_verified": true,
+      "original_inputs_verified": true,
+      "protocol_verified": true
+    },
+    {
+      "study": "mesh-cache-qualification-v2",
+      "archived_files": 246,
+      "archive_verified": true,
+      "original_inputs_verified": true,
+      "protocol_verified": true
+    },
+    {
+      "study": "hostun-systematic-performance-v1",
+      "archived_files": 36,
+      "archive_verified": true,
+      "original_inputs_verified": true,
+      "protocol_verified": true
+    },
+    {
+      "study": "dense27-systematic-performance-v1",
+      "archived_files": 36,
+      "archive_verified": true,
+      "original_inputs_verified": true,
+      "protocol_verified": true
+    },
+    {
+      "study": "dense27-systematic-performance-v2",
+      "archived_files": 42,
+      "archive_verified": true,
+      "original_inputs_verified": true,
+      "protocol_verified": true
+    },
+    {
+      "study": "dense27-gather-performance-v1",
+      "archived_files": 47,
+      "archive_verified": true,
+      "original_inputs_verified": true,
+      "protocol_verified": true
+    },
+    {
+      "study": "hostun-frontier-performance-v1",
+      "archived_files": 42,
+      "archive_verified": true,
+      "original_inputs_verified": true,
+      "protocol_verified": true
+    },
+    {
+      "study": "hostun-promoted-frontier-performance-v1",
+      "archived_files": 28,
+      "archive_verified": true,
+      "original_inputs_verified": true,
+      "protocol_verified": true
+    },
+    {
+      "study": "hostun-promoted-frontier-performance-v2",
+      "archived_files": 28,
+      "archive_verified": true,
+      "original_inputs_verified": true,
+      "protocol_verified": true
+    },
+    {
+      "study": "hostun-promoted-frontier-performance-v3",
+      "archived_files": 28,
+      "archive_verified": true,
+      "original_inputs_verified": true,
+      "protocol_verified": true
+    }
+  ],
+  "analysis_inputs_unchanged": true
+}

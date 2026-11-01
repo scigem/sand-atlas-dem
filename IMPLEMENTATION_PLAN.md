@@ -316,3 +316,120 @@ state/contact/history gates. Retained failures and frozen evidence are in
 [docs/PARALLEL_MESH_CONTACTS.md](docs/PARALLEL_MESH_CONTACTS.md). Dense performance,
 static packed-geometry caching, deeper traversal counters and scientific admission
 remain open. No preparation restart.
+
+## Systematic performance follow-up — 2026-11-01
+
+User-authorized local implementation and studies, preserving the stopped preparation.
+Each workload and gate is frozen before execution; rejected candidates remain evidence.
+
+1. [X] Cache immutable packed mesh arrays: exact-array and invalidation/recovery
+   tests, frozen cold/warm Hostun benchmark (97.239 → 0.611 s median), and actual
+   Metal regression. Cache controls and receipts are documented below.
+2. [X] Reprofile the optimized path and assess stronger pair rejection. All-root
+   hull testing removes no sample queries and adds 7.9% runtime; reject it.
+3. [X] Sweep persistent pools and subtree counts. A 5.4% prototype gain fails
+   independent production verification (3.3–3.4% versus the unchanged 5% gate).
+   Withdraw the fine production mode; preserve all candidate sources/results.
+4. [X] Audit neighbour reuse: displacement/cell-deformation reuse already exists.
+   Remaining dispatch/prefix-scan costs are secondary; retain the current path.
+5. [X] Profile dense gathering and evaluate simple scheduling. Gathering dominates
+   the dense synthetic diagnostic. Smaller groups fail the speed gate and strict
+   baseline normal-repeatability checks remain open. No reducer is promoted.
+
+This closes the bounded list of measurements and candidate screening, not dense
+performance/scientific qualification. Contiguous segmented force reduction and
+normal/near-zero-resultant precision remain separately open architecture studies.
+Full methods, retained failures and final cache regression receipt:
+[docs/PERFORMANCE_FOLLOWUP.md](docs/PERFORMANCE_FOLLOWUP.md).
+No push, preparation restart or scientific admission is part of these studies.
+
+### Contiguous force reduction experiment — 2026-11-01
+
+- [X] Prototype GPU count/scan/scatter adjacency and compensated 64-lane gather;
+  freeze and run spinning/zero-spin dense and actual sparse Hostun comparisons.
+- [X] Independently probe the isolated shallow-face normal correction against
+  analytical box gradients; preserve invalid first probe and all failed gates.
+- [X] Establish deterministic endpoint reduction and recheck dense torque floor;
+  measure ordering overhead before production integration.
+- [ ] Qualify a density-dependent dispatch policy and the face-normal correction
+  separately, including walls, damping, capacity growth and active timestep paths.
+
+Dense ~1.78× throughput remains experimental; sparse Hostun ~0.5% slower and dense
+numerical gates fail. No promotion. See `docs/SEGMENTED_FORCE_GATHER.md`.
+
+### Canonical ordering and density policy — 2026-11-01
+
+- [X] Establish bitwise dense repeatability by full-key endpoint sorting.
+- [X] Reuse canonical order only after exact GPU contact-set membership checks;
+  verify additions, removals, same-count replacement, empty sets and8192 bound.
+- [X] Freeze and measure the density policy on dense spin and sparse Hostun;
+  independently verify below/at/above-threshold transitions and force/torque sums.
+- [ ] Production integration remains open: compact cache storage, capacity/retry/
+  rollback, walls, viscosity and active-timestep qualification; unresolved legacy
+  zero-spin baseline comparison must remain failed. No default change.
+
+Cached ordering gives1.60× dense throughput with bitwise repeatability; spinning
+and Hostun comparisons pass. Sparse hybrid cost+4.06% passes the predeclared5%
+nonregression limit, but gives no sparse speedup. See
+`docs/DETERMINISTIC_FORCE_GATHER.md` for exact reports and retained failures.
+
+### Persistent endpoint slots and dispatch binding reuse — 2026-11-01
+
+- [X] Freeze and test fixed canonical endpoint slots with exact GPU set validation;
+  retain numerical passes and lack of improvement over canonical cache.
+- [X] Test fused contact response/reduction; retain numerical passes and slowdown.
+- [X] Attribute host/submission/wait wall intervals before selecting another target.
+- [X] Prototype immutable complete shader bindings and verify changed configs/resources.
+- [X] Measure dense and actual sparse Hostun: canonical + bindings gives 2.77× dense
+  timing, 1.085× sparse; retain whole dense-study failure from a legacy linked-list
+  normal-repeat check. No numerical gate waived, production defaults unchanged.
+- [ ] Production integration of bounded immutable bindings and canonical gather:
+  lifetime/eviction, capacity/retry/rollback, walls, damping, active timestep,
+  diagnostics and full regression. Legacy zero-spin comparisons remain failed.
+
+See `docs/PERSISTENT_GATHER_AND_BINDINGS.md` for plan, evidence and exact scope.
+
+### Coherent exact-mesh query experiment — 2026-11-01
+
+- [X] Freeze and measure per-lane previous-triangle distance bounds on actual Hostun,
+  with identical immutable binding reuse in both variants.
+- [X] Verify cold/stale seeds, cross-region queries, packed shape offsets and independent
+  box/concave distances. All simulation and query checks pass.
+- [X] Retain below-gate result: 8.181 → 8.013 ms/step (1.021×), below fixed 1.05×
+  screening gate and 2× target. No production promotion.
+- [ ] Separately freeze conservative brick triangle lists; complete nearest-feature
+  candidates, floating-point bounds, deterministic ties and BVH fallback required.
+
+See `docs/COHERENT_MESH_ACCESS.md`. No NanoVDB dependency or SDF approximation added.
+
+### Conservative triangle brick experiment — 2026-11-01
+
+- [X] Implement fixed 32³ body-frame brick directory and complete triangle lists,
+  capped at 96 with BVH fallback; preserve near-tie feature selection.
+- [X] Freeze and check independent all-triangle candidate completeness, rounded cell
+  boundaries, exact GPU query agreement, ties and forced-small-cap fallback.
+- [X] Measure actual Hostun: 8.196 → 17.368 ms/step; all numerical checks pass,
+  but every diagnostic query falls back. Reject the prototype as a speedup.
+- [X] Diagnose all 955 checkpoint active contacts: 99–646 candidates, above fixed
+  capacity; retain original gates, sources and unsuccessful result.
+- [ ] Adaptive refinement of overfull surface bricks is a separate unmeasured study.
+
+See `docs/BRICK_MESH_ACCESS.md`. Production shader/dispatch/defaults unchanged.
+
+### Adaptive triangle-tree screening — 2026-11-01
+
+- [X] Freeze and implement depth-first octree: <=24 candidates, depth8,100000
+  nodes/shape, checked ancestor spheres and complete BVH fallback.
+- [X] Independently verify child leaves, FP32 boundaries, all-triangle completeness,
+  exact GPU distance/normal vectors, ties and node-budget fallback.
+- [X] Preserve all-fallback depth-first result; separately freeze breadth-first
+  allocation and then surface-only allocation with the same limits/gates.
+- [X] Complete three Hostun studies: all39 numerical checks pass, but all variants
+  still fall back for every specimen diagnostic query. No qualifying speedup.
+- [X] Archive all16 probe cases/45120 candidate evaluations and unsuccessful studies;
+  retain production shader/dispatch/defaults and original failure identities.
+- [ ] Before another index: static actual-query coverage replay and an explicitly
+  nonphysical distance-work-removal timing diagnostic to estimate possible benefit.
+
+Final surface-only8.189→9.068ms/step,297.15MiB extra buffers,138.57s build; no promotion.
+See `docs/ADAPTIVE_MESH_ACCESS.md` for exact scope, limits and preserved evidence.

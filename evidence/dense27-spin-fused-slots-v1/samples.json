@@ -1,0 +1,218 @@
+[
+  {
+    "repeat": 0,
+    "mode": "baseline",
+    "seconds_per_step": 0.0036292008435339085,
+    "cache_hit_miss": [
+      0,
+      0
+    ]
+  },
+  {
+    "repeat": 0,
+    "mode": "segmented-ordered-cached",
+    "seconds_per_step": 0.0023264176406883053,
+    "cache_hit_miss": [
+      3456,
+      0
+    ]
+  },
+  {
+    "repeat": 0,
+    "mode": "segmented-ordered-persistent-cached",
+    "seconds_per_step": 0.0023424215469276533,
+    "cache_hit_miss": [
+      3456,
+      0
+    ]
+  },
+  {
+    "repeat": 0,
+    "mode": "segmented-ordered-persistent-fused-cached",
+    "seconds_per_step": 0.0024041158831096254,
+    "cache_hit_miss": [
+      3456,
+      0
+    ]
+  },
+  {
+    "repeat": 0,
+    "mode": "segmented-ordered-persistent-fused-cached",
+    "seconds_per_step": 0.002335343750019092,
+    "cache_hit_miss": [
+      3456,
+      0
+    ]
+  },
+  {
+    "repeat": 0,
+    "mode": "segmented-ordered-persistent-cached",
+    "seconds_per_step": 0.0022220807268240605,
+    "cache_hit_miss": [
+      3456,
+      0
+    ]
+  },
+  {
+    "repeat": 0,
+    "mode": "segmented-ordered-cached",
+    "seconds_per_step": 0.00234482356972876,
+    "cache_hit_miss": [
+      3456,
+      0
+    ]
+  },
+  {
+    "repeat": 0,
+    "mode": "baseline",
+    "seconds_per_step": 0.0035650172585519613,
+    "cache_hit_miss": [
+      0,
+      0
+    ]
+  },
+  {
+    "repeat": 1,
+    "mode": "baseline",
+    "seconds_per_step": 0.0036414837268239353,
+    "cache_hit_miss": [
+      0,
+      0
+    ]
+  },
+  {
+    "repeat": 1,
+    "mode": "segmented-ordered-cached",
+    "seconds_per_step": 0.0023138899759942433,
+    "cache_hit_miss": [
+      3456,
+      0
+    ]
+  },
+  {
+    "repeat": 1,
+    "mode": "segmented-ordered-persistent-cached",
+    "seconds_per_step": 0.002292181312441244,
+    "cache_hit_miss": [
+      3456,
+      0
+    ]
+  },
+  {
+    "repeat": 1,
+    "mode": "segmented-ordered-persistent-fused-cached",
+    "seconds_per_step": 0.0023646331410418497,
+    "cache_hit_miss": [
+      3456,
+      0
+    ]
+  },
+  {
+    "repeat": 1,
+    "mode": "segmented-ordered-persistent-fused-cached",
+    "seconds_per_step": 0.0023800361323083052,
+    "cache_hit_miss": [
+      3456,
+      0
+    ]
+  },
+  {
+    "repeat": 1,
+    "mode": "segmented-ordered-persistent-cached",
+    "seconds_per_step": 0.0022595953751078923,
+    "cache_hit_miss": [
+      3456,
+      0
+    ]
+  },
+  {
+    "repeat": 1,
+    "mode": "segmented-ordered-cached",
+    "seconds_per_step": 0.002282506179653865,
+    "cache_hit_miss": [
+      3456,
+      0
+    ]
+  },
+  {
+    "repeat": 1,
+    "mode": "baseline",
+    "seconds_per_step": 0.003619305008214724,
+    "cache_hit_miss": [
+      0,
+      0
+    ]
+  },
+  {
+    "repeat": 2,
+    "mode": "baseline",
+    "seconds_per_step": 0.00359873210072692,
+    "cache_hit_miss": [
+      0,
+      0
+    ]
+  },
+  {
+    "repeat": 2,
+    "mode": "segmented-ordered-cached",
+    "seconds_per_step": 0.002287070640704769,
+    "cache_hit_miss": [
+      3456,
+      0
+    ]
+  },
+  {
+    "repeat": 2,
+    "mode": "segmented-ordered-persistent-cached",
+    "seconds_per_step": 0.002268980796543474,
+    "cache_hit_miss": [
+      3456,
+      0
+    ]
+  },
+  {
+    "repeat": 2,
+    "mode": "segmented-ordered-persistent-fused-cached",
+    "seconds_per_step": 0.0023839694058551686,
+    "cache_hit_miss": [
+      3456,
+      0
+    ]
+  },
+  {
+    "repeat": 2,
+    "mode": "segmented-ordered-persistent-fused-cached",
+    "seconds_per_step": 0.002345021483961318,
+    "cache_hit_miss": [
+      3456,
+      0
+    ]
+  },
+  {
+    "repeat": 2,
+    "mode": "segmented-ordered-persistent-cached",
+    "seconds_per_step": 0.00228408886687248,
+    "cache_hit_miss": [
+      3456,
+      0
+    ]
+  },
+  {
+    "repeat": 2,
+    "mode": "segmented-ordered-cached",
+    "seconds_per_step": 0.0023192356720755924,
+    "cache_hit_miss": [
+      3456,
+      0
+    ]
+  },
+  {
+    "repeat": 2,
+    "mode": "baseline",
+    "seconds_per_step": 0.0035602845000539673,
+    "cache_hit_miss": [
+      0,
+      0
+    ]
+  }
+]

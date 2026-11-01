@@ -1,0 +1,74 @@
+{
+  "checks": [
+    {
+      "shape": 0,
+      "round": 0,
+      "native_max_abs": 0.0,
+      "independent_distance_max_abs_m": 6.989945677392945e-11,
+      "passed": true
+    },
+    {
+      "shape": 0,
+      "round": 1,
+      "native_max_abs": 0.0,
+      "independent_distance_max_abs_m": 6.989945677392945e-11,
+      "passed": true
+    },
+    {
+      "shape": 0,
+      "round": 2,
+      "native_max_abs": 0.0,
+      "independent_distance_max_abs_m": 6.989945677392945e-11,
+      "passed": true
+    },
+    {
+      "shape": 0,
+      "round": 3,
+      "native_max_abs": 0.0,
+      "independent_distance_max_abs_m": 6.989945677392945e-11,
+      "passed": true
+    },
+    {
+      "shape": 1,
+      "round": 0,
+      "native_max_abs": 0.0,
+      "independent_distance_max_abs_m": 6.817172824510886e-11,
+      "passed": true
+    },
+    {
+      "shape": 1,
+      "round": 1,
+      "native_max_abs": 0.0,
+      "independent_distance_max_abs_m": 6.817172824510886e-11,
+      "passed": true
+    },
+    {
+      "shape": 1,
+      "round": 2,
+      "native_max_abs": 0.0,
+      "independent_distance_max_abs_m": 6.817172824510886e-11,
+      "passed": true
+    },
+    {
+      "shape": 1,
+      "round": 3,
+      "native_max_abs": 0.0,
+      "independent_distance_max_abs_m": 6.817172824510886e-11,
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "sources_unchanged": true,
+  "backend": {
+    "format": "sand-dem-doctor/1",
+    "backend": "metal",
+    "adapter": "Apple M4 Max",
+    "slangpy": "0.43.1",
+    "python": "3.12.14",
+    "smoke_elements": 257,
+    "smoke_max_error": 0.0,
+    "fallback": false,
+    "floating_point_mode_requested": "precise"
+  },
+  "scientific_admission": false
+}

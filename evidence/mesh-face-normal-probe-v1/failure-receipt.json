@@ -1,0 +1,5 @@
+{
+  "classification": "probe-driver-error",
+  "reason": "ParameterBlock was passed as an entrypoint parameter instead of vars. Results are invalid; retain and supersede with v2.",
+  "superseded_by": "mesh-face-normal-probe-v2"
+}

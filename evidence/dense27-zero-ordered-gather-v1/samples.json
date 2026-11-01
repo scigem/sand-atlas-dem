@@ -1,0 +1,122 @@
+[
+  {
+    "repeat": 0,
+    "mode": "baseline",
+    "seconds_per_step": 0.003682003250105481
+  },
+  {
+    "repeat": 0,
+    "mode": "segmented-original",
+    "seconds_per_step": 0.0021371393204390188
+  },
+  {
+    "repeat": 0,
+    "mode": "segmented-ordered",
+    "seconds_per_step": 0.0035787382812486612
+  },
+  {
+    "repeat": 0,
+    "mode": "segmented-ordered-precision",
+    "seconds_per_step": 0.0035790559923043475
+  },
+  {
+    "repeat": 0,
+    "mode": "segmented-ordered-precision",
+    "seconds_per_step": 0.0035846598284479114
+  },
+  {
+    "repeat": 0,
+    "mode": "segmented-ordered",
+    "seconds_per_step": 0.0035667014999489766
+  },
+  {
+    "repeat": 0,
+    "mode": "segmented-original",
+    "seconds_per_step": 0.0020278343126847176
+  },
+  {
+    "repeat": 0,
+    "mode": "baseline",
+    "seconds_per_step": 0.0036438160777834128
+  },
+  {
+    "repeat": 1,
+    "mode": "baseline",
+    "seconds_per_step": 0.00367926496801374
+  },
+  {
+    "repeat": 1,
+    "mode": "segmented-original",
+    "seconds_per_step": 0.002056537437965744
+  },
+  {
+    "repeat": 1,
+    "mode": "segmented-ordered",
+    "seconds_per_step": 0.0035816676481772447
+  },
+  {
+    "repeat": 1,
+    "mode": "segmented-ordered-precision",
+    "seconds_per_step": 0.0035767897106779856
+  },
+  {
+    "repeat": 1,
+    "mode": "segmented-ordered-precision",
+    "seconds_per_step": 0.003581194015168876
+  },
+  {
+    "repeat": 1,
+    "mode": "segmented-ordered",
+    "seconds_per_step": 0.0035728837892747833
+  },
+  {
+    "repeat": 1,
+    "mode": "segmented-original",
+    "seconds_per_step": 0.0020639108051909716
+  },
+  {
+    "repeat": 1,
+    "mode": "baseline",
+    "seconds_per_step": 0.003651604163678712
+  },
+  {
+    "repeat": 2,
+    "mode": "baseline",
+    "seconds_per_step": 0.0036376673206177657
+  },
+  {
+    "repeat": 2,
+    "mode": "segmented-original",
+    "seconds_per_step": 0.00202215853096277
+  },
+  {
+    "repeat": 2,
+    "mode": "segmented-ordered",
+    "seconds_per_step": 0.003540455406437104
+  },
+  {
+    "repeat": 2,
+    "mode": "segmented-ordered-precision",
+    "seconds_per_step": 0.0035587744141594158
+  },
+  {
+    "repeat": 2,
+    "mode": "segmented-ordered-precision",
+    "seconds_per_step": 0.0035521712261470384
+  },
+  {
+    "repeat": 2,
+    "mode": "segmented-ordered",
+    "seconds_per_step": 0.003560319008101942
+  },
+  {
+    "repeat": 2,
+    "mode": "segmented-original",
+    "seconds_per_step": 0.0020067233044755994
+  },
+  {
+    "repeat": 2,
+    "mode": "baseline",
+    "seconds_per_step": 0.00366936035152321
+  }
+]

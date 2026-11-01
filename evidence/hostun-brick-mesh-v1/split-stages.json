@@ -1,0 +1,1222 @@
+{
+  "baseline": [
+    [
+      {
+        "name": "drift",
+        "encode_seconds": 0.00011466699652373791,
+        "submit_wait_seconds": 0.00018449989147484303,
+        "wall_seconds": 0.00029916688799858093
+      },
+      {
+        "name": "neighbours",
+        "encode_seconds": 0.00015766697470098734,
+        "submit_wait_seconds": 0.0002056249650195241,
+        "wall_seconds": 0.00036329193972051144
+      },
+      {
+        "name": "contact_geometry",
+        "encode_seconds": 0.0001335000852122903,
+        "submit_wait_seconds": 0.0071637919172644615,
+        "wall_seconds": 0.007297292002476752
+      },
+      {
+        "name": "friction_and_history",
+        "encode_seconds": 0.0001324580516666174,
+        "submit_wait_seconds": 0.0004515829496085644,
+        "wall_seconds": 0.0005840410012751818
+      },
+      {
+        "name": "force_reduction",
+        "encode_seconds": 4.1584018617868423e-05,
+        "submit_wait_seconds": 0.00037274998612701893,
+        "wall_seconds": 0.00041433400474488735
+      },
+      {
+        "name": "final_kick",
+        "encode_seconds": 4.258297849446535e-05,
+        "submit_wait_seconds": 0.0001543340040370822,
+        "wall_seconds": 0.00019691698253154755
+      }
+    ],
+    [
+      {
+        "name": "drift",
+        "encode_seconds": 0.00011041597463190556,
+        "submit_wait_seconds": 0.0001746669877320528,
+        "wall_seconds": 0.00028508296236395836
+      },
+      {
+        "name": "neighbours",
+        "encode_seconds": 0.00015970796812325716,
+        "submit_wait_seconds": 0.00020320795010775328,
+        "wall_seconds": 0.00036291591823101044
+      },
+      {
+        "name": "contact_geometry",
+        "encode_seconds": 0.00011929101310670376,
+        "submit_wait_seconds": 0.007160249981097877,
+        "wall_seconds": 0.007279540994204581
+      },
+      {
+        "name": "friction_and_history",
+        "encode_seconds": 0.00012924999464303255,
+        "submit_wait_seconds": 0.00045466702431440353,
+        "wall_seconds": 0.0005839170189574361
+      },
+      {
+        "name": "force_reduction",
+        "encode_seconds": 4.237494431436062e-05,
+        "submit_wait_seconds": 0.000371375004760921,
+        "wall_seconds": 0.0004137499490752816
+      },
+      {
+        "name": "final_kick",
+        "encode_seconds": 4.2208004742860794e-05,
+        "submit_wait_seconds": 0.00014233402907848358,
+        "wall_seconds": 0.00018454203382134438
+      }
+    ],
+    [
+      {
+        "name": "drift",
+        "encode_seconds": 0.00010891701094806194,
+        "submit_wait_seconds": 0.00017016602214425802,
+        "wall_seconds": 0.00027908303309231997
+      },
+      {
+        "name": "neighbours",
+        "encode_seconds": 0.00015241699293255806,
+        "submit_wait_seconds": 0.00019687495660036802,
+        "wall_seconds": 0.0003492919495329261
+      },
+      {
+        "name": "contact_geometry",
+        "encode_seconds": 0.00011862500105053186,
+        "submit_wait_seconds": 0.007080834009684622,
+        "wall_seconds": 0.007199459010735154
+      },
+      {
+        "name": "friction_and_history",
+        "encode_seconds": 0.000124584068544209,
+        "submit_wait_seconds": 0.0004510829458013177,
+        "wall_seconds": 0.0005756670143455267
+      },
+      {
+        "name": "force_reduction",
+        "encode_seconds": 4.016596358269453e-05,
+        "submit_wait_seconds": 0.0003759590908885002,
+        "wall_seconds": 0.00041612505447119474
+      },
+      {
+        "name": "final_kick",
+        "encode_seconds": 4.0041981264948845e-05,
+        "submit_wait_seconds": 0.00015237508341670036,
+        "wall_seconds": 0.0001924170646816492
+      }
+    ],
+    [
+      {
+        "name": "drift",
+        "encode_seconds": 0.00010545901022851467,
+        "submit_wait_seconds": 0.00016941595822572708,
+        "wall_seconds": 0.00027487496845424175
+      },
+      {
+        "name": "neighbours",
+        "encode_seconds": 0.0002102500293403864,
+        "submit_wait_seconds": 0.0002050829352810979,
+        "wall_seconds": 0.0004153329646214843
+      },
+      {
+        "name": "contact_geometry",
+        "encode_seconds": 0.00011620798613876104,
+        "submit_wait_seconds": 0.007081458927132189,
+        "wall_seconds": 0.00719766691327095
+      },
+      {
+        "name": "friction_and_history",
+        "encode_seconds": 0.00012337497901171446,
+        "submit_wait_seconds": 0.0004432499408721924,
+        "wall_seconds": 0.0005666249198839068
+      },
+      {
+        "name": "force_reduction",
+        "encode_seconds": 4.091695882380009e-05,
+        "submit_wait_seconds": 0.00036587496288120747,
+        "wall_seconds": 0.00040679192170500755
+      },
+      {
+        "name": "final_kick",
+        "encode_seconds": 4.045793320983648e-05,
+        "submit_wait_seconds": 0.0001509999856352806,
+        "wall_seconds": 0.0001914579188451171
+      }
+    ],
+    [
+      {
+        "name": "drift",
+        "encode_seconds": 0.00010458298493176699,
+        "submit_wait_seconds": 0.00017391692381352186,
+        "wall_seconds": 0.00027849990874528885
+      },
+      {
+        "name": "neighbours",
+        "encode_seconds": 0.0001544170081615448,
+        "submit_wait_seconds": 0.00020237499848008156,
+        "wall_seconds": 0.00035679200664162636
+      },
+      {
+        "name": "contact_geometry",
+        "encode_seconds": 0.00011362496297806501,
+        "submit_wait_seconds": 0.00706000009085983,
+        "wall_seconds": 0.007173625053837895
+      },
+      {
+        "name": "friction_and_history",
+        "encode_seconds": 0.00010449998080730438,
+        "submit_wait_seconds": 0.0004330839728936553,
+        "wall_seconds": 0.0005375839537009597
+      },
+      {
+        "name": "force_reduction",
+        "encode_seconds": 3.870902583003044e-05,
+        "submit_wait_seconds": 0.0003602079814299941,
+        "wall_seconds": 0.00039891700726002455
+      },
+      {
+        "name": "final_kick",
+        "encode_seconds": 3.9207981899380684e-05,
+        "submit_wait_seconds": 0.00015199999324977398,
+        "wall_seconds": 0.00019120797514915466
+      }
+    ],
+    [
+      {
+        "name": "drift",
+        "encode_seconds": 0.00010562490206211805,
+        "submit_wait_seconds": 0.00017416710034012794,
+        "wall_seconds": 0.000279792002402246
+      },
+      {
+        "name": "neighbours",
+        "encode_seconds": 0.00015087495557963848,
+        "submit_wait_seconds": 0.0002007500734180212,
+        "wall_seconds": 0.0003516250289976597
+      },
+      {
+        "name": "contact_geometry",
+        "encode_seconds": 0.00011270795948803425,
+        "submit_wait_seconds": 0.007087875041179359,
+        "wall_seconds": 0.007200583000667393
+      },
+      {
+        "name": "friction_and_history",
+        "encode_seconds": 0.00012287497520446777,
+        "submit_wait_seconds": 0.0004456660244613886,
+        "wall_seconds": 0.0005685409996658564
+      },
+      {
+        "name": "force_reduction",
+        "encode_seconds": 3.995897714048624e-05,
+        "submit_wait_seconds": 0.00036745809484273195,
+        "wall_seconds": 0.0004074170719832182
+      },
+      {
+        "name": "final_kick",
+        "encode_seconds": 3.987504169344902e-05,
+        "submit_wait_seconds": 0.00015300000086426735,
+        "wall_seconds": 0.00019287504255771637
+      }
+    ],
+    [
+      {
+        "name": "drift",
+        "encode_seconds": 0.00010562501847743988,
+        "submit_wait_seconds": 0.00017504196148365736,
+        "wall_seconds": 0.00028066697996109724
+      },
+      {
+        "name": "neighbours",
+        "encode_seconds": 0.0001509580761194229,
+        "submit_wait_seconds": 0.00019712501671165228,
+        "wall_seconds": 0.0003480830928310752
+      },
+      {
+        "name": "contact_geometry",
+        "encode_seconds": 0.00012741703540086746,
+        "submit_wait_seconds": 0.007082665921188891,
+        "wall_seconds": 0.007210082956589758
+      },
+      {
+        "name": "friction_and_history",
+        "encode_seconds": 0.00012258300557732582,
+        "submit_wait_seconds": 0.00045104208402335644,
+        "wall_seconds": 0.0005736250896006823
+      },
+      {
+        "name": "force_reduction",
+        "encode_seconds": 3.9917067624628544e-05,
+        "submit_wait_seconds": 0.0003727079601958394,
+        "wall_seconds": 0.00041262502782046795
+      },
+      {
+        "name": "final_kick",
+        "encode_seconds": 3.987504169344902e-05,
+        "submit_wait_seconds": 0.00015095900744199753,
+        "wall_seconds": 0.00019083404913544655
+      }
+    ],
+    [
+      {
+        "name": "drift",
+        "encode_seconds": 0.00010458403266966343,
+        "submit_wait_seconds": 0.00017324998043477535,
+        "wall_seconds": 0.0002778340131044388
+      },
+      {
+        "name": "neighbours",
+        "encode_seconds": 0.00014937494415789843,
+        "submit_wait_seconds": 0.000202000024728477,
+        "wall_seconds": 0.00035137496888637543
+      },
+      {
+        "name": "contact_geometry",
+        "encode_seconds": 0.00011675001587718725,
+        "submit_wait_seconds": 0.007081707939505577,
+        "wall_seconds": 0.007198457955382764
+      },
+      {
+        "name": "friction_and_history",
+        "encode_seconds": 0.00012291606981307268,
+        "submit_wait_seconds": 0.00044350000098347664,
+        "wall_seconds": 0.0005664160707965493
+      },
+      {
+        "name": "force_reduction",
+        "encode_seconds": 4.054093733429909e-05,
+        "submit_wait_seconds": 0.00036700000055134296,
+        "wall_seconds": 0.00040754093788564205
+      },
+      {
+        "name": "final_kick",
+        "encode_seconds": 4.012498538941145e-05,
+        "submit_wait_seconds": 0.00015120895113795996,
+        "wall_seconds": 0.0001913339365273714
+      }
+    ],
+    [
+      {
+        "name": "drift",
+        "encode_seconds": 0.00010449998080730438,
+        "submit_wait_seconds": 0.00017270806711167097,
+        "wall_seconds": 0.00027720804791897535
+      },
+      {
+        "name": "neighbours",
+        "encode_seconds": 0.00014933303464204073,
+        "submit_wait_seconds": 0.00019566703122109175,
+        "wall_seconds": 0.0003450000658631325
+      },
+      {
+        "name": "contact_geometry",
+        "encode_seconds": 0.00011491600889712572,
+        "submit_wait_seconds": 0.007135041989386082,
+        "wall_seconds": 0.007249957998283207
+      },
+      {
+        "name": "friction_and_history",
+        "encode_seconds": 0.00010549998842179775,
+        "submit_wait_seconds": 0.00044941704254597425,
+        "wall_seconds": 0.000554917030967772
+      },
+      {
+        "name": "force_reduction",
+        "encode_seconds": 4.0665967389941216e-05,
+        "submit_wait_seconds": 0.0003721249522641301,
+        "wall_seconds": 0.00041279091965407133
+      },
+      {
+        "name": "final_kick",
+        "encode_seconds": 3.9917067624628544e-05,
+        "submit_wait_seconds": 0.00015012500807642937,
+        "wall_seconds": 0.0001900420757010579
+      }
+    ],
+    [
+      {
+        "name": "drift",
+        "encode_seconds": 0.0001052080187946558,
+        "submit_wait_seconds": 0.0001707079354673624,
+        "wall_seconds": 0.0002759159542620182
+      },
+      {
+        "name": "neighbours",
+        "encode_seconds": 0.00015095900744199753,
+        "submit_wait_seconds": 0.00019737507682293653,
+        "wall_seconds": 0.00034833408426493406
+      },
+      {
+        "name": "contact_geometry",
+        "encode_seconds": 0.000114459078758955,
+        "submit_wait_seconds": 0.007076374953612685,
+        "wall_seconds": 0.00719083403237164
+      },
+      {
+        "name": "friction_and_history",
+        "encode_seconds": 0.00012162502389401197,
+        "submit_wait_seconds": 0.0004525409312918782,
+        "wall_seconds": 0.0005741659551858902
+      },
+      {
+        "name": "force_reduction",
+        "encode_seconds": 4.066608380526304e-05,
+        "submit_wait_seconds": 0.00036866695154458284,
+        "wall_seconds": 0.0004093330353498459
+      },
+      {
+        "name": "final_kick",
+        "encode_seconds": 4.095898475497961e-05,
+        "submit_wait_seconds": 0.0001514999894425273,
+        "wall_seconds": 0.0001924589741975069
+      }
+    ],
+    [
+      {
+        "name": "drift",
+        "encode_seconds": 0.00010520906653255224,
+        "submit_wait_seconds": 0.00017083296552300453,
+        "wall_seconds": 0.0002760420320555568
+      },
+      {
+        "name": "neighbours",
+        "encode_seconds": 0.0001520420191809535,
+        "submit_wait_seconds": 0.0001948750577867031,
+        "wall_seconds": 0.0003469170769676566
+      },
+      {
+        "name": "contact_geometry",
+        "encode_seconds": 0.00011408410500735044,
+        "submit_wait_seconds": 0.00707674992736429,
+        "wall_seconds": 0.00719083403237164
+      },
+      {
+        "name": "friction_and_history",
+        "encode_seconds": 0.00012216693721711636,
+        "submit_wait_seconds": 0.0004487080732360482,
+        "wall_seconds": 0.0005708750104531646
+      },
+      {
+        "name": "force_reduction",
+        "encode_seconds": 3.9375037886202335e-05,
+        "submit_wait_seconds": 0.0003725839778780937,
+        "wall_seconds": 0.00041195901576429605
+      },
+      {
+        "name": "final_kick",
+        "encode_seconds": 3.899994771927595e-05,
+        "submit_wait_seconds": 0.00014908402226865292,
+        "wall_seconds": 0.00018808396998792887
+      }
+    ],
+    [
+      {
+        "name": "drift",
+        "encode_seconds": 0.00010299996938556433,
+        "submit_wait_seconds": 0.00016912503633648157,
+        "wall_seconds": 0.0002721250057220459
+      },
+      {
+        "name": "neighbours",
+        "encode_seconds": 0.00014995795208960772,
+        "submit_wait_seconds": 0.0001990000018849969,
+        "wall_seconds": 0.0003489579539746046
+      },
+      {
+        "name": "contact_geometry",
+        "encode_seconds": 0.00011333299335092306,
+        "submit_wait_seconds": 0.0070492500672116876,
+        "wall_seconds": 0.007162583060562611
+      },
+      {
+        "name": "friction_and_history",
+        "encode_seconds": 0.00016612501349300146,
+        "submit_wait_seconds": 0.00046716700308024883,
+        "wall_seconds": 0.0006332920165732503
+      },
+      {
+        "name": "force_reduction",
+        "encode_seconds": 6.241700612008572e-05,
+        "submit_wait_seconds": 0.00035995792131870985,
+        "wall_seconds": 0.00042237492743879557
+      },
+      {
+        "name": "final_kick",
+        "encode_seconds": 4.133395850658417e-05,
+        "submit_wait_seconds": 0.00013929104898124933,
+        "wall_seconds": 0.0001806250074878335
+      }
+    ],
+    [
+      {
+        "name": "drift",
+        "encode_seconds": 0.00010970805305987597,
+        "submit_wait_seconds": 0.0001764169428497553,
+        "wall_seconds": 0.00028612499590963125
+      },
+      {
+        "name": "neighbours",
+        "encode_seconds": 0.00015466706827282906,
+        "submit_wait_seconds": 0.00019491591956466436,
+        "wall_seconds": 0.0003495829878374934
+      },
+      {
+        "name": "contact_geometry",
+        "encode_seconds": 0.00014150002971291542,
+        "submit_wait_seconds": 0.007128290948458016,
+        "wall_seconds": 0.007269790978170931
+      },
+      {
+        "name": "friction_and_history",
+        "encode_seconds": 0.00013370905071496964,
+        "submit_wait_seconds": 0.00046029093209654093,
+        "wall_seconds": 0.0005939999828115106
+      },
+      {
+        "name": "force_reduction",
+        "encode_seconds": 4.008400719612837e-05,
+        "submit_wait_seconds": 0.00037287501618266106,
+        "wall_seconds": 0.0004129590233787894
+      },
+      {
+        "name": "final_kick",
+        "encode_seconds": 4.554097540676594e-05,
+        "submit_wait_seconds": 0.00015333399642258883,
+        "wall_seconds": 0.00019887497182935476
+      }
+    ],
+    [
+      {
+        "name": "drift",
+        "encode_seconds": 0.0001068339915946126,
+        "submit_wait_seconds": 0.00016695796512067318,
+        "wall_seconds": 0.0002737919567152858
+      },
+      {
+        "name": "neighbours",
+        "encode_seconds": 0.00015116704162210226,
+        "submit_wait_seconds": 0.00019537494517862797,
+        "wall_seconds": 0.00034654198680073023
+      },
+      {
+        "name": "contact_geometry",
+        "encode_seconds": 0.00011633301619440317,
+        "submit_wait_seconds": 0.0070838750107213855,
+        "wall_seconds": 0.007200208026915789
+      },
+      {
+        "name": "friction_and_history",
+        "encode_seconds": 0.0001272079534828663,
+        "submit_wait_seconds": 0.0004562920657917857,
+        "wall_seconds": 0.000583500019274652
+      },
+      {
+        "name": "force_reduction",
+        "encode_seconds": 4.225003067404032e-05,
+        "submit_wait_seconds": 0.00037233298644423485,
+        "wall_seconds": 0.00041458301711827517
+      },
+      {
+        "name": "final_kick",
+        "encode_seconds": 4.02920413762331e-05,
+        "submit_wait_seconds": 0.00015229196287691593,
+        "wall_seconds": 0.00019258400425314903
+      }
+    ],
+    [
+      {
+        "name": "drift",
+        "encode_seconds": 0.00010570802260190248,
+        "submit_wait_seconds": 0.00017212505917996168,
+        "wall_seconds": 0.00027783308178186417
+      },
+      {
+        "name": "neighbours",
+        "encode_seconds": 0.00015433295629918575,
+        "submit_wait_seconds": 0.00019462499767541885,
+        "wall_seconds": 0.0003489579539746046
+      },
+      {
+        "name": "contact_geometry",
+        "encode_seconds": 0.00011216592974960804,
+        "submit_wait_seconds": 0.007087375037372112,
+        "wall_seconds": 0.00719954096712172
+      },
+      {
+        "name": "friction_and_history",
+        "encode_seconds": 0.00012283294927328825,
+        "submit_wait_seconds": 0.000449958024546504,
+        "wall_seconds": 0.0005727909738197923
+      },
+      {
+        "name": "force_reduction",
+        "encode_seconds": 3.9499951526522636e-05,
+        "submit_wait_seconds": 0.00037154206074774265,
+        "wall_seconds": 0.0004110420122742653
+      },
+      {
+        "name": "final_kick",
+        "encode_seconds": 3.9624981582164764e-05,
+        "submit_wait_seconds": 0.00014945899602025747,
+        "wall_seconds": 0.00018908397760242224
+      }
+    ],
+    [
+      {
+        "name": "drift",
+        "encode_seconds": 0.00010354199912399054,
+        "submit_wait_seconds": 0.00016958301421254873,
+        "wall_seconds": 0.00027312501333653927
+      },
+      {
+        "name": "neighbours",
+        "encode_seconds": 0.00015508406795561314,
+        "submit_wait_seconds": 0.00019349996000528336,
+        "wall_seconds": 0.0003485840279608965
+      },
+      {
+        "name": "contact_geometry",
+        "encode_seconds": 0.00011254195123910904,
+        "submit_wait_seconds": 0.007084375014528632,
+        "wall_seconds": 0.007196916965767741
+      },
+      {
+        "name": "friction_and_history",
+        "encode_seconds": 0.00012270803563296795,
+        "submit_wait_seconds": 0.0004496669862419367,
+        "wall_seconds": 0.0005723750218749046
+      },
+      {
+        "name": "force_reduction",
+        "encode_seconds": 3.9624981582164764e-05,
+        "submit_wait_seconds": 0.0003709159791469574,
+        "wall_seconds": 0.00041054096072912216
+      },
+      {
+        "name": "final_kick",
+        "encode_seconds": 3.983289934694767e-05,
+        "submit_wait_seconds": 0.00015304202679544687,
+        "wall_seconds": 0.00019287492614239454
+      }
+    ]
+  ],
+  "brick": [
+    [
+      {
+        "name": "drift",
+        "encode_seconds": 0.0001199580729007721,
+        "submit_wait_seconds": 0.00018274993635714054,
+        "wall_seconds": 0.00030270800925791264
+      },
+      {
+        "name": "neighbours",
+        "encode_seconds": 0.0001611249754205346,
+        "submit_wait_seconds": 0.00019854202400892973,
+        "wall_seconds": 0.00035966699942946434
+      },
+      {
+        "name": "contact_geometry",
+        "encode_seconds": 0.00013229204341769218,
+        "submit_wait_seconds": 0.016230540932156146,
+        "wall_seconds": 0.016362832975573838
+      },
+      {
+        "name": "friction_and_history",
+        "encode_seconds": 0.00013304094318300486,
+        "submit_wait_seconds": 0.0004627500893548131,
+        "wall_seconds": 0.000595791032537818
+      },
+      {
+        "name": "force_reduction",
+        "encode_seconds": 4.2791012674570084e-05,
+        "submit_wait_seconds": 0.0003766249865293503,
+        "wall_seconds": 0.00041941599920392036
+      },
+      {
+        "name": "final_kick",
+        "encode_seconds": 4.583294503390789e-05,
+        "submit_wait_seconds": 0.00015512504614889622,
+        "wall_seconds": 0.0002009579911828041
+      }
+    ],
+    [
+      {
+        "name": "drift",
+        "encode_seconds": 0.00011358398478478193,
+        "submit_wait_seconds": 0.00024208310060203075,
+        "wall_seconds": 0.0003556670853868127
+      },
+      {
+        "name": "neighbours",
+        "encode_seconds": 0.00016175000928342342,
+        "submit_wait_seconds": 0.00020345894154161215,
+        "wall_seconds": 0.00036520895082503557
+      },
+      {
+        "name": "contact_geometry",
+        "encode_seconds": 0.00014529190957546234,
+        "submit_wait_seconds": 0.016219292068853974,
+        "wall_seconds": 0.016364583978429437
+      },
+      {
+        "name": "friction_and_history",
+        "encode_seconds": 0.0001142079709097743,
+        "submit_wait_seconds": 0.0004528750432655215,
+        "wall_seconds": 0.0005670830141752958
+      },
+      {
+        "name": "force_reduction",
+        "encode_seconds": 4.34160465374589e-05,
+        "submit_wait_seconds": 0.0003717920044437051,
+        "wall_seconds": 0.000415208050981164
+      },
+      {
+        "name": "final_kick",
+        "encode_seconds": 4.187505692243576e-05,
+        "submit_wait_seconds": 0.00015412503853440285,
+        "wall_seconds": 0.0001960000954568386
+      }
+    ],
+    [
+      {
+        "name": "drift",
+        "encode_seconds": 0.00010645808652043343,
+        "submit_wait_seconds": 0.0001729169161990285,
+        "wall_seconds": 0.0002793750027194619
+      },
+      {
+        "name": "neighbours",
+        "encode_seconds": 0.00015470909420400858,
+        "submit_wait_seconds": 0.00019937497563660145,
+        "wall_seconds": 0.00035408406984061003
+      },
+      {
+        "name": "contact_geometry",
+        "encode_seconds": 0.00012279103975743055,
+        "submit_wait_seconds": 0.01625470898579806,
+        "wall_seconds": 0.01637750002555549
+      },
+      {
+        "name": "friction_and_history",
+        "encode_seconds": 0.0001259580021724105,
+        "submit_wait_seconds": 0.00045433291234076023,
+        "wall_seconds": 0.0005802909145131707
+      },
+      {
+        "name": "force_reduction",
+        "encode_seconds": 4.012498538941145e-05,
+        "submit_wait_seconds": 0.0003753750352188945,
+        "wall_seconds": 0.00041550002060830593
+      },
+      {
+        "name": "final_kick",
+        "encode_seconds": 3.983394708484411e-05,
+        "submit_wait_seconds": 0.00014533300418406725,
+        "wall_seconds": 0.00018516695126891136
+      }
+    ],
+    [
+      {
+        "name": "drift",
+        "encode_seconds": 0.0001194169744849205,
+        "submit_wait_seconds": 0.0001739170402288437,
+        "wall_seconds": 0.0002933340147137642
+      },
+      {
+        "name": "neighbours",
+        "encode_seconds": 0.00015037506818771362,
+        "submit_wait_seconds": 0.0001938749337568879,
+        "wall_seconds": 0.00034425000194460154
+      },
+      {
+        "name": "contact_geometry",
+        "encode_seconds": 0.00012183305807411671,
+        "submit_wait_seconds": 0.016224541934207082,
+        "wall_seconds": 0.0163463749922812
+      },
+      {
+        "name": "friction_and_history",
+        "encode_seconds": 0.00011262495536357164,
+        "submit_wait_seconds": 0.0004521249793469906,
+        "wall_seconds": 0.0005647499347105622
+      },
+      {
+        "name": "force_reduction",
+        "encode_seconds": 4.3042004108428955e-05,
+        "submit_wait_seconds": 0.00036824995186179876,
+        "wall_seconds": 0.0004112919559702277
+      },
+      {
+        "name": "final_kick",
+        "encode_seconds": 4.000007174909115e-05,
+        "submit_wait_seconds": 0.00015095795970410109,
+        "wall_seconds": 0.00019095803145319223
+      }
+    ],
+    [
+      {
+        "name": "drift",
+        "encode_seconds": 0.000108166947029531,
+        "submit_wait_seconds": 0.00017245800700038671,
+        "wall_seconds": 0.0002806249540299177
+      },
+      {
+        "name": "neighbours",
+        "encode_seconds": 0.0001503749517723918,
+        "submit_wait_seconds": 0.00019645807333290577,
+        "wall_seconds": 0.00034683302510529757
+      },
+      {
+        "name": "contact_geometry",
+        "encode_seconds": 0.00011958391405642033,
+        "submit_wait_seconds": 0.016250541084446013,
+        "wall_seconds": 0.016370124998502433
+      },
+      {
+        "name": "friction_and_history",
+        "encode_seconds": 0.00012199999764561653,
+        "submit_wait_seconds": 0.00044908293057233095,
+        "wall_seconds": 0.0005710829282179475
+      },
+      {
+        "name": "force_reduction",
+        "encode_seconds": 4.04169550165534e-05,
+        "submit_wait_seconds": 0.0003708750009536743,
+        "wall_seconds": 0.0004112919559702277
+      },
+      {
+        "name": "final_kick",
+        "encode_seconds": 3.9375037886202335e-05,
+        "submit_wait_seconds": 0.00015041697770357132,
+        "wall_seconds": 0.00018979201558977365
+      }
+    ],
+    [
+      {
+        "name": "drift",
+        "encode_seconds": 0.00011329201515763998,
+        "submit_wait_seconds": 0.00016983295790851116,
+        "wall_seconds": 0.00028312497306615114
+      },
+      {
+        "name": "neighbours",
+        "encode_seconds": 0.0001498749479651451,
+        "submit_wait_seconds": 0.00018654100131243467,
+        "wall_seconds": 0.0003364159492775798
+      },
+      {
+        "name": "contact_geometry",
+        "encode_seconds": 0.0001272499794140458,
+        "submit_wait_seconds": 0.016219082986935973,
+        "wall_seconds": 0.01634633296635002
+      },
+      {
+        "name": "friction_and_history",
+        "encode_seconds": 0.00010662502609193325,
+        "submit_wait_seconds": 0.0004517079796642065,
+        "wall_seconds": 0.0005583330057561398
+      },
+      {
+        "name": "force_reduction",
+        "encode_seconds": 4.216597881168127e-05,
+        "submit_wait_seconds": 0.0003734590718522668,
+        "wall_seconds": 0.00041562505066394806
+      },
+      {
+        "name": "final_kick",
+        "encode_seconds": 4.016596358269453e-05,
+        "submit_wait_seconds": 0.00015120906755328178,
+        "wall_seconds": 0.00019137503113597631
+      }
+    ],
+    [
+      {
+        "name": "drift",
+        "encode_seconds": 0.00010545796249061823,
+        "submit_wait_seconds": 0.00019295804668217897,
+        "wall_seconds": 0.0002984160091727972
+      },
+      {
+        "name": "neighbours",
+        "encode_seconds": 0.00015095900744199753,
+        "submit_wait_seconds": 0.00019479100592434406,
+        "wall_seconds": 0.0003457500133663416
+      },
+      {
+        "name": "contact_geometry",
+        "encode_seconds": 0.00012066599447280169,
+        "submit_wait_seconds": 0.016246084007434547,
+        "wall_seconds": 0.01636675000190735
+      },
+      {
+        "name": "friction_and_history",
+        "encode_seconds": 0.00012583297211676836,
+        "submit_wait_seconds": 0.00045112508814781904,
+        "wall_seconds": 0.0005769580602645874
+      },
+      {
+        "name": "force_reduction",
+        "encode_seconds": 4.037492908537388e-05,
+        "submit_wait_seconds": 0.0003730000462383032,
+        "wall_seconds": 0.00041337497532367706
+      },
+      {
+        "name": "final_kick",
+        "encode_seconds": 3.9790989831089973e-05,
+        "submit_wait_seconds": 0.0001508750719949603,
+        "wall_seconds": 0.00019066606182605028
+      }
+    ],
+    [
+      {
+        "name": "drift",
+        "encode_seconds": 0.00010429089888930321,
+        "submit_wait_seconds": 0.00017120910342782736,
+        "wall_seconds": 0.00027550000231713057
+      },
+      {
+        "name": "neighbours",
+        "encode_seconds": 0.00015354098286479712,
+        "submit_wait_seconds": 0.0002025839639827609,
+        "wall_seconds": 0.000356124946847558
+      },
+      {
+        "name": "contact_geometry",
+        "encode_seconds": 0.00012374995276331902,
+        "submit_wait_seconds": 0.016254457994364202,
+        "wall_seconds": 0.01637820794712752
+      },
+      {
+        "name": "friction_and_history",
+        "encode_seconds": 0.00012250000145286322,
+        "submit_wait_seconds": 0.00045000005047768354,
+        "wall_seconds": 0.0005725000519305468
+      },
+      {
+        "name": "force_reduction",
+        "encode_seconds": 4.0458980947732925e-05,
+        "submit_wait_seconds": 0.00036929105408489704,
+        "wall_seconds": 0.00040975003503262997
+      },
+      {
+        "name": "final_kick",
+        "encode_seconds": 3.99160198867321e-05,
+        "submit_wait_seconds": 0.00014408398419618607,
+        "wall_seconds": 0.00018400000408291817
+      }
+    ],
+    [
+      {
+        "name": "drift",
+        "encode_seconds": 0.00011087500024586916,
+        "submit_wait_seconds": 0.00017220806330442429,
+        "wall_seconds": 0.00028308306355029345
+      },
+      {
+        "name": "neighbours",
+        "encode_seconds": 0.0001486249966546893,
+        "submit_wait_seconds": 0.00019591592717915773,
+        "wall_seconds": 0.00034454092383384705
+      },
+      {
+        "name": "contact_geometry",
+        "encode_seconds": 0.00011904200073331594,
+        "submit_wait_seconds": 0.016206625034101307,
+        "wall_seconds": 0.016325667034834623
+      },
+      {
+        "name": "friction_and_history",
+        "encode_seconds": 0.00016525003593415022,
+        "submit_wait_seconds": 0.00042999989818781614,
+        "wall_seconds": 0.0005952499341219664
+      },
+      {
+        "name": "force_reduction",
+        "encode_seconds": 3.645801916718483e-05,
+        "submit_wait_seconds": 0.00035674998071044683,
+        "wall_seconds": 0.00039320799987763166
+      },
+      {
+        "name": "final_kick",
+        "encode_seconds": 3.958307206630707e-05,
+        "submit_wait_seconds": 0.0001509999856352806,
+        "wall_seconds": 0.00019058305770158768
+      }
+    ],
+    [
+      {
+        "name": "drift",
+        "encode_seconds": 0.00010395899880677462,
+        "submit_wait_seconds": 0.00016704096924513578,
+        "wall_seconds": 0.0002709999680519104
+      },
+      {
+        "name": "neighbours",
+        "encode_seconds": 0.0001490419963374734,
+        "submit_wait_seconds": 0.00022504199296236038,
+        "wall_seconds": 0.0003740839892998338
+      },
+      {
+        "name": "contact_geometry",
+        "encode_seconds": 0.00012708408758044243,
+        "submit_wait_seconds": 0.016257999930530787,
+        "wall_seconds": 0.01638508401811123
+      },
+      {
+        "name": "friction_and_history",
+        "encode_seconds": 0.00012275006156414747,
+        "submit_wait_seconds": 0.00044916698243469,
+        "wall_seconds": 0.0005719170439988375
+      },
+      {
+        "name": "force_reduction",
+        "encode_seconds": 4.1584018617868423e-05,
+        "submit_wait_seconds": 0.00036225002259016037,
+        "wall_seconds": 0.0004038340412080288
+      },
+      {
+        "name": "final_kick",
+        "encode_seconds": 3.958307206630707e-05,
+        "submit_wait_seconds": 0.00014858401846140623,
+        "wall_seconds": 0.0001881670905277133
+      }
+    ],
+    [
+      {
+        "name": "drift",
+        "encode_seconds": 0.00011675001587718725,
+        "submit_wait_seconds": 0.00017370795831084251,
+        "wall_seconds": 0.00029045797418802977
+      },
+      {
+        "name": "neighbours",
+        "encode_seconds": 0.00015070801600813866,
+        "submit_wait_seconds": 0.00020066695287823677,
+        "wall_seconds": 0.00035137496888637543
+      },
+      {
+        "name": "contact_geometry",
+        "encode_seconds": 0.00011908297892659903,
+        "submit_wait_seconds": 0.01621950010303408,
+        "wall_seconds": 0.016338583081960678
+      },
+      {
+        "name": "friction_and_history",
+        "encode_seconds": 0.00010458403266966343,
+        "submit_wait_seconds": 0.00045299995690584183,
+        "wall_seconds": 0.0005575839895755053
+      },
+      {
+        "name": "force_reduction",
+        "encode_seconds": 3.983289934694767e-05,
+        "submit_wait_seconds": 0.0003729170421138406,
+        "wall_seconds": 0.00041274994146078825
+      },
+      {
+        "name": "final_kick",
+        "encode_seconds": 3.899994771927595e-05,
+        "submit_wait_seconds": 0.00013991701416671276,
+        "wall_seconds": 0.0001789169618859887
+      }
+    ],
+    [
+      {
+        "name": "drift",
+        "encode_seconds": 0.00010837509762495756,
+        "submit_wait_seconds": 0.00020358292385935783,
+        "wall_seconds": 0.0003119580214843154
+      },
+      {
+        "name": "neighbours",
+        "encode_seconds": 0.00014849996659904718,
+        "submit_wait_seconds": 0.00019233394414186478,
+        "wall_seconds": 0.00034083391074091196
+      },
+      {
+        "name": "contact_geometry",
+        "encode_seconds": 0.0001190409529954195,
+        "submit_wait_seconds": 0.016257042065262794,
+        "wall_seconds": 0.016376083018258214
+      },
+      {
+        "name": "friction_and_history",
+        "encode_seconds": 0.00012787501327693462,
+        "submit_wait_seconds": 0.00043925002682954073,
+        "wall_seconds": 0.0005671250401064754
+      },
+      {
+        "name": "force_reduction",
+        "encode_seconds": 4.004104994237423e-05,
+        "submit_wait_seconds": 0.0003665839321911335,
+        "wall_seconds": 0.00040662498213350773
+      },
+      {
+        "name": "final_kick",
+        "encode_seconds": 3.979192115366459e-05,
+        "submit_wait_seconds": 0.00015129102393984795,
+        "wall_seconds": 0.00019108294509351254
+      }
+    ],
+    [
+      {
+        "name": "drift",
+        "encode_seconds": 0.00010475004091858864,
+        "submit_wait_seconds": 0.0001736249541863799,
+        "wall_seconds": 0.00027837499510496855
+      },
+      {
+        "name": "neighbours",
+        "encode_seconds": 0.0001492080045863986,
+        "submit_wait_seconds": 0.00019562500528991222,
+        "wall_seconds": 0.0003448330098763108
+      },
+      {
+        "name": "contact_geometry",
+        "encode_seconds": 0.00012108299415558577,
+        "submit_wait_seconds": 0.016250916989520192,
+        "wall_seconds": 0.016371999983675778
+      },
+      {
+        "name": "friction_and_history",
+        "encode_seconds": 0.00011333299335092306,
+        "submit_wait_seconds": 0.00045062496792525053,
+        "wall_seconds": 0.0005639579612761736
+      },
+      {
+        "name": "force_reduction",
+        "encode_seconds": 3.92089132219553e-05,
+        "submit_wait_seconds": 0.0003678330685943365,
+        "wall_seconds": 0.0004070419818162918
+      },
+      {
+        "name": "final_kick",
+        "encode_seconds": 4.054198507219553e-05,
+        "submit_wait_seconds": 0.00014804198872298002,
+        "wall_seconds": 0.00018858397379517555
+      }
+    ],
+    [
+      {
+        "name": "drift",
+        "encode_seconds": 0.00010908301919698715,
+        "submit_wait_seconds": 0.0001687080366536975,
+        "wall_seconds": 0.00027779105585068464
+      },
+      {
+        "name": "neighbours",
+        "encode_seconds": 0.00014770799316465855,
+        "submit_wait_seconds": 0.0001893340377137065,
+        "wall_seconds": 0.00033704203087836504
+      },
+      {
+        "name": "contact_geometry",
+        "encode_seconds": 0.00012574996799230576,
+        "submit_wait_seconds": 0.016216165968216956,
+        "wall_seconds": 0.01634191593620926
+      },
+      {
+        "name": "friction_and_history",
+        "encode_seconds": 0.00010362500324845314,
+        "submit_wait_seconds": 0.0004488748963922262,
+        "wall_seconds": 0.0005524998996406794
+      },
+      {
+        "name": "force_reduction",
+        "encode_seconds": 3.9375037886202335e-05,
+        "submit_wait_seconds": 0.0003672919701784849,
+        "wall_seconds": 0.00040666700806468725
+      },
+      {
+        "name": "final_kick",
+        "encode_seconds": 4.025001544505358e-05,
+        "submit_wait_seconds": 0.0001521660014986992,
+        "wall_seconds": 0.00019241601694375277
+      }
+    ],
+    [
+      {
+        "name": "drift",
+        "encode_seconds": 0.00010495807509869337,
+        "submit_wait_seconds": 0.0001715839607641101,
+        "wall_seconds": 0.00027654203586280346
+      },
+      {
+        "name": "neighbours",
+        "encode_seconds": 0.0001473750453442335,
+        "submit_wait_seconds": 0.00019458297174423933,
+        "wall_seconds": 0.00034195801708847284
+      },
+      {
+        "name": "contact_geometry",
+        "encode_seconds": 0.0001188330352306366,
+        "submit_wait_seconds": 0.01624758297111839,
+        "wall_seconds": 0.016366416006349027
+      },
+      {
+        "name": "friction_and_history",
+        "encode_seconds": 0.0001212080242112279,
+        "submit_wait_seconds": 0.00044120894744992256,
+        "wall_seconds": 0.0005624169716611505
+      },
+      {
+        "name": "force_reduction",
+        "encode_seconds": 3.941706381738186e-05,
+        "submit_wait_seconds": 0.0003654169850051403,
+        "wall_seconds": 0.00040483404882252216
+      },
+      {
+        "name": "final_kick",
+        "encode_seconds": 3.958295565098524e-05,
+        "submit_wait_seconds": 0.00014529202599078417,
+        "wall_seconds": 0.0001848749816417694
+      }
+    ],
+    [
+      {
+        "name": "drift",
+        "encode_seconds": 0.0001038750633597374,
+        "submit_wait_seconds": 0.00017179199494421482,
+        "wall_seconds": 0.0002756670583039522
+      },
+      {
+        "name": "neighbours",
+        "encode_seconds": 0.0001485419925302267,
+        "submit_wait_seconds": 0.00019399996381253004,
+        "wall_seconds": 0.00034254195634275675
+      },
+      {
+        "name": "contact_geometry",
+        "encode_seconds": 0.00011825002729892731,
+        "submit_wait_seconds": 0.01624983293004334,
+        "wall_seconds": 0.016368082957342267
+      },
+      {
+        "name": "friction_and_history",
+        "encode_seconds": 0.00014500005636364222,
+        "submit_wait_seconds": 0.0004509580321609974,
+        "wall_seconds": 0.0005959580885246396
+      },
+      {
+        "name": "force_reduction",
+        "encode_seconds": 4.029099363833666e-05,
+        "submit_wait_seconds": 0.00036975007969886065,
+        "wall_seconds": 0.0004100410733371973
+      },
+      {
+        "name": "final_kick",
+        "encode_seconds": 3.98330157622695e-05,
+        "submit_wait_seconds": 0.00014820799697190523,
+        "wall_seconds": 0.00018804101273417473
+      }
+    ]
+  ]
+}

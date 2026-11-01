@@ -1,0 +1,500 @@
+{
+  "identity": "dense27-zero-cached-order-v2",
+  "completed": true,
+  "backend": {
+    "format": "sand-dem-doctor/1",
+    "backend": "metal",
+    "adapter": "Apple M4 Max",
+    "slangpy": "0.43.1",
+    "python": "3.12.14",
+    "smoke_elements": 257,
+    "smoke_max_error": 0.0,
+    "fallback": false,
+    "floating_point_mode_requested": "precise"
+  },
+  "sources_and_inputs_unchanged": true,
+  "median_seconds_per_step": {
+    "baseline": 0.003627160808264307,
+    "segmented-ordered": 0.0035666598282659834,
+    "segmented-ordered-cached": 0.0022660384101982345
+  },
+  "speedups": {
+    "baseline": 1.0,
+    "segmented-ordered": 1.0169629241114753,
+    "segmented-ordered-cached": 1.60066166219442
+  },
+  "eligible": {
+    "segmented-ordered": false,
+    "segmented-ordered-cached": false
+  },
+  "checks": [
+    {
+      "mode": "segmented-ordered-cached",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 0.0,
+        "rotation": 0.0,
+        "force": 0.0,
+        "torque": 0.0
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true,
+      "bitwise_body_state": {
+        "position": true,
+        "velocity": true,
+        "rotation": true,
+        "momentum": true,
+        "force": true,
+        "torque": true,
+        "positionRemainder": true,
+        "velocityRemainder": true,
+        "momentumRemainder": true,
+        "rotationRemainder": true,
+        "accumulated": true,
+        "accumulatedRemainder": true
+      }
+    },
+    {
+      "mode": "segmented-ordered",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 0.0,
+        "rotation": 0.0,
+        "force": 0.0,
+        "torque": 0.0
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true,
+      "bitwise_body_state": {
+        "position": true,
+        "velocity": true,
+        "rotation": true,
+        "momentum": true,
+        "force": true,
+        "torque": true,
+        "positionRemainder": true,
+        "velocityRemainder": true,
+        "momentumRemainder": true,
+        "rotationRemainder": true,
+        "accumulated": true,
+        "accumulatedRemainder": true
+      }
+    },
+    {
+      "mode": "baseline",
+      "passed": false,
+      "errors": {
+        "position": 2.2737367544323206e-13,
+        "velocity": 9.094947017729282e-13,
+        "rotation": 1.2597561882543573e-14,
+        "force": 6.678293829054383e-08,
+        "torque": 0.0002520269772503525
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true,
+      "bitwise_body_state": {
+        "position": true,
+        "velocity": false,
+        "rotation": false,
+        "momentum": false,
+        "force": false,
+        "torque": false,
+        "positionRemainder": false,
+        "velocityRemainder": false,
+        "momentumRemainder": false,
+        "rotationRemainder": false,
+        "accumulated": true,
+        "accumulatedRemainder": true
+      }
+    },
+    {
+      "mode": "baseline",
+      "passed": false,
+      "errors": {
+        "position": 2.2737367544323206e-13,
+        "velocity": 1.3642420526593924e-12,
+        "rotation": 1.4492747280048235e-14,
+        "force": 6.679341169046893e-08,
+        "torque": 0.00021205974917393178
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true,
+      "bitwise_body_state": {
+        "position": true,
+        "velocity": false,
+        "rotation": false,
+        "momentum": false,
+        "force": false,
+        "torque": false,
+        "positionRemainder": false,
+        "velocityRemainder": false,
+        "momentumRemainder": false,
+        "rotationRemainder": false,
+        "accumulated": true,
+        "accumulatedRemainder": true
+      }
+    },
+    {
+      "mode": "segmented-ordered",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 0.0,
+        "rotation": 0.0,
+        "force": 0.0,
+        "torque": 0.0
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true,
+      "bitwise_body_state": {
+        "position": true,
+        "velocity": true,
+        "rotation": true,
+        "momentum": true,
+        "force": true,
+        "torque": true,
+        "positionRemainder": true,
+        "velocityRemainder": true,
+        "momentumRemainder": true,
+        "rotationRemainder": true,
+        "accumulated": true,
+        "accumulatedRemainder": true
+      }
+    },
+    {
+      "mode": "segmented-ordered-cached",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 0.0,
+        "rotation": 0.0,
+        "force": 0.0,
+        "torque": 0.0
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true,
+      "bitwise_body_state": {
+        "position": true,
+        "velocity": true,
+        "rotation": true,
+        "momentum": true,
+        "force": true,
+        "torque": true,
+        "positionRemainder": true,
+        "velocityRemainder": true,
+        "momentumRemainder": true,
+        "rotationRemainder": true,
+        "accumulated": true,
+        "accumulatedRemainder": true
+      }
+    },
+    {
+      "mode": "segmented-ordered-cached",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 0.0,
+        "rotation": 0.0,
+        "force": 0.0,
+        "torque": 0.0
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true,
+      "bitwise_body_state": {
+        "position": true,
+        "velocity": true,
+        "rotation": true,
+        "momentum": true,
+        "force": true,
+        "torque": true,
+        "positionRemainder": true,
+        "velocityRemainder": true,
+        "momentumRemainder": true,
+        "rotationRemainder": true,
+        "accumulated": true,
+        "accumulatedRemainder": true
+      }
+    },
+    {
+      "mode": "segmented-ordered",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 0.0,
+        "rotation": 0.0,
+        "force": 0.0,
+        "torque": 0.0
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true,
+      "bitwise_body_state": {
+        "position": true,
+        "velocity": true,
+        "rotation": true,
+        "momentum": true,
+        "force": true,
+        "torque": true,
+        "positionRemainder": true,
+        "velocityRemainder": true,
+        "momentumRemainder": true,
+        "rotationRemainder": true,
+        "accumulated": true,
+        "accumulatedRemainder": true
+      }
+    },
+    {
+      "mode": "baseline",
+      "passed": false,
+      "errors": {
+        "position": 6.821210263296962e-13,
+        "velocity": 6.821210263296962e-13,
+        "rotation": 1.4841142095649296e-14,
+        "force": 6.680814124138124e-08,
+        "torque": 0.0002871321339625865
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true,
+      "bitwise_body_state": {
+        "position": true,
+        "velocity": false,
+        "rotation": false,
+        "momentum": false,
+        "force": false,
+        "torque": false,
+        "positionRemainder": false,
+        "velocityRemainder": false,
+        "momentumRemainder": false,
+        "rotationRemainder": false,
+        "accumulated": true,
+        "accumulatedRemainder": true
+      }
+    },
+    {
+      "mode": "baseline",
+      "passed": false,
+      "errors": {
+        "position": 2.2737367544323206e-13,
+        "velocity": 1.2505552149377763e-12,
+        "rotation": 2.0360449437539785e-14,
+        "force": 6.678608599486324e-08,
+        "torque": 0.0002473829372320324
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true,
+      "bitwise_body_state": {
+        "position": true,
+        "velocity": false,
+        "rotation": false,
+        "momentum": false,
+        "force": false,
+        "torque": false,
+        "positionRemainder": false,
+        "velocityRemainder": false,
+        "momentumRemainder": false,
+        "rotationRemainder": false,
+        "accumulated": true,
+        "accumulatedRemainder": true
+      }
+    },
+    {
+      "mode": "segmented-ordered",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 0.0,
+        "rotation": 0.0,
+        "force": 0.0,
+        "torque": 0.0
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true,
+      "bitwise_body_state": {
+        "position": true,
+        "velocity": true,
+        "rotation": true,
+        "momentum": true,
+        "force": true,
+        "torque": true,
+        "positionRemainder": true,
+        "velocityRemainder": true,
+        "momentumRemainder": true,
+        "rotationRemainder": true,
+        "accumulated": true,
+        "accumulatedRemainder": true
+      }
+    },
+    {
+      "mode": "segmented-ordered-cached",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 0.0,
+        "rotation": 0.0,
+        "force": 0.0,
+        "torque": 0.0
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true,
+      "bitwise_body_state": {
+        "position": true,
+        "velocity": true,
+        "rotation": true,
+        "momentum": true,
+        "force": true,
+        "torque": true,
+        "positionRemainder": true,
+        "velocityRemainder": true,
+        "momentumRemainder": true,
+        "rotationRemainder": true,
+        "accumulated": true,
+        "accumulatedRemainder": true
+      }
+    },
+    {
+      "mode": "segmented-ordered-cached",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 0.0,
+        "rotation": 0.0,
+        "force": 0.0,
+        "torque": 0.0
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true,
+      "bitwise_body_state": {
+        "position": true,
+        "velocity": true,
+        "rotation": true,
+        "momentum": true,
+        "force": true,
+        "torque": true,
+        "positionRemainder": true,
+        "velocityRemainder": true,
+        "momentumRemainder": true,
+        "rotationRemainder": true,
+        "accumulated": true,
+        "accumulatedRemainder": true
+      }
+    },
+    {
+      "mode": "segmented-ordered",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 0.0,
+        "rotation": 0.0,
+        "force": 0.0,
+        "torque": 0.0
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true,
+      "bitwise_body_state": {
+        "position": true,
+        "velocity": true,
+        "rotation": true,
+        "momentum": true,
+        "force": true,
+        "torque": true,
+        "positionRemainder": true,
+        "velocityRemainder": true,
+        "momentumRemainder": true,
+        "rotationRemainder": true,
+        "accumulated": true,
+        "accumulatedRemainder": true
+      }
+    },
+    {
+      "mode": "baseline",
+      "passed": false,
+      "errors": {
+        "position": 4.547473508864641e-13,
+        "velocity": 1.3642420526593924e-12,
+        "rotation": 1.33921736547582e-14,
+        "force": 6.678290276340704e-08,
+        "torque": 0.0003038692520931363
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true,
+      "bitwise_body_state": {
+        "position": true,
+        "velocity": false,
+        "rotation": false,
+        "momentum": false,
+        "force": false,
+        "torque": false,
+        "positionRemainder": false,
+        "velocityRemainder": false,
+        "momentumRemainder": false,
+        "rotationRemainder": false,
+        "accumulated": true,
+        "accumulatedRemainder": true
+      }
+    },
+    {
+      "mode": "segmented-ordered",
+      "reference": "baseline",
+      "passed": false,
+      "errors": {
+        "position": 1.3642420526593924e-12,
+        "velocity": 7.901235221652314e-12,
+        "rotation": 4.231223661374517e-14,
+        "force": 9.443758841598537e-08,
+        "torque": 0.00022925413213670254
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "segmented-ordered-cached",
+      "reference": "baseline",
+      "passed": false,
+      "errors": {
+        "position": 1.3642420526593924e-12,
+        "velocity": 7.901235221652314e-12,
+        "rotation": 4.231223661374517e-14,
+        "force": 9.443758841598537e-08,
+        "torque": 0.00022925413213670254
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "segmented-ordered-cached",
+      "reference": "segmented-ordered",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 0.0,
+        "rotation": 0.0,
+        "force": 0.0,
+        "torque": 0.0
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    }
+  ],
+  "equivalence_passed": false,
+  "counters": {},
+  "scientific_admission": false
+}

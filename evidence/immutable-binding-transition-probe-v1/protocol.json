@@ -1,0 +1,7 @@
+{
+  "identity": "immutable-binding-transition-probe-v1",
+  "shader_sha256": "81427bba232ea93b77b4c65947886d220799ddd31006d30a7f29a98da8fc1528",
+  "driver_sha256": "1239099a856254e3606e1e042d06bcea226f0a825279dca197fa78c3d2a5cb6f",
+  "helper_sha256": "df4e8c942c8f6018d36ba5d1c61e97f45199c002c03a8a38d09da71619179753",
+  "gate": "Exact FP32 output vs independent integer-valued analytical results; caller dictionaries mutated between queued dispatches, globals and entrypoint parameters change, buffers change identity/content, and zero-length work leaves output untouched. Cache hit required for repeated full binding; new entry required for scalar or resource identity changes. No numerical tolerance or physics change."
+}

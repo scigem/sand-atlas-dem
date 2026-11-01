@@ -1,0 +1,78 @@
+[
+  {
+    "build_seconds": 0.12011245905887336,
+    "resolution": 256,
+    "capacity": 24,
+    "max_depth": 8,
+    "node_budget_per_shape": 100000,
+    "per_shape": [
+      {
+        "triangles": 192,
+        "nodes": 7625,
+        "list_leaves": 5720,
+        "fallback_leaves": 952,
+        "max_depth_fallbacks": 0,
+        "budget_fallbacks": 0,
+        "interior_fallbacks": 952,
+        "deepest_level": 6
+      },
+      {
+        "triangles": 20,
+        "nodes": 1,
+        "list_leaves": 1,
+        "fallback_leaves": 0,
+        "max_depth_fallbacks": 0,
+        "budget_fallbacks": 0,
+        "interior_fallbacks": 0,
+        "deepest_level": 0
+      }
+    ],
+    "bytes": 764688,
+    "array_sha256": {
+      "brickInfo": "e2d7fbd700521d42d57a467f1c3b8f5bb03a48f67ea3536f49ef52366f56cd10",
+      "brickCenters": "f86a5815620928a1b87daffd5e5c466cf1226ea3391d1adb00129b25327d4e14",
+      "brickHalf": "9e74d0d039d80b5a3452e80b896f5ca8b9290202956281d18d7a748af6788de2",
+      "brickRanges": "4bf0f72d1b67697f3d3dc10e4daaa30acacab1961324827c204a3663244e5c2a",
+      "brickTriangles": "6b57065d3a4de066a438d789603525c9085ce65b797e2713be01925cbf42a13a"
+    },
+    "margin_eps_multiplier": 128
+  },
+  {
+    "build_seconds": 2.96607954101637,
+    "resolution": 256,
+    "capacity": 1,
+    "max_depth": 8,
+    "node_budget_per_shape": 100000,
+    "per_shape": [
+      {
+        "triangles": 192,
+        "nodes": 99993,
+        "list_leaves": 0,
+        "fallback_leaves": 87494,
+        "max_depth_fallbacks": 76280,
+        "budget_fallbacks": 30,
+        "interior_fallbacks": 11184,
+        "deepest_level": 8
+      },
+      {
+        "triangles": 20,
+        "nodes": 99993,
+        "list_leaves": 0,
+        "fallback_leaves": 87494,
+        "max_depth_fallbacks": 76048,
+        "budget_fallbacks": 25,
+        "interior_fallbacks": 11421,
+        "deepest_level": 8
+      }
+    ],
+    "bytes": 9599364,
+    "array_sha256": {
+      "brickInfo": "24bf1b4d56528e999abcc893e55ad38adc5ac651c621635bda423a15c2b63119",
+      "brickCenters": "b6bb7358282b68591c89e5f19f9db8c09088f05afb991006cb1725618671e671",
+      "brickHalf": "d8153907686071d201838ae1d639924541e99e1b7ccbc057ca19e9fb3c7d5172",
+      "brickRanges": "3fbe526f8f890274fa0907fd478341c5a5ebae443d3f4071aedf28cd96f7106d",
+      "brickTriangles": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    },
+    "margin_eps_multiplier": 128
+  }
+]

@@ -1,0 +1,14 @@
+{
+ "identity": "precision-v1",
+ "frozen_before_execution": true,
+ "reference": "Analytical force-free translation, constant spatial rotation of an isotropic body, diagonal cell strain and peculiar-velocity evolution",
+ "particles": 2,
+ "timestep_s": 1e-8,
+ "steps": 2000,
+ "initial_quaternion_xyzw": [0.5,0.5,0.5,0.5],
+ "initial_normalized_velocity": [1e-7,0.1,0],
+ "physical_angular_velocity_rad_s": [0.01,0.02,-0.03],
+ "diagonal_cell_rate_s": [0,-0.1,0],
+ "limits": {"translation_absolute_normalized":5e-11,"velocity_absolute_normalized":1e-10,"engineering_strain_absolute":1e-7,"orientation_error_rad":1e-9},
+ "invariant": "Per-step increments below FP32 ULP must accumulate; no relaxed equilibrium gate or CPU stepping fallback. All residual state is transactional and checkpointed."
+}

@@ -1,0 +1,27 @@
+{
+  "results": {
+    "baseline": {
+      "distance_max_abs": 3.5265088627056684e-08,
+      "normal_max_abs": 0.5976142883300781,
+      "passed": false
+    },
+    "precision": {
+      "distance_max_abs": 3.5265088627056684e-08,
+      "normal_max_abs": 3.07656989662064e-07,
+      "passed": true
+    }
+  },
+  "backend": {
+    "format": "sand-dem-doctor/1",
+    "backend": "metal",
+    "adapter": "Apple M4 Max",
+    "slangpy": "0.43.1",
+    "python": "3.12.14",
+    "smoke_elements": 257,
+    "smoke_max_error": 0.0,
+    "fallback": false,
+    "floating_point_mode_requested": "precise"
+  },
+  "sources_unchanged": true,
+  "scientific_admission": false
+}

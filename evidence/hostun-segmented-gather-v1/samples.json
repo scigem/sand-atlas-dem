@@ -1,0 +1,122 @@
+[
+  {
+    "repeat": 0,
+    "mode": "baseline",
+    "seconds_per_step": 0.009028356445014651
+  },
+  {
+    "repeat": 0,
+    "mode": "precision",
+    "seconds_per_step": 0.008878909835402737
+  },
+  {
+    "repeat": 0,
+    "mode": "segmented",
+    "seconds_per_step": 0.009164190750198031
+  },
+  {
+    "repeat": 0,
+    "mode": "segmented-original",
+    "seconds_per_step": 0.009014300125272712
+  },
+  {
+    "repeat": 0,
+    "mode": "segmented-original",
+    "seconds_per_step": 0.009013469078126946
+  },
+  {
+    "repeat": 0,
+    "mode": "segmented",
+    "seconds_per_step": 0.009074781250092201
+  },
+  {
+    "repeat": 0,
+    "mode": "precision",
+    "seconds_per_step": 0.008902390624825784
+  },
+  {
+    "repeat": 0,
+    "mode": "baseline",
+    "seconds_per_step": 0.008991492515633581
+  },
+  {
+    "repeat": 1,
+    "mode": "baseline",
+    "seconds_per_step": 0.008959699218394235
+  },
+  {
+    "repeat": 1,
+    "mode": "precision",
+    "seconds_per_step": 0.00893210417143564
+  },
+  {
+    "repeat": 1,
+    "mode": "segmented",
+    "seconds_per_step": 0.009034572914060846
+  },
+  {
+    "repeat": 1,
+    "mode": "segmented-original",
+    "seconds_per_step": 0.00909517773470725
+  },
+  {
+    "repeat": 1,
+    "mode": "segmented-original",
+    "seconds_per_step": 0.009043575843861618
+  },
+  {
+    "repeat": 1,
+    "mode": "segmented",
+    "seconds_per_step": 0.009020459312523599
+  },
+  {
+    "repeat": 1,
+    "mode": "precision",
+    "seconds_per_step": 0.00887866634366219
+  },
+  {
+    "repeat": 1,
+    "mode": "baseline",
+    "seconds_per_step": 0.008994067383355286
+  },
+  {
+    "repeat": 2,
+    "mode": "baseline",
+    "seconds_per_step": 0.008978295577435347
+  },
+  {
+    "repeat": 2,
+    "mode": "precision",
+    "seconds_per_step": 0.00890440689818206
+  },
+  {
+    "repeat": 2,
+    "mode": "segmented",
+    "seconds_per_step": 0.008984456703728938
+  },
+  {
+    "repeat": 2,
+    "mode": "segmented-original",
+    "seconds_per_step": 0.009032740234943049
+  },
+  {
+    "repeat": 2,
+    "mode": "segmented-original",
+    "seconds_per_step": 0.008978400390333263
+  },
+  {
+    "repeat": 2,
+    "mode": "segmented",
+    "seconds_per_step": 0.00897640788298304
+  },
+  {
+    "repeat": 2,
+    "mode": "precision",
+    "seconds_per_step": 0.008902225913516304
+  },
+  {
+    "repeat": 2,
+    "mode": "baseline",
+    "seconds_per_step": 0.00897029264797311
+  }
+]

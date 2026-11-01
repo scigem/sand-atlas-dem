@@ -1,0 +1,370 @@
+[WARN] No supported shader model found, pretending to support sm_6_0.
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/solver.slang(182): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/solver.slang(182): warning :  unused variable '_S5' [-Wunused-variable]
+    uint _S5 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/solver.slang(182): warning :  unused variable '_S5' [-Wunused-variable]
+    uint _S5 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/solver.slang(380): warning :  unused variable '_S26' [-Wunused-variable]
+    uint _S26 = findPairs_0(id_2, true, &kernelContext_5);
+         ^
+2 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/solver.slang(182): warning :  unused variable '_S31' [-Wunused-variable]
+    uint _S31 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_5->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/solver.slang(508): warning :  unused variable '_S79' [-Wunused-variable]
+                        uint _S79 = atomic_fetch_add_explicit(((atomic_uint device*)(kernelContext_9->r_0->contactCounts_0+pair_0)), 1U, memory_order_relaxed);
+                             ^
+2 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/solver.slang(182): warning :  unused variable '_S10' [-Wunused-variable]
+    uint _S10 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_2->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/solver.slang(719): warning :  unused variable '_S23' [-Wunused-variable]
+            uint _S23 = atomic_fetch_add_explicit(((atomic_uint device*)(r_1->control_0+int(6))), 1U, memory_order_relaxed);
+                 ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/solver.slang(734): warning :  unused variable '_S29' [-Wunused-variable]
+        uint _S29 = atomic_fetch_add_explicit(((atomic_uint device*)(r_1->control_0+int(6))), 1U, memory_order_relaxed);
+             ^
+3 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/solver.slang(182): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_1->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/solver.slang(182): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/baseline.slang(182): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_1->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/baseline.slang(182): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/baseline.slang(182): warning :  unused variable '_S5' [-Wunused-variable]
+    uint _S5 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/baseline.slang(182): warning :  unused variable '_S5' [-Wunused-variable]
+    uint _S5 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/baseline.slang(380): warning :  unused variable '_S26' [-Wunused-variable]
+    uint _S26 = findPairs_0(id_2, true, &kernelContext_5);
+         ^
+2 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/baseline.slang(182): warning :  unused variable '_S31' [-Wunused-variable]
+    uint _S31 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_5->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/baseline.slang(508): warning :  unused variable '_S79' [-Wunused-variable]
+                        uint _S79 = atomic_fetch_add_explicit(((atomic_uint device*)(kernelContext_9->r_0->contactCounts_0+pair_0)), 1U, memory_order_relaxed);
+                             ^
+2 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/baseline.slang(182): warning :  unused variable '_S10' [-Wunused-variable]
+    uint _S10 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_2->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/baseline.slang(719): warning :  unused variable '_S23' [-Wunused-variable]
+            uint _S23 = atomic_fetch_add_explicit(((atomic_uint device*)(r_1->control_0+int(6))), 1U, memory_order_relaxed);
+                 ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/baseline.slang(734): warning :  unused variable '_S29' [-Wunused-variable]
+        uint _S29 = atomic_fetch_add_explicit(((atomic_uint device*)(r_1->control_0+int(6))), 1U, memory_order_relaxed);
+             ^
+3 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/baseline.slang(182): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/baseline.slang(182): warning :  unused variable '_S22' [-Wunused-variable]
+    uint _S22 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_10->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/baseline.slang(182): warning :  unused variable '_S5' [-Wunused-variable]
+    uint _S5 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_2->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/baseline.slang(894): warning :  unused variable '_S3' [-Wunused-variable]
+        uint _S3 = atomic_fetch_or_explicit(((atomic_uint device*)((&kernelContext_1)->r_0->control_0+int(4))), 1U, memory_order_relaxed);
+             ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/baseline.slang(182): warning :  unused variable '_S15' [-Wunused-variable]
+    uint _S15 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_9->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-cached.slang(185): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_1->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-cached.slang(185): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-cached.slang(185): warning :  unused variable '_S5' [-Wunused-variable]
+    uint _S5 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-cached.slang(185): warning :  unused variable '_S5' [-Wunused-variable]
+    uint _S5 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-cached.slang(383): warning :  unused variable '_S26' [-Wunused-variable]
+    uint _S26 = findPairs_0(id_2, true, &kernelContext_5);
+         ^
+2 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-cached.slang(185): warning :  unused variable '_S31' [-Wunused-variable]
+    uint _S31 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_5->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-cached.slang(511): warning :  unused variable '_S79' [-Wunused-variable]
+                        uint _S79 = atomic_fetch_add_explicit(((atomic_uint device*)(kernelContext_9->r_0->contactCounts_0+pair_0)), 1U, memory_order_relaxed);
+                             ^
+2 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-cached.slang(185): warning :  unused variable '_S10' [-Wunused-variable]
+    uint _S10 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_2->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-cached.slang(722): warning :  unused variable '_S23' [-Wunused-variable]
+            uint _S23 = atomic_fetch_add_explicit(((atomic_uint device*)(r_1->control_0+int(6))), 1U, memory_order_relaxed);
+                 ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-cached.slang(724): warning :  unused variable '_S25' [-Wunused-variable]
+        uint _S25 = atomic_fetch_add_explicit(((atomic_uint device*)((&kernelContext_4)->r_0->adjCounts_0+i_2)), 1U, memory_order_relaxed);
+             ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-cached.slang(737): warning :  unused variable '_S30' [-Wunused-variable]
+        uint _S30 = atomic_fetch_add_explicit(((atomic_uint device*)(r_1->control_0+int(6))), 1U, memory_order_relaxed);
+             ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-cached.slang(741): warning :  unused variable '_S31' [-Wunused-variable]
+    uint _S31 = atomic_fetch_add_explicit(((atomic_uint device*)((&kernelContext_4)->r_0->adjCounts_0+i_2)), 1U, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-cached.slang(741): warning :  unused variable '_S32' [-Wunused-variable]
+    uint _S32 = atomic_fetch_add_explicit(((atomic_uint device*)((&kernelContext_4)->r_0->adjCounts_0+j_1)), 1U, memory_order_relaxed);
+         ^
+6 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-cached.slang(185): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-cached.slang(1024): warning :  unused variable '_S24' [-Wunused-variable]
+                    uint _S24 = atomic_fetch_or_explicit(((atomic_uint threadgroup*)(&(*(&kernelContext_3)->sortedEndpoints_0)[int(8191)])), 1U, memory_order_relaxed);
+                         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-cached.slang(1034): warning :  unused variable '_S26' [-Wunused-variable]
+            uint _S26 = atomic_fetch_add_explicit(((atomic_uint device*)((&kernelContext_3)->r_0->adjCacheMetrics_0+int(0))), 1U, memory_order_relaxed);
+                 ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-cached.slang(1037): warning :  unused variable '_S27' [-Wunused-variable]
+        uint _S27 = atomic_fetch_add_explicit(((atomic_uint device*)((&kernelContext_3)->r_0->adjCacheMetrics_0+int(1))), 1U, memory_order_relaxed);
+             ^
+4 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-cached.slang(185): warning :  unused variable '_S22' [-Wunused-variable]
+    uint _S22 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_10->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-cached.slang(185): warning :  unused variable '_S5' [-Wunused-variable]
+    uint _S5 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_2->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-cached.slang(939): warning :  unused variable '_S3' [-Wunused-variable]
+        uint _S3 = atomic_fetch_or_explicit(((atomic_uint device*)((&kernelContext_1)->r_0->control_0+int(4))), 1U, memory_order_relaxed);
+             ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-cached.slang(185): warning :  unused variable '_S15' [-Wunused-variable]
+    uint _S15 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_9->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-persistent-cached.slang(185): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_1->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-persistent-cached.slang(185): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-persistent-cached.slang(185): warning :  unused variable '_S5' [-Wunused-variable]
+    uint _S5 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-persistent-cached.slang(185): warning :  unused variable '_S5' [-Wunused-variable]
+    uint _S5 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-persistent-cached.slang(383): warning :  unused variable '_S26' [-Wunused-variable]
+    uint _S26 = findPairs_0(id_2, true, &kernelContext_5);
+         ^
+2 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-persistent-cached.slang(185): warning :  unused variable '_S31' [-Wunused-variable]
+    uint _S31 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_5->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-persistent-cached.slang(511): warning :  unused variable '_S79' [-Wunused-variable]
+                        uint _S79 = atomic_fetch_add_explicit(((atomic_uint device*)(kernelContext_9->r_0->contactCounts_0+pair_0)), 1U, memory_order_relaxed);
+                             ^
+2 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-persistent-cached.slang(185): warning :  unused variable '_S10' [-Wunused-variable]
+    uint _S10 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_2->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-persistent-cached.slang(722): warning :  unused variable '_S23' [-Wunused-variable]
+            uint _S23 = atomic_fetch_add_explicit(((atomic_uint device*)(r_1->control_0+int(6))), 1U, memory_order_relaxed);
+                 ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-persistent-cached.slang(724): warning :  unused variable '_S25' [-Wunused-variable]
+        uint _S25 = atomic_fetch_add_explicit(((atomic_uint device*)((&kernelContext_4)->r_0->adjCounts_0+i_2)), 1U, memory_order_relaxed);
+             ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-persistent-cached.slang(737): warning :  unused variable '_S30' [-Wunused-variable]
+        uint _S30 = atomic_fetch_add_explicit(((atomic_uint device*)(r_1->control_0+int(6))), 1U, memory_order_relaxed);
+             ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-persistent-cached.slang(741): warning :  unused variable '_S31' [-Wunused-variable]
+    uint _S31 = atomic_fetch_add_explicit(((atomic_uint device*)((&kernelContext_4)->r_0->adjCounts_0+i_2)), 1U, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-persistent-cached.slang(741): warning :  unused variable '_S32' [-Wunused-variable]
+    uint _S32 = atomic_fetch_add_explicit(((atomic_uint device*)((&kernelContext_4)->r_0->adjCounts_0+j_1)), 1U, memory_order_relaxed);
+         ^
+6 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-persistent-cached.slang(185): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-persistent-cached.slang(1056): warning :  unused variable '_S13' [-Wunused-variable]
+                    uint _S13 = atomic_fetch_or_explicit(((atomic_uint threadgroup*)((&kernelContext_2)->slotMiss_0)), 1U, memory_order_relaxed);
+                         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-persistent-cached.slang(1063): warning :  unused variable '_S16' [-Wunused-variable]
+        uint _S16 = atomic_fetch_add_explicit(((atomic_uint device*)((&kernelContext_2)->r_0->adjCacheMetrics_0+_S5)), 1U, memory_order_relaxed);
+             ^
+3 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-persistent-cached.slang(185): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-persistent-cached.slang(185): warning :  unused variable '_S22' [-Wunused-variable]
+    uint _S22 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_10->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-persistent-cached.slang(185): warning :  unused variable '_S5' [-Wunused-variable]
+    uint _S5 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_2->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-persistent-cached.slang(939): warning :  unused variable '_S3' [-Wunused-variable]
+        uint _S3 = atomic_fetch_or_explicit(((atomic_uint device*)((&kernelContext_1)->r_0->control_0+int(4))), 1U, memory_order_relaxed);
+             ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-persistent-cached.slang(185): warning :  unused variable '_S15' [-Wunused-variable]
+    uint _S15 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_9->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-persistent-fused-cached.slang(185): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_1->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-persistent-fused-cached.slang(185): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-persistent-fused-cached.slang(185): warning :  unused variable '_S5' [-Wunused-variable]
+    uint _S5 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-persistent-fused-cached.slang(185): warning :  unused variable '_S5' [-Wunused-variable]
+    uint _S5 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-persistent-fused-cached.slang(383): warning :  unused variable '_S26' [-Wunused-variable]
+    uint _S26 = findPairs_0(id_2, true, &kernelContext_5);
+         ^
+2 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-persistent-fused-cached.slang(185): warning :  unused variable '_S31' [-Wunused-variable]
+    uint _S31 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_5->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-persistent-fused-cached.slang(511): warning :  unused variable '_S79' [-Wunused-variable]
+                        uint _S79 = atomic_fetch_add_explicit(((atomic_uint device*)(kernelContext_9->r_0->contactCounts_0+pair_0)), 1U, memory_order_relaxed);
+                             ^
+2 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-persistent-fused-cached.slang(745): warning :  unused variable '_S6' [-Wunused-variable]
+        uint _S6 = atomic_fetch_add_explicit(((atomic_uint device*)((&kernelContext_0)->r_0->adjCounts_0+_S5)), 1U, memory_order_relaxed);
+             ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-persistent-fused-cached.slang(744): warning :  unused variable '_S4' [-Wunused-variable]
+    uint _S4 = atomic_fetch_add_explicit(((atomic_uint device*)((&kernelContext_0)->r_0->adjCounts_0+_S3)), 1U, memory_order_relaxed);
+         ^
+2 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-persistent-fused-cached.slang(185): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-persistent-fused-cached.slang(1070): warning :  unused variable '_S13' [-Wunused-variable]
+                    uint _S13 = atomic_fetch_or_explicit(((atomic_uint threadgroup*)((&kernelContext_2)->slotMiss_0)), 1U, memory_order_relaxed);
+                         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-persistent-fused-cached.slang(1077): warning :  unused variable '_S16' [-Wunused-variable]
+        uint _S16 = atomic_fetch_add_explicit(((atomic_uint device*)((&kernelContext_2)->r_0->adjCacheMetrics_0+_S5)), 1U, memory_order_relaxed);
+             ^
+3 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-persistent-fused-cached.slang(185): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-persistent-fused-cached.slang(185): warning :  unused variable '_S10' [-Wunused-variable]
+    uint _S10 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_2->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-persistent-fused-cached.slang(790): warning :  unused variable '_S47' [-Wunused-variable]
+                uint _S47 = atomic_fetch_add_explicit(((atomic_uint device*)((&kernelContext_11)->r_0->control_0+int(6))), 1U, memory_order_relaxed);
+                     ^
+2 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-persistent-fused-cached.slang(185): warning :  unused variable '_S22' [-Wunused-variable]
+    uint _S22 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_10->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-persistent-fused-cached.slang(185): warning :  unused variable '_S5' [-Wunused-variable]
+    uint _S5 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_2->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-persistent-fused-cached.slang(953): warning :  unused variable '_S3' [-Wunused-variable]
+        uint _S3 = atomic_fetch_or_explicit(((atomic_uint device*)((&kernelContext_1)->r_0->control_0+int(4))), 1U, memory_order_relaxed);
+             ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-fused-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-persistent-fused-cached.slang(185): warning :  unused variable '_S15' [-Wunused-variable]
+    uint _S15 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_9->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+

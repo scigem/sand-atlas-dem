@@ -1,0 +1,183 @@
+[WARN] No supported shader model found, pretending to support sm_6_0.
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/hostun-adaptive-mesh-v1/source_snapshot/sand_atlas_dem/shaders/solver.slang(182): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/hostun-adaptive-mesh-v1/source_snapshot/sand_atlas_dem/shaders/solver.slang(182): warning :  unused variable '_S5' [-Wunused-variable]
+    uint _S5 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/hostun-adaptive-mesh-v1/source_snapshot/sand_atlas_dem/shaders/solver.slang(182): warning :  unused variable '_S5' [-Wunused-variable]
+    uint _S5 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/hostun-adaptive-mesh-v1/source_snapshot/sand_atlas_dem/shaders/solver.slang(380): warning :  unused variable '_S26' [-Wunused-variable]
+    uint _S26 = findPairs_0(id_2, true, &kernelContext_5);
+         ^
+2 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/hostun-adaptive-mesh-v1/source_snapshot/sand_atlas_dem/shaders/solver.slang(182): warning :  unused variable '_S31' [-Wunused-variable]
+    uint _S31 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_5->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/hostun-adaptive-mesh-v1/source_snapshot/sand_atlas_dem/shaders/solver.slang(508): warning :  unused variable '_S79' [-Wunused-variable]
+                        uint _S79 = atomic_fetch_add_explicit(((atomic_uint device*)(kernelContext_9->r_0->contactCounts_0+pair_0)), 1U, memory_order_relaxed);
+                             ^
+2 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/hostun-adaptive-mesh-v1/source_snapshot/sand_atlas_dem/shaders/solver.slang(182): warning :  unused variable '_S10' [-Wunused-variable]
+    uint _S10 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_2->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/hostun-adaptive-mesh-v1/source_snapshot/sand_atlas_dem/shaders/solver.slang(719): warning :  unused variable '_S23' [-Wunused-variable]
+            uint _S23 = atomic_fetch_add_explicit(((atomic_uint device*)(r_1->control_0+int(6))), 1U, memory_order_relaxed);
+                 ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/hostun-adaptive-mesh-v1/source_snapshot/sand_atlas_dem/shaders/solver.slang(734): warning :  unused variable '_S29' [-Wunused-variable]
+        uint _S29 = atomic_fetch_add_explicit(((atomic_uint device*)(r_1->control_0+int(6))), 1U, memory_order_relaxed);
+             ^
+3 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/hostun-adaptive-mesh-v1/source_snapshot/sand_atlas_dem/shaders/solver.slang(182): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_1->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/hostun-adaptive-mesh-v1/source_snapshot/sand_atlas_dem/shaders/solver.slang(182): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+adaptive shape 1/53 nodes=99993 lists=32948 elapsed=1.8s
+adaptive shape 2/53 nodes=99993 lists=62031 elapsed=3.6s
+adaptive shape 3/53 nodes=99993 lists=69171 elapsed=5.3s
+adaptive shape 4/53 nodes=99993 lists=62030 elapsed=7.0s
+adaptive shape 5/53 nodes=99993 lists=17544 elapsed=9.0s
+adaptive shape 6/53 nodes=99993 lists=67788 elapsed=10.7s
+adaptive shape 7/53 nodes=99993 lists=34820 elapsed=12.7s
+adaptive shape 8/53 nodes=99993 lists=70680 elapsed=14.3s
+adaptive shape 9/53 nodes=99993 lists=64661 elapsed=16.2s
+adaptive shape 10/53 nodes=99993 lists=68687 elapsed=17.8s
+adaptive shape 11/53 nodes=99993 lists=69668 elapsed=19.7s
+adaptive shape 12/53 nodes=99993 lists=69006 elapsed=21.4s
+adaptive shape 13/53 nodes=99993 lists=42989 elapsed=23.4s
+adaptive shape 14/53 nodes=99993 lists=69810 elapsed=25.1s
+adaptive shape 15/53 nodes=99993 lists=68827 elapsed=26.8s
+adaptive shape 16/53 nodes=99993 lists=68093 elapsed=28.5s
+adaptive shape 17/53 nodes=99993 lists=27227 elapsed=30.6s
+adaptive shape 18/53 nodes=99993 lists=70965 elapsed=32.3s
+adaptive shape 19/53 nodes=26657 lists=12710 elapsed=32.8s
+adaptive shape 20/53 nodes=99993 lists=68401 elapsed=34.5s
+adaptive shape 21/53 nodes=99993 lists=66664 elapsed=36.2s
+adaptive shape 22/53 nodes=99993 lists=59873 elapsed=38.2s
+adaptive shape 23/53 nodes=99993 lists=60601 elapsed=40.0s
+adaptive shape 24/53 nodes=99993 lists=69546 elapsed=41.7s
+adaptive shape 25/53 nodes=99993 lists=71548 elapsed=43.4s
+adaptive shape 26/53 nodes=99993 lists=67170 elapsed=45.1s
+adaptive shape 27/53 nodes=99993 lists=69584 elapsed=47.3s
+adaptive shape 28/53 nodes=99993 lists=66114 elapsed=49.1s
+adaptive shape 29/53 nodes=99993 lists=69898 elapsed=50.8s
+adaptive shape 30/53 nodes=99993 lists=68134 elapsed=52.5s
+adaptive shape 31/53 nodes=99993 lists=65574 elapsed=54.2s
+adaptive shape 32/53 nodes=99993 lists=69492 elapsed=56.0s
+adaptive shape 33/53 nodes=99993 lists=47286 elapsed=58.3s
+adaptive shape 34/53 nodes=99993 lists=69919 elapsed=60.0s
+adaptive shape 35/53 nodes=67873 lists=11945 elapsed=61.0s
+adaptive shape 36/53 nodes=99993 lists=67130 elapsed=62.8s
+adaptive shape 37/53 nodes=99993 lists=66717 elapsed=64.5s
+adaptive shape 38/53 nodes=99993 lists=70042 elapsed=66.2s
+adaptive shape 39/53 nodes=99993 lists=70427 elapsed=68.0s
+adaptive shape 40/53 nodes=99993 lists=65951 elapsed=69.7s
+adaptive shape 41/53 nodes=99993 lists=67496 elapsed=71.5s
+adaptive shape 42/53 nodes=99993 lists=61912 elapsed=73.9s
+adaptive shape 43/53 nodes=99993 lists=53158 elapsed=75.6s
+adaptive shape 44/53 nodes=99993 lists=64941 elapsed=77.4s
+adaptive shape 45/53 nodes=99993 lists=70610 elapsed=79.1s
+adaptive shape 46/53 nodes=99993 lists=58052 elapsed=80.9s
+adaptive shape 47/53 nodes=99993 lists=69926 elapsed=82.7s
+adaptive shape 48/53 nodes=99993 lists=63557 elapsed=84.5s
+adaptive shape 49/53 nodes=99993 lists=70885 elapsed=86.3s
+adaptive shape 50/53 nodes=99993 lists=66783 elapsed=88.0s
+adaptive shape 51/53 nodes=99993 lists=69072 elapsed=89.8s
+adaptive shape 52/53 nodes=99993 lists=66570 elapsed=92.4s
+adaptive shape 53/53 nodes=99993 lists=68944 elapsed=94.2s
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/hostun-adaptive-mesh-v1/source_snapshot/sand_atlas_dem/shaders/baseline.slang(182): warning :  unused variable '_S31' [-Wunused-variable]
+    uint _S31 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_5->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/hostun-adaptive-mesh-v1/source_snapshot/sand_atlas_dem/shaders/baseline.slang(508): warning :  unused variable '_S79' [-Wunused-variable]
+                        uint _S79 = atomic_fetch_add_explicit(((atomic_uint device*)(kernelContext_9->r_0->contactCounts_0+pair_0)), 1U, memory_order_relaxed);
+                             ^
+2 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/hostun-adaptive-mesh-v1/source_snapshot/sand_atlas_dem/shaders/solver.slang(182): warning :  unused variable '_S22' [-Wunused-variable]
+    uint _S22 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_10->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/hostun-adaptive-mesh-v1/source_snapshot/sand_atlas_dem/shaders/solver.slang(182): warning :  unused variable '_S5' [-Wunused-variable]
+    uint _S5 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_2->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/hostun-adaptive-mesh-v1/source_snapshot/sand_atlas_dem/shaders/solver.slang(894): warning :  unused variable '_S3' [-Wunused-variable]
+        uint _S3 = atomic_fetch_or_explicit(((atomic_uint device*)((&kernelContext_1)->r_0->control_0+int(4))), 1U, memory_order_relaxed);
+             ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/hostun-adaptive-mesh-v1/source_snapshot/sand_atlas_dem/shaders/solver.slang(182): warning :  unused variable '_S15' [-Wunused-variable]
+    uint _S15 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_9->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/hostun-adaptive-mesh-v1/source_snapshot/sand_atlas_dem/shaders/brick.slang(187): warning :  unused variable '_S31' [-Wunused-variable]
+    uint _S31 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_5->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/hostun-adaptive-mesh-v1/source_snapshot/sand_atlas_dem/shaders/brick.slang(546): warning :  unused variable '_S100' [-Wunused-variable]
+                        uint _S100 = atomic_fetch_add_explicit(((atomic_uint device*)(kernelContext_10->r_0->contactCounts_0+pair_0)), 1U, memory_order_relaxed);
+                             ^
+2 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/hostun-adaptive-mesh-v1/source_snapshot/sand_atlas_dem/shaders/baseline-metrics.slang(183): warning :  unused variable '_S31' [-Wunused-variable]
+    uint _S31 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_5->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/hostun-adaptive-mesh-v1/source_snapshot/sand_atlas_dem/shaders/baseline-metrics.slang(251): warning :  unused variable '_S49' [-Wunused-variable]
+    uint _S49 = atomic_fetch_add_explicit(((atomic_uint device*)(kernelContext_6->r_0->meshQueryMetrics_0+int(0))), 1U, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/hostun-adaptive-mesh-v1/source_snapshot/sand_atlas_dem/shaders/baseline-metrics.slang(252): warning :  unused variable '_S50' [-Wunused-variable]
+    uint _S50 = atomic_fetch_add_explicit(((atomic_uint device*)(kernelContext_6->r_0->meshQueryMetrics_0+int(1))), _S34, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/hostun-adaptive-mesh-v1/source_snapshot/sand_atlas_dem/shaders/baseline-metrics.slang(253): warning :  unused variable '_S51' [-Wunused-variable]
+    uint _S51 = atomic_fetch_add_explicit(((atomic_uint device*)(kernelContext_6->r_0->meshQueryMetrics_0+int(2))), triangles_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/hostun-adaptive-mesh-v1/source_snapshot/sand_atlas_dem/shaders/baseline-metrics.slang(514): warning :  unused variable '_S86' [-Wunused-variable]
+                        uint _S86 = atomic_fetch_add_explicit(((atomic_uint device*)(kernelContext_9->r_0->contactCounts_0+pair_0)), 1U, memory_order_relaxed);
+                             ^
+5 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/hostun-adaptive-mesh-v1/source_snapshot/sand_atlas_dem/shaders/brick-metrics.slang(188): warning :  unused variable '_S31' [-Wunused-variable]
+    uint _S31 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_5->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/hostun-adaptive-mesh-v1/source_snapshot/sand_atlas_dem/shaders/brick-metrics.slang(256): warning :  unused variable '_S49' [-Wunused-variable]
+    uint _S49 = atomic_fetch_add_explicit(((atomic_uint device*)(kernelContext_6->r_0->meshQueryMetrics_0+int(0))), 1U, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/hostun-adaptive-mesh-v1/source_snapshot/sand_atlas_dem/shaders/brick-metrics.slang(257): warning :  unused variable '_S50' [-Wunused-variable]
+    uint _S50 = atomic_fetch_add_explicit(((atomic_uint device*)(kernelContext_6->r_0->meshQueryMetrics_0+int(1))), _S34, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/hostun-adaptive-mesh-v1/source_snapshot/sand_atlas_dem/shaders/brick-metrics.slang(258): warning :  unused variable '_S51' [-Wunused-variable]
+    uint _S51 = atomic_fetch_add_explicit(((atomic_uint device*)(kernelContext_6->r_0->meshQueryMetrics_0+int(2))), triangles_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/hostun-adaptive-mesh-v1/source_snapshot/sand_atlas_dem/shaders/brick-metrics.slang(288): warning :  unused variable '_S74' [-Wunused-variable]
+        uint _S74 = atomic_fetch_add_explicit(((atomic_uint device*)(kernelContext_7->r_0->meshQueryMetrics_0+int(8))), 1U, memory_order_relaxed);
+             ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/hostun-adaptive-mesh-v1/source_snapshot/sand_atlas_dem/shaders/brick-metrics.slang(277): warning :  unused variable '_S66' [-Wunused-variable]
+    uint _S66 = atomic_fetch_add_explicit(((atomic_uint device*)(kernelContext_7->r_0->meshQueryMetrics_0+int(4))), 1U, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/hostun-adaptive-mesh-v1/source_snapshot/sand_atlas_dem/shaders/brick-metrics.slang(277): warning :  unused variable '_S68' [-Wunused-variable]
+    uint _S68 = atomic_fetch_add_explicit(((atomic_uint device*)(kernelContext_7->r_0->meshQueryMetrics_0+int(6))), _S67, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/hostun-adaptive-mesh-v1/source_snapshot/sand_atlas_dem/shaders/brick-metrics.slang(291): warning :  unused variable '_S76' [-Wunused-variable]
+    uint _S76 = atomic_fetch_add_explicit(((atomic_uint device*)(kernelContext_7->r_0->meshQueryMetrics_0+int(5))), 1U, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/hostun-adaptive-mesh-v1/source_snapshot/sand_atlas_dem/shaders/brick-metrics.slang(552): warning :  unused variable '_S111' [-Wunused-variable]
+                        uint _S111 = atomic_fetch_add_explicit(((atomic_uint device*)(kernelContext_10->r_0->contactCounts_0+pair_0)), 1U, memory_order_relaxed);
+                             ^
+9 warnings generated.
+

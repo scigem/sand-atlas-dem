@@ -1,0 +1,44 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "case": "queued_mutated_config_and_outputs",
+      "passed": true
+    },
+    {
+      "case": "content_change_reuses_binding",
+      "passed": true
+    },
+    {
+      "case": "resource_identity_invalidates",
+      "passed": true
+    },
+    {
+      "case": "revert_reuses_original_root",
+      "passed": true
+    },
+    {
+      "case": "zero_length_scalar_change",
+      "passed": true
+    },
+    {
+      "case": "retained_binding_tree_is_snapshot",
+      "passed": true
+    }
+  ],
+  "hits": 2,
+  "misses": 5,
+  "backend": {
+    "format": "sand-dem-doctor/1",
+    "backend": "metal",
+    "adapter": "Apple M4 Max",
+    "slangpy": "0.43.1",
+    "python": "3.12.14",
+    "smoke_elements": 257,
+    "smoke_max_error": 0.0,
+    "fallback": false,
+    "floating_point_mode_requested": "precise"
+  },
+  "sources_unchanged": true,
+  "scientific_admission": false
+}

@@ -1,0 +1,6 @@
+{
+  "completed": false,
+  "stage": "production selection precondition before timing",
+  "reason": "The all-shapes>=131072 selector retained32: two Hostun shapes have8448 and64512 samples despite library median919488. No timing/equivalence pass inferred.",
+  "next_study": "v2 selects by median resolution, matching the measured library; unchanged5% performance and numerical gates. Original frozen source and failure retained."
+}

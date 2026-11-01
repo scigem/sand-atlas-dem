@@ -1,0 +1,21 @@
+{
+  "seed": 791,
+  "random_points": 2048,
+  "resolution": 32,
+  "capacities": [
+    96,
+    1
+  ],
+  "distance_atol_m": 2e-09,
+  "native_max_abs": 0.0,
+  "complete_atol": 1e-12,
+  "files": {
+    "/private/tmp/sand-atlas-dem-walls/assets/generated/concave-prism.h5": "06ac75f00c247a9d25d871ff0a8209a8f471bf949052c2981c9b53ef795ed06a",
+    "/private/tmp/sand-atlas-dem-walls/examples/probe_brick_mesh.py": "5625cb3687cfbddb680f20480ad3afd0a116d604a262ab13ab9328998eb4d2fd",
+    "/private/tmp/sand-atlas-dem-walls/examples/brick_mesh.py": "641c9551660f35dd077abaf915d8eedaf06907a785646a4f16b60e9a32d5c01d",
+    "/private/tmp/sand-atlas-dem-walls/examples/coherent_mesh_shader.py": "59d9db42b950a4484c0b1f78d95f56e5178f8fcf17cd9ecd79c18b761f293804",
+    "/private/tmp/sand-atlas-dem-walls/evidence/brick-mesh-query-probe-v1/baseline.slang": "3fd246f01596151621247e89a52748b03a7cb996011476e9314ac06e5461b209",
+    "/private/tmp/sand-atlas-dem-walls/evidence/brick-mesh-query-probe-v1/brick.slang": "68e29ecd9eaf4bc419579f88b64745b654d569d7b590ab9aea29286148e627de"
+  },
+  "scope": "Independent FP64 all-triangle candidate completeness; box analytical and concave triangle distances; exact GPU normal/distance comparison; cell boundaries, ties, external points, shape offsets and forced-small-cap fallback. Freeze before compilation; no CPU DEM."
+}

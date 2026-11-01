@@ -1,0 +1,3450 @@
+{
+  "identity": "hostun-frontier-performance-v1",
+  "completed": true,
+  "backend": {
+    "format": "sand-dem-doctor/1",
+    "backend": "metal",
+    "adapter": "Apple M4 Max",
+    "slangpy": "0.43.1",
+    "python": "3.12.14",
+    "smoke_elements": 257,
+    "smoke_max_error": 0.0,
+    "fallback": false,
+    "floating_point_mode_requested": "precise"
+  },
+  "sources_and_inputs_unchanged": true,
+  "median_seconds_per_step": {
+    "baseline": 0.008927295242301625,
+    "frontier8-pool4096": 0.010109175128945935,
+    "frontier16-pool4096": 0.008601045734849322,
+    "frontier64-pool4096": 0.008814041179903143,
+    "frontier128-pool4096": 0.008514146977177006,
+    "frontier64-pool16384": 0.008584514319863956,
+    "frontier128-pool16384": 0.008466854656035139
+  },
+  "speedups": {
+    "baseline": 1.0,
+    "frontier8-pool4096": 0.8830883952875448,
+    "frontier16-pool4096": 1.0379313768941398,
+    "frontier64-pool4096": 1.0128492776567362,
+    "frontier128-pool4096": 1.0485249157939254,
+    "frontier64-pool16384": 1.0399301474335594,
+    "frontier128-pool16384": 1.0543815389506286
+  },
+  "eligible": {
+    "frontier8-pool4096": false,
+    "frontier16-pool4096": false,
+    "frontier64-pool4096": false,
+    "frontier128-pool4096": false,
+    "frontier64-pool16384": false,
+    "frontier128-pool16384": true
+  },
+  "checks": [
+    {
+      "mode": "frontier128-pool16384",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 2.220446049250313e-16,
+        "rotation": 0.0,
+        "force": 2.0766328656662836e-09,
+        "torque": 3.5284257737799862e-09
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "frontier64-pool16384",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 6.661338147750939e-16,
+        "rotation": 3.552713678800501e-15,
+        "force": 2.9368023568565604e-09,
+        "torque": 3.5284257737799862e-09
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "frontier128-pool4096",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 4.440892098500626e-16,
+        "rotation": 7.105427357601002e-15,
+        "force": 2.0766328656662836e-09,
+        "torque": 0.0
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "frontier64-pool4096",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 4.440892098500626e-16,
+        "rotation": 7.105427357601002e-15,
+        "force": 2.9368023568565604e-09,
+        "torque": 3.5284257737799862e-09
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "frontier16-pool4096",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 1.1102230246251565e-15,
+        "rotation": 7.105427357601002e-15,
+        "force": 2.9368023568565604e-09,
+        "torque": 3.5284257737799862e-09
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "frontier8-pool4096",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 6.661338147750939e-16,
+        "rotation": 0.0,
+        "force": 2.9368023568565604e-09,
+        "torque": 3.5284257737799862e-09
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "baseline",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 6.661338147750939e-16,
+        "rotation": 0.0,
+        "force": 2.0766328656662836e-09,
+        "torque": 0.0
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "baseline",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 5.551115123125783e-16,
+        "rotation": 0.0,
+        "force": 2.0766328656662836e-09,
+        "torque": 1.4113703095119945e-08
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "frontier8-pool4096",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 6.661338147750939e-16,
+        "rotation": 0.0,
+        "force": 2.9368023568565604e-09,
+        "torque": 3.5284257737799862e-09
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "frontier16-pool4096",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 1.1102230246251565e-15,
+        "rotation": 7.105427357601002e-15,
+        "force": 2.0766328656662836e-09,
+        "torque": 3.5284257737799862e-09
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "frontier64-pool4096",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 4.440892098500626e-16,
+        "rotation": 7.105427357601002e-15,
+        "force": 2.9368023568565604e-09,
+        "torque": 1.4113703095119945e-08
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "frontier128-pool4096",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 4.440892098500626e-16,
+        "rotation": 0.0,
+        "force": 2.0766328656662836e-09,
+        "torque": 3.5284257737799862e-09
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "frontier64-pool16384",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 8.881784197001252e-16,
+        "rotation": 0.0,
+        "force": 2.9368023568565604e-09,
+        "torque": 0.0
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "frontier128-pool16384",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 4.440892098500626e-16,
+        "rotation": 0.0,
+        "force": 2.0766328656662836e-09,
+        "torque": 3.5284257737799862e-09
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "frontier128-pool16384",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 2.220446049250313e-16,
+        "rotation": 7.105427357601002e-15,
+        "force": 2.0766328656662836e-09,
+        "torque": 3.5284257737799862e-09
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "frontier64-pool16384",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 4.440892098500626e-16,
+        "rotation": 3.552713678800501e-15,
+        "force": 2.9368023568565604e-09,
+        "torque": 3.5284257737799862e-09
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "frontier128-pool4096",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 6.661338147750939e-16,
+        "rotation": 0.0,
+        "force": 2.0766328656662836e-09,
+        "torque": 0.0
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "frontier64-pool4096",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 8.881784197001252e-16,
+        "rotation": 7.105427357601002e-15,
+        "force": 2.0766328656662836e-09,
+        "torque": 3.5284257737799862e-09
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "frontier16-pool4096",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 8.881784197001252e-16,
+        "rotation": 7.105427357601002e-15,
+        "force": 2.0766328656662836e-09,
+        "torque": 3.5284257737799862e-09
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "frontier8-pool4096",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 1.3322676295501878e-15,
+        "rotation": 7.105427357601002e-15,
+        "force": 2.9368023568565604e-09,
+        "torque": 0.0
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "baseline",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 4.440892098500626e-16,
+        "rotation": 3.552713678800501e-15,
+        "force": 2.0766328656662836e-09,
+        "torque": 1.4113703095119945e-08
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "baseline",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 1.1102230246251565e-15,
+        "rotation": 7.105427357601002e-15,
+        "force": 2.9368023568565604e-09,
+        "torque": 1.4113703095119945e-08
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "frontier8-pool4096",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 3.608224830031759e-16,
+        "rotation": 0.0,
+        "force": 0.0,
+        "torque": 3.5284257737799862e-09
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "frontier16-pool4096",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 1.1102230246251565e-15,
+        "rotation": 7.105427357601002e-15,
+        "force": 2.9368023568565604e-09,
+        "torque": 3.5284257737799862e-09
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "frontier64-pool4096",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 4.440892098500626e-16,
+        "rotation": 7.105427357601002e-15,
+        "force": 2.0766328656662836e-09,
+        "torque": 3.5284257737799862e-09
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "frontier128-pool4096",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 6.661338147750939e-16,
+        "rotation": 0.0,
+        "force": 0.0,
+        "torque": 3.5284257737799862e-09
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "frontier64-pool16384",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 3.3306690738754696e-16,
+        "rotation": 0.0,
+        "force": 2.9368023568565604e-09,
+        "torque": 1.454807119216639e-08
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "frontier128-pool16384",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 6.661338147750939e-16,
+        "rotation": 0.0,
+        "force": 2.0766328656662836e-09,
+        "torque": 3.5284257737799862e-09
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "frontier128-pool16384",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 4.440892098500626e-16,
+        "rotation": 0.0,
+        "force": 2.9368023568565604e-09,
+        "torque": 3.5284257737799862e-09
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "frontier64-pool16384",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 8.881784197001252e-16,
+        "rotation": 7.105427357601002e-15,
+        "force": 2.0766328656662836e-09,
+        "torque": 3.5284257737799862e-09
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "frontier128-pool4096",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 8.881784197001252e-16,
+        "rotation": 0.0,
+        "force": 2.0766328656662836e-09,
+        "torque": 0.0
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "frontier64-pool4096",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 1.1102230246251565e-15,
+        "rotation": 3.552713678800501e-15,
+        "force": 2.0766328656662836e-09,
+        "torque": 3.5284257737799862e-09
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "frontier16-pool4096",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 6.661338147750939e-16,
+        "rotation": 7.105427357601002e-15,
+        "force": 2.0766328656662836e-09,
+        "torque": 0.0
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "frontier8-pool4096",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 1.1102230246251565e-15,
+        "rotation": 7.105427357601002e-15,
+        "force": 2.0766328656662836e-09,
+        "torque": 0.0
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "baseline",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 4.440892098500626e-16,
+        "rotation": 0.0,
+        "force": 2.0766328656662836e-09,
+        "torque": 1.4113703095119945e-08
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "frontier8-pool4096",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 1.1102230246251565e-15,
+        "rotation": 0.0,
+        "force": 2.0766328656662836e-09,
+        "torque": 1.4113703095119945e-08
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "frontier16-pool4096",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 8.881784197001252e-16,
+        "rotation": 7.105427357601002e-15,
+        "force": 2.0766328656662836e-09,
+        "torque": 1.454807119216639e-08
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "frontier64-pool4096",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 8.881784197001252e-16,
+        "rotation": 7.105427357601002e-15,
+        "force": 2.0766328656662836e-09,
+        "torque": 1.454807119216639e-08
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "frontier128-pool4096",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 6.661338147750939e-16,
+        "rotation": 0.0,
+        "force": 2.0766328656662836e-09,
+        "torque": 1.454807119216639e-08
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "frontier64-pool16384",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 2.7755575615628914e-16,
+        "rotation": 0.0,
+        "force": 2.9368023568565604e-09,
+        "torque": 1.4113703095119945e-08
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "frontier128-pool16384",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 6.661338147750939e-16,
+        "rotation": 0.0,
+        "force": 2.9368023568565604e-09,
+        "torque": 1.454807119216639e-08
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "split-profile",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 2.220446049250313e-16,
+        "rotation": 0.0,
+        "force": 2.076631089309444e-09,
+        "torque": 3.5299259071308597e-09
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    }
+  ],
+  "equivalence_passed": true,
+  "counters": {
+    "baseline": {
+      "totals": [
+        347,
+        351,
+        11232,
+        12410,
+        862,
+        13775,
+        956,
+        0
+      ],
+      "per_pair_clusters_and_samples": [
+        [
+          64,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          66,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          78,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          112,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          66,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          66,
+          0
+        ],
+        [
+          530,
+          6620
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          34,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          66,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          68,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          66,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          68,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          68,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          66,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          68,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          66,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          682,
+          7155
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ]
+      ],
+      "contacts": 956
+    },
+    "all-hull-roots": {
+      "totals": [
+        347,
+        346,
+        11072,
+        12250,
+        862,
+        13775,
+        956,
+        0
+      ],
+      "per_pair_clusters_and_samples": [
+        [
+          64,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          66,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          78,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          112,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          66,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          66,
+          0
+        ],
+        [
+          530,
+          6620
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          34,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          66,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          68,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          66,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          68,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          68,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          66,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          68,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          66,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          682,
+          7155
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          32,
+          0
+        ]
+      ],
+      "contacts": 956
+    }
+  },
+  "stage_mean_seconds": {
+    "drift": 0.0004089660906174686,
+    "neighbours": 0.0005229375019553117,
+    "contact_geometry": 0.0073249674642283935,
+    "friction_and_history": 0.0007018592878011987,
+    "force_reduction": 0.0004536251690296922,
+    "final_kick": 0.00023094143034541048
+  },
+  "scientific_admission": false
+}

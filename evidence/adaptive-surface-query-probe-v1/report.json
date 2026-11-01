@@ -1,0 +1,184 @@
+{
+  "checks": [
+    {
+      "shape": 0,
+      "capacity": 24,
+      "points": 2820,
+      "cpu_candidate_queries": 1164,
+      "complete": true,
+      "native_max_abs": 0.0,
+      "independent_distance_max_abs_m": 6.989945677392945e-11,
+      "metrics": {
+        "baseline": [
+          2820,
+          51400,
+          28956,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "brick": [
+          1673,
+          32397,
+          19221,
+          0,
+          1164,
+          1147,
+          21152,
+          0,
+          17,
+          1012,
+          0,
+          644
+        ]
+      },
+      "passed": true
+    },
+    {
+      "shape": 1,
+      "capacity": 24,
+      "points": 2820,
+      "cpu_candidate_queries": 2738,
+      "complete": true,
+      "native_max_abs": 0.0,
+      "independent_distance_max_abs_m": 2.155283526689589e-10,
+      "metrics": {
+        "baseline": [
+          2820,
+          34651,
+          36066,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "brick": [
+          445,
+          5408,
+          5761,
+          0,
+          2738,
+          2375,
+          54760,
+          0,
+          363,
+          0,
+          0,
+          82
+        ]
+      },
+      "passed": true
+    },
+    {
+      "shape": 0,
+      "capacity": 1,
+      "points": 2820,
+      "cpu_candidate_queries": 0,
+      "complete": true,
+      "native_max_abs": 0.0,
+      "independent_distance_max_abs_m": 6.989945677392945e-11,
+      "metrics": {
+        "baseline": [
+          2820,
+          51400,
+          28956,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "brick": [
+          2820,
+          51400,
+          28956,
+          0,
+          0,
+          0,
+          0,
+          360,
+          0,
+          1674,
+          0,
+          786
+        ]
+      },
+      "passed": true
+    },
+    {
+      "shape": 1,
+      "capacity": 1,
+      "points": 2820,
+      "cpu_candidate_queries": 0,
+      "complete": true,
+      "native_max_abs": 0.0,
+      "independent_distance_max_abs_m": 2.155283526689589e-10,
+      "metrics": {
+        "baseline": [
+          2820,
+          34651,
+          36066,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "brick": [
+          2820,
+          34651,
+          36066,
+          0,
+          0,
+          0,
+          0,
+          362,
+          0,
+          1708,
+          0,
+          750
+        ]
+      },
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "sources_unchanged": true,
+  "refined_box_tree": true,
+  "path_coverage": {
+    "fast": 3522,
+    "forced_small_cap_fallback": 5640,
+    "near_tie_fallback": 380
+  },
+  "backend": {
+    "format": "sand-dem-doctor/1",
+    "backend": "metal",
+    "adapter": "Apple M4 Max",
+    "slangpy": "0.43.1",
+    "python": "3.12.14",
+    "smoke_elements": 257,
+    "smoke_max_error": 0.0,
+    "fallback": false,
+    "floating_point_mode_requested": "precise"
+  },
+  "scientific_admission": false
+}

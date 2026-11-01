@@ -1,0 +1,17 @@
+{
+  "identity": "mesh-face-normal-probe-v1",
+  "distance_atol": 1e-06,
+  "normal_atol": 2e-05,
+  "depths": [
+    0.01,
+    0.0001,
+    1e-06,
+    1e-07
+  ],
+  "modules": {
+    "evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/baseline.slang": "258bc2e5c0e1fb16b13cfdb00f39389c15d7cb32ae5d5d5733c9eef3732a8905",
+    "evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/precision.slang": "3e7c357b72ae0629837455fee00394c3fc58f47b604ec818b47ab044fbb0fda9"
+  },
+  "driver_sha256": "4d418e90eeaf366283bbe040b43b6e90b978648dfb14853e678c507790b21d87",
+  "scope": "Analytical signed box gradients from actual FP32 query coordinates; interior-face, exterior-face, edge and corner points. Same scalar distance path. Diagnostic comparison, no scientific admission."
+}

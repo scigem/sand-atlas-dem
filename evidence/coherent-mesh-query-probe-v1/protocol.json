@@ -1,0 +1,17 @@
+{
+  "identity": "coherent-mesh-query-probe-v1",
+  "seed": 791,
+  "count": 1024,
+  "rounds": 4,
+  "distance_atol_m": 2e-09,
+  "native_atol": 0.0,
+  "modules": {
+    "/private/tmp/sand-atlas-dem-walls/evidence/coherent-mesh-query-probe-v1/baseline.slang": "258bc2e5c0e1fb16b13cfdb00f39389c15d7cb32ae5d5d5733c9eef3732a8905",
+    "/private/tmp/sand-atlas-dem-walls/evidence/coherent-mesh-query-probe-v1/coherent.slang": "205e7f7dbb8015e9be7a15736349df00a0f654d7779171ceba069f1fed3150be"
+  },
+  "asset": {
+    "/private/tmp/sand-atlas-dem-walls/assets/generated/concave-prism.h5": "06ac75f00c247a9d25d871ff0a8209a8f471bf949052c2981c9b53ef795ed06a"
+  },
+  "driver_sha256": "050b8095c7af67ac681f45f34b1a93d161a65ecfc0f20eea10ea144b9002efb7",
+  "scope": "Random near/interior/exterior points; alternating cold and arbitrary valid triangle seeds; repeated queries jump across geometry; packed shape offsets. Independent FP64 analytical box and trimesh triangle distance. No CPU DEM."
+}

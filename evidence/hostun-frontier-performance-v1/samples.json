@@ -1,0 +1,212 @@
+[
+  {
+    "repeat": 0,
+    "mode": "baseline",
+    "seconds_per_step": 0.00902931314885791
+  },
+  {
+    "repeat": 0,
+    "mode": "frontier8-pool4096",
+    "seconds_per_step": 0.010062500000458385
+  },
+  {
+    "repeat": 0,
+    "mode": "frontier16-pool4096",
+    "seconds_per_step": 0.008571899085836776
+  },
+  {
+    "repeat": 0,
+    "mode": "frontier64-pool4096",
+    "seconds_per_step": 0.008815441406113678
+  },
+  {
+    "repeat": 0,
+    "mode": "frontier128-pool4096",
+    "seconds_per_step": 0.008514647789525043
+  },
+  {
+    "repeat": 0,
+    "mode": "frontier64-pool16384",
+    "seconds_per_step": 0.008583958655435708
+  },
+  {
+    "repeat": 0,
+    "mode": "frontier128-pool16384",
+    "seconds_per_step": 0.00846499479666818
+  },
+  {
+    "repeat": 0,
+    "mode": "frontier128-pool16384",
+    "seconds_per_step": 0.00843967480432184
+  },
+  {
+    "repeat": 0,
+    "mode": "frontier64-pool16384",
+    "seconds_per_step": 0.008585069984292204
+  },
+  {
+    "repeat": 0,
+    "mode": "frontier128-pool4096",
+    "seconds_per_step": 0.008502814125677105
+  },
+  {
+    "repeat": 0,
+    "mode": "frontier64-pool4096",
+    "seconds_per_step": 0.00881174902406201
+  },
+  {
+    "repeat": 0,
+    "mode": "frontier16-pool4096",
+    "seconds_per_step": 0.008619222656307102
+  },
+  {
+    "repeat": 0,
+    "mode": "frontier8-pool4096",
+    "seconds_per_step": 0.01012342773447017
+  },
+  {
+    "repeat": 0,
+    "mode": "baseline",
+    "seconds_per_step": 0.008923357093408413
+  },
+  {
+    "repeat": 1,
+    "mode": "baseline",
+    "seconds_per_step": 0.008921184898099455
+  },
+  {
+    "repeat": 1,
+    "mode": "frontier8-pool4096",
+    "seconds_per_step": 0.010117247070411395
+  },
+  {
+    "repeat": 1,
+    "mode": "frontier16-pool4096",
+    "seconds_per_step": 0.008588654617597058
+  },
+  {
+    "repeat": 1,
+    "mode": "frontier64-pool4096",
+    "seconds_per_step": 0.008813018883301993
+  },
+  {
+    "repeat": 1,
+    "mode": "frontier128-pool4096",
+    "seconds_per_step": 0.008532334632946004
+  },
+  {
+    "repeat": 1,
+    "mode": "frontier64-pool16384",
+    "seconds_per_step": 0.008589972655499878
+  },
+  {
+    "repeat": 1,
+    "mode": "frontier128-pool16384",
+    "seconds_per_step": 0.008491460609548085
+  },
+  {
+    "repeat": 1,
+    "mode": "frontier128-pool16384",
+    "seconds_per_step": 0.008483399414217274
+  },
+  {
+    "repeat": 1,
+    "mode": "frontier64-pool16384",
+    "seconds_per_step": 0.008580778648138221
+  },
+  {
+    "repeat": 1,
+    "mode": "frontier128-pool4096",
+    "seconds_per_step": 0.00851364616482897
+  },
+  {
+    "repeat": 1,
+    "mode": "frontier64-pool4096",
+    "seconds_per_step": 0.00882173275022069
+  },
+  {
+    "repeat": 1,
+    "mode": "frontier16-pool4096",
+    "seconds_per_step": 0.008611640297203849
+  },
+  {
+    "repeat": 1,
+    "mode": "frontier8-pool4096",
+    "seconds_per_step": 0.01005731868735893
+  },
+  {
+    "repeat": 1,
+    "mode": "baseline",
+    "seconds_per_step": 0.00893462597650796
+  },
+  {
+    "repeat": 2,
+    "mode": "baseline",
+    "seconds_per_step": 0.008924391921937058
+  },
+  {
+    "repeat": 2,
+    "mode": "frontier8-pool4096",
+    "seconds_per_step": 0.010117420242750086
+  },
+  {
+    "repeat": 2,
+    "mode": "frontier16-pool4096",
+    "seconds_per_step": 0.00863291732093785
+  },
+  {
+    "repeat": 2,
+    "mode": "frontier64-pool4096",
+    "seconds_per_step": 0.008815063476504292
+  },
+  {
+    "repeat": 2,
+    "mode": "frontier128-pool4096",
+    "seconds_per_step": 0.008491399093145446
+  },
+  {
+    "repeat": 2,
+    "mode": "frontier64-pool16384",
+    "seconds_per_step": 0.008582075195590733
+  },
+  {
+    "repeat": 2,
+    "mode": "frontier128-pool16384",
+    "seconds_per_step": 0.008468714515402098
+  },
+  {
+    "repeat": 2,
+    "mode": "frontier128-pool16384",
+    "seconds_per_step": 0.008460956382805307
+  },
+  {
+    "repeat": 2,
+    "mode": "frontier64-pool16384",
+    "seconds_per_step": 0.00861796549270366
+  },
+  {
+    "repeat": 2,
+    "mode": "frontier128-pool4096",
+    "seconds_per_step": 0.00851470475026872
+  },
+  {
+    "repeat": 2,
+    "mode": "frontier64-pool4096",
+    "seconds_per_step": 0.008735411132875015
+  },
+  {
+    "repeat": 2,
+    "mode": "frontier16-pool4096",
+    "seconds_per_step": 0.008590451172494795
+  },
+  {
+    "repeat": 2,
+    "mode": "frontier8-pool4096",
+    "seconds_per_step": 0.010101103187480476
+  },
+  {
+    "repeat": 2,
+    "mode": "baseline",
+    "seconds_per_step": 0.008930198562666192
+  }
+]

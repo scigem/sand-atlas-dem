@@ -1,0 +1,282 @@
+{
+  "build_seconds": 100.35064566705842,
+  "resolution": 32,
+  "capacity": 96,
+  "per_shape": [
+    {
+      "triangles": 48524,
+      "bricks": 32768,
+      "usable_bricks": 0
+    },
+    {
+      "triangles": 24664,
+      "bricks": 32768,
+      "usable_bricks": 0
+    },
+    {
+      "triangles": 14208,
+      "bricks": 32768,
+      "usable_bricks": 2918
+    },
+    {
+      "triangles": 22576,
+      "bricks": 32768,
+      "usable_bricks": 0
+    },
+    {
+      "triangles": 59872,
+      "bricks": 32768,
+      "usable_bricks": 0
+    },
+    {
+      "triangles": 19156,
+      "bricks": 32768,
+      "usable_bricks": 27
+    },
+    {
+      "triangles": 41664,
+      "bricks": 32768,
+      "usable_bricks": 0
+    },
+    {
+      "triangles": 15324,
+      "bricks": 32768,
+      "usable_bricks": 775
+    },
+    {
+      "triangles": 19712,
+      "bricks": 32768,
+      "usable_bricks": 26
+    },
+    {
+      "triangles": 15848,
+      "bricks": 32768,
+      "usable_bricks": 325
+    },
+    {
+      "triangles": 13696,
+      "bricks": 32768,
+      "usable_bricks": 1648
+    },
+    {
+      "triangles": 17216,
+      "bricks": 32768,
+      "usable_bricks": 377
+    },
+    {
+      "triangles": 44824,
+      "bricks": 32768,
+      "usable_bricks": 0
+    },
+    {
+      "triangles": 16444,
+      "bricks": 32768,
+      "usable_bricks": 315
+    },
+    {
+      "triangles": 17588,
+      "bricks": 32768,
+      "usable_bricks": 80
+    },
+    {
+      "triangles": 20468,
+      "bricks": 32768,
+      "usable_bricks": 22
+    },
+    {
+      "triangles": 42952,
+      "bricks": 32768,
+      "usable_bricks": 0
+    },
+    {
+      "triangles": 15580,
+      "bricks": 32768,
+      "usable_bricks": 1226
+    },
+    {
+      "triangles": 84,
+      "bricks": 32768,
+      "usable_bricks": 32768
+    },
+    {
+      "triangles": 19300,
+      "bricks": 32768,
+      "usable_bricks": 252
+    },
+    {
+      "triangles": 20580,
+      "bricks": 32768,
+      "usable_bricks": 13
+    },
+    {
+      "triangles": 26496,
+      "bricks": 32768,
+      "usable_bricks": 0
+    },
+    {
+      "triangles": 24228,
+      "bricks": 32768,
+      "usable_bricks": 0
+    },
+    {
+      "triangles": 16140,
+      "bricks": 32768,
+      "usable_bricks": 29
+    },
+    {
+      "triangles": 14108,
+      "bricks": 32768,
+      "usable_bricks": 1256
+    },
+    {
+      "triangles": 19368,
+      "bricks": 32768,
+      "usable_bricks": 115
+    },
+    {
+      "triangles": 13736,
+      "bricks": 32768,
+      "usable_bricks": 1048
+    },
+    {
+      "triangles": 22548,
+      "bricks": 32768,
+      "usable_bricks": 1
+    },
+    {
+      "triangles": 13112,
+      "bricks": 32768,
+      "usable_bricks": 2192
+    },
+    {
+      "triangles": 18820,
+      "bricks": 32768,
+      "usable_bricks": 107
+    },
+    {
+      "triangles": 22284,
+      "bricks": 32768,
+      "usable_bricks": 0
+    },
+    {
+      "triangles": 17824,
+      "bricks": 32768,
+      "usable_bricks": 167
+    },
+    {
+      "triangles": 34088,
+      "bricks": 32768,
+      "usable_bricks": 0
+    },
+    {
+      "triangles": 14972,
+      "bricks": 32768,
+      "usable_bricks": 664
+    },
+    {
+      "triangles": 44,
+      "bricks": 32768,
+      "usable_bricks": 32768
+    },
+    {
+      "triangles": 16668,
+      "bricks": 32768,
+      "usable_bricks": 216
+    },
+    {
+      "triangles": 21136,
+      "bricks": 32768,
+      "usable_bricks": 18
+    },
+    {
+      "triangles": 14780,
+      "bricks": 32768,
+      "usable_bricks": 1112
+    },
+    {
+      "triangles": 13948,
+      "bricks": 32768,
+      "usable_bricks": 1009
+    },
+    {
+      "triangles": 19040,
+      "bricks": 32768,
+      "usable_bricks": 48
+    },
+    {
+      "triangles": 19808,
+      "bricks": 32768,
+      "usable_bricks": 55
+    },
+    {
+      "triangles": 23908,
+      "bricks": 32768,
+      "usable_bricks": 0
+    },
+    {
+      "triangles": 29448,
+      "bricks": 32768,
+      "usable_bricks": 0
+    },
+    {
+      "triangles": 20424,
+      "bricks": 32768,
+      "usable_bricks": 1
+    },
+    {
+      "triangles": 12632,
+      "bricks": 32768,
+      "usable_bricks": 1099
+    },
+    {
+      "triangles": 23848,
+      "bricks": 32768,
+      "usable_bricks": 0
+    },
+    {
+      "triangles": 17936,
+      "bricks": 32768,
+      "usable_bricks": 373
+    },
+    {
+      "triangles": 22496,
+      "bricks": 32768,
+      "usable_bricks": 1
+    },
+    {
+      "triangles": 13044,
+      "bricks": 32768,
+      "usable_bricks": 1672
+    },
+    {
+      "triangles": 23456,
+      "bricks": 32768,
+      "usable_bricks": 14
+    },
+    {
+      "triangles": 17464,
+      "bricks": 32768,
+      "usable_bricks": 305
+    },
+    {
+      "triangles": 20256,
+      "bricks": 32768,
+      "usable_bricks": 12
+    },
+    {
+      "triangles": 16196,
+      "bricks": 32768,
+      "usable_bricks": 617
+    }
+  ],
+  "bytes": 66488664,
+  "array_sha256": {
+    "brickInfo": "cd2ba2f05d0e4387905c62ebbc9190ef9ea632e740ea3e3d465e9e3cd08781db",
+    "brickOrigin": "48caf2e5415a8c4cc86f97ee3044b57d2c1c7350ee919032d7fc0e40cd9adaf6",
+    "brickScale": "b73012f8f3a3eb9d00e0353163fabb2f90c147114158f60a9281f5aa5b68d0d5",
+    "brickCenters": "1d38059d0c259ea7fc456475578364358b620462422fad49150354e74d79473f",
+    "brickRanges": "2c4544ec02b7b74ea627379cb6156c91e84664a2cb41a6a9ce63d760e836aa24",
+    "brickTriangles": "a564f281bebc1200cbdc7723506d14d27e4527580baa87a7fb8b2a7c030eff7f"
+  },
+  "margin_eps_multiplier": 128
+}

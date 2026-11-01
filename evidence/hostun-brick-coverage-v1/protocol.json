@@ -1,0 +1,9 @@
+{
+  "files": {
+    "studies/hostun-brick-mesh-v1.json": "d49bf8674ef8fcd3685bcc599a0eaf4fa887f4ce7bd3fb7bc2eb207feb0a238d",
+    "/private/tmp/sand-atlas-dem-walls/examples/diagnose_brick_coverage.py": "6a2b58cc7197197eea5e597a685f7c468997bd960b535bc319be8a78f1aa228c",
+    "/private/tmp/sand-atlas-dem-walls/evidence/hostun-first-contact-profile-v1/private/checkpoint.h5": "831a722b693cb13534cea220524d24641c6040af70109622056c2d331f87102b",
+    "/private/tmp/sand-atlas-dem-walls/evidence/hostun-balanced424-preparation-v3/study/private/shapes.h5": "c4b32a08ad649ff8c85f1393c17c881b4b743b9dfba106eded304d06ef6b02a7"
+  },
+  "scope": "Static FP64 checkpoint contact-coordinate diagnostic; counts conservative brick candidates directly. Not a CPU simulation or a throughput measurement."
+}

@@ -1,0 +1,56 @@
+[
+  {
+    "build_seconds": 0.4794237919850275,
+    "resolution": 32,
+    "capacity": 96,
+    "per_shape": [
+      {
+        "triangles": 12,
+        "bricks": 32768,
+        "usable_bricks": 32768
+      },
+      {
+        "triangles": 20,
+        "bricks": 32768,
+        "usable_bricks": 32768
+      }
+    ],
+    "bytes": 4415296,
+    "array_sha256": {
+      "brickInfo": "8b23ecc679429f9bf3e8dd0138992ad5d66949b1de994cf632a60e7be44ff222",
+      "brickOrigin": "b6d0b18f950ea669f280c47484d91254ba7bd90e2b588f4f428c5148be4f8854",
+      "brickScale": "553d16c70eb79cd2a8e842e4ba80dc1cb347454467f6c34af753fa450eb0f7cb",
+      "brickCenters": "16c83a5e80a34d8c3c85fd818f90b6cb16750d0d99add4a3d33802d3eeee9d66",
+      "brickRanges": "169e08b77485963aeec99db32b475b8daa51ef1c00c07dd3bb7562cdb5fdc2ee",
+      "brickTriangles": "b23ff5837e861ecc434ceda3c2ab6dd6d4ba37e34cf5bc785524cf5cd91c2e41"
+    },
+    "margin_eps_multiplier": 128
+  },
+  {
+    "build_seconds": 0.42664408299606293,
+    "resolution": 32,
+    "capacity": 1,
+    "per_shape": [
+      {
+        "triangles": 12,
+        "bricks": 32768,
+        "usable_bricks": 0
+      },
+      {
+        "triangles": 20,
+        "bricks": 32768,
+        "usable_bricks": 0
+      }
+    ],
+    "bytes": 2097252,
+    "array_sha256": {
+      "brickInfo": "8b23ecc679429f9bf3e8dd0138992ad5d66949b1de994cf632a60e7be44ff222",
+      "brickOrigin": "b6d0b18f950ea669f280c47484d91254ba7bd90e2b588f4f428c5148be4f8854",
+      "brickScale": "553d16c70eb79cd2a8e842e4ba80dc1cb347454467f6c34af753fa450eb0f7cb",
+      "brickCenters": "16c83a5e80a34d8c3c85fd818f90b6cb16750d0d99add4a3d33802d3eeee9d66",
+      "brickRanges": "30e14955ebf1352266dc2ff8067e68104607e750abb9d3b36582b8af909fcb58",
+      "brickTriangles": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+    },
+    "margin_eps_multiplier": 128
+  }
+]

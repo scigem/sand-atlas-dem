@@ -1,0 +1,333 @@
+[WARN] No supported shader model found, pretending to support sm_6_0.
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/solver.slang(182): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/solver.slang(182): warning :  unused variable '_S5' [-Wunused-variable]
+    uint _S5 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/solver.slang(182): warning :  unused variable '_S5' [-Wunused-variable]
+    uint _S5 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/solver.slang(380): warning :  unused variable '_S26' [-Wunused-variable]
+    uint _S26 = findPairs_0(id_2, true, &kernelContext_5);
+         ^
+2 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/solver.slang(182): warning :  unused variable '_S31' [-Wunused-variable]
+    uint _S31 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_5->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/solver.slang(508): warning :  unused variable '_S79' [-Wunused-variable]
+                        uint _S79 = atomic_fetch_add_explicit(((atomic_uint device*)(kernelContext_9->r_0->contactCounts_0+pair_0)), 1U, memory_order_relaxed);
+                             ^
+2 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/solver.slang(182): warning :  unused variable '_S10' [-Wunused-variable]
+    uint _S10 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_2->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/solver.slang(719): warning :  unused variable '_S23' [-Wunused-variable]
+            uint _S23 = atomic_fetch_add_explicit(((atomic_uint device*)(r_1->control_0+int(6))), 1U, memory_order_relaxed);
+                 ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/solver.slang(734): warning :  unused variable '_S29' [-Wunused-variable]
+        uint _S29 = atomic_fetch_add_explicit(((atomic_uint device*)(r_1->control_0+int(6))), 1U, memory_order_relaxed);
+             ^
+3 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/solver.slang(182): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_1->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/solver.slang(182): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/baseline.slang(182): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_1->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/baseline.slang(182): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/baseline.slang(182): warning :  unused variable '_S5' [-Wunused-variable]
+    uint _S5 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/baseline.slang(182): warning :  unused variable '_S5' [-Wunused-variable]
+    uint _S5 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/baseline.slang(380): warning :  unused variable '_S26' [-Wunused-variable]
+    uint _S26 = findPairs_0(id_2, true, &kernelContext_5);
+         ^
+2 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/baseline.slang(182): warning :  unused variable '_S31' [-Wunused-variable]
+    uint _S31 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_5->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/baseline.slang(508): warning :  unused variable '_S79' [-Wunused-variable]
+                        uint _S79 = atomic_fetch_add_explicit(((atomic_uint device*)(kernelContext_9->r_0->contactCounts_0+pair_0)), 1U, memory_order_relaxed);
+                             ^
+2 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/baseline.slang(182): warning :  unused variable '_S10' [-Wunused-variable]
+    uint _S10 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_2->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/baseline.slang(719): warning :  unused variable '_S23' [-Wunused-variable]
+            uint _S23 = atomic_fetch_add_explicit(((atomic_uint device*)(r_1->control_0+int(6))), 1U, memory_order_relaxed);
+                 ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/baseline.slang(734): warning :  unused variable '_S29' [-Wunused-variable]
+        uint _S29 = atomic_fetch_add_explicit(((atomic_uint device*)(r_1->control_0+int(6))), 1U, memory_order_relaxed);
+             ^
+3 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/baseline.slang(182): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/baseline.slang(182): warning :  unused variable '_S22' [-Wunused-variable]
+    uint _S22 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_10->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/baseline.slang(182): warning :  unused variable '_S5' [-Wunused-variable]
+    uint _S5 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_2->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/baseline.slang(894): warning :  unused variable '_S3' [-Wunused-variable]
+        uint _S3 = atomic_fetch_or_explicit(((atomic_uint device*)((&kernelContext_1)->r_0->control_0+int(4))), 1U, memory_order_relaxed);
+             ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/baseline.slang(182): warning :  unused variable '_S15' [-Wunused-variable]
+    uint _S15 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_9->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/precision.slang(182): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_1->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/precision.slang(182): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/precision.slang(182): warning :  unused variable '_S5' [-Wunused-variable]
+    uint _S5 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/precision.slang(182): warning :  unused variable '_S5' [-Wunused-variable]
+    uint _S5 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/precision.slang(380): warning :  unused variable '_S26' [-Wunused-variable]
+    uint _S26 = findPairs_0(id_2, true, &kernelContext_5);
+         ^
+2 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/precision.slang(182): warning :  unused variable '_S31' [-Wunused-variable]
+    uint _S31 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_5->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/precision.slang(508): warning :  unused variable '_S80' [-Wunused-variable]
+                        uint _S80 = atomic_fetch_add_explicit(((atomic_uint device*)(kernelContext_9->r_0->contactCounts_0+pair_0)), 1U, memory_order_relaxed);
+                             ^
+2 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/precision.slang(182): warning :  unused variable '_S10' [-Wunused-variable]
+    uint _S10 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_2->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/precision.slang(719): warning :  unused variable '_S23' [-Wunused-variable]
+            uint _S23 = atomic_fetch_add_explicit(((atomic_uint device*)(r_1->control_0+int(6))), 1U, memory_order_relaxed);
+                 ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/precision.slang(734): warning :  unused variable '_S29' [-Wunused-variable]
+        uint _S29 = atomic_fetch_add_explicit(((atomic_uint device*)(r_1->control_0+int(6))), 1U, memory_order_relaxed);
+             ^
+3 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/precision.slang(182): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/precision.slang(182): warning :  unused variable '_S22' [-Wunused-variable]
+    uint _S22 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_10->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/precision.slang(182): warning :  unused variable '_S5' [-Wunused-variable]
+    uint _S5 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_2->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/precision.slang(894): warning :  unused variable '_S3' [-Wunused-variable]
+        uint _S3 = atomic_fetch_or_explicit(((atomic_uint device*)((&kernelContext_1)->r_0->control_0+int(4))), 1U, memory_order_relaxed);
+             ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/precision.slang(182): warning :  unused variable '_S15' [-Wunused-variable]
+    uint _S15 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_9->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/segmented.slang(183): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_1->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/segmented.slang(183): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/segmented.slang(183): warning :  unused variable '_S5' [-Wunused-variable]
+    uint _S5 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/segmented.slang(183): warning :  unused variable '_S5' [-Wunused-variable]
+    uint _S5 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/segmented.slang(381): warning :  unused variable '_S26' [-Wunused-variable]
+    uint _S26 = findPairs_0(id_2, true, &kernelContext_5);
+         ^
+2 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/segmented.slang(183): warning :  unused variable '_S31' [-Wunused-variable]
+    uint _S31 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_5->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/segmented.slang(509): warning :  unused variable '_S80' [-Wunused-variable]
+                        uint _S80 = atomic_fetch_add_explicit(((atomic_uint device*)(kernelContext_9->r_0->contactCounts_0+pair_0)), 1U, memory_order_relaxed);
+                             ^
+2 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/segmented.slang(183): warning :  unused variable '_S10' [-Wunused-variable]
+    uint _S10 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_2->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/segmented.slang(720): warning :  unused variable '_S23' [-Wunused-variable]
+            uint _S23 = atomic_fetch_add_explicit(((atomic_uint device*)(r_1->control_0+int(6))), 1U, memory_order_relaxed);
+                 ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/segmented.slang(722): warning :  unused variable '_S25' [-Wunused-variable]
+        uint _S25 = atomic_fetch_add_explicit(((atomic_uint device*)((&kernelContext_4)->r_0->adjCounts_0+i_2)), 1U, memory_order_relaxed);
+             ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/segmented.slang(735): warning :  unused variable '_S30' [-Wunused-variable]
+        uint _S30 = atomic_fetch_add_explicit(((atomic_uint device*)(r_1->control_0+int(6))), 1U, memory_order_relaxed);
+             ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/segmented.slang(739): warning :  unused variable '_S31' [-Wunused-variable]
+    uint _S31 = atomic_fetch_add_explicit(((atomic_uint device*)((&kernelContext_4)->r_0->adjCounts_0+i_2)), 1U, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/segmented.slang(739): warning :  unused variable '_S32' [-Wunused-variable]
+    uint _S32 = atomic_fetch_add_explicit(((atomic_uint device*)((&kernelContext_4)->r_0->adjCounts_0+j_1)), 1U, memory_order_relaxed);
+         ^
+6 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/segmented.slang(183): warning :  unused variable '_S22' [-Wunused-variable]
+    uint _S22 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_10->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/segmented.slang(183): warning :  unused variable '_S5' [-Wunused-variable]
+    uint _S5 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_2->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/segmented.slang(937): warning :  unused variable '_S3' [-Wunused-variable]
+        uint _S3 = atomic_fetch_or_explicit(((atomic_uint device*)((&kernelContext_1)->r_0->control_0+int(4))), 1U, memory_order_relaxed);
+             ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/segmented.slang(183): warning :  unused variable '_S15' [-Wunused-variable]
+    uint _S15 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_9->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/segmented-original.slang(183): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_1->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/segmented-original.slang(183): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/segmented-original.slang(183): warning :  unused variable '_S5' [-Wunused-variable]
+    uint _S5 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/segmented-original.slang(183): warning :  unused variable '_S5' [-Wunused-variable]
+    uint _S5 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/segmented-original.slang(381): warning :  unused variable '_S26' [-Wunused-variable]
+    uint _S26 = findPairs_0(id_2, true, &kernelContext_5);
+         ^
+2 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/segmented-original.slang(183): warning :  unused variable '_S31' [-Wunused-variable]
+    uint _S31 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_5->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/segmented-original.slang(509): warning :  unused variable '_S79' [-Wunused-variable]
+                        uint _S79 = atomic_fetch_add_explicit(((atomic_uint device*)(kernelContext_9->r_0->contactCounts_0+pair_0)), 1U, memory_order_relaxed);
+                             ^
+2 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/segmented-original.slang(183): warning :  unused variable '_S10' [-Wunused-variable]
+    uint _S10 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_2->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/segmented-original.slang(720): warning :  unused variable '_S23' [-Wunused-variable]
+            uint _S23 = atomic_fetch_add_explicit(((atomic_uint device*)(r_1->control_0+int(6))), 1U, memory_order_relaxed);
+                 ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/segmented-original.slang(722): warning :  unused variable '_S25' [-Wunused-variable]
+        uint _S25 = atomic_fetch_add_explicit(((atomic_uint device*)((&kernelContext_4)->r_0->adjCounts_0+i_2)), 1U, memory_order_relaxed);
+             ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/segmented-original.slang(735): warning :  unused variable '_S30' [-Wunused-variable]
+        uint _S30 = atomic_fetch_add_explicit(((atomic_uint device*)(r_1->control_0+int(6))), 1U, memory_order_relaxed);
+             ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/segmented-original.slang(739): warning :  unused variable '_S31' [-Wunused-variable]
+    uint _S31 = atomic_fetch_add_explicit(((atomic_uint device*)((&kernelContext_4)->r_0->adjCounts_0+i_2)), 1U, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/segmented-original.slang(739): warning :  unused variable '_S32' [-Wunused-variable]
+    uint _S32 = atomic_fetch_add_explicit(((atomic_uint device*)((&kernelContext_4)->r_0->adjCounts_0+j_1)), 1U, memory_order_relaxed);
+         ^
+6 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/segmented-original.slang(183): warning :  unused variable '_S22' [-Wunused-variable]
+    uint _S22 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_10->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/segmented-original.slang(183): warning :  unused variable '_S5' [-Wunused-variable]
+    uint _S5 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_2->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/segmented-original.slang(937): warning :  unused variable '_S3' [-Wunused-variable]
+        uint _S3 = atomic_fetch_or_explicit(((atomic_uint device*)((&kernelContext_1)->r_0->control_0+int(4))), 1U, memory_order_relaxed);
+             ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/sand_atlas_dem/shaders/segmented-original.slang(183): warning :  unused variable '_S15' [-Wunused-variable]
+    uint _S15 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_9->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+Traceback (most recent call last):
+  File "/private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/study_segmented_gather.py", line 334, in <module>
+    main()
+  File "/private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/study_segmented_gather.py", line 259, in main
+    execute(out)
+  File "/private/tmp/sand-atlas-dem-walls/evidence/dense27-segmented-gather-v1/source_snapshot/study_segmented_gather.py", line 248, in execute
+    assert intact() and passed
+           ^^^^^^^^^^^^^^^^^^^
+AssertionError

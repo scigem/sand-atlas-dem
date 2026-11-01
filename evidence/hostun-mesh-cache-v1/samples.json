@@ -1,0 +1,98 @@
+[
+  {
+    "seconds": 97.2394435419701,
+    "receipt": {
+      "status": "miss",
+      "key": "a1d2f9cfed99edfd320bfc751dbd460aaec780737ee5c07cc5aa76b4a149015c",
+      "path": "/private/tmp/sand-atlas-dem-walls/evidence/hostun-mesh-cache-v1/private/cache/a1d2f9cfed99edfd320bfc751dbd460aaec780737ee5c07cc5aa76b4a149015c.npz"
+    },
+    "array_hashes": {
+      "meshFrontier": "6c1838ba0789fa9da5f6c47f1cae06bee00d88f4b199b85015c8f82214d6be6f",
+      "meshClusterInfo": "cc6ed6cfbc84c470ad794790cf2782bcce4b1ce5ddd23f418ea4dbb3a718c5ea",
+      "meshClusterRanges": "2c1009cbe3bbc1c09514a26b2750c04f7c0b6e8ef1d7f6a81ef9c153e4717262",
+      "meshClusterMin": "9ccf4d770005e78681065efaa5d34a57d079f3f33f8ac1e42c603b94545943e5",
+      "meshClusterMax": "b7ebc3c9b5b82cd1830edd612021ede7d61279d5af94f34aa6ac22905eccfd5f",
+      "meshSampleIndices": "d4d43f7672c31bfaf71ceb170061071035354a4aba0af7e472d875f91d08e17b",
+      "meshHullInfo": "db85aac47fc052df551b41a6deefbc7dbbaff7742db740ff8260ba7f6f36cfec",
+      "meshPlanes": "cf5ee0aa950aa2a629367a98f89d7ac661404680f6619c64c2e4d3f9d797288c",
+      "meshRoots": "12bb1e78d5802ec942cd167b79c40b589a3596e1b0c3fca40af731eb85aa5374",
+      "meshMin": "2e7739eecb50a61a4a52b456d1f180689f29ac2b7ab7d9f469f4f9d755731784",
+      "meshMax": "474470f38a7d6213bdddf813ad25f732e55d9046f23d20db6cec8ea45acecc2e",
+      "meshLinks": "b56a530e3656fc9b2636117b2689179af6a5a9133c54d02e7d23d6aae17b61db",
+      "meshTriangles": "d3060ce81206f0d252bfba5c2a75d6683e91ee7516b7a84a93d8a503d38a5203",
+      "meshNormals": "153f429c73bc64582ca5fb239d5756b8ecb95303a221d17dbcaa2d5c5e8f64c4"
+    }
+  },
+  {
+    "seconds": 0.6139213750138879,
+    "receipt": {
+      "status": "hit",
+      "key": "a1d2f9cfed99edfd320bfc751dbd460aaec780737ee5c07cc5aa76b4a149015c",
+      "path": "/private/tmp/sand-atlas-dem-walls/evidence/hostun-mesh-cache-v1/private/cache/a1d2f9cfed99edfd320bfc751dbd460aaec780737ee5c07cc5aa76b4a149015c.npz"
+    },
+    "array_hashes": {
+      "meshClusterMax": "b7ebc3c9b5b82cd1830edd612021ede7d61279d5af94f34aa6ac22905eccfd5f",
+      "meshLinks": "b56a530e3656fc9b2636117b2689179af6a5a9133c54d02e7d23d6aae17b61db",
+      "meshMax": "474470f38a7d6213bdddf813ad25f732e55d9046f23d20db6cec8ea45acecc2e",
+      "meshClusterInfo": "cc6ed6cfbc84c470ad794790cf2782bcce4b1ce5ddd23f418ea4dbb3a718c5ea",
+      "meshClusterMin": "9ccf4d770005e78681065efaa5d34a57d079f3f33f8ac1e42c603b94545943e5",
+      "meshRoots": "12bb1e78d5802ec942cd167b79c40b589a3596e1b0c3fca40af731eb85aa5374",
+      "meshHullInfo": "db85aac47fc052df551b41a6deefbc7dbbaff7742db740ff8260ba7f6f36cfec",
+      "meshSampleIndices": "d4d43f7672c31bfaf71ceb170061071035354a4aba0af7e472d875f91d08e17b",
+      "meshClusterRanges": "2c1009cbe3bbc1c09514a26b2750c04f7c0b6e8ef1d7f6a81ef9c153e4717262",
+      "meshMin": "2e7739eecb50a61a4a52b456d1f180689f29ac2b7ab7d9f469f4f9d755731784",
+      "meshNormals": "153f429c73bc64582ca5fb239d5756b8ecb95303a221d17dbcaa2d5c5e8f64c4",
+      "meshPlanes": "cf5ee0aa950aa2a629367a98f89d7ac661404680f6619c64c2e4d3f9d797288c",
+      "meshFrontier": "6c1838ba0789fa9da5f6c47f1cae06bee00d88f4b199b85015c8f82214d6be6f",
+      "meshTriangles": "d3060ce81206f0d252bfba5c2a75d6683e91ee7516b7a84a93d8a503d38a5203"
+    }
+  },
+  {
+    "seconds": 0.6108454999048263,
+    "receipt": {
+      "status": "hit",
+      "key": "a1d2f9cfed99edfd320bfc751dbd460aaec780737ee5c07cc5aa76b4a149015c",
+      "path": "/private/tmp/sand-atlas-dem-walls/evidence/hostun-mesh-cache-v1/private/cache/a1d2f9cfed99edfd320bfc751dbd460aaec780737ee5c07cc5aa76b4a149015c.npz"
+    },
+    "array_hashes": {
+      "meshClusterMax": "b7ebc3c9b5b82cd1830edd612021ede7d61279d5af94f34aa6ac22905eccfd5f",
+      "meshLinks": "b56a530e3656fc9b2636117b2689179af6a5a9133c54d02e7d23d6aae17b61db",
+      "meshMax": "474470f38a7d6213bdddf813ad25f732e55d9046f23d20db6cec8ea45acecc2e",
+      "meshClusterInfo": "cc6ed6cfbc84c470ad794790cf2782bcce4b1ce5ddd23f418ea4dbb3a718c5ea",
+      "meshClusterMin": "9ccf4d770005e78681065efaa5d34a57d079f3f33f8ac1e42c603b94545943e5",
+      "meshRoots": "12bb1e78d5802ec942cd167b79c40b589a3596e1b0c3fca40af731eb85aa5374",
+      "meshHullInfo": "db85aac47fc052df551b41a6deefbc7dbbaff7742db740ff8260ba7f6f36cfec",
+      "meshSampleIndices": "d4d43f7672c31bfaf71ceb170061071035354a4aba0af7e472d875f91d08e17b",
+      "meshClusterRanges": "2c1009cbe3bbc1c09514a26b2750c04f7c0b6e8ef1d7f6a81ef9c153e4717262",
+      "meshMin": "2e7739eecb50a61a4a52b456d1f180689f29ac2b7ab7d9f469f4f9d755731784",
+      "meshNormals": "153f429c73bc64582ca5fb239d5756b8ecb95303a221d17dbcaa2d5c5e8f64c4",
+      "meshPlanes": "cf5ee0aa950aa2a629367a98f89d7ac661404680f6619c64c2e4d3f9d797288c",
+      "meshFrontier": "6c1838ba0789fa9da5f6c47f1cae06bee00d88f4b199b85015c8f82214d6be6f",
+      "meshTriangles": "d3060ce81206f0d252bfba5c2a75d6683e91ee7516b7a84a93d8a503d38a5203"
+    }
+  },
+  {
+    "seconds": 0.6004110409412533,
+    "receipt": {
+      "status": "hit",
+      "key": "a1d2f9cfed99edfd320bfc751dbd460aaec780737ee5c07cc5aa76b4a149015c",
+      "path": "/private/tmp/sand-atlas-dem-walls/evidence/hostun-mesh-cache-v1/private/cache/a1d2f9cfed99edfd320bfc751dbd460aaec780737ee5c07cc5aa76b4a149015c.npz"
+    },
+    "array_hashes": {
+      "meshClusterMax": "b7ebc3c9b5b82cd1830edd612021ede7d61279d5af94f34aa6ac22905eccfd5f",
+      "meshLinks": "b56a530e3656fc9b2636117b2689179af6a5a9133c54d02e7d23d6aae17b61db",
+      "meshMax": "474470f38a7d6213bdddf813ad25f732e55d9046f23d20db6cec8ea45acecc2e",
+      "meshClusterInfo": "cc6ed6cfbc84c470ad794790cf2782bcce4b1ce5ddd23f418ea4dbb3a718c5ea",
+      "meshClusterMin": "9ccf4d770005e78681065efaa5d34a57d079f3f33f8ac1e42c603b94545943e5",
+      "meshRoots": "12bb1e78d5802ec942cd167b79c40b589a3596e1b0c3fca40af731eb85aa5374",
+      "meshHullInfo": "db85aac47fc052df551b41a6deefbc7dbbaff7742db740ff8260ba7f6f36cfec",
+      "meshSampleIndices": "d4d43f7672c31bfaf71ceb170061071035354a4aba0af7e472d875f91d08e17b",
+      "meshClusterRanges": "2c1009cbe3bbc1c09514a26b2750c04f7c0b6e8ef1d7f6a81ef9c153e4717262",
+      "meshMin": "2e7739eecb50a61a4a52b456d1f180689f29ac2b7ab7d9f469f4f9d755731784",
+      "meshNormals": "153f429c73bc64582ca5fb239d5756b8ecb95303a221d17dbcaa2d5c5e8f64c4",
+      "meshPlanes": "cf5ee0aa950aa2a629367a98f89d7ac661404680f6619c64c2e4d3f9d797288c",
+      "meshFrontier": "6c1838ba0789fa9da5f6c47f1cae06bee00d88f4b199b85015c8f82214d6be6f",
+      "meshTriangles": "d3060ce81206f0d252bfba5c2a75d6683e91ee7516b7a84a93d8a503d38a5203"
+    }
+  }
+]

@@ -1,0 +1,255 @@
+{
+  "identity": "hostun-coherent-mesh-v1",
+  "completed": true,
+  "backend": {
+    "format": "sand-dem-doctor/1",
+    "backend": "metal",
+    "adapter": "Apple M4 Max",
+    "slangpy": "0.43.1",
+    "python": "3.12.14",
+    "smoke_elements": 257,
+    "smoke_max_error": 0.0,
+    "fallback": false,
+    "floating_point_mode_requested": "precise"
+  },
+  "sources_and_inputs_unchanged": true,
+  "median_seconds_per_step": {
+    "baseline": 0.008180557781088282,
+    "coherent": 0.008012994464934309
+  },
+  "speedup": 1.0209114478847137,
+  "meets_2x": false,
+  "eligible": false,
+  "equivalence_passed": true,
+  "checks": [
+    {
+      "mode": "coherent",
+      "kind": "repeat",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 1.3322676295501878e-15,
+        "rotation": 0.0,
+        "force": 2.0766328656662836e-09,
+        "torque": 3.5284257737799862e-09
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "baseline",
+      "kind": "repeat",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 8.881784197001252e-16,
+        "rotation": 0.0,
+        "force": 2.9368023568565604e-09,
+        "torque": 3.5284257737799862e-09
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "baseline",
+      "kind": "repeat",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 4.440892098500626e-16,
+        "rotation": 7.105427357601002e-15,
+        "force": 2.0766328656662836e-09,
+        "torque": 1.4113703095119945e-08
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "coherent",
+      "kind": "repeat",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 8.881784197001252e-16,
+        "rotation": 7.105427357601002e-15,
+        "force": 2.0766328656662836e-09,
+        "torque": 3.5284257737799862e-09
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "coherent",
+      "kind": "repeat",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 8.881784197001252e-16,
+        "rotation": 3.552713678800501e-15,
+        "force": 2.0766328656662836e-09,
+        "torque": 3.5284257737799862e-09
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "baseline",
+      "kind": "repeat",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 6.661338147750939e-16,
+        "rotation": 3.552713678800501e-15,
+        "force": 2.0766328656662836e-09,
+        "torque": 0.0
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "baseline",
+      "kind": "repeat",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 6.661338147750939e-16,
+        "rotation": 0.0,
+        "force": 2.0766328656662836e-09,
+        "torque": 3.5284257737799862e-09
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "coherent",
+      "kind": "repeat",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 1.3322676295501878e-15,
+        "rotation": 7.105427357601002e-15,
+        "force": 2.0766328656662836e-09,
+        "torque": 0.0
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "coherent",
+      "kind": "repeat",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 5.551115123125783e-16,
+        "rotation": 7.105427357601002e-15,
+        "force": 2.0766328656662836e-09,
+        "torque": 3.5284257737799862e-09
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "baseline",
+      "kind": "repeat",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 3.3306690738754696e-16,
+        "rotation": 0.0,
+        "force": 2.9368023568565604e-09,
+        "torque": 3.5284257737799862e-09
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "coherent",
+      "kind": "baseline-comparison",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 6.661338147750939e-16,
+        "rotation": 7.105427357601002e-15,
+        "force": 2.9368023568565604e-09,
+        "torque": 0.0
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "baseline",
+      "kind": "split-comparison",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 2.220446049250313e-16,
+        "rotation": 0.0,
+        "force": 2.076649074922443e-09,
+        "torque": 3.530108649840713e-09
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "mode": "coherent",
+      "kind": "split-comparison",
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 4.440892098500626e-16,
+        "rotation": 0.0,
+        "force": 2.076649074922443e-09,
+        "torque": 3.530108649840713e-09
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    }
+  ],
+  "counters": {
+    "baseline": {
+      "queries": 7601,
+      "bvh_nodes": 381597,
+      "triangles": 220555,
+      "seeded_queries": 0
+    },
+    "coherent": {
+      "queries": 7601,
+      "bvh_nodes": 315651,
+      "triangles": 218148,
+      "seeded_queries": 7292
+    }
+  },
+  "stage_median_seconds": {
+    "baseline": {
+      "drift": 0.00029339600587263703,
+      "neighbours": 0.0003755830111913383,
+      "contact_geometry": 0.0072818544576875865,
+      "friction_and_history": 0.0005907290033064783,
+      "force_reduction": 0.0004218334797769785,
+      "final_kick": 0.00019856251310557127
+    },
+    "coherent": {
+      "drift": 0.0002647705259732902,
+      "neighbours": 0.0003427914925850928,
+      "contact_geometry": 0.007031749933958054,
+      "friction_and_history": 0.0005737710162065923,
+      "force_reduction": 0.00040979153709486127,
+      "final_kick": 0.00018404144793748856
+    }
+  },
+  "stage_scope": "Synchronized wall times, not GPU timestamps; immutable binding reuse enabled equally in both modes.",
+  "scientific_admission": false
+}

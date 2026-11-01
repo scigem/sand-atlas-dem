@@ -1,0 +1,954 @@
+{
+  "results": {
+    "dense27-zero-ordered-gather-v1": {
+      "completed": true,
+      "medians": {
+        "baseline": 0.003660482257600961,
+        "segmented-original": 0.002042185875325231,
+        "segmented-ordered": 0.00356979264461188,
+        "segmented-ordered-precision": 0.0035779228514911665
+      },
+      "speedups": {
+        "baseline": 1.0,
+        "segmented-original": 1.7924334419451444,
+        "segmented-ordered": 1.025404728514404,
+        "segmented-ordered-precision": 1.0230746747586763
+      },
+      "equivalence_passed": false,
+      "repeat": {
+        "baseline": {
+          "passed": 0,
+          "total": 5,
+          "all_bitwise_body_fields": false
+        },
+        "segmented-original": {
+          "passed": 0,
+          "total": 5,
+          "all_bitwise_body_fields": false
+        },
+        "segmented-ordered": {
+          "passed": 5,
+          "total": 5,
+          "all_bitwise_body_fields": true
+        },
+        "segmented-ordered-precision": {
+          "passed": 5,
+          "total": 5,
+          "all_bitwise_body_fields": true
+        }
+      },
+      "failed_checks": [
+        {
+          "mode": "segmented-original",
+          "passed": false,
+          "errors": {
+            "position": 6.821210263296962e-13,
+            "velocity": 2.7284841053187847e-12,
+            "rotation": 3.906770740247367e-14,
+            "force": 9.446616644481765e-08,
+            "torque": 0.0003925371274817735
+          },
+          "keys_equal": true,
+          "history_equal": true,
+          "normals_equal": true,
+          "bitwise_body_state": {
+            "position": true,
+            "velocity": false,
+            "rotation": false,
+            "momentum": false,
+            "force": false,
+            "torque": false,
+            "positionRemainder": false,
+            "velocityRemainder": false,
+            "momentumRemainder": false,
+            "rotationRemainder": false,
+            "accumulated": true,
+            "accumulatedRemainder": true
+          }
+        },
+        {
+          "mode": "baseline",
+          "passed": false,
+          "errors": {
+            "position": 2.2737367544323206e-13,
+            "velocity": 6.821210263296962e-13,
+            "rotation": 1.5100767858378106e-14,
+            "force": 6.67837127821258e-08,
+            "torque": 0.00019258138490840793
+          },
+          "keys_equal": true,
+          "history_equal": true,
+          "normals_equal": true,
+          "bitwise_body_state": {
+            "position": true,
+            "velocity": false,
+            "rotation": false,
+            "momentum": false,
+            "force": false,
+            "torque": false,
+            "positionRemainder": false,
+            "velocityRemainder": false,
+            "momentumRemainder": false,
+            "rotationRemainder": false,
+            "accumulated": true,
+            "accumulatedRemainder": true
+          }
+        },
+        {
+          "mode": "baseline",
+          "passed": false,
+          "errors": {
+            "position": 2.2737367544323206e-13,
+            "velocity": 1.5916157281026244e-12,
+            "rotation": 1.6436504934880247e-14,
+            "force": 6.678179431673925e-08,
+            "torque": 0.00019743514712899923
+          },
+          "keys_equal": true,
+          "history_equal": true,
+          "normals_equal": true,
+          "bitwise_body_state": {
+            "position": true,
+            "velocity": false,
+            "rotation": false,
+            "momentum": false,
+            "force": false,
+            "torque": false,
+            "positionRemainder": false,
+            "velocityRemainder": false,
+            "momentumRemainder": false,
+            "rotationRemainder": false,
+            "accumulated": true,
+            "accumulatedRemainder": true
+          }
+        },
+        {
+          "mode": "segmented-original",
+          "passed": false,
+          "errors": {
+            "position": 6.821210263296962e-13,
+            "velocity": 2.7853275241795927e-12,
+            "rotation": 3.296473337355277e-14,
+            "force": 9.44431306493243e-08,
+            "torque": 0.000364912353688851
+          },
+          "keys_equal": true,
+          "history_equal": true,
+          "normals_equal": true,
+          "bitwise_body_state": {
+            "position": true,
+            "velocity": false,
+            "rotation": false,
+            "momentum": false,
+            "force": false,
+            "torque": false,
+            "positionRemainder": false,
+            "velocityRemainder": false,
+            "momentumRemainder": false,
+            "rotationRemainder": false,
+            "accumulated": true,
+            "accumulatedRemainder": true
+          }
+        },
+        {
+          "mode": "segmented-original",
+          "passed": false,
+          "errors": {
+            "position": 9.094947017729282e-13,
+            "velocity": 3.808509063674137e-12,
+            "rotation": 4.637251953959476e-14,
+            "force": 9.445800230878376e-08,
+            "torque": 0.0003609720151871443
+          },
+          "keys_equal": true,
+          "history_equal": true,
+          "normals_equal": true,
+          "bitwise_body_state": {
+            "position": true,
+            "velocity": false,
+            "rotation": false,
+            "momentum": false,
+            "force": false,
+            "torque": false,
+            "positionRemainder": false,
+            "velocityRemainder": false,
+            "momentumRemainder": false,
+            "rotationRemainder": false,
+            "accumulated": true,
+            "accumulatedRemainder": true
+          }
+        },
+        {
+          "mode": "baseline",
+          "passed": false,
+          "errors": {
+            "position": 6.821210263296962e-13,
+            "velocity": 7.958078640513122e-13,
+            "rotation": 1.440774582972537e-14,
+            "force": 6.678013875216493e-08,
+            "torque": 0.0002794877509586513
+          },
+          "keys_equal": true,
+          "history_equal": true,
+          "normals_equal": true,
+          "bitwise_body_state": {
+            "position": true,
+            "velocity": false,
+            "rotation": false,
+            "momentum": false,
+            "force": false,
+            "torque": false,
+            "positionRemainder": false,
+            "velocityRemainder": false,
+            "momentumRemainder": false,
+            "rotationRemainder": false,
+            "accumulated": true,
+            "accumulatedRemainder": true
+          }
+        },
+        {
+          "mode": "baseline",
+          "passed": false,
+          "errors": {
+            "position": 2.2737367544323206e-13,
+            "velocity": 1.3642420526593924e-12,
+            "rotation": 1.6513700129561215e-14,
+            "force": 6.679096742345791e-08,
+            "torque": 0.0002745474048424512
+          },
+          "keys_equal": true,
+          "history_equal": true,
+          "normals_equal": true,
+          "bitwise_body_state": {
+            "position": true,
+            "velocity": false,
+            "rotation": false,
+            "momentum": false,
+            "force": false,
+            "torque": false,
+            "positionRemainder": false,
+            "velocityRemainder": false,
+            "momentumRemainder": false,
+            "rotationRemainder": false,
+            "accumulated": true,
+            "accumulatedRemainder": true
+          }
+        },
+        {
+          "mode": "segmented-original",
+          "passed": false,
+          "errors": {
+            "position": 9.094947017729282e-13,
+            "velocity": 2.2737367544323206e-12,
+            "rotation": 3.464242781525684e-14,
+            "force": 9.447512638871558e-08,
+            "torque": 0.0004557680513244122
+          },
+          "keys_equal": true,
+          "history_equal": true,
+          "normals_equal": true,
+          "bitwise_body_state": {
+            "position": true,
+            "velocity": false,
+            "rotation": false,
+            "momentum": false,
+            "force": false,
+            "torque": false,
+            "positionRemainder": false,
+            "velocityRemainder": false,
+            "momentumRemainder": false,
+            "rotationRemainder": false,
+            "accumulated": true,
+            "accumulatedRemainder": true
+          }
+        },
+        {
+          "mode": "segmented-original",
+          "passed": false,
+          "errors": {
+            "position": 6.821210263296962e-13,
+            "velocity": 2.8421709430404007e-12,
+            "rotation": 3.472688716449346e-14,
+            "force": 9.452141114252299e-08,
+            "torque": 0.00045787033741362393
+          },
+          "keys_equal": true,
+          "history_equal": true,
+          "normals_equal": true,
+          "bitwise_body_state": {
+            "position": true,
+            "velocity": false,
+            "rotation": false,
+            "momentum": false,
+            "force": false,
+            "torque": false,
+            "positionRemainder": false,
+            "velocityRemainder": false,
+            "momentumRemainder": false,
+            "rotationRemainder": false,
+            "accumulated": true,
+            "accumulatedRemainder": true
+          }
+        },
+        {
+          "mode": "baseline",
+          "passed": false,
+          "errors": {
+            "position": 2.2737367544323206e-13,
+            "velocity": 1.5916157281026244e-12,
+            "rotation": 1.7357209419754938e-14,
+            "force": 6.680004105419357e-08,
+            "torque": 0.00021524298063013703
+          },
+          "keys_equal": true,
+          "history_equal": true,
+          "normals_equal": true,
+          "bitwise_body_state": {
+            "position": true,
+            "velocity": false,
+            "rotation": false,
+            "momentum": false,
+            "force": false,
+            "torque": false,
+            "positionRemainder": false,
+            "velocityRemainder": false,
+            "momentumRemainder": false,
+            "rotationRemainder": false,
+            "accumulated": true,
+            "accumulatedRemainder": true
+          }
+        },
+        {
+          "mode": "segmented-original",
+          "reference": "baseline",
+          "passed": false,
+          "errors": {
+            "position": 5.684341886080801e-13,
+            "velocity": 4.320099833421409e-12,
+            "rotation": 2.4810665674723786e-14,
+            "force": 9.44406508551765e-08,
+            "torque": 0.0002889108727686107
+          },
+          "keys_equal": true,
+          "history_equal": true,
+          "normals_equal": true
+        },
+        {
+          "mode": "segmented-ordered",
+          "reference": "baseline",
+          "passed": false,
+          "errors": {
+            "position": 1.3642420526593924e-12,
+            "velocity": 7.901235221652314e-12,
+            "rotation": 4.1671093659045866e-14,
+            "force": 9.443758841598537e-08,
+            "torque": 0.000271873694146052
+          },
+          "keys_equal": true,
+          "history_equal": true,
+          "normals_equal": true
+        },
+        {
+          "mode": "segmented-ordered-precision",
+          "reference": "baseline",
+          "passed": false,
+          "errors": {
+            "position": 2.5647750589996576e-10,
+            "velocity": 2.007141119975131e-09,
+            "rotation": 9.660154504662413e-10,
+            "force": 4.9062123252952006e-06,
+            "torque": 1.053812026977539
+          },
+          "keys_equal": true,
+          "history_equal": true,
+          "normals_equal": false
+        },
+        {
+          "mode": "segmented-ordered",
+          "reference": "segmented-original",
+          "passed": false,
+          "errors": {
+            "position": 1.5916157281026244e-12,
+            "velocity": 8.355982572538778e-12,
+            "rotation": 3.8799692625435256e-14,
+            "force": 1.156619475750631e-07,
+            "torque": 0.00029660732252523303
+          },
+          "keys_equal": true,
+          "history_equal": true,
+          "normals_equal": true
+        },
+        {
+          "mode": "segmented-ordered-precision",
+          "reference": "segmented-original",
+          "passed": false,
+          "errors": {
+            "position": 2.5647750589996576e-10,
+            "velocity": 2.0075390239071567e-09,
+            "rotation": 9.660031807670957e-10,
+            "force": 4.90393949803547e-06,
+            "torque": 1.0538042783737183
+          },
+          "keys_equal": true,
+          "history_equal": true,
+          "normals_equal": false
+        },
+        {
+          "mode": "segmented-ordered-precision",
+          "reference": "segmented-ordered",
+          "passed": false,
+          "errors": {
+            "position": 2.5647750589996576e-10,
+            "velocity": 2.0093580133107025e-09,
+            "rotation": 9.660232523850745e-10,
+            "force": 4.9062123252952006e-06,
+            "torque": 1.0538051128387451
+          },
+          "keys_equal": true,
+          "history_equal": true,
+          "normals_equal": false
+        }
+      ],
+      "production_promoted": false
+    },
+    "dense27-zero-cached-order-v1": {
+      "completed": false,
+      "failure": {
+        "completed": false,
+        "failure": "Metal threadgroup memory32772 exceeds32768-byte limit; extra shared uint above8192-entry sorting array.",
+        "superseded_by": "dense27-zero-cached-order-v2",
+        "numerical_gate_changed": false
+      }
+    },
+    "dense27-zero-cached-order-v2": {
+      "completed": true,
+      "medians": {
+        "baseline": 0.003627160808264307,
+        "segmented-ordered": 0.0035666598282659834,
+        "segmented-ordered-cached": 0.0022660384101982345
+      },
+      "speedups": {
+        "baseline": 1.0,
+        "segmented-ordered": 1.0169629241114753,
+        "segmented-ordered-cached": 1.60066166219442
+      },
+      "equivalence_passed": false,
+      "repeat": {
+        "baseline": {
+          "passed": 0,
+          "total": 5,
+          "all_bitwise_body_fields": false
+        },
+        "segmented-ordered": {
+          "passed": 5,
+          "total": 5,
+          "all_bitwise_body_fields": true
+        },
+        "segmented-ordered-cached": {
+          "passed": 5,
+          "total": 5,
+          "all_bitwise_body_fields": true
+        }
+      },
+      "failed_checks": [
+        {
+          "mode": "baseline",
+          "passed": false,
+          "errors": {
+            "position": 2.2737367544323206e-13,
+            "velocity": 9.094947017729282e-13,
+            "rotation": 1.2597561882543573e-14,
+            "force": 6.678293829054383e-08,
+            "torque": 0.0002520269772503525
+          },
+          "keys_equal": true,
+          "history_equal": true,
+          "normals_equal": true,
+          "bitwise_body_state": {
+            "position": true,
+            "velocity": false,
+            "rotation": false,
+            "momentum": false,
+            "force": false,
+            "torque": false,
+            "positionRemainder": false,
+            "velocityRemainder": false,
+            "momentumRemainder": false,
+            "rotationRemainder": false,
+            "accumulated": true,
+            "accumulatedRemainder": true
+          }
+        },
+        {
+          "mode": "baseline",
+          "passed": false,
+          "errors": {
+            "position": 2.2737367544323206e-13,
+            "velocity": 1.3642420526593924e-12,
+            "rotation": 1.4492747280048235e-14,
+            "force": 6.679341169046893e-08,
+            "torque": 0.00021205974917393178
+          },
+          "keys_equal": true,
+          "history_equal": true,
+          "normals_equal": true,
+          "bitwise_body_state": {
+            "position": true,
+            "velocity": false,
+            "rotation": false,
+            "momentum": false,
+            "force": false,
+            "torque": false,
+            "positionRemainder": false,
+            "velocityRemainder": false,
+            "momentumRemainder": false,
+            "rotationRemainder": false,
+            "accumulated": true,
+            "accumulatedRemainder": true
+          }
+        },
+        {
+          "mode": "baseline",
+          "passed": false,
+          "errors": {
+            "position": 6.821210263296962e-13,
+            "velocity": 6.821210263296962e-13,
+            "rotation": 1.4841142095649296e-14,
+            "force": 6.680814124138124e-08,
+            "torque": 0.0002871321339625865
+          },
+          "keys_equal": true,
+          "history_equal": true,
+          "normals_equal": true,
+          "bitwise_body_state": {
+            "position": true,
+            "velocity": false,
+            "rotation": false,
+            "momentum": false,
+            "force": false,
+            "torque": false,
+            "positionRemainder": false,
+            "velocityRemainder": false,
+            "momentumRemainder": false,
+            "rotationRemainder": false,
+            "accumulated": true,
+            "accumulatedRemainder": true
+          }
+        },
+        {
+          "mode": "baseline",
+          "passed": false,
+          "errors": {
+            "position": 2.2737367544323206e-13,
+            "velocity": 1.2505552149377763e-12,
+            "rotation": 2.0360449437539785e-14,
+            "force": 6.678608599486324e-08,
+            "torque": 0.0002473829372320324
+          },
+          "keys_equal": true,
+          "history_equal": true,
+          "normals_equal": true,
+          "bitwise_body_state": {
+            "position": true,
+            "velocity": false,
+            "rotation": false,
+            "momentum": false,
+            "force": false,
+            "torque": false,
+            "positionRemainder": false,
+            "velocityRemainder": false,
+            "momentumRemainder": false,
+            "rotationRemainder": false,
+            "accumulated": true,
+            "accumulatedRemainder": true
+          }
+        },
+        {
+          "mode": "baseline",
+          "passed": false,
+          "errors": {
+            "position": 4.547473508864641e-13,
+            "velocity": 1.3642420526593924e-12,
+            "rotation": 1.33921736547582e-14,
+            "force": 6.678290276340704e-08,
+            "torque": 0.0003038692520931363
+          },
+          "keys_equal": true,
+          "history_equal": true,
+          "normals_equal": true,
+          "bitwise_body_state": {
+            "position": true,
+            "velocity": false,
+            "rotation": false,
+            "momentum": false,
+            "force": false,
+            "torque": false,
+            "positionRemainder": false,
+            "velocityRemainder": false,
+            "momentumRemainder": false,
+            "rotationRemainder": false,
+            "accumulated": true,
+            "accumulatedRemainder": true
+          }
+        },
+        {
+          "mode": "segmented-ordered",
+          "reference": "baseline",
+          "passed": false,
+          "errors": {
+            "position": 1.3642420526593924e-12,
+            "velocity": 7.901235221652314e-12,
+            "rotation": 4.231223661374517e-14,
+            "force": 9.443758841598537e-08,
+            "torque": 0.00022925413213670254
+          },
+          "keys_equal": true,
+          "history_equal": true,
+          "normals_equal": true
+        },
+        {
+          "mode": "segmented-ordered-cached",
+          "reference": "baseline",
+          "passed": false,
+          "errors": {
+            "position": 1.3642420526593924e-12,
+            "velocity": 7.901235221652314e-12,
+            "rotation": 4.231223661374517e-14,
+            "force": 9.443758841598537e-08,
+            "torque": 0.00022925413213670254
+          },
+          "keys_equal": true,
+          "history_equal": true,
+          "normals_equal": true
+        }
+      ],
+      "production_promoted": false
+    },
+    "dense27-spin-hybrid-order-v1": {
+      "completed": true,
+      "medians": {
+        "baseline": 0.0036016485978507262,
+        "segmented-ordered-cached": 0.0022594453121200786,
+        "segmented-ordered-cached-hybrid": 0.0022542696988239186
+      },
+      "speedups": {
+        "baseline": 1.0,
+        "segmented-ordered-cached": 1.5940410588965457,
+        "segmented-ordered-cached-hybrid": 1.5977008428626587
+      },
+      "equivalence_passed": true,
+      "repeat": {
+        "baseline": {
+          "passed": 5,
+          "total": 5,
+          "all_bitwise_body_fields": false
+        },
+        "segmented-ordered-cached": {
+          "passed": 5,
+          "total": 5,
+          "all_bitwise_body_fields": true
+        },
+        "segmented-ordered-cached-hybrid": {
+          "passed": 5,
+          "total": 5,
+          "all_bitwise_body_fields": true
+        }
+      },
+      "failed_checks": [],
+      "production_promoted": false
+    },
+    "hostun-hybrid-order-v1": {
+      "completed": true,
+      "medians": {
+        "baseline": 0.008975668132734427,
+        "segmented-ordered-cached": 0.009204311031226098,
+        "segmented-ordered-cached-hybrid": 0.0093397805976565
+      },
+      "speedups": {
+        "baseline": 1.0,
+        "segmented-ordered-cached": 0.9751591512155566,
+        "segmented-ordered-cached-hybrid": 0.9610148802624513
+      },
+      "equivalence_passed": true,
+      "repeat": {
+        "baseline": {
+          "passed": 5,
+          "total": 5,
+          "all_bitwise_body_fields": false
+        },
+        "segmented-ordered-cached": {
+          "passed": 5,
+          "total": 5,
+          "all_bitwise_body_fields": true
+        },
+        "segmented-ordered-cached-hybrid": {
+          "passed": 5,
+          "total": 5,
+          "all_bitwise_body_fields": false
+        }
+      },
+      "failed_checks": [],
+      "production_promoted": false
+    },
+    "order-cache-transition-probe-v1": {
+      "passed": true,
+      "checks": [
+        {
+          "name": "first",
+          "passed": true,
+          "cache_hit_miss": [
+            0,
+            3
+          ],
+          "counts": [
+            3,
+            3,
+            2
+          ]
+        },
+        {
+          "name": "index-permutation",
+          "passed": true,
+          "cache_hit_miss": [
+            3,
+            0
+          ],
+          "counts": [
+            3,
+            3,
+            2
+          ]
+        },
+        {
+          "name": "equal-count-replacement",
+          "passed": true,
+          "cache_hit_miss": [
+            1,
+            2
+          ],
+          "counts": [
+            3,
+            3,
+            2
+          ]
+        },
+        {
+          "name": "remove",
+          "passed": true,
+          "cache_hit_miss": [
+            1,
+            2
+          ],
+          "counts": [
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "name": "add",
+          "passed": true,
+          "cache_hit_miss": [
+            1,
+            2
+          ],
+          "counts": [
+            4,
+            2,
+            2
+          ]
+        },
+        {
+          "name": "permuted",
+          "passed": true,
+          "cache_hit_miss": [
+            3,
+            0
+          ],
+          "counts": [
+            4,
+            2,
+            2
+          ]
+        },
+        {
+          "name": "empty",
+          "passed": true,
+          "cache_hit_miss": [
+            0,
+            3
+          ],
+          "counts": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "reappear",
+          "passed": true,
+          "cache_hit_miss": [
+            0,
+            3
+          ],
+          "counts": [
+            3,
+            3,
+            2
+          ]
+        },
+        {
+          "name": "full8192",
+          "passed": true,
+          "cache_hit_miss": [
+            0,
+            3
+          ],
+          "counts": [
+            8192,
+            8192,
+            0
+          ]
+        },
+        {
+          "name": "full8192-cache-hit",
+          "passed": true,
+          "cache_hit_miss": [
+            3,
+            0
+          ],
+          "counts": [
+            8192,
+            8192,
+            0
+          ]
+        },
+        {
+          "name": "reject8193",
+          "passed": true,
+          "flags": 16384
+        }
+      ],
+      "backend": {
+        "format": "sand-dem-doctor/1",
+        "backend": "metal",
+        "adapter": "Apple M4 Max",
+        "slangpy": "0.43.1",
+        "python": "3.12.14",
+        "smoke_elements": 257,
+        "smoke_max_error": 0.0,
+        "fallback": false,
+        "floating_point_mode_requested": "precise"
+      },
+      "module_unchanged": true,
+      "scientific_admission": false
+    },
+    "hybrid-switch-probe-v1": {
+      "completed": false,
+      "failure": {
+        "completed": false,
+        "classification": "independent-probe-error",
+        "reason": "FP64 expected torque used source-minus-target centre branch, opposite to target-minus-source contract; omitted position residuals. First force check passed, first torque check failed.",
+        "superseded_by": "hybrid-switch-probe-v2",
+        "tolerances_changed": false
+      }
+    },
+    "hybrid-switch-probe-v2": {
+      "passed": true,
+      "checks": [
+        {
+          "contacts": 191,
+          "dense": false,
+          "cache_hit_miss": [
+            0,
+            0
+          ],
+          "passed": true,
+          "force_max_abs": 1.7763568394002505e-15,
+          "torque_max_abs": 2.5464281348390087e-14
+        },
+        {
+          "contacts": 192,
+          "dense": true,
+          "cache_hit_miss": [
+            0,
+            3
+          ],
+          "passed": true,
+          "force_max_abs": 0.0,
+          "torque_max_abs": 3.008320224940947e-14
+        },
+        {
+          "contacts": 193,
+          "dense": true,
+          "cache_hit_miss": [
+            1,
+            2
+          ],
+          "passed": true,
+          "force_max_abs": 1.7763568394002505e-15,
+          "torque_max_abs": 3.690122375765012e-14
+        },
+        {
+          "contacts": 191,
+          "dense": false,
+          "cache_hit_miss": [
+            0,
+            0
+          ],
+          "passed": true,
+          "force_max_abs": 1.7763568394002505e-15,
+          "torque_max_abs": 2.5464281348390087e-14
+        },
+        {
+          "contacts": 0,
+          "dense": false,
+          "cache_hit_miss": [
+            0,
+            0
+          ],
+          "passed": true,
+          "force_max_abs": 0.0,
+          "torque_max_abs": 0.0
+        },
+        {
+          "contacts": 192,
+          "dense": true,
+          "cache_hit_miss": [
+            1,
+            2
+          ],
+          "passed": true,
+          "force_max_abs": 0.0,
+          "torque_max_abs": 3.008320224940947e-14
+        },
+        {
+          "contacts": 192,
+          "dense": true,
+          "cache_hit_miss": [
+            3,
+            0
+          ],
+          "passed": true,
+          "force_max_abs": 0.0,
+          "torque_max_abs": 3.008320224940947e-14
+        }
+      ],
+      "module_unchanged": true,
+      "backend": {
+        "format": "sand-dem-doctor/1",
+        "backend": "metal",
+        "adapter": "Apple M4 Max",
+        "slangpy": "0.43.1",
+        "python": "3.12.14",
+        "smoke_elements": 257,
+        "smoke_max_error": 0.0,
+        "fallback": false,
+        "floating_point_mode_requested": "precise"
+      },
+      "scientific_admission": false
+    }
+  },
+  "production_promoted": false,
+  "scientific_admission": false
+}

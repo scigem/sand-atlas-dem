@@ -1,0 +1,45 @@
+[WARN] No supported shader model found, pretending to support sm_6_0.
+adaptive shape 1/2 nodes=1 lists=1 elapsed=0.0s
+adaptive shape 2/2 nodes=1 lists=1 elapsed=0.0s
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/adaptive-mesh-query-probe-v1/baseline.slang(183): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_1->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/adaptive-mesh-query-probe-v1/baseline.slang(251): warning :  unused variable '_S19' [-Wunused-variable]
+    uint _S19 = atomic_fetch_add_explicit(((atomic_uint device*)(kernelContext_2->r_0->meshQueryMetrics_0+int(0))), 1U, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/adaptive-mesh-query-probe-v1/baseline.slang(252): warning :  unused variable '_S20' [-Wunused-variable]
+    uint _S20 = atomic_fetch_add_explicit(((atomic_uint device*)(kernelContext_2->r_0->meshQueryMetrics_0+int(1))), _S4, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/adaptive-mesh-query-probe-v1/baseline.slang(253): warning :  unused variable '_S21' [-Wunused-variable]
+    uint _S21 = atomic_fetch_add_explicit(((atomic_uint device*)(kernelContext_2->r_0->meshQueryMetrics_0+int(2))), triangles_0, memory_order_relaxed);
+         ^
+4 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/adaptive-mesh-query-probe-v1/brick.slang(188): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_1->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/adaptive-mesh-query-probe-v1/brick.slang(256): warning :  unused variable '_S19' [-Wunused-variable]
+    uint _S19 = atomic_fetch_add_explicit(((atomic_uint device*)(kernelContext_2->r_0->meshQueryMetrics_0+int(0))), 1U, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/adaptive-mesh-query-probe-v1/brick.slang(257): warning :  unused variable '_S20' [-Wunused-variable]
+    uint _S20 = atomic_fetch_add_explicit(((atomic_uint device*)(kernelContext_2->r_0->meshQueryMetrics_0+int(1))), _S4, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/adaptive-mesh-query-probe-v1/brick.slang(258): warning :  unused variable '_S21' [-Wunused-variable]
+    uint _S21 = atomic_fetch_add_explicit(((atomic_uint device*)(kernelContext_2->r_0->meshQueryMetrics_0+int(2))), triangles_0, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/adaptive-mesh-query-probe-v1/brick.slang(288): warning :  unused variable '_S44' [-Wunused-variable]
+        uint _S44 = atomic_fetch_add_explicit(((atomic_uint device*)(kernelContext_3->r_0->meshQueryMetrics_0+int(8))), 1U, memory_order_relaxed);
+             ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/adaptive-mesh-query-probe-v1/brick.slang(277): warning :  unused variable '_S36' [-Wunused-variable]
+    uint _S36 = atomic_fetch_add_explicit(((atomic_uint device*)(kernelContext_3->r_0->meshQueryMetrics_0+int(4))), 1U, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/adaptive-mesh-query-probe-v1/brick.slang(277): warning :  unused variable '_S38' [-Wunused-variable]
+    uint _S38 = atomic_fetch_add_explicit(((atomic_uint device*)(kernelContext_3->r_0->meshQueryMetrics_0+int(6))), _S37, memory_order_relaxed);
+         ^
+metal 32023.922: /private/tmp/sand-atlas-dem-walls/evidence/adaptive-mesh-query-probe-v1/brick.slang(291): warning :  unused variable '_S46' [-Wunused-variable]
+    uint _S46 = atomic_fetch_add_explicit(((atomic_uint device*)(kernelContext_3->r_0->meshQueryMetrics_0+int(5))), 1U, memory_order_relaxed);
+         ^
+8 warnings generated.
+
+adaptive shape 1/2 nodes=99993 lists=0 elapsed=1.4s
+adaptive shape 2/2 nodes=99993 lists=0 elapsed=2.9s

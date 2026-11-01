@@ -131,3 +131,9 @@ Fresh output directories are required. Source snapshots retain the exact solver
 and benchmark driver. Original failed reports and earlier profiling evidence
 remain unchanged. The stopped preparation is not restarted; stiffness, timestep
 and overlap defaults are not adjusted.
+
+A subsequent [systematic follow-up](PERFORMANCE_FOLLOWUP.md) tested finer subtrees,
+larger/smaller pools and stronger root rejection. Its integrated candidates missed
+the fixed performance gate and were withdrawn; production retains the 32-root,
+4096-group path described here. Verified geometry caching now improves repeated
+startup. All original benchmark and failed-source identities remain unchanged.

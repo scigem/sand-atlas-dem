@@ -1,0 +1,6 @@
+{
+  "completed": false,
+  "stage": "fixture construction",
+  "reason": "subdivisions=8 is invalid; API accepts refinement levels0..6, not subdivisions per edge. No GPU execution occurred. Frozen sources/protocol and run.log retained.",
+  "next_study": "dense27-systematic-performance-v2: level3 gives2304 nodes per cube; same acceptance gates"
+}

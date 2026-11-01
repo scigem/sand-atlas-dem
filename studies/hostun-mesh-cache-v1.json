@@ -1,0 +1,9 @@
+{
+  "identity": "hostun-mesh-cache-v1",
+  "shape_library": "/private/tmp/sand-atlas-dem-walls/evidence/hostun-balanced424-preparation-v3/study/private/shapes.h5",
+  "shape_sha256": "c4b32a08ad649ff8c85f1393c17c881b4b743b9dfba106eded304d06ef6b02a7",
+  "length_unit": 0.0001,
+  "warm_repetitions": 3,
+  "minimum_speedup": 2,
+  "gate": "Byte-identical array content/dtypes/shapes; miss then three hits. Hash original geometry, exact packer source, runtime versions, units and provenance. No changed sample keys or bounds. Private cache files only. Not end-to-end startup or steady-state timing."
+}

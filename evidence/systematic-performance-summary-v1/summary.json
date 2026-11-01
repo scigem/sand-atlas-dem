@@ -1,0 +1,141 @@
+{
+  "studies": [
+    {
+      "identity": "hostun-mesh-cache-v1",
+      "completed": true,
+      "equivalence_passed": null,
+      "performance_passed": true,
+      "speedup": 159.18827847159494,
+      "speedups": null,
+      "stage_mean_seconds": null
+    },
+    {
+      "identity": "mesh-cache-qualification-v1",
+      "completed": null,
+      "equivalence_passed": null,
+      "performance_passed": null,
+      "speedup": null,
+      "speedups": null,
+      "stage_mean_seconds": null
+    },
+    {
+      "identity": "mesh-cache-qualification-v2",
+      "completed": null,
+      "equivalence_passed": null,
+      "performance_passed": null,
+      "speedup": null,
+      "speedups": null,
+      "stage_mean_seconds": null
+    },
+    {
+      "identity": "hostun-systematic-performance-v1",
+      "completed": true,
+      "equivalence_passed": true,
+      "performance_passed": null,
+      "speedup": null,
+      "speedups": {
+        "baseline": 1.0,
+        "pool256": 1.0111991665556734,
+        "pool1024": 1.0116963121573266,
+        "pool16384": 1.0451032322473857,
+        "all-hull-roots": 0.9270535873668077
+      },
+      "stage_mean_seconds": {
+        "drift": 0.00042133719034609385,
+        "neighbours": 0.0005464231180667412,
+        "contact_geometry": 0.0073507305642124265,
+        "friction_and_history": 0.0007094988686731085,
+        "force_reduction": 0.0004606106085702777,
+        "final_kick": 0.00023268490986083634
+      }
+    },
+    {
+      "identity": "dense27-systematic-performance-v2",
+      "completed": true,
+      "equivalence_passed": false,
+      "performance_passed": null,
+      "speedup": null,
+      "speedups": {
+        "baseline": 1.0,
+        "pool256": 0.9590579305304044,
+        "pool1024": 0.98698361586771,
+        "pool16384": 1.0020119532587266,
+        "all-hull-roots": 0.9981253150719144
+      },
+      "stage_mean_seconds": {
+        "drift": 0.0003861653422063682,
+        "neighbours": 0.0004909922608931083,
+        "contact_geometry": 0.0004965924345015083,
+        "friction_and_history": 0.0004613490600604564,
+        "force_reduction": 0.002691549430892337,
+        "final_kick": 0.00022797007841290906
+      }
+    },
+    {
+      "identity": "dense27-gather-performance-v1",
+      "completed": true,
+      "equivalence_passed": false,
+      "performance_passed": null,
+      "speedup": null,
+      "speedups": {
+        "baseline": 1.0,
+        "gather1": 1.0284977594806903,
+        "gather4": 1.0262501705243805,
+        "gather8": 0.9983761077476423,
+        "gather16": 0.9972901591379385,
+        "gather32": 0.9984298860450475
+      },
+      "stage_mean_seconds": {
+        "drift": 0.00040671882379683666,
+        "neighbours": 0.0004969791370967869,
+        "contact_geometry": 0.000506615837366553,
+        "friction_and_history": 0.00047519540385110304,
+        "force_reduction": 0.002716671941016102,
+        "final_kick": 0.00023273699844139628
+      }
+    },
+    {
+      "identity": "hostun-frontier-performance-v1",
+      "completed": true,
+      "equivalence_passed": true,
+      "performance_passed": null,
+      "speedup": null,
+      "speedups": {
+        "baseline": 1.0,
+        "frontier8-pool4096": 0.8830883952875448,
+        "frontier16-pool4096": 1.0379313768941398,
+        "frontier64-pool4096": 1.0128492776567362,
+        "frontier128-pool4096": 1.0485249157939254,
+        "frontier64-pool16384": 1.0399301474335594,
+        "frontier128-pool16384": 1.0543815389506286
+      },
+      "stage_mean_seconds": {
+        "drift": 0.0004089660906174686,
+        "neighbours": 0.0005229375019553117,
+        "contact_geometry": 0.0073249674642283935,
+        "friction_and_history": 0.0007018592878011987,
+        "force_reduction": 0.0004536251690296922,
+        "final_kick": 0.00023094143034541048
+      }
+    },
+    {
+      "identity": "hostun-promoted-frontier-performance-v2",
+      "completed": true,
+      "equivalence_passed": true,
+      "performance_passed": false,
+      "speedup": 1.0326559569747102,
+      "speedups": null,
+      "stage_mean_seconds": null
+    },
+    {
+      "identity": "hostun-promoted-frontier-performance-v3",
+      "completed": true,
+      "equivalence_passed": true,
+      "performance_passed": false,
+      "speedup": 1.033884718048557,
+      "speedups": null,
+      "stage_mean_seconds": null
+    }
+  ],
+  "scope": "Diagnostic wall profiles; failed studies remain failed. No material admission or GPU-only timestamp claim."
+}

@@ -1,0 +1,171 @@
+{
+  "identity": "hostun-promoted-frontier-performance-v2",
+  "completed": true,
+  "backend": {
+    "format": "sand-dem-doctor/1",
+    "backend": "metal",
+    "adapter": "Apple M4 Max",
+    "slangpy": "0.43.1",
+    "python": "3.12.14",
+    "smoke_elements": 257,
+    "smoke_max_error": 0.0,
+    "fallback": false,
+    "floating_point_mode_requested": "precise"
+  },
+  "setup_seconds": 106.43021474999841,
+  "sources_and_inputs_unchanged": true,
+  "equivalence_checks": [
+    {
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 8.881784197001252e-16,
+        "rotation": 7.105427357601002e-15,
+        "force": 2.0766328656662836e-09,
+        "torque": 3.5284257737799862e-09
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 5.551115123125783e-16,
+        "rotation": 0.0,
+        "force": 2.0766328656662836e-09,
+        "torque": 0.0
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 8.881784197001252e-16,
+        "rotation": 0.0,
+        "force": 2.9368023568565604e-09,
+        "torque": 0.0
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 8.881784197001252e-16,
+        "rotation": 7.105427357601002e-15,
+        "force": 2.9368023568565604e-09,
+        "torque": 3.5284257737799862e-09
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 8.881784197001252e-16,
+        "rotation": 7.105427357601002e-15,
+        "force": 2.0766328656662836e-09,
+        "torque": 3.5284257737799862e-09
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 5.551115123125783e-16,
+        "rotation": 3.552713678800501e-15,
+        "force": 2.9368023568565604e-09,
+        "torque": 3.5284257737799862e-09
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 5.551115123125783e-16,
+        "rotation": 0.0,
+        "force": 2.9368023568565604e-09,
+        "torque": 3.5284257737799862e-09
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 4.440892098500626e-16,
+        "rotation": 7.105427357601002e-15,
+        "force": 2.0766328656662836e-09,
+        "torque": 3.5284257737799862e-09
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 8.881784197001252e-16,
+        "rotation": 7.105427357601002e-15,
+        "force": 2.0766328656662836e-09,
+        "torque": 3.5284257737799862e-09
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 3.3306690738754696e-16,
+        "rotation": 3.552713678800501e-15,
+        "force": 2.9368023568565604e-09,
+        "torque": 3.5284257737799862e-09
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    },
+    {
+      "passed": true,
+      "errors": {
+        "position": 0.0,
+        "velocity": 4.440892098500626e-16,
+        "rotation": 7.105427357601002e-15,
+        "force": 2.9368023568565604e-09,
+        "torque": 3.5284257737799862e-09
+      },
+      "keys_equal": true,
+      "history_equal": true,
+      "normals_equal": true
+    }
+  ],
+  "equivalence_passed": true,
+  "median_seconds_per_step": {
+    "baseline": 0.008864682617058861,
+    "parallel": 0.008584352375237359
+  },
+  "speedup": 1.0326559569747102,
+  "performance_passed": false,
+  "scientific_admission": false,
+  "scope": "Production auto-selected128-root/16384-group path vs archived32-root/4096-group collector on same current engine. Fine selection requires median shape sample count >=131072; predominantly coarse libraries retain original32 path. Same immutable Hostun checkpoint,2ns step, contact model and gates. Six128-step trials per mode. Fixed5% performance gate, full source/reference archive before execution. No preparation restart or scientific admission."
+}

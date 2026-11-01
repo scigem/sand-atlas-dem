@@ -1,0 +1,4 @@
+{
+  "scope": "Withdrawn candidate-only high-resolution GPU static test and selector tests. CPU portions executed; new GPU test was never executed because independent production speedup failed5% gate. Do not infer qualification.",
+  "sha256": "3578bfa81161af055339339112e60bab35b67fbe3b88d18e4aea97b0ad50183f"
+}

@@ -1,0 +1,7 @@
+{
+  "completed": false,
+  "classification": "independent-probe-error",
+  "reason": "FP64 expected torque used source-minus-target centre branch, opposite to target-minus-source contract; omitted position residuals. First force check passed, first torque check failed.",
+  "superseded_by": "hybrid-switch-probe-v2",
+  "tolerances_changed": false
+}

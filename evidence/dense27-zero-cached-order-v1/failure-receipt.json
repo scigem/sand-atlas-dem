@@ -1,0 +1,6 @@
+{
+  "completed": false,
+  "failure": "Metal threadgroup memory32772 exceeds32768-byte limit; extra shared uint above8192-entry sorting array.",
+  "superseded_by": "dense27-zero-cached-order-v2",
+  "numerical_gate_changed": false
+}

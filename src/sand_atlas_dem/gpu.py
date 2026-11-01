@@ -419,9 +419,11 @@ class Engine:
 
     def _static_geometry(self):
         if self.spec.contact_geometry == "mesh":
-            from .mesh import pack_meshes
+            from .mesh_cache import packed_meshes
 
-            mesh_data = pack_meshes(self.library, self.length_unit)
+            mesh_data, self.mesh_cache_receipt = packed_meshes(
+                self.library, self.length_unit
+            )
         else:
             mesh_data = {
                 name: np.zeros(

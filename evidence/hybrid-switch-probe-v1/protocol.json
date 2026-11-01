@@ -1,0 +1,19 @@
+{
+  "identity": "hybrid-switch-probe-v1",
+  "driver_sha256": "e2d6056307c5c7642df5bcf4c36718b73f16a1f9acfc458fdf3dcad38c3251ad",
+  "module": "/private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-hybrid-order-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-cached-hybrid.slang",
+  "module_sha256": "7ff96f93226441adc7ef5c0bc60e0b7d4e7bf0c463fc152571b95e948f83d793",
+  "contact_counts": [
+    191,
+    192,
+    193,
+    191,
+    0,
+    192,
+    192
+  ],
+  "threshold": 192,
+  "force_torque_rtol": 2e-06,
+  "force_torque_atol": 1e-10,
+  "scope": "Prescribed synthetic contact rows verify GPU sparse/dense transitions and reductions; no CPU DEM simulation. Exact full endpoint membership and expected order-kernel activity required. Independent FP64 sums from actual FP32 GPU contact forces and prescribed arms, zero momentum and physical history step0. No scientific admission."
+}

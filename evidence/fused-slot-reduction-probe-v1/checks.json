@@ -1,0 +1,79 @@
+[
+  {
+    "contacts": 191,
+    "dense": true,
+    "cache_hit_miss": [
+      0,
+      3
+    ],
+    "passed": true,
+    "force_max_abs": 1.7763568394002505e-15,
+    "torque_max_abs": 2.5464281348390087e-14
+  },
+  {
+    "contacts": 192,
+    "dense": true,
+    "cache_hit_miss": [
+      1,
+      2
+    ],
+    "passed": true,
+    "force_max_abs": 0.0,
+    "torque_max_abs": 3.008320224940947e-14
+  },
+  {
+    "contacts": 193,
+    "dense": true,
+    "cache_hit_miss": [
+      1,
+      2
+    ],
+    "passed": true,
+    "force_max_abs": 1.7763568394002505e-15,
+    "torque_max_abs": 3.690122375765012e-14
+  },
+  {
+    "contacts": 191,
+    "dense": true,
+    "cache_hit_miss": [
+      1,
+      2
+    ],
+    "passed": true,
+    "force_max_abs": 1.7763568394002505e-15,
+    "torque_max_abs": 2.5464281348390087e-14
+  },
+  {
+    "contacts": 0,
+    "dense": true,
+    "cache_hit_miss": [
+      1,
+      2
+    ],
+    "passed": true,
+    "force_max_abs": 0.0,
+    "torque_max_abs": 0.0
+  },
+  {
+    "contacts": 192,
+    "dense": true,
+    "cache_hit_miss": [
+      1,
+      2
+    ],
+    "passed": true,
+    "force_max_abs": 0.0,
+    "torque_max_abs": 3.008320224940947e-14
+  },
+  {
+    "contacts": 192,
+    "dense": true,
+    "cache_hit_miss": [
+      3,
+      0
+    ],
+    "passed": true,
+    "force_max_abs": 0.0,
+    "torque_max_abs": 3.008320224940947e-14
+  }
+]

@@ -1,0 +1,64 @@
+{
+  "identity": "persistent-slot-transition-probe-v1",
+  "module": "/private/tmp/sand-atlas-dem-walls/evidence/dense27-spin-persistent-slots-v1/source_snapshot/sand_atlas_dem/shaders/segmented-ordered-persistent-cached.slang",
+  "module_sha256": "fa8abba65d002dcf40e87e24bf96699079375c2385222022143ddcb5ff286971",
+  "driver_sha256": "d079f7836523e9c9c750f7a2c9f12f9a26d15dbcbb7161835f375ffafc123081",
+  "cases": [
+    {
+      "name": "first",
+      "contacts": 4,
+      "keys_sha256": "a8734e07ed0d6a0c3c879e4ac10030075b80654f9a5bcbb58c8d7ffe7dc99304"
+    },
+    {
+      "name": "index-permutation",
+      "contacts": 4,
+      "keys_sha256": "a64d550e1b8d6bffa28a0bea1f27a983c0b19a9300b9381446e7b9f165454baa"
+    },
+    {
+      "name": "equal-count-replacement",
+      "contacts": 4,
+      "keys_sha256": "c00f4f91ff249a687821496c07b2cdde8c586ed5ee2d887144b0ab42e75432ea"
+    },
+    {
+      "name": "remove",
+      "contacts": 3,
+      "keys_sha256": "41f688875556b1b88d881cd84c14c39e760bc984dab599829f02c1006e836bea"
+    },
+    {
+      "name": "add",
+      "contacts": 4,
+      "keys_sha256": "b8d3b86a293f406b8789a50a3c2b7e216194ee0a6f6550787a114c66e38a480c"
+    },
+    {
+      "name": "permuted",
+      "contacts": 4,
+      "keys_sha256": "8008e61b302752b8655a8c30d4f3f1144962be2a13c39d9e4c2c30a4660d8ee6"
+    },
+    {
+      "name": "empty",
+      "contacts": 0,
+      "keys_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "reappear",
+      "contacts": 4,
+      "keys_sha256": "a64d550e1b8d6bffa28a0bea1f27a983c0b19a9300b9381446e7b9f165454baa"
+    },
+    {
+      "name": "full8192",
+      "contacts": 8192,
+      "keys_sha256": "d93dcf435609fcbbfad8128b5f2d340da308eb700c1137af3d74bebd5cfd5c0f"
+    },
+    {
+      "name": "full8192-cache-hit",
+      "contacts": 8192,
+      "keys_sha256": "3cd4afe5246b660be622c9242ff5889342fd726bfe56195a3d91462976c40407"
+    },
+    {
+      "name": "reject8193",
+      "contacts": 8193,
+      "keys_sha256": "2b62126a0d215a61b558ebda9e68110cdf14a0ec0a70fc35ed93ec70e1ed7dda"
+    }
+  ],
+  "gates": "Exact canonical endpoint sequence, exact cache hit/miss counts from prior/current set equality, no duplicates, complete membership.8192 endpoints supported;8193 rejects with bit16384 before access. No force simulation or numerical-gate revision."
+}

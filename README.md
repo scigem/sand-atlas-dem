@@ -10,6 +10,8 @@ is still open. See [STATUS.md](docs/STATUS.md), the [implementation board](IMPLE
 and the [contact-method contract](docs/CONTACT_METHOD.md). A fast benchmark is not
 experimental validation or a verified soil specimen.
 
+Research prerelease: **v0.1.0a1**. See [release notes](RELEASE_NOTES.md).
+
 ## Setup
 
 Requires Apple Silicon, macOS 26+, Python 3.12 and Xcode's Metal compiler toolchain.
@@ -223,3 +225,7 @@ current contact areas and rotational mobility instead of the whole surface. Set
 `"timestep_policy": "active-contact"` in a complete experiment/case. Device checks
 reject unsafe chunks with rollback; this does not automatically choose a timestep
 or qualify a material. The default remains `"conservative"`.
+
+Packed mesh geometry now has a verified content-addressed disk cache for faster
+repeated case startup. See [cache controls and performance studies](docs/PERFORMANCE_FOLLOWUP.md).
+Set `SAND_DEM_MESH_CACHE=off` to disable it, or use an explicit cache directory.

@@ -1,0 +1,338 @@
+[
+  {
+    "repeat": 0,
+    "mode": "baseline",
+    "seconds_per_step": 0.009104408851271728,
+    "phase_seconds_per_step": {
+      "host_before_submit": 0.001376205726955959,
+      "submit_call": 0.00011723437455657404,
+      "after_submit_wait_and_checks": 0.007610968749759195
+    },
+    "cache_hit_miss": [
+      0,
+      0
+    ]
+  },
+  {
+    "repeat": 0,
+    "mode": "baseline-bound",
+    "seconds_per_step": 0.008261251953626925,
+    "phase_seconds_per_step": {
+      "host_before_submit": 0.0006087021483835997,
+      "submit_call": 6.89876333126449e-05,
+      "after_submit_wait_and_checks": 0.00758356217193068
+    },
+    "cache_hit_miss": [
+      0,
+      0
+    ]
+  },
+  {
+    "repeat": 0,
+    "mode": "segmented-ordered-cached",
+    "seconds_per_step": 0.009362450195112615,
+    "phase_seconds_per_step": {
+      "host_before_submit": 0.0017539866485094535,
+      "submit_call": 9.820638297242112e-05,
+      "after_submit_wait_and_checks": 0.00751025716363074
+    },
+    "cache_hit_miss": [
+      54142,
+      130
+    ]
+  },
+  {
+    "repeat": 0,
+    "mode": "segmented-ordered-cached-bound",
+    "seconds_per_step": 0.008302897460453096,
+    "phase_seconds_per_step": {
+      "host_before_submit": 0.0007422288435918745,
+      "submit_call": 7.265234398801113e-05,
+      "after_submit_wait_and_checks": 0.00748801627287321
+    },
+    "cache_hit_miss": [
+      54142,
+      130
+    ]
+  },
+  {
+    "repeat": 0,
+    "mode": "segmented-ordered-cached-bound",
+    "seconds_per_step": 0.00829540429640474,
+    "phase_seconds_per_step": {
+      "host_before_submit": 0.000740699867492367,
+      "submit_call": 4.878027266386198e-05,
+      "after_submit_wait_and_checks": 0.007505924156248511
+    },
+    "cache_hit_miss": [
+      54142,
+      130
+    ]
+  },
+  {
+    "repeat": 0,
+    "mode": "segmented-ordered-cached",
+    "seconds_per_step": 0.009310610351349169,
+    "phase_seconds_per_step": {
+      "host_before_submit": 0.0017429153667762876,
+      "submit_call": 5.541406244446989e-05,
+      "after_submit_wait_and_checks": 0.0075122809221284115
+    },
+    "cache_hit_miss": [
+      54142,
+      130
+    ]
+  },
+  {
+    "repeat": 0,
+    "mode": "baseline-bound",
+    "seconds_per_step": 0.008246426757978043,
+    "phase_seconds_per_step": {
+      "host_before_submit": 0.0006236829458430293,
+      "submit_call": 4.275423452781979e-05,
+      "after_submit_wait_and_checks": 0.0075799895776071935
+    },
+    "cache_hit_miss": [
+      0,
+      0
+    ]
+  },
+  {
+    "repeat": 0,
+    "mode": "baseline",
+    "seconds_per_step": 0.008999811523608514,
+    "phase_seconds_per_step": {
+      "host_before_submit": 0.0013460130157909589,
+      "submit_call": 4.173046909272671e-05,
+      "after_submit_wait_and_checks": 0.0076120680387248285
+    },
+    "cache_hit_miss": [
+      0,
+      0
+    ]
+  },
+  {
+    "repeat": 1,
+    "mode": "baseline",
+    "seconds_per_step": 0.008971743163783685,
+    "phase_seconds_per_step": {
+      "host_before_submit": 0.0013560361321651726,
+      "submit_call": 3.723014106071787e-05,
+      "after_submit_wait_and_checks": 0.007578476890557795
+    },
+    "cache_hit_miss": [
+      0,
+      0
+    ]
+  },
+  {
+    "repeat": 1,
+    "mode": "baseline-bound",
+    "seconds_per_step": 0.008216777671805175,
+    "phase_seconds_per_step": {
+      "host_before_submit": 0.000605410484240565,
+      "submit_call": 3.707063297042623e-05,
+      "after_submit_wait_and_checks": 0.007574296554594184
+    },
+    "cache_hit_miss": [
+      0,
+      0
+    ]
+  },
+  {
+    "repeat": 1,
+    "mode": "segmented-ordered-cached",
+    "seconds_per_step": 0.009377449217936373,
+    "phase_seconds_per_step": {
+      "host_before_submit": 0.0017081640617107041,
+      "submit_call": 5.514648455573479e-05,
+      "after_submit_wait_and_checks": 0.007614138671669934
+    },
+    "cache_hit_miss": [
+      54142,
+      130
+    ]
+  },
+  {
+    "repeat": 1,
+    "mode": "segmented-ordered-cached-bound",
+    "seconds_per_step": 0.008373597328500182,
+    "phase_seconds_per_step": {
+      "host_before_submit": 0.000732743164007843,
+      "submit_call": 5.473177407111507e-05,
+      "after_submit_wait_and_checks": 0.007586122390421224
+    },
+    "cache_hit_miss": [
+      54142,
+      130
+    ]
+  },
+  {
+    "repeat": 1,
+    "mode": "segmented-ordered-cached-bound",
+    "seconds_per_step": 0.008314294921547116,
+    "phase_seconds_per_step": {
+      "host_before_submit": 0.0007489863282899023,
+      "submit_call": 5.500097631738754e-05,
+      "after_submit_wait_and_checks": 0.007510307616939826
+    },
+    "cache_hit_miss": [
+      54142,
+      130
+    ]
+  },
+  {
+    "repeat": 1,
+    "mode": "segmented-ordered-cached",
+    "seconds_per_step": 0.009272463868001068,
+    "phase_seconds_per_step": {
+      "host_before_submit": 0.0017153190083263326,
+      "submit_call": 5.030696866015205e-05,
+      "after_submit_wait_and_checks": 0.007506837891014584
+    },
+    "cache_hit_miss": [
+      54142,
+      130
+    ]
+  },
+  {
+    "repeat": 1,
+    "mode": "baseline-bound",
+    "seconds_per_step": 0.008251858070252638,
+    "phase_seconds_per_step": {
+      "host_before_submit": 0.0006034580073901452,
+      "submit_call": 4.356314912001835e-05,
+      "after_submit_wait_and_checks": 0.007604836913742474
+    },
+    "cache_hit_miss": [
+      0,
+      0
+    ]
+  },
+  {
+    "repeat": 1,
+    "mode": "baseline",
+    "seconds_per_step": 0.009028903969010571,
+    "phase_seconds_per_step": {
+      "host_before_submit": 0.0013833574221280287,
+      "submit_call": 4.0209632061305456e-05,
+      "after_submit_wait_and_checks": 0.007605336914821237
+    },
+    "cache_hit_miss": [
+      0,
+      0
+    ]
+  },
+  {
+    "repeat": 2,
+    "mode": "baseline",
+    "seconds_per_step": 0.009033386718328984,
+    "phase_seconds_per_step": {
+      "host_before_submit": 0.0013692350230485317,
+      "submit_call": 4.322005497670034e-05,
+      "after_submit_wait_and_checks": 0.007620931640303752
+    },
+    "cache_hit_miss": [
+      0,
+      0
+    ]
+  },
+  {
+    "repeat": 2,
+    "mode": "baseline-bound",
+    "seconds_per_step": 0.008238003257247328,
+    "phase_seconds_per_step": {
+      "host_before_submit": 0.0006113330073276302,
+      "submit_call": 3.7658203837054316e-05,
+      "after_submit_wait_and_checks": 0.007589012046082644
+    },
+    "cache_hit_miss": [
+      0,
+      0
+    ]
+  },
+  {
+    "repeat": 2,
+    "mode": "segmented-ordered-cached",
+    "seconds_per_step": 0.009275544272895786,
+    "phase_seconds_per_step": {
+      "host_before_submit": 0.0017177063828057726,
+      "submit_call": 5.6924476666608825e-05,
+      "after_submit_wait_and_checks": 0.0075009134134234046
+    },
+    "cache_hit_miss": [
+      54142,
+      130
+    ]
+  },
+  {
+    "repeat": 2,
+    "mode": "segmented-ordered-cached-bound",
+    "seconds_per_step": 0.008374982422537869,
+    "phase_seconds_per_step": {
+      "host_before_submit": 0.0007405553360513295,
+      "submit_call": 5.279948436509585e-05,
+      "after_submit_wait_and_checks": 0.0075816276021214435
+    },
+    "cache_hit_miss": [
+      54142,
+      130
+    ]
+  },
+  {
+    "repeat": 2,
+    "mode": "segmented-ordered-cached-bound",
+    "seconds_per_step": 0.008265328781817516,
+    "phase_seconds_per_step": {
+      "host_before_submit": 0.0007389238280666177,
+      "submit_call": 5.005794537282782e-05,
+      "after_submit_wait_and_checks": 0.00747634700837807
+    },
+    "cache_hit_miss": [
+      54142,
+      130
+    ]
+  },
+  {
+    "repeat": 2,
+    "mode": "segmented-ordered-cached",
+    "seconds_per_step": 0.00926895930479077,
+    "phase_seconds_per_step": {
+      "host_before_submit": 0.001717753578304837,
+      "submit_call": 5.6511718867113814e-05,
+      "after_submit_wait_and_checks": 0.007494694007618818
+    },
+    "cache_hit_miss": [
+      54142,
+      130
+    ]
+  },
+  {
+    "repeat": 2,
+    "mode": "baseline-bound",
+    "seconds_per_step": 0.008291249343528762,
+    "phase_seconds_per_step": {
+      "host_before_submit": 0.0006231305314940982,
+      "submit_call": 4.242382783559151e-05,
+      "after_submit_wait_and_checks": 0.007625694984199072
+    },
+    "cache_hit_miss": [
+      0,
+      0
+    ]
+  },
+  {
+    "repeat": 2,
+    "mode": "baseline",
+    "seconds_per_step": 0.009001105140669097,
+    "phase_seconds_per_step": {
+      "host_before_submit": 0.0013625934216179303,
+      "submit_call": 4.136360985285137e-05,
+      "after_submit_wait_and_checks": 0.007597148109198315
+    },
+    "cache_hit_miss": [
+      0,
+      0
+    ]
+  }
+]

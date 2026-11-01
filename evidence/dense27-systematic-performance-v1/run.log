@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/private/tmp/sand-atlas-dem-walls/evidence/dense27-systematic-performance-v1/source_snapshot/study_mesh_performance.py", line 351, in <module>
+    main()
+  File "/private/tmp/sand-atlas-dem-walls/evidence/dense27-systematic-performance-v1/source_snapshot/study_mesh_performance.py", line 280, in main
+    execute(out)
+  File "/private/tmp/sand-atlas-dem-walls/evidence/dense27-systematic-performance-v1/source_snapshot/study_mesh_performance.py", line 125, in execute
+    shape = with_face_quadrature(
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/sand-atlas-dem-walls/evidence/dense27-systematic-performance-v1/source_snapshot/sand_atlas_dem/geometry.py", line 333, in with_face_quadrature
+    raise ValueError("Triangle subdivisions must be an integer from zero to six")
+ValueError: Triangle subdivisions must be an integer from zero to six
