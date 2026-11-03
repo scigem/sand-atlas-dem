@@ -1,11 +1,12 @@
 # Sand Atlas DEM
 
 A standalone research implementation of mesh-derived, surface-based DEM
-in **Slang**, executed through **SlangPy/Metal** on Apple Silicon. It has no CPU
-simulation fallback. Python prepares geometry, schedules tests and writes evidence;
-neighbour search, contacts, friction history and rigid-body updates run on the GPU.
+in **Slang**, executed through explicit **SlangPy/Metal** or a native **CPU** backend.
+There is no automatic backend fallback. Python prepares geometry, schedules tests
+and writes evidence. The selected backend executes neighbour search, contacts,
+friction history and rigid-body updates.
 
-**Status:** working GPU solver and laboratory driver; scientific pilot acceptance
+**Status:** working GPU and CPU solvers and laboratory driver; scientific pilot acceptance
 is still open. See [STATUS.md](docs/STATUS.md), the [implementation board](IMPLEMENTATION_PLAN.md)
 and the [contact-method contract](docs/CONTACT_METHOD.md). A fast benchmark is not
 experimental validation or a verified soil specimen.
@@ -16,6 +17,11 @@ Research prerelease: **v0.1.0a1**. See [release notes](RELEASE_NOTES.md).
 
 Requires Apple Silicon, macOS 26+, Python 3.12 and Xcode's Metal compiler toolchain.
 The current SlangPy dependency is pinned to 0.43.1. The Metal backend is experimental.
+
+The CPU backend uses the bundled Slang compiler and a C++17 compiler (`xcrun
+clang++` on macOS, `CXX` or `c++` on Linux). CPU execution does not create a Metal
+device. Apple Silicon is verified locally; Linux portability is not yet tested.
+See [CPU execution and parallel jobs](docs/CPU_SOLVER.md).
 
 ```sh
 python3.12 -m venv .venv

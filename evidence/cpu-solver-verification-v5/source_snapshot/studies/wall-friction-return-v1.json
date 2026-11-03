@@ -1,0 +1,14 @@
+{
+  "identity": "wall-friction-return-v1",
+  "backend": "metal",
+  "scope": "Production wall collector/resolve/gather versus independent closed sphere-cap Coulomb force, torque and return-loss integrals; not a quasistatic or large-step work-balance study",
+  "test": "tests/test_wall_coulomb.py",
+  "reference": {
+    "surface_measure": "dA=2*pi*R*dd",
+    "traction": "min(kt*S,mu*kn*d)",
+    "return_loss": "2*pi*R*c*(S*h^2/2-c*h^3/(3*kt)), c=mu*kn, h=min(depth,kt*S/c)",
+    "kinematics": "First-step prescribed positive x wall velocity gives negative x trial slip and positive x force; common-node torque has negative y component"
+  },
+  "gates": {"force": "relative vector error <0.1%", "torque": "relative vector error <0.1%", "coulomb_loss": "relative error <0.1%", "mixed_stick_slip": "Sliding fraction strictly between zero and one, wall work positive"},
+  "regression": "Full serial actual-Metal pytest suite with unchanged prior assertions"
+}

@@ -1,0 +1,48 @@
+{
+  "identity": "mixed-quadrature-box-v3",
+  "box_extents_m": [
+    [
+      0.001,
+      0.001,
+      0.001
+    ],
+    [
+      0.001,
+      0.003,
+      0.0003
+    ],
+    [
+      0.001,
+      0.01,
+      0.01
+    ]
+  ],
+  "depth_fractions": [
+    0.01,
+    0.02
+  ],
+  "maximum_reference_change": 0.02,
+  "maximum_reference_continuum_error": 0.02,
+  "selection_target": 0.05,
+  "minimum_distinct_selected_levels": 2,
+  "maximum_gpu_integral_error": 0.1,
+  "maximum_gpu_fixed_level_error": 0.001,
+  "minimum_gpu_refinement_factor": 2,
+  "timestep_s": 2e-09,
+  "overlap_guard_fraction": 0.03,
+  "scope": "Own analytical boxes; independent axis-aligned distance and closed continuum x-force = -d*(hy-2d)*(hz-2d), before multiplying by traction stiffness. Surface Gauss3 levels0..6, accepted-source adaptive selection and actual shared Metal study driver. All four original poses retained; require at least two distinct selected per-shape levels. No Hostun/material/assembly or performance claim.",
+  "parent": "mixed-quadrature-box-v2",
+  "reference_levels": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "revision": "Retain both original boxes and poses; add one wide plate so small edge effects permit a coarser selected level. Increase unused field resolution for resolved interior sampling of high-aspect-ratio boxes. All reference, selection, mixed-profile and GPU gates unchanged.",
+  "sdf_resolution": 32
+}

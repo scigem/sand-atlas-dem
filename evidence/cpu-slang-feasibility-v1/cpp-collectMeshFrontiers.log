@@ -1,0 +1,20 @@
+error[E36107]: unavailable features in entry point
+   --> /Users/bmar5496/code/sand-atlas-dem/runs/cpu-slang-feasibility-v1/source_snapshot/shaders/solver.slang:529:6
+    |
+529 | void collectMeshFrontiers(uint3 group:SV_GroupID,uint lane:SV_GroupIndex){
+    |      ^^^^^^^^^^^^^^^^^^^^ entrypoint 'collectMeshFrontiers' uses features that are not available in 'compute' stage for 'cpp' compilation target.
+----'
+note: see using of 'GroupMemoryBarrierWithGroupSync'
+   --> /Users/bmar5496/code/sand-atlas-dem/runs/cpu-slang-feasibility-v1/source_snapshot/shaders/solver.slang:499:5
+    |
+499 | GroupMemoryBarrierWithGroupSync();
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----'
+note: see definition of 'GroupMemoryBarrierWithGroupSync'
+--> hlsl.meta.slang:11855:6
+-'
+note: see declaration of 'require'
+--> hlsl.meta.slang:11854:2
+-'
+
+{"status": -2147467259, "code_bytes": 0, "compiler": "/Users/bmar5496/code/sand-atlas-dem/.venv/lib/python3.12/site-packages/slangpy/libslang-compiler.0.2026.12.dylib", "compiler_sha256": "edaf4f75945629b470671fb8c39f1866c67a0d5c74cf54f87c247bc059ccebef"}

@@ -1,0 +1,12 @@
+{
+  "identity": "normal-viscosity-integration-v1",
+  "backend": "metal",
+  "scope": "Full serial regression and expanded viscous production state/pair checks, unchanged prior operator gates",
+  "new_gates": {
+    "grain_pair": "Independent exhaustive FP64 SDF quadrature, 0.1% force, torque and loss-power error, force/common-moment balance 1e-5 relative",
+    "rigid_motion": "Common translation and superposed instantaneous rigid velocity/spin preserve contact force, torque and dissipated power rtol 1e-4 atol 1e-9",
+    "hdf5": "Checkpoint/5 records all three damping fields; continuation rtol 2e-4 atol 3e-7",
+    "capacity_growth": "Actually grow from 16 contacts, exact active count against generous capacity, cumulative normal loss positive; state rtol 2e-4 atol 3e-7"
+  },
+  "regression": "All tests serially with SAND_DEM_METAL=1 and explicit adjacent Atlas source checkout for Python/browser request consumers; no continuum compiled execution"
+}

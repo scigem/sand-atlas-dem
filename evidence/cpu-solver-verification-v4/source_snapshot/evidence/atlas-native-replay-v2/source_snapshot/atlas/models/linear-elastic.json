@@ -1,0 +1,89 @@
+{
+  "schema_version": "0.1",
+  "status": "transcribed",
+  "parameters": {
+    "p_ref": {
+      "default": 100000,
+      "min": 1,
+      "max": 10000000000.0,
+      "unit": "Pa",
+      "label": "Reference stress / numerical scaling"
+    },
+    "E": {
+      "default": 30000000.0,
+      "min": 1,
+      "max": 1000000000000.0,
+      "unit": "Pa",
+      "label": "Young modulus"
+    },
+    "nu": {
+      "default": 0.25,
+      "min": -0.99,
+      "max": 0.499,
+      "unit": "1",
+      "label": "Poisson ratio"
+    }
+  },
+  "state": [
+    {
+      "name": "sigma",
+      "unit": "Pa",
+      "initial": [
+        100000.0,
+        100000.0,
+        100000.0,
+        0,
+        0,
+        0
+      ],
+      "shape": "sym",
+      "scale": "p_ref"
+    },
+    {
+      "name": "e",
+      "unit": "1",
+      "initial": 0.7,
+      "shape": "scalar",
+      "scale": "1"
+    }
+  ],
+  "derived": [
+    {
+      "name": "K",
+      "expr": "E / (3 * (1 - 2 * nu))"
+    },
+    {
+      "name": "G",
+      "expr": "E / (2 * (1 + nu))"
+    }
+  ],
+  "domain": [
+    "e > 0"
+  ],
+  "integration": "residual",
+  "id": "linear-elastic",
+  "name": "Linear isotropic elasticity",
+  "family": "elasticity",
+  "description": "Infinitesimal isotropic elasticity. Demonstration parameters, not calibrated to a soil.",
+  "sources": [
+    {
+      "url": "https://github.com/ufz/ogs/blob/b5d0f115c75ee74a7cdbfad533625a550a416fda/MaterialLib/SolidModels/LinearElasticIsotropic.h",
+      "locator": "MaterialProperties::lambda, mu, bulk_modulus; elasticTangentStiffness",
+      "role": "Pinned reference formulation"
+    },
+    {
+      "url": "https://github.com/ufz/ogs/blob/b5d0f115c75ee74a7cdbfad533625a550a416fda/MaterialLib/SolidModels/LinearElasticIsotropic.cpp",
+      "locator": "LinearElasticIsotropic::integrateStress; sigma_prev + C * (eps_m - eps_m_prev)",
+      "role": "Pinned incremental stress update"
+    },
+    {
+      "url": "https://github.com/benjym/constitutive-atlas/blob/main/docs/models/linear-elastic.md",
+      "locator": "Equation mapping; project-specific void-ratio bookkeeping and small-strain limits",
+      "role": "Transcription dossier"
+    }
+  ],
+  "equations": {
+    "sigma": "sigma - sigma_n - K * trace(de) * I - 2 * G * dev(de)",
+    "e": "e - (1 + e_n) * exp(-trace(de)) + 1"
+  }
+}

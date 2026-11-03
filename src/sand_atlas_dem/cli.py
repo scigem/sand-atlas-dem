@@ -73,6 +73,7 @@ def main(argv=None):
     a.add_argument("--cache", type=Path, default=cache_default)
     case = sub.add_parser("case").add_subparsers(dest="case_command", required=True)
     a = case.add_parser("run")
+    a.add_argument("--backend", choices=["metal", "cpu"], default=None)
     a.add_argument("material")
     a.add_argument("--case", type=Path, required=True)
     a.add_argument("--cache", type=Path, default=cache_default)
@@ -112,6 +113,7 @@ def main(argv=None):
         help="Write an SVG response comparison (requires inspect extra)",
     )
     doctor = sub.add_parser("doctor")
+    doctor.add_argument("--backend", choices=["metal", "cpu"], default="metal")
     doctor.add_argument("--output", type=Path)
     g = sub.add_parser("geometry").add_subparsers(
         dest="geometry_command", required=True
@@ -144,16 +146,19 @@ def main(argv=None):
     a.add_argument("--resolution", type=int, default=32)
     a.add_argument("--samples", type=int, default=512)
     a = sub.add_parser("run")
+    a.add_argument("--backend", choices=["metal", "cpu"], default=None)
     a.add_argument("specification", type=Path)
     a.add_argument("--output", type=Path, required=True)
     a.add_argument("--max-chunks", type=int)
     _view_arguments(a)
     a = sub.add_parser("resume")
+    a.add_argument("--backend", choices=["metal", "cpu"], default=None)
     a.add_argument("checkpoint", type=Path)
     a.add_argument("--output", type=Path, required=True)
     a.add_argument("--max-chunks", type=int)
     _view_arguments(a)
     a = sub.add_parser("benchmark")
+    a.add_argument("--backend", choices=["metal", "cpu"], default="metal")
     a.add_argument("--output", type=Path, required=True)
     a.add_argument("--particles", type=int, default=1000)
     a.add_argument("--resolution", type=int, default=32)
@@ -261,6 +266,8 @@ def main(argv=None):
                 view_kwargs = (
                     {"view_options": view_options} if view_options is not None else {}
                 )
+                if args.backend is not None:
+                    view_kwargs["backend"] = args.backend
                 report = run_case(report, args.output, args.max_chunks, **view_kwargs)
                 if all(handoff) and report["status"] == "complete":
                     from .atlas_bridge import export_replay
@@ -305,9 +312,14 @@ def main(argv=None):
                     atlas_root=args.atlas_root,
                 )
         elif args.command == "doctor":
-            from .backend import Metal
+            if args.backend == "cpu":
+                from .cpu import CPU
 
-            report = Metal().doctor()
+                report = CPU().doctor()
+            else:
+                from .backend import Metal
+
+                report = Metal().doctor()
             if args.output:
                 write_json(args.output, report)
         elif args.command == "geometry":
@@ -392,9 +404,9 @@ def main(argv=None):
 
             view_options = _view_options(args)
             sim = (
-                Simulation(Experiment.load(args.specification))
+                Simulation(Experiment.load(args.specification), backend=args.backend)
                 if args.command == "run"
-                else Simulation.resume(args.checkpoint)
+                else Simulation.resume(args.checkpoint, backend=args.backend)
             )
             result = sim.run(
                 args.output, max_chunks=args.max_chunks, view_options=view_options
@@ -407,6 +419,11 @@ def main(argv=None):
         elif args.command == "benchmark":
             from .benchmark import benchmark
 
+            backend_kwargs = {}
+            if args.backend == "cpu":
+                from .cpu import CPU
+
+                backend_kwargs["metal"] = CPU()
             report = benchmark(
                 args.output,
                 particles=args.particles,
@@ -421,6 +438,7 @@ def main(argv=None):
                 minimum_seconds=args.minimum_seconds,
                 pairs_per_particle=args.pairs_per_particle,
                 contacts_per_particle=args.contacts_per_particle,
+                **backend_kwargs,
             )
         elif args.command == "qualify":
             from .qualification import qualify

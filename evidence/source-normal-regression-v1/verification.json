@@ -1,0 +1,10 @@
+{
+  "identity": "source-normal-regression-v1",
+  "input_integrity": true,
+  "passed": 355,
+  "skipped": 8,
+  "warnings": 1,
+  "elapsed_s": 70.46,
+  "exit_code": 0,
+  "scientific_admission": false
+}

@@ -1,0 +1,13 @@
+..................................................ss..................ss [ 19%]
+......s................................................................. [ 39%]
+........................................................................ [ 59%]
+........................................................................ [ 79%]
+....................................................sss................. [ 99%]
+...                                                                      [100%]
+=============================== warnings summary ===============================
+tests/test_contact_timestep_policy.py::test_active_patch_allows_larger_step
+  tests/test_contact_timestep_policy.py:245: PytestWarning: record_property is incompatible with junit_family 'xunit2' (use 'legacy' or 'xunit1')
+    @pytest.mark.metal
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+355 passed, 8 skipped, 1 warning in 70.46s (0:01:10)

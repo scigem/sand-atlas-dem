@@ -1,0 +1,38 @@
+{
+  "identity": "hostun-frontier-performance-v1",
+  "checkpoint": "/private/tmp/sand-atlas-dem-walls/evidence/hostun-first-contact-profile-v1/private/checkpoint.h5",
+  "checkpoint_sha256": "831a722b693cb13534cea220524d24641c6040af70109622056c2d331f87102b",
+  "shape_library": "/private/tmp/sand-atlas-dem-walls/evidence/hostun-balanced424-preparation-v3/study/private/shapes.h5",
+  "shape_sha256": "c4b32a08ad649ff8c85f1393c17c881b4b743b9dfba106eded304d06ef6b02a7",
+  "repetitions": 3,
+  "warmup_steps": 16,
+  "steps": 128,
+  "rate_s": [
+    -50,
+    -50,
+    -50
+  ],
+  "drag_s": 100000,
+  "minimum_speedup": 1.05,
+  "history_rtol": 0.0001,
+  "history_atol": 1e-08,
+  "limits": {
+    "position": 1e-05,
+    "velocity": 1e-05,
+    "rotation": 1e-05,
+    "force": 0.0001,
+    "torque": 0.0001
+  },
+  "scope": "Same immutable Hostun state, unchanged 5% gate and numerical gates. Finer/coarser disjoint frontier coverage (8,16,64,128 roots vs baseline32) and declared larger-pool combinations. Existing leaves, keys and weights unchanged. Six restored 128-step trials per mode; independent new study identity before execution. No preparation restart or material admission.",
+  "workload": "hostun",
+  "modes": [
+    "baseline",
+    "frontier8-pool4096",
+    "frontier16-pool4096",
+    "frontier64-pool4096",
+    "frontier128-pool4096",
+    "frontier64-pool16384",
+    "frontier128-pool16384"
+  ],
+  "split_steps": 32
+}

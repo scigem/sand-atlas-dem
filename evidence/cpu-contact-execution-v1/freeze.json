@@ -1,0 +1,13 @@
+{
+  "id": "cpu-contact-execution-v1",
+  "files": {
+    "protocol.json": "8d5a226e6a8262a13d0214d63619bd4dab0755744ebc66e959ce8d27d0e32219",
+    "source_snapshot/codegen-freeze.json": "31a73e9ceb222c092a1b44fc254694f09d1cd495f24281a35704d403cc141b2e",
+    "source_snapshot/cpu_plane_bridge.cpp": "4efc42fd7e62faf11697a128b152c85b01c91c6d29a0535c869513b659ec1e8f",
+    "source_snapshot/planeProbe.cpp": "dd82f7a8f528835cbe3c675e388bb5438c1bf0d4dbeb067082a59cb5f5aa5f8b",
+    "source_snapshot/reference.py": "972bdbec1a08a8f01097758503296d3581ab6f558145ceac70b02c27603c7730",
+    "source_snapshot/study_cpu_contacts.py": "b2a89104bff1144d2703e3305df2c3f3bf5f6a6dcead23c46d962ab5c10a772c"
+  },
+  "created_unix": 1793646513.5367591,
+  "gpu_dispatches": 0
+}

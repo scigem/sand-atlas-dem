@@ -57,7 +57,15 @@ def initial_assembly(library, spec):
 
 
 class Simulation:
-    def __init__(self, experiment, *, library=None, metal=None):
+    def __init__(self, experiment, *, library=None, metal=None, backend=None):
+        if backend not in {None, "metal", "cpu"}:
+            raise ValueError("Backend must be explicitly metal or cpu")
+        if backend == "cpu":
+            if metal is not None:
+                raise ValueError("Cannot combine CPU selection with a Metal device")
+            from .cpu import CPU
+
+            metal = CPU()
         self.experiment = experiment
         self.library = library or ShapeLibrary.load(experiment.shape_library)
         positions, cell, ids, scales = initial_assembly(self.library, experiment)
@@ -89,6 +97,7 @@ class Simulation:
                 experiment=json.dumps(self.engine.spec.to_dict()),
                 shape_sha256=sha256(self.experiment.shape_library),
                 filter_stress=json.dumps(self.filter_stress.tolist()),
+                backend=getattr(self.engine.m, "name", "metal"),
                 initial_cell=json.dumps(self.engine.initial_cell.tolist()),
                 rows=json.dumps(self.rows),
             )
@@ -99,7 +108,7 @@ class Simulation:
                     f.create_dataset(name, data=value, compression="gzip")
 
     @classmethod
-    def resume(cls, path, *, metal=None):
+    def resume(cls, path, *, metal=None, backend=None):
         with h5py.File(path) as f:
             if f.attrs.get("format") not in {
                 "sand-dem-checkpoint/3",
@@ -114,7 +123,8 @@ class Simulation:
                 raise ValueError("Shape library changed since checkpoint")
             state = {name: f[name][:] for name in f}
             state["contacts"] = int(f.attrs["contacts"])
-            obj = cls(spec, metal=metal)
+            selected = backend or str(f.attrs.get("backend", "metal"))
+            obj = cls(spec, metal=metal, backend=selected)
             obj.engine.initial_cell = np.array(json.loads(f.attrs["initial_cell"]))
             obj.engine.restore(state, int(f.attrs["step"]))
             obj.stage_index = int(f.attrs["stage_index"])

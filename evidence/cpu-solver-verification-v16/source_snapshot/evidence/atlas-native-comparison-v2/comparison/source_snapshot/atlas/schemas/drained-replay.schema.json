@@ -1,0 +1,190 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Explicit normalized drained experiment replay mapping",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "model",
+    "parameters",
+    "initial_history",
+    "initial_strain",
+    "declarations"
+  ],
+  "properties": {
+    "version": {
+      "const": "experimental-drained-replay-0.1"
+    },
+    "model": {
+      "type": "string"
+    },
+    "parameters": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "number"
+      }
+    },
+    "initial_history": {
+      "type": "object",
+      "additionalProperties": {
+        "oneOf": [
+          {
+            "type": "number"
+          },
+          {
+            "type": "array",
+            "minItems": 6,
+            "maxItems": 6,
+            "items": {
+              "type": "number"
+            }
+          }
+        ]
+      }
+    },
+    "initial_strain": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "number"
+      }
+    },
+    "declarations": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "kinematics": {
+          "const": "fixed-frame-axisymmetric-x"
+        },
+        "p": {
+          "const": "mean-effective-stress"
+        },
+        "q": {
+          "const": "signed-axial-minus-radial-effective-stress"
+        },
+        "strain_origin": {
+          "const": "first-observation"
+        },
+        "radial_control": {
+          "const": "replay-measured-effective-stress"
+        },
+        "evidence_url": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence_locator": {
+          "type": "string",
+          "minLength": 1
+        },
+        "initialization_note": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "kinematics",
+        "p",
+        "q",
+        "strain_origin",
+        "radial_control",
+        "evidence_url",
+        "evidence_locator",
+        "initialization_note"
+      ]
+    },
+    "integration_settings": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "residual_tolerance": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "rate_tolerance": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "max_iterations": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000
+        },
+        "max_depth": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 20
+        },
+        "max_substeps": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000000
+        },
+        "max_backtracks": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 30
+        }
+      },
+      "required": []
+    },
+    "control_settings": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "control_tolerance": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 0.001
+        },
+        "max_iterations": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000
+        },
+        "max_backtracks": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 30
+        },
+        "max_material_trials": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000000
+        },
+        "finite_difference_step": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 0.01
+        }
+      },
+      "required": []
+    },
+    "restart_settings": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "max_restarts": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 16
+        },
+        "restart_step": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 0.01
+        },
+        "restart_levels": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 16
+        }
+      },
+      "required": []
+    },
+    "initial_void_ratio_override_note": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

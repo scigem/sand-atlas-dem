@@ -1,0 +1,15 @@
+{
+  "identity": "normal-viscosity-operator-v1",
+  "backend": "metal",
+  "tests": "tests/test_normal_viscosity.py",
+  "scope": "First operator, production cap, force-timing restart and transaction checks; dynamic oscillator/mesh-assembly qualification remains separate",
+  "gates": {
+    "operator": "Hand-evaluated table rtol 2e-6 atol 1e-7; both directed weights; zero viscosity; inactive, compression, unclipped and clipped unloading",
+    "cap_force_and_power": "Continuum integrals relative error <0.1%, 32768 original sphere nodes",
+    "reaction": "Force and common origin moment relative scale <1e-5",
+    "restart": "Normalized state rtol 2e-4 atol 3e-7; cumulative loss rtol 2e-4",
+    "rollback": "Every committed state field bitwise unchanged, including force-evaluation velocity, angular velocity and accumulated normal loss",
+    "timestep": "Extreme explicit viscosity rejects the unchanged conservative estimate"
+  },
+  "regression": "Existing serial Metal suite with unchanged assertions; later identity after first bounded study"
+}

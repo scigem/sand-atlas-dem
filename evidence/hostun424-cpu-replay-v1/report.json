@@ -1,0 +1,17 @@
+{
+  "id": "hostun424-cpu-replay-v1",
+  "backend": "cpu",
+  "gpu_dispatches": 0,
+  "scientific_admission": false,
+  "particles": 424,
+  "unique_shapes": 53,
+  "source_nodes": 53564544,
+  "estimated_bytes": 4272779024,
+  "restore_wall_s": 38.21516341692768,
+  "force_relative_l2_error": 0.0007604599894396224,
+  "torque_relative_l2_error": 0.0023287600771237163,
+  "passed": false,
+  "failure": "AssertionError('torque cross-backend resultant gate failed')",
+  "source_integrity": true,
+  "input_integrity": true
+}

@@ -1,0 +1,12 @@
+{
+  "identity": "hostun-library-quadrature-consolidated-v4",
+  "frozen_before_execution": true,
+  "require_exact_overlapping_forces": true,
+  "maximum_reference_change": 0.02,
+  "selection_target": 0.05,
+  "archive_policy": "Preserve all nested source archives and both same-pose grain54 level8 extensions. Identical numerical reference dependencies, no source-pose deletion or tolerance change. Production capability gaps remain separate.",
+  "parent_report": "/private/tmp/sand-atlas-dem-walls/evidence/hostun-library-quadrature-consolidated-v3/report.json",
+  "parent_report_sha256": "5cdb737810d0f026157402ab043ab0e580fe746b2d82021af2e3c48e465b8256",
+  "supplement_report": "/private/tmp/sand-atlas-dem-walls/evidence/hostun-grain54-deep-quadrature-l8-v1/report.json",
+  "supplement_report_sha256": "8535d0e064195db35a2958c572a1bcd1010d539faf209f754ef3ec9123903157"
+}

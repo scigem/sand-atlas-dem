@@ -1,0 +1,144 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://benjym.github.io/constitutive-atlas/schemas/screening.schema.json",
+  "title": "Publication screening record; independent review is a separate claim",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "0.1"
+    },
+    "kind": {
+      "const": "publication-screening"
+    },
+    "publication_id": {
+      "type": "string",
+      "pattern": "^doi:10[.][^ ]+/.+$"
+    },
+    "doi": {
+      "type": "string",
+      "pattern": "^10[.][^ ]+/.+$"
+    },
+    "url": {
+      "type": "string",
+      "pattern": "^https://doi[.]org/10[.]"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "containers": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "model_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "decision": {
+      "enum": [
+        "exclude",
+        "include-for-full-text",
+        "unresolved"
+      ]
+    },
+    "reason_code": {
+      "type": "string",
+      "minLength": 1
+    },
+    "reason": {
+      "type": "string",
+      "minLength": 1
+    },
+    "screening_basis": {
+      "enum": [
+        "title-and-container-metadata",
+        "abstract",
+        "full-text"
+      ]
+    },
+    "full_text_reviewed": {
+      "type": "boolean"
+    },
+    "reviewer": {
+      "type": "string",
+      "minLength": 1
+    },
+    "reviewed_at": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "independent_review": {
+      "enum": [
+        "pending",
+        "accepted",
+        "changes-requested"
+      ]
+    },
+    "unresolved": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "locator": {
+            "type": "string",
+            "minLength": 1
+          },
+          "url": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "path",
+          "sha256",
+          "locator",
+          "url"
+        ]
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "kind",
+    "publication_id",
+    "doi",
+    "url",
+    "title",
+    "containers",
+    "model_ids",
+    "decision",
+    "reason_code",
+    "reason",
+    "screening_basis",
+    "full_text_reviewed",
+    "reviewer",
+    "reviewed_at",
+    "independent_review",
+    "unresolved",
+    "evidence"
+  ]
+}

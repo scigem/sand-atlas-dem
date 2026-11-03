@@ -1,0 +1,37 @@
+{
+  "id": "cpu-solver-verification-v11",
+  "backend": "cpu",
+  "gpu_dispatches": 0,
+  "numerical_contract": "tests/test_cpu_solver.py; tolerances fixed in source before execution",
+  "pytest_arguments": [
+    "-m",
+    "not metal and not render",
+    "-q"
+  ],
+  "fixture": {
+    "geometry": "synthetic box, explicit extents [0.001,0.0008,0.0006] m",
+    "resolution": 12,
+    "samples": 64,
+    "face_rule": "gauss3",
+    "subdivisions": 2
+  },
+  "benchmark": {
+    "particles": 32,
+    "steps": 64,
+    "repeats": 96,
+    "timestep_s": 1e-09,
+    "packing": "controlled-pairs",
+    "geometry": "mesh",
+    "worker_counts": [
+      1
+    ]
+  },
+  "timeouts_s": {
+    "tests": 300,
+    "job": 180
+  },
+  "admission": "Software and independent operator verification only. No experimental validation, dense Hostun speed claim, sustained scaling claim or GPU speed comparison.",
+  "parallelism": "One native execution thread per independent process. Python scan/reduction orchestration retained. Compiler builds protected by per-artifact interprocess lock. Existing Metal run left untouched.",
+  "revision": "Retain native per-kernel pair output buffers and capacities; reconstruct all contact values each call. Exact serial/parallel state checks, cold-to-warm retry counters and shared-adapter engine/pair-count changes. Existing numerical tolerances unchanged.",
+  "cpu_threads": 4
+}

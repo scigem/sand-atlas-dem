@@ -1,0 +1,94 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "0.1"
+    },
+    "kind": {
+      "const": "source-review"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "created_at": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_commit": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "model": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]*$"
+        },
+        "definition_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "required": [
+        "id",
+        "definition_sha256"
+      ],
+      "additionalProperties": false
+    },
+    "status": {
+      "enum": [
+        "pending",
+        "changes-requested",
+        "accepted"
+      ]
+    },
+    "independent": {
+      "type": "boolean"
+    },
+    "reviewer": {
+      "type": "string",
+      "minLength": 1
+    },
+    "reviewed_at": {
+      "type": "string",
+      "minLength": 1
+    },
+    "dossier": {
+      "type": "string",
+      "pattern": "^docs/models/[a-z0-9-]+[.]md$"
+    },
+    "evidence_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9-]*$"
+      }
+    },
+    "unresolved": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "kind",
+    "id",
+    "created_at",
+    "source_commit",
+    "model",
+    "status",
+    "independent",
+    "dossier",
+    "evidence_ids",
+    "unresolved"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://benjym.github.io/constitutive-atlas/schemas/review.schema.json",
+  "title": "Source review record; automated work must remain pending"
+}

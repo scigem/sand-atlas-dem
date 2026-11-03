@@ -1,0 +1,23 @@
+{
+  "id": "hostun424-cpu-seeded-query-v1",
+  "checkpoint": "runs/hostun-relaxed-overlap-equilibration-v5/physical-initial.h5",
+  "baseline_package": "evidence/hostun424-cpu-profile-v1/source_snapshot/sand_atlas_dem",
+  "steps_per_variant": 2,
+  "rate_s": [
+    0,
+    0,
+    0
+  ],
+  "drag_s": 0,
+  "backend": "cpu",
+  "gpu_dispatches": 0,
+  "numerical_gate": "Identical contact counts and bitwise equal every Engine.state array after checkpoint force reconstruction and after two complete steps. Baseline changes only collector native kernel to frozen pre-optimization implementation; all other kernels are shared.",
+  "performance_gate": "Descriptive only; no minimum speedup gate. Warm execution only, construction, compilation, checkpoint reconstruction, state readback and diagnostics excluded.",
+  "scientific_admission": false,
+  "allowed_runtime_changes": [
+    "cpu.py",
+    "shaders/cpu_scheduling.slang"
+  ],
+  "revision": "Cached bounds plus CPU-only previous-triangle initial upper bound and loop-invariant branch. Compare to original collector with unchanged bitwise gate.",
+  "candidate_name": "seeded_query"
+}

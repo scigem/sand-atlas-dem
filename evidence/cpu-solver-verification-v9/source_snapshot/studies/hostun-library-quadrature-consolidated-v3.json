@@ -1,0 +1,12 @@
+{
+  "identity": "hostun-library-quadrature-consolidated-v3",
+  "frozen_before_execution": true,
+  "require_exact_overlapping_forces": true,
+  "maximum_reference_change": 0.02,
+  "selection_target": 0.05,
+  "archive_policy": "Retain both complete archives; identical numerical operators required across all nested parent archives. Production selection gaps are explicit separate outputs and never relax reference gates.",
+  "parent_report": "/private/tmp/sand-atlas-dem-walls/evidence/hostun-library-quadrature-consolidated-v2/report.json",
+  "parent_report_sha256": "fa1b4085d0430f4bea974b8782df5262e95e840226cbfb3fc1cd5c6a28ac9aff",
+  "supplement_report": "/private/tmp/sand-atlas-dem-walls/evidence/hostun-grain54-shallow-quadrature-l8-v1/report.json",
+  "supplement_report_sha256": "2dd7b7393abdeb4b0cbf1614603143da2e0bdbb93c5e6bf3a4dfd6f6169b9fc0"
+}

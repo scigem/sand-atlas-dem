@@ -1,0 +1,12 @@
+{
+  "id": "cpu-pair-release-diagnostic-v1",
+  "inputs": {
+    "/Users/bmar5496/code/sand-atlas-dem/runs/cpu-pair-release-diagnostic-v1/check.py": "b84f511d13a364e4bcab7206896543431c5e2fb56b0c15497339053f223e6cf9",
+    "/Users/bmar5496/code/sand-atlas-dem/runs/cpu-solver-verification-v5/fixture.h5": "ae5f75d21a5d7f3a74d4f7fa16186f010715f7b00659fd4da051c03da7eec780",
+    "/Users/bmar5496/code/sand-atlas-dem/runs/cpu-solver-verification-v5/freeze.json": "24d7d36569807d2329103fa5afc95e3e82e786453e385f1fa0d57689852e9918"
+  },
+  "steps": 2048,
+  "timestep_s": 1e-09,
+  "purpose": "Diagnostic only: report free-release topology and separation; does not revise v5 failure",
+  "gpu_dispatches": 0
+}

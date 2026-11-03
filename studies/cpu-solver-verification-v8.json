@@ -1,0 +1,38 @@
+{
+  "id": "cpu-solver-verification-v8",
+  "backend": "cpu",
+  "gpu_dispatches": 0,
+  "numerical_contract": "tests/test_cpu_solver.py; tolerances fixed in source before execution",
+  "pytest_arguments": [
+    "-m",
+    "not metal and not render",
+    "-q"
+  ],
+  "fixture": {
+    "geometry": "synthetic box, explicit extents [0.001,0.0008,0.0006] m",
+    "resolution": 12,
+    "samples": 64,
+    "face_rule": "gauss3",
+    "subdivisions": 2
+  },
+  "benchmark": {
+    "particles": 32,
+    "steps": 64,
+    "repeats": 96,
+    "timestep_s": 1e-09,
+    "packing": "controlled-pairs",
+    "geometry": "mesh",
+    "worker_counts": [
+      1,
+      2,
+      4
+    ]
+  },
+  "timeouts_s": {
+    "tests": 300,
+    "job": 180
+  },
+  "admission": "Software and independent operator verification only. No experimental validation, dense Hostun speed claim, sustained scaling claim or GPU speed comparison.",
+  "parallelism": "One native execution thread per independent process. Python scan/reduction orchestration retained. Compiler builds protected by per-artifact interprocess lock. Existing Metal run left untouched.",
+  "revision": "Retain cached-bounds v1 result (1.0067x, no meaningful gain). Add a padded previous-triangle upper bound for exact mesh BVH traversal and hoist unchanged local branch. Original triangle math, nearest-first traversal and strict tie rule retained; fallback to original query if no feature visited. All gates unchanged."
+}

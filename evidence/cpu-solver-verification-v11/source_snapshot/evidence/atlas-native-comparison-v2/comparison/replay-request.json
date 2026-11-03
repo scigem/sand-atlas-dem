@@ -1,0 +1,159 @@
+{
+  "version": "experimental-recorded-run-0.1",
+  "model": "linear-elastic",
+  "parameters": [
+    100000,
+    30000000,
+    0.25
+  ],
+  "initial": [
+    10000.0,
+    10000.0,
+    10000.0,
+    0,
+    0,
+    0,
+    0.7
+  ],
+  "path": {
+    "version": "experimental-recorded-path-0.1",
+    "coordinate": {
+      "name": "source_row_index",
+      "unit": "1",
+      "meaning": "path_order"
+    },
+    "initial_strain": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "controls": [
+      {
+        "kind": "strain",
+        "coefficients": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "stress",
+        "coefficients": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "stress",
+        "coefficients": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "strain",
+        "coefficients": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "strain",
+        "coefficients": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "kind": "strain",
+        "coefficients": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      }
+    ],
+    "knots": [
+      {
+        "coordinate": 0,
+        "targets": [
+          0.0,
+          10000.0,
+          10000.0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "coordinate": 1,
+        "targets": [
+          0.00010000000000010001,
+          11000.0,
+          11000.0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "coordinate": 2,
+        "targets": [
+          0.00019999999999986695,
+          12000.0,
+          12000.0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "coordinate": 3,
+        "targets": [
+          0.00010000000000010001,
+          10000.0,
+          10000.0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "coordinate": 4,
+        "targets": [
+          0.00010000000000010001,
+          10000.0,
+          10000.0,
+          0,
+          0,
+          0
+        ]
+      }
+    ]
+  }
+}

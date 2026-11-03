@@ -1,0 +1,13 @@
+{
+  "identity": "hostun-mesh-force-v1",
+  "frozen_before_gpu_execution": true,
+  "library": "assets/private/hostun-30-r64-s2048.h5",
+  "library_sha256": "1bc9f37a22b402ada31495ea7ff1ebef4bb6a27a26d68a8333f7f84a12ad16b7",
+  "reference_report": "evidence/hostun-source-triangle-contact-v1/report.json",
+  "reference_report_sha256": "88a455e49c4693830886437f21d0369b96dfb4008022e8315199ab8aa6257c6c",
+  "maximum_relative_force_error": 0.001,
+  "exact_active_sample_count_required": true,
+  "timestep_s": 2e-09,
+  "overlap_guard_fraction": 0.03,
+  "scope": "Actual GPU static normal forces at all ten unchanged source-triangle audit poses and quadrature. Stricter 0.1% GPU/oracle gate. Not continuum-quadrature or assembly convergence."
+}

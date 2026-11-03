@@ -1,0 +1,21 @@
+{
+  "identity": "hostun-overlap-controller-v1",
+  "frozen_before_execution": true,
+  "parent_checkpoint": "/Users/bmar5496/code/sand-atlas-dem/runs/hostun-balanced424-resume-v1/study/run/chunk-0004/checkpoint.h5",
+  "old_failure_checkpoint": "/Users/bmar5496/code/sand-atlas-dem/runs/hostun-balanced424-resume-v1/study/run/chunk-0005/checkpoint.h5",
+  "old_failure_step": 2319625,
+  "steps": 100000,
+  "checkpoint_steps": 10000,
+  "minimum_relative_density_increase": 0.0001,
+  "control": {
+    "taper_start": 0.004,
+    "hold_at": 0.008,
+    "resume_at": 0.006,
+    "contact_rate": 5.0
+  },
+  "fast_cell_rtol": 1e-06,
+  "fast_position_atol_normalized": 1e-06,
+  "fast_velocity_atol_m_s": 1e-08,
+  "scope": "Prospective bounded screen, unchanged parent physics/timestep/guard/pressure/energy/force/consecutive-sample criteria. 100k steps from2250000; must finish, exit hold and increase density by>=0.01% relative. Explicitly report whether old failure density was reached; step-count passage alone does not establish equivalent preparation progress or scientific admission. No automatic long restart.",
+  "fast_scope": "1000steps at1000/s versus250steps at4000/s from the original dilute initial state: equal imposed log strain0.002 per axis, no contacts, positive bounding-sphere gaps. Fast cap limited to25% minimum log-gap and0.001 log strain per125-step batch. Fallback to original1000/s near bounding-sphere contact; not full approach-to-contact qualification. Fixed2ns timestep."
+}

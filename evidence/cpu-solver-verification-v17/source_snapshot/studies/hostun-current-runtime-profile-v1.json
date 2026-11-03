@@ -1,0 +1,17 @@
+{
+  "identity": "hostun-current-runtime-profile-v1",
+  "checkpoint": "/private/tmp/sand-atlas-dem-walls/evidence/hostun-first-contact-profile-v1/private/checkpoint.h5",
+  "checkpoint_sha256": "831a722b693cb13534cea220524d24641c6040af70109622056c2d331f87102b",
+  "shape_library": "/private/tmp/sand-atlas-dem-walls/evidence/hostun-balanced424-preparation-v3/study/private/shapes.h5",
+  "shape_sha256": "c4b32a08ad649ff8c85f1393c17c881b4b743b9dfba106eded304d06ef6b02a7",
+  "solver_commit": "82e07eb9f5d37716c2e76b3a8d678463a9591e70",
+  "warmup_steps": 16,
+  "repetitions": 3,
+  "batch_steps": [1, 16, 128],
+  "split_steps": 32,
+  "host_profile_steps": 128,
+  "rate_s": [-50, -50, -50],
+  "drag_s": 100000,
+  "partition_state_max_absolute_error": 0.00001,
+  "scope": "Current solver: identical restored dilute424-grain Hostun checkpoint with53.6million surface nodes. Startup Python profile, fixed batch-size wall throughput, Python encoding profile and synchronized wall-time subsystem attribution. No GPU-only timestamp inference, preparation continuation, dense benchmark, material admission or changed timestep. Partition comparison uses normalized state components and an unpartitioned trajectory from the identical warmup, not an independent physical reference."
+}

@@ -1,0 +1,14 @@
+{
+  "identity": "preparation-auditor-controller-v4-v1",
+  "scope": "Retrospective software check of the independent auditor against an already accepted unchanged 216-sphere checkpoint; no new physics admission or reinterpretation of the original study.",
+  "expected_particles": 216,
+  "expected_shapes": 1,
+  "expected_contact_geometry": "sdf",
+  "accepted_samples": 100,
+  "pressure_relative_tolerance": 0.01,
+  "maximum_kinetic_elastic_ratio": 1e-05,
+  "maximum_unbalanced_force": 0.001,
+  "maximum_overlap_fraction": 0.01,
+  "minimum_final_solid_fraction": 0.45,
+  "minimum_active_grain_pairs": 216
+}

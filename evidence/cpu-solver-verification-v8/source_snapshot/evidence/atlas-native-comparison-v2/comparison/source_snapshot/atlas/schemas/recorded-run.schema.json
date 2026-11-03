@@ -1,0 +1,230 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "const": "experimental-recorded-run-0.1",
+      "type": "string"
+    },
+    "model": {
+      "type": "string",
+      "minLength": 1
+    },
+    "path": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "title": "Experimental ordered recorded incremental path",
+      "description": "Dimensionless ordering coordinate. Targets are absolute row projections of strain or stress in Pa. Model, parameters, and initial state belong to the enclosing API.",
+      "type": "object",
+      "required": [
+        "version",
+        "coordinate",
+        "initial_strain",
+        "controls",
+        "knots"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "version": {
+          "type": "string",
+          "const": "experimental-recorded-path-0.1"
+        },
+        "coordinate": {
+          "type": "object",
+          "required": [
+            "name",
+            "unit",
+            "meaning"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 64
+            },
+            "unit": {
+              "type": "string",
+              "const": "1"
+            },
+            "meaning": {
+              "type": "string",
+              "const": "path_order"
+            }
+          }
+        },
+        "initial_strain": {
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 6,
+          "items": {
+            "type": "number"
+          }
+        },
+        "controls": {
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 6,
+          "items": {
+            "type": "object",
+            "required": [
+              "kind",
+              "coefficients"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "strain",
+                  "stress"
+                ]
+              },
+              "coefficients": {
+                "type": "array",
+                "minItems": 6,
+                "maxItems": 6,
+                "items": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        },
+        "knots": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 5001,
+          "items": {
+            "type": "object",
+            "required": [
+              "coordinate",
+              "targets"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "coordinate": {
+                "type": "number"
+              },
+              "targets": {
+                "type": "array",
+                "minItems": 6,
+                "maxItems": 6,
+                "items": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "parameters": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    },
+    "initial": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    },
+    "integration_settings": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "residual_tolerance": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "rate_tolerance": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "max_iterations": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000
+        },
+        "max_depth": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 20
+        },
+        "max_substeps": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000000
+        },
+        "max_backtracks": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 30
+        }
+      },
+      "required": []
+    },
+    "control_settings": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "control_tolerance": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 0.001
+        },
+        "max_iterations": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000
+        },
+        "max_backtracks": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 30
+        },
+        "max_material_trials": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000000
+        },
+        "finite_difference_step": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 0.01
+        }
+      },
+      "required": []
+    },
+    "restart_settings": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "max_restarts": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 16
+        },
+        "restart_step": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 0.01
+        },
+        "restart_levels": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 16
+        }
+      },
+      "required": []
+    }
+  },
+  "required": [
+    "version",
+    "model",
+    "path"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Experimental recorded-path run request"
+}

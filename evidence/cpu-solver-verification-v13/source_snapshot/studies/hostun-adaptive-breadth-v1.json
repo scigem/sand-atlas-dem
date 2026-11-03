@@ -1,0 +1,35 @@
+{
+  "identity": "hostun-adaptive-breadth-v1",
+  "checkpoint": "/private/tmp/sand-atlas-dem-walls/evidence/hostun-first-contact-profile-v1/private/checkpoint.h5",
+  "checkpoint_sha256": "831a722b693cb13534cea220524d24641c6040af70109622056c2d331f87102b",
+  "shape_library": "/private/tmp/sand-atlas-dem-walls/evidence/hostun-balanced424-preparation-v3/study/private/shapes.h5",
+  "shape_sha256": "c4b32a08ad649ff8c85f1393c17c881b4b743b9dfba106eded304d06ef6b02a7",
+  "repetitions": 3,
+  "warmup_steps": 16,
+  "steps": 128,
+  "rate_s": [
+    -50,
+    -50,
+    -50
+  ],
+  "drag_s": 100000,
+  "minimum_speedup": 1.05,
+  "history_rtol": 0.0001,
+  "history_atol": 1e-08,
+  "limits": {
+    "position": 1e-05,
+    "velocity": 1e-05,
+    "rotation": 1e-05,
+    "force": 0.0001,
+    "torque": 0.0001
+  },
+  "scope": "Adaptive local-frame triangle octree, maximum depth8 (nominal256), <=24 candidates, 100000 node budget per shape. Overfull surface cells subdivide; deep interior/depth/budget failures use full BVH, no truncation. Ancestor spheres checked at runtime; near ties retain BVH feature selection. Same original numerical gates, workload, immutable bindings and six128-step samples. Freeze sources before execution, arrays before candidate compilation. Fixed1.05 screening gate and2x target. Experimental only. Separate breadth-first allocation study, preserving original depth-first evidence. Same capacities, budget, source geometry, numerical and timing gates. Record fallback reasons. Performance eligibility additionally requires nonzero actual fast queries.",
+  "workload": "hostun",
+  "modes": [
+    "baseline",
+    "brick"
+  ],
+  "split_steps": 16,
+  "brick_resolution": 256,
+  "brick_capacity": 24
+}

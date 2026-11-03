@@ -1,0 +1,76 @@
+{
+  "identity": "prepared-hostun424-assembly-work-v1",
+  "frozen_before_execution": true,
+  "particles": 424,
+  "initial_pressure_Pa": 10000.0,
+  "timesteps_s": [
+    2e-09,
+    1e-09,
+    5e-10
+  ],
+  "diagnostic_period_s": 1e-07,
+  "maximum_relative_proxy_balance_residual": 0.02,
+  "maximum_relative_independent_work_error": 0.001,
+  "maximum_relative_refinement_difference": 0.01,
+  "dissipation_roundoff_fraction": 1e-06,
+  "minimum_active_grain_pairs": 424,
+  "overlap_guard_fraction": 0.01,
+  "cases": [
+    {
+      "name": "static",
+      "phases": [
+        {
+          "duration_s": 0.0001,
+          "rate_s": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "drag_s": 0.0
+        }
+      ]
+    },
+    {
+      "name": "drag",
+      "phases": [
+        {
+          "duration_s": 0.0001,
+          "rate_s": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "drag_s": 100000.0
+        }
+      ]
+    },
+    {
+      "name": "cyclic-affine",
+      "phases": [
+        {
+          "duration_s": 2e-05,
+          "rate_s": [
+            -50.0,
+            -50.0,
+            -50.0
+          ],
+          "drag_s": 0.0
+        },
+        {
+          "duration_s": 2e-05,
+          "rate_s": [
+            50.0,
+            50.0,
+            50.0
+          ],
+          "drag_s": 0.0
+        }
+      ]
+    }
+  ],
+  "scope": "Prospective actual-Metal all-53-shape/424-particle Hostun assembly work and timestep study. Requires accepted unchanged preparation and independent checkpoint audit. Retain every static/drag 100us and cyclic-affine40us case at2,1,0.5ns. Same2% proxy,0.1% independent work,1% endpoint refinement and1% overlap gates as sphere study. Minimum424 active grain pairs. A proxy balance does not establish an exact potential, all orientations, constitutive calibration or experimental validation. No automatic numerical-gate revision.",
+  "requires_preparation": "evidence/hostun-balanced424-preparation-v3",
+  "required_contact_geometry": "mesh",
+  "required_source_shapes": 53,
+  "copies_per_shape": 8
+}

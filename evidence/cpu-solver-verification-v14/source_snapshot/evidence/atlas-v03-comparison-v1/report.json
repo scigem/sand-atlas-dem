@@ -1,0 +1,13 @@
+{
+  "identity": "atlas-v03-comparison-v1",
+  "passed": true,
+  "scientific_admission": false,
+  "model": "barodesy-sand",
+  "schema_version": "0.3",
+  "maximum_native_control_error": 3.1483956576345026e-11,
+  "source_unchanged": true,
+  "ordered": true,
+  "duplicate_state_retained": true,
+  "comparison_report_sha256": "486c1688dbb14aef466fa816c18dfe61f2589eb0621da07841875707c8a4a7ba",
+  "note": "Actual v0.3 strain-path-rate native comparison on the existing five-observation analytical source fixture. Nonlinear curve is not expected to match the elastic fixture; no calibration, GPU specimen or scientific admission."
+}

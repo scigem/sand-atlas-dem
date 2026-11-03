@@ -1,0 +1,11 @@
+{
+  "identity": "atlas-native-comparison-v2",
+  "passed": true,
+  "scientific_admission": false,
+  "comparison_report_sha256": "226f5ede4f12347dfffe10e6f5a65daa378e1d600d747f1046a71d644236d75b",
+  "maximum_absolute_difference": {
+    "q_Pa": 3.990862751379609e-09,
+    "p_Pa": 1.3278622645884752e-09,
+    "volumetric_strain": 2.1746385074628005e-16
+  }
+}

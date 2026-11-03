@@ -1,0 +1,33 @@
+{
+  "identity": "dense27-systematic-performance-v1",
+  "repetitions": 3,
+  "warmup_steps": 16,
+  "steps": 128,
+  "rate_s": [
+    0,
+    0,
+    0
+  ],
+  "drag_s": 0,
+  "minimum_speedup": 1.05,
+  "history_rtol": 0.0001,
+  "history_atol": 1e-08,
+  "limits": {
+    "position": 1e-05,
+    "velocity": 1e-05,
+    "rotation": 1e-05,
+    "force": 0.0001,
+    "torque": 0.0001
+  },
+  "scope": "Synthetic nonperiodic 3x3x3 cube assembly: 100um side, .999 side spacing, Gauss3 subdivision8, 1ns conservative timestep, zero loading/drag. Many surface contacts per body for dense gather diagnostic. Same scheduling/rejection sweep and unchanged equivalence gates, split-stage wall profile. Not dense irregular Hostun or material validation.",
+  "workload": "dense27",
+  "modes": [
+    "baseline",
+    "pool256",
+    "pool1024",
+    "pool16384",
+    "all-hull-roots"
+  ],
+  "split_steps": 32,
+  "subdivisions": 8
+}

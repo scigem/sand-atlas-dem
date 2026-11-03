@@ -1,0 +1,124 @@
+{
+  "winding_tolerance": 1e-08,
+  "query_batch_size": 2048,
+  "identity": "hostun-grain38-quadrature-l6-v1",
+  "shape": "hostun-particle_00038",
+  "target_sampled_depth_fraction": 0.0025,
+  "subdivision_levels": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "maximum_finest_relative_change": 0.02,
+  "maximum_overlap_relative_difference": 1e-12,
+  "reference_source_sha256": "f443b565f9774dcd5d0d1a2e34b6c17ce44b275be9fbb96a6ffaf2ecc19cd421",
+  "library": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r64-s2048.h5",
+  "library_sha256": "1bc9f37a22b402ada31495ea7ff1ebef4bb6a27a26d68a8333f7f84a12ad16b7",
+  "pose_report": "/Users/bmar5496/code/sand-atlas-dem/evidence/hostun-library-contact-poses-minimum-v1/report.json",
+  "pose_report_sha256": "cdf3c3bdbbf51bec25749ebff8c18dbc8e7934d99b279deb49d58c140f446cd2",
+  "baseline_row": {
+    "shape": "hostun-particle_00038",
+    "separation_m": 0.0003720462605601217,
+    "target_sampled_depth_fraction": 0.0025,
+    "levels": [
+      {
+        "level": 0,
+        "force_integral_m3": [
+          -1.0922484157545216e-15,
+          2.6631556736514973e-17,
+          -2.8263117023178586e-18
+        ],
+        "maximum_sampled_depth_fraction": 0.0013533075280417793,
+        "active_nodes": 3,
+        "evaluated_nodes": 24,
+        "triangle_queried_nodes": 3,
+        "candidate_subtriangles": [
+          4,
+          4
+        ],
+        "cumulative_winding_checks": 0,
+        "maximum_winding_integer_residual": 0.0
+      },
+      {
+        "level": 1,
+        "force_integral_m3": [
+          -1.5125161720440947e-15,
+          2.419581465613897e-17,
+          -8.341910384462049e-18
+        ],
+        "maximum_sampled_depth_fraction": 0.0025514239227610825,
+        "active_nodes": 11,
+        "evaluated_nodes": 57,
+        "triangle_queried_nodes": 11,
+        "candidate_subtriangles": [
+          9,
+          10
+        ],
+        "cumulative_winding_checks": 0,
+        "maximum_winding_integer_residual": 0.0
+      },
+      {
+        "level": 2,
+        "force_integral_m3": [
+          -1.4205208019848116e-15,
+          1.8291136870558586e-17,
+          -9.382285192317621e-18
+        ],
+        "maximum_sampled_depth_fraction": 0.0032184397319297464,
+        "active_nodes": 38,
+        "evaluated_nodes": 102,
+        "triangle_queried_nodes": 38,
+        "candidate_subtriangles": [
+          14,
+          20
+        ],
+        "cumulative_winding_checks": 0,
+        "maximum_winding_integer_residual": 0.0
+      },
+      {
+        "level": 3,
+        "force_integral_m3": [
+          -1.1827580675338527e-15,
+          2.4034260437672242e-17,
+          -6.052953477466129e-18
+        ],
+        "maximum_sampled_depth_fraction": 0.003076445406690552,
+        "active_nodes": 161,
+        "evaluated_nodes": 291,
+        "triangle_queried_nodes": 161,
+        "candidate_subtriangles": [
+          41,
+          56
+        ],
+        "cumulative_winding_checks": 0,
+        "maximum_winding_integer_residual": 0.0
+      },
+      {
+        "level": 4,
+        "force_integral_m3": [
+          -1.2864947153603474e-15,
+          2.256949647704425e-17,
+          -1.2171938038919644e-17
+        ],
+        "maximum_sampled_depth_fraction": 0.0033018670974575477,
+        "active_nodes": 639,
+        "evaluated_nodes": 897,
+        "triangle_queried_nodes": 639,
+        "candidate_subtriangles": [
+          129,
+          170
+        ],
+        "cumulative_winding_checks": 0,
+        "maximum_winding_integer_residual": 0.0
+      }
+    ],
+    "finest_relative_change": 0.08076725133960745,
+    "qmc_2048_relative_error_to_finest": 0.3357593329697926
+  },
+  "selection_reason": "The completed level-four row exceeds the unchanged 2% refinement gate (8.0767%); preserve that result and test two further levels at the identical pose.",
+  "scope": "Targeted CPU reference diagnostic only, not full-library qualification; retain all original 106 cases in the still-running parent study."
+}

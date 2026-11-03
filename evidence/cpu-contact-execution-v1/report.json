@@ -1,0 +1,83 @@
+{
+  "id": "cpu-contact-execution-v1",
+  "scientific_admission": false,
+  "gpu_dispatches": 0,
+  "whole_solver_throughput_measured": false,
+  "mesh_query_measured": false,
+  "compile_command": [
+    "xcrun",
+    "clang++",
+    "-O3",
+    "-std=c++17",
+    "-fno-fast-math",
+    "-dynamiclib",
+    "/Users/bmar5496/code/sand-atlas-dem/runs/cpu-contact-execution-v1/source_snapshot/cpu_plane_bridge.cpp",
+    "-o",
+    "/Users/bmar5496/code/sand-atlas-dem/runs/cpu-contact-execution-v1/plane-contact.dylib"
+  ],
+  "compile_returncode": 0,
+  "reference_path": "/Users/bmar5496/code/sand-atlas-dem/src/sand_atlas_dem/reference.py",
+  "max_absolute_errors": {
+    "force_energy": 2.92471111329462e-07,
+    "slip_loss": 4.683439681403166e-12,
+    "torque_active": 2.904803446390769e-10
+  },
+  "contact_verification_passed": true,
+  "benchmark": [
+    {
+      "workers": 1,
+      "workers_detail": [
+        {
+          "seconds": 0.186401917017065,
+          "contacts": 16777216,
+          "checksum": 275625.46572784055
+        }
+      ],
+      "aggregate_kernel_contacts_per_s": 90005597.94921023
+    },
+    {
+      "workers": 2,
+      "workers_detail": [
+        {
+          "seconds": 0.19049154093954712,
+          "contacts": 16777216,
+          "checksum": 275625.46572784055
+        },
+        {
+          "seconds": 0.1907136250520125,
+          "contacts": 16777216,
+          "checksum": 275625.46572784055
+        }
+      ],
+      "aggregate_kernel_contacts_per_s": 176044011.8970874
+    },
+    {
+      "workers": 4,
+      "workers_detail": [
+        {
+          "seconds": 0.20550849998835474,
+          "contacts": 16777216,
+          "checksum": 275625.46572784055
+        },
+        {
+          "seconds": 0.20354487502481788,
+          "contacts": 16777216,
+          "checksum": 275625.46572784055
+        },
+        {
+          "seconds": 0.2015039169928059,
+          "contacts": 16777216,
+          "checksum": 275625.46572784055
+        },
+        {
+          "seconds": 0.20691637496929616,
+          "contacts": 16777216,
+          "checksum": 275625.46572784055
+        }
+      ],
+      "aggregate_kernel_contacts_per_s": 328404830.86193377
+    }
+  ],
+  "execution_passed": true,
+  "source_integrity": true
+}

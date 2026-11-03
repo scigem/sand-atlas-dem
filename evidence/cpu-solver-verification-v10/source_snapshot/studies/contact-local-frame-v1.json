@@ -1,0 +1,11 @@
+{
+ "identity": "contact-local-frame-v1",
+ "side_m": 0.0001,
+ "depth_fraction": 0.001,
+ "centres_m": [0.0003,0.005,0.5,5],
+ "normals": [[0,0,1],[0.6,0,0.8],[0.3333333333333333,0.6666666666666666,0.6666666666666666]],
+ "maximum_relative_force_error": 0.0001,
+ "maximum_relative_torque_error": 0.0001,
+ "maximum_normalized_initial_position_error": 1e-7,
+ "scope": "Frozen analytical six-face-centre static traction, all original sampled areas; translation spans centre/side 3 to50000. Expected forces and centre torques evaluated independently from SI plane equations in FP64. No timestep preflight bypass, no altered contact properties. This is bounded precision verification, not mesh or material qualification."
+}

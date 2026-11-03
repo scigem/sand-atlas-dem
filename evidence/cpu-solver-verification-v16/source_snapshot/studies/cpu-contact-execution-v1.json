@@ -1,0 +1,23 @@
+{
+  "id": "cpu-contact-execution-v1",
+  "purpose": "Execute unchanged generated plane contact equations on CPU; not a mesh or DEM benchmark",
+  "generated_cpp": "runs/cpu-slang-feasibility-v1/planeProbe.cpp",
+  "seed": 20261103,
+  "verification_contacts": 256,
+  "kn_Pa_per_m": 1000000000000,
+  "kt_Pa_per_m": 500000000000,
+  "mu": 0.5,
+  "dt_s": 0.00000002,
+  "rtol": 0.00002,
+  "absolute_tolerances": [1e-9, 1e-12, 1e-12],
+  "reference": "Independent FP64 nodal_force with doubled half-weight coefficients for full-weight wall variant; independent energy, torque and dissipation algebra",
+  "coordinate_units": "metres; SI force N, torque Nm, energy J",
+  "geometry": "Synthetic fixed plane +z, offset 0; no external meshes, no geometry processing",
+  "benchmark_contacts_per_worker": 262144,
+  "repetitions": 64,
+  "worker_counts": [1, 2, 4],
+  "timeout_s": 60,
+  "compiler": "System xcrun clang++, -O3 -std=c++17 -fno-fast-math",
+  "scientific_admission": false,
+  "limits": "No geometry queries, neighbour search, history lookup, force reduction, state integration, GPU comparison or whole-case throughput"
+}

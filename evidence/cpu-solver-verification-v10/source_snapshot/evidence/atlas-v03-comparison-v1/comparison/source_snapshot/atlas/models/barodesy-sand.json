@@ -1,0 +1,263 @@
+{
+  "schema_version": "0.3",
+  "id": "barodesy-sand",
+  "name": "Barodesy sand (2015) \u2014 fixed-frame draft",
+  "family": "barodesy",
+  "status": "draft",
+  "description": "Draft laboratory preview of Kolymbas2015 Eq31 sand law, fixed spatial frame and zero spin. Compression-positive effective Cauchy stress and void ratio; explicit schema v0.3. Default parameters are the separately attributed Kolymbas/Bathaeian2019 illustrative calibration, not a 2015 experimental reproduction. Conservative positive-definite/nonzero stress interior, density margin and bounded matrix-exponential support are numerical restrictions. Exact zero-loading continuation is selected; zero-stress evolution and zero-loading update tangents are unresolved. Supply stress/e explicitly. No finite-rotation, matched preparation, experimental validation or scientific admission claim.",
+  "sources": [
+    {
+      "url": "https://doi.org/10.1680/geot.14.P.151",
+      "role": "Primary selected sand law",
+      "locator": "Kolymbas2015 pp53\u201356 Eqs9,20,23,26\u201331; p58 numerical context; p59 frame gap. Received PDF SHA2564d4511bdbb6014c19460bf0c5d7e2072c2c606fa8a5b49db180fc99d0da149da"
+    },
+    {
+      "url": "https://doi.org/10.1002/nag.2984",
+      "role": "Separate illustrative default parameter fixture",
+      "locator": "Kolymbas/Bathaeian2019 author manuscript p5 Table1, Eqs11\u201315; c4 converted465kPa to465000Pa. Not asserted publisher-equivalent."
+    },
+    {
+      "url": "https://github.com/benjym/constitutive-atlas/blob/main/catalogue/investigations/barodesy2015-rates-v2/RESULTS.md",
+      "role": "Independent instantaneous-rate verification",
+      "locator": "38 independent Cartesian/exact rational source rates and16 rejection/recovery pairs per native/Wasm backend; original cancellation failure preserved separately."
+    },
+    {
+      "url": "https://github.com/benjym/constitutive-atlas/blob/main/docs/models/barodesy2015-laboratory-preview.md",
+      "role": "Atlas laboratory-preview scope and limitations",
+      "locator": "Explicit contract, separately attributed default calibration, source and finite-path software checks; no scientific admission."
+    }
+  ],
+  "parameters": {
+    "c1": {
+      "default": -1.0246,
+      "min": -2,
+      "max": -0.1,
+      "unit": "1"
+    },
+    "c2": {
+      "default": 1,
+      "min": 0,
+      "max": 1.5,
+      "unit": "1"
+    },
+    "c3": {
+      "default": -2.3,
+      "min": -5,
+      "max": -0.1,
+      "unit": "1"
+    },
+    "c4": {
+      "default": 465000,
+      "min": 1000,
+      "max": 100000000.0,
+      "unit": "Pa"
+    },
+    "c5": {
+      "default": 28,
+      "min": 0.1,
+      "max": 100,
+      "unit": "1"
+    },
+    "ec0": {
+      "default": 0.87,
+      "min": 0.1,
+      "max": 2,
+      "unit": "1"
+    },
+    "emin": {
+      "default": 0.35,
+      "min": 0,
+      "max": 1,
+      "unit": "1"
+    }
+  },
+  "state": [
+    {
+      "name": "sigma",
+      "shape": "sym",
+      "unit": "Pa",
+      "scale": "c4",
+      "initial": [
+        100000,
+        100000,
+        100000,
+        0,
+        0,
+        0
+      ],
+      "semantics": {
+        "role": "persistent",
+        "quantity": "cauchy_stress",
+        "transformation": "symmetric_spatial_tensor"
+      }
+    },
+    {
+      "name": "e",
+      "shape": "scalar",
+      "unit": "1",
+      "scale": "1",
+      "initial": 0.75,
+      "semantics": {
+        "role": "persistent",
+        "quantity": "void_ratio",
+        "transformation": "scalar_invariant"
+      }
+    }
+  ],
+  "derived": [
+    {
+      "name": "scaled_stress",
+      "expr": "sigma/c4"
+    },
+    {
+      "name": "stress_measure",
+      "expr": "norm(scaled_stress)"
+    },
+    {
+      "name": "stress_unit",
+      "expr": "select(stress_measure > 0,scaled_stress/stress_measure,0*I)"
+    },
+    {
+      "name": "stress_value",
+      "expr": "c4*stress_measure"
+    },
+    {
+      "name": "loading_measure",
+      "expr": "norm(de)"
+    },
+    {
+      "name": "loading_abs_sum",
+      "expr": "abs(dot(de,sym(1,0,0,0,0,0)))+abs(dot(de,sym(0,1,0,0,0,0)))+abs(dot(de,sym(0,0,1,0,0,0)))+abs(dot(de,sym(0,0,0,1,0,0)))+abs(dot(de,sym(0,0,0,0,1,0)))+abs(dot(de,sym(0,0,0,0,0,1)))"
+    },
+    {
+      "name": "loading_unit",
+      "expr": "select(loading_measure > 0,de/loading_measure,0*I)"
+    },
+    {
+      "name": "v",
+      "expr": "trace(loading_unit)"
+    },
+    {
+      "name": "a",
+      "expr": "c1*exp(-c2*v)"
+    },
+    {
+      "name": "direction_argument",
+      "expr": "-a*loading_unit"
+    },
+    {
+      "name": "direction_tensor",
+      "expr": "expm(direction_argument)"
+    },
+    {
+      "name": "direction_unit",
+      "expr": "direction_tensor/norm(direction_tensor)"
+    },
+    {
+      "name": "B",
+      "expr": "(ec0-emin)/(ec0+1)*exp(-(1+emin)/c5*log1p(c5*stress_measure))"
+    },
+    {
+      "name": "ec",
+      "expr": "(emin+B)/(1-B)"
+    },
+    {
+      "name": "K",
+      "expr": "(c4+c5*stress_value)/(e-emin)"
+    },
+    {
+      "name": "sxx",
+      "expr": "dot(stress_unit,sym(1,0,0,0,0,0))"
+    },
+    {
+      "name": "syy",
+      "expr": "dot(stress_unit,sym(0,1,0,0,0,0))"
+    },
+    {
+      "name": "szz",
+      "expr": "dot(stress_unit,sym(0,0,1,0,0,0))"
+    },
+    {
+      "name": "sxy",
+      "expr": "dot(stress_unit,sym(0,0,0,1,0,0))"
+    },
+    {
+      "name": "syz",
+      "expr": "dot(stress_unit,sym(0,0,0,0,1,0))"
+    },
+    {
+      "name": "sxz",
+      "expr": "dot(stress_unit,sym(0,0,0,0,0,1))"
+    },
+    {
+      "name": "minor_two",
+      "expr": "sxx*syy-sxy**2/2"
+    },
+    {
+      "name": "stress_det",
+      "expr": "sxx*syy*szz-(sxx*syz**2+syy*sxz**2+szz*sxy**2)/2+sxy*syz*sxz/sqrt(2)"
+    }
+  ],
+  "equations": {
+    "sigma": "select(loading_measure > 0,K*((v-c3*ec)*direction_unit+c3*e*stress_unit)*loading_measure,0*sigma)",
+    "e": "-(1+e)*trace(de)"
+  },
+  "domain": [
+    "ec0 > emin",
+    "e > emin",
+    "e-emin >= 1e-8",
+    "e <= 3",
+    "stress_measure >= 1e-10",
+    "stress_measure <= 1e10",
+    "sxx > 0",
+    "syy > 0",
+    "szz > 0",
+    "minor_two > 1.4210854715202004e-14",
+    "stress_det > 1.4210854715202004e-14",
+    "B > 0",
+    "B < 1",
+    "ec > emin",
+    "loading_measure <= 1000",
+    "select(loading_abs_sum > 0,loading_measure >= 1e-140,loading_measure >= 0)",
+    "norm(direction_argument) <= 64"
+  ],
+  "formulation": {
+    "time_dependence": "strain_path",
+    "equation_form": "strain_path_rate",
+    "kinematics": "small_strain_3d",
+    "frame": "fixed_spatial",
+    "objective_rate": "none",
+    "tensor_representation": "mandel",
+    "stress_sign": "compression_positive",
+    "strain_sign": "compression_positive",
+    "stress": {
+      "source": "state",
+      "name": "sigma",
+      "measure": "cauchy",
+      "scope": "effective"
+    },
+    "inputs": {
+      "equation": {
+        "de": {
+          "quantity": "strain_increment",
+          "measure": "infinitesimal_strain",
+          "shape": "sym",
+          "unit": "1",
+          "configuration": "current",
+          "sampling": "increment",
+          "constraint": "finite"
+        }
+      },
+      "advance": {}
+    }
+  },
+  "initialization": {
+    "method": "explicit_state",
+    "default_policy": "examples_only",
+    "required_state": [
+      "sigma",
+      "e"
+    ],
+    "validation": "domain_and_initial_checks"
+  }
+}

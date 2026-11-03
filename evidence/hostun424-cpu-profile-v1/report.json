@@ -1,0 +1,383 @@
+{
+  "id": "hostun424-cpu-profile-v1",
+  "backend": "cpu",
+  "gpu_dispatches": 0,
+  "scientific_admission": false,
+  "timing_scope": "perf_counter around actual queued CPU kernel execution, grouped by original entry name; construction, compilation, checkpoint force rebuild and diagnostics excluded from step timing",
+  "execution_completed": true,
+  "particles": 424,
+  "unique_shapes": 53,
+  "estimated_solver_bytes": 4272779024,
+  "step_wall_seconds": [
+    38.066050875000656,
+    38.38700475008227
+  ],
+  "mean_seconds_per_step": 38.22652781254146,
+  "kernels": {
+    "collectMeshFrontiers": {
+      "seconds": 74.9439630000852,
+      "calls": 2,
+      "fraction_of_step_wall_time": 0.9802611862579026,
+      "seconds_per_step": 37.4719815000426
+    },
+    "resolveContacts": {
+      "seconds": 0.9982681249966845,
+      "calls": 2,
+      "fraction_of_step_wall_time": 0.013057269154709495,
+      "seconds_per_step": 0.49913406249834225
+    },
+    "gather": {
+      "seconds": 0.3500265000620857,
+      "calls": 2,
+      "fraction_of_step_wall_time": 0.004578319299343322,
+      "seconds_per_step": 0.17501325003104284
+    },
+    "buildHistoryHash": {
+      "seconds": 0.051907583023421466,
+      "calls": 2,
+      "fraction_of_step_wall_time": 0.0006789471342776715,
+      "seconds_per_step": 0.025953791511710733
+    },
+    "clearContactStorage": {
+      "seconds": 0.031521248864009976,
+      "calls": 2,
+      "fraction_of_step_wall_time": 0.00041229547473663566,
+      "seconds_per_step": 0.015760624432004988
+    },
+    "prepareMeshPairs": {
+      "seconds": 0.00694004213437438,
+      "calls": 2,
+      "fraction_of_step_wall_time": 9.077520940964813e-05,
+      "seconds_per_step": 0.00347002106718719
+    },
+    "checkContactTimestep": {
+      "seconds": 0.00041149999015033245,
+      "calls": 4,
+      "fraction_of_step_wall_time": 5.382387751357925e-06,
+      "seconds_per_step": 0.00020574999507516623
+    },
+    "beginStep": {
+      "seconds": 0.00019779312424361706,
+      "calls": 2,
+      "fraction_of_step_wall_time": 2.5871186262792687e-06,
+      "seconds_per_step": 9.889656212180853e-05
+    },
+    "blockScan": {
+      "seconds": 0.0001769170630723238,
+      "calls": 4,
+      "fraction_of_step_wall_time": 2.3140613756486716e-06,
+      "seconds_per_step": 8.84585315361619e-05
+    },
+    "finishStep": {
+      "seconds": 0.0001518760109320283,
+      "calls": 2,
+      "fraction_of_step_wall_time": 1.9865263682436832e-06,
+      "seconds_per_step": 7.593800546601415e-05
+    },
+    "resetMeshContacts": {
+      "seconds": 0.00011629192158579826,
+      "calls": 2,
+      "fraction_of_step_wall_time": 1.5210892571263678e-06,
+      "seconds_per_step": 5.814596079289913e-05
+    },
+    "clearBins": {
+      "seconds": 0.00011570809874683619,
+      "calls": 2,
+      "fraction_of_step_wall_time": 1.5134528999632862e-06,
+      "seconds_per_step": 5.785404937341809e-05
+    },
+    "advanceCell": {
+      "seconds": 0.00010808312799781561,
+      "calls": 2,
+      "fraction_of_step_wall_time": 1.413718877736463e-06,
+      "seconds_per_step": 5.4041563998907804e-05
+    },
+    "countPairs": {
+      "seconds": 0.00010554201435297728,
+      "calls": 2,
+      "fraction_of_step_wall_time": 1.3804813096096941e-06,
+      "seconds_per_step": 5.277100717648864e-05
+    },
+    "emitPairs": {
+      "seconds": 0.00010320800356566906,
+      "calls": 2,
+      "fraction_of_step_wall_time": 1.349952630693917e-06,
+      "seconds_per_step": 5.160400178283453e-05
+    },
+    "checkRebuild": {
+      "seconds": 0.00010145804844796658,
+      "calls": 2,
+      "fraction_of_step_wall_time": 1.3270633543478665e-06,
+      "seconds_per_step": 5.072902422398329e-05
+    },
+    "fillBins": {
+      "seconds": 9.708409197628498e-05,
+      "calls": 2,
+      "fraction_of_step_wall_time": 1.2698523451093218e-06,
+      "seconds_per_step": 4.854204598814249e-05
+    },
+    "addBlocks": {
+      "seconds": 2.575002145022154e-05,
+      "calls": 2,
+      "fraction_of_step_wall_time": 3.3680827063991675e-07,
+      "seconds_per_step": 1.287501072511077e-05
+    }
+  },
+  "untimed_kernel_remainder_seconds": 0.06871791440062225,
+  "initial_diagnostics": {
+    "step": 18200,
+    "elapsed_time": 0.0003103035979715578,
+    "cell": [
+      0.0026321694707903266,
+      0.0026321694707903266,
+      0.0026321694707903266
+    ],
+    "domain_cell": [
+      0.0026321694707903266,
+      0.0026321694707903266,
+      0.0026321694707903266
+    ],
+    "walls": [],
+    "stress": [
+      [
+        10692.397355026671,
+        -274.60160965275605,
+        116.52635761143169
+      ],
+      [
+        -274.0102353240598,
+        9534.209942491689,
+        80.45285996414627
+      ],
+      [
+        115.37601041779139,
+        86.78513979150188,
+        9704.622319948914
+      ]
+    ],
+    "contact_stress": [
+      [
+        10692.385801647972,
+        -274.60227694817956,
+        116.52681628599157
+      ],
+      [
+        -274.0109026195641,
+        9534.194702551444,
+        80.45446369208504
+      ],
+      [
+        115.37646909235127,
+        86.78674351927918,
+        9704.600581452018
+      ]
+    ],
+    "kinetic_stress": [
+      [
+        0.011553378699998932,
+        0.0006672954235254504,
+        -0.0004586745598862189
+      ],
+      [
+        0.0006672955042581575,
+        0.0152399402443402,
+        -0.0016037279387690205
+      ],
+      [
+        -0.0004586745598862189,
+        -0.0016037277773036064,
+        0.021738496896720663
+      ]
+    ],
+    "stress_antisymmetry": 0.0005280569105123575,
+    "p": 9977.076539155758,
+    "q": -408.68132881026577,
+    "axial_strain": 1.817111272561789e-08,
+    "volumetric_strain": 5.4513338176853665e-08,
+    "volume_ratio": 0.9999999454866627,
+    "log_strain": [
+      1.817111289071256e-08,
+      1.817111289071256e-08,
+      1.817111289071256e-08
+    ],
+    "void_ratio": 0.8788968937394719,
+    "kinetic_energy": 5.927661694826725e-10,
+    "elastic_energy_proxy": 2.2507670109916944e-06,
+    "contact_normal": "target-gradient",
+    "elastic_energy_interpretation": "existing nodal spring energy proxy",
+    "unbalanced_force": 0.010663365945219994,
+    "max_overlap_fraction": 0.034980740398168564,
+    "friction_dissipation_last_step": 1.3084456478365536e-12,
+    "candidate_pairs": 5621,
+    "active_surface_contacts": 4418377,
+    "active_grain_pairs": 1305,
+    "coordination": 6.15566037735849,
+    "fabric": [
+      [
+        0.33989301323890686,
+        -0.005955935921519995,
+        -0.0066604651510715485
+      ],
+      [
+        -0.005955935921519995,
+        0.331779420375824,
+        0.002363690873607993
+      ],
+      [
+        -0.0066604651510715485,
+        0.002363690873607993,
+        0.32832759618759155
+      ]
+    ],
+    "sliding_fraction": 0.15574225558389426,
+    "cell_log_rate": [
+      -2.8791799545288086,
+      -2.8791799545288086,
+      -2.8791799545288086
+    ],
+    "friction_dissipation": 3.2971627206279663e-07,
+    "drag_dissipation": 7.886211506047403e-07,
+    "cell_work": 2.777255758701358e-06,
+    "wall_work": 0.0,
+    "normal_contact_dissipation": 0.0,
+    "normal_contact_power": 0.0
+  },
+  "final_diagnostics": {
+    "step": 18202,
+    "elapsed_time": 0.00031033769726803817,
+    "cell": [
+      0.0026321694707903266,
+      0.0026321694707903266,
+      0.0026321694707903266
+    ],
+    "domain_cell": [
+      0.0026321694707903266,
+      0.0026321694707903266,
+      0.0026321694707903266
+    ],
+    "walls": [],
+    "stress": [
+      [
+        10692.179514880245,
+        -274.58563894123944,
+        116.47533378723135
+      ],
+      [
+        -274.06291931413364,
+        9534.026714477046,
+        80.43153727153098
+      ],
+      [
+        115.3548484257286,
+        86.80947226370088,
+        9704.348471888665
+      ]
+    ],
+    "contact_stress": [
+      [
+        10692.167731967478,
+        -274.5863195977241,
+        116.47580144080219
+      ],
+      [
+        -274.0635999705376,
+        9534.011171857612,
+        80.43317311574796
+      ],
+      [
+        115.35531607938017,
+        86.8111081077564,
+        9704.326301263818
+      ]
+    ],
+    "kinetic_stress": [
+      [
+        0.01178291276591558,
+        0.000680656484717754,
+        -0.0004676535708365161
+      ],
+      [
+        0.0006806564039850469,
+        0.015542619434607404,
+        -0.0016358442169781189
+      ],
+      [
+        -0.0004676536515692231,
+        -0.0016358440555127045,
+        0.0221706248471275
+      ]
+    ],
+    "stress_antisymmetry": 0.0005308175142815398,
+    "p": 9976.851567081985,
+    "q": -408.7546427899797,
+    "axial_strain": 1.817111272561789e-08,
+    "volumetric_strain": 5.4513338176853665e-08,
+    "volume_ratio": 0.9999999454866627,
+    "log_strain": [
+      1.817111289071256e-08,
+      1.817111289071256e-08,
+      1.817111289071256e-08
+    ],
+    "void_ratio": 0.8788968937394719,
+    "kinetic_energy": 6.045495215545316e-10,
+    "elastic_energy_proxy": 2.2507274479721673e-06,
+    "contact_normal": "target-gradient",
+    "elastic_energy_interpretation": "existing nodal spring energy proxy",
+    "unbalanced_force": 0.010661644861102104,
+    "max_overlap_fraction": 0.034980759024620056,
+    "friction_dissipation_last_step": 1.4211654422724429e-11,
+    "candidate_pairs": 5621,
+    "active_surface_contacts": 4418316,
+    "active_grain_pairs": 1305,
+    "coordination": 6.15566037735849,
+    "fabric": [
+      [
+        0.33989301323890686,
+        -0.00595594197511673,
+        -0.006660457234829664
+      ],
+      [
+        -0.00595594197511673,
+        0.33177945017814636,
+        0.0023636852856725454
+      ],
+      [
+        -0.006660457234829664,
+        0.0023636852856725454,
+        0.32832756638526917
+      ]
+    ],
+    "sliding_fraction": 0.338359003747129,
+    "cell_log_rate": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "friction_dissipation": 3.297439263860724e-07,
+    "drag_dissipation": 7.886211506047403e-07,
+    "cell_work": 2.777255758701358e-06,
+    "wall_work": 0.0,
+    "normal_contact_dissipation": 0.0,
+    "normal_contact_power": 0.0
+  },
+  "observed_metal_comparison": {
+    "early": {
+      "start_step": 18210,
+      "end_step": 19210,
+      "seconds_per_step": 0.6494079529580195,
+      "cpu_slowdown": 58.863658257373686,
+      "active_contacts_at_end": 4408082,
+      "scope": "Existing Metal preparation telemetry, first and latest available 1000-step windows. Same original geometry, different trajectory points and pressure controller; observational estimate, not an isolated matched-device benchmark."
+    },
+    "recent": {
+      "start_step": 84420,
+      "end_step": 85420,
+      "seconds_per_step": 0.6425493785419967,
+      "cpu_slowdown": 59.49196916084637,
+      "active_contacts_at_end": 4326318,
+      "scope": "Existing Metal preparation telemetry, first and latest available 1000-step windows. Same original geometry, different trajectory points and pressure controller; observational estimate, not an isolated matched-device benchmark."
+    }
+  },
+  "source_integrity": true,
+  "input_integrity": true
+}

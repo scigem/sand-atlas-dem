@@ -1,0 +1,20 @@
+{
+  "identity": "hostun-annealing-pair-refinement-v1",
+  "state": "/Users/bmar5496/code/sand-atlas-dem/runs/hostun-dense-annealing-v4/state-final.h5",
+  "full_library": "/private/tmp/sand-atlas-dem-walls/evidence/hostun-balanced424-preparation-v3/study/private/shapes.h5",
+  "prior_report": "/Users/bmar5496/code/sand-atlas-dem/runs/hostun-annealing-pair-isolation-v1/report.json",
+  "pairs": [[149,309],[163,231]],
+  "levels": [1024,4096,16384],
+  "seed": 211,
+  "steps": 4000,
+  "perturbation_steps": 2000,
+  "batch_steps": 20,
+  "diagnostic_steps": 200,
+  "translation_over_diameter": 0.001,
+  "rotation_radians": 0.001,
+  "timestep_cap_s": 0.000001,
+  "minimum_timestep_s": 0.0000000001,
+  "drag_per_step": 0.005,
+  "minimum_free_bytes": 1073741824,
+  "scope": "Prospective bounded Metal diagnostic. Reproduce two coarse trapped controls, preserve poses/full residual states. From each coarse endpoint independently relax 4096 and16384 original-node area-stratified refinements (original mesh/volume/inertia/law unchanged, seeds211+shape index, all53 library identities maintained). At finest endpoint apply +/-0.001 mean diameter radial translation to second body and +/-0.001rad spatial x rotation, zero velocities/history,2000 steps each. All starts zero velocities/history; retained poses are configuration evidence, NPZ states preserve residuals. Existing50% construction guard and active dt/retry policy unchanged. Finite perturbation observations are not a Hessian/stability proof or continuum convergence gate. No physical handoff, dense specimen, or acceptance. Archive only numeric reports and source; geometry and node maps remain private. No geometry library copies due disk limits."
+}

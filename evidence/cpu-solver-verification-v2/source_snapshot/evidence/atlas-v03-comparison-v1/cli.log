@@ -1,0 +1,27 @@
+{
+  "format": "sand-dem-atlas-response-report/1",
+  "kind": "synthetic-dem",
+  "status": "complete",
+  "scientific_admission": false,
+  "model": "barodesy-sand",
+  "observation_count": 5,
+  "binary_sha256": "da23f66eda19e4b14c3eea85422572809b87e24d37ca6ebdf8f4a05f21af2a82",
+  "catalogue_sha256": "bc08858bba18517f7398a383db1a3c8c38474e6ad7dc88db147364df7d6dc040",
+  "source_unchanged": true,
+  "artifacts": {
+    "prospective-freeze.json": "bf2e589d190bcf69e2ef42e751ad04b4efcffed8e383777f74919a0623a33f89",
+    "handoff.json": "06be6cbfe12698b2f3a18fac301c633e7d138ba6d3338c7788c84ffce2e08ccd",
+    "comparison.svg": "9bcb8c747de87d4c0b84e932f6d7baff727935fcc05301ab2db84bacb13541db",
+    "replay-request.json": "464f3d7a256d77cf546033a1eff56e31a7eec392608bb24c3e824bc21b502a6b",
+    "virtual-test.json": "b3d897474f2ae15d5fa7a38eddadf293e58c2ac837a495d011bff5abfd3315d7",
+    "projection-policy.json": "6cb038897998e21d4d943610fb5609981f7caf04684b6e043d4970ee31562c00",
+    "comparison.png": "bae4c11d2a8975483c4f088c11758fb4440c5da21dfaffe36104ae867372e35f",
+    "comparison.json": "08d67b0a45d16499c2d28697d0a68c83c1689b0f8d6785139cdc1880d1304983",
+    "native.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "configuration.json": "8d3ce00ab0baf01b008a1636f93e18f0f25eef61723b9d45f6d0157011b64e21",
+    "compiled-catalogue.json": "7abdf1ad1c2569862c0f9f384a6bde0620bd90c863dcb055ef49db18b79bc99e",
+    "native-describe.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-response.json": "c89638cf586931e2759e4b8c089d459958d28a35ecf6e1f3881233dc361d2ec1",
+    "native-describe.json": "a51b5587cba1f81b96c0db336b82798f20a40bfba74439a5809f2fb20fede0a4"
+  }
+}

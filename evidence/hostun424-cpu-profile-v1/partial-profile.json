@@ -1,0 +1,80 @@
+{
+  "step_wall_seconds": [
+    38.066050875000656,
+    38.38700475008227
+  ],
+  "kernels": {
+    "checkContactTimestep": {
+      "seconds": 0.00041149999015033245,
+      "calls": 4
+    },
+    "beginStep": {
+      "seconds": 0.00019779312424361706,
+      "calls": 2
+    },
+    "advanceCell": {
+      "seconds": 0.00010808312799781561,
+      "calls": 2
+    },
+    "checkRebuild": {
+      "seconds": 0.00010145804844796658,
+      "calls": 2
+    },
+    "clearBins": {
+      "seconds": 0.00011570809874683619,
+      "calls": 2
+    },
+    "fillBins": {
+      "seconds": 9.708409197628498e-05,
+      "calls": 2
+    },
+    "countPairs": {
+      "seconds": 0.00010554201435297728,
+      "calls": 2
+    },
+    "blockScan": {
+      "seconds": 0.0001769170630723238,
+      "calls": 4
+    },
+    "addBlocks": {
+      "seconds": 2.575002145022154e-05,
+      "calls": 2
+    },
+    "emitPairs": {
+      "seconds": 0.00010320800356566906,
+      "calls": 2
+    },
+    "resetMeshContacts": {
+      "seconds": 0.00011629192158579826,
+      "calls": 2
+    },
+    "prepareMeshPairs": {
+      "seconds": 0.00694004213437438,
+      "calls": 2
+    },
+    "collectMeshFrontiers": {
+      "seconds": 74.9439630000852,
+      "calls": 2
+    },
+    "clearContactStorage": {
+      "seconds": 0.031521248864009976,
+      "calls": 2
+    },
+    "resolveContacts": {
+      "seconds": 0.9982681249966845,
+      "calls": 2
+    },
+    "buildHistoryHash": {
+      "seconds": 0.051907583023421466,
+      "calls": 2
+    },
+    "gather": {
+      "seconds": 0.3500265000620857,
+      "calls": 2
+    },
+    "finishStep": {
+      "seconds": 0.0001518760109320283,
+      "calls": 2
+    }
+  }
+}

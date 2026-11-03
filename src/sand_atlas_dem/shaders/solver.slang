@@ -15,6 +15,7 @@ struct Config {
     float dt; float kn; float kt; float mu; float normalViscosity;
     float skin; float drag; float maxOverlap; uint historyStep;
     uint meshGeometry; uint periodic; uint wallCount; uint wallBoxEnabled;
+    uint sourceSurfaceNormal;
 };
 struct Resources {
     Config c;
@@ -220,7 +221,7 @@ float meshBoxDistance(uint node,float3 p){
     float3 d=max(max(r.meshMin[node].xyz-p,p-r.meshMax[node].xyz),0);
     return dot(d,d);
 }
-float4 meshDistance(uint shape,float3 p){
+float4 meshDistance(uint shape,float3 p,bool surfaceNormal=false){
     uint root=r.meshRoots[shape].x;
     uint pending[32];uint top=1;pending[0]=root;
     float best=1e30;float3 nearest=0,pseudo=0;
@@ -246,7 +247,7 @@ float4 meshDistance(uint shape,float3 p){
         }
     }
     float distance=sqrt(best);float side=dot(p-nearest,pseudo)<0?-1.:1.;
-    float3 normal=distance>1e-12?side*(p-nearest)/distance:pseudo;
+    float3 normal=surfaceNormal?pseudo:(distance>1e-12?side*(p-nearest)/distance:pseudo);
     return float4(normal,side*distance);
 }
 [shader("compute")][numthreads(64,1,1)]
@@ -328,6 +329,13 @@ bool nodeContact(uint src,uint dst,uint node,out float4 pd,out float4 na){
     pd=float4(arm,-f.w*r.body[dst].x);na=0;
     if(pd.w<=0)return false;
     float3 grad=qrot(r.rotation[dst],f.xyz);float len=length(grad);
+    if(r.c.sourceSurfaceNormal!=0){
+        // Opposite sampled-surface outward normal: a different contact operator.
+        // Use the closest feature pseudonormal, not an offset dominated by roundoff.
+        float4 own=meshDistance(sid,sp.xyz,true);
+        if(abs(own.w)>1e-5){fail(2);return false;}
+        grad=-qrot(r.rotation[src],own.xyz);len=length(grad);
+    }
     if(len<1e-7||!isfinite(pd.w)){fail(2);return false;}
     na=float4(grad/len,sp.w*r.body[src].x*r.body[src].x);
     if(pd.w>r.c.maxOverlap*min(r.body[src].w,r.body[dst].w))fail(4);
@@ -365,6 +373,7 @@ uint findPairs(uint id,bool emit){
             uint j=r.binParticles[bi*r.c.binCapacity+slot];
             if(j<=id)continue;
             float3 d=centerBranch(id,j);
+            if(r.c.sourceSurfaceNormal!=0&&dot(d,d)<1e-12){fail(16384);continue;}
             float range=r.body[id].z+r.body[j].z+r.c.skin;
             if(dot(d,d)>range*range)continue;
             if(emit){uint index=r.pairOffsets[id]+count;if(index<r.c.pairCapacity)r.pairs[index]=uint2(id,j);else fail(16);}

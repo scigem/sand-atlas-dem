@@ -1,0 +1,40 @@
+{
+  "identity": "dense27-gather-performance-v1",
+  "repetitions": 3,
+  "warmup_steps": 16,
+  "steps": 128,
+  "rate_s": [
+    0,
+    0,
+    0
+  ],
+  "drag_s": 0,
+  "minimum_speedup": 1.05,
+  "history_rtol": 0.0001,
+  "history_atol": 1e-08,
+  "limits": {
+    "position": 1e-05,
+    "velocity": 1e-05,
+    "rotation": 1e-05,
+    "force": 0.0001,
+    "torque": 0.0001
+  },
+  "scope": "New spinning dense cube fixture with resolved contact torque: uniform initial angular velocity [600,800,0]rad/s. Same 1ns timestep and unchanged state/force/torque/history gates. Original zero-spin dense study failed relative torque repeatability and remains failed. Scheduling only: gather threadgroup size1/4/8/16/32 vs64. Six128-step restored trials per mode; minimum5% median gain before promotion. No scientific admission.",
+  "workload": "dense27",
+  "modes": [
+    "baseline",
+    "gather1",
+    "gather4",
+    "gather8",
+    "gather16",
+    "gather32"
+  ],
+  "split_steps": 32,
+  "subdivisions": 3,
+  "omega_rad_s": [
+    600,
+    800,
+    0
+  ],
+  "grid_side": 3
+}

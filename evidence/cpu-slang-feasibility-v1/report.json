@@ -1,0 +1,50 @@
+{
+  "id": "cpu-slang-feasibility-v1",
+  "probes": [
+    {
+      "name": "cpu-device",
+      "returncode": 1,
+      "seconds": 2.1223144159885123
+    },
+    {
+      "name": "cpp-normalProbe",
+      "returncode": 0,
+      "seconds": 0.1968333750264719
+    },
+    {
+      "name": "cpp-planeProbe",
+      "returncode": 0,
+      "seconds": 0.18454762501642108
+    },
+    {
+      "name": "cpp-smoke",
+      "returncode": 0,
+      "seconds": 0.21847387496381998
+    },
+    {
+      "name": "cpp-resolveContacts",
+      "returncode": 1,
+      "seconds": 0.1958899999735877
+    },
+    {
+      "name": "cpp-fillBins",
+      "returncode": 1,
+      "seconds": 0.1939189590048045
+    },
+    {
+      "name": "cpp-collectMeshFrontiers",
+      "returncode": 1,
+      "seconds": 0.19937316700816154
+    },
+    {
+      "name": "cpp-blockScan",
+      "returncode": 1,
+      "seconds": 0.16714054089970887
+    }
+  ],
+  "cpu_only": true,
+  "gpu_dispatches": 0,
+  "scientific_admission": false,
+  "whole_solver_throughput_measured": false,
+  "source_integrity": true
+}

@@ -1,0 +1,1743 @@
+{
+  "schema_version": "0.1",
+  "sha256": "bc08858bba18517f7398a383db1a3c8c38474e6ad7dc88db147364df7d6dc040",
+  "models": [
+    {
+      "schema_version": "0.3",
+      "status": "draft",
+      "id": "barodesy-clay-2017",
+      "name": "Barodesy clay 2017 \u2014 body law, zero spin (draft)",
+      "family": "barodesy",
+      "description": "Draft laboratory preview of Medicus\u2013Fellin2017 body Eqs1\u201310 at zero spin. Seven physical states; compression-positive effective Cauchy stress and void ratio. Selects body2p critical density, not Appendix6p; no claim of author-code equivalence or resolved printed spin expression. Conservative positive-definite stress interior and bounded matrix exponential; exact zero/hydrostatic continuations are project numerical choices. Default Table2 soil parameters and stress/e are examples, not a matched experimental preparation. No experimental validation, independent scientific admission, finite rotation or validated zero/near-hydrostatic update tangent. Use explicit state; source and retained research evidence are linked.",
+      "sources": [
+        {
+          "url": "https://doi.org/10.1007/s11440-016-0458-4",
+          "role": "Primary body equations and declared source differences",
+          "locator": "Medicus/Fellin2017 pp366\u2013367Eqs1\u201310,Table1; p368Table2; p369Sec4.3; p374Eq32/footnote13; p375App3Eq41distinct6p; publisherPDFSHA256bd049a3fd874c9e4945e1c77f5af5b84ac14c26a08cee1b953428b4312e6af15"
+        },
+        {
+          "url": "https://github.com/benjym/constitutive-atlas/blob/main/docs/models/barodesy2017-research-rates.md",
+          "role": "Atlas numerical implementation and limitations",
+          "locator": "Original immutable research variant and separate rate/derivative/finite-path studies; historical evidence is not the current preview hash."
+        },
+        {
+          "url": "https://github.com/benjym/constitutive-atlas/blob/main/docs/reviews/barodesy2017-wider-integration-results.md",
+          "role": "Bounded independent finite-path comparisons",
+          "locator": "Off-NCL compression, reversal/reloading and rotated nonproportional tensor paths; no experimental validation."
+        }
+      ],
+      "parameters": {
+        "phi_c": {
+          "default": 0.3944444109507185,
+          "min": 0.0001,
+          "max": 1.56,
+          "unit": "1",
+          "label": "Criticalfrictionangle,radians"
+        },
+        "N": {
+          "default": 1.375,
+          "min": -10,
+          "max": 10,
+          "unit": "1"
+        },
+        "lambda_star": {
+          "default": 0.11,
+          "min": 1e-05,
+          "max": 1,
+          "unit": "1"
+        },
+        "kappa_star": {
+          "default": 0.016,
+          "min": 1e-06,
+          "max": 0.999,
+          "unit": "1"
+        },
+        "sigma_star": {
+          "default": 1000,
+          "min": 1000,
+          "max": 1000,
+          "unit": "Pa",
+          "label": "Fixedsource1kPareference,notfifthsoilinput"
+        }
+      },
+      "state": [
+        {
+          "name": "sigma",
+          "shape": "sym",
+          "unit": "Pa",
+          "scale": "sigma_star",
+          "initial": [
+            100000,
+            100000,
+            100000,
+            0,
+            0,
+            0
+          ],
+          "semantics": {
+            "role": "persistent",
+            "quantity": "cauchy_stress",
+            "transformation": "symmetric_spatial_tensor"
+          }
+        },
+        {
+          "name": "e",
+          "shape": "scalar",
+          "unit": "1",
+          "scale": "1",
+          "initial": 0.8,
+          "semantics": {
+            "role": "persistent",
+            "quantity": "void_ratio",
+            "transformation": "scalar_invariant"
+          }
+        }
+      ],
+      "derived": [
+        {
+          "name": "sphi",
+          "expr": "sin(phi_c)"
+        },
+        {
+          "name": "c2",
+          "expr": "-(3*sqrt(2)+3)/2"
+        },
+        {
+          "name": "c1",
+          "expr": "(1-sphi)/(2*c2**2*sphi)"
+        },
+        {
+          "name": "c5",
+          "expr": "(1+sphi)/(1-sphi)"
+        },
+        {
+          "name": "t",
+          "expr": "c5*lambda_star"
+        },
+        {
+          "name": "c3",
+          "expr": "(-sqrt(3)/lambda_star+sqrt(3)/kappa_star)/(2**t+(1/500)**t-2)"
+        },
+        {
+          "name": "c6",
+          "expr": "1/(2*(-sqrt(3)/(c3*kappa_star)+2**t-1))"
+        },
+        {
+          "name": "p",
+          "expr": "trace(sigma)/3"
+        },
+        {
+          "name": "critical_plus_one",
+          "expr": "exp(N)*(2*p/sigma_star)**(-lambda_star)"
+        },
+        {
+          "name": "density",
+          "expr": "(1+e)/critical_plus_one"
+        },
+        {
+          "name": "rate_norm",
+          "expr": "norm(de)"
+        },
+        {
+          "name": "lxx",
+          "expr": "sym(1,0,0,0,0,0)"
+        },
+        {
+          "name": "lyy",
+          "expr": "sym(0,1,0,0,0,0)"
+        },
+        {
+          "name": "lzz",
+          "expr": "sym(0,0,1,0,0,0)"
+        },
+        {
+          "name": "lxy",
+          "expr": "sym(0,0,0,1,0,0)"
+        },
+        {
+          "name": "lyz",
+          "expr": "sym(0,0,0,0,1,0)"
+        },
+        {
+          "name": "lxz",
+          "expr": "sym(0,0,0,0,0,1)"
+        },
+        {
+          "name": "loading_abs_sum",
+          "expr": "abs(dot(de,lxx))+abs(dot(de,lyy))+abs(dot(de,lzz))+abs(dot(de,lxy))+abs(dot(de,lyz))+abs(dot(de,lxz))"
+        },
+        {
+          "name": "hydro_measure",
+          "expr": "abs(dot(de,lxx)-dot(de,lyy))+abs(dot(de,lyy)-dot(de,lzz))+abs(dot(de,lzz)-dot(de,lxx))+abs(dot(de,lxy))+abs(dot(de,lyz))+abs(dot(de,lxz))"
+        },
+        {
+          "name": "U",
+          "expr": "select(rate_norm > 0, de/rate_norm, 0*I)"
+        },
+        {
+          "name": "delta",
+          "expr": "select(rate_norm > 0, select(hydro_measure > 0, -trace(U), select(trace(de) > 0,-sqrt(3),sqrt(3))),0)"
+        },
+        {
+          "name": "q",
+          "expr": "select(hydro_measure > 0,norm(dev(U)),0)"
+        },
+        {
+          "name": "m",
+          "expr": "select(q > 0,-sqrt(1.5)*delta/q,0)"
+        },
+        {
+          "name": "x",
+          "expr": "select(q > 0,c1*(m-c2)**2,1)"
+        },
+        {
+          "name": "logK",
+          "expr": "select(q > 0,select(x > 1,-log1p(1/x),log(x)-log1p(x)),0)"
+        },
+        {
+          "name": "a",
+          "expr": "select(q > 0,logK/(sqrt(1.5)*q),0)"
+        },
+        {
+          "name": "dir_B",
+          "expr": "select(q > 0,expm(-a*U),I)"
+        },
+        {
+          "name": "dir_P",
+          "expr": "dir_B/norm(dir_B)"
+        },
+        {
+          "name": "Lambda",
+          "expr": "-(lambda_star-kappa_star)*delta/(2*sqrt(3))+(lambda_star+kappa_star)/2"
+        },
+        {
+          "name": "beta",
+          "expr": "-1/(c3*Lambda)+(2**t-1)/sqrt(3)"
+        },
+        {
+          "name": "f",
+          "expr": "c6*beta*delta-1/2"
+        },
+        {
+          "name": "g",
+          "expr": "(1-c6)*beta*delta+density**c5-1/2"
+        },
+        {
+          "name": "stress_norm",
+          "expr": "norm(sigma)"
+        },
+        {
+          "name": "stress_unit",
+          "expr": "select(stress_norm > 0*sigma_star,sigma/stress_norm,0*I)"
+        },
+        {
+          "name": "stress_xx",
+          "expr": "dot(stress_unit,lxx)"
+        },
+        {
+          "name": "stress_yy",
+          "expr": "dot(stress_unit,lyy)"
+        },
+        {
+          "name": "stress_zz",
+          "expr": "dot(stress_unit,lzz)"
+        },
+        {
+          "name": "stress_xy",
+          "expr": "dot(stress_unit,lxy)"
+        },
+        {
+          "name": "stress_yz",
+          "expr": "dot(stress_unit,lyz)"
+        },
+        {
+          "name": "stress_xz",
+          "expr": "dot(stress_unit,lxz)"
+        },
+        {
+          "name": "minor_two",
+          "expr": "stress_xx*stress_yy-stress_xy**2/2"
+        },
+        {
+          "name": "stress_det",
+          "expr": "stress_xx*stress_yy*stress_zz-(stress_xx*stress_yz**2+stress_yy*stress_xz**2+stress_zz*stress_xy**2)/2+stress_xy*stress_yz*stress_xz/sqrt(2)"
+        }
+      ],
+      "domain": [
+        "lambda_star > kappa_star",
+        "c1 > 0",
+        "p > 0*sigma_star",
+        "e >= 0",
+        "critical_plus_one > 0",
+        "density > 0",
+        "Lambda > 0",
+        "x > 0",
+        "abs(a) <= 64",
+        "select(loading_abs_sum > 0,rate_norm > 0,rate_norm >= 0)",
+        "select(hydro_measure > 0,q > 0,q >= 0)",
+        "stress_norm > 0*sigma_star",
+        "stress_xx > 0",
+        "stress_yy > 0",
+        "stress_zz > 0",
+        "minor_two > 1.4210854715202004e-14",
+        "stress_det > 1.4210854715202004e-14"
+      ],
+      "equations": {
+        "sigma": "select(rate_norm > 0,c3*rate_norm*(f*norm(sigma)*dir_P+g*sigma),0*sigma)",
+        "e": "-(1+e)*trace(de)"
+      },
+      "formulation": {
+        "time_dependence": "strain_path",
+        "equation_form": "strain_path_rate",
+        "kinematics": "small_strain_3d",
+        "frame": "fixed_spatial",
+        "objective_rate": "none",
+        "tensor_representation": "mandel",
+        "stress_sign": "compression_positive",
+        "strain_sign": "compression_positive",
+        "stress": {
+          "source": "state",
+          "name": "sigma",
+          "measure": "cauchy",
+          "scope": "effective"
+        },
+        "inputs": {
+          "equation": {
+            "de": {
+              "quantity": "strain_increment",
+              "measure": "infinitesimal_strain",
+              "shape": "sym",
+              "unit": "1",
+              "configuration": "current",
+              "sampling": "increment",
+              "constraint": "finite"
+            }
+          },
+          "advance": {}
+        }
+      },
+      "initialization": {
+        "method": "explicit_state",
+        "default_policy": "examples_only",
+        "required_state": [
+          "sigma",
+          "e"
+        ],
+        "validation": "domain_and_initial_checks"
+      }
+    },
+    {
+      "schema_version": "0.3",
+      "id": "barodesy-sand",
+      "name": "Barodesy sand (2015) \u2014 fixed-frame draft",
+      "family": "barodesy",
+      "status": "draft",
+      "description": "Draft laboratory preview of Kolymbas2015 Eq31 sand law, fixed spatial frame and zero spin. Compression-positive effective Cauchy stress and void ratio; explicit schema v0.3. Default parameters are the separately attributed Kolymbas/Bathaeian2019 illustrative calibration, not a 2015 experimental reproduction. Conservative positive-definite/nonzero stress interior, density margin and bounded matrix-exponential support are numerical restrictions. Exact zero-loading continuation is selected; zero-stress evolution and zero-loading update tangents are unresolved. Supply stress/e explicitly. No finite-rotation, matched preparation, experimental validation or scientific admission claim.",
+      "sources": [
+        {
+          "url": "https://doi.org/10.1680/geot.14.P.151",
+          "role": "Primary selected sand law",
+          "locator": "Kolymbas2015 pp53\u201356 Eqs9,20,23,26\u201331; p58 numerical context; p59 frame gap. Received PDF SHA2564d4511bdbb6014c19460bf0c5d7e2072c2c606fa8a5b49db180fc99d0da149da"
+        },
+        {
+          "url": "https://doi.org/10.1002/nag.2984",
+          "role": "Separate illustrative default parameter fixture",
+          "locator": "Kolymbas/Bathaeian2019 author manuscript p5 Table1, Eqs11\u201315; c4 converted465kPa to465000Pa. Not asserted publisher-equivalent."
+        },
+        {
+          "url": "https://github.com/benjym/constitutive-atlas/blob/main/catalogue/investigations/barodesy2015-rates-v2/RESULTS.md",
+          "role": "Independent instantaneous-rate verification",
+          "locator": "38 independent Cartesian/exact rational source rates and16 rejection/recovery pairs per native/Wasm backend; original cancellation failure preserved separately."
+        },
+        {
+          "url": "https://github.com/benjym/constitutive-atlas/blob/main/docs/models/barodesy2015-laboratory-preview.md",
+          "role": "Atlas laboratory-preview scope and limitations",
+          "locator": "Explicit contract, separately attributed default calibration, source and finite-path software checks; no scientific admission."
+        }
+      ],
+      "parameters": {
+        "c1": {
+          "default": -1.0246,
+          "min": -2,
+          "max": -0.1,
+          "unit": "1"
+        },
+        "c2": {
+          "default": 1,
+          "min": 0,
+          "max": 1.5,
+          "unit": "1"
+        },
+        "c3": {
+          "default": -2.3,
+          "min": -5,
+          "max": -0.1,
+          "unit": "1"
+        },
+        "c4": {
+          "default": 465000,
+          "min": 1000,
+          "max": 100000000.0,
+          "unit": "Pa"
+        },
+        "c5": {
+          "default": 28,
+          "min": 0.1,
+          "max": 100,
+          "unit": "1"
+        },
+        "ec0": {
+          "default": 0.87,
+          "min": 0.1,
+          "max": 2,
+          "unit": "1"
+        },
+        "emin": {
+          "default": 0.35,
+          "min": 0,
+          "max": 1,
+          "unit": "1"
+        }
+      },
+      "state": [
+        {
+          "name": "sigma",
+          "shape": "sym",
+          "unit": "Pa",
+          "scale": "c4",
+          "initial": [
+            100000,
+            100000,
+            100000,
+            0,
+            0,
+            0
+          ],
+          "semantics": {
+            "role": "persistent",
+            "quantity": "cauchy_stress",
+            "transformation": "symmetric_spatial_tensor"
+          }
+        },
+        {
+          "name": "e",
+          "shape": "scalar",
+          "unit": "1",
+          "scale": "1",
+          "initial": 0.75,
+          "semantics": {
+            "role": "persistent",
+            "quantity": "void_ratio",
+            "transformation": "scalar_invariant"
+          }
+        }
+      ],
+      "derived": [
+        {
+          "name": "scaled_stress",
+          "expr": "sigma/c4"
+        },
+        {
+          "name": "stress_measure",
+          "expr": "norm(scaled_stress)"
+        },
+        {
+          "name": "stress_unit",
+          "expr": "select(stress_measure > 0,scaled_stress/stress_measure,0*I)"
+        },
+        {
+          "name": "stress_value",
+          "expr": "c4*stress_measure"
+        },
+        {
+          "name": "loading_measure",
+          "expr": "norm(de)"
+        },
+        {
+          "name": "loading_abs_sum",
+          "expr": "abs(dot(de,sym(1,0,0,0,0,0)))+abs(dot(de,sym(0,1,0,0,0,0)))+abs(dot(de,sym(0,0,1,0,0,0)))+abs(dot(de,sym(0,0,0,1,0,0)))+abs(dot(de,sym(0,0,0,0,1,0)))+abs(dot(de,sym(0,0,0,0,0,1)))"
+        },
+        {
+          "name": "loading_unit",
+          "expr": "select(loading_measure > 0,de/loading_measure,0*I)"
+        },
+        {
+          "name": "v",
+          "expr": "trace(loading_unit)"
+        },
+        {
+          "name": "a",
+          "expr": "c1*exp(-c2*v)"
+        },
+        {
+          "name": "direction_argument",
+          "expr": "-a*loading_unit"
+        },
+        {
+          "name": "direction_tensor",
+          "expr": "expm(direction_argument)"
+        },
+        {
+          "name": "direction_unit",
+          "expr": "direction_tensor/norm(direction_tensor)"
+        },
+        {
+          "name": "B",
+          "expr": "(ec0-emin)/(ec0+1)*exp(-(1+emin)/c5*log1p(c5*stress_measure))"
+        },
+        {
+          "name": "ec",
+          "expr": "(emin+B)/(1-B)"
+        },
+        {
+          "name": "K",
+          "expr": "(c4+c5*stress_value)/(e-emin)"
+        },
+        {
+          "name": "sxx",
+          "expr": "dot(stress_unit,sym(1,0,0,0,0,0))"
+        },
+        {
+          "name": "syy",
+          "expr": "dot(stress_unit,sym(0,1,0,0,0,0))"
+        },
+        {
+          "name": "szz",
+          "expr": "dot(stress_unit,sym(0,0,1,0,0,0))"
+        },
+        {
+          "name": "sxy",
+          "expr": "dot(stress_unit,sym(0,0,0,1,0,0))"
+        },
+        {
+          "name": "syz",
+          "expr": "dot(stress_unit,sym(0,0,0,0,1,0))"
+        },
+        {
+          "name": "sxz",
+          "expr": "dot(stress_unit,sym(0,0,0,0,0,1))"
+        },
+        {
+          "name": "minor_two",
+          "expr": "sxx*syy-sxy**2/2"
+        },
+        {
+          "name": "stress_det",
+          "expr": "sxx*syy*szz-(sxx*syz**2+syy*sxz**2+szz*sxy**2)/2+sxy*syz*sxz/sqrt(2)"
+        }
+      ],
+      "equations": {
+        "sigma": "select(loading_measure > 0,K*((v-c3*ec)*direction_unit+c3*e*stress_unit)*loading_measure,0*sigma)",
+        "e": "-(1+e)*trace(de)"
+      },
+      "domain": [
+        "ec0 > emin",
+        "e > emin",
+        "e-emin >= 1e-8",
+        "e <= 3",
+        "stress_measure >= 1e-10",
+        "stress_measure <= 1e10",
+        "sxx > 0",
+        "syy > 0",
+        "szz > 0",
+        "minor_two > 1.4210854715202004e-14",
+        "stress_det > 1.4210854715202004e-14",
+        "B > 0",
+        "B < 1",
+        "ec > emin",
+        "loading_measure <= 1000",
+        "select(loading_abs_sum > 0,loading_measure >= 1e-140,loading_measure >= 0)",
+        "norm(direction_argument) <= 64"
+      ],
+      "formulation": {
+        "time_dependence": "strain_path",
+        "equation_form": "strain_path_rate",
+        "kinematics": "small_strain_3d",
+        "frame": "fixed_spatial",
+        "objective_rate": "none",
+        "tensor_representation": "mandel",
+        "stress_sign": "compression_positive",
+        "strain_sign": "compression_positive",
+        "stress": {
+          "source": "state",
+          "name": "sigma",
+          "measure": "cauchy",
+          "scope": "effective"
+        },
+        "inputs": {
+          "equation": {
+            "de": {
+              "quantity": "strain_increment",
+              "measure": "infinitesimal_strain",
+              "shape": "sym",
+              "unit": "1",
+              "configuration": "current",
+              "sampling": "increment",
+              "constraint": "finite"
+            }
+          },
+          "advance": {}
+        }
+      },
+      "initialization": {
+        "method": "explicit_state",
+        "default_policy": "examples_only",
+        "required_state": [
+          "sigma",
+          "e"
+        ],
+        "validation": "domain_and_initial_checks"
+      }
+    },
+    {
+      "schema_version": "0.1",
+      "status": "transcribed",
+      "parameters": {
+        "p_ref": {
+          "default": 100000,
+          "min": 1,
+          "max": 10000000000.0,
+          "unit": "Pa",
+          "label": "Reference stress / numerical scaling"
+        },
+        "E": {
+          "default": 30000000.0,
+          "min": 1,
+          "max": 1000000000000.0,
+          "unit": "Pa",
+          "label": "Young modulus"
+        },
+        "nu": {
+          "default": 0.25,
+          "min": -0.99,
+          "max": 0.499,
+          "unit": "1",
+          "label": "Poisson ratio"
+        },
+        "M": {
+          "default": 1.2,
+          "min": 0,
+          "max": 3,
+          "unit": "1",
+          "label": "Friction slope"
+        },
+        "Md": {
+          "default": 0.2,
+          "min": 0,
+          "max": 3,
+          "unit": "1",
+          "label": "Dilatancy slope"
+        },
+        "c": {
+          "default": 10000,
+          "min": 0,
+          "max": 1000000000.0,
+          "unit": "Pa",
+          "label": "Yield intercept"
+        }
+      },
+      "state": [
+        {
+          "name": "sigma",
+          "unit": "Pa",
+          "initial": [
+            100000.0,
+            100000.0,
+            100000.0,
+            0,
+            0,
+            0
+          ],
+          "shape": "sym",
+          "scale": "p_ref"
+        },
+        {
+          "name": "e",
+          "unit": "1",
+          "initial": 0.7,
+          "shape": "scalar",
+          "scale": "1"
+        },
+        {
+          "name": "gamma",
+          "unit": "1",
+          "initial": 0,
+          "shape": "scalar",
+          "scale": "1",
+          "transient": true,
+          "multiplier": true
+        }
+      ],
+      "derived": [
+        {
+          "name": "K",
+          "expr": "E / (3 * (1 - 2 * nu))"
+        },
+        {
+          "name": "G",
+          "expr": "E / (2 * (1 + nu))"
+        },
+        {
+          "name": "mean",
+          "expr": "trace(sigma) / 3"
+        },
+        {
+          "name": "q",
+          "expr": "sqrt(1.5 * dot(dev(sigma), dev(sigma)))"
+        },
+        {
+          "name": "yield_scaled",
+          "expr": "(q - M * mean - c) / p_ref"
+        },
+        {
+          "name": "trial_s",
+          "expr": "dev(sigma_n) + 2 * G * dev(de)"
+        },
+        {
+          "name": "trial_q",
+          "expr": "sqrt(1.5 * dot(trial_s, trial_s))"
+        },
+        {
+          "name": "trial_q_safe",
+          "expr": "select(trial_q > 0 * p_ref, trial_q, p_ref)"
+        }
+      ],
+      "domain": [
+        "e > 0",
+        "gamma > -1e-9"
+      ],
+      "integration": "residual",
+      "id": "drucker-prager",
+      "name": "Drucker\u2013Prager, nonassociated perfect plasticity",
+      "family": "elastoplasticity",
+      "description": "Drucker\u2013Prager cone f=q-M p-c with separate dilatancy slope Md. Backward Euler with declarative trial-direction radial return and subgradient apex branch. Constant elasticity; no hardening or tensile cap.",
+      "sources": [
+        {
+          "url": "https://opensees.github.io/OpenSeesDocumentation/user/manual/material/ndMaterials/DruckerPrager.html",
+          "locator": "Drucker\u2013Prager yield and flow conventions; this entry is the explicitly stated perfect-plastic specialization",
+          "role": "formulation"
+        },
+        {
+          "url": "https://github.com/OpenSees/OpenSees/blob/8a0273db3e2f5a14c05924a179c1e439500c852c/SRC/material/nD/UWmaterials/DruckerPrager.cpp",
+          "locator": "plastic_integrator: smooth-cone correction under zero hardening; atlas omits separate tensile cutoff. Trial-direction elimination and apex subgradient are project derivations documented in docs/models/drucker-prager-apex.md.",
+          "role": "implementation reference"
+        },
+        {
+          "url": "https://docs.itascacg.com/itasca930/common/models/drucker/doc/modeldrucker.html",
+          "locator": "Equations 17\u201323 (radial scaling) and Apex Stress Correction; comparison source includes a separate tensile cutoff absent from this atlas law. Project derivation: docs/models/drucker-prager-apex.md.",
+          "role": "formulation reference"
+        }
+      ],
+      "equations": {
+        "sigma": "sigma - sigma_n - K * trace(de) * I - 2 * G * dev(de) + min(3 * G * gamma / trial_q_safe, 1) * trial_s - gamma * K * Md * I",
+        "e": "e - (1 + e_n) * exp(-trace(de)) + 1",
+        "gamma": "sqrt(gamma**2 + yield_scaled**2) - gamma + yield_scaled"
+      },
+      "initial_checks": [
+        "yield_scaled <= 1e-8"
+      ]
+    },
+    {
+      "schema_version": "0.3",
+      "id": "hypoplastic-clay-2013",
+      "name": "Clay hypoplasticity 2013 \u2014 Appendix law, zero spin (draft)",
+      "family": "hypoplasticity",
+      "description": "Draft laboratory candidate of Ma\u0161\u00edn2013 author-manuscript Appendix Eqs43\u201358 at zero spin, with effective compression-positive Cauchy stress and void ratio. Fixed spatial infinitesimal3D restriction; no finite objective transport, IGS or 2014 anisotropy. Illustrative parameters are software fixtures, distinct from Table1 fictitious eval. and material calibrations; require explicit stress/e, with no inferred specimen preparation. Exact isotropic continuation and conservative unresolved-arithmetic rejection are project choices. Existing invariant guards do not certify eigenvalue signs arbitrarily close to singular stress; no clipping or stress floor. ASBS is diagnostic rather than a yield barrier; an evaluable initial state need not have a verified physical preparation. No universal-SPD accuracy, experimental validation, human scientific admission or validated zero/near-isotropic update tangent. See linked source, preparation and precision limitations.",
+      "status": "draft",
+      "sources": [
+        {
+          "url": "https://doi.org/10.1007/s11440-012-0199-y",
+          "locator": "Masin 2013, Appendix Eqs43\u201358; density Eq7, ASBS Eq17. Author-manuscript/final reconciliation remains open.",
+          "role": "primary publication"
+        },
+        {
+          "url": "https://web.natur.cuni.cz/uhigug/masin/download/Masin_AG12-pp.pdf",
+          "locator": "author manuscript PDF pp13\u201314 Eqs43\u201358; density p3 Eq7; SHA256 21834ab9da81ec2cdebdf3a3d7f97b691d47bf481a24432bc0562aca9f503281",
+          "role": "pinned author manuscript"
+        },
+        {
+          "url": "https://github.com/benjym/constitutive-atlas/blob/main/docs/ingestion/hypoplastic-clay-2013/README.md",
+          "role": "Atlas source, preparation and precision scope",
+          "locator": "Publisher HTML Appendix43\u201358 compared with pinned manuscript; full final-body equivalence and universal physical initial-state policy remain open."
+        },
+        {
+          "url": "https://github.com/benjym/constitutive-atlas/blob/main/docs/models/clay2013-research-integration.md",
+          "role": "Separately bounded historical implementation evidence",
+          "locator": "Original immutable research definition; exact isotropic/Cartesian nonisotropic histories. Those receipts do not identify this new candidate hash."
+        },
+        {
+          "url": "https://github.com/benjym/constitutive-atlas/blob/main/docs/reviews/clay2013-initialization-policy.md",
+          "role": "ASBS and explicit initial-state policy",
+          "locator": "ASBS outward-rate witness; no continuous yield barrier, no inferred preparation or universal OCR conversion."
+        },
+        {
+          "url": "https://github.com/benjym/constitutive-atlas/blob/main/docs/reviews/clay2013-algebra-review.md",
+          "role": "Numerical continuation and precision limitations",
+          "locator": "Stable invariant reduction, exact isotropy, near-SPD/angle finite-arithmetic limits; no universal-SPD coverage."
+        }
+      ],
+      "parameters": {
+        "p_ref": {
+          "default": 1000,
+          "min": 1000,
+          "max": 1000,
+          "unit": "Pa",
+          "label": "Fixed source reference pressure; not a calibration parameter"
+        },
+        "p_scale": {
+          "default": 100000,
+          "min": 1,
+          "max": 1000000000000.0,
+          "unit": "Pa",
+          "label": "Numerical stress error scale"
+        },
+        "phi_c": {
+          "default": 0.5235987755982988,
+          "min": 0.01,
+          "max": 1.4,
+          "unit": "1",
+          "label": "Critical friction angle, radians; illustrative"
+        },
+        "lambda_star": {
+          "default": 0.12,
+          "min": 0.0001,
+          "max": 1.0,
+          "unit": "1",
+          "label": "Logarithmic compression slope; illustrative"
+        },
+        "kappa_star": {
+          "default": 0.025,
+          "min": 1e-05,
+          "max": 1.0,
+          "unit": "1",
+          "label": "Logarithmic swelling slope; illustrative"
+        },
+        "N": {
+          "default": 1.1,
+          "min": -10.0,
+          "max": 10.0,
+          "unit": "1",
+          "label": "Logarithmic density intercept at 1000Pa; illustrative"
+        },
+        "nu": {
+          "default": 0.2,
+          "min": -0.9,
+          "max": 0.49,
+          "unit": "1",
+          "label": "Hypoelastic Poisson parameter; illustrative"
+        }
+      },
+      "state": [
+        {
+          "name": "sigma",
+          "shape": "sym",
+          "unit": "Pa",
+          "initial": [
+            10000.0,
+            10000.0,
+            10000.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": "p_scale",
+          "semantics": {
+            "role": "persistent",
+            "quantity": "cauchy_stress",
+            "transformation": "symmetric_spatial_tensor"
+          }
+        },
+        {
+          "name": "e",
+          "shape": "scalar",
+          "unit": "1",
+          "initial": 0.8,
+          "scale": "1",
+          "semantics": {
+            "role": "persistent",
+            "quantity": "void_ratio",
+            "transformation": "scalar_invariant"
+          }
+        }
+      ],
+      "derived": [
+        {
+          "name": "p",
+          "expr": "trace(sigma)/3"
+        },
+        {
+          "name": "a",
+          "expr": "dev(dev(sigma))/trace(sigma)"
+        },
+        {
+          "name": "j2",
+          "expr": "dot(a,a)"
+        },
+        {
+          "name": "j3",
+          "expr": "cube_trace(a)"
+        },
+        {
+          "name": "fm",
+          "expr": "(j2-3*j3)/(8/27-(j2+j3)/3)"
+        },
+        {
+          "name": "omega",
+          "expr": "-log(cos(phi_c)**2)/log(2)+0.3*(fm-sin(phi_c)**2)"
+        },
+        {
+          "name": "pe",
+          "expr": "p_ref*exp((N-log(1+e))/lambda_star)"
+        },
+        {
+          "name": "fd",
+          "expr": "(2*p/pe)**2"
+        },
+        {
+          "name": "fdA",
+          "expr": "4*(1-fm)**(2/omega)"
+        },
+        {
+          "name": "fs",
+          "expr": "(3*p/2)*(1/lambda_star+1/kappa_star)*(1-2*nu)/(1+nu)"
+        },
+        {
+          "name": "cos3theta",
+          "expr": "select(j2 > 0,-sqrt(6)*j3/j2**(3/2),0)"
+        },
+        {
+          "name": "xi",
+          "expr": "1.7+3.9*sin(phi_c)**2"
+        },
+        {
+          "name": "dA",
+          "expr": "-a+I*(2/3-(cos3theta+1)*fm**(1/4)/4)*(fm**(xi/2)-sin(phi_c)**xi)/(1-sin(phi_c)**xi)"
+        },
+        {
+          "name": "d",
+          "expr": "dA/norm(dA)"
+        },
+        {
+          "name": "c",
+          "expr": "nu/(1-2*nu)"
+        },
+        {
+          "name": "Ld",
+          "expr": "d+c*trace(d)*I"
+        },
+        {
+          "name": "Ad",
+          "expr": "fs*Ld-(sigma/lambda_star)*trace(d)"
+        },
+        {
+          "name": "stress_rate",
+          "expr": "fs*(de+c*trace(de)*I)+(fd/fdA)*Ad*norm(de)"
+        },
+        {
+          "name": "e_rate",
+          "expr": "-(1+e)*trace(de)"
+        },
+        {
+          "name": "principal_pair",
+          "expr": "1/3-j2/2"
+        },
+        {
+          "name": "principal_det",
+          "expr": "1/27-j2/6+j3/3"
+        },
+        {
+          "name": "spherical_residual",
+          "expr": "abs(dot(sigma,sym(1,-1,0,0,0,0)))+abs(dot(sigma,sym(0,1,-1,0,0,0)))+abs(dot(sigma,sym(0,0,0,1,0,0)))+abs(dot(sigma,sym(0,0,0,0,1,0)))+abs(dot(sigma,sym(0,0,0,0,0,1)))"
+        }
+      ],
+      "equations": {
+        "sigma": "stress_rate",
+        "e": "e_rate"
+      },
+      "domain": [
+        "e >= 0",
+        "lambda_star > kappa_star",
+        "p > 0*p_ref",
+        "principal_pair > 0",
+        "principal_det > 0",
+        "select(j2 > 0,0*p_ref,spherical_residual) <= 0*p_ref",
+        "fm >= 0",
+        "fm < 1",
+        "omega > 0",
+        "pe > 0*p_ref",
+        "fd > 0",
+        "fdA > 0",
+        "fs > 0*p_ref",
+        "norm(dA) > 0",
+        "cos3theta >= -1-1.4210854715202004e-14",
+        "cos3theta <= 1+1.4210854715202004e-14",
+        "abs(p) <= p_ref*1e300",
+        "norm(a) <= 1e300",
+        "abs(j2) <= 1e300",
+        "abs(j3) <= 1e300",
+        "abs(fm) <= 1e300",
+        "abs(omega) <= 1e300",
+        "abs(pe) <= p_ref*1e300",
+        "abs(fd) <= 1e300",
+        "abs(fdA) <= 1e300",
+        "abs(fs) <= p_ref*1e300",
+        "abs(cos3theta) <= 1e300",
+        "abs(xi) <= 1e300",
+        "norm(dA) <= 1e300",
+        "norm(d) <= 1e300",
+        "abs(c) <= 1e300",
+        "norm(Ld) <= 1e300",
+        "norm(Ad) <= p_ref*1e300",
+        "norm(stress_rate) <= p_ref*1e300",
+        "abs(e_rate) <= 1e300"
+      ],
+      "formulation": {
+        "time_dependence": "strain_path",
+        "equation_form": "strain_path_rate",
+        "kinematics": "small_strain_3d",
+        "frame": "fixed_spatial",
+        "objective_rate": "none",
+        "tensor_representation": "mandel",
+        "stress_sign": "compression_positive",
+        "strain_sign": "compression_positive",
+        "stress": {
+          "source": "state",
+          "name": "sigma",
+          "measure": "cauchy",
+          "scope": "effective"
+        },
+        "inputs": {
+          "equation": {
+            "de": {
+              "quantity": "strain_increment",
+              "measure": "infinitesimal_strain",
+              "shape": "sym",
+              "unit": "1",
+              "configuration": "current",
+              "sampling": "increment",
+              "constraint": "finite"
+            }
+          },
+          "advance": {}
+        }
+      },
+      "initialization": {
+        "method": "explicit_state",
+        "default_policy": "examples_only",
+        "required_state": [
+          "sigma",
+          "e"
+        ],
+        "validation": "domain_and_initial_checks"
+      }
+    },
+    {
+      "schema_version": "0.1",
+      "status": "draft",
+      "parameters": {
+        "p_ref": {
+          "default": 100000,
+          "min": 1,
+          "max": 10000000000.0,
+          "unit": "Pa",
+          "label": "Reference stress / numerical scaling"
+        },
+        "phi": {
+          "default": 0.5235987755982988,
+          "min": 0.1,
+          "max": 1.2,
+          "unit": "1",
+          "label": "Critical friction angle [rad]"
+        },
+        "hs": {
+          "default": 5800000000.0,
+          "min": 1000000.0,
+          "max": 1000000000000.0,
+          "unit": "Pa",
+          "label": "Granular hardness"
+        },
+        "n": {
+          "default": 0.28,
+          "min": 0.05,
+          "max": 0.9,
+          "unit": "1",
+          "label": "Barotropy exponent"
+        },
+        "ed0": {
+          "default": 0.53,
+          "min": 0.01,
+          "max": 2,
+          "unit": "1",
+          "label": "Minimum void ratio at zero pressure"
+        },
+        "ec0": {
+          "default": 0.84,
+          "min": 0.02,
+          "max": 3,
+          "unit": "1",
+          "label": "Critical void ratio at zero pressure"
+        },
+        "ei0": {
+          "default": 1.0,
+          "min": 0.03,
+          "max": 4,
+          "unit": "1",
+          "label": "Maximum void ratio at zero pressure"
+        },
+        "alpha": {
+          "default": 0.13,
+          "min": 0.01,
+          "max": 1,
+          "unit": "1",
+          "label": "Density / dilatancy exponent"
+        },
+        "beta": {
+          "default": 1.05,
+          "min": 0,
+          "max": 5,
+          "unit": "1",
+          "label": "Pyknotropy exponent"
+        },
+        "R": {
+          "default": 0.0001,
+          "min": 1e-07,
+          "max": 0.01,
+          "unit": "1",
+          "label": "Limiting intergranular strain magnitude"
+        },
+        "mR": {
+          "default": 5,
+          "min": 1,
+          "max": 30,
+          "unit": "1",
+          "label": "Reversal stiffness multiplier"
+        },
+        "mT": {
+          "default": 2,
+          "min": 1,
+          "max": 30,
+          "unit": "1",
+          "label": "Orthogonal stiffness multiplier"
+        },
+        "beta_r": {
+          "default": 0.5,
+          "min": 0.05,
+          "max": 5,
+          "unit": "1",
+          "label": "History mobilisation exponent"
+        },
+        "chi": {
+          "default": 6,
+          "min": 0.1,
+          "max": 20,
+          "unit": "1",
+          "label": "Stiffness transition exponent"
+        }
+      },
+      "state": [
+        {
+          "name": "sigma",
+          "unit": "Pa",
+          "initial": [
+            100000.0,
+            100000.0,
+            100000.0,
+            0,
+            0,
+            0
+          ],
+          "shape": "sym",
+          "scale": "p_ref"
+        },
+        {
+          "name": "e",
+          "unit": "1",
+          "initial": 0.7,
+          "shape": "scalar",
+          "scale": "1"
+        },
+        {
+          "name": "h",
+          "unit": "1",
+          "initial": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "shape": "sym",
+          "scale": "R"
+        }
+      ],
+      "derived": [
+        {
+          "name": "mean",
+          "expr": "trace(sigma) / 3"
+        },
+        {
+          "name": "hat",
+          "expr": "sigma / trace(sigma)"
+        },
+        {
+          "name": "hsdev",
+          "expr": "dev(hat)"
+        },
+        {
+          "name": "j2",
+          "expr": "dot(hsdev, hsdev)"
+        },
+        {
+          "name": "tanpsi",
+          "expr": "sqrt(3 * j2)"
+        },
+        {
+          "name": "lode",
+          "expr": "select(j2 > 1e-24, -sqrt(6) * cube_trace(hsdev) / j2**1.5, 0)"
+        },
+        {
+          "name": "F",
+          "expr": "sqrt(tanpsi**2 / 8 + (2 - tanpsi**2) / (2 + sqrt(2) * tanpsi * lode)) - tanpsi / (2 * sqrt(2))"
+        },
+        {
+          "name": "a",
+          "expr": "sqrt(3) * (3 - sin(phi)) / (2 * sqrt(2) * sin(phi))"
+        },
+        {
+          "name": "compression",
+          "expr": "exp(-(3 * mean / hs)**n)"
+        },
+        {
+          "name": "ed",
+          "expr": "ed0 * compression"
+        },
+        {
+          "name": "ec",
+          "expr": "ec0 * compression"
+        },
+        {
+          "name": "ei",
+          "expr": "ei0 * compression"
+        },
+        {
+          "name": "fd",
+          "expr": "((e - ed) / (ec - ed))**alpha"
+        },
+        {
+          "name": "fe",
+          "expr": "(ec / e)**beta"
+        },
+        {
+          "name": "fb",
+          "expr": "hs / n * (ei0 / ec0)**beta * (1 + ei) / ei * (3 * mean / hs)**(1 - n) / (3 + a**2 - a * sqrt(3) * ((ei0 - ed0) / (ec0 - ed0))**alpha)"
+        },
+        {
+          "name": "factor",
+          "expr": "fb * fe / dot(hat,hat)"
+        },
+        {
+          "name": "linear",
+          "expr": "factor * (F**2 * de + a**2 * dot(hat,de) * hat)"
+        },
+        {
+          "name": "nonlinear",
+          "expr": "-factor * fd * a * F * (hat + hsdev)"
+        },
+        {
+          "name": "hn",
+          "expr": "norm(h)"
+        },
+        {
+          "name": "eta",
+          "expr": "select(hn > 0, h / hn, 0 * I)"
+        },
+        {
+          "name": "rho",
+          "expr": "min(hn / R, 1)"
+        },
+        {
+          "name": "projection",
+          "expr": "dot(eta,de)"
+        },
+        {
+          "name": "linear_eta",
+          "expr": "factor * (F**2 * eta + a**2 * dot(hat,eta) * hat)"
+        },
+        {
+          "name": "overlay",
+          "expr": "rho**chi * mT + (1 - rho**chi) * mR"
+        }
+      ],
+      "domain": [
+        "e > 0",
+        "mean > p_ref * 1e-8",
+        "ed0 < ec0",
+        "ec0 < ei0",
+        "e > ed",
+        "e < ei",
+        "F > 0",
+        "fb > 0 * p_ref",
+        "hn < R * 1.01",
+        "mR >= mT"
+      ],
+      "integration": "rate",
+      "id": "hypoplastic-sand-igs97",
+      "name": "Sand hypoplasticity + intergranular strain (1997)",
+      "family": "hypoplasticity",
+      "description": "Draft IGS overlay on the von Wolffersdorff base law; compression-positive h and strain. Equation transcription requires independent review before scientific use.",
+      "sources": [
+        {
+          "url": "https://www.uibk.ac.at/de/geotechnik/bodenmechanik/forschung/hypoplasticity-copy-2/",
+          "locator": "Equations of the Hypoplastic Law, section 5, images 18\u201326; Karlsruhe parameter row",
+          "role": "equation transcription"
+        },
+        {
+          "url": "https://doi.org/10.1002/(SICI)1099-1484(199607)1:3<251::AID-CFM13>3.0.CO;2-3",
+          "locator": "von Wolffersdorff (1996), pp. 251\u2013271",
+          "role": "original publication"
+        },
+        {
+          "url": "https://doi.org/10.1002/(SICI)1099-1484(199710)2:4<279::AID-CFM29>3.0.CO;2-8",
+          "locator": "Niemunis & Herle (1997), hypoplastic model for cohesionless soils with elastic strain range; IGS evolution and stiffness overlay",
+          "role": "original publication; independent transcription review pending"
+        },
+        {
+          "url": "https://j-machacek.github.io/numgeo/2026-09/theory/constitutive-models/mechanical-models/hypo-igs.html#igs-extension",
+          "locator": "2026-09 theory manual, IGS Extension: stiffness operator, mobilisation/direction and history evolution displays. Atlas adds rho cap and 1% history admission band; see dossier.",
+          "role": "implementation-author continuous-equation cross-check; not external execution"
+        }
+      ],
+      "equations": {
+        "sigma": "overlay * linear + select(projection > 0, rho**chi * ((1 - mT) * linear_eta + nonlinear) * projection, rho**chi * (mR - mT) * linear_eta * projection)",
+        "e": "-(1 + e) * trace(de)",
+        "h": "de - select(projection > 0, rho**beta_r * eta * projection, 0 * I)"
+      }
+    },
+    {
+      "schema_version": "0.1",
+      "status": "transcribed",
+      "parameters": {
+        "p_ref": {
+          "default": 100000,
+          "min": 1,
+          "max": 10000000000.0,
+          "unit": "Pa",
+          "label": "Reference stress / numerical scaling"
+        },
+        "phi": {
+          "default": 0.5235987755982988,
+          "min": 0.1,
+          "max": 1.2,
+          "unit": "1",
+          "label": "Critical friction angle [rad]"
+        },
+        "hs": {
+          "default": 5800000000.0,
+          "min": 1000000.0,
+          "max": 1000000000000.0,
+          "unit": "Pa",
+          "label": "Granular hardness"
+        },
+        "n": {
+          "default": 0.28,
+          "min": 0.05,
+          "max": 0.9,
+          "unit": "1",
+          "label": "Pressure dependency exponent"
+        },
+        "ed0": {
+          "default": 0.53,
+          "min": 0.01,
+          "max": 2,
+          "unit": "1",
+          "label": "Dense-limit void ratio at zero pressure"
+        },
+        "ec0": {
+          "default": 0.84,
+          "min": 0.02,
+          "max": 3,
+          "unit": "1",
+          "label": "Critical-state void ratio at zero pressure"
+        },
+        "ei0": {
+          "default": 1.0,
+          "min": 0.03,
+          "max": 4,
+          "unit": "1",
+          "label": "Loose-limit void ratio at zero pressure"
+        },
+        "alpha": {
+          "default": 0.13,
+          "min": 0.01,
+          "max": 1,
+          "unit": "1",
+          "label": "Density influence exponent"
+        },
+        "beta": {
+          "default": 1.05,
+          "min": 0,
+          "max": 5,
+          "unit": "1",
+          "label": "Stiffness density exponent"
+        }
+      },
+      "state": [
+        {
+          "name": "sigma",
+          "unit": "Pa",
+          "initial": [
+            100000.0,
+            100000.0,
+            100000.0,
+            0,
+            0,
+            0
+          ],
+          "shape": "sym",
+          "scale": "p_ref"
+        },
+        {
+          "name": "e",
+          "unit": "1",
+          "initial": 0.7,
+          "shape": "scalar",
+          "scale": "1"
+        }
+      ],
+      "derived": [
+        {
+          "name": "mean",
+          "expr": "trace(sigma) / 3"
+        },
+        {
+          "name": "hat",
+          "expr": "sigma / trace(sigma)"
+        },
+        {
+          "name": "hsdev",
+          "expr": "dev(hat)"
+        },
+        {
+          "name": "j2",
+          "expr": "dot(hsdev, hsdev)"
+        },
+        {
+          "name": "tanpsi",
+          "expr": "sqrt(3 * j2)"
+        },
+        {
+          "name": "lode",
+          "expr": "select(j2 > 1e-24, -sqrt(6) * cube_trace(hsdev) / j2**1.5, 0)"
+        },
+        {
+          "name": "F",
+          "expr": "sqrt(tanpsi**2 / 8 + (2 - tanpsi**2) / (2 + sqrt(2) * tanpsi * lode)) - tanpsi / (2 * sqrt(2))"
+        },
+        {
+          "name": "a",
+          "expr": "sqrt(3) * (3 - sin(phi)) / (2 * sqrt(2) * sin(phi))"
+        },
+        {
+          "name": "compression",
+          "expr": "exp(-(3 * mean / hs)**n)"
+        },
+        {
+          "name": "ed",
+          "expr": "ed0 * compression"
+        },
+        {
+          "name": "ec",
+          "expr": "ec0 * compression"
+        },
+        {
+          "name": "ei",
+          "expr": "ei0 * compression"
+        },
+        {
+          "name": "fd",
+          "expr": "((e - ed) / (ec - ed))**alpha"
+        },
+        {
+          "name": "fe",
+          "expr": "(ec / e)**beta"
+        },
+        {
+          "name": "fb",
+          "expr": "hs / n * (ei0 / ec0)**beta * (1 + ei) / ei * (3 * mean / hs)**(1 - n) / (3 + a**2 - a * sqrt(3) * ((ei0 - ed0) / (ec0 - ed0))**alpha)"
+        },
+        {
+          "name": "factor",
+          "expr": "fb * fe / dot(hat,hat)"
+        },
+        {
+          "name": "linear",
+          "expr": "factor * (F**2 * de + a**2 * dot(hat,de) * hat)"
+        },
+        {
+          "name": "nonlinear",
+          "expr": "-factor * fd * a * F * (hat + hsdev)"
+        }
+      ],
+      "domain": [
+        "e > 0",
+        "mean > p_ref * 1e-8",
+        "ed0 < ec0",
+        "ec0 < ei0",
+        "e > ed",
+        "e < ei",
+        "F > 0",
+        "fb > 0 * p_ref"
+      ],
+      "integration": "rate",
+      "id": "hypoplastic-sand-vw96",
+      "name": "Sand hypoplasticity \u2014 von Wolffersdorff (1996)",
+      "family": "hypoplasticity",
+      "description": "Compression-positive transcription of the von Wolffersdorff stress-rate law. Uses the published Karlsruhe sand parameter example (not Wichtmann calibration). Infinitesimal kinematics; zero spin.",
+      "sources": [
+        {
+          "url": "https://www.uibk.ac.at/de/geotechnik/bodenmechanik/forschung/hypoplasticity-copy-2/",
+          "locator": "Wolfgang Fellin, Equations of the Hypoplastic Law (1999-10-01), section 5, visually inspected images 18\u201326 and Karlsruhe row. Image URLs/hashes: catalogue/source-audits/hypoplastic-sand-vw96-fellin-1999.json. Full original 1996 paper review remains pending.",
+          "role": "implementation-author equation summary"
+        },
+        {
+          "url": "https://doi.org/10.1002/(SICI)1099-1484(199607)1:3<251::AID-CFM13>3.0.CO;2-3",
+          "locator": "von Wolffersdorff (1996), pp. 251\u2013271",
+          "role": "original publication"
+        }
+      ],
+      "equations": {
+        "sigma": "linear + nonlinear * norm(de)",
+        "e": "-(1 + e) * trace(de)"
+      }
+    },
+    {
+      "schema_version": "0.1",
+      "status": "transcribed",
+      "parameters": {
+        "p_ref": {
+          "default": 100000,
+          "min": 1,
+          "max": 10000000000.0,
+          "unit": "Pa",
+          "label": "Reference stress / numerical scaling"
+        },
+        "E": {
+          "default": 30000000.0,
+          "min": 1,
+          "max": 1000000000000.0,
+          "unit": "Pa",
+          "label": "Young modulus"
+        },
+        "nu": {
+          "default": 0.25,
+          "min": -0.99,
+          "max": 0.499,
+          "unit": "1",
+          "label": "Poisson ratio"
+        }
+      },
+      "state": [
+        {
+          "name": "sigma",
+          "unit": "Pa",
+          "initial": [
+            100000.0,
+            100000.0,
+            100000.0,
+            0,
+            0,
+            0
+          ],
+          "shape": "sym",
+          "scale": "p_ref"
+        },
+        {
+          "name": "e",
+          "unit": "1",
+          "initial": 0.7,
+          "shape": "scalar",
+          "scale": "1"
+        }
+      ],
+      "derived": [
+        {
+          "name": "K",
+          "expr": "E / (3 * (1 - 2 * nu))"
+        },
+        {
+          "name": "G",
+          "expr": "E / (2 * (1 + nu))"
+        }
+      ],
+      "domain": [
+        "e > 0"
+      ],
+      "integration": "residual",
+      "id": "linear-elastic",
+      "name": "Linear isotropic elasticity",
+      "family": "elasticity",
+      "description": "Infinitesimal isotropic elasticity. Demonstration parameters, not calibrated to a soil.",
+      "sources": [
+        {
+          "url": "https://github.com/ufz/ogs/blob/b5d0f115c75ee74a7cdbfad533625a550a416fda/MaterialLib/SolidModels/LinearElasticIsotropic.h",
+          "locator": "MaterialProperties::lambda, mu, bulk_modulus; elasticTangentStiffness",
+          "role": "Pinned reference formulation"
+        },
+        {
+          "url": "https://github.com/ufz/ogs/blob/b5d0f115c75ee74a7cdbfad533625a550a416fda/MaterialLib/SolidModels/LinearElasticIsotropic.cpp",
+          "locator": "LinearElasticIsotropic::integrateStress; sigma_prev + C * (eps_m - eps_m_prev)",
+          "role": "Pinned incremental stress update"
+        },
+        {
+          "url": "https://github.com/benjym/constitutive-atlas/blob/main/docs/models/linear-elastic.md",
+          "locator": "Equation mapping; project-specific void-ratio bookkeeping and small-strain limits",
+          "role": "Transcription dossier"
+        }
+      ],
+      "equations": {
+        "sigma": "sigma - sigma_n - K * trace(de) * I - 2 * G * dev(de)",
+        "e": "e - (1 + e_n) * exp(-trace(de)) + 1"
+      }
+    },
+    {
+      "schema_version": "0.1",
+      "status": "transcribed",
+      "parameters": {
+        "p_ref": {
+          "default": 100000,
+          "min": 1,
+          "max": 10000000000.0,
+          "unit": "Pa",
+          "label": "Reference stress / numerical scaling"
+        },
+        "M": {
+          "default": 1.2,
+          "min": 0.1,
+          "max": 3,
+          "unit": "1",
+          "label": "Critical-state slope"
+        },
+        "lambda_c": {
+          "default": 0.2,
+          "min": 0.001,
+          "max": 1,
+          "unit": "1",
+          "label": "Virgin compression index"
+        },
+        "kappa": {
+          "default": 0.04,
+          "min": 0.0001,
+          "max": 0.5,
+          "unit": "1",
+          "label": "Swelling index"
+        },
+        "nu": {
+          "default": 0.25,
+          "min": -0.9,
+          "max": 0.49,
+          "unit": "1",
+          "label": "Poisson ratio"
+        }
+      },
+      "state": [
+        {
+          "name": "sigma",
+          "unit": "Pa",
+          "initial": [
+            100000.0,
+            100000.0,
+            100000.0,
+            0,
+            0,
+            0
+          ],
+          "shape": "sym",
+          "scale": "p_ref"
+        },
+        {
+          "name": "e",
+          "unit": "1",
+          "initial": 0.7,
+          "shape": "scalar",
+          "scale": "1"
+        },
+        {
+          "name": "pc",
+          "unit": "Pa",
+          "initial": 200000,
+          "shape": "scalar",
+          "scale": "p_ref"
+        },
+        {
+          "name": "gamma",
+          "unit": "1",
+          "initial": 0,
+          "shape": "scalar",
+          "scale": "1",
+          "transient": true,
+          "multiplier": true
+        }
+      ],
+      "derived": [
+        {
+          "name": "mean",
+          "expr": "trace(sigma) / 3"
+        },
+        {
+          "name": "q2",
+          "expr": "1.5 * dot(dev(sigma),dev(sigma))"
+        },
+        {
+          "name": "K",
+          "expr": "(1 + e) * mean / kappa"
+        },
+        {
+          "name": "G",
+          "expr": "3 * K * (1 - 2 * nu) / (2 * (1 + nu))"
+        },
+        {
+          "name": "yield_scaled",
+          "expr": "(q2 + M**2 * mean * (mean - pc)) / p_ref**2"
+        },
+        {
+          "name": "plastic_volume",
+          "expr": "gamma * M**2 * (2 * mean - pc) / pc_n"
+        }
+      ],
+      "domain": [
+        "e > 0",
+        "lambda_c > kappa",
+        "mean > p_ref * 1e-8",
+        "pc > p_ref * 1e-8",
+        "gamma > -1e-9"
+      ],
+      "integration": "residual",
+      "id": "modified-cam-clay",
+      "name": "Modified Cam Clay",
+      "family": "critical-state plasticity",
+      "description": "Associated Modified Cam Clay with endpoint pressure/void-ratio dependent elasticity, exponential log-pc hardening and exponential volume bookkeeping. Project finite-step choices documented in the source dossier; demonstration initialization; finite rotation unsupported.",
+      "sources": [
+        {
+          "url": "https://github.com/ufz/ogs/blob/b5d0f115c75ee74a7cdbfad533625a550a416fda/web/content/docs/benchmarks/small-deformations/ModifiedCamClay/ModifiedCamClay_report.pdf",
+          "locator": "Silbermann & Nagel, 28 June 2023: equations 14\u201317 and 30b; equation 11 prints M while 30b uses M squared. Section 3.1 hardening differs from atlas exponential log-pc update. Project discretization and normalization: docs/models/modified-cam-clay.md.",
+          "role": "formulation"
+        },
+        {
+          "url": "https://docs.itascacg.com/itasca930/common/models/camclay/doc/modelcamclay.html",
+          "locator": "Equations 15, 18\u201325: stiffness, yield and associated flow; 31 and 8 have different finite-step hardening/volume updates. Initialization: 32 and 42. Not an executed cross-code comparison.",
+          "role": "formulation reference"
+        }
+      ],
+      "equations": {
+        "sigma": "sigma - sigma_n - K * trace(de) * I - 2 * G * dev(de) + gamma * (6 * G * dev(sigma) / pc_n + K * M**2 * (2 * mean - pc) / pc_n * I)",
+        "e": "e - (1 + e_n) * exp(-trace(de)) + 1",
+        "pc": "pc - pc_n * exp((1 + e) * plastic_volume / (lambda_c - kappa))",
+        "gamma": "sqrt(gamma**2 + yield_scaled**2) - gamma + yield_scaled"
+      },
+      "initial_checks": [
+        "yield_scaled <= 1e-8"
+      ]
+    }
+  ]
+}

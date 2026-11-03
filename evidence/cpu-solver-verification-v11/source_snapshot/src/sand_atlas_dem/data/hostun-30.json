@@ -1,0 +1,353 @@
+{
+  "format": "sand-dem-source-recipe/1",
+  "id": "hostun-0000005",
+  "aliases": [
+    "hostun",
+    "Hostun sand"
+  ],
+  "archive": {
+    "url": "https://data.scigem-eng.sydney.edu.au/sand-atlas/sands/hostun-0000005/meshes_30.zip",
+    "sha256": "22549ef78526991dc3adb82efe7f1b9cf98babef2e00b435c449f3b90d0f48a6",
+    "filename": "hostun-meshes-30.zip",
+    "bytes": 25568448
+  },
+  "descriptors": {
+    "url": "https://sand-atlas.scigem.com/assets/sands/hostun-0000005.csv",
+    "sha256": "3a615e1af45b981a8c39da454155fe37dd7e61d422d6b91c13fa68af283f5872",
+    "filename": "hostun-descriptors.csv",
+    "bytes": 10205
+  },
+  "coordinate_unit": "um",
+  "scale_evidence": "Micrometre coordinates inferred from unique one-to-one raw-volume matching to dimensioned source descriptors. The inference is fixed to these source hashes and is not an STL-declared unit. See docs/HOSTUN_ACQUISITION_V2.md.",
+  "repairs": [],
+  "members": [
+    {
+      "name": "particle_00019.stl",
+      "sha256": "5483591bfd3ad901d0a0dfe67fccf5825416c5926b6a9de18e239fee645fe05d",
+      "descriptor_id": "1",
+      "accepted": false
+    },
+    {
+      "name": "particle_00020.stl",
+      "sha256": "0bc5fb6b04a62ff9b693776339db9660b829d52422c8b575b9379575282967d6",
+      "descriptor_id": "2",
+      "accepted": true
+    },
+    {
+      "name": "particle_00021.stl",
+      "sha256": "38c86dc9c810b73b299f690ad8866d777229b201e7670a9b03fc26fd1bc7b3e6",
+      "descriptor_id": "3",
+      "accepted": true
+    },
+    {
+      "name": "particle_00022.stl",
+      "sha256": "ad32ae7020a7688171acfb454a65511f648c1b4d4e27c2c874bc003605db927d",
+      "descriptor_id": "4",
+      "accepted": true
+    },
+    {
+      "name": "particle_00023.stl",
+      "sha256": "97970e677f81c0145a6dd47e0cfdf41941931f6e96ac521b0f96c0c155a12372",
+      "descriptor_id": "5",
+      "accepted": true
+    },
+    {
+      "name": "particle_00024.stl",
+      "sha256": "31c5139f5719c9744f1e3fa8616ad0978f7acedb9af3256822c4cd928a7823ea",
+      "descriptor_id": "6",
+      "accepted": true
+    },
+    {
+      "name": "particle_00025.stl",
+      "sha256": "1e071a54d56bcedbdde06a98ec149482614b53b8e90d0d004139870f7c637979",
+      "descriptor_id": "7",
+      "accepted": true
+    },
+    {
+      "name": "particle_00026.stl",
+      "sha256": "ab69f83cd684ceb2f75953653979b1d03cf83f5047a895fa583d58021fc0ba11",
+      "descriptor_id": "8",
+      "accepted": true
+    },
+    {
+      "name": "particle_00027.stl",
+      "sha256": "f3a13407ebd387bcfbf4bd210243ded6c508e9a3a071b8863e814efd6af0641c",
+      "descriptor_id": "9",
+      "accepted": true
+    },
+    {
+      "name": "particle_00028.stl",
+      "sha256": "3a792841a26455cf4265b87583d3c1736b4e7368856222ec9f183defa4cd0954",
+      "descriptor_id": "10",
+      "accepted": true
+    },
+    {
+      "name": "particle_00029.stl",
+      "sha256": "42cb845b399b1b80cb35f5a56475613a3546ced3221016e2e9a4435a13dd8a0f",
+      "descriptor_id": "11",
+      "accepted": true
+    },
+    {
+      "name": "particle_00030.stl",
+      "sha256": "49b7d7275a9d8ec4502f905a3e4046ac821830a3949060550d67aa7cf7d4eef1",
+      "descriptor_id": "12",
+      "accepted": true
+    },
+    {
+      "name": "particle_00031.stl",
+      "sha256": "6db9417877adbee1a23f27f0f7dd91f3ce0ee09169869785d1614b8c711e7133",
+      "descriptor_id": "13",
+      "accepted": true
+    },
+    {
+      "name": "particle_00032.stl",
+      "sha256": "de2901707b173b08fede31d9824c476604cdb7c2ae1c92b1a7c6b71e36804f5d",
+      "descriptor_id": "14",
+      "accepted": true
+    },
+    {
+      "name": "particle_00033.stl",
+      "sha256": "fdf9f25e839c46f61a2bed324eaddda950e8241c3087fa34c354875989081a8f",
+      "descriptor_id": "15",
+      "accepted": true
+    },
+    {
+      "name": "particle_00034.stl",
+      "sha256": "759d2a46a56ffafb048ef48b9903e9b12d2302fb8339e0286dbd8eba11060f82",
+      "descriptor_id": "16",
+      "accepted": true
+    },
+    {
+      "name": "particle_00035.stl",
+      "sha256": "bfc481c6092031e7067f7b2b0ad0c749e8c73ffe30b0c988b7169da742cff6c4",
+      "descriptor_id": "17",
+      "accepted": true
+    },
+    {
+      "name": "particle_00036.stl",
+      "sha256": "78ad852e896da73302484b66b9502a0ad24ab82232b54252138eeda64098c3c7",
+      "descriptor_id": "18",
+      "accepted": true
+    },
+    {
+      "name": "particle_00037.stl",
+      "sha256": "f7223956f18b9a27b07b1d2dfcb7547b961c59270d89967320656c2875aa4c7f",
+      "descriptor_id": "19",
+      "accepted": true
+    },
+    {
+      "name": "particle_00038.stl",
+      "sha256": "029b5bc8707a8a9d658403d6d8e4e65ebfada1e2e76b8035761d8ba5e562a29e",
+      "descriptor_id": "20",
+      "accepted": true
+    },
+    {
+      "name": "particle_00039.stl",
+      "sha256": "c104417f34e90536354696bb8af6d2aa6e9666e7b38ec15856ced3cf7b59c167",
+      "descriptor_id": "21",
+      "accepted": true
+    },
+    {
+      "name": "particle_00040.stl",
+      "sha256": "d9b685172cd56610c39d483458f12ef2d752e3d24f0f0bedee2a6d14f0c25a9c",
+      "descriptor_id": "22",
+      "accepted": true
+    },
+    {
+      "name": "particle_00041.stl",
+      "sha256": "5f8cd6063976090db960e3092b3a73c41716d7410c4038e63c73314f60a31391",
+      "descriptor_id": "23",
+      "accepted": true
+    },
+    {
+      "name": "particle_00042.stl",
+      "sha256": "3f0da63d3bb054eb6b2e4367aaca5b67f6d00c884786a9e0f2d0759b47ab8459",
+      "descriptor_id": "24",
+      "accepted": true
+    },
+    {
+      "name": "particle_00043.stl",
+      "sha256": "aa09a41aab6946bd7bcc4e7eff756e708be90bd9939137b0ad5e985244d44e3f",
+      "descriptor_id": "25",
+      "accepted": true
+    },
+    {
+      "name": "particle_00044.stl",
+      "sha256": "0cf081f4c98f4c5879a93a64cd6d61ddcd56a65f276d254adbaf682d1640949b",
+      "descriptor_id": "26",
+      "accepted": true
+    },
+    {
+      "name": "particle_00045.stl",
+      "sha256": "2c8a8eda8d7dab15dd4da16cae6f10c9ffbe9798f101dd4e54dcd12dcde76b0b",
+      "descriptor_id": "27",
+      "accepted": true
+    },
+    {
+      "name": "particle_00046.stl",
+      "sha256": "cc052e79359b065f7a988f20ccba23ede744cb023b661f8c5476d4ec3a151431",
+      "descriptor_id": "28",
+      "accepted": true
+    },
+    {
+      "name": "particle_00047.stl",
+      "sha256": "b09bf2755c607f35653723ceaf8363caab2303fa9cffcaf73fcccf83c9b1fa13",
+      "descriptor_id": "29",
+      "accepted": true
+    },
+    {
+      "name": "particle_00048.stl",
+      "sha256": "8ecae546d13de00e6efff92d304408a1022f3961f3e79537e9ecf66c75a94891",
+      "descriptor_id": "30",
+      "accepted": true
+    },
+    {
+      "name": "particle_00049.stl",
+      "sha256": "48e9480d41709ee3553ed2c96e212a23af6a971521182813995bc4db1412d3e5",
+      "descriptor_id": "31",
+      "accepted": true
+    },
+    {
+      "name": "particle_00050.stl",
+      "sha256": "fe2b010ab1723a34b7ffdfa0da3c6a6fac242f39e355358cbaeebc0dac32dcb4",
+      "descriptor_id": "32",
+      "accepted": true
+    },
+    {
+      "name": "particle_00051.stl",
+      "sha256": "0452237103d97402f6406f58765f41cd734569ae37484a535709f30f26d23034",
+      "descriptor_id": "33",
+      "accepted": true
+    },
+    {
+      "name": "particle_00052.stl",
+      "sha256": "51da6fccd04f192e399a6d0f4b2106ec48358f2f08a4b85e3592e2110d595e54",
+      "descriptor_id": "34",
+      "accepted": true
+    },
+    {
+      "name": "particle_00053.stl",
+      "sha256": "912d2affdd4efa3cbe93e770e7ab3281f4a9722655069d786d90a98c4363b084",
+      "descriptor_id": "35",
+      "accepted": true
+    },
+    {
+      "name": "particle_00054.stl",
+      "sha256": "b00c923172cd0090fa19621d7142f210a920623b8ab63043fce2a9b174443239",
+      "descriptor_id": "36",
+      "accepted": true
+    },
+    {
+      "name": "particle_00055.stl",
+      "sha256": "e9718139ba02a9b341595a91e60b03fc37fa13d8d31b8c08ac6b246b6e7f7d5e",
+      "descriptor_id": "37",
+      "accepted": true
+    },
+    {
+      "name": "particle_00056.stl",
+      "sha256": "495af93dbd6de7fb69352aebdcd896160e56885c5826009310eacfae0afed0c8",
+      "descriptor_id": "38",
+      "accepted": true
+    },
+    {
+      "name": "particle_00057.stl",
+      "sha256": "10ad9b68bc7697f311995f20784ba19ccd149ec1d210bc3f3ce809077c85945a",
+      "descriptor_id": "39",
+      "accepted": true
+    },
+    {
+      "name": "particle_00058.stl",
+      "sha256": "3173043b1d10888aa77d6333322b4e46de8e74e215c90170c344717f8d732a65",
+      "descriptor_id": "40",
+      "accepted": true
+    },
+    {
+      "name": "particle_00059.stl",
+      "sha256": "c91100d7042f1aacb8f20630ff908d362e41ebafd1b805031867675bbb68f909",
+      "descriptor_id": "41",
+      "accepted": true
+    },
+    {
+      "name": "particle_00060.stl",
+      "sha256": "07fef318a4044a3971b956a9c5d775afc6f9e038fc07c037c2fb65546b060bdf",
+      "descriptor_id": "42",
+      "accepted": true
+    },
+    {
+      "name": "particle_00061.stl",
+      "sha256": "d66e62d7a19dc83d7aa9c8539ce5cc52b02c122c17798da546e4d4d4f2aacaf7",
+      "descriptor_id": "43",
+      "accepted": true
+    },
+    {
+      "name": "particle_00062.stl",
+      "sha256": "fd69fe5e1eeae37f472027833ff7f0794f7da303575cf3378376d6ba19f060b3",
+      "descriptor_id": "44",
+      "accepted": true
+    },
+    {
+      "name": "particle_00063.stl",
+      "sha256": "0f767dcd6ef72a1e28bae27962dd7e726f07abe678e413297b6f4f5876fa5f18",
+      "descriptor_id": "45",
+      "accepted": true
+    },
+    {
+      "name": "particle_00064.stl",
+      "sha256": "7468bd6dce63c6d012328f1b62f2230edcee00f32e00c4c4e4d981af94b7308c",
+      "descriptor_id": "46",
+      "accepted": true
+    },
+    {
+      "name": "particle_00065.stl",
+      "sha256": "710cb456519e9250a8d173a5a5f5acd1d03ac7c14a83b8da727ba901b156448f",
+      "descriptor_id": "47",
+      "accepted": true
+    },
+    {
+      "name": "particle_00066.stl",
+      "sha256": "6261b496a0cf321ffcf0c4bce1d476c07b10c64e2e3c85b7ef04425b08ff6e0f",
+      "descriptor_id": "48",
+      "accepted": true
+    },
+    {
+      "name": "particle_00067.stl",
+      "sha256": "c6ab3aa11e34aec93978a9e80b3ef54212bc5f1264ee8b95d34111809bc31fa8",
+      "descriptor_id": "49",
+      "accepted": true
+    },
+    {
+      "name": "particle_00068.stl",
+      "sha256": "70c10509475fade5f3d2e38470f8a564ac1d2cd04561d26cf0d71647b147b3d3",
+      "descriptor_id": "50",
+      "accepted": true
+    },
+    {
+      "name": "particle_00070.stl",
+      "sha256": "675c37d2cfca2f66a42d6339302fd7a7dad85bb546722def6e3908fa9d425be3",
+      "descriptor_id": "51",
+      "accepted": true
+    },
+    {
+      "name": "particle_00071.stl",
+      "sha256": "d95fdbc826d279b9878021fec4677aa2ac8c27585ec22b42eb06df3c5b7cbc10",
+      "descriptor_id": "52",
+      "accepted": true
+    },
+    {
+      "name": "particle_00072.stl",
+      "sha256": "12e82225b03777b9f6c7012b0fdf6be3b5af1dfa130e8e5c0c1293dc6ad7c59b",
+      "descriptor_id": "53",
+      "accepted": true
+    },
+    {
+      "name": "particle_00073.stl",
+      "sha256": "d6026481f78171047518c7f0a82f5a9e4c2dbe8441a33ac9f3139f46ce22267c",
+      "descriptor_id": "54",
+      "accepted": true
+    }
+  ],
+  "landing_page": "https://sand-atlas.scigem.com/sands/hostun-0000005/",
+  "contributor": "Max Wiebicke",
+  "publication": "https://doi.org/10.1088/1361-6501/aa8dbf",
+  "source_license": "Advertised CC BY 4.0; originals and derived geometry kept private pending redistribution review."
+}

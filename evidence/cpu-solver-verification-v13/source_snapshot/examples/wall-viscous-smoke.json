@@ -1,0 +1,179 @@
+{
+  "format": "sand-dem-experiment/1",
+  "shape_library": "../assets/generated/sphere.h5",
+  "contact_geometry": "sdf",
+  "periodic": false,
+  "planes": [
+    {
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "offset": 0.0005,
+      "velocity": [
+        0,
+        0,
+        0
+      ],
+      "normal_stiffness": 1000000000000.0,
+      "tangential_stiffness": 500000000000.0,
+      "friction": 0.3,
+      "normal_viscosity": 1000000.0
+    },
+    {
+      "normal": [
+        -1,
+        0,
+        0
+      ],
+      "offset": -0.0055,
+      "velocity": [
+        0,
+        0,
+        0
+      ],
+      "normal_stiffness": 1000000000000.0,
+      "tangential_stiffness": 500000000000.0,
+      "friction": 0.3,
+      "normal_viscosity": 1000000.0
+    },
+    {
+      "normal": [
+        0,
+        1,
+        0
+      ],
+      "offset": 0.0005,
+      "velocity": [
+        0,
+        0,
+        0
+      ],
+      "normal_stiffness": 1000000000000.0,
+      "tangential_stiffness": 500000000000.0,
+      "friction": 0.3,
+      "normal_viscosity": 1000000.0
+    },
+    {
+      "normal": [
+        0,
+        -1,
+        0
+      ],
+      "offset": -0.0055,
+      "velocity": [
+        0,
+        0,
+        0
+      ],
+      "normal_stiffness": 1000000000000.0,
+      "tangential_stiffness": 500000000000.0,
+      "friction": 0.3,
+      "normal_viscosity": 1000000.0
+    },
+    {
+      "normal": [
+        0,
+        0,
+        1
+      ],
+      "offset": 0.0028600119407122685,
+      "velocity": [
+        0,
+        0,
+        0
+      ],
+      "normal_stiffness": 1000000000000.0,
+      "tangential_stiffness": 500000000000.0,
+      "friction": 0.3,
+      "normal_viscosity": 1000000.0
+    },
+    {
+      "normal": [
+        0,
+        0,
+        -1
+      ],
+      "offset": -0.0055,
+      "velocity": [
+        0,
+        0,
+        0
+      ],
+      "normal_stiffness": 1000000000000.0,
+      "tangential_stiffness": 500000000000.0,
+      "friction": 0.3,
+      "normal_viscosity": 1000000.0
+    }
+  ],
+  "boundary_box": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "particles": 1,
+  "seed": 42,
+  "density": 2650.0,
+  "normal_stiffness": 1000000000000.0,
+  "tangential_stiffness": 500000000000.0,
+  "friction": 0.5,
+  "timestep": 1e-08,
+  "initial_solid_fraction": 0.15,
+  "scale": 1.0,
+  "cell": [
+    0.006,
+    0.006,
+    0.006
+  ],
+  "skin": 0.05,
+  "working_memory_gib": 12.0,
+  "contacts_per_particle": 256,
+  "pairs_per_particle": 32,
+  "bin_capacity": 128,
+  "stages": [
+    {
+      "kind": "wall",
+      "steps": 20,
+      "wall_velocities": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.1
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ]
+    }
+  ],
+  "diagnostic_interval": 5,
+  "snapshot_interval": 10,
+  "max_overlap_fraction": 0.01,
+  "normal_viscosity": 1000000.0
+}

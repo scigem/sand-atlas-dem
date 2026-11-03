@@ -1,0 +1,478 @@
+{
+  "ok": true,
+  "api_version": "experimental-recorded-replay-0.1",
+  "catalogue_hash": "bc08858bba18517f7398a383db1a3c8c38474e6ad7dc88db147364df7d6dc040",
+  "model": "barodesy-sand",
+  "message": "",
+  "failed_knot": -1,
+  "parameters": [
+    -1.0246,
+    1,
+    -2.3,
+    465000,
+    28,
+    0.87,
+    0.35
+  ],
+  "initial": [
+    10000,
+    10000,
+    10000,
+    0,
+    0,
+    0,
+    0.7
+  ],
+  "initial_strain": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "controls_wire": [
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1
+  ],
+  "knots_wire": [
+    0,
+    0,
+    10000,
+    10000,
+    0,
+    0,
+    0,
+    1,
+    0.00010000000000010001,
+    11000,
+    11000,
+    0,
+    0,
+    0,
+    2,
+    0.00019999999999986695,
+    12000,
+    12000,
+    0,
+    0,
+    0,
+    3,
+    0.00010000000000010001,
+    10000,
+    10000,
+    0,
+    0,
+    0,
+    4,
+    0.00010000000000010001,
+    10000,
+    10000,
+    0,
+    0,
+    0
+  ],
+  "integration_settings": {
+    "version": "incremental-settings-0.1",
+    "norm": "scaled_component_max",
+    "residual_tolerance": 2e-10,
+    "rate_tolerance": 1e-06,
+    "max_iterations": 45,
+    "max_depth": 14,
+    "max_substeps": 20000,
+    "max_backtracks": 11
+  },
+  "control_settings": {
+    "control_tolerance": 1e-10,
+    "max_iterations": 30,
+    "max_backtracks": 10,
+    "max_material_trials": 20000,
+    "finite_difference_step": 1e-07
+  },
+  "state": [
+    10610.032855128613,
+    10000,
+    10000,
+    0,
+    0,
+    0,
+    0.7003649951748311
+  ],
+  "strain": [
+    0.00010000000000010001,
+    -0.00015734000327070387,
+    -0.0001573400032707037,
+    0,
+    0,
+    0
+  ],
+  "material_trials": 20,
+  "finite_difference_probes": 0,
+  "attempted_substeps": 54,
+  "last_control_error": 0,
+  "last_trial_increment": [
+    -9.999999999976694e-05,
+    -0.0005468213208437503,
+    -0.0005468213208437502,
+    0,
+    0,
+    0
+  ],
+  "points": [
+    {
+      "coordinate": 0,
+      "state": [
+        10000,
+        10000,
+        10000,
+        0,
+        0,
+        0,
+        0.7
+      ],
+      "strain": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "control_error": 0,
+      "diagnostics": {
+        "iterations": 0,
+        "substeps": 0,
+        "rejected": 0,
+        "error": 0,
+        "increment_fractions": []
+      }
+    },
+    {
+      "coordinate": 1,
+      "state": [
+        10892.924932262198,
+        11000.00001336516,
+        11000.00001336516,
+        0,
+        0,
+        0,
+        0.6991501130256869
+      ],
+      "strain": [
+        0.00010000000000010001,
+        0.00020002926396895943,
+        0.00020002926396895943,
+        0,
+        0,
+        0
+      ],
+      "control_error": 2.874227795219149e-11,
+      "diagnostics": {
+        "iterations": 0,
+        "substeps": 2,
+        "rejected": 0,
+        "error": 6.583679662716966e-07,
+        "increment_fractions": [
+          0.5,
+          0.5
+        ]
+      }
+    },
+    {
+      "coordinate": 2,
+      "state": [
+        11799.626026644437,
+        12000.00001464004,
+        12000.00001464004,
+        0,
+        0,
+        0,
+        0.6983365778837808
+      ],
+      "strain": [
+        0.00019999999999986695,
+        0.0003894813175730464,
+        0.0003894813175730465,
+        0,
+        0,
+        0
+      ],
+      "control_error": 3.1483956576345026e-11,
+      "diagnostics": {
+        "iterations": 0,
+        "substeps": 2,
+        "rejected": 0,
+        "error": 5.946614679780924e-07,
+        "increment_fractions": [
+          0.5,
+          0.5
+        ]
+      }
+    },
+    {
+      "coordinate": 3,
+      "state": [
+        10610.032855128613,
+        10000,
+        10000,
+        0,
+        0,
+        0,
+        0.7003649951748311
+      ],
+      "strain": [
+        0.00010000000000010001,
+        -0.00015734000327070387,
+        -0.0001573400032707037,
+        0,
+        0,
+        0
+      ],
+      "control_error": 0,
+      "diagnostics": {
+        "iterations": 0,
+        "substeps": 4,
+        "rejected": 1,
+        "error": 9.172992305090008e-07,
+        "increment_fractions": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ]
+      }
+    },
+    {
+      "coordinate": 4,
+      "state": [
+        10610.032855128613,
+        10000,
+        10000,
+        0,
+        0,
+        0,
+        0.7003649951748311
+      ],
+      "strain": [
+        0.00010000000000010001,
+        -0.00015734000327070387,
+        -0.0001573400032707037,
+        0,
+        0,
+        0
+      ],
+      "control_error": 0,
+      "diagnostics": {
+        "iterations": 0,
+        "substeps": 0,
+        "rejected": 0,
+        "error": 0,
+        "increment_fractions": []
+      }
+    }
+  ],
+  "specification": {
+    "version": "experimental-recorded-run-0.1",
+    "model": "barodesy-sand",
+    "parameters": [
+      -1.0246,
+      1,
+      -2.3,
+      465000,
+      28,
+      0.87,
+      0.35
+    ],
+    "initial": [
+      10000.0,
+      10000.0,
+      10000.0,
+      0,
+      0,
+      0,
+      0.7
+    ],
+    "path": {
+      "version": "experimental-recorded-path-0.1",
+      "coordinate": {
+        "name": "source_row_index",
+        "unit": "1",
+        "meaning": "path_order"
+      },
+      "initial_strain": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "controls": [
+        {
+          "kind": "strain",
+          "coefficients": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "stress",
+          "coefficients": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "stress",
+          "coefficients": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "strain",
+          "coefficients": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "strain",
+          "coefficients": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "kind": "strain",
+          "coefficients": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        }
+      ],
+      "knots": [
+        {
+          "coordinate": 0,
+          "targets": [
+            0.0,
+            10000.0,
+            10000.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "coordinate": 1,
+          "targets": [
+            0.00010000000000010001,
+            11000.0,
+            11000.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "coordinate": 2,
+          "targets": [
+            0.00019999999999986695,
+            12000.0,
+            12000.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "coordinate": 3,
+          "targets": [
+            0.00010000000000010001,
+            10000.0,
+            10000.0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "coordinate": 4,
+          "targets": [
+            0.00010000000000010001,
+            10000.0,
+            10000.0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    }
+  },
+  "request_sha256": "fff661878d06f12f764855784ce358a8ee43281524a643772147595c5f7b57b2"
+}

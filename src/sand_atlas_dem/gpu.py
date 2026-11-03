@@ -22,6 +22,7 @@ ERRORS = {
     2048: "nonperiodic domain escape",
     4096: "invalid boundary box",
     8192: "active-contact timestep bound",
+    16384: "coincident centres unsupported by experimental source-normal contacts",
 }
 
 
@@ -510,6 +511,7 @@ class Engine:
             "maxOverlap": self.spec.max_overlap_fraction,
             "historyStep": int(self.history),
             "meshGeometry": int(self.spec.contact_geometry == "mesh"),
+            "sourceSurfaceNormal": int(self.spec.contact_normal == "source-surface-experimental"),
             "periodic": int(self.spec.periodic),
             "wallCount": self.wall_count,
             "wallBoxEnabled": int(self.spec.boundary_box is not None),
@@ -864,6 +866,10 @@ class Engine:
             "void_ratio": float(volume / solid - 1),
             "kinetic_energy": float(data[0, 3] * self.energy_unit),
             "elastic_energy_proxy": float(data[1, 3] * self.energy_unit),
+            "contact_normal": self.spec.contact_normal,
+            "elastic_energy_interpretation": "proxy; source-normal forces are not its gradient"
+            if self.spec.contact_normal == "source-surface-experimental"
+            else "existing nodal spring energy proxy",
             "unbalanced_force": float(data[2, 3] / max(data[3, 3], 1e-30)),
             "max_overlap_fraction": float(data[4, 3]),
             "friction_dissipation_last_step": float(data[5, 3] * self.energy_unit),
@@ -931,6 +937,16 @@ class Engine:
 
     def profile_step(self):
         """One real step, timestamped by subsystem; benchmark-only synchronization."""
+        if getattr(self.m, "name", None) == "cpu":
+            import time
+
+            start = time.perf_counter()
+            self.advance(1)
+            return {
+                "available": True,
+                "timing_source": "CPU wall clock; complete step including host dispatch",
+                "seconds": {"complete_step": time.perf_counter() - start},
+            }
         pool = self.m.device.create_query_pool(self.m.spy.QueryType.timestamp, 12)
         e = self.m.device.create_command_encoder()
         b = self.bindings()

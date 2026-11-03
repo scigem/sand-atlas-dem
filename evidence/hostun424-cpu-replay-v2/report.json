@@ -1,0 +1,167 @@
+{
+  "id": "hostun424-cpu-replay-v2",
+  "backend": "cpu",
+  "gpu_dispatches": 0,
+  "scientific_admission": false,
+  "particles": 424,
+  "unique_shapes": 53,
+  "source_nodes": 53564544,
+  "estimated_bytes": 4272779024,
+  "restore_wall_s": 38.53130979195703,
+  "force_relative_l2_error": 0.0007604599894396224,
+  "torque_relative_l2_error": 0.0023287600771237163,
+  "cross_backend_transfer_passed": false,
+  "old_contacts": 4418385,
+  "cpu_contacts": 4418377,
+  "original_fp32_branch_diagnostic": {
+    "force_relative_l2_error": 0.000641716846066341,
+    "torque_relative_l2_error": 0.00246423699881007
+  },
+  "advance_wall_s": 76.42993824998848,
+  "final_diagnostics": {
+    "step": 18202,
+    "elapsed_time": 0.00031033769726803817,
+    "cell": [
+      0.0026321694707903266,
+      0.0026321694707903266,
+      0.0026321694707903266
+    ],
+    "domain_cell": [
+      0.0026321694707903266,
+      0.0026321694707903266,
+      0.0026321694707903266
+    ],
+    "walls": [],
+    "stress": [
+      [
+        10692.179514880245,
+        -274.58563894123944,
+        116.47533378723135
+      ],
+      [
+        -274.06291931413364,
+        9534.026714477046,
+        80.43153727153098
+      ],
+      [
+        115.354859007526,
+        86.80947755459957,
+        9704.348471888665
+      ]
+    ],
+    "contact_stress": [
+      [
+        10692.167731967478,
+        -274.5863195977241,
+        116.47580144080219
+      ],
+      [
+        -274.0635999705376,
+        9534.011171857612,
+        80.43317311574796
+      ],
+      [
+        115.35532666117757,
+        86.81111339865508,
+        9704.326301263818
+      ]
+    ],
+    "kinetic_stress": [
+      [
+        0.01178291276591558,
+        0.000680656484717754,
+        -0.0004676535708365161
+      ],
+      [
+        0.0006806564039850469,
+        0.015542619434607404,
+        -0.0016358442169781189
+      ],
+      [
+        -0.0004676536515692231,
+        -0.0016358440555127045,
+        0.0221706248471275
+      ]
+    ],
+    "stress_antisymmetry": 0.0005308177895591176,
+    "p": 9976.851567081985,
+    "q": -408.7546427899797,
+    "axial_strain": 1.817111272561789e-08,
+    "volumetric_strain": 5.4513338176853665e-08,
+    "volume_ratio": 0.9999999454866627,
+    "log_strain": [
+      1.817111289071256e-08,
+      1.817111289071256e-08,
+      1.817111289071256e-08
+    ],
+    "void_ratio": 0.8788968937394719,
+    "kinetic_energy": 6.045495215545316e-10,
+    "elastic_energy_proxy": 2.2507274479721673e-06,
+    "contact_normal": "target-gradient",
+    "elastic_energy_interpretation": "existing nodal spring energy proxy",
+    "unbalanced_force": 0.010661644861102104,
+    "max_overlap_fraction": 0.034980759024620056,
+    "friction_dissipation_last_step": 1.4211557278209774e-11,
+    "candidate_pairs": 5621,
+    "active_surface_contacts": 4418316,
+    "active_grain_pairs": 1305,
+    "coordination": 6.15566037735849,
+    "fabric": [
+      [
+        0.33989301323890686,
+        -0.00595594197511673,
+        -0.006660457234829664
+      ],
+      [
+        -0.00595594197511673,
+        0.33177945017814636,
+        0.0023636852856725454
+      ],
+      [
+        -0.006660457234829664,
+        0.0023636852856725454,
+        0.32832756638526917
+      ]
+    ],
+    "sliding_fraction": 0.33835560878850673,
+    "cell_log_rate": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "friction_dissipation": 3.297439263860724e-07,
+    "drag_dissipation": 7.886211506047403e-07,
+    "cell_work": 2.777255758701358e-06,
+    "wall_work": 0.0,
+    "normal_contact_dissipation": 0.0,
+    "normal_contact_power": 0.0
+  },
+  "passed": false,
+  "cpu_execution_and_replay_passed": true,
+  "replay_max_absolute_errors": {
+    "position": 0.0,
+    "velocity": 0.0,
+    "rotation": 0.0,
+    "momentum": 0.0,
+    "force": 0.0,
+    "torque": 0.0,
+    "accumulated": 0.0,
+    "slip": 0.0,
+    "normalArea": 0.0
+  },
+  "backend_identity": {
+    "format": "sand-dem-doctor/1",
+    "backend": "cpu",
+    "fallback": false,
+    "adapter": "arm",
+    "numerics": "native Slang C++ FP32, compensated state, serial kernels per process",
+    "source_sha256": "d52293bbd9d667af564c064b7b5b70e348ff46c876aad6ad42b3f881ef4f8609",
+    "compiler_sha256": "edaf4f75945629b470671fb8c39f1866c67a0d5c74cf54f87c247bc059ccebef",
+    "smoke_elements": 257,
+    "smoke_passed": true,
+    "smoke_max_error": 0.0,
+    "job_parallelism": "independent processes"
+  },
+  "source_integrity": true,
+  "input_integrity": true
+}

@@ -14,6 +14,7 @@ class Experiment:
     format: str = "sand-dem-experiment/1"
     shape_library: str = ""
     contact_geometry: str = "sdf"
+    contact_normal: str = "target-gradient"
     periodic: bool = True
     planes: list = field(default_factory=list)
     boundary_box: list | None = None
@@ -47,6 +48,13 @@ class Experiment:
             raise ValueError("Unsupported experiment format")
         if self.contact_geometry not in {"sdf", "mesh"}:
             raise ValueError("Unsupported contact geometry")
+        if self.contact_normal not in {"target-gradient", "source-surface-experimental"}:
+            raise ValueError("Unsupported contact normal")
+        if self.contact_normal == "source-surface-experimental" and (
+            self.contact_geometry != "mesh" or self.friction != 0
+            or self.normal_viscosity != 0 or self.planes
+        ):
+            raise ValueError("Experimental source normals require mesh, zero friction/viscosity and no planes")
         if self.timestep_policy not in {"conservative", "active-contact"}:
             raise ValueError("Unsupported timestep policy")
         if self.shape_sampling not in {"random", "balanced"}:

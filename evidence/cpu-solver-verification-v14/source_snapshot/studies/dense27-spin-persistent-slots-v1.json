@@ -1,0 +1,37 @@
+{
+  "identity": "dense27-spin-persistent-slots-v1",
+  "repetitions": 3,
+  "warmup_steps": 16,
+  "steps": 128,
+  "rate_s": [
+    0,
+    0,
+    0
+  ],
+  "drag_s": 0,
+  "minimum_speedup": 1.05,
+  "history_rtol": 0.0001,
+  "history_atol": 1e-08,
+  "limits": {
+    "position": 1e-05,
+    "velocity": 1e-05,
+    "rotation": 1e-05,
+    "force": 0.0001,
+    "torque": 0.0001
+  },
+  "scope": "Fixed canonical endpoint slots remove CSR prefix scan. GPU verifies exact contact-set membership before reuse; scatter and sort write only changed bodies. Geometry and contact laws unchanged. Same previous numerical gates, six trials/mode, pairwise comparisons, exact endpoint membership and bitwise-repeat diagnostics. Goal >=2x baseline throughput;5% minimum candidate improvement gate remains, compare against1.60x cached architecture too. Fixed8192 endpoints/body checked before loads; no truncation; scratch budget checked. No production promotion.",
+  "workload": "dense27",
+  "modes": [
+    "baseline",
+    "segmented-ordered-cached",
+    "segmented-ordered-persistent-cached"
+  ],
+  "split_steps": 32,
+  "subdivisions": 3,
+  "omega_rad_s": [
+    600,
+    800,
+    0
+  ],
+  "grid_side": 3
+}

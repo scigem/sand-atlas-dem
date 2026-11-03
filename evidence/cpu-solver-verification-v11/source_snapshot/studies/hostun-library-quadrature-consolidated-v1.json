@@ -1,0 +1,11 @@
+{
+  "identity": "hostun-library-quadrature-consolidated-v1",
+  "frozen_before_execution": true,
+  "parent_report": "/private/tmp/sand-atlas-dem-walls/evidence/hostun-library-quadrature-adaptive-v2/report.json",
+  "supplement_report": "/private/tmp/sand-atlas-dem-walls/evidence/hostun-grain38-deep-quadrature-l6-v1/report.json",
+  "require_exact_overlapping_forces": true,
+  "maximum_reference_change": 0.02,
+  "selection_target": 0.05,
+  "parent_report_sha256": "03f0d8358ac01b70a458a1298618787c719d7c1fd74ad4147527c55c2b30de4e",
+  "supplement_report_sha256": "11e9fb78948ea107d95923528ad67fb371c3a8e4de4b868c22a57eaa2680bad5"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "cpu-slang-feasibility-v1",
+  "purpose": "Explicit CPU feasibility study, independent of ongoing Metal preparation; no dynamics fallback",
+  "device": "cpu",
+  "gpu_dispatches": 0,
+  "probes": [
+    ["normal.slang", "normalProbe"],
+    ["plane.slang", "planeProbe"],
+    ["solver.slang", "smoke"],
+    ["solver.slang", "resolveContacts"],
+    ["solver.slang", "fillBins"],
+    ["solver.slang", "collectMeshFrontiers"],
+    ["scan.slang", "blockScan"]
+  ],
+  "smoke_elements": 257,
+  "smoke_rtol": 0.000001,
+  "smoke_atol": 0.000001,
+  "contact_cases": 256,
+  "contact_seed": 20261103,
+  "contact_rtol": 0.00002,
+  "contact_atol": 0.000000001,
+  "timeout_s": 60,
+  "scientific_admission": false,
+  "throughput_admission": "No whole-solver throughput claim from compilation or scalar contact probes"
+}

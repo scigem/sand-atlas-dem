@@ -1,0 +1,12 @@
+{
+ "identity": "hostun-sdf-refinement-v1",
+ "frozen_before_execution": true,
+ "coarse_library": "assets/private/hostun-30-r32-s512.h5",
+ "coarse_sha256": "7757ab752483cd8fabd910ea2cba3c5570fa8a6962b7672d14a32b15f8c414a9",
+ "fine_library": "assets/private/hostun-30-r64-s2048.h5",
+ "fine_sha256": "1bc9f37a22b402ada31495ea7ff1ebef4bb6a27a26d68a8333f7f84a12ad16b7",
+ "reference": "The 2048 area-stratified points lie exactly on the source mesh triangles, so exact signed distance is zero independently of SDF interpolation.",
+ "sample_weighting": "Equal grain count, equal area within each grain",
+ "limits": {"pooled_fine_p95_fraction_diameter":0.005,"worst_grain_fine_p95_fraction_diameter":0.01,"minimum_pooled_p95_improvement":1.5},
+ "scope": "Source surface representation only. These size-relative bounds do not prove force convergence at overlaps smaller than the SDF error, or admit a material response. Surface quadrature and assembly convergence remain separate."
+}

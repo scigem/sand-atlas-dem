@@ -1,0 +1,13 @@
+{
+  "identity":"deep-overlap-sphere-reproducer-v1",
+  "radius_m":0.0005,
+  "normal_stiffness_Pa_per_m":10000000000.0,
+  "separation_over_radius":[0.25,0.5,0.8,1.0,1.5,1.9],
+  "icosphere_subdivisions":2,
+  "samples":16384,
+  "seed":517,
+  "sdf_resolution":8,
+  "force_error_over_pi_kn_R3":0.03,
+  "energy_error_over_pi_kn_R4":0.01,
+  "scope":"Static actual Metal mesh contact reproducer, no integration. Identical convex polyhedral spheres, original triangles, no shape repair. Compare force on right body to exact uniform-surface spherical continuum law. Same half-weight two-pass project law, friction/viscosity0,50% construction guard. Negative radial resultant is an observed defect for deep-overlap untangling, not a desired physical result. Analytical sign expectation frozen before GPU evaluation: attraction at d/R0.25,0.5,0.8; repulsion at1,1.5,1.9. Sphere formulas are independent static integration, no CPU simulation. No specimen acceptance or gate changes."
+}

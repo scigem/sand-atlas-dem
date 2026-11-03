@@ -1,0 +1,91 @@
+[WARN] No supported shader model found, pretending to support sm_6_0.
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/runs/source-normal-contact-v2/source_snapshot/sand_atlas_dem/shaders/solver.slang(183): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/runs/source-normal-contact-v2/source_snapshot/sand_atlas_dem/shaders/solver.slang(183): warning :  unused variable '_S5' [-Wunused-variable]
+    uint _S5 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/runs/source-normal-contact-v2/source_snapshot/sand_atlas_dem/shaders/solver.slang(183): warning :  unused variable '_S5' [-Wunused-variable]
+    uint _S5 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_3->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/runs/source-normal-contact-v2/source_snapshot/sand_atlas_dem/shaders/solver.slang(389): warning :  unused variable '_S27' [-Wunused-variable]
+    uint _S27 = findPairs_0(id_2, true, &kernelContext_5);
+         ^
+2 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/runs/source-normal-contact-v2/source_snapshot/sand_atlas_dem/shaders/solver.slang(183): warning :  unused variable '_S31' [-Wunused-variable]
+    uint _S31 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_5->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/runs/source-normal-contact-v2/source_snapshot/sand_atlas_dem/shaders/solver.slang(517): warning :  unused variable '_S82' [-Wunused-variable]
+                        uint _S82 = atomic_fetch_add_explicit(((atomic_uint device*)(kernelContext_9->r_0->contactCounts_0+pair_0)), 1U, memory_order_relaxed);
+                             ^
+2 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/runs/source-normal-contact-v2/source_snapshot/sand_atlas_dem/shaders/solver.slang(183): warning :  unused variable '_S10' [-Wunused-variable]
+    uint _S10 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_2->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/runs/source-normal-contact-v2/source_snapshot/sand_atlas_dem/shaders/solver.slang(728): warning :  unused variable '_S23' [-Wunused-variable]
+            uint _S23 = atomic_fetch_add_explicit(((atomic_uint device*)(r_1->control_0+int(6))), 1U, memory_order_relaxed);
+                 ^
+metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/runs/source-normal-contact-v2/source_snapshot/sand_atlas_dem/shaders/solver.slang(743): warning :  unused variable '_S29' [-Wunused-variable]
+        uint _S29 = atomic_fetch_add_explicit(((atomic_uint device*)(r_1->control_0+int(6))), 1U, memory_order_relaxed);
+             ^
+3 warnings generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/runs/source-normal-contact-v2/source_snapshot/sand_atlas_dem/shaders/solver.slang(183): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_1->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/runs/source-normal-contact-v2/source_snapshot/sand_atlas_dem/shaders/solver.slang(183): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+[WARN] (rhi) slang: metal 32023.922: /Users/bmar5496/code/sand-atlas-dem/runs/source-normal-contact-v2/source_snapshot/sand_atlas_dem/shaders/solver.slang(183): warning :  unused variable '_S1' [-Wunused-variable]
+    uint _S1 = atomic_fetch_or_explicit(((atomic_uint device*)(kernelContext_0->r_0->control_0+int(0))), bit_0, memory_order_relaxed);
+         ^
+1 warning generated.
+
+sphere-0.25 target-gradient force [-0.4555254280567169, -0.0006185627426020801, 2.266658157168422e-05] reference checks True False
+sphere-0.25 source-surface-experimental force [0.5682787299156189, 0.00034710890031419694, -5.441260327643249e-06] reference checks True True
+sphere-0.5 target-gradient force [-0.5487871766090393, -0.000854636775329709, -7.215503137558699e-05] reference checks True True
+sphere-0.5 source-surface-experimental force [0.967266321182251, 0.0005337534239515662, 0.0001525896805105731] reference checks True True
+sphere-0.8 target-gradient force [-0.18342632055282593, -0.0008646700880490243, 0.00016703941219020635] reference checks True True
+sphere-0.8 source-surface-experimental force [1.153092861175537, 0.000702805002219975, 0.0001466153044020757] reference checks True True
+sphere-1.0 target-gradient force [0.34445682168006897, 0.00028688530437648296, -0.0009666142868809402] reference checks True True
+sphere-1.0 source-surface-experimental force [1.060488224029541, 0.0005870803142897785, 0.00018813576025422662] reference checks True True
+sphere-1.5 target-gradient force [0.3389539420604706, 0.0006482844473794103, -0.0002284753427375108] reference checks True True
+sphere-1.5 source-surface-experimental force [0.36338648200035095, 2.156399750674609e-05, 8.704619540367275e-05] reference checks True True
+sphere-1.9 target-gradient force [0.011197893880307674, 2.1311022919690004e-06, -4.376820470497478e-06] reference checks True True
+sphere-1.9 source-surface-experimental force [0.011202693916857243, 1.1310453373880591e-06, 1.818156079025357e-06] reference checks True True
+sphere-1.99 target-gradient force [9.744527233124245e-06, 2.4354704919460346e-07, -2.3971932705535437e-07] reference checks False False
+sphere-1.99 source-surface-experimental force [9.747978765517473e-06, -1.2707144492196676e-07, 5.019625604063549e-08] reference checks True False
+objectivity-base source-surface-experimental force [0.36338648200035095, 2.156392474716995e-05, 8.704617357579991e-05] reference checks True True
+objectivity-rotated source-surface-experimental force [0.28683146834373474, 0.022931532934308052, 0.22192704677581787] reference checks True True
+body-swap source-surface-experimental force [-0.36338648200035095, -2.1563984773820266e-05, -8.704627543920651e-05] reference checks True True
+Traceback (most recent call last):
+  File "/Users/bmar5496/code/sand-atlas-dem/runs/source-normal-contact-v2/source_snapshot/study_source_normals.py", line 177, in <module>
+    if __name__=='__main__':raise SystemExit(main())
+                                             ^^^^^^
+  File "/Users/bmar5496/code/sand-atlas-dem/runs/source-normal-contact-v2/source_snapshot/study_source_normals.py", line 163, in main
+    if a.worker:return execute(out)
+                       ^^^^^^^^^^^^
+  File "/Users/bmar5496/code/sand-atlas-dem/runs/source-normal-contact-v2/source_snapshot/study_source_normals.py", line 94, in execute
+    e,_=static('unequal-contained',sphere,exp,contained_x,q,[0,0],[1.,.5],cell);del e
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bmar5496/code/sand-atlas-dem/runs/source-normal-contact-v2/source_snapshot/study_source_normals.py", line 62, in static
+    e=build(library,spec,x,q,ids,scales,cell)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bmar5496/code/sand-atlas-dem/runs/source-normal-contact-v2/source_snapshot/study_source_normals.py", line 59, in build
+    e.buffers['rotation'].copy_from_numpy(np.asarray(q,np.float32));e.initialize();metal=e.m
+                                                                    ^^^^^^^^^^^^^^
+  File "/Users/bmar5496/code/sand-atlas-dem/runs/source-normal-contact-v2/source_snapshot/sand_atlas_dem/gpu.py", line 585, in initialize
+    self.check_errors()
+  File "/Users/bmar5496/code/sand-atlas-dem/runs/source-normal-contact-v2/source_snapshot/sand_atlas_dem/gpu.py", line 594, in check_errors
+    raise RejectedStep(ctrl[0])
+sand_atlas_dem.gpu.RejectedStep: GPU step rejected: excessive penetration

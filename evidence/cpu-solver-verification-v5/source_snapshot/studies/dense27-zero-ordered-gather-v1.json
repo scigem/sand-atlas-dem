@@ -1,0 +1,38 @@
+{
+  "identity": "dense27-zero-ordered-gather-v1",
+  "repetitions": 3,
+  "warmup_steps": 16,
+  "steps": 128,
+  "rate_s": [
+    0,
+    0,
+    0
+  ],
+  "drag_s": 0,
+  "minimum_speedup": 1.05,
+  "history_rtol": 0.0001,
+  "history_atol": 1e-08,
+  "limits": {
+    "position": 1e-05,
+    "velocity": 1e-05,
+    "rotation": 1e-05,
+    "force": 0.0001,
+    "torque": 0.0001
+  },
+  "scope": "Canonical endpoint bitonic sort by full contact key and endpoint then compensated workgroup gather. Unchanged original gates and5% performance threshold. All repeats and pairwise comparisons required for promotion; per-mode bitwise repeatability is an additional diagnostic. Hard8192 endpoint/body bound aborts rather than truncates. Untimed canonical order, no-duplicate and full-endpoint membership checks after every trial. No production promotion or scientific admission.",
+  "workload": "dense27",
+  "modes": [
+    "baseline",
+    "segmented-original",
+    "segmented-ordered",
+    "segmented-ordered-precision"
+  ],
+  "split_steps": 32,
+  "subdivisions": 3,
+  "omega_rad_s": [
+    0,
+    0,
+    0
+  ],
+  "grid_side": 3
+}

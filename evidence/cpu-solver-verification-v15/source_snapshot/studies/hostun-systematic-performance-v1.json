@@ -1,0 +1,36 @@
+{
+  "identity": "hostun-systematic-performance-v1",
+  "checkpoint": "/private/tmp/sand-atlas-dem-walls/evidence/hostun-first-contact-profile-v1/private/checkpoint.h5",
+  "checkpoint_sha256": "831a722b693cb13534cea220524d24641c6040af70109622056c2d331f87102b",
+  "shape_library": "/private/tmp/sand-atlas-dem-walls/evidence/hostun-balanced424-preparation-v3/study/private/shapes.h5",
+  "shape_sha256": "c4b32a08ad649ff8c85f1393c17c881b4b743b9dfba106eded304d06ef6b02a7",
+  "repetitions": 3,
+  "warmup_steps": 16,
+  "steps": 128,
+  "rate_s": [
+    -50,
+    -50,
+    -50
+  ],
+  "drag_s": 100000,
+  "minimum_speedup": 1.05,
+  "history_rtol": 0.0001,
+  "history_atol": 1e-08,
+  "limits": {
+    "position": 1e-05,
+    "velocity": 1e-05,
+    "rotation": 1e-05,
+    "force": 0.0001,
+    "torque": 0.0001
+  },
+  "scope": "Frozen same-state Metal scheduling and stronger root-rejection trials. Six samples per candidate in forward/reverse order. Existing equivalence gates unchanged. 5% minimum median benefit before considering promotion. Untimed instrumented traversal counts kept separate from throughput. Post-optimization split wall profile; no dense or scientific admission claim.",
+  "workload": "hostun",
+  "modes": [
+    "baseline",
+    "pool256",
+    "pool1024",
+    "pool16384",
+    "all-hull-roots"
+  ],
+  "split_steps": 32
+}

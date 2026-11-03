@@ -1,0 +1,215 @@
+{
+  "identity": "hostun-calibration-reference-v1",
+  "status": "candidate-reference-specification-not-calibration",
+  "geometry": {
+    "material": "Hostun sand",
+    "library": "Existing53-shape subset,424-grain balanced numerical inventory",
+    "quality": "meshes_30.zip; quality investigation parked by user",
+    "batch_match": "not established",
+    "grading_match": "not established; balanced shape counts are not the experimental PSD"
+  },
+  "experimental_source": {
+    "doi": "10.5281/zenodo.12697903",
+    "version": "v2",
+    "campaigns": [
+      "Heron-cited triax-CD-1: four curves",
+      "Deng-cited triax-CD-2: six curves"
+    ],
+    "records": [
+      {
+        "id": "GEOLAB-HOSTUN-TRIAX-CD-1-C15-C16",
+        "kind": "measurement-series",
+        "source_id": "geolab-v2",
+        "path": "GEOLAB-HOSTUN-TRIAX-CD-1-C15-C16.json.gz",
+        "sha256": "4f2d1b0f33eff9fc8585aa0cd29a1ee9d1fde335890b094203a8bd537dc3af3a",
+        "rows": 74
+      },
+      {
+        "id": "GEOLAB-HOSTUN-TRIAX-CD-1-C18-C19",
+        "kind": "measurement-series",
+        "source_id": "geolab-v2",
+        "path": "GEOLAB-HOSTUN-TRIAX-CD-1-C18-C19.json.gz",
+        "sha256": "e99eaf7706fb18c275437b2dfaf2463d1c2e3eb64539469444cbbc6b6de9b9dd",
+        "rows": 121
+      },
+      {
+        "id": "GEOLAB-HOSTUN-TRIAX-CD-1-C2-C3",
+        "kind": "measurement-series",
+        "source_id": "geolab-v2",
+        "path": "GEOLAB-HOSTUN-TRIAX-CD-1-C2-C3.json.gz",
+        "sha256": "5f2996c65383a89a5d53e5dd25fb08ac44d2f7e1dd666a462336b19d54c636f4",
+        "rows": 130
+      },
+      {
+        "id": "GEOLAB-HOSTUN-TRIAX-CD-1-C21-C22",
+        "kind": "measurement-series",
+        "source_id": "geolab-v2",
+        "path": "GEOLAB-HOSTUN-TRIAX-CD-1-C21-C22.json.gz",
+        "sha256": "8751d12b3ef9deec007f0dfd71a6b666f9422bd41e045a3277e24ca44325a659",
+        "rows": 80
+      },
+      {
+        "id": "GEOLAB-HOSTUN-TRIAX-CD-2-C15-C16",
+        "kind": "measurement-series",
+        "source_id": "geolab-v2",
+        "path": "GEOLAB-HOSTUN-TRIAX-CD-2-C15-C16.json.gz",
+        "sha256": "099527aabc1a4315f0ebdb2a27df76ef8a69ef35d8e4e68266f240b2c92453cf",
+        "rows": 157
+      },
+      {
+        "id": "GEOLAB-HOSTUN-TRIAX-CD-2-C18-C19",
+        "kind": "measurement-series",
+        "source_id": "geolab-v2",
+        "path": "GEOLAB-HOSTUN-TRIAX-CD-2-C18-C19.json.gz",
+        "sha256": "8fde9963a61a025e37ac4c321eadc12886aae36986f1f07b64bc3205fa2035ec",
+        "rows": 213
+      },
+      {
+        "id": "GEOLAB-HOSTUN-TRIAX-CD-2-C2-C3",
+        "kind": "measurement-series",
+        "source_id": "geolab-v2",
+        "path": "GEOLAB-HOSTUN-TRIAX-CD-2-C2-C3.json.gz",
+        "sha256": "9ac5aee438a2cacd69ce062de455efd4b31f9bef3064479d902d181d90afc537",
+        "rows": 206
+      },
+      {
+        "id": "GEOLAB-HOSTUN-TRIAX-CD-2-C21-C22",
+        "kind": "measurement-series",
+        "source_id": "geolab-v2",
+        "path": "GEOLAB-HOSTUN-TRIAX-CD-2-C21-C22.json.gz",
+        "sha256": "7d60167dc8ea9c6733a453267b97fda802ea0fb337d797ed5be7893e644dd35b",
+        "rows": 191
+      },
+      {
+        "id": "GEOLAB-HOSTUN-TRIAX-CD-2-C24-C25",
+        "kind": "measurement-series",
+        "source_id": "geolab-v2",
+        "path": "GEOLAB-HOSTUN-TRIAX-CD-2-C24-C25.json.gz",
+        "sha256": "e4c9b21dacd1050c85b7a59a3dbefddff7c743fc81cbf6a9970f84c615301916",
+        "rows": 171
+      },
+      {
+        "id": "GEOLAB-HOSTUN-TRIAX-CD-2-C27-C28",
+        "kind": "measurement-series",
+        "source_id": "geolab-v2",
+        "path": "GEOLAB-HOSTUN-TRIAX-CD-2-C27-C28.json.gz",
+        "sha256": "5405cafe6e33e33886badab7be8bb34e95b569d2eb3bebdadd2c82b6405f3e14",
+        "rows": 228
+      }
+    ]
+  },
+  "candidate_conditions": [
+    {
+      "condition": "loose",
+      "confinement_kpa": 40,
+      "workbook_Dr_percent": 37,
+      "thesis_table_3_3_Dr_percent": 35,
+      "companion_test_id": "CDC01",
+      "status": "condition_and_source_route_match_not_verified_raw_specimen_identity"
+    },
+    {
+      "condition": "loose",
+      "confinement_kpa": 100,
+      "workbook_Dr_percent": 33,
+      "thesis_table_3_3_Dr_percent": 34,
+      "companion_test_id": "CDC02",
+      "status": "condition_and_source_route_match_not_verified_raw_specimen_identity"
+    },
+    {
+      "condition": "loose",
+      "confinement_kpa": 160,
+      "workbook_Dr_percent": 36,
+      "thesis_table_3_3_Dr_percent": 35,
+      "companion_test_id": "CDC03",
+      "status": "condition_and_source_route_match_not_verified_raw_specimen_identity"
+    },
+    {
+      "condition": "dense",
+      "confinement_kpa": 40,
+      "workbook_Dr_percent": 82,
+      "thesis_table_3_3_Dr_percent": 84,
+      "companion_test_id": "CDC04",
+      "status": "condition_and_source_route_match_not_verified_raw_specimen_identity"
+    },
+    {
+      "condition": "dense",
+      "confinement_kpa": 100,
+      "workbook_Dr_percent": 85,
+      "thesis_table_3_3_Dr_percent": 84,
+      "companion_test_id": "CDC05",
+      "status": "condition_and_source_route_match_not_verified_raw_specimen_identity"
+    },
+    {
+      "condition": "dense",
+      "confinement_kpa": 160,
+      "workbook_Dr_percent": 87,
+      "thesis_table_3_3_Dr_percent": 85,
+      "companion_test_id": "CDC06",
+      "status": "condition_and_source_route_match_not_verified_raw_specimen_identity"
+    }
+  ],
+  "unresolved_source_findings": [
+    {
+      "locator": "Deng thesis PDF p.107, printed p.81, Table 3.3",
+      "finding": "Thesis relative densities conflict with the six GEOLAB worksheet group labels. Do not select a density or derive a specimen void ratio until state timing and curve correspondence are resolved."
+    },
+    {
+      "locator": "Deng thesis PDF p.108, printed p.82, Fig.3.20; companion PDF p.27, Fig.3",
+      "finding": "Both original figures explicitly label the abscissa Shear strain (%), while the curated/workbook channels are labelled Axial strain. The source does not establish a strain definition or valid conversion in the reviewed passages. Do not silently treat this as axial strain or apply a fixed factor."
+    },
+    {
+      "locator": "Companion PDF p.7, Tables 2-3; thesis PDF p.107, Tables3.2-3.3",
+      "finding": "Material index limits and peak dilation angles are reported. Peak dilation angles are scalar derived summaries, not volumetric-strain histories. No recoverable volume-history plot was found in these reviewed triaxial figures."
+    },
+    {
+      "locator": "Thesis Sec.3.5.1 and Table3.2",
+      "finding": "New and used Hostun sand have distinct reported grain sizes. Generic Hostun labels do not prove shared material batch or preparation."
+    },
+    {
+      "locator": "Deng thesis Sec6.2, PDF p.187 (printed p.161), Fig6.2 and Table6.2; page visually checked",
+      "finding": "A second presentation of the same six pressure/density groups again explicitly labels shear strain and reports half/full peak-deviator-stress mobilisation strains. This makes a one-off figure-label typo less plausible, but still does not define a conversion to axial strain. Table6.2 is a source-derived summary, not an independent dataset or a recovered volume history.",
+      "use": "Additional author-clarification locator only; no numerical curve matching, new fitting objective or strain conversion."
+    }
+  ],
+  "initial_state_assignment": null,
+  "strain_conversion": null,
+  "volume_history_available": false,
+  "split": {
+    "status": "not assigned",
+    "proposal": "After exact specimen/state/strain correspondence is resolved, consider loose+dense100kPa for calibration and40/160kPa for prediction checks within the same campaign. Do not mix campaigns or call previously inspected public curves blind."
+  },
+  "candidate_fit_parameters": [
+    "normal stiffness (Pa/m)",
+    "tangential/normal stiffness ratio",
+    "particle friction coefficient"
+  ],
+  "not_fit_to_response": [
+    "numerical damping",
+    "loading rate",
+    "specimen initial void ratio"
+  ],
+  "constraints": [
+    "Match independently documented specimen void ratio and PSD; do not change either to improve curve fit",
+    "No dilation calibration without recovered volumetric history",
+    "No rolling resistance parameter unless its implementation and need are separately justified",
+    "No fitting or alteration of either adjacent atlas in this pilot"
+  ],
+  "first_pilot": {
+    "pressure_Pa": 10000,
+    "purpose": "Short software/numerical/cost screen from current preparation; not a100kPa experiment or a material calibration",
+    "axial_engineering_strain": 2e-05,
+    "cases": [
+      "2/s",
+      "1/s",
+      "2/s with smaller timestep"
+    ]
+  },
+  "source_receipts": {
+    "/Users/bmar5496/code/constitutive-atlas/paper/study/hostun_source_metadata.json": "c8b2691de8a9b1f0c7c13dcec4767ca51e5453453e9348a9c150c57dd2e3f520",
+    "/Users/bmar5496/code/constitutive-atlas/paper/study/hostun_feasibility.json": "a8dceff67bf8040b7eb4f48dac8e7052bc231077381038f388d6bc915ed1e3b1",
+    "/Users/bmar5496/code/constitutive-atlas/data/curated/index.json": "14a2624d0c999d2d1b0b1cbbe54afc8dcab232c7fbd08bd2e8b77660f2833380",
+    "/Users/bmar5496/code/sand-atlas/_data/json/hostun-0000005.json": "1469c9ffecc6d25a43d844aef2362a1e8ebc4e585e78bf546bb57784246e193e"
+  },
+  "scientific_admission": false,
+  "calibrated_material": false
+}

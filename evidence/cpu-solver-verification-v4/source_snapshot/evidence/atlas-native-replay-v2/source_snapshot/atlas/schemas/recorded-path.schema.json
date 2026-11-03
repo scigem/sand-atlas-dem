@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Experimental ordered recorded incremental path",
+  "description": "Dimensionless ordering coordinate. Targets are absolute row projections of strain or stress in Pa. Model, parameters, and initial state belong to the enclosing API.",
+  "type": "object",
+  "required": [
+    "version",
+    "coordinate",
+    "initial_strain",
+    "controls",
+    "knots"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "type": "string",
+      "const": "experimental-recorded-path-0.1"
+    },
+    "coordinate": {
+      "type": "object",
+      "required": [
+        "name",
+        "unit",
+        "meaning"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 64
+        },
+        "unit": {
+          "type": "string",
+          "const": "1"
+        },
+        "meaning": {
+          "type": "string",
+          "const": "path_order"
+        }
+      }
+    },
+    "initial_strain": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "number"
+      }
+    },
+    "controls": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "required": [
+          "kind",
+          "coefficients"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "strain",
+              "stress"
+            ]
+          },
+          "coefficients": {
+            "type": "array",
+            "minItems": 6,
+            "maxItems": 6,
+            "items": {
+              "type": "number"
+            }
+          }
+        }
+      }
+    },
+    "knots": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 5001,
+      "items": {
+        "type": "object",
+        "required": [
+          "coordinate",
+          "targets"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "coordinate": {
+            "type": "number"
+          },
+          "targets": {
+            "type": "array",
+            "minItems": 6,
+            "maxItems": 6,
+            "items": {
+              "type": "number"
+            }
+          }
+        }
+      }
+    }
+  }
+}

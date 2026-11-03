@@ -1,0 +1,17 @@
+{
+  "format": "sand-dem-case/1",
+  "experiment": {
+    "contact_geometry": "mesh",
+    "particles": 106,
+    "seed": 42,
+    "density": 2650,
+    "normal_stiffness": 1000000000000,
+    "tangential_stiffness": 500000000000,
+    "friction": 0.5,
+    "timestep": 2e-9,
+    "initial_solid_fraction": 0.01,
+    "diagnostic_interval": 1,
+    "snapshot_interval": 100,
+    "stages": [{"kind": "hold", "steps": 2, "drag": 0}]
+  }
+}

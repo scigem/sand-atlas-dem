@@ -1,0 +1,21 @@
+{
+  "identity": "atlas-v03-comparison-v1",
+  "scope": "Actual v0.3 strain-path-rate native comparison on the existing five-observation analytical source fixture. Nonlinear curve is not expected to match the elastic fixture; no calibration, GPU specimen or scientific admission.",
+  "expected_observations": 5,
+  "maximum_native_control_error": 1e-10,
+  "required_stress_binding": {
+    "source": "state",
+    "name": "sigma",
+    "measure": "cauchy",
+    "scope": "effective"
+  },
+  "inputs": {
+    "/private/tmp/sand-atlas-dem-walls/cases/atlas-barodesy-sand-software-replay.json": "8d3ce00ab0baf01b008a1636f93e18f0f25eef61723b9d45f6d0157011b64e21",
+    "/private/tmp/sand-atlas-dem-walls/cases/atlas-projection.json": "6cb038897998e21d4d943610fb5609981f7caf04684b6e043d4970ee31562c00",
+    "/Users/bmar5496/code/sand-atlas-dem/evidence/atlas-bridge-software-v3/private/analytic-run/manifest.json": "824505c176baad592d5c4792bbbaee17c0668542c16b08206356ace356e5175a",
+    "/Users/bmar5496/code/sand-atlas-dem/evidence/atlas-bridge-software-v3/private/analytic-run/history.json": "d7cb0a60678285a420edfe9752f74b09541b784ae42e13d87ec673486fb520e9",
+    "/Users/bmar5496/code/constitutive-atlas/build/atlas_solver": "da23f66eda19e4b14c3eea85422572809b87e24d37ca6ebdf8f4a05f21af2a82",
+    "/Users/bmar5496/code/constitutive-atlas/build/generated/models.json": "7abdf1ad1c2569862c0f9f384a6bde0620bd90c863dcb055ef49db18b79bc99e",
+    "/Users/bmar5496/code/constitutive-atlas/models/barodesy-sand.json": "3a61b5373404d6973a2957bd0fa21692e10b49e974cdf87eff047d5531851239"
+  }
+}

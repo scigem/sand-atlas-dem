@@ -1,0 +1,16 @@
+{
+  "id": "cpu-slang-feasibility-v1",
+  "created_unix": 1793646424.484732,
+  "files": {
+    "protocol.json": "20ab470a21ef5c8d2200ef3d8a1db1c844410c8e1fa9efeda600829eb7358448",
+    "source_snapshot/reference.py": "972bdbec1a08a8f01097758503296d3581ab6f558145ceac70b02c27603c7730",
+    "source_snapshot/shaders/diagnostic.slang": "e1da948fb7c6a0088b40b3380d92a8f13347de6603559ff8d9bfe59452207a8d",
+    "source_snapshot/shaders/normal.slang": "5d2495d51046362734247f3507929d4b08a2fa63d76109d2f4adac0a2ddcd78e",
+    "source_snapshot/shaders/plane.slang": "ff020384d70fc828c574f3d9853ae43fcb968f8c270e7c30b4d3aaf31cd0e7a2",
+    "source_snapshot/shaders/scan.slang": "51900fe7d78347d2274488b1b5c328ed53714be3043d221ad1d48555e1c5cbac",
+    "source_snapshot/shaders/solver.slang": "a32ed514bec4516530a6dd268aeeb95984bb1b2eada0c1dc583eec4756a0bd1f",
+    "source_snapshot/study_cpu_slang.py": "7f3ee28c30d6618c8f04eb88da1369becee5a13fe635c07c90cfce0663b5acfc"
+  },
+  "cpu_only": true,
+  "gpu_dispatches": 0
+}

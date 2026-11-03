@@ -1,0 +1,111 @@
+{
+  "old_cpu_source_sha256": "d52293bbd9d667af564c064b7b5b70e348ff46c876aad6ad42b3f881ef4f8609",
+  "new_cpu_source_sha256": "f8aa5c781770b375ebfda2997bcb18a679a067a4082fd2042e6f31f02f0a691c",
+  "comparison": "Remove only #line directives, which contain cache path identities; no arithmetic normalization",
+  "kernels": [
+    {
+      "kernel": "clearBins",
+      "generated_cpp_equal_excluding_line_directives": true
+    },
+    {
+      "kernel": "fillBins",
+      "generated_cpp_equal_excluding_line_directives": true
+    },
+    {
+      "kernel": "countPairs",
+      "generated_cpp_equal_excluding_line_directives": true
+    },
+    {
+      "kernel": "emitPairs",
+      "generated_cpp_equal_excluding_line_directives": true
+    },
+    {
+      "kernel": "resetMeshContacts",
+      "generated_cpp_equal_excluding_line_directives": true
+    },
+    {
+      "kernel": "prepareMeshPairs",
+      "generated_cpp_equal_excluding_line_directives": true
+    },
+    {
+      "kernel": "collectMeshFrontiers",
+      "generated_cpp_equal_excluding_line_directives": true
+    },
+    {
+      "kernel": "countContacts",
+      "generated_cpp_equal_excluding_line_directives": true
+    },
+    {
+      "kernel": "contactTotal",
+      "generated_cpp_equal_excluding_line_directives": true
+    },
+    {
+      "kernel": "emitContacts",
+      "generated_cpp_equal_excluding_line_directives": true
+    },
+    {
+      "kernel": "collectWallContacts",
+      "generated_cpp_equal_excluding_line_directives": true
+    },
+    {
+      "kernel": "clearContactStorage",
+      "generated_cpp_equal_excluding_line_directives": true
+    },
+    {
+      "kernel": "resolveContacts",
+      "generated_cpp_equal_excluding_line_directives": true
+    },
+    {
+      "kernel": "buildHistoryHash",
+      "generated_cpp_equal_excluding_line_directives": true
+    },
+    {
+      "kernel": "gather",
+      "generated_cpp_equal_excluding_line_directives": true
+    },
+    {
+      "kernel": "gatherWallRows",
+      "generated_cpp_equal_excluding_line_directives": true
+    },
+    {
+      "kernel": "checkContactTimestep",
+      "generated_cpp_equal_excluding_line_directives": true
+    },
+    {
+      "kernel": "beginStep",
+      "generated_cpp_equal_excluding_line_directives": true
+    },
+    {
+      "kernel": "advanceCell",
+      "generated_cpp_equal_excluding_line_directives": true
+    },
+    {
+      "kernel": "advanceWalls",
+      "generated_cpp_equal_excluding_line_directives": true
+    },
+    {
+      "kernel": "checkRebuild",
+      "generated_cpp_equal_excluding_line_directives": true
+    },
+    {
+      "kernel": "finishStep",
+      "generated_cpp_equal_excluding_line_directives": true
+    },
+    {
+      "kernel": "diagnosticRows",
+      "generated_cpp_equal_excluding_line_directives": true
+    },
+    {
+      "kernel": "fabricRows",
+      "generated_cpp_equal_excluding_line_directives": true
+    },
+    {
+      "kernel": "captureContactKinematics",
+      "generated_cpp_equal_excluding_line_directives": true
+    },
+    {
+      "kernel": "refreshWallPower",
+      "generated_cpp_equal_excluding_line_directives": true
+    }
+  ]
+}

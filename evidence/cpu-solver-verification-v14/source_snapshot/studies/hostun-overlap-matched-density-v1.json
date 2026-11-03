@@ -1,0 +1,24 @@
+{
+  "identity": "hostun-overlap-matched-density-v1",
+  "frozen_before_execution": true,
+  "parent_checkpoint": "/Users/bmar5496/code/sand-atlas-dem/runs/hostun-overlap-controller-v1/run/chunk-0009/checkpoint.h5",
+  "old_failure_checkpoint": "/Users/bmar5496/code/sand-atlas-dem/runs/hostun-balanced424-resume-v1/study/run/chunk-0005/checkpoint.h5",
+  "old_failure_step": 2319625,
+  "steps": 1000000,
+  "checkpoint_steps": 10000,
+  "minimum_relative_density_increase": 0.0001,
+  "control": {
+    "taper_start": 0.004,
+    "hold_at": 0.008,
+    "resume_at": 0.006,
+    "contact_rate": 5.0
+  },
+  "fast_cell_rtol": 1e-06,
+  "fast_position_atol_normalized": 1e-06,
+  "fast_velocity_atol_m_s": 1e-08,
+  "scope": "Prospective matched-density continuation from2350000 with hash-bound controller state. Stop at first10000-step checkpoint at or above old failure solid fraction, original failure, original equilibrium completion or1million additional steps. Same2ns timestep, physics, overlap1% guard and all equilibrium gates. Success requires matched density, nonfailed execution, exact incoming device/servo restore and input/source integrity. Matching density is a loading-path screen, not preparation acceptance or scientific admission. No automatic further launch. Stop early if free storage falls below5GiB; retain every checkpoint and report unmatched density as an unsuccessful screen.",
+  "fast_scope": "1000steps at1000/s versus250steps at4000/s from the original dilute initial state: equal imposed log strain0.002 per axis, no contacts, positive bounding-sphere gaps. Fast cap limited to25% minimum log-gap and0.001 log strain per125-step batch. Fallback to original1000/s near bounding-sphere contact; not full approach-to-contact qualification. Fixed2ns timestep.",
+  "mode": "matched-density-continuation",
+  "controller_state": "/Users/bmar5496/code/sand-atlas-dem/runs/hostun-overlap-controller-v1/run/chunk-0009/controller-state.json",
+  "minimum_free_bytes": 5368709120
+}

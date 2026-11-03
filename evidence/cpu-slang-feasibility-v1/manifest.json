@@ -1,0 +1,26 @@
+{
+  "files": {
+    "cpp-blockScan.log": "ef1ab3a5030147ee2d5a90bb8e96b0df8e79f9409b5a1c3592240fe7ca3db8fa",
+    "cpp-collectMeshFrontiers.log": "81a5a8172e14e6ec384134e5ea856ab85268fe7e1e792142a5d93436d36c466c",
+    "cpp-fillBins.log": "1270bc9e163280d234913b7eb5981e88c87df91c232379462ac6d05fe3515fcb",
+    "cpp-normalProbe.log": "77550f238185d0b6fab8e09f1792c363448bd37e8945e881b2e11c52fcae015d",
+    "cpp-planeProbe.log": "3adcb344bb45a277480eab9cce3aec51912a8c3e157b280a5148e5e4872b6def",
+    "cpp-resolveContacts.log": "ca1417ead1907d79515573c7a6c80d54cf44299664d833e6c08881a7868fe35b",
+    "cpp-smoke.log": "954fe7bfa179a3c9b48f15a90b434343ea1d5859a2091b2a3cafa2b7b7aa17bb",
+    "cpu-device.log": "95694564400b083ab54faf7c89c9a6c618ae56b7c9d9dfc894ee3ef8dea3c563",
+    "freeze.json": "31a73e9ceb222c092a1b44fc254694f09d1cd495f24281a35704d403cc141b2e",
+    "normalProbe.cpp": "c9de79f09c1239349d29db8c789f6fb4b359793af0a8f730488c4df3b0f90039",
+    "planeProbe.cpp": "dd82f7a8f528835cbe3c675e388bb5438c1bf0d4dbeb067082a59cb5f5aa5f8b",
+    "protocol.json": "20ab470a21ef5c8d2200ef3d8a1db1c844410c8e1fa9efeda600829eb7358448",
+    "report.json": "dfd2d4e734756fc103ae1937bcb947eb6847974eaf979e320442f78a1c650b99",
+    "smoke.cpp": "155c277c5e39d811c0193d54db9f57a1a025a0ba58b0fe520fe3e7ce50b1ca98",
+    "source_snapshot/reference.py": "972bdbec1a08a8f01097758503296d3581ab6f558145ceac70b02c27603c7730",
+    "source_snapshot/shaders/diagnostic.slang": "e1da948fb7c6a0088b40b3380d92a8f13347de6603559ff8d9bfe59452207a8d",
+    "source_snapshot/shaders/normal.slang": "5d2495d51046362734247f3507929d4b08a2fa63d76109d2f4adac0a2ddcd78e",
+    "source_snapshot/shaders/plane.slang": "ff020384d70fc828c574f3d9853ae43fcb968f8c270e7c30b4d3aaf31cd0e7a2",
+    "source_snapshot/shaders/scan.slang": "51900fe7d78347d2274488b1b5c328ed53714be3043d221ad1d48555e1c5cbac",
+    "source_snapshot/shaders/solver.slang": "a32ed514bec4516530a6dd268aeeb95984bb1b2eada0c1dc583eec4756a0bd1f",
+    "source_snapshot/study_cpu_slang.py": "7f3ee28c30d6618c8f04eb88da1369becee5a13fe635c07c90cfce0663b5acfc"
+  },
+  "note": "Native binary excluded; generated source and build command retained"
+}

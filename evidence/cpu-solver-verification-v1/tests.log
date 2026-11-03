@@ -1,0 +1,228 @@
+
+==================================== ERRORS ====================================
+_ ERROR collecting runs/cpu-solver-verification-v1/source_snapshot/tests/test_assembly_work_audit.py _
+tests/test_assembly_work_audit.py:12: in <module>
+    spec.loader.exec_module(study)
+<frozen importlib._bootstrap_external>:995: in exec_module
+    ???
+<frozen importlib._bootstrap_external>:1132: in get_code
+    ???
+<frozen importlib._bootstrap_external>:1190: in get_data
+    ???
+E   FileNotFoundError: [Errno 2] No such file or directory: '/Users/bmar5496/code/sand-atlas-dem/runs/cpu-solver-verification-v1/source_snapshot/examples/assembly_work_study.py'
+_ ERROR collecting runs/cpu-solver-verification-v1/source_snapshot/tests/test_checkpoint_profile_resolution.py _
+tests/test_checkpoint_profile_resolution.py:13: in <module>
+    spec.loader.exec_module(profile)
+<frozen importlib._bootstrap_external>:995: in exec_module
+    ???
+<frozen importlib._bootstrap_external>:1132: in get_code
+    ???
+<frozen importlib._bootstrap_external>:1190: in get_data
+    ???
+E   FileNotFoundError: [Errno 2] No such file or directory: '/Users/bmar5496/code/sand-atlas-dem/runs/cpu-solver-verification-v1/source_snapshot/examples/profile_checkpoint.py'
+_ ERROR collecting runs/cpu-solver-verification-v1/source_snapshot/tests/test_deep_overlap_counterexample.py _
+tests/test_deep_overlap_counterexample.py:12: in <module>
+    spec.loader.exec_module(reproducer)
+<frozen importlib._bootstrap_external>:995: in exec_module
+    ???
+<frozen importlib._bootstrap_external>:1132: in get_code
+    ???
+<frozen importlib._bootstrap_external>:1190: in get_data
+    ???
+E   FileNotFoundError: [Errno 2] No such file or directory: '/Users/bmar5496/code/sand-atlas-dem/runs/cpu-solver-verification-v1/source_snapshot/examples/reproduce_deep_overlap.py'
+_ ERROR collecting runs/cpu-solver-verification-v1/source_snapshot/tests/test_deterministic_quadrature.py _
+tests/test_deterministic_quadrature.py:19: in <module>
+    study = load("deterministic_quadrature", "library_quadrature_deterministic.py")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_deterministic_quadrature.py:15: in load
+    spec.loader.exec_module(module)
+<frozen importlib._bootstrap_external>:995: in exec_module
+    ???
+<frozen importlib._bootstrap_external>:1132: in get_code
+    ???
+<frozen importlib._bootstrap_external>:1190: in get_data
+    ???
+E   FileNotFoundError: [Errno 2] No such file or directory: '/Users/bmar5496/code/sand-atlas-dem/runs/cpu-solver-verification-v1/source_snapshot/examples/library_quadrature_deterministic.py'
+_ ERROR collecting runs/cpu-solver-verification-v1/source_snapshot/tests/test_library_contact_poses.py _
+tests/test_library_contact_poses.py:15: in <module>
+    spec.loader.exec_module(study)
+<frozen importlib._bootstrap_external>:995: in exec_module
+    ???
+<frozen importlib._bootstrap_external>:1132: in get_code
+    ???
+<frozen importlib._bootstrap_external>:1190: in get_data
+    ???
+E   FileNotFoundError: [Errno 2] No such file or directory: '/Users/bmar5496/code/sand-atlas-dem/runs/cpu-solver-verification-v1/source_snapshot/examples/library_contact_poses.py'
+_ ERROR collecting runs/cpu-solver-verification-v1/source_snapshot/tests/test_library_quadrature.py _
+tests/test_library_quadrature.py:13: in <module>
+    spec.loader.exec_module(study)
+<frozen importlib._bootstrap_external>:995: in exec_module
+    ???
+<frozen importlib._bootstrap_external>:1132: in get_code
+    ???
+<frozen importlib._bootstrap_external>:1190: in get_data
+    ???
+E   FileNotFoundError: [Errno 2] No such file or directory: '/Users/bmar5496/code/sand-atlas-dem/runs/cpu-solver-verification-v1/source_snapshot/examples/library_quadrature.py'
+_ ERROR collecting runs/cpu-solver-verification-v1/source_snapshot/tests/test_mixed_quadrature_protocol.py _
+tests/test_mixed_quadrature_protocol.py:13: in <module>
+    spec.loader.exec_module(study)
+<frozen importlib._bootstrap_external>:995: in exec_module
+    ???
+<frozen importlib._bootstrap_external>:1132: in get_code
+    ???
+<frozen importlib._bootstrap_external>:1190: in get_data
+    ???
+E   FileNotFoundError: [Errno 2] No such file or directory: '/Users/bmar5496/code/sand-atlas-dem/runs/cpu-solver-verification-v1/source_snapshot/examples/mesh_quadrature_study.py'
+_ ERROR collecting runs/cpu-solver-verification-v1/source_snapshot/tests/test_normalized_stiffness_reference.py _
+tests/test_normalized_stiffness_reference.py:20: in <module>
+    spec.loader.exec_module(study)
+<frozen importlib._bootstrap_external>:995: in exec_module
+    ???
+<frozen importlib._bootstrap_external>:1132: in get_code
+    ???
+<frozen importlib._bootstrap_external>:1190: in get_data
+    ???
+E   FileNotFoundError: [Errno 2] No such file or directory: '/Users/bmar5496/code/sand-atlas-dem/runs/cpu-solver-verification-v1/source_snapshot/examples/normalized_stiffness_study.py'
+_ ERROR collecting runs/cpu-solver-verification-v1/source_snapshot/tests/test_packing_pressure_control.py _
+tests/test_packing_pressure_control.py:10: in <module>
+    spec.loader.exec_module(controller)
+<frozen importlib._bootstrap_external>:995: in exec_module
+    ???
+<frozen importlib._bootstrap_external>:1132: in get_code
+    ???
+<frozen importlib._bootstrap_external>:1190: in get_data
+    ???
+E   FileNotFoundError: [Errno 2] No such file or directory: '/Users/bmar5496/code/sand-atlas-dem/runs/cpu-solver-verification-v1/source_snapshot/examples/packing_pressure_control.py'
+_ ERROR collecting runs/cpu-solver-verification-v1/source_snapshot/tests/test_plane_reference.py _
+tests/test_plane_reference.py:13: in <module>
+    spec.loader.exec_module(reference)
+<frozen importlib._bootstrap_external>:995: in exec_module
+    ???
+<frozen importlib._bootstrap_external>:1132: in get_code
+    ???
+<frozen importlib._bootstrap_external>:1190: in get_data
+    ???
+E   FileNotFoundError: [Errno 2] No such file or directory: '/Users/bmar5496/code/sand-atlas-dem/runs/cpu-solver-verification-v1/source_snapshot/examples/plane_reference.py'
+_ ERROR collecting runs/cpu-solver-verification-v1/source_snapshot/tests/test_prepared_work_resolution.py _
+tests/test_prepared_work_resolution.py:19: in <module>
+    spec.loader.exec_module(resolver)
+<frozen importlib._bootstrap_external>:995: in exec_module
+    ???
+<frozen importlib._bootstrap_external>:1132: in get_code
+    ???
+<frozen importlib._bootstrap_external>:1190: in get_data
+    ???
+E   FileNotFoundError: [Errno 2] No such file or directory: '/Users/bmar5496/code/sand-atlas-dem/runs/cpu-solver-verification-v1/source_snapshot/examples/resolve_prepared_work.py'
+_ ERROR collecting runs/cpu-solver-verification-v1/source_snapshot/tests/test_quadrature_zero_reference.py _
+tests/test_quadrature_zero_reference.py:12: in <module>
+    spec.loader.exec_module(study)
+<frozen importlib._bootstrap_external>:995: in exec_module
+    ???
+<frozen importlib._bootstrap_external>:1132: in get_code
+    ???
+<frozen importlib._bootstrap_external>:1190: in get_data
+    ???
+E   FileNotFoundError: [Errno 2] No such file or directory: '/Users/bmar5496/code/sand-atlas-dem/runs/cpu-solver-verification-v1/source_snapshot/examples/mesh_quadrature_study.py'
+_ ERROR collecting runs/cpu-solver-verification-v1/source_snapshot/tests/test_reference_inside.py _
+tests/test_reference_inside.py:13: in <module>
+    spec.loader.exec_module(module)
+<frozen importlib._bootstrap_external>:995: in exec_module
+    ???
+<frozen importlib._bootstrap_external>:1132: in get_code
+    ???
+<frozen importlib._bootstrap_external>:1190: in get_data
+    ???
+E   FileNotFoundError: [Errno 2] No such file or directory: '/Users/bmar5496/code/sand-atlas-dem/runs/cpu-solver-verification-v1/source_snapshot/examples/reference_inside.py'
+_ ERROR collecting runs/cpu-solver-verification-v1/source_snapshot/tests/test_reference_overlap.py _
+tests/test_reference_overlap.py:13: in <module>
+    spec.loader.exec_module(refinement)
+<frozen importlib._bootstrap_external>:995: in exec_module
+    ???
+<frozen importlib._bootstrap_external>:1132: in get_code
+    ???
+<frozen importlib._bootstrap_external>:1190: in get_data
+    ???
+E   FileNotFoundError: [Errno 2] No such file or directory: '/Users/bmar5496/code/sand-atlas-dem/runs/cpu-solver-verification-v1/source_snapshot/examples/refine_quadrature_case.py'
+_ ERROR collecting runs/cpu-solver-verification-v1/source_snapshot/tests/test_reference_rays.py _
+tests/test_reference_rays.py:13: in <module>
+    spec.loader.exec_module(module)
+<frozen importlib._bootstrap_external>:995: in exec_module
+    ???
+<frozen importlib._bootstrap_external>:1132: in get_code
+    ???
+<frozen importlib._bootstrap_external>:1190: in get_data
+    ???
+E   FileNotFoundError: [Errno 2] No such file or directory: '/Users/bmar5496/code/sand-atlas-dem/runs/cpu-solver-verification-v1/source_snapshot/examples/reference_rays.py'
+_ ERROR collecting runs/cpu-solver-verification-v1/source_snapshot/tests/test_reference_winding.py _
+tests/test_reference_winding.py:13: in <module>
+    spec.loader.exec_module(module)
+<frozen importlib._bootstrap_external>:995: in exec_module
+    ???
+<frozen importlib._bootstrap_external>:1132: in get_code
+    ???
+<frozen importlib._bootstrap_external>:1190: in get_data
+    ???
+E   FileNotFoundError: [Errno 2] No such file or directory: '/Users/bmar5496/code/sand-atlas-dem/runs/cpu-solver-verification-v1/source_snapshot/examples/reference_winding.py'
+_ ERROR collecting runs/cpu-solver-verification-v1/source_snapshot/tests/test_restitution_scaling.py _
+tests/test_restitution_scaling.py:15: in <module>
+    _spec.loader.exec_module(audit)
+<frozen importlib._bootstrap_external>:995: in exec_module
+    ???
+<frozen importlib._bootstrap_external>:1132: in get_code
+    ???
+<frozen importlib._bootstrap_external>:1190: in get_data
+    ???
+E   FileNotFoundError: [Errno 2] No such file or directory: '/Users/bmar5496/code/sand-atlas-dem/runs/cpu-solver-verification-v1/source_snapshot/examples/restitution_scaling_audit.py'
+_ ERROR collecting runs/cpu-solver-verification-v1/source_snapshot/tests/test_source_normal_metal.py _
+tests/test_source_normal_metal.py:16: in <module>
+    module_spec.loader.exec_module(study)
+<frozen importlib._bootstrap_external>:995: in exec_module
+    ???
+<frozen importlib._bootstrap_external>:1132: in get_code
+    ???
+<frozen importlib._bootstrap_external>:1190: in get_data
+    ???
+E   FileNotFoundError: [Errno 2] No such file or directory: '/Users/bmar5496/code/sand-atlas-dem/runs/cpu-solver-verification-v1/source_snapshot/examples/study_source_normals.py'
+_ ERROR collecting runs/cpu-solver-verification-v1/source_snapshot/tests/test_study_protocol.py _
+tests/test_study_protocol.py:13: in <module>
+    _module_spec.loader.exec_module(_driver)
+<frozen importlib._bootstrap_external>:995: in exec_module
+    ???
+<frozen importlib._bootstrap_external>:1132: in get_code
+    ???
+<frozen importlib._bootstrap_external>:1190: in get_data
+    ???
+E   FileNotFoundError: [Errno 2] No such file or directory: '/Users/bmar5496/code/sand-atlas-dem/runs/cpu-solver-verification-v1/source_snapshot/examples/controller_study.py'
+_ ERROR collecting runs/cpu-solver-verification-v1/source_snapshot/tests/test_triangle_enclosure_cull.py _
+tests/test_triangle_enclosure_cull.py:13: in <module>
+    spec.loader.exec_module(study)
+<frozen importlib._bootstrap_external>:995: in exec_module
+    ???
+<frozen importlib._bootstrap_external>:1132: in get_code
+    ???
+<frozen importlib._bootstrap_external>:1190: in get_data
+    ???
+E   FileNotFoundError: [Errno 2] No such file or directory: '/Users/bmar5496/code/sand-atlas-dem/runs/cpu-solver-verification-v1/source_snapshot/examples/library_quadrature_culled.py'
+=========================== short test summary info ============================
+ERROR tests/test_assembly_work_audit.py - FileNotFoundError: [Errno 2] No suc...
+ERROR tests/test_checkpoint_profile_resolution.py - FileNotFoundError: [Errno...
+ERROR tests/test_deep_overlap_counterexample.py - FileNotFoundError: [Errno 2...
+ERROR tests/test_deterministic_quadrature.py - FileNotFoundError: [Errno 2] N...
+ERROR tests/test_library_contact_poses.py - FileNotFoundError: [Errno 2] No s...
+ERROR tests/test_library_quadrature.py - FileNotFoundError: [Errno 2] No such...
+ERROR tests/test_mixed_quadrature_protocol.py - FileNotFoundError: [Errno 2] ...
+ERROR tests/test_normalized_stiffness_reference.py - FileNotFoundError: [Errn...
+ERROR tests/test_packing_pressure_control.py - FileNotFoundError: [Errno 2] N...
+ERROR tests/test_plane_reference.py - FileNotFoundError: [Errno 2] No such fi...
+ERROR tests/test_prepared_work_resolution.py - FileNotFoundError: [Errno 2] N...
+ERROR tests/test_quadrature_zero_reference.py - FileNotFoundError: [Errno 2] ...
+ERROR tests/test_reference_inside.py - FileNotFoundError: [Errno 2] No such f...
+ERROR tests/test_reference_overlap.py - FileNotFoundError: [Errno 2] No such ...
+ERROR tests/test_reference_rays.py - FileNotFoundError: [Errno 2] No such fil...
+ERROR tests/test_reference_winding.py - FileNotFoundError: [Errno 2] No such ...
+ERROR tests/test_restitution_scaling.py - FileNotFoundError: [Errno 2] No suc...
+ERROR tests/test_source_normal_metal.py - FileNotFoundError: [Errno 2] No suc...
+ERROR tests/test_study_protocol.py - FileNotFoundError: [Errno 2] No such fil...
+ERROR tests/test_triangle_enclosure_cull.py - FileNotFoundError: [Errno 2] No...
+!!!!!!!!!!!!!!!!!!! Interrupted: 20 errors during collection !!!!!!!!!!!!!!!!!!!
+83 deselected, 20 errors in 1.08s

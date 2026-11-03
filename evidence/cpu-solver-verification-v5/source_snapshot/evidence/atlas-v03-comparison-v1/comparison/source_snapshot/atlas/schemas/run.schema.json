@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Laboratory run specification",
+  "type": "object",
+  "required": [
+    "model",
+    "protocol",
+    "target",
+    "steps",
+    "cycles"
+  ],
+  "properties": {
+    "model": {
+      "type": "string"
+    },
+    "parameters": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    },
+    "initial": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    },
+    "protocol": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 4
+    },
+    "target": {
+      "type": "number"
+    },
+    "steps": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5000
+    },
+    "cycles": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100
+    }
+  },
+  "additionalProperties": false
+}

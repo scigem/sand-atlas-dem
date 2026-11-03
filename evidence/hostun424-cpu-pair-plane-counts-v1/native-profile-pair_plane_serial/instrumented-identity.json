@@ -1,0 +1,21 @@
+{
+  "original_cpp_sha256": "f556f5a4ee7b0bdb5eb2bc67cddc2578dd9fed4a0e3f65ef64029b8e4f41b1be",
+  "instrumented_cpp_sha256": "69b9ca081098db53c1dfaf333c74994b8d9dbe6734bb5c8d59b84f598265ae0c",
+  "binary_sha256": "b5c1af32b65767c91a2dff286f174b56688ab26dbd245f988fc28c1876e0e727",
+  "command": [
+    "xcrun",
+    "clang++",
+    "-std=c++17",
+    "-O3",
+    "-fno-fast-math",
+    "-ffp-contract=off",
+    "-shared",
+    "-fPIC",
+    "-pthread",
+    "/Users/bmar5496/code/sand-atlas-dem/runs/hostun424-cpu-pair-plane-counts-v1/native-profile-pair_plane_serial/instrumented-collector.cpp",
+    "-o",
+    "/Users/bmar5496/code/sand-atlas-dem/runs/hostun424-cpu-pair-plane-counts-v1/native-profile-pair_plane_serial/instrumented-collector.dylib"
+  ],
+  "timing": "Call counters only for six native functions; no timers/update/pop instrumentation. Performance admission uses the separate uninstrumented study.",
+  "counts_only": true
+}

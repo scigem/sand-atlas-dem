@@ -1,0 +1,19 @@
+{
+  "identity": "hostun-first-contact-profile-v1",
+  "frozen_before_execution": true,
+  "checkpoint": "/private/tmp/sand-atlas-dem-walls/evidence/hostun-balanced424-preparation-v3/study/run/chunk-0001/checkpoint.h5",
+  "checkpoint_sha256": "831a722b693cb13534cea220524d24641c6040af70109622056c2d331f87102b",
+  "checkpoint_step": 500000,
+  "preparation_study": "/private/tmp/sand-atlas-dem-walls/evidence/hostun-balanced424-preparation-v3/study",
+  "particles": 424,
+  "drag_s": 100000,
+  "rate_s": [
+    -50,
+    -50,
+    -50
+  ],
+  "warmup_steps": 16,
+  "profile_steps": 128,
+  "repetitions": 3,
+  "scope": "Prospective short actual-Metal subsystem profile of the immutable 500k-step dilute first-contact checkpoint using its complete archived solver. Three restored repetitions, each16 warmup and128 profiled2ns steps, prescribed isotropic-50/s rate and declared1e5/s drag. Original archived profile_step dispatch sequence retained; default zero drag explicitly overridden through its bindings only. Not continuation of the pressure controller, dense benchmark, preparation acceptance, stability study or material/scientific admission. No GPU execution concurrent with the continuing preparation."
+}

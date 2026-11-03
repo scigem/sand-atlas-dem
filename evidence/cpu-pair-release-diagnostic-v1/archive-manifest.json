@@ -1,0 +1,8 @@
+{
+  "id": "cpu-pair-release-diagnostic-v1",
+  "files": {
+    "check.py": "b84f511d13a364e4bcab7206896543431c5e2fb56b0c15497339053f223e6cf9",
+    "freeze.json": "c2f5c9db9832b1bd9e6e85e841f1e6f7613898c351bc8c1f6778766a9a82d90f",
+    "report.json": "c032a961cf67727722f184ff5f6c375e8742511cd4f15e478d6b79240eeefc20"
+  }
+}

@@ -990,3 +990,168 @@ fast/child/tie/fallback probes pass16 cases and45120 query vectors with bitwise
 original-GPU agreement; this does not qualify Hostun fast-path execution. Original
 studies/gates retained, production unchanged. See
 [ADAPTIVE_MESH_ACCESS.md](ADAPTIVE_MESH_ACCESS.md).
+
+## CPU feasibility study — 3 November 2026
+
+Completed the explicitly requested CPU feasibility study without launching GPU work or changing the active Metal preparation. Slang generated C++ for normal/plane probes and selected smoke; native plane-contact execution passed 256 frozen FP64 reference cases. Full solver CPU compilation failed on atomics/barriers, with failed logs preserved. Short arithmetic-only CPU measurements were 90.0/176.0/328.4 million evaluations/s at 1/2/4 workers; these exclude mesh traversal and do not establish full-case speed. No CPU DEM engine or scientific admission is claimed. See [CPU_FEASIBILITY.md](CPU_FEASIBILITY.md) for evidence, limits and the proposed native scheduling/geometry port.
+
+
+## Complete CPU execution backend — 3 November 2026
+
+Explicit native CPU DEM is implemented through the shared numerical engine and
+laboratory driver: mesh/SDF geometry, friction/history, particle/wall viscosity,
+rigid-body/cell integration, active/conservative timestep guards, rollback/capacity
+growth, diagnostics, snapshots, checkpoints and case/Atlas comparison output.
+Run/case/resume/doctor/benchmark accept `--backend cpu`; CPU checkpoints retain
+backend identity. Cases can run in independent processes without GPU devices.
+No automatic fallback, scientific admission or sand calibration was introduced.
+See docs/CPU_SOLVER.md for usage and numerical distinctions.
+
+Frozen final software verification `cpu-solver-verification-v4` reports **305
+passed, 5 skipped, 84 deselected**, including 23 dedicated CPU checks. Four
+independent 32-grain mesh workloads delivered 2787.7 aggregate timed steps/s
+versus 711.7 for one worker (3.92x). These are short small-workload measurements.
+V1's source-snapshot collection failure and V2/V3 results remain archived.
+
+Full-inventory `hostun424-cpu-replay-v2` executed two hold steps of the original
+424-grain, 53-shape, 53.56-million-library-node Hostun state, with about 4.42 million
+contacts. CPU advance took 76.43 s; CPU checkpoint replay was exact in all reported
+primary/resultant/history/work fields. Solver allocation estimate was 4.27 GB,
+excluding shape objects and compiler/temporary overhead. This is execution and
+restart evidence, not preparation convergence or material validation.
+
+The extra strict Metal-to-CPU transfer gate remains **failed**: force relative
+L2 error 0.0760%, torque 0.2329%, against the fixed 0.2% gates. No tolerance was
+retuned. The diagnostic records maximum normalized absolute errors 1.70e-8 and
+1.97e-8, inside the pre-existing preparation resultant restart bounds, but keyed
+normals/contact membership can differ and strict cross-backend interchange is
+unqualified. Original FP32 branch arithmetic did not remove the difference.
+Explicit Slang PRECISE mode produced identical generated C++ arithmetic for all
+26 solver kernels; final CPU/regression tests and full-inventory rebuild use it.
+All failed reports and codegen comparison evidence are retained. Homogeneous CPU
+jobs and restart are verified; this transfer limitation remains documented.
+The existing Metal preparation and queued pilot were not restarted or modified.
+# Fresh CPU verification — 3 November 2026
+
+`cpu-solver-verification-v6` passed 307 tests (5 skipped, 84 Metal/render cases
+deselected), including independent analytic elastic release through separation
+at two timesteps, energy/momentum gates and exact mid-contact restart. Seven
+independent CPU benchmark jobs completed 43,008 full mesh steps in total;
+four-process aggregate throughput was 3.77x the single-process result on this
+small workload. Reports and frozen sources are retained under the matching
+`evidence/` directory. No additional GPU execution was started.
+
+The v5 benchmark attempt remains failed: its long uninterrupted free-release
+trajectory violated the benchmark's constant-contact-count assumption. A separate
+diagnostic confirms all 16 pairs moved apart and contacts decreased from 3,072
+to zero with finite state. V6 uses repeated original 64-step contacting windows;
+neither the failure nor any numerical gate was revised. This verifies bounded
+CPU software execution and analytic dynamics, not calibrated sand behaviour or
+strict cross-backend interchange. The previous strict Metal-to-CPU transfer
+failure remains open; see `CPU_SOLVER.md`.
+
+# CPU contact collection speedup — 3 November 2026
+
+Optional native pair-parallel collection is implemented, selected through
+`SAND_DEM_CPU_THREADS` or `CPU(threads=...)`, with one thread remaining the
+default. Private pair outputs/control and deterministic pair-order compaction
+retain the original collector and force accumulation order. Local growth and
+global overflow retain explicit retry/rollback behaviour; the bridge is part
+of cache identity and the selected thread count appears in backend metadata.
+
+`hostun424-cpu-parallel-collector-v1` passed the frozen bitwise equality gate
+for all checked state arrays/contact counts after reconstruction and after two
+full steps on the same original 424-grain checkpoint. Eight workers reduce
+mean step time from 37.58 to 11.73 seconds (3.20x). Geometry loading, compilation,
+reconstruction, diagnostics and state comparisons are excluded from step timing.
+`cpu-solver-verification-v10` passes 343 tests, with 5 skips and 84 Metal/render
+cases deselected; fixtures exercise one and four threads, private output growth,
+deterministic ordering and two-pair global overflow/rollback. No new GPU work
+was launched. These are bounded execution/numerical checks, not sand validation
+or sustained scaling measurements.
+
+Cached pair bounds and nearby-triangle seeded queries each passed state equality
+but produced no meaningful speedup (1.0067x and 1.0002x); their implementation
+changes were removed. Frozen reports and sources for all attempts are retained.
+
+
+# CPU buffer reuse — 3 November 2026
+
+Retained per-kernel native pair output buffers/capacities are implemented for the
+optional parallel mesh collector. Every contact is recomputed; no geometry query
+result or history is cached. Scratch has explicit lifetime, serialized use, checked
+local/global capacity limits and deterministic compaction. Pair count changes and
+shared-adapter engine rebinding preserve exact results.
+
+`hostun424-cpu-buffer-reuse-v1` compares eight workers against the frozen previous
+eight-worker collector: 19.345 to 9.625 s/step, 2.010x on two complete warm steps.
+All checked state arrays and counts are bitwise equal after reconstruction and at
+the end. Cold reconstruction has 2,444 local overflow retries; timed warm steps
+have zero. Retained outputs occupy 496.03 MiB. Loading/compilation/reconstruction,
+readback and diagnostics are excluded from step timing. Current baseline absolute
+time differs from the previous study, so speedup ratios are not multiplied.
+
+Final `cpu-solver-verification-v14`: 344 pass, 5 skipped, 84 Metal/render deselected,
+plus 6,144 full smoke steps. v11/v12 failures and intermediate v13 pass are retained
+under separate identities. No new GPU dispatches. This is execution/numerical and
+bounded performance evidence, not sand validation or sustained scaling.
+
+# CPU worker scaling — 3 November 2026
+
+Frozen `hostun424-cpu-worker-scaling-v1` and v2 complete 40 full Hostun steps
+across 2/4/8/12-worker blocks and repeated eight-worker references. Every variant
+matches all checked state arrays/contact counts after reconstruction and after
+four complete steps. No warm local overflow retries. Runtime source is unchanged
+from verified v14 and all 31 files match the passing source snapshot.
+
+v2 uses a single scratch context and reversed intermediate order to remove v1's
+accumulated scratch-memory confound. Times: 2 workers 20.87 s/step, 4 workers
+12.39, 8 workers 10.39 initially and 8.33 on repeat, 12 workers 10.42. Repeat
+drift remains -19.9% (v1 +18.3%), so modest thread-count gains are not robust.
+Eight remains the practical large-case starting point; twelve deliver no
+repeatable gain. Two/four improve throughput per allocated worker as a sequential
+proxy, but actual concurrent full-case throughput/RAM scaling remains untested.
+Contact collection remains about 90–92% at 8/12 workers; next profile exact mesh
+queries and worker tails before selecting SIMD/batching or work reordering.
+Existing Metal preparation was left untouched. No new scientific admission.
+
+# Serial query work reduction — 3 November 2026
+
+Detailed one-worker native profiling finds 44.34 million mesh queries per original
+Hostun step, 5.30 billion box tests (42.8% redundant popped bounds), and 148.57
+million intermediate normal reads. Retain computed FP32 bounds on the traversal
+stack and fetch only the final feature pseudonormal. Query order, ties, triangle
+arithmetic, overflow and no-winner semantics are preserved; no geometry changes.
+
+`hostun424-cpu-query-reuse-v1`: three complete one-worker steps, 44.299 to 38.063
+s/step (1.164x), identical checked state/contact counts after reconstruction and
+at the endpoint. Instrumentation is absent from this performance comparison.
+The wider full-hull cull trial was expensive and interrupted; code removed,
+partial report/source and interruption annotation retained under its own identity.
+No completed candidate performance or final-state admission is claimed for it.
+
+Final `cpu-solver-verification-v17` passes 346 tests and 6,144 smoke steps; source
+matches the retained v15 query and successful full-case comparison. Tests include
+raw-byte original-query feature ties/extreme misses and penetrating-point culling
+coverage. No additional GPU work or parallelization changes. Further culling needs
+measured rejection/cost efficiency; broad all-plane loops are not retained.
+
+## Bounded pair-plane rejection — 3 November 2026
+
+Retain one conservative hull plane chosen once per directed pair, ahead of the
+original point containment and exact mesh query. Existing rounded geometry and
+outward enclosure planes are unchanged; the additional point test is padded.
+`hostun424-cpu-pair-plane-v1` compares three complete serial steps: **39.189 to
+32.136 s/step, 1.219x throughput (18.0% less wall time)**. All checked state arrays
+and contact counts match after checkpoint reconstruction and at the endpoint;
+source/input integrity pass. This is a short paired observation with the existing
+background Metal workload, not a sustained or multiworker speed claim.
+`cpu-solver-verification-v18`: 346 tests and 6,144 smoke steps pass, unchanged
+tolerances. No new GPU work or scientific admission.
+
+The separate one-step call-counter study `hostun424-cpu-pair-plane-counts-v1`
+passes identical checked state/counts and source/input integrity. It records
+22.2% fewer directional hull calls, 16.1% fewer exact mesh queries (44.34 to
+37.22 million), 19.0% fewer box tests and 22.0% fewer triangle tests. Node and
+cluster counts are unchanged. Instrumented timing is excluded from speed claims.
+All 31 current runtime source files match v18 and both full-case studies.

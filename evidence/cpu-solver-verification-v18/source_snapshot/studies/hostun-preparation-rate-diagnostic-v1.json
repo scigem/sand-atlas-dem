@@ -1,0 +1,37 @@
+{
+  "identity": "hostun-preparation-rate-diagnostic-v1",
+  "frozen_before_execution": true,
+  "backend": "Metal",
+  "checkpoints": [
+    {
+      "name": "near-limit",
+      "path": "/Users/bmar5496/code/sand-atlas-dem/runs/hostun-balanced424-resume-v1/study/run/chunk-0005/checkpoint.h5",
+      "steps": 2500
+    },
+    {
+      "name": "earlier",
+      "path": "/Users/bmar5496/code/sand-atlas-dem/runs/hostun-balanced424-resume-v1/study/run/chunk-0004/checkpoint.h5",
+      "steps": 5000
+    }
+  ],
+  "branches": [
+    {
+      "name": "original",
+      "cap_s_inv": 50
+    },
+    {
+      "name": "slow",
+      "cap_s_inv": 5
+    },
+    {
+      "name": "hold",
+      "cap_s_inv": 0
+    }
+  ],
+  "timestep_s": 2e-09,
+  "drag": 100000,
+  "diagnostic_interval": 125,
+  "max_overlap_fraction": 0.01,
+  "scope": "Short differential diagnostic, not preparation acceptance. Identical initial checkpoint state/history per branch. Original servo cap50/s, cap5/s, and fixed-cell hold; drag/timestep/force law/geometry/overlap limit unchanged. Near-limit provides failure reproduction; earlier tests relaxation without immediate threshold proximity. Time windows 5us/10us do not establish asymptotic equilibrium or safe long-term preparation.",
+  "interpretation": "Report completion/rejection, overlap trends, pressure, kinetic/elastic ratio, worst contact identity, and cell change. A hold rejection does not by itself isolate geometry from inherited velocity or contact-force effects. Fixed-cell endpoints must match initial cell exactly. No relaxed limits, admission or production default changes."
+}

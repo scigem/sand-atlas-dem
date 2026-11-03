@@ -1,0 +1,9 @@
+{
+  "format": "sand-dem-atlas-projection/1",
+  "stress": "axisymmetric-mean-radial-projection",
+  "strain": "prepared-state-engineering",
+  "effective_stress": "dry-no-pore-pressure",
+  "kinematics": "caller-accepted-infinitesimal-approximation",
+  "maximum_component_strain": 0.01,
+  "note": "Illustrative one-percent bound. Caller must assess whether engineering-strain increments and the axisymmetric stress projection are suitable for the chosen continuum model."
+}

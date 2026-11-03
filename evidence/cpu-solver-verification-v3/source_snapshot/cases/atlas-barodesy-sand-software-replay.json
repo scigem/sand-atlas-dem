@@ -1,0 +1,34 @@
+{
+  "version": "experimental-drained-replay-0.1",
+  "model": "barodesy-sand",
+  "parameters": {
+    "c1": -1.0246,
+    "c2": 1,
+    "c3": -2.3,
+    "c4": 465000,
+    "c5": 28,
+    "ec0": 0.87,
+    "emin": 0.35
+  },
+  "initial_history": {
+    "e": 0.7
+  },
+  "initial_strain": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "declarations": {
+    "kinematics": "fixed-frame-axisymmetric-x",
+    "p": "mean-effective-stress",
+    "q": "signed-axial-minus-radial-effective-stress",
+    "strain_origin": "first-observation",
+    "radial_control": "replay-measured-effective-stress",
+    "evidence_url": "https://github.com/SciGEM/sand-atlas-dem",
+    "evidence_locator": "docs/ATLAS_BRIDGE.md; virtual-test.json and its source manifest/history hashes",
+    "initialization_note": "Explicit coefficients for an incremental v0.3 software replay, not a Hostun calibration. Initial e=0.7 matches the analytical source fixture. Preserve the selected barodesy-sand model identity and its documented numerical domain; no finite-spin or physical-time behaviour is inferred."
+  }
+}

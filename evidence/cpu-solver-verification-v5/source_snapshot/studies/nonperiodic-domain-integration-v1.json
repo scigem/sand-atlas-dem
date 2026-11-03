@@ -1,0 +1,17 @@
+{
+  "identity": "nonperiodic-domain-integration-v1",
+  "parent": "nonperiodic-domain-v1",
+  "backend": "metal",
+  "scope": "Nonperiodic GPU pipeline including SDF/mesh interior contacts and persisted laboratory configuration; no plane physics",
+  "tests": ["tests/test_nonperiodic.py", "tests/test_nonperiodic_integration.py"],
+  "gates": {
+    "parent": "All unchanged nonperiodic-domain-v1 assertions",
+    "interior_mechanics": "SDF and mesh: periodic/nonperiodic position, velocity, rotation, momentum, force and torque agree at rtol 2e-4 and normalized atol 3e-7 after three contact steps",
+    "friction_restart": "Ten contact continuation steps: restored/interrupted position, velocity, rotation, momentum, force, torque and accumulated diagnostics agree at rtol 2e-4 and normalized atol 3e-7",
+    "checkpoint": "HDF5 retains periodic=false; two resumed free-motion steps are bit-identical to uninterrupted state; resumed laboratory completes eight steps",
+    "export": "Synthetic identity plus explicit nonperiodic-centre-domain boundary and computational_domain measurement-volume labels",
+    "invalid_device_initial_state": "Exact domain-escape flag 2048 for a directly overwritten upper-face device position"
+  },
+  "regression": "Full serial Metal pytest suite, unchanged numerical gates",
+  "limitations": ["Domain limits constrain centres only", "No physical wall confinement or material acceptance", "Computational domain volume must not be presented as a specimen volume"]
+}

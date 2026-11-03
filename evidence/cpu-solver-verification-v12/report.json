@@ -1,0 +1,11 @@
+{
+  "id": "cpu-solver-verification-v12",
+  "backend": "cpu",
+  "gpu_dispatches": 0,
+  "scientific_admission": false,
+  "whole_solver_workload": "synthetic isolated mesh pairs; no dense Hostun performance claim",
+  "tests_returncode": -11,
+  "passed": false,
+  "failure": "RuntimeError('Frozen CPU/regression tests failed; see tests.log')",
+  "source_integrity": true
+}

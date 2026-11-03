@@ -1,0 +1,20 @@
+{
+  "original_cpp_sha256": "ae36bbe261b3fc2e233c44cdffde058247c7e5ec4b81309d1d99bcc490cf050d",
+  "instrumented_cpp_sha256": "83a56492e3cfe927520df3ce6a452cd823b3395d3b1a5ff5e1de047a4f6e2093",
+  "binary_sha256": "4e5d849ff3e9046c27467d2469a021fe16ea6591571f2077ab489089664d767d",
+  "command": [
+    "xcrun",
+    "clang++",
+    "-std=c++17",
+    "-O3",
+    "-fno-fast-math",
+    "-ffp-contract=off",
+    "-shared",
+    "-fPIC",
+    "-pthread",
+    "/Users/bmar5496/code/sand-atlas-dem/runs/hostun424-cpu-mesh-query-profile-v1/instrumented-collector.cpp",
+    "-o",
+    "/Users/bmar5496/code/sand-atlas-dem/runs/hostun424-cpu-mesh-query-profile-v1/instrumented-collector.dylib"
+  ],
+  "timing": "inclusive native function timing; overlapping scopes must not be summed; box/triangle/update/pop counters only; instrumentation overhead included"
+}

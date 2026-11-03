@@ -1,0 +1,45 @@
+{
+  "identity": "feldfogel-published-data-inventory-v2",
+  "frozen_before_inventory": true,
+  "access_date": "2026-10-31",
+  "dataset_doi": "10.3929/ethz-b-000640908",
+  "article_doi": "10.1002/nme.7400",
+  "archive": "evidence/feldfogel-source-acquisition-v1/private/rawData.zip",
+  "sources": [
+    {
+      "path": "evidence/feldfogel-source-acquisition-v1/private/rawData.zip",
+      "url": "https://www.research-collection.ethz.ch/server/api/core/bitstreams/bd081f87-eac3-4469-b53b-59a64405fd21/content",
+      "publisher_md5": "596077cd536dffbeb0d3f6822d4c739b",
+      "sha256": "0648960a2ff40bab2c708399371beb7c2f81e6452368ffb075483cccbb7ac20c"
+    },
+    {
+      "path": "evidence/feldfogel-source-acquisition-v1/private/readMe.pdf",
+      "url": "https://www.research-collection.ethz.ch/server/api/core/bitstreams/3c3afbeb-7750-409e-894d-d681b7c21f2f/content",
+      "publisher_md5": "42c488904accf6c38659acfb5f177a17",
+      "sha256": "2ef872c4c39f40a2a11bb2da7988667cbcc16504f1c03c58b523d5c2e5ff198c"
+    },
+    {
+      "path": "evidence/feldfogel-source-acquisition-v1/private/paper.pdf",
+      "url": "https://authors.library.caltech.edu/records/9c0re-55s09",
+      "publisher_md5": "393a36963dbc3d08d5f767274ffd707e",
+      "sha256": "7946df872661b81445c82e1b7bf9e544290fae325b4009876112c2b9c1e44b5f"
+    }
+  ],
+  "rights": "ETH dataset listing: CC BY 4.0; Caltech article record: Creative Commons Attribution. Original files retained privately.",
+  "initial_access_failures": [
+    {
+      "surface": "web-reader landing page",
+      "http_status": 403
+    },
+    {
+      "surface": "curl public item API",
+      "http_status": 429
+    }
+  ],
+  "retrieval": "Later retry of public ETH API with an identified research client succeeded; Caltech file download succeeded. No supplied binaries or scripts were executed.",
+  "headers": {
+    "fig_3/data_figure_3b.txt": "data_figure_1\tdata_figure_2\tdata_figure_3\tdata_figure_4\tdata_figure_5",
+    "fig_4/displacement_fig_4.txt": "dum",
+    "fig_4/load_array_fig_4c.txt": "dum"
+  }
+}

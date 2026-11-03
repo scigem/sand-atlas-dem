@@ -85,9 +85,12 @@ def memory_report(engine):
     import sys
 
     buffers = {}
+    buffer_type = getattr(engine.m, "buffer_type", None)
+    if buffer_type is None:
+        buffer_type = engine.m.spy.Buffer
 
     def visit(value):
-        if isinstance(value, engine.m.spy.Buffer):
+        if isinstance(value, buffer_type):
             buffers[id(value)] = value
         elif isinstance(value, dict):
             for item in value.values():
@@ -126,6 +129,11 @@ def memory_report(engine):
             "Driver execution scratch and shader thread-local storage are outside logical buffer inventory",
         ],
     )
+    if getattr(engine.m, "name", None) == "cpu":
+        report["reported_host_resource_bytes"] = report["logical_solver_buffer_bytes"]
+        report["reported_device_resource_bytes"] = 0
+        report["allocation_kind"] = "CPU NumPy-owned contiguous host buffers"
+        return report
     try:
         report["reported_device_resource_bytes"] = sum(
             b.memory_usage.device for b in buffers.values()
@@ -310,7 +318,9 @@ def benchmark(
         ),
         initial_diagnostics=before,
         final_diagnostics=diagnostics[-1],
-        gpu_profile=profile,
+        gpu_profile=profile if getattr(e.m, "name", None) != "cpu" else {
+            "available": False, "reason": "Explicit CPU execution; see cpu_profile"
+        },
         scientific_verification=False,
         limitations=[
             "This workload is not a prepared soil specimen. Minimum duration is explicit; a long run alone does not prove thermal equilibrium.",
@@ -319,5 +329,7 @@ def benchmark(
             "Reset and diagnostic costs are excluded from per-step timing; elapsed wall time includes them.",
         ],
     )
+    if getattr(e.m, "name", None) == "cpu":
+        report["cpu_profile"] = profile
     write_json(output / "benchmark.json", report)
     return report

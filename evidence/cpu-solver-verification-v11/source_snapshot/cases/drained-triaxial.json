@@ -1,0 +1,20 @@
+{
+  "format": "sand-dem-case/1",
+  "experiment": {
+    "contact_geometry": "mesh",
+    "particles": 10000,
+    "seed": 42,
+    "density": 2650,
+    "normal_stiffness": 1000000000000,
+    "tangential_stiffness": 500000000000,
+    "friction": 0.5,
+    "timestep": 2e-9,
+    "initial_solid_fraction": 0.01,
+    "diagnostic_interval": 50,
+    "snapshot_interval": 10000,
+    "stages": [
+      {"kind": "isotropic", "steps": 2000000, "drag": 100000, "pressure": 10000, "gain": 1000, "filter_time": 0.00001, "max_rate": 1000, "converged_samples": 100},
+      {"kind": "triaxial", "steps": 60000000, "drag": 0, "pressure": 10000, "gain": 1000, "filter_time": 0.00001, "max_rate": 1000, "rate": 1, "stop_strain": 0.1}
+    ]
+  }
+}

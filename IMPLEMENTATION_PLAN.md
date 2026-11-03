@@ -433,3 +433,108 @@ See `docs/BRICK_MESH_ACCESS.md`. Production shader/dispatch/defaults unchanged.
 
 Final surface-only8.189→9.068ms/step,297.15MiB extra buffers,138.57s build; no promotion.
 See `docs/ADAPTIVE_MESH_ACCESS.md` for exact scope, limits and preserved evidence.
+
+## CPU feasibility study — 3 November 2026
+
+Completed the explicitly requested CPU feasibility study without launching GPU work or changing the active Metal preparation. Slang generated C++ for normal/plane probes and selected smoke; native plane-contact execution passed 256 frozen FP64 reference cases. Full solver CPU compilation failed on atomics/barriers, with failed logs preserved. Short arithmetic-only CPU measurements were 90.0/176.0/328.4 million evaluations/s at 1/2/4 workers; these exclude mesh traversal and do not establish full-case speed. No CPU DEM engine or scientific admission is claimed. See [CPU_FEASIBILITY.md](docs/CPU_FEASIBILITY.md) for evidence, limits and the proposed native scheduling/geometry port.
+
+
+## Complete CPU execution backend — 3 November 2026
+
+Explicit native CPU DEM is implemented through the shared numerical engine and
+laboratory driver: mesh/SDF geometry, friction/history, particle/wall viscosity,
+rigid-body/cell integration, active/conservative timestep guards, rollback/capacity
+growth, diagnostics, snapshots, checkpoints and case/Atlas comparison output.
+Run/case/resume/doctor/benchmark accept `--backend cpu`; CPU checkpoints retain
+backend identity. Cases can run in independent processes without GPU devices.
+No automatic fallback, scientific admission or sand calibration was introduced.
+See docs/CPU_SOLVER.md for usage and numerical distinctions.
+
+Frozen final software verification `cpu-solver-verification-v4` reports **305
+passed, 5 skipped, 84 deselected**, including 23 dedicated CPU checks. Four
+independent 32-grain mesh workloads delivered 2787.7 aggregate timed steps/s
+versus 711.7 for one worker (3.92x). These are short small-workload measurements.
+V1's source-snapshot collection failure and V2/V3 results remain archived.
+
+Full-inventory `hostun424-cpu-replay-v2` executed two hold steps of the original
+424-grain, 53-shape, 53.56-million-library-node Hostun state, with about 4.42 million
+contacts. CPU advance took 76.43 s; CPU checkpoint replay was exact in all reported
+primary/resultant/history/work fields. Solver allocation estimate was 4.27 GB,
+excluding shape objects and compiler/temporary overhead. This is execution and
+restart evidence, not preparation convergence or material validation.
+
+The extra strict Metal-to-CPU transfer gate remains **failed**: force relative
+L2 error 0.0760%, torque 0.2329%, against the fixed 0.2% gates. No tolerance was
+retuned. The diagnostic records maximum normalized absolute errors 1.70e-8 and
+1.97e-8, inside the pre-existing preparation resultant restart bounds, but keyed
+normals/contact membership can differ and strict cross-backend interchange is
+unqualified. Original FP32 branch arithmetic did not remove the difference.
+Explicit Slang PRECISE mode produced identical generated C++ arithmetic for all
+26 solver kernels; final CPU/regression tests and full-inventory rebuild use it.
+All failed reports and codegen comparison evidence are retained. Homogeneous CPU
+jobs and restart are verified; this transfer limitation remains documented.
+The existing Metal preparation and queued pilot were not restarted or modified.
+# CPU contact profiling follow-up — 3 November 2026
+
+- [x] Freeze and compare cached bounds and seeded exact mesh-query bounds;
+  bitwise state checks pass but no meaningful gain, so remove those changes.
+- [x] Add optional native pair workers, private growing buffers/control and
+  deterministic pair-order concatenation, preserving original contact equations.
+- [x] Verify serial/parallel state equality, private growth, global rollback and
+  end-to-end execution: 343 tests pass in `cpu-solver-verification-v10`.
+- [x] Same-checkpoint full Hostun comparison: eight workers deliver 3.20x
+  speedup, 37.58 to 11.73 s/step, with bitwise equality of every checked state
+  array/contact count. Frozen evidence: `hostun424-cpu-parallel-collector-v1`.
+- [ ] Sustained full-inventory scaling and Linux execution remain unqualified.
+
+
+## CPU retained contact buffers (3 November 2026)
+
+- [x] Reuse per-kernel private pair output storage/capacity, with explicit native
+  lifetime and reset/rebind of every contact, count and flag on each dispatch.
+- [x] Preserve local retry/global rollback, pair order and allocation-failure safety.
+- [x] Verify shared-adapter engines, changing pair counts/capacities and exact
+  serial/parallel state; final frozen v14 passes 344 tests and 6,144 smoke steps.
+- [x] Compare against frozen eight-worker implementation on original Hostun state:
+  bitwise equality passes, 19.345 to 9.625 s/step (2.010x), zero warm local retries,
+  496.03 MiB retained output allocation. Evidence: hostun424-cpu-buffer-reuse-v1.
+- [ ] Sustained/repeated full-case timing and worker-count scaling remain unqualified;
+  absolute timings vary across studies, so separate speedup ratios are not compounded.
+
+## CPU worker-count study (3 November 2026)
+
+- [x] Freeze original checkpoint/loading and exact state/count gates; run 2,4,8,12
+  workers with repeated eight-worker reference blocks: 40 complete steps total.
+- [x] Preserve v1 (+18.3% repeated-reference drift) and rerun v2 with one shared
+  scratch and reversed intermediate order. v2 still drifts -19.9%; no robust
+  additional 12-worker gain. All numerical comparisons pass, no warm local retries.
+- [x] Archive source/input identities, timing arrays, per-worker allocation proxies
+  and runtime-source audits against passing CPU verification v14.
+- [ ] Profile per-pair mesh-query costs and worker completion tails, then choose
+  packet/SIMD traversal or scheduling work from evidence rather than thread count.
+- [ ] Isolated/sustained scaling and full-case concurrent-process throughput remain
+  unqualified; no default worker-count change follows from these short studies.
+
+## Serial contact hot path (3 November 2026)
+
+- [x] Profile native query stages/call counts with a private generated-C++ collector,
+  then verify identical full-case state. Freeze/source/hash instrumentation separately.
+- [x] Cache original FP32 pushed bounds; preserve pruning/tie/stack-error semantics.
+- [x] Defer pseudonormal loads to final feature, preserving no-winner behaviour.
+- [x] One-worker full Hostun comparison: 44.299 to 38.063 s/step (1.164x), three
+  complete steps, exact checked state/count equality; no throughput gate retuning.
+- [x] Trial broad hull-plane rejection; preserve expensive interrupted report and
+  remove the unhelpful code. Passing small fixtures alone does not retain a change.
+- [x] Final v17: 346 tests plus 6,144 smoke steps; raw-byte original-query checks and
+  penetrating-point culling oracle. Runtime restored to successful v15/serial study.
+- [x] Trial one conservative plane selected once per directed pair: three serial
+  Hostun steps, 39.189 to 32.136 s/step (1.219x), identical checked state/counts.
+  Keep the original directional hull and exact mesh query after this padded test.
+- [x] Verify retained pair-plane implementation with v18: 346 tests and 6,144
+  smoke steps; original numerical tolerances unchanged.
+- [x] Quantify calls separately from timing: hull calls -22.2%, exact queries
+  -16.1%, box tests -19.0%, triangles -22.0%; unchanged node/cluster counts and
+  identical checked endpoint state. Counter study has no performance admission.
+- [ ] Consider a stronger bounded enclosure under a new frozen budget/identity:
+  37.2 million exact queries still remain per step. No further worker-count tuning
+  planned first; additional 2x performance is not demonstrated.

@@ -1,0 +1,14 @@
+{
+  "completed_steps": 3,
+  "step_wall_seconds": [
+    32.001391874975525,
+    30.568469375022687,
+    33.83801950002089
+  ],
+  "collector_wall_seconds": [
+    31.235056582954712,
+    29.820175958098844,
+    33.15524450002704
+  ],
+  "final_state_verified": false
+}

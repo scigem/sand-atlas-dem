@@ -1,0 +1,42 @@
+{
+  "identity": "source-normal-contact-v3",
+  "sphere_fixture": "runs/deep-overlap-sphere-reproducer-v1/fixture.h5",
+  "pair_state": "runs/hostun-dense-annealing-v4/state-final.h5",
+  "pair_pose_dir": "runs/hostun-annealing-pair-refinement-v1",
+  "pairs": [
+    [
+      149,
+      309
+    ],
+    [
+      163,
+      231
+    ]
+  ],
+  "separations_over_R": [
+    0.25,
+    0.5,
+    0.8,
+    1.0,
+    1.5,
+    1.9,
+    1.99
+  ],
+  "normal_stiffness": 10000000000.0,
+  "steps": 4000,
+  "batch_steps": 20,
+  "diagnostic_steps": 200,
+  "timestep_cap_s": 1e-06,
+  "minimum_timestep_s": 1e-10,
+  "drag_per_step": 0.005,
+  "force_rtol": 0.0003,
+  "force_atol_N": 1e-10,
+  "torque_rtol": 0.0003,
+  "torque_atol_Nm": 1e-14,
+  "objectivity_rtol": 0.001,
+  "shallow_force_rtol": 0.05,
+  "physical_gradient_rtol": 0.001,
+  "fd_fraction": 1e-05,
+  "minimum_free_bytes": 1073741824,
+  "scope": "Prospectively frozen explicit Metal mesh-only, frictionless, zero-viscosity source-feature-normal prototype. Retain baseline target normals, half-weight directed passes, common-node reactions, physical guard unchanged elsewhere. Synthetic sphere signs, independent triangle CPU static force/torque, body swap/global rotation, scaled containment probe, coincidence explicit rejection; pair force/proxy-energy translation+rotation derivatives and4000-step zero-velocity relaxation from saved coarse trapped poses. Report energy-gradient consistency and1% pair clearance separately as physical gates; these may fail even when software comparisons pass. No CPU dynamics or dense specimen/admission. Existing energy remains a proxy; no new conservative potential asserted. Full existing tests run serially after this study. V1 failed to create a Metal device inside sandbox before any contact evaluation; v2 is an execution-permission retry with unchanged workload and numerical gates. V2 rejected the scaled containment probe under the unchanged50% minimum-diameter guard, after completing sphere/objectivity statics. V3 explicitly records that expected domain rejection and continues independent cases; no guard or tolerance relaxed. Static progress now retained incrementally."
+}

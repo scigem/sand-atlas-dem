@@ -1,0 +1,457 @@
+{
+  "id": "hostun424-cpu-pair-plane-v1",
+  "backend": "cpu",
+  "gpu_dispatches": 0,
+  "scientific_admission": false,
+  "variants": {
+    "baseline": {
+      "native_query_profiles": [],
+      "step_wall_seconds": [
+        40.034259875072166,
+        39.00840170902666,
+        38.52451679203659
+      ],
+      "mean_seconds_per_step": 39.1890594587118,
+      "collector_wall_seconds": [
+        39.23676825000439,
+        38.23403437505476,
+        37.80149825010449
+      ],
+      "checkpoint_reconstruction_seconds_excluded": 41.79864683293272,
+      "final_diagnostics": {
+        "step": 18203,
+        "elapsed_time": 0.0003103547469162784,
+        "cell": [
+          0.0026321694707903266,
+          0.0026321694707903266,
+          0.0026321694707903266
+        ],
+        "domain_cell": [
+          0.0026321694707903266,
+          0.0026321694707903266,
+          0.0026321694707903266
+        ],
+        "walls": [],
+        "stress": [
+          [
+            10692.06991840516,
+            -274.57033093000206,
+            116.48204870713508
+          ],
+          [
+            -274.0351036183881,
+            9533.931376786637,
+            80.43288085705112
+          ],
+          [
+            115.35971153109011,
+            86.83470425665446,
+            9704.216628684271
+          ]
+        ],
+        "contact_stress": [
+          [
+            10692.058019892198,
+            -274.5710183187065,
+            116.48252088214117
+          ],
+          [
+            -274.0357910070118,
+            9533.915681718017,
+            80.43453287671183
+          ],
+          [
+            115.36018370617694,
+            86.83635627631517,
+            9704.194240432464
+          ]
+        ],
+        "kinetic_stress": [
+          [
+            0.011898512960411119,
+            0.0006873887044296226,
+            -0.0004721750060973203
+          ],
+          [
+            0.0006873886236969156,
+            0.01569506862006731,
+            -0.001652019660706076
+          ],
+          [
+            -0.00047217508683002746,
+            -0.001652019660706076,
+            0.022388251807540255
+          ]
+        ],
+        "stress_antisymmetry": 0.0005328487109652471,
+        "p": 9976.73930795869,
+        "q": -408.78401891162684,
+        "axial_strain": 1.817111272561789e-08,
+        "volumetric_strain": 5.4513338176853665e-08,
+        "volume_ratio": 0.9999999454866627,
+        "log_strain": [
+          1.817111289071256e-08,
+          1.817111289071256e-08,
+          1.817111289071256e-08
+        ],
+        "void_ratio": 0.8788968937394719,
+        "kinetic_energy": 6.104842742438166e-10,
+        "elastic_energy_proxy": 2.2507065295940265e-06,
+        "contact_normal": "target-gradient",
+        "elastic_energy_interpretation": "existing nodal spring energy proxy",
+        "unbalanced_force": 0.010661222040653229,
+        "max_overlap_fraction": 0.03498072922229767,
+        "friction_dissipation_last_step": 1.455034617098283e-11,
+        "candidate_pairs": 5621,
+        "active_surface_contacts": 4418289,
+        "active_grain_pairs": 1305,
+        "coordination": 6.15566037735849,
+        "fabric": [
+          [
+            0.33989301323890686,
+            -0.005955944769084454,
+            -0.006660453975200653
+          ],
+          [
+            -0.005955944769084454,
+            0.33177945017814636,
+            0.002363682957366109
+          ],
+          [
+            -0.006660453975200653,
+            0.002363682957366109,
+            0.32832756638526917
+          ]
+        ],
+        "sliding_fraction": 0.3441963619853749,
+        "cell_log_rate": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "friction_dissipation": 3.2975844987959135e-07,
+        "drag_dissipation": 7.886211506047403e-07,
+        "cell_work": 2.777255758701358e-06,
+        "wall_work": 0.0,
+        "normal_contact_dissipation": 0.0,
+        "normal_contact_power": 0.0
+      },
+      "reconstruction_scratch_stats": {
+        "pairs": 0,
+        "query_attempts": 0,
+        "overflow_retries": 0,
+        "retained_bytes": 0
+      },
+      "step_scratch_stats": [
+        {
+          "pairs": 0,
+          "query_attempts": 0,
+          "overflow_retries": 0,
+          "retained_bytes": 0
+        },
+        {
+          "pairs": 0,
+          "query_attempts": 0,
+          "overflow_retries": 0,
+          "retained_bytes": 0
+        },
+        {
+          "pairs": 0,
+          "query_attempts": 0,
+          "overflow_retries": 0,
+          "retained_bytes": 0
+        }
+      ],
+      "scratch_stats": {
+        "pairs": 0,
+        "query_attempts": 0,
+        "overflow_retries": 0,
+        "retained_bytes": 0
+      }
+    },
+    "pair_plane_serial": {
+      "native_query_profiles": [],
+      "step_wall_seconds": [
+        32.001391874975525,
+        30.568469375022687,
+        33.83801950002089
+      ],
+      "mean_seconds_per_step": 32.13596025000637,
+      "collector_wall_seconds": [
+        31.235056582954712,
+        29.820175958098844,
+        33.15524450002704
+      ],
+      "checkpoint_reconstruction_seconds_excluded": 31.032873666030355,
+      "final_diagnostics": {
+        "step": 18203,
+        "elapsed_time": 0.0003103547469162784,
+        "cell": [
+          0.0026321694707903266,
+          0.0026321694707903266,
+          0.0026321694707903266
+        ],
+        "domain_cell": [
+          0.0026321694707903266,
+          0.0026321694707903266,
+          0.0026321694707903266
+        ],
+        "walls": [],
+        "stress": [
+          [
+            10692.06991840516,
+            -274.57033093000206,
+            116.48204870713508
+          ],
+          [
+            -274.0351036183881,
+            9533.931376786637,
+            80.43288085705112
+          ],
+          [
+            115.35971153109011,
+            86.83470425665446,
+            9704.216628684271
+          ]
+        ],
+        "contact_stress": [
+          [
+            10692.058019892198,
+            -274.5710183187065,
+            116.48252088214117
+          ],
+          [
+            -274.0357910070118,
+            9533.915681718017,
+            80.43453287671183
+          ],
+          [
+            115.36018370617694,
+            86.83635627631517,
+            9704.194240432464
+          ]
+        ],
+        "kinetic_stress": [
+          [
+            0.011898512960411119,
+            0.0006873887044296226,
+            -0.0004721750060973203
+          ],
+          [
+            0.0006873886236969156,
+            0.01569506862006731,
+            -0.001652019660706076
+          ],
+          [
+            -0.00047217508683002746,
+            -0.001652019660706076,
+            0.022388251807540255
+          ]
+        ],
+        "stress_antisymmetry": 0.0005328487109652471,
+        "p": 9976.73930795869,
+        "q": -408.78401891162684,
+        "axial_strain": 1.817111272561789e-08,
+        "volumetric_strain": 5.4513338176853665e-08,
+        "volume_ratio": 0.9999999454866627,
+        "log_strain": [
+          1.817111289071256e-08,
+          1.817111289071256e-08,
+          1.817111289071256e-08
+        ],
+        "void_ratio": 0.8788968937394719,
+        "kinetic_energy": 6.104842742438166e-10,
+        "elastic_energy_proxy": 2.2507065295940265e-06,
+        "contact_normal": "target-gradient",
+        "elastic_energy_interpretation": "existing nodal spring energy proxy",
+        "unbalanced_force": 0.010661222040653229,
+        "max_overlap_fraction": 0.03498072922229767,
+        "friction_dissipation_last_step": 1.455034617098283e-11,
+        "candidate_pairs": 5621,
+        "active_surface_contacts": 4418289,
+        "active_grain_pairs": 1305,
+        "coordination": 6.15566037735849,
+        "fabric": [
+          [
+            0.33989301323890686,
+            -0.005955944769084454,
+            -0.006660453975200653
+          ],
+          [
+            -0.005955944769084454,
+            0.33177945017814636,
+            0.002363682957366109
+          ],
+          [
+            -0.006660453975200653,
+            0.002363682957366109,
+            0.32832756638526917
+          ]
+        ],
+        "sliding_fraction": 0.3441963619853749,
+        "cell_log_rate": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "friction_dissipation": 3.2975844987959135e-07,
+        "drag_dissipation": 7.886211506047403e-07,
+        "cell_work": 2.777255758701358e-06,
+        "wall_work": 0.0,
+        "normal_contact_dissipation": 0.0,
+        "normal_contact_power": 0.0
+      },
+      "reconstruction_scratch_stats": {
+        "pairs": 0,
+        "query_attempts": 0,
+        "overflow_retries": 0,
+        "retained_bytes": 0
+      },
+      "step_scratch_stats": [
+        {
+          "pairs": 0,
+          "query_attempts": 0,
+          "overflow_retries": 0,
+          "retained_bytes": 0
+        },
+        {
+          "pairs": 0,
+          "query_attempts": 0,
+          "overflow_retries": 0,
+          "retained_bytes": 0
+        },
+        {
+          "pairs": 0,
+          "query_attempts": 0,
+          "overflow_retries": 0,
+          "retained_bytes": 0
+        }
+      ],
+      "scratch_stats": {
+        "pairs": 0,
+        "query_attempts": 0,
+        "overflow_retries": 0,
+        "retained_bytes": 0
+      }
+    }
+  },
+  "source_identities": {
+    "baseline": "935a6ab51dfc0c8d4744745f59b72bd7a0ff2ee550af8ccb7a3d094f6b235d81",
+    "pair_plane_serial": "f1c1c66608c32fc63f71d19a68b58fa39baa42a85eb9dbe6a5b34ca8095c5725"
+  },
+  "candidate_contact_threads": 1,
+  "baseline_contact_threads": 1,
+  "variant_contact_threads": {
+    "baseline": 1,
+    "pair_plane_serial": 1
+  },
+  "shared_collector_scratch": false,
+  "state_comparisons": {
+    "pair_plane_serial": {
+      "initial": {
+        "all_bitwise_equal": true,
+        "fields": {
+          "position": true,
+          "velocity": true,
+          "rotation": true,
+          "momentum": true,
+          "cell": true,
+          "force": true,
+          "torque": true,
+          "accumulated": true,
+          "positionRemainder": true,
+          "velocityRemainder": true,
+          "momentumRemainder": true,
+          "rotationRemainder": true,
+          "accumulatedRemainder": true,
+          "cellLog": true,
+          "meta": true,
+          "slip": true,
+          "normalArea": true,
+          "contacts": true
+        },
+        "differences": {}
+      },
+      "final": {
+        "all_bitwise_equal": true,
+        "fields": {
+          "position": true,
+          "velocity": true,
+          "rotation": true,
+          "momentum": true,
+          "cell": true,
+          "force": true,
+          "torque": true,
+          "accumulated": true,
+          "positionRemainder": true,
+          "velocityRemainder": true,
+          "momentumRemainder": true,
+          "rotationRemainder": true,
+          "accumulatedRemainder": true,
+          "cellLog": true,
+          "meta": true,
+          "slip": true,
+          "normalArea": true,
+          "contacts": true
+        },
+        "differences": {}
+      }
+    }
+  },
+  "initial_state_comparison": {
+    "all_bitwise_equal": true,
+    "fields": {
+      "position": true,
+      "velocity": true,
+      "rotation": true,
+      "momentum": true,
+      "cell": true,
+      "force": true,
+      "torque": true,
+      "accumulated": true,
+      "positionRemainder": true,
+      "velocityRemainder": true,
+      "momentumRemainder": true,
+      "rotationRemainder": true,
+      "accumulatedRemainder": true,
+      "cellLog": true,
+      "meta": true,
+      "slip": true,
+      "normalArea": true,
+      "contacts": true
+    },
+    "differences": {}
+  },
+  "final_state_comparison": {
+    "all_bitwise_equal": true,
+    "fields": {
+      "position": true,
+      "velocity": true,
+      "rotation": true,
+      "momentum": true,
+      "cell": true,
+      "force": true,
+      "torque": true,
+      "accumulated": true,
+      "positionRemainder": true,
+      "velocityRemainder": true,
+      "momentumRemainder": true,
+      "rotationRemainder": true,
+      "accumulatedRemainder": true,
+      "cellLog": true,
+      "meta": true,
+      "slip": true,
+      "normalArea": true,
+      "contacts": true
+    },
+    "differences": {}
+  },
+  "speedup_over_baseline": {
+    "baseline": 1.0,
+    "pair_plane_serial": 1.219476846306593
+  },
+  "step_speedup": 1.219476846306593,
+  "passed": true,
+  "source_integrity": true,
+  "input_integrity": true
+}

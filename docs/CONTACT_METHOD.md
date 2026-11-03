@@ -165,3 +165,44 @@ conservative bounds are reused; force and torque use compensated accumulation.
 Physical quadrature and persistent history keys are retained. Architecture,
 qualification, failures and throughput limits are in
 [PARALLEL_MESH_CONTACTS.md](PARALLEL_MESH_CONTACTS.md).
+
+## Explicit CPU execution
+
+The native CPU backend reuses the Slang equations under an explicit per-case CPU
+scheduling adapter. Mesh/SDF contacts, wall and grain friction/viscosity, timestep
+guards, compensated integration and state schema are shared. CPU centre-branch
+subtraction uses FP64 intermediates before returning a local FP32 vector.
+Independent processes provide case parallelism. There is no automatic fallback.
+Optional native mesh-pair workers use private outputs and deterministic pair-order
+compaction; one worker is the default. The original serial collector and eight
+workers reproduce every checked full-Hostun state array bitwise over the frozen
+two-step comparison. This execution result is separate from scientific admission.
+[CPU_SOLVER.md](CPU_SOLVER.md) documents numerical verification, exact homogeneous
+CPU replay, full Hostun cost and the separately failed strict Metal-to-CPU
+transfer gate. CPU execution does not confer scientific admission.
+
+### CPU BVH query reuse
+
+The native CPU source retains the original FP32 child-box distances on its
+32-entry traversal stack, then compares those cached values with the current
+best distance on pop. Child order, strict nearest-feature updates, original
+closest-triangle arithmetic and explicit stack-overflow failure are preserved.
+The final feature's pseudonormal is fetched after traversal; queries with no
+winner retain the original zero normal/sentinel. Production Metal shader source
+and mesh preprocessing are unchanged. Independent convex/concave checks and
+raw-byte query comparisons at feature ties and extreme misses are included in
+`cpu-solver-verification-v15` (346 passing tests).
+
+### CPU per-pair enclosure plane
+
+The CPU mesh collector chooses one existing outward-rounded hull plane per
+directed pair: the plane with maximum signed value at the source centre in
+target coordinates, first in stored group order on a tie. It checks each source
+sample against this plane before the original directional containment and exact
+mesh query. A `64 * eps32 * (1 + max(abs(local)))` margin protects the additional
+dot evaluation; points within that margin continue to the original operator.
+The plane only rejects exterior points. Contacts still use the original target
+triangles, feature normals, sample identities and force/history equations.
+No additional geometry approximation or resource is introduced. Verification v18
+includes rotated convex/concave exhaustive-node comparisons on CPU1 and CPU4;
+the full frozen Hostun comparison retains identical checked state/counts.

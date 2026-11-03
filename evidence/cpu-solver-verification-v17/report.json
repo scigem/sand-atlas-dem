@@ -1,0 +1,23 @@
+{
+  "id": "cpu-solver-verification-v17",
+  "backend": "cpu",
+  "gpu_dispatches": 0,
+  "scientific_admission": false,
+  "whole_solver_workload": "synthetic isolated mesh pairs; no dense Hostun performance claim",
+  "tests_returncode": 0,
+  "fixture_sha256": "ae5f75d21a5d7f3a74d4f7fa16186f010715f7b00659fd4da051c03da7eec780",
+  "groups": [
+    {
+      "workers": 1,
+      "whole_group_elapsed_s": 12.894144542049617,
+      "median_step_seconds": [
+        0.0017618050160308485
+      ],
+      "aggregate_kernel_steps_per_s": 567.5997008187031,
+      "completed_jobs": 1,
+      "job_steps": 6144
+    }
+  ],
+  "passed": true,
+  "source_integrity": true
+}

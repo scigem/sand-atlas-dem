@@ -1,0 +1,16 @@
+{
+  "identity": "nonperiodic-domain-v1",
+  "scope": "Nonperiodic GPU neighbours, drift, restart state and transactional escape rejection; no plane contacts or wall physics",
+  "backend": "metal",
+  "tests": "tests/test_nonperiodic.py",
+  "gates": {
+    "pairs": "Exact unique canonical pair set versus independent Euclidean all-pairs; two domain sizes including a single bin and a cutoff exceeding half the shortest length",
+    "opposite_faces": "Exactly zero candidate pairs, contacts and force for the specified separated centres",
+    "escape": "All six faces: flag exactly 2048 and bit-identical rollback of all exported state, followed by successful advancement",
+    "drift": "40 steps at prescribed free velocity, position absolute error <=3e-10 m; skin rebuild bound <skin/2",
+    "restore": "Bit-identical exported state after ten continuation steps, compared with uninterrupted advancement",
+    "rate_rejection": "Nonzero affine rate rejected before mutation, all exported state bit-identical"
+  },
+  "regression": "Run existing serial Metal suite with no relaxed assertions",
+  "limitations": ["No wall forces/motion/reactions", "Domain bounds apply to centres, not whole grain surfaces", "Computational cell volume is not a wall-confined specimen volume"]
+}

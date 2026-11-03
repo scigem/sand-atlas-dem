@@ -1,0 +1,26 @@
+[ERROR] (rhi) layer: No adapters found
+
+Traceback (most recent call last):
+  File "/Users/bmar5496/code/sand-atlas-dem/runs/source-normal-contact-v1/source_snapshot/study_source_normals.py", line 177, in <module>
+    if __name__=='__main__':raise SystemExit(main())
+                                             ^^^^^^
+  File "/Users/bmar5496/code/sand-atlas-dem/runs/source-normal-contact-v1/source_snapshot/study_source_normals.py", line 163, in main
+    if a.worker:return execute(out)
+                       ^^^^^^^^^^^^
+  File "/Users/bmar5496/code/sand-atlas-dem/runs/source-normal-contact-v1/source_snapshot/study_source_normals.py", line 82, in execute
+    e,_=static(f'sphere-{separation}',sphere,replace(base,contact_normal=normal),x,q,[0,0],[1.,1.],cell);del e
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bmar5496/code/sand-atlas-dem/runs/source-normal-contact-v1/source_snapshot/study_source_normals.py", line 62, in static
+    e=build(library,spec,x,q,ids,scales,cell)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bmar5496/code/sand-atlas-dem/runs/source-normal-contact-v1/source_snapshot/study_source_normals.py", line 58, in build
+    e=Engine(library,spec,x,cell,ids,scales,metal=metal)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bmar5496/code/sand-atlas-dem/runs/source-normal-contact-v1/source_snapshot/sand_atlas_dem/gpu.py", line 108, in __init__
+    self.m = metal or Metal()
+                      ^^^^^^^
+  File "/Users/bmar5496/code/sand-atlas-dem/runs/source-normal-contact-v1/source_snapshot/sand_atlas_dem/backend.py", line 14, in __init__
+    self.device = spy.Device(
+                  ^^^^^^^^^^^
+RuntimeError: Failed to create device!
+/Users/runner/work/slangpy/slangpy/src/sgl/device/device.cpp:280 in function Device

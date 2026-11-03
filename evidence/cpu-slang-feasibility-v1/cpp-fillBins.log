@@ -1,0 +1,20 @@
+error[E36107]: unavailable features in entry point
+   --> /Users/bmar5496/code/sand-atlas-dem/runs/cpu-slang-feasibility-v1/source_snapshot/shaders/solver.slang:351:6
+    |
+351 | void fillBins(uint id:SV_DispatchThreadID){
+    |      ^^^^^^^^ entrypoint 'fillBins' uses features that are not available in 'compute' stage for 'cpp' compilation target.
+----'
+note: see using of 'InterlockedOr'
+   --> /Users/bmar5496/code/sand-atlas-dem/runs/cpu-slang-feasibility-v1/source_snapshot/shaders/solver.slang:183:33
+    |
+183 | void fail(uint bit){uint unused;InterlockedOr(r.control[0],bit,unused);}
+    |                                 ^^^^^^^^^^^^^
+----'
+note: see definition of 'InterlockedOr'
+--> hlsl.meta.slang:11939:6
+-'
+note: see declaration of 'require'
+--> hlsl.meta.slang:11938:2
+-'
+
+{"status": -2147467259, "code_bytes": 0, "compiler": "/Users/bmar5496/code/sand-atlas-dem/.venv/lib/python3.12/site-packages/slangpy/libslang-compiler.0.2026.12.dylib", "compiler_sha256": "edaf4f75945629b470671fb8c39f1866c67a0d5c74cf54f87c247bc059ccebef"}

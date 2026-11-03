@@ -1,0 +1,12 @@
+{
+  "id": "cpu-solver-verification-v5",
+  "backend": "cpu",
+  "gpu_dispatches": 0,
+  "scientific_admission": false,
+  "whole_solver_workload": "synthetic isolated mesh pairs; no dense Hostun performance claim",
+  "tests_returncode": 0,
+  "fixture_sha256": "ae5f75d21a5d7f3a74d4f7fa16186f010715f7b00659fd4da051c03da7eec780",
+  "passed": false,
+  "failure": "RuntimeError('CPU benchmark job failed; see job logs')",
+  "source_integrity": true
+}

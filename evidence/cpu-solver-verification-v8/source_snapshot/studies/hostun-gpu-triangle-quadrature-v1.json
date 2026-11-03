@@ -1,0 +1,27 @@
+{
+  "identity": "hostun-gpu-triangle-quadrature-v1",
+  "frozen_before_gpu_execution": true,
+  "reference_report": "evidence/hostun-triangle-quadrature-culled-v1/report.json",
+  "reference_report_sha256": "6d2dced509cae5519ec19111e7bbc5d6f6e36fc0e4f84ca5a842b44978c68fab",
+  "parent_library_sha256": "1bc9f37a22b402ada31495ea7ff1ebef4bb6a27a26d68a8333f7f84a12ad16b7",
+  "libraries": [
+    {
+      "path": "assets/private/hostun-30-r64-gauss3.h5",
+      "sha256": "097a6a14df21513e8cf3b936fe0404baa488e38316a0e4233e6f59ba94bc2270",
+      "subdivisions": 0
+    },
+    {
+      "path": "assets/private/hostun-30-r64-gauss3-l2.h5",
+      "sha256": "4c57ed2f02bcc232fa4e1c83121a1441228b4fc44cebac1f8accff238432f3c0",
+      "subdivisions": 2
+    }
+  ],
+  "maximum_relative_force_error": 0.1,
+  "maximum_fixed_level_gpu_error": 0.001,
+  "minimum_worst_error_improvement_factor": 2,
+  "timestep_s": 2e-09,
+  "overlap_guard_fraction": 0.03,
+  "contacts_per_particle": 4096,
+  "active_counts": "Diagnostic for FP64/FP32 boundary classification; separate unchanged 2048-node exact-count oracle required.",
+  "scope": "Same ten independently frozen source poses. Preserve the existing 10% integral-force gate and 0.1% GPU/oracle gate; require at least twofold worst-error reduction. Not full-library, friction, assembly or material acceptance."
+}

@@ -1,0 +1,60 @@
+{
+  "logical_cpu_count": 14,
+  "rows": [
+    {
+      "variant": "baseline",
+      "workers": 8,
+      "seconds_per_step": 9.547691447718535,
+      "min_seconds": 8.799277457990684,
+      "max_seconds": 10.004410541965626,
+      "collector_fraction": 0.9184273983200523,
+      "steps_per_second_per_allocated_worker": 0.013092170048066365,
+      "all_warm_local_retries_zero": true
+    },
+    {
+      "variant": "workers_2",
+      "workers": 2,
+      "seconds_per_step": 21.29653601074824,
+      "min_seconds": 20.6204436669359,
+      "max_seconds": 22.308543542050757,
+      "collector_fraction": 0.9650149916562389,
+      "steps_per_second_per_allocated_worker": 0.02347799659755243,
+      "all_warm_local_retries_zero": true
+    },
+    {
+      "variant": "workers_4",
+      "workers": 4,
+      "seconds_per_step": 13.512588625279022,
+      "min_seconds": 12.857737875077873,
+      "max_seconds": 14.406740208971314,
+      "collector_fraction": 0.9417974361284782,
+      "steps_per_second_per_allocated_worker": 0.01850126625865795,
+      "all_warm_local_retries_zero": true
+    },
+    {
+      "variant": "workers_12",
+      "workers": 12,
+      "seconds_per_step": 8.008263718744274,
+      "min_seconds": 7.116783124976791,
+      "max_seconds": 9.551471624989063,
+      "collector_fraction": 0.8941484086958936,
+      "steps_per_second_per_allocated_worker": 0.010405917719502913,
+      "all_warm_local_retries_zero": true
+    },
+    {
+      "variant": "workers_8_repeat",
+      "workers": 8,
+      "seconds_per_step": 11.295595896051964,
+      "min_seconds": 9.905797208077274,
+      "max_seconds": 12.946149500086904,
+      "collector_fraction": 0.92158693067691,
+      "steps_per_second_per_allocated_worker": 0.011066259907871703,
+      "all_warm_local_retries_zero": true
+    }
+  ],
+  "eight_worker_repeat_relative_time_drift": 0.18307089812282307,
+  "per_worker_metric_is_allocation_proxy_not_measured_cpu_utilization": true,
+  "concurrent_independent_case_throughput_measured": false,
+  "shared_collector_scratch": false,
+  "scientific_admission": false
+}

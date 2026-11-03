@@ -1,0 +1,60 @@
+{
+  "logical_cpu_count": 14,
+  "rows": [
+    {
+      "variant": "baseline",
+      "workers": 8,
+      "seconds_per_step": 10.389307531237137,
+      "min_seconds": 10.101369292009622,
+      "max_seconds": 10.90507916698698,
+      "collector_fraction": 0.9158388616965966,
+      "steps_per_second_per_allocated_worker": 0.012031600722585913,
+      "all_warm_local_retries_zero": true
+    },
+    {
+      "variant": "workers_12",
+      "workers": 12,
+      "seconds_per_step": 10.418575073010288,
+      "min_seconds": 8.60606579191517,
+      "max_seconds": 13.349906125105917,
+      "collector_fraction": 0.9017768751654758,
+      "steps_per_second_per_allocated_worker": 0.00799853461239738,
+      "all_warm_local_retries_zero": true
+    },
+    {
+      "variant": "workers_4",
+      "workers": 4,
+      "seconds_per_step": 12.390227135503665,
+      "min_seconds": 11.505247291992418,
+      "max_seconds": 13.207110708928667,
+      "collector_fraction": 0.9436010843387043,
+      "steps_per_second_per_allocated_worker": 0.020177192658852535,
+      "all_warm_local_retries_zero": true
+    },
+    {
+      "variant": "workers_2",
+      "workers": 2,
+      "seconds_per_step": 20.86713409348158,
+      "min_seconds": 19.36233237502165,
+      "max_seconds": 22.218537415959872,
+      "collector_fraction": 0.9667287779599935,
+      "steps_per_second_per_allocated_worker": 0.023961124597181204,
+      "all_warm_local_retries_zero": true
+    },
+    {
+      "variant": "workers_8_repeat",
+      "workers": 8,
+      "seconds_per_step": 8.325216312543489,
+      "min_seconds": 7.103746916051023,
+      "max_seconds": 8.95326350000687,
+      "collector_fraction": 0.9089625469037882,
+      "steps_per_second_per_allocated_worker": 0.01501462488267893,
+      "all_warm_local_retries_zero": true
+    }
+  ],
+  "eight_worker_repeat_relative_time_drift": -0.19867457118654186,
+  "per_worker_metric_is_allocation_proxy_not_measured_cpu_utilization": true,
+  "concurrent_independent_case_throughput_measured": false,
+  "shared_collector_scratch": true,
+  "scientific_admission": false
+}

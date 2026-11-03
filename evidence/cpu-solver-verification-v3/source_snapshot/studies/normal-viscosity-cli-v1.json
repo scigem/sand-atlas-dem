@@ -1,0 +1,16 @@
+{
+  "identity": "normal-viscosity-cli-v1",
+  "scope": "20-step synthetic one-sphere CLI execution with positive viscosity, checkpoint/5, interruption/resume and exports; software check only",
+  "commands": [
+    "sand-dem run examples/wall-viscous-smoke.json --output <private>/paused --max-chunks 2",
+    "sand-dem resume <private>/paused/checkpoint.h5 --output <private>/resumed",
+    "sand-dem export <private>/resumed --output <private>/exports"
+  ],
+  "gates": {
+    "paused": "status paused, step10",
+    "resumed": "status complete, step20, checkpoint/5",
+    "diagnostics": "All observations have finite nonnegative normal loss and power; final loss and wall work positive, cell work zero",
+    "export": "CSV and synthetic JSON retain normal-loss/power columns; at least one VTK particle snapshot"
+  },
+  "scientific_admission": false
+}

@@ -1,0 +1,11 @@
+{
+  "identity": "hostun-exact-contact-poses-v1",
+  "frozen_before_execution": true,
+  "library": "assets/private/hostun-30-r64-s2048.h5",
+  "library_sha256": "1bc9f37a22b402ada31495ea7ff1ebef4bb6a27a26d68a8333f7f84a12ad16b7",
+  "parent_report": "evidence/hostun-source-triangle-contact-v1/report.json",
+  "parent_report_sha256": "88a455e49c4693830886437f21d0369b96dfb4008022e8315199ab8aa6257c6c",
+  "bisection_iterations": 32,
+  "source_reference": "Normalized source-triangle closest point plus independent ray inside predicate; same five grains and 2048 source samples. Targets retain original .0025 and .01 values but now constrain the exact sampled maximum.",
+  "scope": "Correct the coarse-512-node placement limitation. Old force failure and excessive-penetration rejection remain retained. New reference poses do not relax any force or overlap gate."
+}

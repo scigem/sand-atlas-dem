@@ -1,0 +1,18 @@
+{
+  "identity": "contact-timestep-limits-v1",
+  "density_kg_m3": 2650,
+  "normal_stiffness_N_m3": 1000000000000,
+  "tangential_stiffness_N_m3": 500000000000,
+  "sizes_m": [0.0001, 0.0005, 0.001],
+  "modes": ["confined", "rebound"],
+  "preload_depth_fraction": 0.01,
+  "amplitude_fraction": 0.001,
+  "duration_omega_t": 12.566370614359172,
+  "physical_timesteps_s": [2e-9, 4e-9, 8e-9, 1.6e-8, 3.2e-8, 6.4e-8, 1.28e-7, 2.56e-7, 5.12e-7, 1.024e-6],
+  "dimensionless_timesteps": [0.5, 1, 1.5, 1.9, 2.1, 2.5],
+  "maximum_steps_per_observation": 16,
+  "maximum_normalized_path_error": 0.01,
+  "maximum_relative_dynamic_energy_error": 0.01,
+  "bounded_dynamic_energy_multiple": 10,
+  "scope": "Exploratory actual-Metal single-body contacts; exact face-centre traction quadrature. Friction, viscosity and drag zero. No mesh-assembly acceptance. Production timestep check unchanged. Research-only subclass bypasses preflight to observe failures. Confined analytical reference applies only while both opposing planes remain active; loss is retained as domain exit. Free rebound reference is unilateral linear spring followed by ballistic motion. No retuning after observing results."
+}

@@ -1,0 +1,19 @@
+{
+  "identity": "wall-boundaries-metal-v1",
+  "backend": "metal",
+  "scope": "Production fixed-normal translating plane contact, conservative mesh sample collection, rigid-body response, reactions/work, volume, transactions and checkpoint state. Explicit project full-area wall variant, without restitution or published-benchmark admission.",
+  "tests": "tests/test_wall_boundaries.py",
+  "gates": {
+    "analytical_sphere_cap": "32768-node force and normal energy relative error <0.1% against independent closed cap integrals",
+    "action_reaction": "Force and common-origin moment residuals <1e-5 of force and force*0.006m scales",
+    "wall_stress": "Independent original-node common-point virial error <1e-4 of force*radius/domain_volume",
+    "original_node_collection": "Rotated box and oblique plane, SDF and hierarchical mesh modes: exact active source keys/counts; force/torque error <1e-4 of force and force*radius scales",
+    "moving_wall_work": "100 single steps at 10ns, normal wall velocity +0.1 then -0.1m/s; independent SI trapezoidal work and per-wall/total agreement <1e-5 initial elastic energy; kinetic+proxy balance residual <0.1% initial elastic energy at every observation; zero cell work",
+    "restart_and_growth": "Continuing friction/restart and automatic capacity-growth states: normalized rtol 2e-4, atol 3e-7; exact untruncated contact count after growth; zero continuing spring after separation and return",
+    "rollback": "Excess penetration and invalid wall-box gap reject entire chunks; every exported state array bit-identical including plane velocities, residuals, work and history",
+    "volume": "Moving six-plane box, fixed computational domain; lengths relative error <1e-7, axial engineering strain absolute error <1e-7",
+    "laboratory": "Explicit wall stage, HDF5 checkpoint/4 retains all plane state, resume completes eight steps, exported boundary and measurement volume remain explicit"
+  },
+  "regression": "All existing serial Metal tests, with unchanged gates",
+  "limitations": ["Fixed plane normals only", "Prescribed velocities, no inertial walls or force controller", "No restitution dashpot", "No published assembly or Hostun material acceptance"]
+}

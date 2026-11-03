@@ -1,0 +1,50 @@
+{
+  "objective": "build a complete CPU version of the DEM solver",
+  "scope": "Explicit CPU execution on the local Apple Silicon host, with complete engine/laboratory/case workflows and independent process jobs. Scientific material admission and strict cross-device numerical interchange are separate qualifications.",
+  "requirements": [
+    {
+      "requirement": "Full mesh and SDF neighbour/contact/rigid-body/cell dynamics",
+      "evidence": "23 dedicated CPU contracts in tests.log, plus full-inventory hostun424-cpu-replay-v2 CPU execution",
+      "status": "verified"
+    },
+    {
+      "requirement": "Friction history, viscosity, source-normal option, walls, timestep guards, capacity growth and rollback",
+      "evidence": "tests/test_cpu_solver.py in frozen snapshot; 23 passed as part of 305-test run",
+      "status": "verified"
+    },
+    {
+      "requirement": "Case/material CLI, complete simulation, pause/resume, snapshots and Atlas-compatible exports",
+      "evidence": "test_complete_simulation_pause_resume_export; test_named_material_case_cpu_cli_and_resume",
+      "status": "verified"
+    },
+    {
+      "requirement": "Homogeneous CPU restart and repeatable evolution",
+      "evidence": "Small mesh/SDF/wall restart tests and exact two-step full Hostun replay of primary/resultant/history/work state",
+      "status": "verified"
+    },
+    {
+      "requirement": "Parallel independent CPU jobs",
+      "evidence": "Seven complete benchmark jobs across worker counts 1,2,4 in report.json; each runs full mesh steps with preserved contact topology",
+      "status": "verified"
+    },
+    {
+      "requirement": "Explicit backend selection with no automatic GPU/CPU fallback",
+      "evidence": "CLI/Simulation source branches, actual CPU doctor execution and all verification reports gpu_dispatches=0",
+      "status": "verified"
+    },
+    {
+      "requirement": "Source identities, units, private inputs and immutable study evidence",
+      "evidence": "freeze.json, run manifests, private input hashes and report source/input integrity fields",
+      "status": "verified"
+    }
+  ],
+  "limitations_not_claimed_as_achieved": [
+    "Strict Metal-to-CPU transfer: fixed 0.2% relative-L2 torque gate failed at 0.232876%; retained in separate reports. Some keyed normals/contact membership differ.",
+    "Scientific admission, calibration and laboratory validation remain open for both solvers.",
+    "Sustained parallel dense-Hostun throughput and Linux execution were not tested.",
+    "New GPU regression was not run concurrently with ongoing Metal preparation; shared GPU equations remain unchanged."
+  ],
+  "final_runtime_source_matches_frozen_snapshot": true,
+  "final_tests": "305 passed, 5 skipped, 84 deselected",
+  "precise_mode_bridge": "All 26 C++ solver kernels before/after explicit PRECISE request match after removing only #line path directives; see hostun424-cpu-transfer-diagnostic-v1/precise-codegen-comparison.json"
+}

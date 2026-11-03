@@ -1,0 +1,10 @@
+{
+  "status": "interrupted; broad full-hull cull rejected",
+  "exit_code": 130,
+  "reason": "Full-case reconstruction and execution showed no useful speed benefit. Stop costly trial rather than retain it. Existing report remains unchanged; no final endpoint equality/performance result claimed.",
+  "observed_progress_step_1_unix_time": 1793656634.8503659,
+  "observed_progress_step_2_unix_time": 1793656688.048776,
+  "observed_between_step_progress_seconds": 53.19841003417969,
+  "between_progress_is_not_official_step_timing": true,
+  "retained_production_change": "cached BVH distances and deferred pseudonormals only; full-hull code removed"
+}

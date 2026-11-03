@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://benjym.github.io/constitutive-atlas/schemas/history-snapshot.schema.json",
+  "title": "Complete experimental history snapshot",
+  "type": "object",
+  "required": [
+    "version",
+    "program_sha256",
+    "generation",
+    "preparation_epoch",
+    "values"
+  ],
+  "properties": {
+    "version": {
+      "const": "experimental-history-snapshot-0.1"
+    },
+    "program_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "generation": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9007199254740991
+    },
+    "preparation_epoch": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9007199254740991
+    },
+    "values": {
+      "type": "object",
+      "minProperties": 1,
+      "maxProperties": 32,
+      "propertyNames": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 64,
+        "pattern": "^[A-Za-z][A-Za-z0-9_]*$"
+      },
+      "additionalProperties": {
+        "oneOf": [
+          {
+            "type": "number"
+          },
+          {
+            "type": "array",
+            "minItems": 6,
+            "maxItems": 6,
+            "items": {
+              "type": "number"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "additionalProperties": false,
+  "description": "Semantic validation against the pinned program requires exact field set, shape, finite values, units by declaration, and allowed mode values. Restart restores this snapshot without preparation."
+}

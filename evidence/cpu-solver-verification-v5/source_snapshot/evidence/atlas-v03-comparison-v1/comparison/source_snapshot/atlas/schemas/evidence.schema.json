@@ -1,0 +1,158 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "0.1"
+    },
+    "kind": {
+      "const": "numerical-evidence"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "created_at": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_commit": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "model": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]*$"
+        },
+        "definition_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "required": [
+        "id",
+        "definition_sha256"
+      ],
+      "additionalProperties": false
+    },
+    "executor": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "automated": {
+          "const": true,
+          "type": "boolean"
+        },
+        "method": {
+          "enum": [
+            "analytical-closed-form",
+            "external-reference",
+            "analytical-and-scalar-reduction",
+            "independent-cartesian-rates-and-rk4"
+          ]
+        },
+        "independent_review": {
+          "const": false,
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "name",
+        "automated",
+        "method",
+        "independent_review"
+      ],
+      "additionalProperties": false
+    },
+    "scope": {
+      "type": "string",
+      "minLength": 1
+    },
+    "limitations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "outcome": {
+      "enum": [
+        "passed",
+        "failed"
+      ]
+    },
+    "artifacts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_./-]*$"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        },
+        "required": [
+          "path",
+          "sha256"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "reproduction_command": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_files": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_./-]*$"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        },
+        "required": [
+          "path",
+          "sha256"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "kind",
+    "id",
+    "created_at",
+    "source_commit",
+    "model",
+    "executor",
+    "scope",
+    "limitations",
+    "outcome",
+    "artifacts",
+    "reproduction_command",
+    "source_files"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://benjym.github.io/constitutive-atlas/schemas/evidence.schema.json",
+  "title": "Numerical evidence envelope; independent review is a separate human process"
+}

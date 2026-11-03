@@ -156,7 +156,7 @@ def resolve_case(material, case, cache, overrides=None):
     )
 
 
-def run_case(resolved, output, max_chunks=None, *, view_options=None):
+def run_case(resolved, output, max_chunks=None, *, view_options=None, backend=None):
     """Keep resolved inputs even if device initialization or preparation fails."""
     from .simulation import Simulation, export_run
 
@@ -178,7 +178,8 @@ def run_case(resolved, output, max_chunks=None, *, view_options=None):
         if sha256(spec.shape_library) != resolved["material"]["shape_sha256"]:
             raise ValueError("Material changed after case resolution")
         view_kwargs = {"view_options": view_options} if view_options is not None else {}
-        result = Simulation(spec).run(output / "run", max_chunks=max_chunks, **view_kwargs)
+        backend_kwargs = {"backend": backend} if backend is not None else {}
+        result = Simulation(spec, **backend_kwargs).run(output / "run", max_chunks=max_chunks, **view_kwargs)
         if result.rows:
             export_run(result.path, output / "exports")
             bundle_path = output / "exports" / "atlas-comparison.json"

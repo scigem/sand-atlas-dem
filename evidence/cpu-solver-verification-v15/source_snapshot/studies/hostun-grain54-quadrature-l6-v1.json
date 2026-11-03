@@ -1,0 +1,124 @@
+{
+  "winding_tolerance": 1e-08,
+  "query_batch_size": 2048,
+  "identity": "hostun-grain54-quadrature-l6-v1",
+  "shape": "hostun-particle_00054",
+  "target_sampled_depth_fraction": 0.01,
+  "subdivision_levels": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "maximum_finest_relative_change": 0.02,
+  "maximum_overlap_relative_difference": 1e-12,
+  "reference_source_sha256": "f443b565f9774dcd5d0d1a2e34b6c17ce44b275be9fbb96a6ffaf2ecc19cd421",
+  "library": "/Users/bmar5496/code/sand-atlas-dem/assets/private/hostun-30-r64-s2048.h5",
+  "library_sha256": "1bc9f37a22b402ada31495ea7ff1ebef4bb6a27a26d68a8333f7f84a12ad16b7",
+  "pose_report": "/Users/bmar5496/code/sand-atlas-dem/evidence/hostun-library-contact-poses-minimum-v1/report.json",
+  "pose_report_sha256": "cdf3c3bdbbf51bec25749ebff8c18dbc8e7934d99b279deb49d58c140f446cd2",
+  "baseline_row": {
+    "shape": "hostun-particle_00054",
+    "separation_m": 0.00013862776581757743,
+    "target_sampled_depth_fraction": 0.01,
+    "levels": [
+      {
+        "level": 0,
+        "force_integral_m3": [
+          -1.2951186058324689e-14,
+          -1.0215957733880039e-16,
+          -1.2836407986159175e-16
+        ],
+        "maximum_sampled_depth_fraction": 0.003597147320277175,
+        "active_nodes": 2,
+        "evaluated_nodes": 78,
+        "triangle_queried_nodes": 2,
+        "candidate_subtriangles": [
+          13,
+          13
+        ],
+        "cumulative_winding_checks": 0,
+        "maximum_winding_integer_residual": 0.0
+      },
+      {
+        "level": 1,
+        "force_integral_m3": [
+          -1.7421462796987036e-14,
+          -1.6994213504447276e-16,
+          -7.775571728381246e-17
+        ],
+        "maximum_sampled_depth_fraction": 0.0069617102137605365,
+        "active_nodes": 8,
+        "evaluated_nodes": 102,
+        "triangle_queried_nodes": 8,
+        "candidate_subtriangles": [
+          17,
+          17
+        ],
+        "cumulative_winding_checks": 0,
+        "maximum_winding_integer_residual": 0.0
+      },
+      {
+        "level": 2,
+        "force_integral_m3": [
+          -1.6883807989066784e-14,
+          -1.628857517160026e-16,
+          -8.439929557614077e-17
+        ],
+        "maximum_sampled_depth_fraction": 0.008643991660502214,
+        "active_nodes": 34,
+        "evaluated_nodes": 183,
+        "triangle_queried_nodes": 34,
+        "candidate_subtriangles": [
+          31,
+          30
+        ],
+        "cumulative_winding_checks": 0,
+        "maximum_winding_integer_residual": 0.0
+      },
+      {
+        "level": 3,
+        "force_integral_m3": [
+          -1.7854418179533124e-14,
+          -1.7550527574748119e-16,
+          -8.596268859213999e-17
+        ],
+        "maximum_sampled_depth_fraction": 0.009485132383873057,
+        "active_nodes": 158,
+        "evaluated_nodes": 372,
+        "triangle_queried_nodes": 158,
+        "candidate_subtriangles": [
+          63,
+          61
+        ],
+        "cumulative_winding_checks": 0,
+        "maximum_winding_integer_residual": 0.0
+      },
+      {
+        "level": 4,
+        "force_integral_m3": [
+          -1.8336115015075198e-14,
+          -1.8600885615828328e-16,
+          -8.234294675914733e-17
+        ],
+        "maximum_sampled_depth_fraction": 0.009905702745558449,
+        "active_nodes": 638,
+        "evaluated_nodes": 951,
+        "triangle_queried_nodes": 638,
+        "candidate_subtriangles": [
+          161,
+          156
+        ],
+        "cumulative_winding_checks": 6,
+        "maximum_winding_integer_residual": 2.220446049250313e-16
+      }
+    ],
+    "finest_relative_change": 0.026275756234853107,
+    "qmc_2048_relative_error_to_finest": 0.01078694599278195
+  },
+  "selection_reason": "Completed deeper grain-54 row exceeds unchanged 2% finest-change gate at 2.6276%; diagnose levels 5 and 6 at identical pose.",
+  "scope": "Targeted CPU diagnostic. Parent terminal source-integrity failure and all 106 numerical rows retained separately; no whole-library admission."
+}

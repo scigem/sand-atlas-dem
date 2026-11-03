@@ -1,0 +1,38 @@
+{
+  "identity": "dense27-gather-submission-profile-v1",
+  "repetitions": 3,
+  "warmup_steps": 16,
+  "steps": 128,
+  "rate_s": [
+    0,
+    0,
+    0
+  ],
+  "drag_s": 0,
+  "minimum_speedup": 1.05,
+  "history_rtol": 0.0001,
+  "history_atol": 1e-08,
+  "limits": {
+    "position": 1e-05,
+    "velocity": 1e-05,
+    "rotation": 1e-05,
+    "force": 0.0001,
+    "torque": 0.0001
+  },
+  "scope": "Wall-time decomposition around the existing single Metal submission per128-step batch, after warmup. Same numerical gates retained. Before-submit includes host copies/readbacks, bindings and command recording; submit-call includes encoder finish and submission; after-submit includes wait and checks. Not GPU timestamps and not an isolated CPU microbenchmark. Frozen sources; four mode counterbalanced repeats.",
+  "workload": "dense27",
+  "modes": [
+    "baseline",
+    "segmented-ordered-cached",
+    "segmented-ordered-persistent-cached",
+    "segmented-ordered-persistent-fused-cached"
+  ],
+  "split_steps": 32,
+  "subdivisions": 3,
+  "omega_rad_s": [
+    600,
+    800,
+    0
+  ],
+  "grid_side": 3
+}

@@ -1,0 +1,42 @@
+{
+  "id": "hostun424-cpu-transfer-diagnostic-v1",
+  "backend": "cpu",
+  "gpu_dispatches": 0,
+  "scientific_admission": false,
+  "particles": 424,
+  "unique_shapes": 53,
+  "source_nodes": 53564544,
+  "estimated_bytes": 4272779024,
+  "restore_wall_s": 38.21421124995686,
+  "force_relative_l2_error": 0.0007604599894396224,
+  "force_max_absolute_normalized_error": 1.6967987903626636e-08,
+  "torque_relative_l2_error": 0.0023287600771237163,
+  "torque_max_absolute_normalized_error": 1.966890295079793e-08,
+  "cross_backend_transfer_passed": false,
+  "old_contacts": 4418385,
+  "cpu_contacts": 4418377,
+  "contact_normal_diagnostic": {
+    "common_keys": 4418362,
+    "max_vector_difference": 1.4142135913017333,
+    "rms_vector_difference": 0.0026891070596103315,
+    "counts_above_1e_3": 12322,
+    "counts_above_1e_2": 1168
+  },
+  "passed": false,
+  "backend_identity": {
+    "format": "sand-dem-doctor/1",
+    "backend": "cpu",
+    "fallback": false,
+    "adapter": "arm",
+    "numerics": "native Slang C++ FP32, compensated state, serial kernels per process",
+    "source_sha256": "f8aa5c781770b375ebfda2997bcb18a679a067a4082fd2042e6f31f02f0a691c",
+    "compiler_sha256": "edaf4f75945629b470671fb8c39f1866c67a0d5c74cf54f87c247bc059ccebef",
+    "floating_point_mode_requested": "precise",
+    "smoke_elements": 257,
+    "smoke_passed": true,
+    "smoke_max_error": 0.0,
+    "job_parallelism": "independent processes"
+  },
+  "source_integrity": true,
+  "input_integrity": true
+}

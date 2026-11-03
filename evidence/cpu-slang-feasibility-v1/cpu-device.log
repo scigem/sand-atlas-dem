@@ -1,0 +1,373 @@
+[WARN] No supported shader model found, pretending to support sm_6_0.
+CPU device: <slangpy.DeviceInfo object at 0x10610f6b0>
+Traceback (most recent call last):
+  File "/Users/bmar5496/code/sand-atlas-dem/runs/cpu-slang-feasibility-v1/source_snapshot/study_cpu_slang.py", line 161, in <module>
+    device_probe(args.device_probe, json.loads(args.protocol.read_text()))
+  File "/Users/bmar5496/code/sand-atlas-dem/runs/cpu-slang-feasibility-v1/source_snapshot/study_cpu_slang.py", line 81, in device_probe
+    program = device.load_program(str(shaders / "solver.slang"), ["smoke"])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Failed to load slang module "/Users/bmar5496/code/sand-atlas-dem/runs/cpu-slang-feasibility-v1/source_snapshot/shaders/solver.slang"
+error[E36107]: unavailable features in entry point
+   --> /Users/bmar5496/code/sand-atlas-dem/runs/cpu-slang-feasibility-v1/source_snapshot/shaders/solver.slang:254:6
+    |
+254 | void meshProbe(uint id:SV_DispatchThreadID,uniform uint count,uniform uint shape,
+    |      ^^^^^^^^^ entrypoint 'meshProbe' uses features that are not available in 'compute' stage for 'cpp' compilation target.
+----'
+note: see using of 'InterlockedOr'
+   --> /Users/bmar5496/code/sand-atlas-dem/runs/cpu-slang-feasibility-v1/source_snapshot/shaders/solver.slang:183:33
+    |
+183 | void fail(uint bit){uint unused;InterlockedOr(r.control[0],bit,unused);}
+    |                                 ^^^^^^^^^^^^^
+----'
+note: see definition of 'InterlockedOr'
+--> hlsl.meta.slang:11939:6
+-'
+note: see declaration of 'require'
+--> hlsl.meta.slang:11938:2
+-'
+error[E36107]: unavailable features in entry point
+   --> /Users/bmar5496/code/sand-atlas-dem/runs/cpu-slang-feasibility-v1/source_snapshot/shaders/solver.slang:351:6
+    |
+351 | void fillBins(uint id:SV_DispatchThreadID){
+    |      ^^^^^^^^ entrypoint 'fillBins' uses features that are not available in 'compute' stage for 'cpp' compilation target.
+----'
+note: see using of 'InterlockedOr'
+   --> /Users/bmar5496/code/sand-atlas-dem/runs/cpu-slang-feasibility-v1/source_snapshot/shaders/solver.slang:183:33
+    |
+183 | void fail(uint bit){uint unused;InterlockedOr(r.control[0],bit,unused);}
+    |                                 ^^^^^^^^^^^^^
+----'
+note: see definition of 'InterlockedOr'
+--> hlsl.meta.slang:11939:6
+-'
+note: see declaration of 'require'
+--> hlsl.meta.slang:11938:2
+-'
+error[E36107]: unavailable features in entry point
+   --> /Users/bmar5496/code/sand-atlas-dem/runs/cpu-slang-feasibility-v1/source_snapshot/shaders/solver.slang:386:6
+    |
+386 | void countPairs(uint id:SV_DispatchThreadID){if(id<r.c.N&&r.control[4]!=0)r.pairCounts[id]=findPairs(id,false);}
+    |      ^^^^^^^^^^ entrypoint 'countPairs' uses features that are not available in 'compute' stage for 'cpp' compilation target.
+----'
+note: see using of 'InterlockedOr'
+   --> /Users/bmar5496/code/sand-atlas-dem/runs/cpu-slang-feasibility-v1/source_snapshot/shaders/solver.slang:183:33
+    |
+183 | void fail(uint bit){uint unused;InterlockedOr(r.control[0],bit,unused);}
+    |                                 ^^^^^^^^^^^^^
+----'
+note: see definition of 'InterlockedOr'
+--> hlsl.meta.slang:11939:6
+-'
+note: see declaration of 'require'
+--> hlsl.meta.slang:11938:2
+-'
+error[E36107]: unavailable features in entry point
+   --> /Users/bmar5496/code/sand-atlas-dem/runs/cpu-slang-feasibility-v1/source_snapshot/shaders/solver.slang:388:6
+    |
+388 | void emitPairs(uint id:SV_DispatchThreadID){
+    |      ^^^^^^^^^ entrypoint 'emitPairs' uses features that are not available in 'compute' stage for 'cpp' compilation target.
+----'
+note: see using of 'InterlockedOr'
+   --> /Users/bmar5496/code/sand-atlas-dem/runs/cpu-slang-feasibility-v1/source_snapshot/shaders/solver.slang:183:33
+    |
+183 | void fail(uint bit){uint unused;InterlockedOr(r.control[0],bit,unused);}
+    |                                 ^^^^^^^^^^^^^
+----'
+note: see definition of 'InterlockedOr'
+--> hlsl.meta.slang:11939:6
+-'
+note: see declaration of 'require'
+--> hlsl.meta.slang:11938:2
+-'
+error[E36107]: unavailable features in entry point
+   --> /Users/bmar5496/code/sand-atlas-dem/runs/cpu-slang-feasibility-v1/source_snapshot/shaders/solver.slang:429:6
+    |
+429 | void collectMeshContacts(uint3 group:SV_GroupID,uint lane:SV_GroupIndex){
+    |      ^^^^^^^^^^^^^^^^^^^ entrypoint 'collectMeshContacts' uses features that are not available in 'compute' stage for 'cpp' compilation target.
+----'
+note: see using of 'GroupMemoryBarrierWithGroupSync'
+   --> /Users/bmar5496/code/sand-atlas-dem/runs/cpu-slang-feasibility-v1/source_snapshot/shaders/solver.slang:433:5
+    |
+433 | GroupMemoryBarrierWithGroupSync();
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----'
+note: see definition of 'GroupMemoryBarrierWithGroupSync'
+--> hlsl.meta.slang:11855:6
+-'
+note: see declaration of 'require'
+--> hlsl.meta.slang:11854:2
+-'
+error[E36107]: unavailable features in entry point
+   --> /Users/bmar5496/code/sand-atlas-dem/runs/cpu-slang-feasibility-v1/source_snapshot/shaders/solver.slang:529:6
+    |
+529 | void collectMeshFrontiers(uint3 group:SV_GroupID,uint lane:SV_GroupIndex){
+    |      ^^^^^^^^^^^^^^^^^^^^ entrypoint 'collectMeshFrontiers' uses features that are not available in 'compute' stage for 'cpp' compilation target.
+----'
+note: see using of 'GroupMemoryBarrierWithGroupSync'
+   --> /Users/bmar5496/code/sand-atlas-dem/runs/cpu-slang-feasibility-v1/source_snapshot/shaders/solver.slang:499:5
+    |
+499 | GroupMemoryBarrierWithGroupSync();
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----'
+note: see definition of 'GroupMemoryBarrierWithGroupSync'
+--> hlsl.meta.slang:11855:6
+-'
+note: see declaration of 'require'
+--> hlsl.meta.slang:11854:2
+-'
+error[E36107]: unavailable features in entry point
+   --> /Users/bmar5496/code/sand-atlas-dem/runs/cpu-slang-feasibility-v1/source_snapshot/shaders/solver.slang:538:6
+    |
+538 | void countContacts(uint3 group:SV_GroupID,uint lane:SV_GroupIndex){
+    |      ^^^^^^^^^^^^^ entrypoint 'countContacts' uses features that are not available in 'compute' stage for 'cpp' compilation target.
+----'
+note: see using of 'InterlockedOr'
+   --> /Users/bmar5496/code/sand-atlas-dem/runs/cpu-slang-feasibility-v1/source_snapshot/shaders/solver.slang:183:33
+    |
+183 | void fail(uint bit){uint unused;InterlockedOr(r.control[0],bit,unused);}
+    |                                 ^^^^^^^^^^^^^
+----'
+note: see definition of 'InterlockedOr'
+--> hlsl.meta.slang:11939:6
+-'
+note: see declaration of 'require'
+--> hlsl.meta.slang:11938:2
+-'
+error[E36107]: unavailable features in entry point
+   --> /Users/bmar5496/code/sand-atlas-dem/runs/cpu-slang-feasibility-v1/source_snapshot/shaders/solver.slang:551:6
+    |
+551 | void emitContacts(uint3 group:SV_GroupID,uint lane:SV_GroupIndex){
+    |      ^^^^^^^^^^^^ entrypoint 'emitContacts' uses features that are not available in 'compute' stage for 'cpp' compilation target.
+----'
+note: see using of 'InterlockedOr'
+   --> /Users/bmar5496/code/sand-atlas-dem/runs/cpu-slang-feasibility-v1/source_snapshot/shaders/solver.slang:183:33
+    |
+183 | void fail(uint bit){uint unused;InterlockedOr(r.control[0],bit,unused);}
+    |                                 ^^^^^^^^^^^^^
+----'
+note: see definition of 'InterlockedOr'
+--> hlsl.meta.slang:11939:6
+-'
+note: see declaration of 'require'
+--> hlsl.meta.slang:11938:2
+-'
+error[E36107]: unavailable features in entry point
+   --> /Users/bmar5496/code/sand-atlas-dem/runs/cpu-slang-feasibility-v1/source_snapshot/shaders/solver.slang:567:6
+    |
+567 | void contactTotal(uint id:SV_DispatchThreadID){
+    |      ^^^^^^^^^^^^ entrypoint 'contactTotal' uses features that are not available in 'compute' stage for 'cpp' compilation target.
+----'
+note: see using of 'InterlockedOr'
+   --> /Users/bmar5496/code/sand-atlas-dem/runs/cpu-slang-feasibility-v1/source_snapshot/shaders/solver.slang:183:33
+    |
+183 | void fail(uint bit){uint unused;InterlockedOr(r.control[0],bit,unused);}
+    |                                 ^^^^^^^^^^^^^
+----'
+note: see definition of 'InterlockedOr'
+--> hlsl.meta.slang:11939:6
+-'
+note: see declaration of 'require'
+--> hlsl.meta.slang:11938:2
+-'
+error[E36107]: unavailable features in entry point
+   --> /Users/bmar5496/code/sand-atlas-dem/runs/cpu-slang-feasibility-v1/source_snapshot/shaders/solver.slang:642:6
+    |
+642 | void collectWallContacts(uint3 group:SV_GroupID,uint lane:SV_GroupIndex){
+    |      ^^^^^^^^^^^^^^^^^^^ entrypoint 'collectWallContacts' uses features that are not available in 'compute' stage for 'cpp' compilation target.
+----'
+note: see using of 'GroupMemoryBarrierWithGroupSync'
+   --> /Users/bmar5496/code/sand-atlas-dem/runs/cpu-slang-feasibility-v1/source_snapshot/shaders/solver.slang:646:5
+    |
+646 | GroupMemoryBarrierWithGroupSync();
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----'
+note: see definition of 'GroupMemoryBarrierWithGroupSync'
+--> hlsl.meta.slang:11855:6
+-'
+note: see declaration of 'require'
+--> hlsl.meta.slang:11854:2
+-'
+error[E36107]: unavailable features in entry point
+   --> /Users/bmar5496/code/sand-atlas-dem/runs/cpu-slang-feasibility-v1/source_snapshot/shaders/solver.slang:669:6
+    |
+669 | void advanceWalls(uint id:SV_DispatchThreadID){
+    |      ^^^^^^^^^^^^ entrypoint 'advanceWalls' uses features that are not available in 'compute' stage for 'cpp' compilation target.
+----'
+note: see using of 'InterlockedOr'
+   --> /Users/bmar5496/code/sand-atlas-dem/runs/cpu-slang-feasibility-v1/source_snapshot/shaders/solver.slang:183:33
+    |
+183 | void fail(uint bit){uint unused;InterlockedOr(r.control[0],bit,unused);}
+    |                                 ^^^^^^^^^^^^^
+----'
+note: see definition of 'InterlockedOr'
+--> hlsl.meta.slang:11939:6
+-'
+note: see declaration of 'require'
+--> hlsl.meta.slang:11938:2
+-'
+error[E36107]: unavailable features in entry point
+   --> /Users/bmar5496/code/sand-atlas-dem/runs/cpu-slang-feasibility-v1/source_snapshot/shaders/solver.slang:703:6
+    |
+703 | void resolveContacts(uint id:SV_DispatchThreadID){
+    |      ^^^^^^^^^^^^^^^ entrypoint 'resolveContacts' uses features that are not available in 'compute' stage for 'cpp' compilation target.
+----'
+note: see using of 'InterlockedOr'
+   --> /Users/bmar5496/code/sand-atlas-dem/runs/cpu-slang-feasibility-v1/source_snapshot/shaders/solver.slang:183:33
+    |
+183 | void fail(uint bit){uint unused;InterlockedOr(r.control[0],bit,unused);}
+    |                                 ^^^^^^^^^^^^^
+----'
+note: see definition of 'InterlockedOr'
+--> hlsl.meta.slang:11939:6
+-'
+note: see declaration of 'require'
+--> hlsl.meta.slang:11938:2
+-'
+error[E36107]: unavailable features in entry point
+   --> /Users/bmar5496/code/sand-atlas-dem/runs/cpu-slang-feasibility-v1/source_snapshot/shaders/solver.slang:751:6
+    |
+751 | void buildHistoryHash(uint id:SV_DispatchThreadID){
+    |      ^^^^^^^^^^^^^^^^ entrypoint 'buildHistoryHash' uses features that are not available in 'compute' stage for 'cpp' compilation target.
+----'
+note: see using of 'InterlockedCompareExchange'
+   --> /Users/bmar5496/code/sand-atlas-dem/runs/cpu-slang-feasibility-v1/source_snapshot/shaders/solver.slang:755:18
+    |
+755 | uint old;InterlockedCompareExchange(r.hash[slot],EMPTY,id,old);if(old==EMPTY)return;
+    |          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+----'
+note: see definition of 'InterlockedCompareExchange'
+--> hlsl.meta.slang:11973:6
+-'
+note: see declaration of 'require'
+--> hlsl.meta.slang:11972:2
+-'
+error[E36107]: unavailable features in entry point
+   --> /Users/bmar5496/code/sand-atlas-dem/runs/cpu-slang-feasibility-v1/source_snapshot/shaders/solver.slang:761:6
+    |
+761 | void gather(uint id:SV_DispatchThreadID){
+    |      ^^^^^^ entrypoint 'gather' uses features that are not available in 'compute' stage for 'cpp' compilation target.
+----'
+note: see using of 'InterlockedOr'
+   --> /Users/bmar5496/code/sand-atlas-dem/runs/cpu-slang-feasibility-v1/source_snapshot/shaders/solver.slang:183:33
+    |
+183 | void fail(uint bit){uint unused;InterlockedOr(r.control[0],bit,unused);}
+    |                                 ^^^^^^^^^^^^^
+----'
+note: see definition of 'InterlockedOr'
+--> hlsl.meta.slang:11939:6
+-'
+note: see declaration of 'require'
+--> hlsl.meta.slang:11938:2
+-'
+error[E36107]: unavailable features in entry point
+   --> /Users/bmar5496/code/sand-atlas-dem/runs/cpu-slang-feasibility-v1/source_snapshot/shaders/solver.slang:816:6
+    |
+816 | void checkContactTimestep(uint id:SV_DispatchThreadID){
+    |      ^^^^^^^^^^^^^^^^^^^^ entrypoint 'checkContactTimestep' uses features that are not available in 'compute' stage for 'cpp' compilation target.
+----'
+note: see using of 'InterlockedOr'
+   --> /Users/bmar5496/code/sand-atlas-dem/runs/cpu-slang-feasibility-v1/source_snapshot/shaders/solver.slang:183:33
+    |
+183 | void fail(uint bit){uint unused;InterlockedOr(r.control[0],bit,unused);}
+    |                                 ^^^^^^^^^^^^^
+----'
+note: see definition of 'InterlockedOr'
+--> hlsl.meta.slang:11939:6
+-'
+note: see declaration of 'require'
+--> hlsl.meta.slang:11938:2
+-'
+error[E36107]: unavailable features in entry point
+   --> /Users/bmar5496/code/sand-atlas-dem/runs/cpu-slang-feasibility-v1/source_snapshot/shaders/solver.slang:837:6
+    |
+837 | void gatherWallRows(uint index:SV_DispatchThreadID){
+    |      ^^^^^^^^^^^^^^ entrypoint 'gatherWallRows' uses features that are not available in 'compute' stage for 'cpp' compilation target.
+----'
+note: see using of 'InterlockedOr'
+   --> /Users/bmar5496/code/sand-atlas-dem/runs/cpu-slang-feasibility-v1/source_snapshot/shaders/solver.slang:183:33
+    |
+183 | void fail(uint bit){uint unused;InterlockedOr(r.control[0],bit,unused);}
+    |                                 ^^^^^^^^^^^^^
+----'
+note: see definition of 'InterlockedOr'
+--> hlsl.meta.slang:11939:6
+-'
+note: see declaration of 'require'
+--> hlsl.meta.slang:11938:2
+-'
+error[E36107]: unavailable features in entry point
+   --> /Users/bmar5496/code/sand-atlas-dem/runs/cpu-slang-feasibility-v1/source_snapshot/shaders/solver.slang:859:6
+    |
+859 | void beginStep(uint id:SV_DispatchThreadID){
+    |      ^^^^^^^^^ entrypoint 'beginStep' uses features that are not available in 'compute' stage for 'cpp' compilation target.
+----'
+note: see using of 'InterlockedOr'
+   --> /Users/bmar5496/code/sand-atlas-dem/runs/cpu-slang-feasibility-v1/source_snapshot/shaders/solver.slang:183:33
+    |
+183 | void fail(uint bit){uint unused;InterlockedOr(r.control[0],bit,unused);}
+    |                                 ^^^^^^^^^^^^^
+----'
+note: see definition of 'InterlockedOr'
+--> hlsl.meta.slang:11939:6
+-'
+note: see declaration of 'require'
+--> hlsl.meta.slang:11938:2
+-'
+error[E36107]: unavailable features in entry point
+   --> /Users/bmar5496/code/sand-atlas-dem/runs/cpu-slang-feasibility-v1/source_snapshot/shaders/solver.slang:890:6
+    |
+890 | void advanceCell(uint id:SV_DispatchThreadID){
+    |      ^^^^^^^^^^^ entrypoint 'advanceCell' uses features that are not available in 'compute' stage for 'cpp' compilation target.
+----'
+note: see using of 'InterlockedOr'
+   --> /Users/bmar5496/code/sand-atlas-dem/runs/cpu-slang-feasibility-v1/source_snapshot/shaders/solver.slang:183:33
+    |
+183 | void fail(uint bit){uint unused;InterlockedOr(r.control[0],bit,unused);}
+    |                                 ^^^^^^^^^^^^^
+----'
+note: see definition of 'InterlockedOr'
+--> hlsl.meta.slang:11939:6
+-'
+note: see declaration of 'require'
+--> hlsl.meta.slang:11938:2
+-'
+error[E36107]: unavailable features in entry point
+   --> /Users/bmar5496/code/sand-atlas-dem/runs/cpu-slang-feasibility-v1/source_snapshot/shaders/solver.slang:899:6
+    |
+899 | void checkRebuild(uint id:SV_DispatchThreadID){
+    |      ^^^^^^^^^^^^ entrypoint 'checkRebuild' uses features that are not available in 'compute' stage for 'cpp' compilation target.
+----'
+note: see using of 'InterlockedOr'
+   --> /Users/bmar5496/code/sand-atlas-dem/runs/cpu-slang-feasibility-v1/source_snapshot/shaders/solver.slang:903:55
+    |
+903 | if(length(d)+deformation>.5*r.c.skin){uint unused;InterlockedOr(r.control[4],1,unused);}
+    |                                                   ^^^^^^^^^^^^^
+----'
+note: see definition of 'InterlockedOr'
+--> hlsl.meta.slang:11939:6
+-'
+note: see declaration of 'require'
+--> hlsl.meta.slang:11938:2
+-'
+error[E36107]: unavailable features in entry point
+   --> /Users/bmar5496/code/sand-atlas-dem/runs/cpu-slang-feasibility-v1/source_snapshot/shaders/solver.slang:906:6
+    |
+906 | void finishStep(uint id:SV_DispatchThreadID){
+    |      ^^^^^^^^^^ entrypoint 'finishStep' uses features that are not available in 'compute' stage for 'cpp' compilation target.
+----'
+note: see using of 'InterlockedOr'
+   --> /Users/bmar5496/code/sand-atlas-dem/runs/cpu-slang-feasibility-v1/source_snapshot/shaders/solver.slang:183:33
+    |
+183 | void fail(uint bit){uint unused;InterlockedOr(r.control[0],bit,unused);}
+    |                                 ^^^^^^^^^^^^^
+----'
+note: see definition of 'InterlockedOr'
+--> hlsl.meta.slang:11939:6
+-'
+note: see declaration of 'require'
+--> hlsl.meta.slang:11938:2
+-'
+error[E39999]: import failed due to compilation error
+fatal error[E40003]: compilation ceased
+abort compilation: fatal error[E40003]: compilation ceased
+

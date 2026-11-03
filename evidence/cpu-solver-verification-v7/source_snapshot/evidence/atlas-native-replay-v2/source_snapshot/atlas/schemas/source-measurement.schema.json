@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Source measurements with explicit channel units",
+  "description": "Separate from normalized material-point experiments. Column keys and plot axes are cross-checked by Atlas readers. Browser assets may standardize units while retaining source units and conversion metadata.",
+  "type": "object",
+  "required": ["schema_version", "kind", "id", "material", "protocol", "conventions", "provenance", "initial", "columns", "rows", "source_plot"],
+  "properties": {
+    "schema_version": {"const": "0.1"},
+    "kind": {"enum": ["measurement-series", "test-summary"]},
+    "id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,119}$"},
+    "material": {"type": "string", "minLength": 1},
+    "protocol": {"type": "string", "minLength": 1},
+    "conventions": {
+      "type": "object",
+      "required": ["stress", "strain", "stress_unit", "strain_unit"],
+      "properties": {
+        "stress": {"const": "source-defined"},
+        "strain": {"const": "source-defined"},
+        "stress_unit": {"const": "per-channel"},
+        "strain_unit": {"const": "per-channel"}
+      },
+      "additionalProperties": false
+    },
+    "initial": {"type": "object", "maxProperties": 0},
+    "columns": {
+      "type": "array", "minItems": 2, "maxItems": 100,
+      "items": {
+        "type": "object", "required": ["key", "name", "unit"],
+        "properties": {
+          "key": {"type": "string", "pattern": "^c[0-9]+$"},
+          "name": {"type": "string", "minLength": 1},
+          "unit": {"type": "string", "minLength": 1},
+          "source_unit": {"type": "string"},
+          "unit_status": {"enum": ["standardized", "unresolved"]},
+          "unit_conversion": {
+            "type": "object", "required": ["scale", "offset"],
+            "properties": {"scale": {"type": "number"}, "offset": {"type": "number"}},
+            "additionalProperties": false
+          }
+        }
+      }
+    },
+    "rows": {
+      "type": "array", "minItems": 1, "maxItems": 200000,
+      "items": {
+        "type": "object", "minProperties": 1,
+        "patternProperties": {"^c[0-9]+$": {"type": "number"}},
+        "additionalProperties": false
+      }
+    },
+    "source_plot": {
+      "type": "object", "required": ["x", "y"],
+      "properties": {"x": {"type": "string", "pattern": "^c[0-9]+$"}, "y": {"type": "string", "pattern": "^c[0-9]+$"}},
+      "additionalProperties": false
+    },
+    "provenance": {
+      "type": "object", "required": ["source_url", "source_id", "license", "license_url", "attribution", "archive_sha256", "member_sha256"],
+      "properties": {
+        "source_url": {"type": "string", "format": "uri"},
+        "license_url": {"type": "string", "format": "uri"},
+        "archive_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "member_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      }
+    },
+    "warnings": {"type": "array", "items": {"type": "string"}},
+    "source_table": {"type": "object"}
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "hostun424-cpu-pair-plane-counts-v1",
+  "checkpoint": "runs/hostun-relaxed-overlap-equilibration-v5/physical-initial.h5",
+  "baseline_package": "evidence/hostun424-cpu-query-reuse-v1/source_snapshot/sand_atlas_dem",
+  "steps_per_variant": 1,
+  "rate_s": [
+    0,
+    0,
+    0
+  ],
+  "drag_s": 0,
+  "backend": "cpu",
+  "gpu_dispatches": 0,
+  "numerical_gate": "Every Engine.state array and contact count equal after checkpoint reconstruction and one complete instrumented step; all original tolerances unchanged.",
+  "performance_gate": "No performance admission: counter-instrumented execution is descriptive only. Compare function call counts with source/input hashes fixed; timing evidence belongs to separate uninstrumented hostun424-cpu-pair-plane-v1.",
+  "scientific_admission": false,
+  "allowed_runtime_changes": [
+    "cpu.py",
+    "shaders/cpu_scheduling.slang"
+  ],
+  "revision": "Select exactly one existing outward-rounded enclosure plane per directed pair: maximum signed violation at source centre transformed into target local coordinates; strict greater-than, stored six-group order breaks ties. Check this plane with 64 eps*(1+max abs local coordinate) padding before the unchanged directional hull and exact triangle query. No point/cluster budget or tolerances changed. Three warm serial steps; exact original contacts/state required. No minimum performance gate. Separate six-function native call-counter study; no chrono scopes, intermediate-normal or pop-site instrumentation. Both collectors instrumented, generated source and binary hashes saved before execution.",
+  "candidate_name": "pair_plane_serial",
+  "cpu_threads": 1,
+  "baseline_cpu_threads": 1,
+  "native_function_profile": true,
+  "native_profile_counts_only": true,
+  "profile_baseline": true
+}

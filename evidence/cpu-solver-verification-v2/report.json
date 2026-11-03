@@ -1,0 +1,47 @@
+{
+  "id": "cpu-solver-verification-v2",
+  "backend": "cpu",
+  "gpu_dispatches": 0,
+  "scientific_admission": false,
+  "whole_solver_workload": "synthetic isolated mesh pairs; no dense Hostun performance claim",
+  "tests_returncode": 0,
+  "fixture_sha256": "ae5f75d21a5d7f3a74d4f7fa16186f010715f7b00659fd4da051c03da7eec780",
+  "groups": [
+    {
+      "workers": 1,
+      "whole_group_elapsed_s": 1.1188421249389648,
+      "median_step_seconds": [
+        0.0014734153610334033
+      ],
+      "aggregate_kernel_steps_per_s": 678.6952453778099,
+      "completed_jobs": 1,
+      "job_steps": 192
+    },
+    {
+      "workers": 2,
+      "whole_group_elapsed_s": 1.163322416949086,
+      "median_step_seconds": [
+        0.0014588183585146908,
+        0.0014519765627483139
+      ],
+      "aggregate_kernel_steps_per_s": 1374.2026516964484,
+      "completed_jobs": 2,
+      "job_steps": 192
+    },
+    {
+      "workers": 4,
+      "whole_group_elapsed_s": 1.2594934169901535,
+      "median_step_seconds": [
+        0.0014450312501139706,
+        0.001460098954339628,
+        0.0014628815006290097,
+        0.0014756074215256376
+      ],
+      "aggregate_kernel_steps_per_s": 2738.1810342739223,
+      "completed_jobs": 4,
+      "job_steps": 192
+    }
+  ],
+  "passed": true,
+  "source_integrity": true
+}

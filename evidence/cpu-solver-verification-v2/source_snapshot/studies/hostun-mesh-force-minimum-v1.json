@@ -1,0 +1,14 @@
+{
+  "identity": "hostun-mesh-force-minimum-v1",
+  "frozen_before_gpu_execution": true,
+  "library": "assets/private/hostun-30-r64-s2048.h5",
+  "library_sha256": "1bc9f37a22b402ada31495ea7ff1ebef4bb6a27a26d68a8333f7f84a12ad16b7",
+  "reference_report": "evidence/hostun-fixed-node-minimum-reference-v1/report.json",
+  "reference_report_sha256": "c15e99aa5f140d0fd4ce0c5d56f8f131ad6e711722a6cb3d6a6e58fb2002aa05",
+  "maximum_relative_force_error": 0.001,
+  "exact_active_sample_count_required": true,
+  "timestep_s": 2e-09,
+  "overlap_guard_fraction": 0.03,
+  "scope": "Unchanged ten physical poses, source geometry, 2048 nodes, exact counts, 0.1% force error and 3% overlap guard; strict FP64 minimum-distance oracle replaces proximity tie substitution. Prior studies retained.",
+  "prior_failure_receipt_sha256": "4531b46e84bb7c6308e295615f4428f2b70c586625b0fbef7df0dba8508ceaad"
+}

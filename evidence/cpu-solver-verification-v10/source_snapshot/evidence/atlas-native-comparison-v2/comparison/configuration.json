@@ -1,0 +1,30 @@
+{
+  "version": "experimental-drained-replay-0.1",
+  "model": "linear-elastic",
+  "parameters": {
+    "p_ref": 100000,
+    "E": 30000000,
+    "nu": 0.25
+  },
+  "initial_history": {
+    "e": 0.7
+  },
+  "initial_strain": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "declarations": {
+    "kinematics": "fixed-frame-axisymmetric-x",
+    "p": "mean-effective-stress",
+    "q": "signed-axial-minus-radial-effective-stress",
+    "strain_origin": "first-observation",
+    "radial_control": "replay-measured-effective-stress",
+    "evidence_url": "https://github.com/SciGEM/sand-atlas-dem",
+    "evidence_locator": "docs/ATLAS_BRIDGE.md; virtual-test.json and its source manifest/history hashes",
+    "initialization_note": "Illustrative linear-elastic parameters, not a sand calibration. Replace e=0.7 with the actual prepared nominal void ratio, or provide Atlas's explicit override note. The converter's legacy radial-control enum denotes an observation constraint; the observations here are synthetic DEM."
+  }
+}

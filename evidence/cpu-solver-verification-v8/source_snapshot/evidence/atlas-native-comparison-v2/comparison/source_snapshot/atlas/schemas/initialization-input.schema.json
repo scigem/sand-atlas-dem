@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Explicit initialization inputs",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "parameters",
+    "inputs"
+  ],
+  "properties": {
+    "version": {
+      "const": "experimental-initialization-input-0.1"
+    },
+    "parameters": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "number"
+      }
+    },
+    "inputs": {
+      "type": "object",
+      "additionalProperties": {
+        "oneOf": [
+          {
+            "type": "number"
+          },
+          {
+            "type": "array",
+            "minItems": 6,
+            "maxItems": 6,
+            "items": {
+              "type": "number"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "identity": "wall-final-integration-v1",
+  "backend": "metal",
+  "parents": ["wall-boundaries-metal-v1", "wall-boundaries-integration-v1", "wall-friction-return-v1", "wall-cli-smoke-v1"],
+  "scope": "Final code review removes unintended profiling-time reduction-buffer reallocation and adds strict immutable normal identity and FP32 representability checks. All previous numerical gates remain unchanged.",
+  "gates": {
+    "restart_identity": "Changed checkpoint plane normal rejected before any state mutation",
+    "velocity_range": "Finite SI wall velocity outside normalized FP32 range rejected before any state mutation",
+    "regression": "Full serial actual-Metal suite passes all unchanged prior numerical assertions plus the new rejection check",
+    "cli": "Repeat the identical frozen wall-smoke inputs with pause/resume/export; all original software gates unchanged"
+  },
+  "scientific_admission": false
+}

@@ -1,0 +1,24 @@
+{
+  "coarse_library": "assets/private/hostun-30-r32-s512.h5",
+  "coarse_sha256": "7757ab752483cd8fabd910ea2cba3c5570fa8a6962b7672d14a32b15f8c414a9",
+  "fine_library": "assets/private/hostun-30-r64-s2048.h5",
+  "fine_sha256": "1bc9f37a22b402ada31495ea7ff1ebef4bb6a27a26d68a8333f7f84a12ad16b7",
+  "identity": "hostun-source-triangle-contact-v1",
+  "frozen_before_execution": true,
+  "volume_order_indices": [
+    0,
+    13,
+    26,
+    39,
+    52
+  ],
+  "placement_depth_fractions": [
+    0.0025,
+    0.01
+  ],
+  "limits": {
+    "maximum_relative_force_error": 0.1
+  },
+  "reference": "Exact source-triangle nearest point and inside predicate in normalized coordinates; same fine surface nodes and areas for coarse/fine/oracle.",
+  "scope": "Five predefined volume-order grains; same physical separation fixed by the coarse field. Engineering 10% per-case field-force gate, not an assertion of continuum quadrature convergence."
+}

@@ -1,0 +1,35 @@
+{
+  "identity": "hostun-promoted-frontier-performance-v2",
+  "checkpoint": "/private/tmp/sand-atlas-dem-walls/evidence/hostun-first-contact-profile-v1/private/checkpoint.h5",
+  "checkpoint_sha256": "831a722b693cb13534cea220524d24641c6040af70109622056c2d331f87102b",
+  "shape_library": "/private/tmp/sand-atlas-dem-walls/evidence/hostun-balanced424-preparation-v3/study/private/shapes.h5",
+  "shape_sha256": "c4b32a08ad649ff8c85f1393c17c881b4b743b9dfba106eded304d06ef6b02a7",
+  "repetitions": 3,
+  "mode_order": [
+    "baseline",
+    "parallel",
+    "parallel",
+    "baseline"
+  ],
+  "warmup_steps": 16,
+  "steps": 128,
+  "rate_s": [
+    -50,
+    -50,
+    -50
+  ],
+  "drag_s": 100000,
+  "minimum_speedup": 1.05,
+  "history_rtol": 0.0001,
+  "history_atol": 1e-08,
+  "limits": {
+    "position": 1e-05,
+    "velocity": 1e-05,
+    "rotation": 1e-05,
+    "force": 0.0001,
+    "torque": 0.0001
+  },
+  "scope": "Production auto-selected128-root/16384-group path vs archived32-root/4096-group collector on same current engine. Fine selection requires median shape sample count >=131072; predominantly coarse libraries retain original32 path. Same immutable Hostun checkpoint,2ns step, contact model and gates. Six128-step trials per mode. Fixed5% performance gate, full source/reference archive before execution. No preparation restart or scientific admission.",
+  "reference_shader": "/private/tmp/sand-atlas-dem-walls/evidence/hostun-frontier-performance-v1/source_snapshot/sand_atlas_dem/shaders/solver.slang",
+  "reference_shader_sha256": "258bc2e5c0e1fb16b13cfdb00f39389c15d7cb32ae5d5d5733c9eef3732a8905"
+}

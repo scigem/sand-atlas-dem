@@ -1,0 +1,14 @@
+{
+  "identity": "hostun-annealing-pair-isolation-v1",
+  "state": "/Users/bmar5496/code/sand-atlas-dem/runs/hostun-dense-annealing-v4/state-final.h5",
+  "audit_report": "/Users/bmar5496/code/sand-atlas-dem/runs/hostun-annealing-contact-audit-v1/report.json",
+  "difference_steps_over_diameter": [0.0001, 0.00003, 0.00001],
+  "gradient_rtol": 0.001,
+  "steps": 4000,
+  "batch_steps": 20,
+  "diagnostic_steps": 200,
+  "timestep_cap_s": 0.000001,
+  "minimum_timestep_s": 0.0000000001,
+  "drag_per_step": 0.005,
+  "scope": "Frozen force versus negative central-difference energy gradient using independent triangle/ray queries. Then isolate3 worst pairs with same mesh quadrature/soft frictionless contact law, zero initial velocities and4k actual Metal steps each. Existing active bounds and50% construction guard unchanged. Clearance is an observation, not a scientific acceptance gate."
+}
